@@ -1288,11 +1288,11 @@
       "Strings": [
         {
           "Culture": "en",
-          "Value": "Only types of selected instance type are being exported: Card, Dialog, File or Task."
+          "Value": "Only types of selected instance type are being exported: Card, File or Task."
         },
         {
           "Culture": "ru",
-          "Value": "Экспортируются только типы с заданным типом экземпляра: Card (карточка), Dialog (диалог), File (файл) или Task (задание)."
+          "Value": "Экспортируются только типы с заданным типом экземпляра: Card (карточка), File (файл) или Task (задание)."
         }
       ]
     },
@@ -5699,11 +5699,11 @@
       "Strings": [
         {
           "Culture": "en",
-          "Value": "TESSA - {0}"
+          "Value": "СЭД РБ - {0}"
         },
         {
           "Culture": "ru",
-          "Value": "TESSA - {0}"
+          "Value": "СЭД РБ - {0}"
         }
       ]
     },

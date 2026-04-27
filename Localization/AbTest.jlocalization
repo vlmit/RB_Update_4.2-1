@@ -442,7 +442,7 @@
         },
         {
           "Culture": "ru",
-          "Value": "Количество контрагентов"
+          "Value": "Количество корреспондентов"
         }
       ]
     },
@@ -471,32 +471,6 @@
         {
           "Culture": "ru",
           "Value": "Дата выпуска"
-        }
-      ]
-    },
-    {
-      "Name": "AbTest_CardTypes_Controls_ReleaseDateFrom",
-      "Strings": [
-        {
-          "Culture": "en",
-          "Value": "Release date \"from\""
-        },
-        {
-          "Culture": "ru",
-          "Value": "Дата выпуска \"с\""
-        }
-      ]
-    },
-    {
-      "Name": "AbTest_CardTypes_Controls_ReleaseDateTo",
-      "Strings": [
-        {
-          "Culture": "en",
-          "Value": "Release date \"to\""
-        },
-        {
-          "Culture": "ru",
-          "Value": "Дата выпуска \"по\""
         }
       ]
     },
@@ -839,7 +813,7 @@
         },
         {
           "Culture": "ru",
-          "Value": "Будет создано контрагентов:"
+          "Value": "Будет создано корреспондентов:"
         }
       ]
     },
@@ -895,7 +869,7 @@
         },
         {
           "Culture": "ru",
-          "Value": "Количество контрагентов не может быть отрицательным числом."
+          "Value": "Количество корреспондентов не может быть отрицательным числом."
         }
       ]
     },
@@ -909,7 +883,7 @@
         },
         {
           "Culture": "ru",
-          "Value": "Количество создаваемых контрагентов слишком велико:"
+          "Value": "Количество создаваемых корреспондентов слишком велико:"
         }
       ]
     },
@@ -1185,19 +1159,6 @@
       ]
     },
     {
-      "Name": "AbTest_Views_Cars_CardName_Param",
-      "Strings": [
-        {
-          "Culture": "en",
-          "Value": "Model"
-        },
-        {
-          "Culture": "ru",
-          "Value": "Модель"
-        }
-      ]
-    },
-    {
       "Name": "AbTest_Views_Cars_CarID_Param",
       "Strings": [
         {
@@ -1224,33 +1185,7 @@
       ]
     },
     {
-      "Name": "AbTest_Views_Cars_DriverName_Param",
-      "Strings": [
-        {
-          "Culture": "en",
-          "Value": "Driver name"
-        },
-        {
-          "Culture": "ru",
-          "Value": "Водитель"
-        }
-      ]
-    },
-    {
       "Name": "AbTest_Views_Cars_MaxSpeed",
-      "Strings": [
-        {
-          "Culture": "en",
-          "Value": "Max speed"
-        },
-        {
-          "Culture": "ru",
-          "Value": "Скорость"
-        }
-      ]
-    },
-    {
-      "Name": "AbTest_Views_Cars_MaxSpeed_Param",
       "Strings": [
         {
           "Culture": "en",
@@ -1300,32 +1235,6 @@
         {
           "Culture": "ru",
           "Value": "Дата выпуска"
-        }
-      ]
-    },
-    {
-      "Name": "AbTest_Views_Cars_ReleaseDateFrom_Param",
-      "Strings": [
-        {
-          "Culture": "en",
-          "Value": "Release date \"from\""
-        },
-        {
-          "Culture": "ru",
-          "Value": "Дата выпуска \"с\""
-        }
-      ]
-    },
-    {
-      "Name": "AbTest_Views_Cars_ReleaseDateTo_Param",
-      "Strings": [
-        {
-          "Culture": "en",
-          "Value": "Release date \"to\""
-        },
-        {
-          "Culture": "ru",
-          "Value": "Дата выпуска \"по\""
         }
       ]
     },

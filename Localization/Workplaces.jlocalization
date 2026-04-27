@@ -3114,7 +3114,7 @@
       "Strings": [
         {
           "Culture": "en",
-          "Value": "View alias cannot be empty or whitespace."
+          "Value": "View alias cannot be empty or contain only spaces."
         },
         {
           "Culture": "ru",
@@ -3127,7 +3127,7 @@
       "Strings": [
         {
           "Culture": "en",
-          "Value": "View caption cannot be empty or whitespace."
+          "Value": "View caption cannot be empty or contain only spaces."
         },
         {
           "Culture": "ru",
@@ -6164,7 +6164,7 @@
         },
         {
           "Culture": "ru",
-          "Value": "Следующая страница"
+          "Value": "Перейти к следующей странице"
         }
       ]
     },
@@ -6174,11 +6174,11 @@
       "Strings": [
         {
           "Culture": "en",
-          "Value": "Previous page"
+          "Value": "Page back"
         },
         {
           "Culture": "ru",
-          "Value": "Предыдущая страница"
+          "Value": "Вернутся на страницу назад"
         }
       ]
     },
@@ -6192,7 +6192,7 @@
         },
         {
           "Culture": "ru",
-          "Value": "Включение/отключение страничного режима"
+          "Value": "Включение/Отключение страничного режима"
         }
       ]
     },
