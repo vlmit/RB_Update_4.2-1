@@ -1,0 +1,3141 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "b4760829-7409-44fa-9185-594fb46bd718",
+  "Name": "FormEditor",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "Editor_BlockName_Absolute",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Absolute block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Блок с абсолютным позиционированием"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_Absolute_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Container for absolute positioning of elements"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контейнер для абсолютного позиционирования элементов"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_Flex",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Flex block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Флекс блок"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_Flex_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Flexible container for arranging elements in row or column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Гибкий контейнер для размещения элементов в строку или столбец"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_Grid",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Табличный блок"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_Grid_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid layout for organizing elements into rows and columns"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сетка для размещения элементов по строкам и столбцам"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_Grid_LeftCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid block, captions on the left side"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Табличный блок, заголовки слева"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_GridCell",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid cell"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ячейка таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_MetaForm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форма"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_MetaForm_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Structured container for form layout and organization"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Структурированный контейнер для компоновки формы и её элементов"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_Root",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Root form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Корневая форма"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_TabContainer",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Block with tabs"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Блок с вкладками"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_TabContainer_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tab container for switching between different content sections"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контейнер вкладок для переключения между различными разделами"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_TaskArea",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Task area"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Область заданий"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_TaskArea_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Area for displaying tasks, statuses, and progress tracking"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Область для отображения задач, их статусов и прогресса выполнения"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_Toolbar",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Toolbar"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тулбар"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_BlockName_Toolbar_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Toolbar with actions and commands available inside the form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Панель действий и команд, доступных в карточке"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_ControlName_NumericBox",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Numeric (editable field)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Число (редактируемое поле)"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_ControlName_NumericBox_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Numeric input field with format validation"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле ввода числовых значений с контролем формата"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Forms_Description_Contract",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form for \"Contract\" card type, to use this form flag \"Use form designer\" must be checked in card type."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форма для типа карточки \"Договор\", чтобы использовать данную форму нужно отметить флаг \"Использовать конструктор форм\" в типе карточки."
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Forms_Description_PersonalRole",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form for \"PersonalRole\" card type, to use this form flag \"Use form designer\" must be checked in card type."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форма для типа карточки \"Сотрудник\", чтобы использовать данную форму нужно отметить флаг \"Использовать конструктор форм\" в типе карточки."
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Forms_Description_SendToPerformer",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form used for \"New Task\" dialog which is invoked by tile \"New Task\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форма, используемая для диалога постановки задачи, который вызывается из по тайлу \"Поставить задачу\"."
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_Confirm_Delete_Row_Or_Column",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The element \"{0}\" contains cells with a content. Are you sure you want to delete anyway?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Элемент \"{0}\" содержит ячейки с контентом. Вы уверены, что хотите его удалить?"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_ConfirmDeleting",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete \"{0}\" with name \"{1}\"?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить \"{0}\" с именем \"{1}\"?"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_ConfirmSave",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form has unsaved changes.\nSave and continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форма содержит несохранённые данные.\nСохранить и продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_DeleteForm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete current form?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить текущую форму?"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_DeleteSelectedElements",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete selected elements?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить выбранные элементы?"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_DeleteSelectedForms",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete selected forms?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить выбранные формы?"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_Element_Does_Not_Have_Current_State",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "This element does not have a current state. To edit its properties, click the \"Add State\" button."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Данный элемент не имеет текущего состояния. Для того, чтобы редактировать свойства данного элемента нажмите кнопку добавления состояния."
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_Element_SelfCopy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "This element is in \"Self Copy\" mode. To edit it's children collection switch the mode to \"Full Copy\" in element's settings."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Этот элементы в режиме \"Self Copy\". Чтобы редактировать коллекцию дочерних элементов смените мод на \"Full Copy\" в настройках этого элемента."
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_Errors_Value_Is_NaN",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The value is not a number"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение не является числом"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_One_Child_Allowed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The block is allowed to have only one child"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Блок может иметь только один дочерний элемент"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_Only_Blocks_Allowed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A child element can only be of block type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дочерний элемент может быть только блочного типа"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Messages_Stored",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The form has been stored"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форма была сохранена"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_NumberField_DecimalSeparator_Comma",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Comma"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запятая"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_NumberField_DecimalSeparator_Dot",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dot"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Точка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PanelButtons_ShowInDialog",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show in dialog"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать в диалоге"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PanelButtons_ShowInTab",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show in tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать во вкладке"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Absolute_Size_Warning",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Size of an absolute block must be set in pixels"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Размеры абсолютного блока должны быть заданы в пикселях"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AddColumn",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить колонку"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AddGroup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add group"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить группу"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AddLeftColumn",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add left column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить колонку в начало"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AddRow",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add row"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить строку"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AddState",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add state"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить состояние"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AddTopRow",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add top row"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить строку в начало"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Alias",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Alias"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Алиас"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Align",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Alignment"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AlignContent",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Align content"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание контента"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AlignItems",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Align items"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание элементов в строке или колонке"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AlignSelf",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Align self"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Собственное выравнивание"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_AutocompleteMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Autocomplete mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим автокомплита"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Background",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Background"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Фон"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Binding",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Data binding"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Привязка данных"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Border",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Рамка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_BorderBottom",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border bottom"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Рамка снизу"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_BorderLeft",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border left"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Рамка слева"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_BorderRadius",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border radius"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скругление рамки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_BorderRight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border right"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Рамка справа"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_BorderTop",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border top"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Рамка сверху"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заголовок"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Caption_Background",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption background"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Фон заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Caption_Color",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_CaptionFont",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption font"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Стиль текста заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_CaptionFontSize",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption font size"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Размер шрифта заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_CaptionFontWeight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption font weight"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Толщина текста заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_CaptionPosition",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption position"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Позиция заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_CardType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип карточки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Column_DataType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Data type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип данных"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ColumnSize",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Column size"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Размер колонки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ColumnsSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Columns settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки колонок"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_CopyFrom",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копировать из"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_DecimalSeparator",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Separator"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разделитель"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Delete_Element_State",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete state"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить состояние"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_DeleteColumn",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить колонку"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_DeleteForm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить форму"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_DeleteGroup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete group"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить группу"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_DigitsAfterSeparator",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Amount of digits after separator"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Количество символов после разделителя"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_DisableAttachingFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Prevent adding files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запретить добавление файлов"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Display",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Display mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим отображения"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ExportForm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Export form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экспортировать форму"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_FieldType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Field type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип поля"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_FlexDirection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Flex direction"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Направление блока"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_FlexValue",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Flex"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Флекс"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_FontColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Font color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет текста"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_FontWeight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Font weight"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Толщина шрифта"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_FormAlias",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form alias"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Алиас формы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_FormBundle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form bundle"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Бандл формы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Gap",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Gap"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Промежуток"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_GridControl_Column",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Column settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки колонки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_GridGap",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid gap"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Расстояние между элементами таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_GridSnap",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid snap"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сетка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Group",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группа"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Height",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Высота"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Help_MaxRows",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The field will display maximum rows if \"Minimum width\" wasn't given"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле будет отображать максимальное количество строк при незаполненном поле \"Минимальна высота\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Hidden",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hidden"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрытый"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_HideIfEmpty",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hide if empty"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрывать, если пустая"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Icon",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Icon"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Иконка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_IdColumn",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "ID column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Колонка с идентификатором"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ImportForm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Import form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Импортировать форму"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_IsCard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Link to a card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ссылка на карточку"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_JustifyContent",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Justify content"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Расположение контента"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_JustifySelf",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Justify self"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Собственное положение"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_LoadForm_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Load form into editor"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Загрузить форму в редактор"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Margin",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Margin"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Внешний отступ"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_MaxHeight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximal height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальная высота"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_MaxValue",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальное значение"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_MaxValue_Less_Than_Min",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum value can't be less than minimum value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальное значение не может быть меньше минимального"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_MaxWidth",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximal width"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальная ширина"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_MetaFormKind",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Kind"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вид"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_MinHeight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Minimal height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Минимальна высота"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_MinValue",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Minimum value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Минимальное значение"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_MinWidth",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Minimal width"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Минимальная ширина"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Multiple",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Multiple values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Множественные значения"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Multiselect",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Multiselect"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Множественный выбор"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_NameColumn",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Колонка с именем"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_NumberType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Number type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип номера"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Orientation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Orientation"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ориентация"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Overflow",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Overflow"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Переполнение"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_OverflowHandling",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Overflow handling"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поведение при переполнении"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_OverflowX",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Overflow X"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Переполнение по X"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_OverflowY",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Overflow Y"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Переполнение по Y"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Padding",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Padding"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Внутренний отступ"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_PresetColors",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preset colors"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предустановленные цвета"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ReadonlyMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open in readonly mode by default"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открывать в режиме чтения по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Resizer",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Resizer"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ресайзер"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_SaveForm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить форму"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_SearchMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Search mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим поиска"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Section",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Section field"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле секции"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_SelectionMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Selection mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим выделения"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_SimpleMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Simple mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Простой режим"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Source",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Source"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Источник"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Spacing",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Space between items"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отступ между элементами"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_SpanCells",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Span cells"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Объединить ячейки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_SplitHorizontally",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Split horizontally"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разделить по горизонтали"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_SplitVertically",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Split vertically"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разделить по вертикали"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_State",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "State"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Состояние"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_StateMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "State mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим состояния"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_SubForm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Subform"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подформа"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabActiveCaptionBackground",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Active caption background"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Актив фон заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabActiveCaptionColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Active caption color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Активный цвет заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabAdditionalCaptionPosition",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption position"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Позиция заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabAdditionalText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Additional text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дополнительный текст"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabAlias",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tab alias"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Алиас вкладки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tab caption"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заголовок вкладки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabCaptionBorder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption border"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Граница заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabCaptionBorderBottom",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption border bottom"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Граница заголовка снизу"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabCaptionBorderLeft",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption border left"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Граница заголовка слева"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabCaptionBorderRight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption border right"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Граница заголовка справа"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabCaptionBorderTop",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption border top"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Граница заголовка сверху"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Active tab font color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет текста активной вкладки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TabContainer_TabsPosition",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tabs position"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Расположение вкладок"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_TaskType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Task type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип задания"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ThumbnailKind",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Thumbnail kind"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вид миниатюры"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ThumbnailSize",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Thumbnail size"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Размер миниатюры"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ToolbarSpacing",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Space between groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Промежуток между группами"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Unique",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unique values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Уникальные значения"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Use_Standard_Buttons",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Use standard solution buttons"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Использовать кнопки типового решения"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_View_CodeGenerated",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Virtual view"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виртуальное представление"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ViewPortHeight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Viewport height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Высота вьюпорта"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_ViewPortWidth",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Viewport width"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ширина вьюпорта"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Width",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Width"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ширина"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Properties_Wrap",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Wrap"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сворачивание"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Property_Groups_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Property_Groups_Default",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Common settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Общие настройки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Property_Groups_Size",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Size settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки размера"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_AbsoluteSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Absolute block settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки контейнера \"Блок с абсолютным позиционированием\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_AutocompleteSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Autocomplete settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Ссылка (поле с автодополнением)\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_Binding",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Binding settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки привязки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_Block",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Common block settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Общие настройки блока"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_ButtonSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Button settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Кнопка\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_CheckboxSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Checkbox settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Флажок\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_ColorSelector",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Color selector settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Выбор цвета\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_ColumnsSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid columns settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки колонок таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_Common",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Common properties"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Общие свойства"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_ControlCommonSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Control common settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Общие настройки контрола"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_DateTimeSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Date time settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Дата и время\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_FileListSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File list settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки карточного элемента \"Список файлов\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_FlexboxSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Flex block settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки контейнера \"Флекс блок\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_GridBlockItem",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Settings for {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки для {0}"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_GridCellSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid cell settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки ячейки таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_GridControl",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Таблица\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_GridSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid block settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки контейнера \"Табличный блок\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_Group",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки группы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_GroupSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки группы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_GroupsSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Groups settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки групп"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_HtmlViewer",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Html viewer settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Отображение HTML\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_Input",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Input settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки ввода"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_LabelSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Label settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Метка (заданный текст)\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_MetaFormSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки контейнера \"Форма\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_NumeratorSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Numerator settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки карточного элемента \"Нумератор\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_NumericSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Numeric field settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Число (редактируемое поле)\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_RichTextBox",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Rich text box settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Текст с форматированием\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_StateManagement",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "State management"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Управление состояниями"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_Tab",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки вкладки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_TabContainer",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tab container"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки контейнера \"Блок с вкладками\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_Table",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table card element settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки карточного элемента \"Таблица\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_TaskAreaSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Task-area settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки контейнера \"Область заданий\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_TextBlockSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text (read-only field) settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Текст (поле только для чтения)\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_TextBox",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text box settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Строка (редактируемое поле)\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_ThumbnailSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Thumbnail settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки элемента \"Миниатюра\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_ToolbarSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Toolbar settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки контейнера \"Тулбар\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_PropertyGroups_ViewControlSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View control settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки карточного элемента \"Представление\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Tabs_Editor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форма"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Tabs_EditorPreview",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preview"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предпросмотр"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Tabs_FormSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Form settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки формы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Tabs_GridScheme",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid scheme"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Схема табличного блока"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Tabs_ItemSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Item settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки объекта"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Tabs_PhysicalTree",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Physical tree"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Физическоe дерево"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Tabs_SubFormEditor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Subform editor"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактор подформы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_CardControls",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card controls"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточные элементы управления"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_Containers",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Containers"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контейнеры"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_Controls",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Controls"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Элементы управления"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_GridBlock_CardPreset",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форма карточки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_GridColumn",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Колонка таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_GridRow",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grid row"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Строка таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_Presets",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Presets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Шаблоны"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_GridBlock_CardPreset_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A ready-made card structure in the form of a table block for convenient content arrangement."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Готовая структура карточки в виде табличного блока для удобной компоновки контента."
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_PropertyGroups_Table",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table card element settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки карточного элемента \"Таблица\""
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_Tab",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вкладка"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_TabContainer_CardPreset",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card tab container"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточный блок с вкладками"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_Toolbar_CardPreset",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card toolbar"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточный тулбар"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_TabContainer_CardPreset_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A tabbed card template for organizing information into sections"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Шаблон карточки с вкладками для организации информации по разделам"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_Toolbar_CardPreset_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A set of pre-defined elements for quickly creating a card toolbar"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Набор предустановленных элементов для быстрого создания панели инструментов карточки"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_Types_ToolbarGroup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Toobar group"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группа тулбара"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_ButtonType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Button for triggering actions and commands"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Кнопка для выполнения действий и команд"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_AutoCompleteEntryType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Input field with suggestions and automatic value selection"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле ввода с подсказками и автоподбором значений"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_CheckBoxType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Toggleable checkbox"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Переключаемый флажок для выбора состояния"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_ColorPickerType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Color selection control with palette"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Элемент для выбора цвета из палитры"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_DateTimeType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Input field for selecting date and time"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле для выбора даты и времени"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_FileListType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File list for attaching and managing documents"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список файлов для добавления и управления вложениями"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_FilePreviewType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preview of uploaded files directly in the form"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предпросмотр загруженных файлов прямо в карточке"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_GridType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table for displaying and editing data"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Таблица для отображения и редактирования данных"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_HtmlViewerType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Display of HTML content with preserved formatting"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображение HTML-контента с сохранением форматирования"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_LabelType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text label for highlighting or explaining information"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текстовая подпись для выделения информации"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_NumeratorType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Automatic numbering element, e.g. for document IDs"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Автоматическая нумерация, например, номера документа"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_RichTextBoxType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Rich text editor with advanced formatting features"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактор форматированного текста с расширенными функциями оформления"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_TextBlockType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Static text display element"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Элемент для отображения статичного текста"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_TextBoxType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Input field for entering text data"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле ввода текста"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_ThumbnailType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Thumbnail image for quick visual identification"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Миниатюрное изображение для быстрой визуальной идентификации"
+        }
+      ]
+    },
+    {
+      "Name": "Editor_ViewControlType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Element for embedding external views or user interface components"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Элемент для встраивания внешних представлений или UI-компонентов"
+        }
+      ]
+    },
+  ]
+}

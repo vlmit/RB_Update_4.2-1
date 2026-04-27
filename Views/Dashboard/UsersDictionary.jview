@@ -1,0 +1,128 @@
+﻿{
+  "Alias": "UsersDictionary",
+  "Caption": "$Views_Names_UsersDictionary",
+  "GroupName": "Dashboard",
+  "ID": "cd3be066-0f10-4638-a76b-ebb787571984",
+  "JsonMetadataSource::txt": "UsersDictionary JSONMETA",
+  "MsQuerySource::txt": "UsersDictionary MSSQL",
+  "PgQuerySource::txt": "UsersDictionary PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART UsersDictionary JSONMETA]
+{
+  "Alias": "UsersDictionary",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_UsersDictionary",
+  "Columns": [
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "$PersonalRoles.ID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_UsersDictionary_Name",
+      "SortBy": "r.Name",
+      "Type": "$PersonalRoles.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "UserName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "PageLimit": 30,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "QuickSearch",
+      "AllowedOperands": [
+        "Contains"
+      ],
+      "Caption": "$Views_UsersDictionary_QuickSearch_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "QuickSearch",
+  "References": [
+    {
+      "ColPrefix": "User",
+      "DisplayValueColumn": "UserName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "UsersDictionary"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART UsersDictionary MSSQL]
+SELECT
+	[r].[ID]		AS [UserID],
+	[r].[Name]		AS [UserName]
+FROM [Roles] AS [r] WITH(NOLOCK)
+INNER JOIN [PersonalRoles] AS [pr] WITH (NOLOCK)
+	ON [pr].[ID] =[r].[ID]
+WHERE [r].[Hidden] = 0
+#if(QuickSearch) {
+	AND
+	(
+		EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+			INNER JOIN [Roles] AS [r2] WITH(NOLOCK)
+				ON [r2].[ID] = [ru].[ID]
+				AND [ru].[UserID] = [r].[ID]
+				AND [r2].[TypeID] = 2 -- Department
+				#param(QuickSearch, [r2].[Name]))
+		OR (1 = 1 #param(QuickSearch, [pr].[Email]))
+		OR (1 = 1 #param(QuickSearch, [pr].[LastName]))
+		OR (1 = 1 #param(QuickSearch, [pr].[FirstName]))
+	)
+}
+ORDER BY #order_by
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 ROWS
+FETCH NEXT #param(PageLimit) ROWS ONLY
+}
+
+[TEXTPART UsersDictionary PGSQL]
+SELECT
+	"r"."ID"	AS "UserID",
+	"r"."Name"	AS "UserName"
+FROM "Roles" AS "r"
+INNER JOIN "PersonalRoles" AS "pr"
+	ON "pr"."ID" = "r"."ID"
+WHERE "r"."Hidden" = false
+#if(QuickSearch) {
+	AND
+	(
+		EXISTS (
+			SELECT NULL
+			FROM "RoleUsers" AS "ru"
+			INNER JOIN "Roles" AS "r2"
+				ON "r2"."ID" = "ru"."ID"
+				AND "ru"."UserID" = "r"."ID"
+				AND "r2"."TypeID" = 2 -- Department
+				#param(QuickSearch, "r2"."Name"))
+		OR (true #param(QuickSearch, "pr"."Email"))
+		OR (true #param(QuickSearch, "pr"."LastName"))
+		OR (true #param(QuickSearch, "pr"."FirstName"))
+	)
+}
+ORDER BY #order_by
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1
+LIMIT #param(PageLimit)
+}

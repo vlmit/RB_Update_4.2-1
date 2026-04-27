@@ -1,0 +1,80 @@
+﻿{
+  "Alias": "LicenseTypes",
+  "Caption": "$Views_Names_LicenseTypes",
+  "GroupName": "System",
+  "ID": "613dd133-9ac2-4cae-851f-c417fe657ec4",
+  "JsonMetadataSource::txt": "LicenseTypes JSONMETA",
+  "MsQuerySource::txt": "LicenseTypes MSSQL",
+  "PgQuerySource::txt": "LicenseTypes PGSQL"
+}
+
+[TEXTPART LicenseTypes JSONMETA]
+{
+  "Alias": "LicenseTypes",
+  "Caption": "$Views_Names_LicenseTypes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$LicenseTypes.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "$Views_LicenseTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.ID",
+      "Type": "$LicenseTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RefName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_LicenseTypes_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "LicenseTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART LicenseTypes MSSQL]
+SELECT
+	[t].[ID]		AS [RefID],
+	[t].[Name]		AS [RefName]
+FROM [LicenseTypes] AS [t] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART LicenseTypes PGSQL]
+SELECT
+	"t"."ID"		AS "RefID",
+	"t"."Name"		AS "RefName"
+FROM "LicenseTypes" AS "t"
+#if(Name) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

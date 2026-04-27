@@ -1,0 +1,257 @@
+﻿{
+  "Content": {
+    "Metadata": {
+      "Alias": "$AbTest_Workplaces_Test",
+      "CompositionId": "3dafe25a-dbc1-4038-a0d5-40969e2e17b1",
+      "EmptyFoldersVisible": false,
+      "FormatVersion": 5,
+      "Items": [
+        {
+          "Alias": "AbResolutions",
+          "Caption": "$AbTest_Workplaces_Resolutions",
+          "CompositionId": "ef47e2fb-db44-4b84-8e83-8464072edbf6",
+          "DataSourceMetadata": {
+            "Alias": "AbResolutions",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin93",
+          "ExpandingMode": "Expanded",
+          "Extensions": [
+            {
+              "Data": {
+                "CardCreationKind": "ByTypeAlias",
+                "CardOpeningKind": "ApplicationTab",
+                "DisplayValue": null,
+                "DocTypeIdentifier": null,
+                "IDParam": null,
+                "OpenInFullscreen": false,
+                "OpenOnlyFirstTab": false,
+                "TypeAlias": "AbResolution"
+              },
+              "Order": 0,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.CreateCardExtension"
+            }
+          ],
+          "IconName": "Thin93",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "e6333773-8c32-4d79-9338-4f85d905ed06",
+              "Items": [
+                {
+                  "CompositionId": "e6333773-8c32-0079-9300-0f85d905ed06",
+                  "Items": [
+                    {
+                      "Alias": "AbResolutions",
+                      "CompositionId": "ef47e2fb-db44-4b84-8e83-8464072edbf6",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByCategory",
+              "Caption": "$AbTest_Views_Resolutions_ByCategory",
+              "CompositionId": "859d24ae-a0e2-422d-a07d-8a408e7fbfd4",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByState",
+              "Caption": "$AbTest_Views_Resolutions_ByState",
+              "CompositionId": "97b146a7-d880-4a65-af78-6a64f335ae01",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByDepartment",
+              "Caption": "$AbTest_Views_Resolutions_ByDepartment",
+              "CompositionId": "7ecd1d8a-e11f-4b1f-ab17-d7f1cbc94ffc",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByAuthor",
+              "Caption": "$AbTest_Views_Resolutions_ByAuthor",
+              "CompositionId": "c5eacee1-5cfd-498e-9f7e-b332e045632c",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "NormalMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "AbCars",
+          "Caption": "$AbTest_Workplaces_Cars",
+          "CompositionId": "193496fb-e9a1-49a1-b9f4-8dbf73d56bd4",
+          "DataSourceMetadata": {
+            "Alias": "AbCars",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin262",
+          "Extensions": [
+            {
+              "Data": {
+                "CardCreationKind": "ByTypeAlias",
+                "CardOpeningKind": "ApplicationTab",
+                "DisplayValue": null,
+                "DocTypeIdentifier": null,
+                "IDParam": null,
+                "OpenInFullscreen": false,
+                "OpenOnlyFirstTab": false,
+                "TypeAlias": "AbCar"
+              },
+              "Order": 0,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.CreateCardExtension"
+            },
+            {
+              "Order": 1,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.OverrideFilterViewExtension"
+            },
+            {
+              "Order": 2,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.AddTagButtonViewExtension"
+            },
+            {
+              "Data": {
+                "AvatarShape": "Circle",
+                "AvatarSize": "Medium",
+                "DestinationColumn": "DriverName",
+                "IDColumn": "DriverID"
+              },
+              "Order": 3,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.Avatars.UserAvatarInRowViewExtension"
+            }
+          ],
+          "IconName": "Thin262",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "6277a882-8798-4aa1-a30c-d06147235716",
+              "Items": [
+                {
+                  "CompositionId": "6277a882-8798-00a1-a300-006147235716",
+                  "Items": [
+                    {
+                      "Alias": "AbCars",
+                      "CompositionId": "193496fb-e9a1-49a1-b9f4-8dbf73d56bd4",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "SecondChildSize": "714.3999999999999",
+              "SplitPosition": "332.79999999999995",
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "NormalMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "$AbTest_Workplaces_ViewExtensions",
+          "CompositionId": "5a818151-6060-4e0e-87a3-c836ab08521e",
+          "Items": [
+            {
+              "Alias": "AbViewFiles",
+              "Caption": "$AbTest_Views_Names_ViewFiles",
+              "CompositionId": "d6158546-c974-4432-bc22-92e65a4eba1b",
+              "DataSourceMetadata": {
+                "Alias": "AbViewFiles",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "ExpandedIconName": "Thin362",
+              "ExpandingMode": "Expanded",
+              "IconName": "Thin362",
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "a21a9230-33ef-406b-acc3-a5bf58512fdb",
+                  "Items": [
+                    {
+                      "CompositionId": "a21a9230-33ef-006b-ac00-05bf58512fdb",
+                      "Items": [
+                        {
+                          "Alias": "AbViewFiles",
+                          "CompositionId": "d6158546-c974-4432-bc22-92e65a4eba1b",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                },
+                {
+                  "Alias": "ByFolder",
+                  "Caption": "$AbTest_Views_ViewFiles_ByFolder",
+                  "CompositionId": "46fd3bff-08a4-437e-a160-5ddd46962b55",
+                  "ExpandingMode": "Expanded",
+                  "TypeName": "JsonWorkplaceViewSubsetMetadata",
+                  "Visibility": "OpenedAsDefault"
+                }
+              ],
+              "SelectionMode": "Row",
+              "ShowMode": "NormalMode",
+              "TypeName": "JsonDataNodeMetadata"
+            },
+            {
+              "Alias": "AbTransientView",
+              "Caption": "$AbTest_Workplaces_ViewExtensions_Generator",
+              "CompositionId": "82cb80f1-fdbe-4b10-80ac-9f5424dfab0b",
+              "DataSourceMetadata": {
+                "Alias": "AbTransientView",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "ExpandedIconName": "Thin464",
+              "IconName": "Thin464",
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "61476115-a01d-441a-8802-5d5717f0ae33",
+                  "Items": [
+                    {
+                      "CompositionId": "61476115-a01d-001a-8800-0d5717f0ae33",
+                      "Items": [
+                        {
+                          "Alias": "AbTransientView",
+                          "CompositionId": "82cb80f1-fdbe-4b10-80ac-9f5424dfab0b",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SelectionMode": "Row",
+              "ShowMode": "NormalMode",
+              "TypeName": "JsonDataNodeMetadata"
+            }
+          ],
+          "TypeName": "JsonFolderNodeMetadata"
+        }
+      ],
+      "LeftSideWidth::dbl": 285.0,
+      "TreeVisibility": true,
+      "Version": 1
+    },
+    "Order": 2
+  }
+}

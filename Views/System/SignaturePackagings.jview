@@ -1,0 +1,74 @@
+﻿{
+  "Alias": "SignaturePackagings",
+  "Caption": "$Views_Names_SignaturePackagings",
+  "GroupName": "System",
+  "ID": "b49ba9e8-4b5c-40af-8fa2-08daf310aca6",
+  "JsonMetadataSource::txt": "SignaturePackagings JSONMETA",
+  "MsQuerySource::txt": "SignaturePackagings MSSQL",
+  "PgQuerySource::txt": "SignaturePackagings PGSQL"
+}
+
+[TEXTPART SignaturePackagings JSONMETA]
+{
+  "Alias": "SignaturePackagings",
+  "Caption": "$Views_Names_SignaturePackagings",
+  "Columns": [
+    {
+      "Alias": "SignaturePackagingID",
+      "Hidden": true,
+      "Type": "$SignaturePackagings.ID"
+    },
+    {
+      "Alias": "SignaturePackagingName",
+      "Caption": "$Views_SignaturePackagings_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$SignaturePackagings.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_SignaturePackagings_Name_Param",
+      "Multiple": false,
+      "Type": "$SignaturePackagings.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "SignaturePackaging",
+      "DisplayValueColumn": "SignaturePackagingName",
+      "RefSection": [
+        "SignaturePackagings"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART SignaturePackagings MSSQL]
+SELECT
+	[st].[ID]		AS [SignaturePackagingID],
+	[st].[Name]		AS [SignaturePackagingName]
+FROM [SignaturePackagings] AS [st] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([st].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY [st].[ID]
+
+
+[TEXTPART SignaturePackagings PGSQL]
+SELECT
+	"st"."ID"		AS "SignaturePackagingID",
+	"st"."Name"		AS "SignaturePackagingName"
+FROM "SignaturePackagings" AS "st"
+#if(Name) {
+CROSS JOIN "Localization"("st"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY "st"."Name"

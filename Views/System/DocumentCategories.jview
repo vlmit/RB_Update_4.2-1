@@ -1,0 +1,185 @@
+﻿{
+  "Alias": "DocumentCategories",
+  "Caption": "$Views_Names_DocumentCategories",
+  "GroupName": "System",
+  "ID": "15fc8ec2-f206-4de1-b942-1c29c931213f",
+  "JsonMetadataSource::txt": "DocumentCategories JSONMETA",
+  "MsQuerySource::txt": "DocumentCategories MSSQL",
+  "PgQuerySource::txt": "DocumentCategories PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART DocumentCategories JSONMETA]
+{
+  "Alias": "DocumentCategories",
+  "Caption": "$Views_Names_DocumentCategories",
+  "Columns": [
+    {
+      "Alias": "CategoryID",
+      "Hidden": true,
+      "Type": "$DocumentCategories.ID"
+    },
+    {
+      "Alias": "CategoryName",
+      "Caption": "$Views_DocumentCategories_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$DocumentCategories.Name"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$DocumentCategories.TypeID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_DocumentCategories_Type",
+      "FilterParameter": "Type",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lTypeCaption.Value lName.Value",
+      "Type": "$DocumentCategories.TypeCaption"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "CategoryName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_DocumentCategories_Name_Param",
+      "Type": "$DocumentCategories.Name"
+    },
+    {
+      "Alias": "Type",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          2,
+          6
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Caption": "$Views_DocumentCategories_Type_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          2,
+          6
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "RefSection": [
+        "KrCardTypesVirtual"
+      ],
+      "Type": "$DocumentCategories.TypeID"
+    },
+    {
+      "Alias": "TypeID",
+      "Caption": "$Views_DocumentCategories_TypeID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$DocumentCategories.TypeID"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Category",
+      "DisplayValueColumn": "CategoryName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "DocumentCategories"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DocumentCategories MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [CategoryID],
+		[t].[Name]								AS [CategoryName],
+		[t].[TypeID],
+		[t].[TypeCaption],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [DocumentCategories] AS [t] WITH (NOLOCK)
+	#if(Name || Normal && (request.SortedBy("CategoryName") || request.SortedBy("TypeCaption"))) {
+	CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+	}
+	#if(Normal && request.SortedBy("TypeCaption")) {
+	CROSS APPLY [Localization]([t].[TypeCaption], #param(locale)) AS [lTypeCaption]
+	}
+	WHERE 1 = 1
+		#param(Name, [lName].[Value])
+		#param(Type, [t].[TypeID])
+		#param(TypeID, [t].[TypeID])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART DocumentCategories PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "CategoryID",
+	"t"."Name"									AS "CategoryName",
+	"t"."TypeID",
+	"t"."TypeCaption",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "DocumentCategories" AS "t"
+#if(Name || Normal && (request.SortedBy("CategoryName") || request.SortedBy("TypeCaption"))) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+#if(Normal && request.SortedBy("TypeCaption")) {
+CROSS JOIN "Localization"("t"."TypeCaption", #param(locale)) AS "lTypeCaption"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+	#param(Type, "t"."TypeID")
+	#param(TypeID, "t"."TypeID")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

@@ -1,0 +1,268 @@
+﻿{
+  "Alias": "TaskAssignedRoles",
+  "Caption": "$Views_Names_TaskAssignedRoles",
+  "GroupName": "TaskAssignedRoles",
+  "ID": "b956e262-9b54-4aaf-a7b8-1649ea9462e7",
+  "JsonMetadataSource::txt": "TaskAssignedRoles JSONMETA",
+  "MsQuerySource::txt": "TaskAssignedRoles MSSQL",
+  "PgQuerySource::txt": "TaskAssignedRoles PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TaskAssignedRoles JSONMETA]
+{
+  "Alias": "TaskAssignedRoles",
+  "Caption": "$Views_Names_TaskAssignedRoles",
+  "Columns": [
+    {
+      "Alias": "TaskRowID",
+      "Hidden": true,
+      "Type": "$TaskAssignedRoles.ID"
+    },
+    {
+      "Alias": "AssignedRoleRowID",
+      "Hidden": true,
+      "Type": "$TaskAssignedRoles.RowID"
+    },
+    {
+      "Alias": "AssignedRoleTaskRoleID",
+      "Hidden": true,
+      "Type": "$TaskAssignedRoles.TaskRoleID"
+    },
+    {
+      "Alias": "TaskRoleCaption",
+      "Caption": "$Views_TaskAssignedRoles_TaskRoleName",
+      "Localizable": true,
+      "SortBy": "fr.Caption",
+      "Type": "$FunctionRoles.Caption"
+    },
+    {
+      "Alias": "AssignedRoleRoleID",
+      "Hidden": true,
+      "Type": "$TaskAssignedRoles.RoleID"
+    },
+    {
+      "Alias": "RoleName",
+      "Caption": "$Views_TaskAssignedRoles_RoleName",
+      "Localizable": true,
+      "SortBy": "tar.RoleName",
+      "Type": "$TaskAssignedRoles.RoleName"
+    },
+    {
+      "Alias": "RoleType",
+      "Hidden": true,
+      "Type": "$TaskAssignedRoles.RoleType"
+    },
+    {
+      "Alias": "RoleTypeCaption",
+      "Caption": "$Views_TaskAssignedRoles_RoleTypeCaption",
+      "Localizable": true,
+      "SortBy": "rt.Name",
+      "Type": "$RoleTypes.Name"
+    },
+    {
+      "Alias": "Position",
+      "Caption": "$Views_TaskAssignedRoles_Position",
+      "Hidden": true,
+      "SortBy": "tar.Position",
+      "Type": "$TaskAssignedRoles.Position"
+    },
+    {
+      "Alias": "ParentRowID",
+      "Hidden": true,
+      "Type": "$TaskAssignedRoles.ParentRowID"
+    },
+    {
+      "Alias": "Master",
+      "Caption": "$Views_TaskAssignedRoles_Master",
+      "SortBy": "tar.Master",
+      "Type": "$TaskAssignedRoles.Master"
+    },
+    {
+      "Alias": "ShowInTaskDetails",
+      "Caption": "$Views_TaskAssignedRoles_ShowInTaskDetails",
+      "SortBy": "tar.ShowInTaskDetails",
+      "Type": "$TaskAssignedRoles.ShowInTaskDetails"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TaskRoleCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "TaskRowID",
+      "Caption": "$Views_TaskAssignedRoles_TaskRowID",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$TaskAssignedRoles.ID"
+    },
+    {
+      "Alias": "FunctionRole",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          2,
+          1
+        ],
+        "RefPrefix": "FunctionRole",
+        "ViewAlias": "FunctionRoleCards"
+      },
+      "Caption": "$Views_TaskAssignedRoles_FunctionRole",
+      "Multiple": false,
+      "RefSection": [
+        "FunctionRoles"
+      ],
+      "Type": "$TaskAssignedRoles.RowID"
+    },
+    {
+      "Alias": "TaskRoleCaptionOrAlias",
+      "Caption": "$Views_TaskAssignedRoles_TaskRoleCaptionAlias",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "AssignedRole",
+      "DisplayValueColumn": "RoleName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "TaskAssignedRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true,
+  "TreeId": "AssignedRoleRowID",
+  "TreeParentId": "ParentRowID"
+}
+
+[TEXTPART TaskAssignedRoles MSSQL]
+SELECT 
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+			[tar].[ID] 								AS [TaskRowID],
+			[tar].[RowID] 							AS [AssignedRoleRowID],
+			[tar].[TaskRoleID] 						AS [AssignedRoleTaskRoleID],
+			[fr].[Caption] 							AS [TaskRoleCaption],
+			[tar].[RoleID] 							AS [AssignedRoleRoleID],
+			[r].[Name] 								AS [RoleName],
+			[tar].[RoleType],
+			[rt].[Name] 							AS [RoleTypeCaption],
+			[tar].[Position],
+			[tar].[ParentRowID],
+			[tar].[Master] 							AS [Master],
+			[tar].[ShowInTaskDetails]				AS [ShowInTaskDetails],
+			row_number() OVER (ORDER BY #order_by) 	AS [rn]
+		}
+		#if(Count) {
+			count(*) 								AS [cnt]
+		}
+	FROM [TaskAssignedRoles] AS [tar] with(nolock)
+	LEFT JOIN [FunctionRoles] AS [fr] with(nolock)
+		ON [fr].[ID] = [tar].[TaskRoleID]
+	LEFT JOIN [Roles] AS [r] with(nolock)
+		ON [r].[ID] = [tar].[RoleID]
+	LEFT JOIN [RoleTypes] AS [rt] with(nolock)
+		ON [rt].[ID] = [tar].[RoleType]
+	#if(TaskRoleCaptionOrAlias || request.SortedBy("TaskRoleCaption")) {
+	CROSS APPLY [Localization]([fr].[Caption], #param(locale)) AS [lCaption]
+	}
+	WHERE 
+		#if(TaskRowID)
+		{
+			1 = 1
+		}
+		{
+			1 = 0
+		}
+		#param(TaskRowID, [tar].[ID])
+		#if(FunctionRole && FunctionRole.Value != Guid.Empty) { 
+		#param(FunctionRole, [tar].[TaskRoleID]) 
+		}		
+		#if(TaskRoleCaptionOrAlias) {
+		AND (1 = 1 #param(TaskRoleCaptionOrAlias, [fr].[Name]) OR 1 = 1 #param(TaskRoleCaptionOrAlias, [lCaption].[Value]))
+		}
+	) AS [t]	
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART TaskAssignedRoles PGSQL]
+SELECT 
+	"t".*
+FROM (
+	SELECT
+		#if(Normal) {
+			"tar"."ID" 								AS "TaskRowID",
+			"tar"."RowID" 							AS "AssignedRoleRowID",
+			"tar"."TaskRoleID" 						AS "AssignedRoleTaskRoleID",
+			"fr"."Caption" 							AS "TaskRoleCaption",
+			"tar"."RoleID" 							AS "AssignedRoleRoleID",
+			"r"."Name" 								AS "RoleName",
+			"tar"."RoleType",
+			"rt"."Name" 							AS "RoleTypeCaption",
+			"tar"."Position",
+			"tar"."ParentRowID",
+			"tar"."Master" 							AS "Master",
+			"tar"."ShowInTaskDetails"				AS "ShowInTaskDetails",
+			0::int8									AS "rn"
+		}
+		#if(Count) {
+			count(*) 								AS "cnt"
+		}
+	FROM "TaskAssignedRoles" AS "tar"
+	LEFT JOIN "FunctionRoles" AS "fr"
+		ON "fr"."ID" = "tar"."TaskRoleID"
+	LEFT JOIN "Roles" AS "r"
+		ON "r"."ID" = "tar"."RoleID"
+	LEFT JOIN "RoleTypes" AS "rt"
+		ON "rt"."ID" = "tar"."RoleType"
+	#if(TaskRoleCaptionOrAlias || request.SortedBy("TaskRoleCaption")) {
+	CROSS JOIN "Localization"("fr"."Caption", #param(locale)) AS "lCaption"
+	}
+	#if(TaskRowID)
+	{
+	WHERE true
+	}
+	{
+	WHERE false
+	}
+	#param(TaskRowID, "tar"."ID")
+	#if(FunctionRole && FunctionRole.Value != Guid.Empty) { 
+	#param(FunctionRole, "tar"."TaskRoleID") 
+	}
+	#if(TaskRoleCaptionOrAlias) {
+	AND (true #param(TaskRoleCaptionOrAlias, "fr"."Name") OR true #param(TaskRoleCaptionOrAlias, "lCaption"."Value"))
+	}
+	#if(Normal) {
+	ORDER BY #order_by
+	}	
+) AS "t"

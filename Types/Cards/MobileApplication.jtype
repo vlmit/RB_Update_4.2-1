@@ -1,0 +1,190 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_MobileApplication",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": "{f:MobileApplication.ID}",
+  "Extensions": null,
+  "Flags::int": 4369,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_MobileApplicationRelease",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "59aa76d9-fcc8-44a1-88ae-0f9ad1ca20c1"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c6b5c416-c0b3-4d77-8ad3-7d8e4a041c5c",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_MobileApplicationPlatformVersion",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "d0a239ad-6da0-412a-86b8-c8ebd1360505"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c6b5c416-c0b3-4d77-8ad3-7d8e4a041c5c",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_MobileApplicationBundleVersion",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "242157bd-dd08-4bff-aafc-d12a8623e294"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c6b5c416-c0b3-4d77-8ad3-7d8e4a041c5c",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_MobileApplicationMinSupportNativeVersion",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "ac87ee6d-b23f-4b5d-acab-a07164152d36"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c6b5c416-c0b3-4d77-8ad3-7d8e4a041c5c",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_MobileApplicationBundleStrategy",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "3b0d458e-f95c-4b39-b5f4-a242a7bc8711"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c6b5c416-c0b3-4d77-8ad3-7d8e4a041c5c",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_MobileApplicationPublicKey",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "51231b21-a374-45ee-83bb-b7e013f32a1b"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c6b5c416-c0b3-4d77-8ad3-7d8e4a041c5c",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "Block1"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_Controls_Files",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "Files",
+              "ControlSettings": null,
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": null,
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "6867130d-0858-0d60-ac87-3ab49bb8d7ed"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "Files"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Main",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "System",
+  "ID::uid": "ecf4e137-696a-40cf-a387-8adb24941990",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "MobileApplication",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "59aa76d9-fcc8-44a1-88ae-0f9ad1ca20c1",
+        "d0a239ad-6da0-412a-86b8-c8ebd1360505",
+        "242157bd-dd08-4bff-aafc-d12a8623e294",
+        "ac87ee6d-b23f-4b5d-acab-a07164152d36",
+        "3b0d458e-f95c-4b39-b5f4-a242a7bc8711",
+        "51231b21-a374-45ee-83bb-b7e013f32a1b"
+      ],
+      "SectionID::uid": "c6b5c416-c0b3-4d77-8ad3-7d8e4a041c5c"
+    }
+  ],
+  "Validators": null
+}

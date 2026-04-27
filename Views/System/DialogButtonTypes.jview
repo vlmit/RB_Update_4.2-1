@@ -1,0 +1,73 @@
+﻿{
+  "Alias": "DialogButtonTypes",
+  "Caption": "$Views_Names_DialogButtonTypes",
+  "GroupName": "System",
+  "ID": "bf4ac076-a8b3-4271-867e-f8f7ae9287a6",
+  "JsonMetadataSource::txt": "DialogButtonTypes JSONMETA",
+  "MsQuerySource::txt": "DialogButtonTypes MSSQL",
+  "PgQuerySource::txt": "DialogButtonTypes PGSQL"
+}
+
+[TEXTPART DialogButtonTypes JSONMETA]
+{
+  "Alias": "DialogButtonTypes",
+  "Caption": "$Views_Names_DialogButtonTypes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$DialogButtonTypes.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "RefName",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$DialogButtonTypes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$DialogButtonTypes_Name",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "DialogButtonTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DialogButtonTypes MSSQL]
+SELECT
+	[a].[ID]		AS [RefID],
+	[a].[Name]		AS [RefName]
+FROM [DialogButtonTypes] AS [a] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([a].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [a].[ID]
+
+
+[TEXTPART DialogButtonTypes PGSQL]
+SELECT
+	"a"."ID"		AS "RefID",
+	"a"."Name"		AS "RefName"
+FROM "DialogButtonTypes" AS "a"
+#if(Name) {
+CROSS JOIN "Localization"("a"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "a"."ID"

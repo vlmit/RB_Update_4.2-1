@@ -1,0 +1,142 @@
+﻿{
+  "Alias": "ReportPermissionsMyTasks",
+  "Caption": "$Views_Names_ReportPermissionsMyTasks",
+  "GroupName": "System",
+  "ID": "7c2cf9ea-f9b2-4c2e-94d5-2a2c1afd4eca",
+  "JsonMetadataSource::txt": "ReportPermissionsMyTasks JSONMETA",
+  "MsQuerySource::txt": "ReportPermissionsMyTasks MSSQL",
+  "PgQuerySource::txt": "ReportPermissionsMyTasks PGSQL"
+}
+
+[TEXTPART ReportPermissionsMyTasks JSONMETA]
+{
+  "Alias": "ReportPermissionsMyTasks",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_ReportPermissionsMyTasks",
+  "Columns": [
+    {
+      "Alias": "HasPermission",
+      "Caption": "HasPermission",
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "User",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_ReportPermissionsMyTasks_User_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Not Null"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ReportPermissionsMyTasks MSSQL]
+SELECT TOP(1) [u].[HasPermission]
+FROM (
+	#if(User) {
+	-- Учёт карточек настройки прав на отчёт
+	SELECT CAST(1 AS bit) AS [HasPermission]
+	FROM [ReportRolesActive] AS [rra] WITH(NOLOCK)
+	INNER JOIN [RoleUsers] AS [rua] WITH(NOLOCK)
+		ON [rua].[ID] = [rra].[RoleID]
+	INNER JOIN [ReportRolesPassive] AS [rrp] WITH(NOLOCK)
+		ON [rrp].[ID] = [rra].[ID]
+	INNER JOIN [RoleUsers] AS [rup] WITH(NOLOCK)
+		ON [rup].[ID] = [rrp].[RoleID]
+	WHERE [rua].[UserID] = #param(CurrentUserID)
+	AND [rup].[UserID] = #param(User)
+	UNION ALL
+	-- Добавляем сотрудников подразделений, для которых нет метаролей и текущий = руководитель
+	SELECT CAST(1 AS bit) AS [HasPermission]
+	FROM [DepartmentRoles] AS [dr] WITH(NOLOCK)
+	INNER JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+		ON [ru].[ID] = [dr].[ID]
+	WHERE [dr].[HeadUserID] = #param(CurrentUserID)
+		AND [ru].[UserID] = #param(User)
+		AND NOT EXISTS (
+			SELECT NULL
+			FROM [MetaRoles] AS [mr]
+			WHERE [mr].[IDGuid] = [dr].[ID])
+	UNION ALL
+	-- Для показа только заданий в своих подразделениях, если юзер - глава, или только своих
+	-- Работает только при наличии метароли - все сотрудники на все уровни вглубь
+	SELECT CAST(1 AS bit) AS [HasPermission]
+	FROM [DepartmentRoles] AS [dr] WITH(NOLOCK)
+	INNER JOIN [MetaRoles] AS [mr] WITH(NOLOCK)
+		ON [mr].[IDGuid] = [dr].[ID]
+	INNER JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+		ON [ru].[ID] = [mr].[ID]
+	INNER JOIN [RoleUsers] [rud] WITH(NOLOCK)
+		ON [ru].[UserID] = [rud].[UserID]
+		AND [rud].[TypeID] = 2
+	WHERE [dr].[HeadUserID] = #param(CurrentUserID)
+	AND [ru].[UserID] = #param(User)
+	} {
+	SELECT CAST(0 AS bit) AS [HasPermission]
+	}
+	) AS [u]
+
+[TEXTPART ReportPermissionsMyTasks PGSQL]
+SELECT "u"."HasPermission"
+	FROM (
+		#if(User) {
+		-- Учёт карточек настройки прав на отчёт
+		SELECT true AS "HasPermission"
+		FROM "ReportRolesActive" AS "rra"
+		INNER JOIN "RoleUsers" AS "rua"
+			ON "rua"."ID" = "rra"."RoleID"
+		INNER JOIN "ReportRolesPassive" AS "rrp"
+			ON "rrp"."ID" = "rra"."ID"
+		INNER JOIN "RoleUsers" AS "rup"
+			ON "rup"."ID" = "rrp"."RoleID"
+		WHERE "rua"."UserID" = #param(CurrentUserID)
+		AND "rup"."UserID" = #param(User)
+		UNION ALL
+		-- Добавляем сотрудников подразделений, для которых нет метаролей и текущий = руководитель
+		SELECT true AS "HasPermission"
+		FROM "DepartmentRoles" AS "dr"
+		INNER JOIN "RoleUsers" AS "ru"
+			ON "ru"."ID" = "dr"."ID"
+		WHERE "dr"."HeadUserID" = #param(CurrentUserID)
+			AND "ru"."UserID" = #param(User)
+			AND NOT EXISTS (
+				SELECT NULL
+				FROM "MetaRoles" AS "mr"
+				WHERE "mr"."IDGuid" = "dr"."ID")
+		UNION ALL
+		-- Для показа только заданий в своих подразделениях, если юзер - глава, или только своих
+		-- Работает только при наличии метароли - все сотрудники на все уровни вглубь
+		SELECT true AS "HasPermission"
+		FROM "DepartmentRoles" AS "dr"
+		INNER JOIN "MetaRoles" AS "mr"
+			ON "mr"."IDGuid" = "dr"."ID"
+		INNER JOIN "RoleUsers" AS "ru"
+			ON "ru"."ID" = "mr"."ID"
+		INNER JOIN "RoleUsers" "rud"
+			ON "ru"."UserID" = "rud"."UserID"
+			AND "rud"."TypeID" = 2
+		WHERE "dr"."HeadUserID" = #param(CurrentUserID)
+		AND "ru"."UserID" = #param(User)
+		} {
+		SELECT false AS "HasPermission"
+		}
+		) AS "u"
+LIMIT 1;

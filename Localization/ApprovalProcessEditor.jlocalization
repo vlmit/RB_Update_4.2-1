@@ -1,0 +1,591 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "7c83bdc3-cd79-487e-9423-30275200c2ab",
+  "Name": "ApprovalProcessEditor",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "ApprovalProcessEditor_ApprovalSettings_Access_Group",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Access"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступ"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApprovalSettings_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Description"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Описание"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApprovalSettings_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Title"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApprovalSettings_Types",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Types"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Типы"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApprovalSettings_Users",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Usage access"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступ на использование"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApprovalSettings_Writers",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit access"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступ на редактирование"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Approver_Menu_Delete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApproverSettings_SkipOnCurrentCycle_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Skip on current cycle"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пропустить на этом цикле"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApproverSettings_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Approver settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки для согласующего"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApproverTaskDetails_AssignedTo",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Assigned to:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Назначено на:"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApproverTaskDetails_Comment",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Comment"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Комментарий"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApproverTaskDetails_CompletedBy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Completed by:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполнено:"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApproverTaskDetails_DelegatedTo",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delegated to:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Делегировано:"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ApproverTaskDetails_Sent",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Sent"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправлено"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ConfirmRefresh",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process editor has unsaved changes. Refresh approval scheme?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактор процесса содержит несохранённые данные. Обновить схему согласования?"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ConfirmSave",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process editor has unsaved changes.\nSave process before closing tab?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактор процесса содержит несохранённые данные.\nСохранить процесс перед закрытием?"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_DefaultTitle",
+      "Comment": "Название нового процесса по умолчанию",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "New approval"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Новое согласование"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_EmployeesAndRoles",
+      "Comment": "Заголовок компонента выбора роли",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employees and roles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудники и Роли"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_EmployeesAndRoles_Type_Employee",
+      "Comment": "Тип роли Сотрудник",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудник"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_EmployeesAndRoles_Type_StaticRole",
+      "Comment": "Тип роли Группа",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группа"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_FinishNode_Caption",
+      "Comment": "Заголовок узла Конец",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Finish"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Конец"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_FitIntoView_Tooltip",
+      "Comment": "Тултип для кнопки Вписать в окно",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Fit into the view"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вписать в окно"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ProcessSettings_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки процесса"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Roles_Name",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Roles_RoleID",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Role ID"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор роли"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Roles_TypeID",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type ID"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор типа"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_RoleSelect_EmptyPlaceholder",
+      "Comment": "Плейсхолдеор для списка ролей, когда список пуст",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Start entering the employee's name or role title (e.g. Sales), then drag and drop the found approver onto the schema."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Начните вводить имя сотрудника или название роли (например, Отдел продаж), после чего перетащите найденного согласующего на схему."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_StageSettings_Duration_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Planned date (working days)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Срок (рабочие дни)"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_StageSettings_Duration_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Fractional values are allowed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Возможно использование дробных значений"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_StageSettings_Empty_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select the stage to display its properties."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выберите этап, чтобы отобразить его свойства."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_StageSettings_Text_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Task text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст задания"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_StageSettings_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Stage settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки этапа"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_StartNode_Caption",
+      "Comment": "Заголовок узла Начало",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Start"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Начало"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Toolbar_Clear",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Clear"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Toolbar_Edit_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open approval scheme in edit mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть схему согласования в режиме редактирования"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Toolbar_Redo_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Redo"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Повторить"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Toolbar_Refresh_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Refresh approval scheme"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновляет схему согласования"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Toolbar_RevokeApproval",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Revoke"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отозвать"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Toolbar_RevokeApprovalConfirmation",
+      "Comment": "Текст подтверждения отзыва процесса",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Revoke process?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отозвать процесс?"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Toolbar_Save_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save all approval scheme changes and refresh scheme "
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохраняет все сделанные изменения схемы согласования и обновляет схему"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Toolbar_StartApproval",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Start approval"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Начать согласование"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_Toolbar_Undo_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Undo"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отменить"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ZoomIn_Tooltip",
+      "Comment": "Тултип для кнопки увеличения масштаба",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Zoom in"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Увеличить масштаб"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcessEditor_ZoomOut_Tooltip",
+      "Comment": "Тултип для кнопки уменьшения масштаба",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Zoom out"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Уменьшить масштаб"
+        }
+      ]
+    }
+  ]
+}

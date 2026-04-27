@@ -1,0 +1,1343 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "7c2ea601-82ed-42ca-b417-cd4971a460c9",
+  "Name": "RefGroups",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "CardTypes_RefGroup",
+      "Comment": "Наименование типа карточек \"Группа ссылок\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference group"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группа ссылок"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_RefGroupType",
+      "Comment": "Наименование типа карточки \"Тип группы ссылок\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference group type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип группы ссылок"
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_RecalcAllRefGroups",
+      "Comment": "Консольная команда \"Пересчитать все группы ссылок\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Recalculate all reference groups."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пересчитать все группы ссылок."
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_RecalcRefGroups",
+      "Comment": "Консольная команда \"Пересчитать группы ссылок\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Recalculate reference groups."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пересчитать группы ссылок."
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_RecalcRefGroupTypes",
+      "Comment": "Консольная команда \"Пересчитать типы групп ссылок\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Recalculate reference group types."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пересчитать типы групп ссылок."
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_RefGroupIDList",
+      "Comment": "Список идентификаторов групп ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference groups ID list."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список идентификаторов групп ссылок."
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_RefGroupTypeIDList",
+      "Comment": "Список идентификаторов типов групп ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference group types ID list."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список идентификаторов типов групп ссылок."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroupMode_Manual",
+      "Comment": "Режим заполнения группы: \"Ручной ввод\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Manual"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ручной ввод"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroupMode_Script",
+      "Comment": "Режим заполнения группы: \"Скрипт\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Script"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрипт"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroupMode_SQL",
+      "Comment": "Режим заполнения группы: \"SQL запрос\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "SQL query"
+        },
+        {
+          "Culture": "ru",
+          "Value": "SQL запрос"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroupMode_ValuesFromType",
+      "Comment": "Режим заполнения группы: \"Значения из типа\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Values from type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значения из типа"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Blocks_Values",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Columns_ID",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "ID"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Columns_Name",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Имя"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Compilation_ScriptIsEmpty",
+      "Comment": "Сообщение, что текст скрипта для компиляции отсутствует.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "C#-script is empty."
+        },
+        {
+          "Culture": "ru",
+          "Value": "C#-скрипт отсутствует."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Compilation_Successful",
+      "Comment": "Сообщение о том, что запрошенная компиляция скриптов в групп ссылок прошла успешно.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Compilation successfully complete."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Компиляция успешно завершена."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_GroupRefSection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group RefSection"
+        },
+        {
+          "Culture": "ru",
+          "Value": "RefSection группы"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_NotCalculatedYet",
+      "Comment": "Расчет еще не был произведен.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Calculation has not been executed yet."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Расчет еще не был произведен."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_Calculate",
+      "Comment": "Текст кнопки для расчета значений группы ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Calculate values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Рассчитать значения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_Calculated",
+      "Comment": "Контрол \"Дата и время последнего успешного расчета значений группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Last successful values calculation"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Последний успешный расчет значений"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_CalculatedValues",
+      "Comment": "Контрол \"Рассчитанные значения группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Calculated values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Рассчитанные значения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_Compile",
+      "Comment": "Текст кнопки для компиляции текущего C#-скрипта.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Compile"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполнить компиляцию"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_CompileAll",
+      "Comment": "Компилировать все C#-скрипты  всех групп текущего типа.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Compile all groups of current group type."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполнить компиляцию всех групп текущего типа."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_Description",
+      "Comment": "Контрол \"Описание группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Description"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Описание"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_ExcludedValues",
+      "Comment": "Контрол \"Исключаемые значения группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Excluded values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Исключаемые значения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_IncludedValues",
+      "Comment": "Контрол \"Включаемые значения группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Included values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Включаемые значения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_IntID",
+      "Comment": "Контрол \"Целочисленный идентификатор группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Integer identifier"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Целочисленный идентификатор"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_LastError",
+      "Comment": "Контрол с датой и временем ошибки расчета.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Last error datetime"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата и время последней ошибки"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_MessageText",
+      "Comment": "Контрол с текстом сообщения по расчету.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Message text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_Mode",
+      "Comment": "Контрол \"Режим расчета значений группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Values calculation mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим расчета значений"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_Name",
+      "Comment": "Контрол \"Наименование группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование группы"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_Script",
+      "Comment": "Контрол с C#-скриптом группы.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "C#-script"
+        },
+        {
+          "Culture": "ru",
+          "Value": "C#-скрипт"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_SQL",
+      "Comment": "Контрол с SQL-скриптом группы.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "SQL-script"
+        },
+        {
+          "Culture": "ru",
+          "Value": "SQL-скрипт"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroup_Type",
+      "Comment": "Контрол \"Тип группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип группы"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_Calculate",
+      "Comment": "Текст кнопки для расчета значений \"Типа группы ссылок\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Calculate values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Рассчитать значения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_Calculated",
+      "Comment": "Контрол \"Дата и время последнего успешного расчета значений \"Типа группы\"\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Last successful values calculation"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Последний успешный расчет значений"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_CalculatedValues",
+      "Comment": "Контрол \"Рассчитанные значения типа группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Calculated values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Рассчитанные значения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_Compile",
+      "Comment": "Кнопка \"Выполнить компиляцию\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Compile"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполнить компиляцию"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_CompileAll",
+      "Comment": "Кнопка \"Выполнить компиляцию всех групп данного типа\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Compile all groups of this type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполнить компиляцию всех групп данного типа"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_KeyType",
+      "Comment": "Контрол \"Тип ключа типа группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Key type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип ключа"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_LastError",
+      "Comment": "Контрол с датой и временем ошибки расчета.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Last error datetime"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата и время последней ошибки"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_MessageText",
+      "Comment": "Контрол с текстом сообщения по расчету.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Message text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_Name",
+      "Comment": "Контрол \"Наименование типа группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group type name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование типа группы"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_Script",
+      "Comment": "Контрол с C#-скриптом.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "C#-script"
+        },
+        {
+          "Culture": "ru",
+          "Value": "C#-скрипт"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_RefGroupType_SQL",
+      "Comment": "Контрол с SQL-скриптом типа группы.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "SQL-script"
+        },
+        {
+          "Culture": "ru",
+          "Value": "SQL-скрипт"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_ValueNameColumn",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value name column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Колонка с именем значения"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Controls_ValueRefSection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group values RefSection"
+        },
+        {
+          "Culture": "ru",
+          "Value": "RefSection значений группы"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Group_AllStates",
+      "Comment": "Название группы \"Все состояния\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "All states"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Все состояния"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Group_CardType",
+      "Comment": "Название группы \"Тип карточки\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип карточки"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Group_DocState",
+      "Comment": "Название группы \"Состояние документа\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Document state"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Состояние документа"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Group_DocumentType",
+      "Comment": "Название группы \"Тип документа\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Document type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип документа"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Group_TaskType",
+      "Comment": "Название группы \"Тип задания\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Task type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип задания"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_CalculationModeNotSupported",
+      "Comment": "Режим расчета не поддерживается.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Calculation mode is not supported."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим расчета не поддерживается."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_CardIDNotFound",
+      "Comment": "Идентификатор карточки для компиляции не найден.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card ID not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор карточки не найден."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_InnerGroupCalculationError",
+      "Comment": "Во вложенной группе \"{0}\" ID \"{1}\" были обнаружены ошибки. Значения указанной группы проигнорированы.\n{0} - Наименование вложенной группы.\n{1} - ID вложенной группы.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Errors have been found in the calculation of inner group {0} with ID {1}. Values from this group are ignored."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В расчетах вложенной группы \"{0}\" c ID \"{1}\" были обнаружены ошибки. Значения данной группы проигнорированы."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_InnerGroupCalculationIsNotProcessedYet",
+      "Comment": "Расчёт вложенной группы \"{0}\" ID \"{1}\" еще не был произведен. Значения указанной группы проигнорированы.\n{0} - Наименование вложенной группы.\n{1} - ID вложенной группы.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Inner group {0} with ID {1} calculations are not processed yet. Values from this group are ignored."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Расчёт вложенной группы \"{0}\" ID \"{1}\" еще не был произведен. Значения указанной группы проигнорированы."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_IntIDIsNotSet",
+      "Comment": "Сообщение об ошибке: \"Целочисленный идентификатор не установлен.\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Integer ID isn't set."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Целочисленный идентификатор не установлен."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_RefGroupCreateScriptInstanceError",
+      "Comment": "Ошибка создания экземпляра скрипта для группы ссылок с ID \"{0}\".\n{0} - ID типа групп ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't create script instance for reference group  with ID \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ошибка создания экземпляра скрипта для группы ссылок с ID \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_RefGroupNotFound",
+      "Comment": "Группа ссылок с ID \"{0}\" не найдена.\n{0} - ID группы ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference group with id \"{0}\" not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группа ссылок с ID \"{0}\" не найдена."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_RefGroupNotUniqueID",
+      "Comment": "Идентификатор \"{0}\" не уникален.\n{0} - ID группы ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "ID \"{0}\" is not unique."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор \"{0}\" не уникален."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_RefGroupsTypeScriptCompilationError",
+      "Comment": "{0} - название типа группы ссылок, при ошибке компиляции C# скрипта.\n{1} - текст ошибки.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "C# script compilation error in reference group type \"{0}\".\n{1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ошибка компиляции C# скрипта в типе группы ссылок \"{0}\".\n{1}"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_RefGroupsTypeScriptCompilationWarning",
+      "Comment": "{0} - название типа группы ссылок, при предупреждении компиляции C# скрипта.\n{1} - текст предупреждения.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "C# script compilation warning in reference group type \"{0}\".\n{1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предупреждение при компиляции C# скрипта в типе группы ссылок \"{0}\".\n{1}"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_RefGroupTypeCreateScriptInstanceError",
+      "Comment": "Ошибка создания экземпляра скрипта для типа группы ссылок с ID \"{0}\".\n{0} - ID типа групп ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't create script instance for reference group type with ID \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ошибка создания экземпляра скрипта для типа группы ссылок с ID \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_RefGroupTypeNotFound",
+      "Comment": "Тип группы ссылок с ID \"{0}\" не найден.\n{0} - ID типа группы ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference group type with id \"{0}\" not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип группы ссылок с ID \"{0}\" не найден."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_RequiredSectionsNotFound",
+      "Comment": "Требуемые секции не найдены.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Required sections not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Требуемые секции не найдены."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_ScriptCompilationError",
+      "Comment": "{0} - название группы ссылок, при ошибке компиляции C# скрипта.\n{1} - текст ошибки.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "C# script compilation error in reference group \"{0}\".\n{1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ошибка компиляции C# скрипта в группе ссылок \"{0}\".\n{1}"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_ScriptCompilationWarning",
+      "Comment": "{0} - название типа группы ссылок, при предупреждении компиляции C# скрипта.\n{1} - текст предупреждения.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "C# script compilation warning in reference group \"{0}\".\n{1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предупреждение при компиляции C# скрипта в группе ссылок \"{0}\".\n{1}"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_ScriptIsNullOrEmpty",
+      "Comment": "C# скрипт null или пуст.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "C# script is null or empty."
+        },
+        {
+          "Culture": "ru",
+          "Value": "C# скрипт null или пуст."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_ScriptReturnTypeIsNotSupported",
+      "Comment": "Тип возвращаемых скриптом значений (\"{0}\") не поддерживается.\n{0} - наименование типа.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Return type of script items (\"{0}\") is not supported."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип возвращаемых скриптом значений (\"{0}\") не поддерживается."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_SQLIsNullOrEmpty",
+      "Comment": "SQL скрипт null или пуст.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "SQL script is null or empty."
+        },
+        {
+          "Culture": "ru",
+          "Value": "SQL скрипт null или пуст."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Message_ValueColumnNotFound",
+      "Comment": "Колонка со значением не найдена.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value column not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Колонка со значением не найдена."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_SaveBeforeCalculateDialogText",
+      "Comment": "Текст вопроса о сохранении карточки перед расчётом значений групп.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The card contains unsaved data and will be saved before calculating group values. Do you want to proceed?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка содержит измененные данные и будет сохранена перед расчетом значений группы. Вы хотите продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_SaveBeforeCompileDialogText",
+      "Comment": "Текст вопроса о сохранении карточки перед компиляцией значений групп.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The card contains unsaved data and will be saved before compilation. Do you want to proceed?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка содержит измененные данные и будет сохранена перед компиляцией. Вы хотите продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Splash_OperationInProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Operation is in progress"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполняется операция"
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Validation_GroupModeMustBeSet",
+      "Comment": "Сообщение валидатора \"Режим расчета группы должен быть выбран.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group calculation mode must be set."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим расчета группы должен быть выбран."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Validation_GroupRefSectionCanNotBeEmpty",
+      "Comment": "Сообщение валидатора \"RefSection группы не может быть пустым.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group RefSection cannot be empty."
+        },
+        {
+          "Culture": "ru",
+          "Value": "RefSection группы не может быть пустым."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Validation_GroupTypeMustBeSet",
+      "Comment": "Сообщение валидатора \"Тип группы должен быть выбран.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group type must be set."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип группы должен быть выбран."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Validation_KeyTypeMustBeSet",
+      "Comment": "Сообщение валидатора \"Тип ключа значений должен быть выбран.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The values key type is required."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип ключа значений должен быть выбран."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Validation_RefGroupNameCanNotBeEmpty",
+      "Comment": "Сообщение валидатора \"Наименование группы не может быть пустым.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group name cannot be empty."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование группы не может быть пустым."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Validation_RefGroupTypeNameCanNotBeEmpty",
+      "Comment": "Сообщение валидатора \"Наименование типа группы не может быть пустым.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group type name cannot be empty."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование типа группы не может быть пустым."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Validation_RefSectionCanNotBeEmpty",
+      "Comment": "Сообщение валидатора \"Значения RefSection не могут быть пустыми.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "RefSection values cannot be empty."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значения RefSection не могут быть пустыми."
+        }
+      ]
+    },
+    {
+      "Name": "RefGroups_Validation_ValueNameColumnCanNotBeEmpty",
+      "Comment": "Сообщение валидатора \"Колонка с именем значения не может быть пустой.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Column with the name of a value cannot be empty."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Колонка с именем значения не может быть пустой."
+        }
+      ]
+    },
+    {
+      "Name": "Views_Names_RefGroupModeEnum",
+      "Comment": "Наименование представления \"Режим расчёта значений групп ссылок\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference groups calculation mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим расчёта значений групп ссылок"
+        }
+      ]
+    },
+    {
+      "Name": "Views_Names_RefGroups",
+      "Comment": "Наименование представления отображающего группы ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группы"
+        }
+      ]
+    },
+    {
+      "Name": "Views_Names_RefGroups_Name",
+      "Comment": "Колонка \"Наименование группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование группы"
+        }
+      ]
+    },
+    {
+      "Name": "Views_Names_RefGroupTypes",
+      "Comment": "Наименование представления отображающего типы групп ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group types"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Типы групп"
+        }
+      ]
+    },
+    {
+      "Name": "Views_Names_RefGroupTypes_KeyTypeName",
+      "Comment": "Тип ключа значений.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value key type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип ключа значений"
+        }
+      ]
+    },
+    {
+      "Name": "Views_Names_RefGroupTypes_Name",
+      "Comment": "Колонка \"Наименование типа группы\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group type name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование типа группы"
+        }
+      ]
+    },
+    {
+      "Name": "Views_Names_RefGroupValueTypesEnum",
+      "Comment": "Наименование представления \"Типы значений группы ссылок\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference group values types"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Типы значений группы ссылок"
+        }
+      ]
+    },
+    {
+      "Name": "Views_RefGroupModeEnum_Name",
+      "Comment": "Колонка \"Наименование\" для режима расчета значений групп ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование"
+        }
+      ]
+    },
+    {
+      "Name": "Views_RefGroups_ByRefGroupType_Param",
+      "Comment": "Наименование параметра и подмножества \"По типу\" для групп ссылок.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By group type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По типу группы"
+        }
+      ]
+    },
+    {
+      "Name": "Views_RefGroups_ByRefGroupType_Subset",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By group type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По типу группы"
+        }
+      ]
+    },
+    {
+      "Name": "Views_RefGroups_Name_Param",
+      "Comment": "Наименование параметра \"Наименование\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование"
+        }
+      ]
+    },
+    {
+      "Name": "Views_RefGroups_TypeID_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type ID"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор типа"
+        }
+      ]
+    },
+    {
+      "Name": "Views_RefGroupTypesEnum_Name",
+      "Comment": "Колонка \"Наименование типа значений группы ссылок\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference group values type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование типа значений группы ссылок"
+        }
+      ]
+    },
+    {
+      "Name": "Workplaces_Admin_RefGroups",
+      "Comment": "Наименование раздела рабочего места.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reference groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группы ссылок"
+        }
+      ]
+    }
+  ]
+}

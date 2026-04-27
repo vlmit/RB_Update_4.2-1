@@ -1,0 +1,354 @@
+﻿{
+  "Alias": "RoleDeputiesNew",
+  "Caption": "$Views_Names_RoleDeputiesNew",
+  "GroupName": "System",
+  "ID": "87c8a806-31fc-4d45-b6a0-cb1028d9fc24",
+  "JsonMetadataSource::txt": "RoleDeputiesNew JSONMETA",
+  "MsQuerySource::txt": "RoleDeputiesNew MSSQL",
+  "PgQuerySource::txt": "RoleDeputiesNew PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART RoleDeputiesNew JSONMETA]
+{
+  "Alias": "RoleDeputiesNew",
+  "Caption": "$Views_Names_RoleDeputiesNew",
+  "Columns": [
+    {
+      "Alias": "RoleDeputyID",
+      "Hidden": true,
+      "Type": "$RoleDeputies.DeputyID"
+    },
+    {
+      "Alias": "RoleDeputyName",
+      "Caption": "$Views_RoleDeputies_RoleDeputy",
+      "FilterParameter": "Deputy",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "rdmu.PersonalRoleName",
+      "Type": "$RoleDeputies.DeputyName"
+    },
+    {
+      "Alias": "RoleDeputizedID",
+      "Hidden": true,
+      "Type": "$RoleDeputies.DeputizedID"
+    },
+    {
+      "Alias": "RoleDeputizedName",
+      "Caption": "$Views_RoleDeputies_RoleDeputized",
+      "FilterParameter": "Deputized",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "r.Name",
+      "Type": "$RoleDeputies.DeputizedName"
+    },
+    {
+      "Alias": "RoleDeputyFrom",
+      "Caption": "$Views_RoleDeputies_RoleDeputyFrom",
+      "SortBy": "rdm.MinDate",
+      "Type": "$RoleDeputies.MinDate"
+    },
+    {
+      "Alias": "RoleDeputyTo",
+      "Caption": "$Views_RoleDeputies_RoleDeputyTo",
+      "SortBy": "rdm.MaxDate",
+      "Type": "$RoleDeputies.MaxDate"
+    },
+    {
+      "Alias": "RoleDeputyIsPermanent",
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsPermanent",
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "RoleDeputyIsEnabled",
+      "Caption": "$Views_RoleDeputies_RoleDeputyAvailable",
+      "FilterParameter": "IsEnabled",
+      "FilterType": "Parameter",
+      "SortBy": "rdm.IsEnabled",
+      "Type": "$RoleDeputies.IsEnabled"
+    },
+    {
+      "Alias": "RoleDeputyIsActive",
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsActive",
+      "FilterParameter": "IsActive",
+      "FilterType": "Parameter",
+      "SortBy": "rdm.IsActive",
+      "Type": "$RoleDeputies.IsActive"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RoleDeputizedName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Role",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Roles"
+      },
+      "Caption": "$Views_RoleDeputies_Role",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "Roles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "Deputized",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_RoleDeputies_RoleDeputized",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "Deputy",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_RoleDeputies_RoleDeputy",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "AvailableOnDate",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_RoleDeputies_AvailableOnDate",
+      "Multiple": false,
+      "Type": "Date Null"
+    },
+    {
+      "Alias": "IsEnabled",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_RoleDeputies_RoleDeputyAvailable",
+      "Multiple": false,
+      "Type": "$RoleDeputies.IsEnabled"
+    },
+    {
+      "Alias": "IsActive",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsActive",
+      "Multiple": false,
+      "Type": "$RoleDeputies.IsActive"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "RoleDeputized",
+      "DisplayValueColumn": "RoleDeputizedName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Users"
+      ]
+    },
+    {
+      "ColPrefix": "RoleDeputy",
+      "DisplayValueColumn": "RoleDeputyName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Users"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RoleDeputiesNew MSSQL]
+SELECT 
+	#if(Normal) {
+	[rdmu].[PersonalRoleID]			AS [RoleDeputyID],
+	[rdmu].[PersonalRoleName]		AS [RoleDeputyName],
+	[r].[ID]						AS [RoleDeputizedID],
+	[r].[Name]						AS [RoleDeputizedName],
+	[rdm].[MinDate]					AS [RoleDeputyFrom],
+	[rdm].[MaxDate]					AS [RoleDeputyTo],
+	CAST(0 as bit) 					AS [RoleDeputyIsPermanent],
+	[rdm].[IsEnabled]				AS [RoleDeputyIsEnabled],			
+	[rdm].[IsActive]				AS [RoleDeputyIsActive],
+	[t].[rn]
+	}
+	#if(Count) {
+		count(*)					AS [cnt]
+	}
+FROM (
+	SELECT 
+		[rdmu].[RowID]
+		#if(Normal){
+		, ROW_NUMBER() OVER (ORDER BY #order_by) AS [rn]
+		}
+	
+		FROM (
+		SELECT [ru].[UserID]
+		FROM [RoleUsers] AS [ru] WITH(NOLOCK)
+		INNER JOIN [Roles] AS [r] WITH(NOLOCK) ON [r].[ID] = [ru].[ID]
+		WHERE [ru].[IsDeputy] = 0
+			AND [r].[DisableDeputies] = 0
+			#param(Role, [ru].[ID])
+
+		UNION
+
+		SELECT [rdmu].[PersonalRoleID] AS [UserID]
+		FROM [RoleUsers] AS [ru] WITH(NOLOCK)
+		INNER JOIN [Roles] AS [r] WITH(NOLOCK) ON [r].[ID] = [ru].[ID]
+		INNER JOIN [RoleDeputiesManagementUsers] AS [rdmu] WITH (NOLOCK) ON [ru].[UserID] = [rdmu].[ID]
+
+		WHERE [ru].[IsDeputy] = 0
+			AND [r].[DisableDeputies] = 0
+			#param(Role, [ru].[ID])
+		) AS [ru]
+		
+	INNER JOIN [RoleDeputiesManagementUsers] AS [rdmu] WITH (NOLOCK) ON [ru].[UserID] = [rdmu].[ID]
+	
+	#if(IsEnabled || IsActive || AvailableOnDate 
+		|| Normal && request.SortedBy("RoleDeputyFrom")
+		|| Normal && request.SortedBy("RoleDeputyTo")
+		|| Normal && request.SortedBy("RoleDeputyIsEnabled")
+		|| Normal && request.SortedBy("RoleDeputyIsActive")) {
+	INNER JOIN [RoleDeputiesManagement] AS [rdm] WITH (NOLOCK) ON [rdmu].[ParentRowID] = [rdm].[RowID]
+	}
+	
+	#if(Normal && request.SortedBy("RoleDeputizedName")){
+	INNER JOIN [Roles] AS [r] WITH (NOLOCK) ON [rdmu].[ID] = [r].[ID]
+	}
+	
+	WHERE 1 = 1
+		#param(Deputized, [ru].[UserID])
+		#param(Deputy, [rdmu].[PersonalRoleID])
+		#param(IsEnabled, [rdm].[IsEnabled])
+		#param(IsActive, [rdm].[IsActive])
+		#if(AvailableOnDate) { AND #param(AvailableOnDate) BETWEEN [rdm].[MinDate] AND [rdm].[MaxDate] }
+
+	) AS [t]
+INNER JOIN [RoleDeputiesManagementUsers] AS [rdmu] WITH (NOLOCK) ON [t].[RowID] = [rdmu].[RowID]
+INNER JOIN [RoleDeputiesManagement] AS [rdm] WITH (NOLOCK) ON [rdmu].[ParentRowID] = [rdm].[RowID]
+INNER JOIN [Roles] AS [r] WITH (NOLOCK) ON [rdm].[ID] = [r].[ID]
+
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+[TEXTPART RoleDeputiesNew PGSQL]
+SELECT 
+	#if(Normal) {
+	"rdmu"."PersonalRoleID"			AS "RoleDeputyID",
+	"rdmu"."PersonalRoleName"		AS "RoleDeputyName",
+	"r"."ID"						AS "RoleDeputizedID",
+	"r"."Name"						AS "RoleDeputizedName",
+	"rdm"."MinDate"					AS "RoleDeputyFrom",
+	"rdm"."MaxDate"					AS "RoleDeputyTo",
+	false							AS "RoleDeputyIsPermanent",
+	"rdm"."IsEnabled"				AS "RoleDeputyIsEnabled",			
+	"rdm"."IsActive"				AS "RoleDeputyIsActive",
+	0::int8							AS "rn"
+	}
+	#if(Count) {
+		count(*)					AS "cnt"
+	}
+FROM (
+	SELECT 
+		"rdmu"."RowID"
+		FROM (
+		SELECT "ru"."UserID"
+		FROM "RoleUsers" AS "ru"
+		INNER JOIN "Roles" AS "r" ON "r"."ID" = "ru"."ID"
+		WHERE NOT "ru"."IsDeputy"
+			AND NOT "r"."DisableDeputies"
+			#param(Role, "ru"."ID")
+
+		UNION
+
+		SELECT "rdmu"."PersonalRoleID" AS "UserID"
+		FROM "RoleUsers" AS "ru"
+		INNER JOIN "Roles" AS "r" ON "r"."ID" = "ru"."ID"
+		INNER JOIN "RoleDeputiesManagementUsers" AS "rdmu" ON "ru"."UserID" = "rdmu"."ID"
+
+		WHERE NOT "ru"."IsDeputy"
+			AND NOT "r"."DisableDeputies"
+			#param(Role, "ru"."ID")
+		) AS "ru"
+		
+	INNER JOIN "RoleDeputiesManagementUsers" AS "rdmu" ON "ru"."UserID" = "rdmu"."ID"
+	
+	#if(IsEnabled || IsActive || AvailableOnDate 
+		|| Normal && request.SortedBy("RoleDeputyFrom")
+		|| Normal && request.SortedBy("RoleDeputyTo")
+		|| Normal && request.SortedBy("RoleDeputyIsEnabled")
+		|| Normal && request.SortedBy("RoleDeputyIsActive")) {
+	INNER JOIN "RoleDeputiesManagement" AS "rdm" ON "rdmu"."ParentRowID" = "rdm"."RowID"
+	}
+	
+	#if(Normal && request.SortedBy("RoleDeputizedName")){
+	INNER JOIN "Roles" AS "r" ON "rdmu"."ID" = "r"."ID"
+	}
+	
+	WHERE true
+		#param(Deputized, "ru"."UserID")
+		#param(Deputy, "rdmu"."PersonalRoleID")
+		#param(IsEnabled, "rdm"."IsEnabled")
+		#param(IsActive, "rdm"."IsActive")
+		#if(AvailableOnDate) { AND #param(AvailableOnDate) BETWEEN "rdm"."MinDate" AND "rdm"."MaxDate" }
+
+	) AS "t"
+INNER JOIN "RoleDeputiesManagementUsers" AS "rdmu" ON "t"."RowID" = "rdmu"."RowID"
+INNER JOIN "RoleDeputiesManagement" AS "rdm" ON "rdmu"."ParentRowID" = "rdm"."RowID"
+INNER JOIN "Roles" AS "r" ON "rdm"."ID" = "r"."ID"
+
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

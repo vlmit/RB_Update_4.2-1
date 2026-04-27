@@ -1,0 +1,79 @@
+﻿{
+  "Alias": "KrStageTemplateGroupPosition",
+  "Caption": "$Views_Names_KrStageTemplateGroupPosition",
+  "GroupName": "Kr Wf",
+  "ID": "c4092348-06c2-452d-984e-18638961365b",
+  "JsonMetadataSource::txt": "KrStageTemplateGroupPosition JSONMETA",
+  "MsQuerySource::txt": "KrStageTemplateGroupPosition MSSQL",
+  "PgQuerySource::txt": "KrStageTemplateGroupPosition PGSQL"
+}
+
+[TEXTPART KrStageTemplateGroupPosition JSONMETA]
+{
+  "Alias": "KrStageTemplateGroupPosition",
+  "Caption": "$Views_Names_KrStageTemplateGroupPosition",
+  "Columns": [
+    {
+      "Alias": "GroupID",
+      "Hidden": true,
+      "Type": "$KrStageTemplateGroupPosition.ID"
+    },
+    {
+      "Alias": "GroupName",
+      "Caption": "$Views_KrStageTemplateGroupPosition_GroupPositionName",
+      "FilterParameter": "GroupNameParam",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$KrStageTemplateGroupPosition.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "GroupName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "GroupNameParam",
+      "Caption": "$Views_KrStageTemplateGroupPosition_GroupPositionName",
+      "Type": "$KrStageTemplateGroupPosition.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Group",
+      "DisplayValueColumn": "GroupName",
+      "RefSection": [
+        "KrStageTemplateGroupPosition"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrStageTemplateGroupPosition MSSQL]
+SELECT
+	[gp].[ID]		AS [GroupID],
+	[gp].[Name]		AS [GroupName]
+FROM [KrStageTemplateGroupPosition] AS [gp] WITH (NOLOCK)
+#if(GroupNameParam) {
+CROSS APPLY [dbo].[Localization]([gp].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(GroupNameParam, [lName].[Value])
+ORDER BY [gp].[ID]
+
+
+[TEXTPART KrStageTemplateGroupPosition PGSQL]
+SELECT
+	"gp"."ID"		AS "GroupID",
+	"gp"."Name"		AS "GroupName"
+FROM "KrStageTemplateGroupPosition" AS "gp"
+#if(GroupNameParam) {
+CROSS JOIN "Localization"("gp"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(GroupNameParam, "lName"."Value")
+ORDER BY "gp"."ID"

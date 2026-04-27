@@ -1,0 +1,25 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_FileVaultStorage",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 4480,
+  "Forms": [
+    {
+      "Blocks": null,
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Main",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "FileVault",
+  "ID::uid": "409eeee9-0b55-4207-848c-289e103fe300",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "FileVaultStorage",
+  "SchemeItems": null,
+  "Validators": null
+}

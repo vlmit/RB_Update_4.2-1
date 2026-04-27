@@ -1,0 +1,211 @@
+﻿{
+  "Alias": "NotificationTypes",
+  "Caption": "$Views_Names_NotificationTypes",
+  "GroupName": "System",
+  "ID": "72cd38b6-102a-4368-97a1-08b216865c96",
+  "JsonMetadataSource::txt": "NotificationTypes JSONMETA",
+  "MsQuerySource::txt": "NotificationTypes MSSQL",
+  "PgQuerySource::txt": "NotificationTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART NotificationTypes JSONMETA]
+{
+  "Alias": "NotificationTypes",
+  "Caption": "$Views_Names_NotificationTypes",
+  "Columns": [
+    {
+      "Alias": "NotificationTypeID",
+      "Hidden": true,
+      "Type": "$NotificationTypes.ID"
+    },
+    {
+      "Alias": "NotificationTypeName",
+      "Caption": "$Views_NotificationTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$NotificationTypes.Name"
+    },
+    {
+      "Alias": "NotificationTypeIsGlobal",
+      "Caption": "$Views_NotificationTypes_IsGlobal",
+      "FilterParameter": "IsGlobal",
+      "FilterType": "Parameter",
+      "SortBy": "t.IsGlobal",
+      "Type": "$NotificationTypes.IsGlobal"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "NotificationTypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_NotificationTypes_Name_Param",
+      "Type": "$NotificationTypes.Name"
+    },
+    {
+      "Alias": "IsGlobal",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_NotificationTypes_IsGlobal_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$NotificationTypes.IsGlobal"
+    },
+    {
+      "Alias": "CanSubscribe",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_NotificationTypes_CanSubscribe_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$NotificationTypes.CanSubscribe"
+    },
+    {
+      "Alias": "CardType",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "Types"
+      },
+      "Caption": "$Views_NotificationTypes_CardType_Param",
+      "Hidden": true,
+      "RefSection": [
+        "Types"
+      ],
+      "Type": "$NotificationTypeCardTypes.TypeID"
+    },
+    {
+      "Alias": "ShowHidden",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_NotificationTypes_ShowHidden_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$NotificationTypes.Hidden"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "NotificationType",
+      "DisplayValueColumn": "NotificationTypeName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "NotificationTypes"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART NotificationTypes MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [NotificationTypeID],
+		[t].[Name]								AS [NotificationTypeName],
+		[t].[IsGlobal]							AS [NotificationTypeIsGlobal],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [NotificationTypes] AS [t] WITH (NOLOCK)
+	#if(Name || Normal && request.SortedBy("NotificationTypeName")) {
+	CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+	}
+	#if(CardType) { 
+	CROSS APPLY ( 
+		SELECT TOP 1 1 as [Tmp]
+		FROM [NotificationTypeCardTypes] AS [tct] WITH (NOLOCK)
+		WHERE [tct].[ID] = [t].[ID] 
+			#param(CardType, [tct].[TypeID])
+		) AS [C]
+	}
+	WHERE 1 = 1
+		#param(Name, [lName].[Value])
+		#param(IsGlobal, [t].[IsGlobal])
+		#param(CanSubscribe, [t].[CanSubscribe])
+		#if(!ShowHidden){
+		AND [t].[Hidden] = 0
+		}
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART NotificationTypes PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "NotificationTypeID",
+	"t"."Name"									AS "NotificationTypeName",
+	"t"."IsGlobal"								AS "NotificationTypeIsGlobal",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "NotificationTypes" AS "t"
+#if(Name || Normal && request.SortedBy("NotificationTypeName")) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+#if(CardType) { 
+INNER JOIN LATERAL ( 
+	SELECT true as "Tmp"
+	FROM "NotificationTypeCardTypes" AS "tct"
+	WHERE "tct"."ID" = "t"."ID"
+		#param(CardType, "tct"."TypeID")
+	) AS "C" ON true
+}
+WHERE true
+	#param(Name, "lName"."Value")
+	#param(IsGlobal, "t"."IsGlobal")
+	#param(CanSubscribe, "t"."CanSubscribe")
+	#if(!ShowHidden){
+	AND "t"."Hidden" = false
+	}
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

@@ -1,0 +1,83 @@
+﻿{
+  "Alias": "LoginTypes",
+  "Caption": "$Views_Names_LoginTypes",
+  "GroupName": "System",
+  "ID": "b0afaa90-23f1-4c2d-a85d-54506e027745",
+  "JsonMetadataSource::txt": "LoginTypes JSONMETA",
+  "MsQuerySource::txt": "LoginTypes MSSQL",
+  "PgQuerySource::txt": "LoginTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART LoginTypes JSONMETA]
+{
+  "Alias": "LoginTypes",
+  "Caption": "$Views_Names_LoginTypes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$LoginTypes.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "$Views_LoginTypes_Name",
+      "Localizable": true,
+      "SortBy": "t.ID",
+      "Type": "$LoginTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RefName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_LoginTypes_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "LoginTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART LoginTypes MSSQL]
+SELECT
+	[t].[ID]		AS [RefID],
+	[t].[Name]		AS [RefName]
+FROM [LoginTypes] AS [t] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART LoginTypes PGSQL]
+SELECT
+	"t"."ID"		AS "RefID",
+	"t"."Name"		AS "RefName"
+FROM "LoginTypes" AS "t"
+#if(Name) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

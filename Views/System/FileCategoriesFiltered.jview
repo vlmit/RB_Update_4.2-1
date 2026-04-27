@@ -1,0 +1,148 @@
+﻿{
+  "Alias": "FileCategoriesFiltered",
+  "Caption": "$Views_Names_FileCategoriesFiltered",
+  "GroupName": "System",
+  "ID": "c54a9c60-2010-4806-9c52-a117baef7643",
+  "JsonMetadataSource::txt": "FileCategoriesFiltered JSONMETA",
+  "MsQuerySource::txt": "FileCategoriesFiltered MSSQL",
+  "PgQuerySource::txt": "FileCategoriesFiltered PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART FileCategoriesFiltered JSONMETA]
+{
+  "Alias": "FileCategoriesFiltered",
+  "Caption": "$Views_Names_FileCategoriesFiltered",
+  "Columns": [
+    {
+      "Alias": "CategoryID",
+      "Hidden": true,
+      "Type": "$FileCategories.ID"
+    },
+    {
+      "Alias": "CategoryName",
+      "Caption": "$Views_FileCategoriesFiltered_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$FileCategories.Name"
+    },
+    {
+      "Alias": "CategoryOrder",
+      "Hidden": true,
+      "SortBy": "t.Order",
+      "Type": "$FileCategories.Order"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "CategoryOrder",
+      "SortDirection": "Ascending"
+    },
+    {
+      "Alias": "CategoryName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_FileCategoriesFiltered_Name_Param",
+      "Type": "$FileCategories.Name"
+    },
+    {
+      "Alias": "IncludeWithoutCategory",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_FileCategoriesFiltered_IncludeWithoutCategory_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Category",
+      "DisplayValueColumn": "CategoryName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "FileCategory"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART FileCategoriesFiltered MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [CategoryID],
+		[t].[Name]								AS [CategoryName],
+		[t].[Order]								AS [CategoryOrder],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [FileCategories] AS [t] WITH (NOLOCK)
+	#if(Name || Normal && request.SortedBy("CategoryName")) {
+	CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+	}
+	WHERE [t].[System] = 0
+		#param(Name, [lName].[Value])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART FileCategoriesFiltered PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "CategoryID",
+	"t"."Name"									AS "CategoryName",
+	"t"."Order"									AS "CategoryOrder",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "FileCategories" AS "t"
+#if(Name || Normal && request.SortedBy("CategoryName")) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE "t"."System" = false
+	#param(Name, "lName"."Value")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

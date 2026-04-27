@@ -1,0 +1,97 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_ApprovalProcessInfo",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 32,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "MainBlock",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "ApprovalProcessInformation",
+              "ControlSettings": null,
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "ApprovalProcessInformation",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "ece1bbd8-6054-0f33-a635-acf28f663531"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "MainBlock"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Form",
+      "TabCaption": null
+    }
+  ],
+  "Group": "ApprovalProcess",
+  "ID::uid": "6384e28d-b9b8-41fd-bc24-ac3d6de9cf45",
+  "InstanceType::int": 2,
+  "MainFormName": "Form",
+  "Name": "ApprovalProcessInfo",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "2d771a7e-e6c7-4c7c-b50f-402676287198",
+        "a2f68d1b-91f4-4473-9557-0e445037d629"
+      ],
+      "SectionID::uid": "7f7dc925-15a3-4d93-b96c-4c6140ecc36f"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "f4967635-c802-43d5-b40d-3e8a018249bf",
+        "4a9a8b18-b321-4341-b288-222d85644162",
+        "2ed3a97f-6535-41e8-821c-6dafad1209c5",
+        "3d4333f2-1686-47dc-82cd-bb13e778a061",
+        "73b4f61c-b500-47e9-b2ef-b49c0c25198a",
+        "4f528bfc-e0e5-4fdf-b20c-f33a4caa85a6",
+        "42221a88-cc46-45b2-a722-3a49e2a8895e"
+      ],
+      "SectionID::uid": "ab2ec272-eb83-429d-b4fc-155bb55f13dd"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "4b28f562-c0f5-426d-bde9-745266f6a6bf",
+        "7cede05c-919f-466b-89e9-7b8e77e53495",
+        "ea5f5816-1f4e-409a-9e4f-f9508a91fb24",
+        "496a794c-8440-483f-b3cd-f7c817c5a758"
+      ],
+      "SectionID::uid": "b43c68d0-a317-4aad-a400-dda21b33aa29"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "ef8e49d4-8a26-4253-bb64-3e5b0beaa500",
+        "d312c0d5-4637-47f4-837c-61d05b09bc6a",
+        "5a1394a5-04ec-4f63-ae96-3811e820a976"
+      ],
+      "SectionID::uid": "eac3013d-02ea-4a26-ab28-75af8ea61e4e"
+    }
+  ],
+  "Validators": null
+}

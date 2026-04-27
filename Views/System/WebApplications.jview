@@ -1,0 +1,174 @@
+﻿{
+  "Alias": "WebApplications",
+  "Caption": "$Views_Names_WebApplications",
+  "Description": "Возвращает список доступных приложений",
+  "GroupName": "System",
+  "ID": "7849787c-5422-4a08-9652-dd77d8557f4a",
+  "JsonMetadataSource::txt": "WebApplications JSONMETA",
+  "MsQuerySource::txt": "WebApplications MSSQL",
+  "PgQuerySource::txt": "WebApplications PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART WebApplications JSONMETA]
+{
+  "Alias": "WebApplications",
+  "Caption": "$Views_Names_WebApplications",
+  "Columns": [
+    {
+      "Alias": "AppID",
+      "Hidden": true,
+      "Type": "$WebApplications.ID"
+    },
+    {
+      "Alias": "AppName",
+      "Caption": "$Views_WebApplications_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "locName.Value",
+      "Type": "$WebApplications.Name"
+    },
+    {
+      "Alias": "LanguageID",
+      "Hidden": true,
+      "Type": "$WebApplications.LanguageID"
+    },
+    {
+      "Alias": "LanguageCode",
+      "Hidden": true,
+      "Type": "$WebApplications.LanguageCode"
+    },
+    {
+      "Alias": "LanguageCaption",
+      "Caption": "$Views_WebApplications_LanguageCaption",
+      "SortBy": "t.LanguageCode",
+      "Type": "$WebApplications.LanguageCaption"
+    },
+    {
+      "Alias": "OSName",
+      "Caption": "$Views_WebApplications_OSName",
+      "SortBy": "t.OSName",
+      "Type": "$WebApplications.OSName"
+    },
+    {
+      "Alias": "Client64Bit",
+      "Caption": "$Views_WebApplications_Client64Bit",
+      "SortBy": "t.Client64Bit",
+      "Type": "$WebApplications.Client64Bit"
+    },
+    {
+      "Alias": "ExecutableFileName",
+      "Hidden": true,
+      "Type": "$WebApplications.ExecutableFileName"
+    },
+    {
+      "Alias": "AppVersion",
+      "Caption": "$Views_WebApplications_AppVersion",
+      "Type": "$WebApplications.AppVersion"
+    },
+    {
+      "Alias": "PlatformVersion",
+      "Caption": "$Views_WebApplications_PlatformVersion",
+      "Type": "$WebApplications.PlatformVersion"
+    },
+    {
+      "Alias": "Description",
+      "Caption": "$Views_WebApplications_Description",
+      "Localizable": true,
+      "Type": "$WebApplications.Description"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "AppName",
+      "SortDirection": "Ascending"
+    },
+    {
+      "Alias": "LanguageCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WebApplications_Name_Param",
+      "Type": "$WebApplications.Name"
+    },
+    {
+      "Alias": "CheckAvailable",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_WebApplications_CheckAvailable_Param",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "App",
+      "DisplayValueColumn": "AppName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "WebApplications"
+      ]
+    },
+    {
+      "ColPrefix": "Language",
+      "DisplayValueColumn": "LanguageCaption",
+      "RefSection": [
+        "Languages"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WebApplications MSSQL]
+SELECT
+	[t].[ID]					AS [AppID],
+	[t].[Name]					AS [AppName],
+	[t].[LanguageID],
+	[t].[LanguageCode],
+	[t].[LanguageCaption],
+	[t].[OSName],
+	[t].[Client64Bit],
+	[t].[ExecutableFileName],
+	[t].[AppVersion],
+	[t].[PlatformVersion],
+	[t].[Description]
+FROM [WebApplications] AS [t] WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [locName]
+WHERE 1 = 1
+	#param(Name, [locName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART WebApplications PGSQL]
+SELECT
+	"t"."ID"					AS "AppID",
+	"t"."Name"					AS "AppName",
+	"t"."LanguageID",
+	"t"."LanguageCode",
+	"t"."LanguageCaption",
+	"t"."OSName",
+	"t"."Client64Bit",
+	"t"."ExecutableFileName",
+	"t"."AppVersion",
+	"t"."PlatformVersion",
+	"t"."Description"
+FROM "WebApplications" AS "t"
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "locName"
+WHERE 1 = 1
+	#param(Name, "locName"."Value")
+ORDER BY #order_by

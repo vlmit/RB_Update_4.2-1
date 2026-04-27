@@ -1,0 +1,88 @@
+﻿{
+  "Alias": "AiToolAdditionalInstructionKinds",
+  "Caption": "$Ai_Views_ToolAdditionalInstructionKinds",
+  "GroupName": "Ai",
+  "ID": "c83f13f5-b0e9-4929-9fd1-b622429b5b6e",
+  "JsonMetadataSource::txt": "AiToolAdditionalInstructionKinds JSONMETA",
+  "MsQuerySource::txt": "AiToolAdditionalInstructionKinds MSSQL",
+  "PgQuerySource::txt": "AiToolAdditionalInstructionKinds PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART AiToolAdditionalInstructionKinds JSONMETA]
+{
+  "Alias": "AiToolAdditionalInstructionKinds",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Ai_Views_ToolAdditionalInstructionKinds",
+  "Columns": [
+    {
+      "Alias": "TAIKID",
+      "Hidden": true,
+      "Type": "$AiToolAdditionalInstructionKind.ID"
+    },
+    {
+      "Alias": "TAIKName",
+      "Caption": "$Ai_Views_Columns_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "\"taik\".\"Name\"",
+      "Type": "$AiToolAdditionalInstructionKind.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TAIKName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Fields_Name_Param",
+      "Type": "$AiToolAdditionalInstructionKind.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "TAIK",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "AiToolAdditionalInstructionKind"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AiToolAdditionalInstructionKinds MSSQL]
+SELECT
+    [taik].[ID] 		AS [TAIKID],
+    [taik].[Name] 		AS [TAIKName]
+FROM [AiToolAdditionalInstructionKind] AS [taik]
+#if(Name) {
+CROSS APPLY [Localization]([taik].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+[TEXTPART AiToolAdditionalInstructionKinds PGSQL]
+SELECT
+	"taik"."ID"				AS "TAIKID",
+	"taik"."Name"			AS "TAIKName"
+FROM "AiToolAdditionalInstructionKind" AS "taik"
+#if(Name) {
+CROSS JOIN "Localization"("taik"."Name", #param(locale)) AS "l"
+}
+WHERE TRUE
+	#param(Name, "l"."Value")
+ORDER BY #order_by

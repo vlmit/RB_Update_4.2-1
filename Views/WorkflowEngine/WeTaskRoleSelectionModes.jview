@@ -1,0 +1,77 @@
+﻿{
+  "Alias": "WeTaskRoleSelectionModes",
+  "Caption": "$Views_Names_WeTaskRoleSelectionModes",
+  "GroupName": "WorkflowEngine",
+  "ID": "3289216e-a3b4-4ca7-b2dc-909f0417a121",
+  "JsonMetadataSource::txt": "WeTaskRoleSelectionModes JSONMETA",
+  "MsQuerySource::txt": "WeTaskRoleSelectionModes MSSQL",
+  "PgQuerySource::txt": "WeTaskRoleSelectionModes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART WeTaskRoleSelectionModes JSONMETA]
+{
+  "Alias": "WeTaskRoleSelectionModes",
+  "Caption": "$Views_Names_WeTaskRoleSelectionModes",
+  "Columns": [
+    {
+      "Alias": "SelectionModeID",
+      "Hidden": true,
+      "Type": "Int32 Not Null"
+    },
+    {
+      "Alias": "SelectionModeName",
+      "Caption": "$Views_WeTaskRoleSelectionModes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "String(128) Not Null"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WeTaskRoleSelectionModes_Name_Param",
+      "Multiple": false,
+      "Type": "String(128) Not Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "SelectionMode",
+      "DisplayValueColumn": "SelectionModeName",
+      "RefSection": [
+        "WeTaskRoleSelectionModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WeTaskRoleSelectionModes MSSQL]
+SELECT
+	[sm].[ID] as [SelectionModeID]
+	,[sm].[Name] as [SelectionModeName]
+FROM [WeTaskRoleSelectionModes] [sm] WITH(NOLOCK)
+#if(Name || request.SortedBy("SelectionModeName")) {
+CROSS APPLY [Localization]([sm].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+
+
+[TEXTPART WeTaskRoleSelectionModes PGSQL]
+SELECT
+	"sm"."ID" as "SelectionModeID"
+	,"sm"."Name" as "SelectionModeName"
+FROM "WeTaskRoleSelectionModes" "sm"
+#if(Name || request.SortedBy("SelectionModeName")) {
+CROSS JOIN "Localization"("sm"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")

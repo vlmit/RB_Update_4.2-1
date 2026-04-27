@@ -1,0 +1,73 @@
+﻿{
+  "Alias": "AccessLevels",
+  "Caption": "$Views_Names_AccessLevels",
+  "GroupName": "System",
+  "ID": "55fe2b54-d61b-4b02-9737-3619cfbfd962",
+  "JsonMetadataSource::txt": "AccessLevels JSONMETA",
+  "MsQuerySource::txt": "AccessLevels MSSQL",
+  "PgQuerySource::txt": "AccessLevels PGSQL"
+}
+
+[TEXTPART AccessLevels JSONMETA]
+{
+  "Alias": "AccessLevels",
+  "Caption": "$Views_Names_AccessLevels",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$AccessLevels.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "$Views_AccessLevels_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$AccessLevels.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_AccessLevels_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "AccessLevels"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AccessLevels MSSQL]
+SELECT
+	[a].[ID]		AS [RefID],
+	[a].[Name]		AS [RefName]
+FROM [AccessLevels] AS [a] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([a].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [a].[ID]
+
+
+[TEXTPART AccessLevels PGSQL]
+SELECT
+	"a"."ID"		AS "RefID",
+	"a"."Name"		AS "RefName"
+FROM "AccessLevels" AS "a"
+#if(Name) {
+CROSS JOIN "Localization"("a"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "a"."ID"

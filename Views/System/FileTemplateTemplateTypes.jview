@@ -1,0 +1,81 @@
+﻿{
+  "Alias": "FileTemplateTemplateTypes",
+  "Caption": "$Views_Names_FileTemplateTemplateTypes",
+  "GroupName": "System",
+  "ID": "91a427d5-4dd9-4a7f-b35f-cb48de3254d0",
+  "JsonMetadataSource::txt": "FileTemplateTemplateTypes JSONMETA",
+  "MsQuerySource::txt": "FileTemplateTemplateTypes MSSQL",
+  "PgQuerySource::txt": "FileTemplateTemplateTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART FileTemplateTemplateTypes JSONMETA]
+{
+  "Alias": "FileTemplateTemplateTypes",
+  "Caption": "$Views_Names_FileTemplateTemplateTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$FileTemplateTemplateTypes.ID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_KrTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "tt.Name",
+      "Type": "$FileTemplateTemplateTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrTypes_Name",
+      "Type": "$FileTemplateTemplateTypes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeName",
+      "RefSection": [
+        "FileTemplateTemplateTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART FileTemplateTemplateTypes MSSQL]
+SELECT
+	[tt].[ID]		AS [TypeID],
+	[tt].[Name]		AS [TypeName]
+FROM [FileTemplateTemplateTypes] AS [tt] WITH (NOLOCK)
+CROSS APPLY [Localization]([tt].[Name], #param(locale)) AS [lName]
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART FileTemplateTemplateTypes PGSQL]
+SELECT
+	"tt"."ID"		AS "TypeID",
+	"tt"."Name"		AS "TypeName"
+FROM "FileTemplateTemplateTypes" AS "tt"
+CROSS JOIN "Localization"("tt"."Name", #param(locale)) AS "lName"
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

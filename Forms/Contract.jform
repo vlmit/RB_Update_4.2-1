@@ -1,0 +1,1753 @@
+{
+  "Alias": "Contract",
+  "BundleID::uid": "c5bdb424-23c9-45ed-9210-98e8c72afd24",
+  "CardTypeID::uid": "335f86a1-d009-012c-8b45-1f43c2382c2d",
+  "Child": {
+    "Alias": "dfd9a79b",
+    "Children": [
+      {
+        "Alias": "c6ff2e12",
+        "Children": [
+          {
+            "Alias": "2d28a9a1",
+            "Background": "#FF546C90",
+            "Children": [],
+            "Groups": [
+              {
+                "Alias": "new group0",
+                "ID::uid": "3f32399a-567c-4137-8fdd-112862844706",
+                "Items": [],
+                "Type::uid": "1c1ab8ed-633f-4943-ab88-385138592614"
+              }
+            ],
+            "Height": "100%",
+            "ID::uid": "2d28a9a1-b195-4176-8e33-cb219dcbf161",
+            "MinHeight": "44px",
+            "Padding": "0 20px 0 0",
+            "Type::uid": "c0a2ae1b-82da-4ca0-b082-5cfbe1ae61c1",
+            "UseStandardButtons": true
+          }
+        ],
+        "Column::int": 0,
+        "Height": "100%",
+        "ID::uid": "c6ff2e12-5789-487c-8f79-2c5f30a96946",
+        "Row::int": 0,
+        "TakenColumns::int": 3,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "00a10c12",
+        "Children": [],
+        "Column::int": 0,
+        "Height": "100%",
+        "ID::uid": "00a10c12-6dc9-4d76-9cb7-a1ff9a47972e",
+        "Row::int": 1,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "5a5de9fa",
+        "Children": [
+          {
+            "Alias": "MainTabBlock",
+            "Children": [
+              {
+                "ActiveHeaderBackground": "--tabs-current-background",
+                "ActiveHeaderColor": "--tabs-current-font-color",
+                "Alias": "b2074693",
+                "Background": "--tabs-current-background",
+                "BorderRadius": "0px var(--corner-radius-l1) var(--corner-radius-l1) var(--corner-radius-l1)",
+                "Caption": "$CardTypes_Tabs_Card",
+                "CaptionBackground": "--tabs-main-background",
+                "CaptionBorderRadius": "var(--corner-radius-l1) var(--corner-radius-l1) 0 0",
+                "CaptionColor": "--tabs-main-font-color",
+                "CaptionPadding": "--tabs-main-padding",
+                "Children": [
+                  {
+                    "Alias": "8c9e0da0",
+                    "Children": [
+                      {
+                        "Alias": "7375ba9c",
+                        "Children": [
+                          {
+                            "Alias": "7bef7a3e",
+                            "Caption": "$CardTypes_Blocks_MainInformation",
+                            "Children": [
+                              {
+                                "Alias": "dcdf74f6",
+                                "Children": [
+                                  {
+                                    "Alias": "0ed33213",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Number",
+                                    "ID::uid": "0ed33213-10bc-4460-827f-0addb0013112",
+                                    "MinWidth": "100%",
+                                    "NumberFieldID::uid": "434a798f-bd1f-4c5c-b291-80490cd0dccf",
+                                    "PhysicalColumnsArray": [
+                                      {
+                                        "::single_type": "uid"
+                                      },
+                                      "eeb023b5-f473-4a8b-bef2-88e07b0d0688"
+                                    ],
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "SequenceFieldID::uid": "5a78f218-dae8-41de-92aa-6746d44468c3",
+                                    "Type::uid": "5b5ee5a2-0847-4305-b854-8a7c95fc5df6"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "dcdf74f6-2891-4f2a-a842-b54591385fc0",
+                                "Row::int": 0,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "f6ddc492",
+                                "Children": [
+                                  {
+                                    "Alias": "39dffc00",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_DocumentType",
+                                    "ComplexColumnID::uid": "d713fa35-af02-4520-bc91-47f5a04e44fa",
+                                    "ID::uid": "39dffc00-21b1-4bac-9249-a8eaa5b4d6ed",
+                                    "MinWidth": "100%",
+                                    "Mode": "Full",
+                                    "Readonly": true,
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34"
+                                  }
+                                ],
+                                "Column::int": 1,
+                                "Height": "100%",
+                                "ID::uid": "f6ddc492-ebea-4abe-9d63-1f561767a9c1",
+                                "Row::int": 0,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "fe736a5c",
+                                "Children": [
+                                  {
+                                    "Alias": "5ae95d2f",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Registrator",
+                                    "ComplexColumnID::uid": "3089d333-8647-49e7-b2ef-d4f8958da086",
+                                    "ID::uid": "5ae95d2f-7cf6-47d4-83bb-f4a7300c9f8a",
+                                    "IdColumn": "UserID",
+                                    "MinWidth": "100%",
+                                    "Mode": "Full",
+                                    "NameColumn": "UserName",
+                                    "ParameterAlias": "Name",
+                                    "Readonly": true,
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "Users"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "fe736a5c-ba0d-4072-98bf-e12fa3c3d03d",
+                                "Row::int": 1,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "80b9f9e7",
+                                "Children": [
+                                  {
+                                    "Alias": "6f555683",
+                                    "AllowEmpty": false,
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_CreationDate",
+                                    "DateType": "DateTime",
+                                    "ID::uid": "6f555683-d138-4056-abd9-1db3c4660f4f",
+                                    "MinWidth": "100%",
+                                    "PhysicalColumnsArray": [
+                                      {
+                                        "::single_type": "uid"
+                                      },
+                                      "d804eb6c-9f50-4299-b31c-2fef064fae9e"
+                                    ],
+                                    "Readonly": true,
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "45667845-d112-4ef3-9bb7-d03bd9eb4274"
+                                  }
+                                ],
+                                "Column::int": 1,
+                                "Height": "100%",
+                                "ID::uid": "80b9f9e7-fb8b-43f4-ad68-56b8e6a631a2",
+                                "Row::int": 1,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "76266bfb",
+                                "Children": [
+                                  {
+                                    "Alias": "18e270fe",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Amount",
+                                    "FieldType": "Decimal",
+                                    "ID::uid": "18e270fe-a6e4-4602-81ca-e285fc14ab11",
+                                    "MaxValue": 900000000000000,
+                                    "MinValue::int": 0,
+                                    "MinWidth": "100%",
+                                    "PhysicalColumnsArray": [
+                                      {
+                                        "::single_type": "uid"
+                                      },
+                                      "ed01aef8-43f4-441d-8b0d-1cb249164e9b"
+                                    ],
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "9c11ba0a-2e8d-46a1-a87d-039458d42da3"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "76266bfb-b443-4254-8696-2e1aed998b1a",
+                                "Row::int": 2,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "c05832fd",
+                                "Children": [
+                                  {
+                                    "Alias": "309ce26d",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Currency",
+                                    "ComplexColumnID::uid": "1f65d492-78e7-4818-b098-8d7a3c524934",
+                                    "ID::uid": "309ce26d-a1fc-4dcd-81a6-a213f9c7a5ee",
+                                    "IdColumn": "CurrencyID",
+                                    "MinWidth": "100%",
+                                    "Mode": "Full",
+                                    "NameColumn": "CurrencyName",
+                                    "ParameterAlias": "Name",
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "Currencies"
+                                  }
+                                ],
+                                "Column::int": 1,
+                                "Height": "100%",
+                                "ID::uid": "c05832fd-f213-4a2d-9ec4-f187af16ddda",
+                                "Row::int": 2,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "KrBlockForDocStatus",
+                                "Children": [
+                                  {
+                                    "Alias": "22c87851",
+                                    "Form": "KrDocStateBlock",
+                                    "ID::uid": "22c87851-fd8c-4110-b315-6950040cbab7",
+                                    "Type::uid": "1f9a0e3a-c02b-4f11-88e1-16a23b8d23f0"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "e2f6493b-5a98-47b3-a16c-d99e34ea793b",
+                                "Row::int": 3,
+                                "TakenColumns::int": 2,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "50ee1998",
+                                "Children": [
+                                  {
+                                    "Alias": "052710c8",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Blocks_Controls_Subject",
+                                    "HideCaption": true,
+                                    "ID::uid": "052710c8-cb5a-4dd4-8a5e-ae573717d9fd",
+                                    "MaxRows::int": 6,
+                                    "MinRows::int": 2,
+                                    "MinWidth": "100%",
+                                    "PhysicalColumnsArray": [
+                                      {
+                                        "::single_type": "uid"
+                                      },
+                                      "2246998b-e4f7-45f1-8a96-211848466450"
+                                    ],
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "50ee1998-e373-4169-b7a7-3359563e6de7",
+                                "Row::int": 4,
+                                "TakenColumns::int": 2,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "7e9fb1c6",
+                                "Children": [
+                                  {
+                                    "Alias": "PartnerControl",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Partner",
+                                    "ComplexColumnID::uid": "22ed59ec-4939-4d96-a7a8-cbf0bda55ec0",
+                                    "ID::uid": "3beaa792-07fa-44cf-97b0-b37dd5e1c3d3",
+                                    "IdColumn": "PartnerID",
+                                    "IsCard": true,
+                                    "MinWidth": "100%",
+                                    "Mode": "NonDroppable",
+                                    "NameColumn": "PartnerName",
+                                    "ParameterAlias": "Name",
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "Partners"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "7e9fb1c6-1ac5-48d1-bff9-6523be0aa060",
+                                "Row::int": 5,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "77b21059",
+                                "Children": [
+                                  {
+                                    "Alias": "b19ecfcb",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_PartnerNumber",
+                                    "ID::uid": "b19ecfcb-8eed-4d37-8763-2f53b67a393d",
+                                    "MinWidth": "100%",
+                                    "PhysicalColumnsArray": [
+                                      {
+                                        "::single_type": "uid"
+                                      },
+                                      "11fce288-91a8-4ddf-a647-f1acbfa81959"
+                                    ],
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+                                  }
+                                ],
+                                "Column::int": 1,
+                                "Height": "100%",
+                                "ID::uid": "77b21059-7e14-4715-8a20-c2353ec91343",
+                                "Row::int": 5,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "7bb12db5",
+                                "Children": [
+                                  {
+                                    "Alias": "6128d635",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Author",
+                                    "ComplexColumnID::uid": "aa152ba8-dc1f-4efa-8c68-03ba804ef6f1",
+                                    "ID::uid": "6128d635-bdb5-498b-9aaa-3d5c1246683c",
+                                    "IdColumn": "UserID",
+                                    "IsCard": true,
+                                    "MinWidth": "100%",
+                                    "Mode": "NonDroppable",
+                                    "NameColumn": "UserName",
+                                    "ParameterAlias": "Name",
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "Users"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "7bb12db5-45f9-46d1-871a-4516189c2c2a",
+                                "Row::int": 6,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "c44b89d1",
+                                "Children": [
+                                  {
+                                    "Alias": "f872127f",
+                                    "AllowEmpty": false,
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_DateOfDocument",
+                                    "DateType": "Date",
+                                    "ID::uid": "f872127f-939d-4f0d-95f4-a05cf63a13c6",
+                                    "MinWidth": "100%",
+                                    "PhysicalColumnsArray": [
+                                      {
+                                        "::single_type": "uid"
+                                      },
+                                      "b452a4ce-ae1e-43fd-a44f-cc74464a6cd3"
+                                    ],
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "45667845-d112-4ef3-9bb7-d03bd9eb4274"
+                                  }
+                                ],
+                                "Column::int": 1,
+                                "Height": "100%",
+                                "ID::uid": "c44b89d1-9df8-4a62-8da0-a1d6438633d4",
+                                "Row::int": 6,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "d98fdcb1",
+                                "Children": [
+                                  {
+                                    "Alias": "2c8bd89c",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Subdivision",
+                                    "ComplexColumnID::uid": "36be79af-fff7-417e-997e-4fe3f51aae56",
+                                    "ID::uid": "2c8bd89c-fa0e-41f7-822e-332c47cd8c92",
+                                    "IdColumn": "RoleID",
+                                    "IsCard": true,
+                                    "MinWidth": "100%",
+                                    "Mode": "NonDroppable",
+                                    "NameColumn": "RoleName",
+                                    "ParameterAlias": "Name",
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "Departments"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "d98fdcb1-798a-42f0-9d13-d46b160f6480",
+                                "Row::int": 7,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "2f19009e",
+                                "Children": [
+                                  {
+                                    "Alias": "97748afe",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Signed",
+                                    "ComplexColumnID::uid": "1b5c91ec-7cc6-45d0-b520-8ae4f2dc0a75",
+                                    "ID::uid": "97748afe-12c5-4bd2-ba94-5f9171f547e9",
+                                    "IdColumn": "UserID",
+                                    "IsCard": true,
+                                    "MinWidth": "100%",
+                                    "Mode": "NonDroppable",
+                                    "NameColumn": "UserName",
+                                    "ParameterAlias": "Name",
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "Users"
+                                  }
+                                ],
+                                "Column::int": 1,
+                                "Height": "100%",
+                                "ID::uid": "2f19009e-1f56-48f9-b662-a1ca43e614ed",
+                                "Row::int": 7,
+                                "TakenColumns::int": 1,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "d8603d78",
+                                "Children": [
+                                  {
+                                    "Alias": "d9413c67",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Receivers",
+                                    "ComplexColumnID::uid": "c2ccd7e2-84b9-44f7-817f-c233ce673900",
+                                    "ID::uid": "d9413c67-3bc7-45e0-8e5f-74e9ae389238",
+                                    "IdColumn": "UserID",
+                                    "IsCard": true,
+                                    "MinWidth": "100%",
+                                    "Mode": "NonDroppable",
+                                    "Multiple": true,
+                                    "NameColumn": "UserName",
+                                    "ParameterAlias": "Name",
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "386509d9-4130-467f-9a52-0004aa15247e",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "Users"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "d8603d78-1a1c-40bb-a242-e1bfcaa69a55",
+                                "Row::int": 8,
+                                "TakenColumns::int": 2,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "4706eff9",
+                                "Children": [
+                                  {
+                                    "Alias": "0949befa",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_Performers",
+                                    "ComplexColumnID::uid": "01f82ec8-178a-426f-ae47-75aa0fcef5c6",
+                                    "ID::uid": "0949befa-2543-45ba-bc37-8b15f03b9cd7",
+                                    "IdColumn": "UserID",
+                                    "IsCard": true,
+                                    "MinWidth": "100%",
+                                    "Mode": "NonDroppable",
+                                    "Multiple": true,
+                                    "NameColumn": "UserName",
+                                    "ParameterAlias": "Name",
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "d0f5547b-b2f5-4a08-8cd9-b34138d35125",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "Users"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "4706eff9-82ec-4c05-8aa5-2fd1bf61138e",
+                                "Row::int": 9,
+                                "TakenColumns::int": 2,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "4e351fa5",
+                                "Children": [
+                                  {
+                                    "Alias": "fae782e1",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Blocks_Controls_References",
+                                    "ComplexColumnID::uid": "4856d3e1-fda0-42eb-bd87-8c2cea592e9f",
+                                    "ID::uid": "fae782e1-83cc-4e6c-bd88-096f3602014d",
+                                    "IdColumn": "DocID",
+                                    "IsCard": true,
+                                    "MinWidth": "100%",
+                                    "Mode": "NonDroppable",
+                                    "Multiple": true,
+                                    "NameColumn": "DocDescription",
+                                    "ParameterAlias": "Description",
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "73320234-fc44-4126-a7a6-5dd0bdaa4880",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "RefDocumentsLookup"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "4e351fa5-7962-4234-b906-c5b5ec1fd7d1",
+                                "Row::int": 10,
+                                "TakenColumns::int": 2,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "3cb6c381",
+                                "Children": [
+                                  {
+                                    "Alias": "2259f2b0",
+                                    "BindingType": "Card",
+                                    "Caption": "$CardTypes_Controls_ReferenceToThisDocument",
+                                    "ComplexColumnID::uid": "e53b1a76-83f6-4c8f-a362-74529b358028",
+                                    "ID::uid": "2259f2b0-682b-4411-aa54-c638b2b4c245",
+                                    "IdColumn": "DocID",
+                                    "IsCard": true,
+                                    "MinWidth": "100%",
+                                    "Mode": "NonDroppable",
+                                    "Multiple": true,
+                                    "NameColumn": "DocDescription",
+                                    "ParameterAlias": "Description",
+                                    "Readonly": true,
+                                    "SearchMode": "Contains",
+                                    "SectionID::uid": "83785076-d844-4ea4-9e84-0a389c951ef4",
+                                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                                    "View": "RefDocumentsLookup"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "3cb6c381-00d7-4a29-a40e-b5c4fc33e213",
+                                "Row::int": 11,
+                                "TakenColumns::int": 2,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              },
+                              {
+                                "Alias": "b5709c7e",
+                                "Children": [
+                                  {
+                                    "Alias": "c70232d7",
+                                    "Caption": "$CardTypes_Blocks_Controls_Files",
+                                    "Children": [
+                                      {
+                                        "Alias": "ff0f5b8b",
+                                        "FlexValue": "1",
+                                        "GroupingSettings": "Disabled",
+                                        "ID::uid": "ff0f5b8b-fd4a-48c3-8a12-ec30ee0c1e18",
+                                        "MinHeight": "30px",
+                                        "MinWidth": "170px",
+                                        "PreviewAlias": "FilePreview",
+                                        "Type::uid": "7ace3ac8-48c6-4f09-8c49-a0377443c9a4",
+                                        "Width": "100%"
+                                      }
+                                    ],
+                                    "Height": "100%",
+                                    "ID::uid": "c70232d7-80f3-42df-912d-61b333fe7a98",
+                                    "Type::uid": "a3928585-0c96-406b-a37f-1b49b65fc922"
+                                  }
+                                ],
+                                "Column::int": 0,
+                                "Height": "100%",
+                                "ID::uid": "b5709c7e-c24e-44dd-93d9-787bceeab979",
+                                "Row::int": 12,
+                                "TakenColumns::int": 2,
+                                "TakenRows::int": 1,
+                                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                              }
+                            ],
+                            "Columns": [
+                              {
+                                "Alias": "44f02967",
+                                "ID::uid": "44f02967-e332-4d0a-b1b8-7e2d86c04ee6",
+                                "Index::int": 0,
+                                "Size": "1fr",
+                                "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+                              },
+                              {
+                                "Alias": "926e3694",
+                                "ID::uid": "926e3694-1211-4b4e-925d-8ab0505b3fe3",
+                                "Index::int": 1,
+                                "Size": "1fr",
+                                "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+                              }
+                            ],
+                            "GridGap": "10px 20px",
+                            "Height": "100%",
+                            "ID::uid": "7bef7a3e-8734-40df-923b-8de8b70dd003",
+                            "Rows": [
+                              {
+                                "Alias": "6de9391d",
+                                "ID::uid": "6de9391d-9be9-4d70-b6b3-59f0b14ce172",
+                                "Index::int": 0,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "48b0210a",
+                                "ID::uid": "48b0210a-df9a-4cc8-a656-3d32156dc44e",
+                                "Index::int": 1,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "500f3cd0",
+                                "ID::uid": "500f3cd0-d897-4ff6-821e-01d4948c8cae",
+                                "Index::int": 2,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "b1b23e45",
+                                "ID::uid": "b1b23e45-750c-4a8e-a748-b363befb68e0",
+                                "Index::int": 3,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "09003e00",
+                                "ID::uid": "09003e00-e45e-4e9b-8ec3-572788fa4cae",
+                                "Index::int": 4,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "1f22b968",
+                                "ID::uid": "1f22b968-b8a1-4979-81c9-9013efbe8fee",
+                                "Index::int": 5,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "92a020e3",
+                                "ID::uid": "92a020e3-c740-44b9-9e61-6448da5e45d0",
+                                "Index::int": 6,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "2cf48d35",
+                                "ID::uid": "2cf48d35-68a6-44a4-9fa7-2aa933dbd18c",
+                                "Index::int": 7,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "1c0f563d",
+                                "ID::uid": "1c0f563d-8d17-401d-8794-2d0919c3a62a",
+                                "Index::int": 8,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "8168c405",
+                                "ID::uid": "8168c405-274f-4c2c-b897-d9e9b9a71d45",
+                                "Index::int": 9,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "6157baea",
+                                "ID::uid": "6157baea-b806-4b58-bac5-479835629dc5",
+                                "Index::int": 10,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "6850a565",
+                                "HideIfEmpty": true,
+                                "ID::uid": "6850a565-fe3f-4f80-9a0c-a3f1e2ce26b9",
+                                "Index::int": 11,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              },
+                              {
+                                "Alias": "76106c08",
+                                "ID::uid": "76106c08-5167-4b9a-98b1-f33b986ceb67",
+                                "Index::int": 12,
+                                "Size": "max-content",
+                                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                              }
+                            ],
+                            "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "7375ba9c-01d3-48c2-9d22-61ceb137b9d6",
+                        "Resizer": "vertical",
+                        "Row::int": 0,
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "9fec3458",
+                        "Children": [
+                          {
+                            "Alias": "FilePreview",
+                            "Height": "100%",
+                            "ID::uid": "bc4ad313-9b6c-4b95-8775-417d5e3a88ab",
+                            "MinWidth": "100%",
+                            "Type::uid": "2d905a58-bee2-48d0-ab1d-64ea3cb3d9d4"
+                          }
+                        ],
+                        "Column::int": 1,
+                        "Height": "100%",
+                        "ID::uid": "9fec3458-7d95-40af-8e40-ba3624c26389",
+                        "Row::int": 0,
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      }
+                    ],
+                    "Columns": [
+                      {
+                        "Alias": "fc78ad0b",
+                        "ID::uid": "fc78ad0b-f891-4f5b-a364-59a80ff05a7b",
+                        "Index::int": 0,
+                        "Size": "1fr",
+                        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+                      },
+                      {
+                        "Alias": "5bded003",
+                        "ID::uid": "5bded003-f0d8-4894-8a67-d89f496a759b",
+                        "Index::int": 1,
+                        "Size": "1fr",
+                        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+                      }
+                    ],
+                    "Height": "100%",
+                    "ID::uid": "8c9e0da0-fcae-4f51-8811-25d1327f5f54",
+                    "Rows": [
+                      {
+                        "Alias": "f8927236",
+                        "ID::uid": "f8927236-3bf6-4212-a0c7-8896b4b16566",
+                        "Index::int": 0,
+                        "Size": "100%",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      }
+                    ],
+                    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+                  }
+                ],
+                "ID::uid": "b2074693-6e2d-4bc1-912f-870e1183f6a2",
+                "Padding": "--tabs-main-padding",
+                "Type::uid": "ff5b7fb7-a558-497f-9319-b986a9353cc3"
+              },
+              {
+                "ActiveHeaderBackground": "--tabs-current-background",
+                "ActiveHeaderColor": "--tabs-current-font-color",
+                "Alias": "ApprovalProcess",
+                "Background": "--tabs-current-background",
+                "Caption": "$CardTypes_Tab_ApprovalProcess",
+                "CaptionBackground": "--tabs-main-background",
+                "CaptionBorderRadius": "var(--corner-radius-l1) var(--corner-radius-l1) 0 0",
+                "CaptionColor": "--tabs-main-font-color",
+                "CaptionPadding": "--tabs-main-padding",
+                "Children": [
+                  {
+                    "Alias": "KrRoutesLayout",
+                    "Form": "KrRoutesBlock",
+                    "ID::uid": "fbf2e9c6-092d-4d4d-ac7e-eed9eeb42dc9",
+                    "Type::uid": "1f9a0e3a-c02b-4f11-88e1-16a23b8d23f0"
+                  }
+                ],
+                "ID::uid": "2be2169d-7a6b-4c37-acb9-a08ed32eed4a",
+                "Padding": "--tabs-main-padding",
+                "Type::uid": "ff5b7fb7-a558-497f-9319-b986a9353cc3"
+              },
+              {
+                "ActiveHeaderBackground": "--tabs-current-background",
+                "ActiveHeaderColor": "--tabs-current-font-color",
+                "Alias": "TaskHistoryTab",
+                "Background": "--tabs-current-background",
+                "Caption": "$CardTypes_Tab_TaskHistory",
+                "CaptionBackground": "--tabs-main-background",
+                "CaptionBorderRadius": "var(--corner-radius-l1) var(--corner-radius-l1) 0 0",
+                "CaptionColor": "--tabs-main-font-color",
+                "CaptionPadding": "--tabs-main-padding",
+                "Children": [
+                  {
+                    "Alias": "a9eeccdb",
+                    "Children": [
+                      {
+                        "Alias": "TaskHistoryCell",
+                        "Children": [],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "24e2a944-12f6-4e68-ba8e-f1f0650b63e4",
+                        "Row::int": 0,
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      }
+                    ],
+                    "Columns": [
+                      {
+                        "Alias": "948967ce",
+                        "ID::uid": "948967ce-cbfb-4ba4-8357-90fe3fea5f0c",
+                        "Index::int": 0,
+                        "Size": "1fr",
+                        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+                      }
+                    ],
+                    "Height": "100%",
+                    "ID::uid": "a9eeccdb-6202-47dc-a5c9-4862c5ccc7bd",
+                    "Rows": [
+                      {
+                        "Alias": "f60907b6",
+                        "ID::uid": "f60907b6-3328-470f-8bca-3c9c3c6b5361",
+                        "Index::int": 0,
+                        "Size": "100%",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      }
+                    ],
+                    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0",
+                    "Width": "100%"
+                  }
+                ],
+                "ID::uid": "76cf6159-536d-4c14-93df-7690d9099bdc",
+                "Padding": "--tabs-main-padding",
+                "Type::uid": "ff5b7fb7-a558-497f-9319-b986a9353cc3"
+              }
+            ],
+            "Height": "100%",
+            "ID::uid": "bef2c149-d98e-42b1-85e4-ddf907c058c8",
+            "Type::uid": "d92b4c08-2258-4e02-8ed9-c995269aeff0",
+            "Width": "100%"
+          }
+        ],
+        "Column::int": 1,
+        "Height": "100%",
+        "ID::uid": "5a5de9fa-8d73-41df-8c0a-4dd09cddf2fd",
+        "OverflowX": "hidden",
+        "Padding": "20px",
+        "Row::int": 1,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "b067c8b0",
+        "Children": [
+          {
+            "Alias": "TaskArea",
+            "Children": [],
+            "FlexDirection": "column",
+            "Gap": "10px",
+            "Height": "100%",
+            "ID::uid": "0a75cd69-3a9e-4280-9187-f05445a0dce0",
+            "MinWidth": "400px",
+            "Padding": "20px 15px 20px 0",
+            "Type::uid": "061dfbfa-c71e-4546-964b-f23162647f2b",
+            "Wrap": "nowrap"
+          }
+        ],
+        "Column::int": 2,
+        "Height": "100%",
+        "ID::uid": "b067c8b0-29b0-41af-842b-e7923702a885",
+        "Padding": "0",
+        "Row::int": 1,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      }
+    ],
+    "Columns": [
+      {
+        "Alias": "56f07078",
+        "ID::uid": "56f07078-f94c-45aa-8fc3-af606f266adf",
+        "Index::int": 0,
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      },
+      {
+        "Alias": "1cb4a87b",
+        "ID::uid": "1cb4a87b-b2b0-4e96-afb4-032c566207d4",
+        "Index::int": 1,
+        "Size": "minmax(min-content, 1440px)",
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      },
+      {
+        "Alias": "b5ee0b9e",
+        "ID::uid": "b5ee0b9e-e82a-456f-9ae9-166eb321d52a",
+        "Index::int": 2,
+        "Size": "minmax(min-content, 1fr)",
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      }
+    ],
+    "Height": "100%",
+    "ID::uid": "dfd9a79b-1f02-45a5-8a8b-c9eb1e310d1f",
+    "Rows": [
+      {
+        "Alias": "3f641410",
+        "ID::uid": "3f641410-a2fd-47c6-a602-2991a0a72001",
+        "Index::int": 0,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      },
+      {
+        "Alias": "8e992706",
+        "ID::uid": "8e992706-b26f-46c5-999d-771235444b2e",
+        "Index::int": 1,
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      }
+    ],
+    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+  },
+  "Description": "$Editor_Forms_Description_Contract",
+  "ID::uid": "667436b1-d57e-472c-beae-ec9ca7f22fab",
+  "States": [
+    {
+      "ID::uid": "76120cae-9dcc-43eb-9380-51ed957eb89c",
+      "Name": "lg",
+      "Parts": [
+        {
+          "ID::uid": "1cb38cd2-135b-4879-8be8-2fd9ac3b9e99",
+          "Item": {
+            "Alias": "8c9e0da0",
+            "Children": [
+              {
+                "Alias": "7375ba9c",
+                "Children": [
+                  {
+                    "Alias": "7bef7a3e",
+                    "Caption": "$CardTypes_Blocks_MainInformation",
+                    "Children": [
+                      {
+                        "Alias": "dcdf74f6",
+                        "Children": [
+                          {
+                            "Alias": "0ed33213",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Number",
+                            "ID::uid": "0ed33213-10bc-4460-827f-0addb0013112",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "NumberFieldID::uid": "434a798f-bd1f-4c5c-b291-80490cd0dccf",
+                            "PhysicalColumnsArray": [
+                              {
+                                "::single_type": "uid"
+                              },
+                              "eeb023b5-f473-4a8b-bef2-88e07b0d0688"
+                            ],
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "SequenceFieldID::uid": "5a78f218-dae8-41de-92aa-6746d44468c3",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "5b5ee5a2-0847-4305-b854-8a7c95fc5df6"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "dcdf74f6-2891-4f2a-a842-b54591385fc0",
+                        "Row::int": 0,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "f6ddc492",
+                        "Children": [
+                          {
+                            "Alias": "39dffc00",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_DocumentType",
+                            "ComplexColumnID::uid": "d713fa35-af02-4520-bc91-47f5a04e44fa",
+                            "ID::uid": "39dffc00-21b1-4bac-9249-a8eaa5b4d6ed",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "Full",
+                            "Readonly": true,
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34"
+                          }
+                        ],
+                        "Column::int": 1,
+                        "Height": "100%",
+                        "ID::uid": "f6ddc492-ebea-4abe-9d63-1f561767a9c1",
+                        "Row::int": 0,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "fe736a5c",
+                        "Children": [
+                          {
+                            "Alias": "5ae95d2f",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Registrator",
+                            "ComplexColumnID::uid": "3089d333-8647-49e7-b2ef-d4f8958da086",
+                            "ID::uid": "5ae95d2f-7cf6-47d4-83bb-f4a7300c9f8a",
+                            "IdColumn": "UserID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "Full",
+                            "NameColumn": "UserName",
+                            "ParameterAlias": "Name",
+                            "Readonly": true,
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "Users"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "fe736a5c-ba0d-4072-98bf-e12fa3c3d03d",
+                        "Row::int": 1,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "80b9f9e7",
+                        "Children": [
+                          {
+                            "Alias": "6f555683",
+                            "AllowEmpty": false,
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_CreationDate",
+                            "DateType": "DateTime",
+                            "ID::uid": "6f555683-d138-4056-abd9-1db3c4660f4f",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "PhysicalColumnsArray": [
+                              {
+                                "::single_type": "uid"
+                              },
+                              "d804eb6c-9f50-4299-b31c-2fef064fae9e"
+                            ],
+                            "Readonly": true,
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "45667845-d112-4ef3-9bb7-d03bd9eb4274"
+                          }
+                        ],
+                        "Column::int": 1,
+                        "Height": "100%",
+                        "ID::uid": "80b9f9e7-fb8b-43f4-ad68-56b8e6a631a2",
+                        "Row::int": 1,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "76266bfb",
+                        "Children": [
+                          {
+                            "Alias": "18e270fe",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Amount",
+                            "FieldType": "Decimal",
+                            "ID::uid": "18e270fe-a6e4-4602-81ca-e285fc14ab11",
+                            "MaxValue": 900000000000000,
+                            "MinHeight": "30px",
+                            "MinValue::int": 0,
+                            "MinWidth": "100%",
+                            "PhysicalColumnsArray": [
+                              {
+                                "::single_type": "uid"
+                              },
+                              "ed01aef8-43f4-441d-8b0d-1cb249164e9b"
+                            ],
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "9c11ba0a-2e8d-46a1-a87d-039458d42da3"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "76266bfb-b443-4254-8696-2e1aed998b1a",
+                        "Row::int": 2,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "c05832fd",
+                        "Children": [
+                          {
+                            "Alias": "309ce26d",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Currency",
+                            "ComplexColumnID::uid": "1f65d492-78e7-4818-b098-8d7a3c524934",
+                            "ID::uid": "309ce26d-a1fc-4dcd-81a6-a213f9c7a5ee",
+                            "IdColumn": "CurrencyID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "Full",
+                            "NameColumn": "CurrencyName",
+                            "ParameterAlias": "Name",
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "Currencies"
+                          }
+                        ],
+                        "Column::int": 1,
+                        "Height": "100%",
+                        "ID::uid": "c05832fd-f213-4a2d-9ec4-f187af16ddda",
+                        "Row::int": 2,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "KrBlockForDocStatus",
+                        "Children": [],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "e2f6493b-5a98-47b3-a16c-d99e34ea793b",
+                        "Row::int": 3,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 2,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "50ee1998",
+                        "Children": [
+                          {
+                            "Alias": "052710c8",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Blocks_Controls_Subject",
+                            "Height": "50px",
+                            "HideCaption": true,
+                            "ID::uid": "052710c8-cb5a-4dd4-8a5e-ae573717d9fd",
+                            "MaxHeight": "150px",
+                            "MaxRows::int": 2,
+                            "MinHeight": "30px",
+                            "MinRows::int": 6,
+                            "MinWidth": "100%",
+                            "PhysicalColumnsArray": [
+                              {
+                                "::single_type": "uid"
+                              },
+                              "2246998b-e4f7-45f1-8a96-211848466450"
+                            ],
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "50ee1998-e373-4169-b7a7-3359563e6de7",
+                        "Row::int": 4,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 2,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "7e9fb1c6",
+                        "Children": [
+                          {
+                            "Alias": "PartnerControl",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Partner",
+                            "ComplexColumnID::uid": "22ed59ec-4939-4d96-a7a8-cbf0bda55ec0",
+                            "ID::uid": "3beaa792-07fa-44cf-97b0-b37dd5e1c3d3",
+                            "IdColumn": "PartnerID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "NonDroppable",
+                            "NameColumn": "PartnerName",
+                            "ParameterAlias": "Name",
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "Partners"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "7e9fb1c6-1ac5-48d1-bff9-6523be0aa060",
+                        "Row::int": 5,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "77b21059",
+                        "Children": [
+                          {
+                            "Alias": "b19ecfcb",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_PartnerNumber",
+                            "ID::uid": "b19ecfcb-8eed-4d37-8763-2f53b67a393d",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "PhysicalColumnsArray": [
+                              {
+                                "::single_type": "uid"
+                              },
+                              "11fce288-91a8-4ddf-a647-f1acbfa81959"
+                            ],
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+                          }
+                        ],
+                        "Column::int": 1,
+                        "Height": "100%",
+                        "ID::uid": "77b21059-7e14-4715-8a20-c2353ec91343",
+                        "Row::int": 5,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "7bb12db5",
+                        "Children": [
+                          {
+                            "Alias": "6128d635",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Author",
+                            "ComplexColumnID::uid": "aa152ba8-dc1f-4efa-8c68-03ba804ef6f1",
+                            "ID::uid": "6128d635-bdb5-498b-9aaa-3d5c1246683c",
+                            "IdColumn": "UserID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "NonDroppable",
+                            "NameColumn": "UserName",
+                            "ParameterAlias": "Name",
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "Users"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "7bb12db5-45f9-46d1-871a-4516189c2c2a",
+                        "Row::int": 6,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "c44b89d1",
+                        "Children": [
+                          {
+                            "Alias": "f872127f",
+                            "AllowEmpty": false,
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_DateOfDocument",
+                            "DateType": "Date",
+                            "ID::uid": "f872127f-939d-4f0d-95f4-a05cf63a13c6",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "PhysicalColumnsArray": [
+                              {
+                                "::single_type": "uid"
+                              },
+                              "b452a4ce-ae1e-43fd-a44f-cc74464a6cd3"
+                            ],
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "45667845-d112-4ef3-9bb7-d03bd9eb4274"
+                          }
+                        ],
+                        "Column::int": 1,
+                        "Height": "100%",
+                        "ID::uid": "c44b89d1-9df8-4a62-8da0-a1d6438633d4",
+                        "Row::int": 6,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "d98fdcb1",
+                        "Children": [
+                          {
+                            "Alias": "2c8bd89c",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Subdivision",
+                            "ComplexColumnID::uid": "36be79af-fff7-417e-997e-4fe3f51aae56",
+                            "ID::uid": "2c8bd89c-fa0e-41f7-822e-332c47cd8c92",
+                            "IdColumn": "RoleID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "NonDroppable",
+                            "NameColumn": "RoleName",
+                            "ParameterAlias": "Name",
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "Departments"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "d98fdcb1-798a-42f0-9d13-d46b160f6480",
+                        "Row::int": 7,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "2f19009e",
+                        "Children": [
+                          {
+                            "Alias": "97748afe",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Signed",
+                            "ComplexColumnID::uid": "1b5c91ec-7cc6-45d0-b520-8ae4f2dc0a75",
+                            "ID::uid": "97748afe-12c5-4bd2-ba94-5f9171f547e9",
+                            "IdColumn": "UserID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "NonDroppable",
+                            "NameColumn": "UserName",
+                            "ParameterAlias": "Name",
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "a161e289-2f99-4699-9e95-6e3336be8527",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "Users"
+                          }
+                        ],
+                        "Column::int": 1,
+                        "Height": "100%",
+                        "ID::uid": "2f19009e-1f56-48f9-b662-a1ca43e614ed",
+                        "Row::int": 7,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 1,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "d8603d78",
+                        "Children": [
+                          {
+                            "Alias": "d9413c67",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Receivers",
+                            "ComplexColumnID::uid": "c2ccd7e2-84b9-44f7-817f-c233ce673900",
+                            "ID::uid": "d9413c67-3bc7-45e0-8e5f-74e9ae389238",
+                            "IdColumn": "UserID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "NonDroppable",
+                            "Multiple": true,
+                            "NameColumn": "UserName",
+                            "ParameterAlias": "Name",
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "386509d9-4130-467f-9a52-0004aa15247e",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "Users"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "d8603d78-1a1c-40bb-a242-e1bfcaa69a55",
+                        "Row::int": 8,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 2,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "4706eff9",
+                        "Children": [
+                          {
+                            "Alias": "0949befa",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_Performers",
+                            "ComplexColumnID::uid": "01f82ec8-178a-426f-ae47-75aa0fcef5c6",
+                            "ID::uid": "0949befa-2543-45ba-bc37-8b15f03b9cd7",
+                            "IdColumn": "UserID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "NonDroppable",
+                            "Multiple": true,
+                            "NameColumn": "UserName",
+                            "ParameterAlias": "Name",
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "d0f5547b-b2f5-4a08-8cd9-b34138d35125",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "Users"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "4706eff9-82ec-4c05-8aa5-2fd1bf61138e",
+                        "Row::int": 9,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 2,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "4e351fa5",
+                        "Children": [
+                          {
+                            "Alias": "fae782e1",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Blocks_Controls_References",
+                            "ComplexColumnID::uid": "4856d3e1-fda0-42eb-bd87-8c2cea592e9f",
+                            "ID::uid": "fae782e1-83cc-4e6c-bd88-096f3602014d",
+                            "IdColumn": "DocID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "NonDroppable",
+                            "Multiple": true,
+                            "NameColumn": "DocDescription",
+                            "ParameterAlias": "Description",
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "73320234-fc44-4126-a7a6-5dd0bdaa4880",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "RefDocumentsLookup"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "4e351fa5-7962-4234-b906-c5b5ec1fd7d1",
+                        "Row::int": 10,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 2,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "3cb6c381",
+                        "Children": [
+                          {
+                            "Alias": "2259f2b0",
+                            "BindingType": "Card",
+                            "Caption": "$CardTypes_Controls_ReferenceToThisDocument",
+                            "ComplexColumnID::uid": "e53b1a76-83f6-4c8f-a362-74529b358028",
+                            "ID::uid": "2259f2b0-682b-4411-aa54-c638b2b4c245",
+                            "IdColumn": "DocID",
+                            "MinHeight": "30px",
+                            "MinWidth": "100%",
+                            "Mode": "NonDroppable",
+                            "Multiple": true,
+                            "NameColumn": "DocDescription",
+                            "ParameterAlias": "Description",
+                            "Readonly": true,
+                            "SearchMode": "Contains",
+                            "SectionID::uid": "83785076-d844-4ea4-9e84-0a389c951ef4",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                            "View": "RefDocumentsLookup"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "3cb6c381-00d7-4a29-a40e-b5c4fc33e213",
+                        "Row::int": 11,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 2,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      },
+                      {
+                        "Alias": "b5709c7e",
+                        "Children": [
+                          {
+                            "Alias": "c70232d7",
+                            "Caption": "$CardTypes_Blocks_Controls_Files",
+                            "Children": [
+                              {
+                                "Alias": "ff0f5b8b",
+                                "FlexValue": "1",
+                                "GroupingSettings": "Disabled",
+                                "ID::uid": "ff0f5b8b-fd4a-48c3-8a12-ec30ee0c1e18",
+                                "MinHeight": "30px",
+                                "MinWidth": "170px",
+                                "PreviewAlias": "FilePreview",
+                                "StateMode": "fullCopy",
+                                "Type::uid": "7ace3ac8-48c6-4f09-8c49-a0377443c9a4",
+                                "Width": "100%"
+                              }
+                            ],
+                            "Height": "100%",
+                            "ID::uid": "c70232d7-80f3-42df-912d-61b333fe7a98",
+                            "StateMode": "fullCopy",
+                            "Type::uid": "a3928585-0c96-406b-a37f-1b49b65fc922"
+                          }
+                        ],
+                        "Column::int": 0,
+                        "Height": "100%",
+                        "ID::uid": "b5709c7e-c24e-44dd-93d9-787bceeab979",
+                        "Row::int": 12,
+                        "StateMode": "fullCopy",
+                        "TakenColumns::int": 2,
+                        "TakenRows::int": 1,
+                        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+                      }
+                    ],
+                    "Columns": [
+                      {
+                        "Alias": "44f02967",
+                        "ID::uid": "44f02967-e332-4d0a-b1b8-7e2d86c04ee6",
+                        "Index::int": 0,
+                        "Size": "1fr",
+                        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+                      },
+                      {
+                        "Alias": "926e3694",
+                        "ID::uid": "926e3694-1211-4b4e-925d-8ab0505b3fe3",
+                        "Index::int": 1,
+                        "Size": "1fr",
+                        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+                      }
+                    ],
+                    "GridGap": "10px 20px",
+                    "Height": "100%",
+                    "ID::uid": "7bef7a3e-8734-40df-923b-8de8b70dd003",
+                    "Rows": [
+                      {
+                        "Alias": "6de9391d",
+                        "ID::uid": "6de9391d-9be9-4d70-b6b3-59f0b14ce172",
+                        "Index::int": 0,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "48b0210a",
+                        "ID::uid": "48b0210a-df9a-4cc8-a656-3d32156dc44e",
+                        "Index::int": 1,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "500f3cd0",
+                        "ID::uid": "500f3cd0-d897-4ff6-821e-01d4948c8cae",
+                        "Index::int": 2,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "b1b23e45",
+                        "ID::uid": "b1b23e45-750c-4a8e-a748-b363befb68e0",
+                        "Index::int": 3,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "09003e00",
+                        "ID::uid": "09003e00-e45e-4e9b-8ec3-572788fa4cae",
+                        "Index::int": 4,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "1f22b968",
+                        "ID::uid": "1f22b968-b8a1-4979-81c9-9013efbe8fee",
+                        "Index::int": 5,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "92a020e3",
+                        "ID::uid": "92a020e3-c740-44b9-9e61-6448da5e45d0",
+                        "Index::int": 6,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "2cf48d35",
+                        "ID::uid": "2cf48d35-68a6-44a4-9fa7-2aa933dbd18c",
+                        "Index::int": 7,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "1c0f563d",
+                        "ID::uid": "1c0f563d-8d17-401d-8794-2d0919c3a62a",
+                        "Index::int": 8,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "8168c405",
+                        "ID::uid": "8168c405-274f-4c2c-b897-d9e9b9a71d45",
+                        "Index::int": 9,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "6157baea",
+                        "ID::uid": "6157baea-b806-4b58-bac5-479835629dc5",
+                        "Index::int": 10,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "6850a565",
+                        "HideIfEmpty": true,
+                        "ID::uid": "6850a565-fe3f-4f80-9a0c-a3f1e2ce26b9",
+                        "Index::int": 11,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      },
+                      {
+                        "Alias": "76106c08",
+                        "ID::uid": "76106c08-5167-4b9a-98b1-f33b986ceb67",
+                        "Index::int": 12,
+                        "Size": "max-content",
+                        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+                      }
+                    ],
+                    "StateMode": "fullCopy",
+                    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "7375ba9c-01d3-48c2-9d22-61ceb137b9d6",
+                "Row::int": 0,
+                "StateMode": "fullCopy",
+                "TakenColumns::int": 1,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "c96537a5",
+                "Children": [
+                  {
+                    "Alias": "FilePreview",
+                    "Height": "100%",
+                    "ID::uid": "cd096dbd-c9bb-47aa-ba42-1843ede6d126",
+                    "MinWidth": "100%",
+                    "StateMode": "fullCopy",
+                    "Type::uid": "2d905a58-bee2-48d0-ab1d-64ea3cb3d9d4"
+                  }
+                ],
+                "Column::int": 0,
+                "ID::uid": "c96537a5-6c02-4bdf-839f-9a9edad18c8c",
+                "Row::int": 1,
+                "TakenColumns::int": 1,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              }
+            ],
+            "Columns": [
+              {
+                "Alias": "fc78ad0b",
+                "ID::uid": "fc78ad0b-f891-4f5b-a364-59a80ff05a7b",
+                "Index::int": 0,
+                "Size": "1fr",
+                "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+              }
+            ],
+            "CopyFrom": "default",
+            "GridGap": "15px",
+            "Height": "100%",
+            "ID::uid": "8c9e0da0-fcae-4f51-8811-25d1327f5f54",
+            "Rows": [
+              {
+                "Alias": "f8927236",
+                "ID::uid": "f8927236-3bf6-4212-a0c7-8896b4b16566",
+                "Index::int": 0,
+                "Size": "1fr",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              },
+              {
+                "Alias": "2a202484",
+                "ID::uid": "2a202484-f05f-4dd3-9d17-52eb78fa0f70",
+                "Index::int": 1,
+                "Size": "1fr",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              }
+            ],
+            "StateMode": "fullCopy",
+            "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+          },
+          "ItemID::uid": "8c9e0da0-fcae-4f51-8811-25d1327f5f54"
+        }
+      ]
+    }
+  ],
+  "SubForms": null,
+  "Version::int": 0
+}

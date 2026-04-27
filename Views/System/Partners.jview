@@ -1,0 +1,252 @@
+﻿{
+  "Alias": "Partners",
+  "Caption": "$Views_Names_Partners",
+  "GroupName": "System",
+  "ID": "f9e6f291-2de8-459c-8d05-420fb8cce90f",
+  "JsonMetadataSource::txt": "Partners JSONMETA",
+  "MsQuerySource::txt": "Partners MSSQL",
+  "PgQuerySource::txt": "Partners PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART Partners JSONMETA]
+{
+  "Alias": "Partners",
+  "Caption": "$Views_Names_Partners",
+  "Columns": [
+    {
+      "Alias": "PartnerID",
+      "Hidden": true,
+      "Type": "$Partners.ID"
+    },
+    {
+      "Alias": "PartnerName",
+      "Caption": "$Views_Partners_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Partners.Name"
+    },
+    {
+      "Alias": "FullName",
+      "Caption": "$Views_Partners_FullName",
+      "FilterParameter": "FullName",
+      "FilterType": "Parameter",
+      "SortBy": "t.FullName",
+      "Type": "$Partners.FullName"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Partners.TypeID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_Partners_Type",
+      "FilterParameter": "Type",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.TypeID",
+      "Type": "$Partners.TypeName"
+    },
+    {
+      "Alias": "INN",
+      "Caption": "$Views_Partners_INN",
+      "FilterParameter": "INN",
+      "FilterType": "Parameter",
+      "Type": "$Partners.INN"
+    },
+    {
+      "Alias": "KPP",
+      "Caption": "$Views_Partners_KPP",
+      "FilterParameter": "KPP",
+      "FilterType": "Parameter",
+      "Type": "$Partners.KPP"
+    },
+    {
+      "Alias": "OGRN",
+      "Hidden": true,
+      "Type": "$Partners.OGRN"
+    },
+    {
+      "Alias": "Comment",
+      "Hidden": true,
+      "Type": "$Partners.Comment"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "PartnerName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "PartnerID",
+      "Caption": "$Views_Partners_PartnerID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$Partners.ID"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Partners_Name_Param",
+      "Type": "$Partners.Name"
+    },
+    {
+      "Alias": "FullName",
+      "Caption": "$Views_Partners_FullName_Param",
+      "Type": "$Partners.FullName"
+    },
+    {
+      "Alias": "Type",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "RefPrefix": "Type",
+        "ViewAlias": "PartnersTypes"
+      },
+      "Caption": "$Views_Partners_Type_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "PartnersTypes"
+      },
+      "Multiple": false,
+      "RefSection": [
+        "PartnersTypes"
+      ],
+      "Type": "$Partners.TypeID"
+    },
+    {
+      "Alias": "INN",
+      "Caption": "$Views_Partners_INN_Param",
+      "Type": "$Partners.INN"
+    },
+    {
+      "Alias": "KPP",
+      "Caption": "$Views_Partners_KPP_Param",
+      "Type": "$Partners.KPP"
+    },
+    {
+      "Alias": "OGRN",
+      "Caption": "$Views_Partners_OGRN_Param",
+      "Type": "$Partners.OGRN"
+    },
+    {
+      "Alias": "Comment",
+      "Caption": "$Views_Partners_Comment_Param",
+      "Type": "$Partners.Comment"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Partner",
+      "DisplayValueColumn": "PartnerName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Partners"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Partners MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[ID]			AS [PartnerID],
+	[tt].[Name]			AS [PartnerName],
+	[tt].[FullName],
+	[tt].[TypeID],
+	[tt].[TypeName],
+	[tt].[INN],
+	[tt].[KPP],
+	[tt].[OGRN],
+	[tt].[Comment]
+	}
+	#if(Count) {
+	[t].*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Partners] AS [t] WITH (NOLOCK)
+	WHERE 1 = 1
+		#param(PartnerID, [t].[ID])
+		#param(Name, [t].[Name])
+		#param(FullName, [t].[FullName])
+		#param(Type, [t].[TypeID])
+		#param(INN, [t].[INN])
+		#param(KPP, [t].[KPP])
+		#param(OGRN, [t].[OGRN])
+		#param(Comment, [t].[Comment])
+	) AS [t]
+#if(Normal) {
+INNER JOIN [Partners] AS [tt] WITH (NOLOCK)
+	ON [tt].[ID] = [t].[ID]
+}
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART Partners PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"			AS "PartnerID",
+	"t"."Name"			AS "PartnerName",
+	"t"."FullName",
+	"t"."TypeID",
+	"t"."TypeName",
+	"t"."INN",
+	"t"."KPP",
+	"t"."OGRN",
+	"t"."Comment"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "Partners" AS "t"
+WHERE true
+	#param(PartnerID, "t"."ID")
+	#param(Name, "t"."Name")
+	#param(FullName, "t"."FullName")
+	#param(Type, "t"."TypeID")
+	#param(INN, "t"."INN")
+	#param(KPP, "t"."KPP")
+	#param(OGRN, "t"."OGRN")
+	#param(Comment, "t"."Comment")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

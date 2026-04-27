@@ -1,0 +1,85 @@
+﻿{
+  "Alias": "Languages",
+  "Caption": "$Views_Names_Languages",
+  "GroupName": "System",
+  "ID": "7ed54a59-1c9e-469b-83eb-ed1c6ec70753",
+  "JsonMetadataSource::txt": "Languages JSONMETA",
+  "MsQuerySource::txt": "Languages MSSQL",
+  "PgQuerySource::txt": "Languages PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART Languages JSONMETA]
+{
+  "Alias": "Languages",
+  "Caption": "$Views_Names_Languages",
+  "Columns": [
+    {
+      "Alias": "LanguageID",
+      "Hidden": true,
+      "Type": "$Languages.ID"
+    },
+    {
+      "Alias": "LanguageCaption",
+      "Caption": "$Views_KrLanguages_Caption",
+      "FilterParameter": "CaptionParam",
+      "FilterType": "Parameter",
+      "SortBy": "l.Caption",
+      "Type": "$Languages.Caption"
+    },
+    {
+      "Alias": "LanguageCode",
+      "Hidden": true,
+      "Type": "$Languages.Code"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "LanguageCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "CaptionParam",
+      "Caption": "$Views_KrLanguages_Caption_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Language",
+      "DisplayValueColumn": "LanguageCaption",
+      "RefSection": [
+        "Languages"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Languages MSSQL]
+SELECT
+	[l].[ID]			AS [LanguageID],
+	[l].[Caption]		AS [LanguageCaption],
+	[l].[Code]			AS [LanguageCode]
+FROM [Languages] AS [l] WITH (NOLOCK)
+WHERE 1 = 1
+	#param(CaptionParam, [l].[Caption])
+ORDER BY #order_by
+
+
+[TEXTPART Languages PGSQL]
+SELECT
+	"l"."ID"			AS "LanguageID",
+	"l"."Caption"		AS "LanguageCaption",
+	"l"."Code"			AS "LanguageCode"
+FROM "Languages" AS "l"
+WHERE true
+	#param(CaptionParam, "l"."Caption")
+ORDER BY #order_by

@@ -1,0 +1,414 @@
+﻿{
+  "Alias": "MyCompletedTasks",
+  "Caption": "$Views_Names_MyCompletedTasks",
+  "GroupName": "System",
+  "ID": "89cf35b0-69bc-406a-9b95-77be879a94fa",
+  "JsonMetadataSource::txt": "MyCompletedTasks JSONMETA",
+  "MsQuerySource::txt": "MyCompletedTasks MSSQL",
+  "PgQuerySource::txt": "MyCompletedTasks PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART MyCompletedTasks JSONMETA]
+{
+  "Alias": "MyCompletedTasks",
+  "Caption": "$Views_Names_MyCompletedTasks",
+  "Columns": [
+    {
+      "Alias": "CardID",
+      "Hidden": true,
+      "Type": "$TaskHistory.ID"
+    },
+    {
+      "Alias": "CardName",
+      "Caption": "$Views_CompletedTasks_Card",
+      "Type": "$DocumentCommonInfo.FullNumber"
+    },
+    {
+      "Alias": "CardTypeID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.CardTypeID"
+    },
+    {
+      "Alias": "CardTypeCaption",
+      "Caption": "$Views_CompletedTasks_CardType",
+      "FilterParameter": "TypeParam",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "NormalizationKeyColumn": "CardTypeID",
+      "NormalizationSource": "KrTypes",
+      "Type": "$DocumentCommonInfo.DocTypeTitle"
+    },
+    {
+      "Alias": "Subject",
+      "Caption": "$Views_Registers_Subject",
+      "Type": "$DocumentCommonInfo.Subject"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$TaskHistory.TypeID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_CompletedTasks_TaskType",
+      "FilterParameter": "TaskType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$TaskHistory.KindCaption"
+    },
+    {
+      "Alias": "OptionID",
+      "Hidden": true,
+      "Type": "$TaskHistory.OptionID"
+    },
+    {
+      "Alias": "OptionCaption",
+      "Caption": "$Views_CompletedTasks_CompletionOption",
+      "FilterParameter": "Option",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$TaskHistory.OptionCaption"
+    },
+    {
+      "Alias": "Result",
+      "Caption": "$Views_CompletedTasks_Result",
+      "Localizable": true,
+      "MaxLength": 150,
+      "Type": "$TaskHistory.Result"
+    },
+    {
+      "Alias": "RoleID",
+      "Hidden": true,
+      "Type": "$TaskHistory.CompletedByID"
+    },
+    {
+      "Alias": "RoleName",
+      "Caption": "$Views_CompletedTasks_Role",
+      "Localizable": true,
+      "Type": "$TaskHistory.CompletedByRole"
+    },
+    {
+      "Alias": "AuthorID",
+      "Hidden": true,
+      "Type": "$TaskHistory.AuthorID"
+    },
+    {
+      "Alias": "AuthorName",
+      "Caption": "$Views_CompletedTasks_Author",
+      "Type": "$TaskHistory.AuthorName"
+    },
+    {
+      "Alias": "Completed",
+      "Caption": "$Views_CompletedTasks_Completed",
+      "SortBy": "th.Completed",
+      "Type": "$TaskHistory.Completed"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Completed",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "FromMeMode",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_CompletedTasks_FromMeMode_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "CompletionDate",
+      "Caption": "$Views_CompletedTasks_CompletionDate_Param",
+      "Type": "$TaskHistory.Completed"
+    },
+    {
+      "Alias": "TypeParam",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Caption": "$Views_CompletedTasks_CardType_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Multiple": false,
+      "RefSection": [
+        "TypeForView"
+      ],
+      "Type": "$DocumentCommonInfo.DocTypeID"
+    },
+    {
+      "Alias": "TaskType",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "TaskTypes"
+      },
+      "Caption": "$Views_CompletedTasks_TaskType_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "TaskTypes"
+      },
+      "RefSection": [
+        "TaskTypes"
+      ],
+      "Type": "$TaskHistory.TypeID"
+    },
+    {
+      "Alias": "Role",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3
+        ],
+        "RefPrefix": "Role",
+        "ViewAlias": "DurableRoles"
+      },
+      "Caption": "$Views_CompletedTasks_RoleGroup_Param",
+      "RefSection": [
+        "Roles"
+      ],
+      "Type": "$RoleUsers.ID"
+    },
+    {
+      "Alias": "Option",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "CompletionOptions"
+      },
+      "Caption": "$Views_CompletedTasks_CompletionOption_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "CompletionOptions"
+      },
+      "RefSection": [
+        "CompletionOptions"
+      ],
+      "Type": "$TaskHistory.OptionID"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Card",
+      "DisplayValueColumn": "CardName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Instances"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART MyCompletedTasks MSSQL]
+DECLARE @NoName			nvarchar(1024);
+#if(TypeParam) {
+DECLARE @CardTypeID		uniqueidentifier;
+}
+
+SET @NoName = [dbo].[GetString](N'Views_CompletedTasks_NoName_Sql', #param(locale));
+
+#if(TypeParam) {
+-- индексы в DocumentCommonInfo устроены так, что нам быстрее сначала найти тип карточки по CardType, а потом тип документа
+SET @CardTypeID = #param(TypeParam);
+
+SELECT @CardTypeID = [CardTypeID]
+FROM [KrDocType] WITH (NOLOCK)
+WHERE [ID] = #param(TypeParam);
+}
+
+SELECT
+	[th].[ID]											AS [CardID],
+	COALESCE([dci].[FullNumber], @NoName)				AS [CardName],
+	COALESCE([dci].[DocTypeID], [i].[TypeID])			AS [CardTypeID],
+	[dci].[Subject],
+	[th].[TypeID],
+	COALESCE([th].[KindCaption], [th].[TypeCaption])	AS [TypeCaption],
+	[th].[OptionID],
+	[th].[OptionCaption],
+	[th].[Result],
+	[th].[CompletedByID]								AS [RoleID],
+	[th].[CompletedByRole]								AS [RoleName],
+	[th].[AuthorID] 									AS [AuthorID],
+	[th].[AuthorName]									AS [AuthorName],
+	[th].[Completed],
+	[t].[rn]
+FROM (
+	SELECT
+		[th].[RowID],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+	FROM [TaskHistory] AS [th] WITH (NOLOCK)
+	#if(TypeParam) {
+	LEFT JOIN [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+		ON [dci].[ID] = [th].[ID]
+	}
+	WHERE [th].[Completed] IS NOT NULL
+		#param(CompletionDate, [th].[Completed])
+		#param(TaskType, [th].[TypeID])
+		#param(SelUser, [th].[UserID])
+		#param(Option, [th].[OptionID])
+
+		#if(FromMeMode && FromMeMode.Value == 1) {
+		AND EXISTS (
+			SELECT TOP 1 1 
+			FROM [RoleUsers] AS [ru] WITH(NOLOCK)				 
+			WHERE [ru].[ID] = [th].[AuthorID]
+				AND [ru].[IsDeputy] = 0
+			 	AND [ru].[UserID] = #param(CurrentUserID))
+		} {
+		AND [th].[UserID] = #param(CurrentUserID)
+		}
+
+		#if(Role) {
+		AND EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+			WHERE [ru].[UserID] = [th].[UserID] #param(Role, [ru].[ID])
+			)
+		}
+
+		#if(TypeParam) {
+		AND [dci].[CardTypeID] = @CardTypeID
+		AND COALESCE([dci].[DocTypeID], [dci].[CardTypeID]) = #param(TypeParam)
+		}
+	) AS [t]
+INNER JOIN [TaskHistory] AS [th] WITH (NOLOCK)
+	ON [th].[RowID] = [t].[RowID]
+INNER JOIN [Instances] AS [i] WITH (NOLOCK)
+	ON [i].[ID] = [th].[ID]
+LEFT JOIN [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+	ON [dci].[ID] = [th].[ID]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+[TEXTPART MyCompletedTasks PGSQL]
+#if(TypeParam) {
+-- индексы в DocumentCommonInfo устроены так, что нам быстрее сначала найти тип карточки по CardType, а потом тип документа
+WITH "card_type" AS (
+	SELECT COALESCE("CardTypeID", #param(TypeParam) ) as "card_type_id"
+	FROM "KrDocType"
+	WHERE "ID" = #param(TypeParam)
+)
+}
+SELECT
+	"th"."ID"											AS "CardID",
+	COALESCE("dci"."FullNumber", "GetString"('Views_CompletedTasks_NoName_Sql', #param(locale)))				AS "CardName",
+	COALESCE("dci"."DocTypeID", "i"."TypeID")			AS "CardTypeID",
+	"dci"."Subject",
+	"th"."TypeID",
+	COALESCE("th"."KindCaption", "th"."TypeCaption")	AS "TypeCaption",
+	"th"."OptionID",
+	"th"."OptionCaption",
+	"th"."Result",
+	"th"."CompletedByID"								AS "RoleID",
+	"th"."CompletedByRole"								AS "RoleName",
+	"th"."AuthorID"										AS "AuthorID",
+	"th"."AuthorName"									AS "AuthorName",
+	"th"."Completed",
+	0::int8												AS "rn"
+FROM (
+	SELECT
+		"th"."RowID"
+	FROM "TaskHistory" AS "th"
+	#if(TypeParam) { 
+	LEFT JOIN "DocumentCommonInfo" AS "dci"
+		ON "dci"."ID" = "th"."ID"
+	}
+	WHERE "th"."Completed" IS NOT NULL
+		#param(CompletionDate, "th"."Completed")
+		#param(TaskType, "th"."TypeID")
+		#param(SelUser, "th"."UserID")
+		#param(Option, "th"."OptionID")
+
+		#if(FromMeMode && FromMeMode.Value == 1) {
+		AND EXISTS (
+			SELECT
+			FROM "RoleUsers" AS "ru"
+			WHERE "ru"."ID" = "th"."AuthorID"
+				AND NOT "ru"."IsDeputy"
+			 	AND "ru"."UserID" = #param(CurrentUserID))
+		} {
+		AND "th"."UserID" = #param(CurrentUserID)
+		}
+
+		#if(Role) {
+		AND EXISTS (
+			SELECT
+			FROM "RoleUsers" AS "ru"
+			WHERE "ru"."UserID" = "th"."UserID" #param(Role, "ru"."ID")
+			)
+		}
+
+		#if(TypeParam) {
+		AND "dci"."CardTypeID" = (SELECT "ct"."card_type_id" FROM "card_type" "ct")::uuid
+		/* Так надо, чтобы coalesce не убивала Postgres при некоторых наборах параметров */
+		AND EXISTS (
+			SELECT
+			FROM (
+				SELECT "dci_fake"."ID"
+				FROM "DocumentCommonInfo" "dci_fake"
+				WHERE "dci_fake"."DocTypeID" = #param(TypeParam)
+						and "dci_fake"."ID" = "dci"."ID"
+				UNION ALL
+				SELECT "dci_fake2"."ID"
+				FROM "DocumentCommonInfo" "dci_fake2"
+				WHERE "dci_fake2"."DocTypeID" IS NULL
+					AND "dci_fake2"."CardTypeID" = #param(TypeParam)
+					and "dci_fake2"."ID" = "dci"."ID"
+			) "expr"
+		)
+		}
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	}
+	) AS "t"
+INNER JOIN "TaskHistory" AS "th"
+	ON "th"."RowID" = "t"."RowID"
+INNER JOIN "Instances" AS "i"
+	ON "i"."ID" = "th"."ID"
+LEFT JOIN "DocumentCommonInfo" AS "dci"
+	ON "dci"."ID" = "th"."ID"	
+#if(Normal) {
+ORDER BY #order_by
+}

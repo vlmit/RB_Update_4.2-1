@@ -1,0 +1,541 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "65cc46a6-7f74-4f3c-a44a-35329ee914d8",
+  "Name": "ConfigDiff",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "ConfigDiff_Cards_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Cards_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified cards:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены карточки:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Cards_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Cards_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименована из"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Forms_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Forms_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified forms:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены формы:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Forms_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Forms_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименована из"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Localization_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Localization libraries were modified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены библиотеки локализации."
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeFunctions_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeFunctions_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified functions:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены функции:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeFunctions_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeFunctions_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименована из"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeMigrations_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeMigrations_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified migrations:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены миграции:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeMigrations_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeMigrations_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименована из"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemePartitions_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemePartitions_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified scheme partitions:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены библиотеки схемы:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemePartitions_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemePartitions_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименована из"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeProcedures_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeProcedures_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified procedures:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены процедуры:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeProcedures_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeProcedures_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименована из"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeTables_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeTables_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified tables:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены таблицы:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeTables_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалена"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_SchemeTables_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименована из"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Types_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлен"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Types_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified types:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены типы:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Types_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалён"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Types_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименован из"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Views_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлено"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Views_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified views:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены представления:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Views_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалено"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Views_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименовано из"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Workplaces_Added",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "added"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавлено"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Workplaces_Prefix",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "# Modified workplaces:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "# Изменены рабочие места:"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Workplaces_Removed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "removed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалено"
+        }
+      ]
+    },
+    {
+      "Name": "ConfigDiff_Workplaces_Renamed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "renamed from"
+        },
+        {
+          "Culture": "ru",
+          "Value": "переименовано из"
+        }
+      ]
+    }
+  ]
+}

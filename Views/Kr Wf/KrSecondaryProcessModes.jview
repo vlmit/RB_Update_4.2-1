@@ -1,0 +1,71 @@
+﻿{
+  "Alias": "KrSecondaryProcessModes",
+  "Caption": "$Views_Names_KrSecondaryProcessModes",
+  "GroupName": "Kr Wf",
+  "ID": "4f6f0744-5a4e-4285-b39e-064c56737715",
+  "JsonMetadataSource::txt": "KrSecondaryProcessModes JSONMETA",
+  "MsQuerySource::txt": "KrSecondaryProcessModes MSSQL",
+  "PgQuerySource::txt": "KrSecondaryProcessModes PGSQL"
+}
+
+[TEXTPART KrSecondaryProcessModes JSONMETA]
+{
+  "Alias": "KrSecondaryProcessModes",
+  "Caption": "$Views_Names_KrSecondaryProcessModes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "RefName",
+      "Localizable": true,
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrSecondaryProcessModes_Name",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "KrSecondaryProcessModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrSecondaryProcessModes MSSQL]
+SELECT
+	[a].[ID]		AS [RefID],
+	[a].[Name]		AS [RefName]
+FROM [KrSecondaryProcessModes] AS [a] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([a].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [a].[ID]
+
+
+[TEXTPART KrSecondaryProcessModes PGSQL]
+SELECT
+	"a"."ID"			AS "RefID",
+	"a"."Name"		AS "RefName"
+FROM "KrSecondaryProcessModes" AS "a"
+#if(Name) {
+CROSS JOIN "Localization"("a"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "a"."ID"

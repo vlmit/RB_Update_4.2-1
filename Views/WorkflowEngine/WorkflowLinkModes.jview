@@ -1,0 +1,72 @@
+﻿{
+  "Alias": "WorkflowLinkModes",
+  "Caption": "$Views_Names_WorkflowLinkModes",
+  "GroupName": "WorkflowEngine",
+  "ID": "cc6b5f26-00f7-4e57-9260-49ed427fd243",
+  "JsonMetadataSource::txt": "WorkflowLinkModes JSONMETA",
+  "MsQuerySource::txt": "WorkflowLinkModes MSSQL",
+  "PgQuerySource::txt": "WorkflowLinkModes PGSQL"
+}
+
+[TEXTPART WorkflowLinkModes JSONMETA]
+{
+  "Alias": "WorkflowLinkModes",
+  "Caption": "$Views_Names_WorkflowLinkModes",
+  "Columns": [
+    {
+      "Alias": "LinkModeID",
+      "Hidden": true,
+      "Type": "$WorkflowLinkModes.ID"
+    },
+    {
+      "Alias": "LinkModeName",
+      "Caption": "$Views_WorkflowLinkModes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$WorkflowLinkModes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WorkflowLinkModes_Name_Param",
+      "Multiple": false,
+      "Type": "$WorkflowLinkModes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "LinkMode",
+      "DisplayValueColumn": "LinkModeName",
+      "RefSection": [
+        "WorkflowLinkModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WorkflowLinkModes MSSQL]
+SELECT
+	[lm].[ID] as [LinkModeID]
+	,[lm].[Name] as [LinkModeName]
+FROM [WorkflowLinkModes] [lm] WITH(NOLOCK)
+#if(Name || request.SortedBy("LinkModeName")) {
+CROSS APPLY [Localization]([lm].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+
+
+[TEXTPART WorkflowLinkModes PGSQL]
+SELECT
+	"lm"."ID" as "LinkModeID"
+	,"lm"."Name" as "LinkModeName"
+FROM "WorkflowLinkModes" "lm"
+#if(Name || request.SortedBy("LinkModeName")) {
+CROSS JOIN "Localization"("lm"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")

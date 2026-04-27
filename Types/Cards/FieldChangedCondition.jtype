@@ -1,0 +1,157 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_FieldChangedCondition",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Section",
+              "ComplexColumnID::uid": "9c54d18e-5f42-49cd-aa95-8463351a60c6",
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "Sections"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "Sections"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "3b9d9643-ed47-4301-94b2-8eedcabc23bc",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Fields",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "c5f46bdf-3a04-49c6-8e2c-5527bb2ca7c0",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "Fields"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "Fields",
+                "ViewMap": [
+                  {
+                    "::single_type": "obj"
+                  },
+                  {
+                    "CardColumn::uid": "9c54d18e-5f42-00cd-4000-0463351a60c6",
+                    "CardSection::uid": "3b9d9643-ed47-4301-94b2-8eedcabc23bc",
+                    "ColumnType::int": 0,
+                    "ConstantValue": false,
+                    "ConstantValueType::int": 4,
+                    "CriteriaOperator": "Equality",
+                    "SkipNullParams": false,
+                    "ViewMasterLinkName": "",
+                    "ViewMasterLinkType::int": 0,
+                    "ViewParamName": "Section",
+                    "ViewParamSetName": ""
+                  },
+                  {
+                    "CardColumn": null,
+                    "CardSection": null,
+                    "ColumnType::int": 5,
+                    "ConstantValue": true,
+                    "ConstantValueType::int": 4,
+                    "CriteriaOperator": "Equality",
+                    "SkipNullParams": false,
+                    "TextFormat": "",
+                    "ViewMasterLinkName": "",
+                    "ViewMasterLinkType::int": 0,
+                    "ViewParamName": "HideComplexColumns",
+                    "ViewParamSetName": "",
+                    "ViewSourceParameterName": ""
+                  }
+                ]
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "06245b07-be2a-40de-aec8-bfd367860930",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "FieldChangedCondition",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Conditions",
+  "ID::uid": "6077353b-1af6-496f-a930-86954dce122c",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "FieldChangedCondition",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "c5f46bdf-3a04-49c6-8e2c-5527bb2ca7c0"
+      ],
+      "SectionID::uid": "06245b07-be2a-40de-aec8-bfd367860930"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "9c54d18e-5f42-49cd-aa95-8463351a60c6"
+      ],
+      "SectionID::uid": "3b9d9643-ed47-4301-94b2-8eedcabc23bc"
+    }
+  ],
+  "Validators": null
+}

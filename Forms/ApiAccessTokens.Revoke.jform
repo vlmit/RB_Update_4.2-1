@@ -1,0 +1,112 @@
+{
+  "Alias": "ApiAccessTokens.Revoke",
+  "BundleID::uid": "c5bdb424-23c9-45ed-9210-98e8c72afd24",
+  "Caption": "$CardTypes_Tabs_ApiAccessTokenRevoke",
+  "Child": {
+    "Alias": "MainInformationBlock",
+    "Caption": "$CardTypes_Blocks_MainInformation",
+    "Children": [
+      {
+        "Alias": "1f432644",
+        "Children": [
+          {
+            "Alias": "Reason",
+            "BindingType": "FormStorage",
+            "Caption": "$CardTypes_Controls_Comment",
+            "ID::uid": "d662536e-91a1-4050-8190-c9ca2069e6f4",
+            "MaxRows::int": 5,
+            "MinRows::int": 3,
+            "MinWidth": "100%",
+            "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+          }
+        ],
+        "Column::int": 0,
+        "Height": "100%",
+        "ID::uid": "1f432644-cb9b-4eb3-8fcc-5a4bf255a4fb",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "aad6b6a3",
+        "Children": [
+          {
+            "Alias": "ButtonsBlock",
+            "Children": [
+              {
+                "Alias": "Revoke",
+                "ButtonTheme": "primary",
+                "Caption": "$CardTypes_Buttons_RevokeToken",
+                "CaptionPadding": null,
+                "ID::uid": "6d095b2c-ef87-480f-bfb3-1f3540de669a",
+                "MinHeight": "30px",
+                "MinWidth": "170px",
+                "Type::uid": "7c55da95-1f7b-4f88-8b27-5e03406231c6"
+              },
+              {
+                "Alias": "Cancel",
+                "ButtonTheme": "secondary",
+                "Caption": "$UI_Common_Cancel",
+                "CaptionPadding": null,
+                "ID::uid": "018413c9-df34-40a5-9fd0-94d18b4a56cc",
+                "MinHeight": "30px",
+                "MinWidth": "170px",
+                "Type::uid": "7c55da95-1f7b-4f88-8b27-5e03406231c6"
+              }
+            ],
+            "Height": "100%",
+            "ID::uid": "1317ad6c-c986-4402-bdc9-7b08fd21724f",
+            "JustifyContent": "end",
+            "Type::uid": "a3928585-0c96-406b-a37f-1b49b65fc922"
+          }
+        ],
+        "Column::int": 0,
+        "Height": "100%",
+        "ID::uid": "aad6b6a3-dcc4-4fc3-b1e8-69c73d04b41f",
+        "Row::int": 1,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      }
+    ],
+    "Columns": [
+      {
+        "Alias": "df2dfdc1",
+        "HideIfEmpty": true,
+        "ID::uid": "df2dfdc1-f428-4d82-95c8-dd8b9b208751",
+        "Index::int": 0,
+        "Size": "1fr",
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      }
+    ],
+    "GridGap": "10px 20px",
+    "Height": "100%",
+    "HideCaption": true,
+    "ID::uid": "3db7b33b-345f-4f00-8aca-3d6730cb6f86",
+    "Padding": "10px",
+    "Rows": [
+      {
+        "Alias": "1971a78e",
+        "HideIfEmpty": true,
+        "ID::uid": "1971a78e-78e1-4742-b9c9-57f577891d36",
+        "Index::int": 0,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      },
+      {
+        "Alias": "a82c1114",
+        "HideIfEmpty": true,
+        "ID::uid": "a82c1114-558d-450a-bb51-6ee038ae3fb6",
+        "Index::int": 1,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      }
+    ],
+    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+  },
+  "ID::uid": "0132b3f4-f608-4041-a346-3c3e0bfcc756",
+  "States": null,
+  "SubForms": null,
+  "Version::int": 0
+}

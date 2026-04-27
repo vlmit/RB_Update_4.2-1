@@ -1,0 +1,77 @@
+﻿{
+  "Alias": "ProtocolReportsWithPhoto",
+  "Caption": "$Views_Names_ProtocolReportsWithPhoto",
+  "Description": "Представление используется для демонстрации возможности формировая файлов по шаблону с изображениями.\nВ шаблоне протокола, включенном в типовом решении, в списке докладов будет новая колонка с фотографией докладчика.\nФото докладчика получается из карточки сотрудника, из приложенного файла с именем вида \"photo%\".",
+  "GroupName": "KrDocuments",
+  "ID": "a5bb501c-3169-4d72-8098-588f932815b1",
+  "JsonMetadataSource::txt": "ProtocolReportsWithPhoto JSONMETA",
+  "MsQuerySource::txt": "ProtocolReportsWithPhoto MSSQL",
+  "PgQuerySource::txt": "ProtocolReportsWithPhoto PGSQL"
+}
+
+[TEXTPART ProtocolReportsWithPhoto JSONMETA]
+{
+  "Alias": "ProtocolReportsWithPhoto",
+  "Caption": "$Views_Names_ProtocolReportsWithPhoto",
+  "Columns": [
+    {
+      "Alias": "PersonName",
+      "Caption": "PersonName",
+      "Type": "$ProtocolReports.PersonName"
+    },
+    {
+      "Alias": "Subject",
+      "Caption": "Subject",
+      "Type": "$ProtocolReports.Subject"
+    },
+    {
+      "Alias": "PhotoFileID",
+      "Caption": "PhotoFileID",
+      "Type": "$Files.RowID"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "CardId",
+      "Caption": "$Views_ProtocolReportsWithPhoto_CardID",
+      "Multiple": false,
+      "Type": "$ProtocolReports.ID"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ProtocolReportsWithPhoto MSSQL]
+SELECT
+	[pr].[PersonName],
+	[pr].[Subject],
+	[p].[RowID] AS [PhotoFileID]
+FROM [ProtocolReports] AS [pr] WITH (NOLOCK)
+OUTER APPLY (
+	SELECT TOP(1) [f].[RowID]
+	FROM [Files] AS [f] WITH (NOLOCK)
+	WHERE [f].[ID] = [pr].[PersonID]
+		AND [f].[Name] LIKE N'photo%'
+	) AS [p]
+WHERE 1 = 1 
+	#param(CardId, [pr].[ID])
+ORDER BY [pr].[Order];
+
+
+[TEXTPART ProtocolReportsWithPhoto PGSQL]
+SELECT
+	"pr"."PersonName",
+	"pr"."Subject",
+	"p"."RowID" AS "PhotoFileID"
+FROM "ProtocolReports" AS "pr"
+LEFT JOIN LATERAL (
+	SELECT "f"."RowID"
+	FROM "Files" AS "f"
+	WHERE "f"."ID" = "pr"."PersonID"
+		AND "f"."Name" LIKE 'photo%'
+	LIMIT 1
+	) AS "p" ON true
+WHERE true
+	#param(CardId, "pr"."ID")
+ORDER BY "pr"."Order";

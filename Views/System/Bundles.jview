@@ -1,0 +1,79 @@
+﻿{
+  "Alias": "Bundles",
+  "Caption": "$Views_Names_Bundles",
+  "GroupName": "System",
+  "ID": "6d3b4f62-0d0d-4279-8c8d-29c7eaee6a1f",
+  "JsonMetadataSource::txt": "Bundles JSONMETA",
+  "MsQuerySource::txt": "Bundles MSSQL",
+  "PgQuerySource::txt": "Bundles PGSQL"
+}
+
+[TEXTPART Bundles JSONMETA]
+{
+  "Alias": "Bundles",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_Bundles",
+  "Columns": [
+    {
+      "Alias": "BundleID",
+      "Hidden": true,
+      "Type": "$Bundles.ID"
+    },
+    {
+      "Alias": "BundleName",
+      "Caption": "$Views_Bundles_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$Bundles.Name"
+    },
+    {
+      "Alias": "BundleVersion",
+      "Caption": "$Views_Bundles_Version",
+      "Localizable": true,
+      "Type": "$Bundles.Version"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Bundles_Name_Param",
+      "Type": "$Bundles.Name"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Bundle",
+      "DisplayValueColumn": "BundleName",
+      "RefSection": [
+        "Bundles"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Bundles MSSQL]
+SELECT
+	[b].[ID]		AS [BundleID],
+	[b].[Name]		AS [BundleName],
+	[b].[Version]	AS [BundleVersion]
+FROM [Bundles] AS [b] WITH (NOLOCK)
+
+WHERE 1 = 1
+	#param(Name, [b].[Name])
+ORDER BY [b].[ID]
+
+[TEXTPART Bundles PGSQL]
+SELECT
+	"b"."ID"		AS "BundleID",
+	"b"."Name"		AS "BundleName",
+	"b"."Version"	AS "BundleVersion"
+FROM "Bundles" AS b
+
+WHERE 1 = 1
+	#param(Name, b."Name")
+ORDER BY b."ID"

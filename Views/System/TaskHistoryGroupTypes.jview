@@ -1,0 +1,139 @@
+﻿{
+  "Alias": "TaskHistoryGroupTypes",
+  "Caption": "$Views_Names_TaskHistoryGroupTypes",
+  "GroupName": "System",
+  "ID": "25d1c651-1008-496c-8252-778a4b5d9064",
+  "JsonMetadataSource::txt": "TaskHistoryGroupTypes JSONMETA",
+  "MsQuerySource::txt": "TaskHistoryGroupTypes MSSQL",
+  "PgQuerySource::txt": "TaskHistoryGroupTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TaskHistoryGroupTypes JSONMETA]
+{
+  "Alias": "TaskHistoryGroupTypes",
+  "Caption": "$Views_Names_TaskHistoryGroupTypes",
+  "Columns": [
+    {
+      "Alias": "GroupTypeID",
+      "Hidden": true,
+      "Type": "$TaskHistoryGroupTypes.ID"
+    },
+    {
+      "Alias": "GroupTypeCaption",
+      "Caption": "$Views_TaskHistoryGroupTypes_GroupTypeCaption",
+      "FilterParameter": "GroupTypeCaptionParam",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$TaskHistoryGroupTypes.Caption"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "GroupTypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "GroupTypeCaptionParam",
+      "Caption": "$Views_TaskHistoryGroupTypes_GroupTypeCaption",
+      "Multiple": false,
+      "Type": "$TaskHistoryGroupTypes.Caption"
+    }
+  ],
+  "QuickSearchParam": "GroupTypeCaptionParam",
+  "References": [
+    {
+      "ColPrefix": "GroupType",
+      "DisplayValueColumn": "GroupTypeCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "TaskHistoryGroupTypes"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TaskHistoryGroupTypes MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[GroupTypeID],
+	[t].[GroupTypeCaption]
+	}
+	#if(Count) {
+	[t].[cnt]
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID] AS [GroupTypeID],
+		[t].[Caption] AS [GroupTypeCaption],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [TaskHistoryGroupTypes] AS [t] WITH (NOLOCK)
+	#if(GroupTypeCaptionParam || Normal && request.SortedBy("GroupTypeCaption")) {
+	CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+	}
+	WHERE 1 = 1
+		#param(GroupTypeCaptionParam, [lCaption].[Value])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART TaskHistoryGroupTypes PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."GroupTypeID", 
+	"t"."GroupTypeCaption"
+	}
+	#if(Count) {
+	"t"."cnt"
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID" AS "GroupTypeID",
+		"t"."Caption" AS "GroupTypeCaption",
+		row_number() OVER (ORDER BY #order_by) AS "rn"
+		}
+		#if(Count) {
+		count(*) AS "cnt"
+		}
+	FROM "TaskHistoryGroupTypes" AS "t"
+	#if(GroupTypeCaptionParam || Normal && request.SortedBy("GroupTypeCaption")) {
+	CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+	}
+	WHERE true
+		#param(GroupTypeCaptionParam, "lCaption"."Value")
+	) AS "t"
+#if(PageOffset) {
+WHERE "t"."rn" >= #param(PageOffset) AND "t"."rn" < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY "t"."rn"
+}

@@ -1,0 +1,234 @@
+﻿{
+  "Alias": "BusinessProcessTemplates",
+  "Caption": "$Views_Names_BusinessProcessTemplates",
+  "GroupName": "WorkflowEngine",
+  "ID": "b9174abb-c460-4a68-b56e-187d4d8f4896",
+  "JsonMetadataSource::txt": "BusinessProcessTemplates JSONMETA",
+  "MsQuerySource::txt": "BusinessProcessTemplates MSSQL",
+  "PgQuerySource::txt": "BusinessProcessTemplates PGSQL"
+}
+
+[TEXTPART BusinessProcessTemplates JSONMETA]
+{
+  "Alias": "BusinessProcessTemplates",
+  "Caption": "$Views_Names_BusinessProcessTemplates",
+  "Columns": [
+    {
+      "Alias": "BusinessProcessID",
+      "Hidden": true,
+      "Type": "$BusinessProcessInfo.ID"
+    },
+    {
+      "Alias": "BusinessProcessName",
+      "Caption": "$Views_BusinessProcessTemplates_ProcessTemplateName",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "bpi.Name",
+      "Type": "$BusinessProcessInfo.Name"
+    },
+    {
+      "Alias": "BusinessProcessGroup",
+      "Caption": "$Views_BusinessProcessTemplates_Group",
+      "FilterParameter": "Group",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "bpi.Group",
+      "Type": "$BusinessProcessInfo.Group"
+    },
+    {
+      "Alias": "BusinessProcessStartFromCard",
+      "Caption": "$Views_BusinessProcessTemplates_RunFromCard",
+      "FilterParameter": "StartFromCard",
+      "FilterType": "Parameter",
+      "SortBy": "bpi.StartFromCard",
+      "Type": "$BusinessProcessInfo.StartFromCard"
+    },
+    {
+      "Alias": "BusinessProcessMultiple",
+      "Caption": "$Views_BusinessProcessTemplates_MultipleInstances",
+      "FilterParameter": "Multiple",
+      "FilterType": "Parameter",
+      "SortBy": "bpi.Multiple",
+      "Type": "$BusinessProcessInfo.Multiple"
+    },
+    {
+      "Alias": "BusinessProcessCardTypes",
+      "Caption": "$Views_BusinessProcessTemplates_CardTypes",
+      "FilterParameter": "CardType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$BusinessProcessCardTypes.CardTypeCaption"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "BusinessProcessName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_BusinessProcessTemplates_ProcessTemplateName_Param",
+      "Type": "$BusinessProcessInfo.Name"
+    },
+    {
+      "Alias": "Group",
+      "Caption": "$Views_BusinessProcessTemplates_Group_Param",
+      "Type": "$BusinessProcessInfo.Group"
+    },
+    {
+      "Alias": "StartFromCard",
+      "Caption": "$Views_BusinessProcessTemplates_RunFromCard_Param",
+      "Type": "$BusinessProcessInfo.StartFromCard"
+    },
+    {
+      "Alias": "Multiple",
+      "Caption": "$Views_BusinessProcessTemplates_MultipleInstances_Param",
+      "Type": "$BusinessProcessInfo.Multiple"
+    },
+    {
+      "Alias": "CardType",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "Types"
+      },
+      "Caption": "$Views_BusinessProcessTemplates_CardType_Param",
+      "RefSection": [
+        "Types"
+      ],
+      "Type": "$BusinessProcessCardTypes.CardTypeID"
+    },
+    {
+      "Alias": "GroupHidden",
+      "Caption": "$Views_BusinessProcessTemplates_GroupHidden_Param",
+      "Hidden": true,
+      "Type": "$BusinessProcessInfo.Group"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "BusinessProcess",
+      "DisplayValueColumn": "BusinessProcessName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "BusinessProcessInfo"
+      ]
+    }
+  ],
+  "Subsets": [
+    {
+      "Alias": "ByGroup",
+      "Caption": "$Views_BusinessProcessTemplates_Group",
+      "CaptionColumn": "BusinessProcessGroupCaption",
+      "RefColumn": "BusinessProcessGroup",
+      "RefParam": "GroupHidden"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART BusinessProcessTemplates MSSQL]
+SELECT
+	#if(Normal) {
+	[bpi].[ID] AS [BusinessProcessID]
+	,[bpi].[Name] AS [BusinessProcessName]
+	,[bpi].[Group] AS [BusinessProcessGroup]
+	,[bpi].[StartFromCard] AS [BusinessProcessStartFromCard]
+	,[bpi].[Multiple] AS [BusinessProcessMultiple]
+	,STUFF((
+		SELECT CHAR(10) +
+			CASE WHEN left([bpct].[CardTypeCaption], 1) = N'$'
+				THEN N'{' + [bpct].[CardTypeCaption] + N'}'
+				ELSE [bpct].[CardTypeCaption]
+			END
+		FROM [BusinessProcessCardTypes] AS [bpct] WITH (NOLOCK)
+		WHERE [bpct].[ID] = [bpi].[ID]
+		FOR XML PATH('')
+	), 1, 1, N'') AS [BusinessProcessCardTypes]
+   	}
+   	#if(ByGroup) {
+   	[bpi].[Group] AS [BusinessProcessGroup],
+   	CASE WHEN [bpi].[Group] = N''
+   		THEN '$Views_BusinessProcessTemplates_NoGroup_Sql'
+   		ELSE [bpi].[Group]
+   	END AS [BusinessProcessGroupCaption]
+   	}
+FROM [BusinessProcessInfo] AS [bpi] WITH (NOLOCK)
+where 1 = 1
+	#param(Name, [bpi].[Name])
+	#param(Group, [bpi].[Group])
+	#param(GroupHidden, [bpi].[Group])
+	#param(StartFromCard, [bpi].[StartFromCard])
+	#param(Multiple, [bpi].[Multiple])
+	#if(CardType){
+	AND EXISTS (
+		SELECT NULL
+		FROM [BusinessProcessCardTypes] [bpct] WITH (NOLOCK) 
+		WHERE [bpct].[ID] = [bpi].[ID]
+			#param(CardType, [bpct].[CardTypeID]))
+	}
+#if(Normal){
+ORDER BY #order_by
+}
+#if(ByGroup) {
+GROUP BY [bpi].[Group]
+ORDER BY [bpi].[Group]
+}
+
+[TEXTPART BusinessProcessTemplates PGSQL]
+SELECT
+	#if(Normal){
+	"bpi"."ID" AS "BusinessProcessID"
+	,"bpi"."Name" AS "BusinessProcessName" 
+	,"bpi"."Group" AS "BusinessProcessGroup"
+	,"bpi"."StartFromCard" AS "BusinessProcessStartFromCard"
+	,"bpi"."Multiple" AS "BusinessProcessMultiple"
+	,(
+		SELECT string_agg("CardTypeCaption", chr(10))
+		FROM (
+			SELECT
+				CASE WHEN substring("bpct"."CardTypeCaption", 1, 1) = '$'
+					THEN '{' || "bpct"."CardTypeCaption" || '}'
+					ELSE "bpct"."CardTypeCaption"
+				END
+			FROM "BusinessProcessCardTypes" AS "bpct"
+			WHERE "bpct"."ID" = "bpi"."ID") AS "groupCaptions"
+	) AS "BusinessProcessCardTypes"
+	}
+	#if(ByGroup) {
+	"bpi"."Group" AS "BusinessProcessGroup",
+	CASE WHEN "bpi"."Group" = '' 
+		THEN '$Views_BusinessProcessTemplates_NoGroup_Sql'
+		ELSE "bpi"."Group"
+	END AS "BusinessProcessGroupCaption"
+	}
+FROM "BusinessProcessInfo" AS "bpi"
+where true
+	#param(Name, "bpi"."Name")
+	#param(Group, "bpi"."Group")
+	#param(GroupHidden, "bpi"."Group")
+	#param(StartFromCard, "bpi"."StartFromCard")
+	#param(Multiple, "bpi"."Multiple")
+	#if(CardType){
+	AND EXISTS (
+		SELECT NULL
+		FROM "BusinessProcessCardTypes" AS "bpct"
+		WHERE "bpct"."ID" = "bpi"."ID"
+			#param(CardType, "bpct"."CardTypeID"))
+	}
+#if(Normal){
+ORDER BY #order_by
+}
+#if(ByGroup) {
+GROUP BY "bpi"."Group"
+ORDER BY "bpi"."Group"
+}

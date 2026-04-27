@@ -1,0 +1,241 @@
+﻿{
+  "Alias": "OcrRequests",
+  "Caption": "$Views_Names_OcrRequests",
+  "GroupName": "Ocr",
+  "ID": "9eed84c8-53f0-4d9a-8619-bdf97c0fc615",
+  "JsonMetadataSource::txt": "OcrRequests JSONMETA",
+  "MsQuerySource::txt": "OcrRequests MSSQL",
+  "PgQuerySource::txt": "OcrRequests PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART OcrRequests JSONMETA]
+{
+  "Alias": "OcrRequests",
+  "Appearance": "RequestStateAppearance",
+  "Caption": "$Views_Names_OcrRequests",
+  "Columns": [
+    {
+      "Alias": "RequestID",
+      "Hidden": true,
+      "Type": "$OcrRequests.RowID"
+    },
+    {
+      "Alias": "RequestIsMain",
+      "Caption": "$Views_OcrRequests_IsMain",
+      "Type": "$OcrRequests.IsMain"
+    },
+    {
+      "Alias": "RequestCreated",
+      "Caption": "$Views_OcrRequests_Created",
+      "SortBy": "Created",
+      "Type": "$OcrRequests.Created"
+    },
+    {
+      "Alias": "RequestCreatedByName",
+      "Caption": "$Views_OcrRequests_CreatedBy",
+      "SortBy": "CreatedByName",
+      "Type": "$OcrRequests.CreatedByName"
+    },
+    {
+      "Alias": "RequestLanguages",
+      "Caption": "$Views_OcrRequests_Languages",
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "RequestConfidence",
+      "Caption": "$Views_OcrRequests_Confidence",
+      "Type": "$OcrRequests.Confidence"
+    },
+    {
+      "Alias": "RequestPreprocess",
+      "Caption": "$Views_OcrRequests_Preprocess",
+      "Type": "$OcrRequests.Preprocess"
+    },
+    {
+      "Alias": "RequestDetectRotation",
+      "Caption": "$Views_OcrRequests_Autorotation",
+      "Type": "$OcrRequests.DetectRotation"
+    },
+    {
+      "Alias": "RequestDetectTables",
+      "Caption": "$Views_OcrRequests_Tables",
+      "Type": "$OcrRequests.DetectTables"
+    },
+    {
+      "Alias": "RequestOverwrite",
+      "Caption": "$Views_OcrRequests_Overwrite",
+      "Type": "$OcrRequests.Overwrite"
+    },
+    {
+      "Alias": "RequestSegmentationMode",
+      "Caption": "$Views_OcrRequests_SegmentationMode",
+      "Localizable": true,
+      "Type": "$OcrRequests.SegmentationModeName"
+    },
+    {
+      "Alias": "RequestStateAppearance",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RequestCreated",
+      "SortDirection": "Descending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "Operation",
+      "Caption": "$Views_OcrRequests_Operation_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "OcrOperations"
+      ],
+      "Type": "$OcrRequests.ID"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Request",
+      "RefSection": [
+        "OcrRequests"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART OcrRequests MSSQL]
+SELECT
+#if(Normal) {
+	[t].[RequestID],
+	[t].[RequestIsMain],
+	[t].[RequestCreated],
+	[t].[RequestCreatedByName],
+	COALESCE(
+		STUFF((
+			SELECT CONCAT(N', ', CHAR(10), [LanguageCaption])
+			FROM [OcrRequestsLanguages] WITH (NOLOCK)
+			WHERE [ParentRowID] = [t].[RequestID]
+			FOR XML PATH('')), 1, 3, N''),
+		N'Auto') AS [RequestLanguages],
+	[t].[RequestConfidence] AS [RequestConfidence],
+	[t].[RequestPreprocess],
+	[t].[RequestDetectRotation],
+	[t].[RequestDetectTables],
+	[t].[RequestOverwrite],
+	[t].[RequestSegmentationMode],
+	N'#appearance(Background: ' +
+		CASE [t].[RequestStateID]
+			WHEN 2 THEN N'#4D52F270' -- Completed => green
+			WHEN 1 THEN N'#4DD6E865' -- Active => yellow green
+			WHEN 3 THEN N'#4DF7A934' -- Interrupted => orange
+			ELSE N'#00000000'		-- Transparent
+		END + N')' AS [RequestStateAppearance]
+}
+#if(Count) {
+	[t].*
+}
+FROM (
+	SELECT
+	#if(Normal) {
+		[RowID]					AS [RequestID],
+		[StateID]				AS [RequestStateID],
+		[IsMain]				AS [RequestIsMain],
+		[Created]				AS [RequestCreated],
+		[CreatedByName]			AS [RequestCreatedByName],
+		[Confidence]			AS [RequestConfidence],
+		[Preprocess]			AS [RequestPreprocess],
+		[DetectRotation]		AS [RequestDetectRotation],
+		[DetectTables]			AS [RequestDetectTables],
+		[Overwrite]				AS [RequestOverwrite],
+		[SegmentationModeName]	AS [RequestSegmentationMode],
+		ROW_NUMBER() OVER (ORDER BY #order_by) AS [rn]
+	}
+	#if(Count) {
+		COUNT(*) 				AS [Count]
+	}
+	FROM [OcrRequests] WITH (NOLOCK)
+	WHERE 1 = 1
+		#param(Operation, [ID])
+) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset)
+	AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+
+
+[TEXTPART OcrRequests PGSQL]
+SELECT
+#if(Normal) {
+	"t"."RequestID",
+	"t"."RequestIsMain",
+	"t"."RequestCreated",
+	"t"."RequestCreatedByName",
+	COALESCE((
+		SELECT string_agg("LanguageCaption", CONCAT(', ', CHR(10)))
+		FROM "OcrRequestsLanguages"
+		WHERE "ParentRowID" = "t"."RequestID"),
+		'Auto') AS "RequestLanguages",
+	"t"."RequestConfidence" AS "RequestConfidence",
+	"t"."RequestPreprocess",
+	"t"."RequestDetectRotation",
+	"t"."RequestDetectTables",
+	"t"."RequestOverwrite",
+	"t"."RequestSegmentationMode",
+	'#appearance(Background: ' ||
+		CASE "t"."RequestStateID"
+			WHEN 2 THEN '#4D52F270' -- Completed => green
+			WHEN 1 THEN '#4DD6E865' -- Active => yellow
+			WHEN 3 THEN '#4DF7A934' -- Interrupted => orange
+			ELSE '#00000000'		-- Transparent
+		END || ')' AS "RequestStateAppearance"
+}
+#if(Count) {
+	"t".*
+}
+FROM (
+	SELECT
+	#if(Normal) {
+		"RowID"					AS "RequestID",
+		"StateID"				AS "RequestStateID",
+		"IsMain"				AS "RequestIsMain",
+		"Created"				AS "RequestCreated",
+		"CreatedByName"			AS "RequestCreatedByName",
+		"Confidence"			AS "RequestConfidence",
+		"Preprocess"			AS "RequestPreprocess",
+		"DetectRotation"		AS "RequestDetectRotation",
+		"DetectTables"			AS "RequestDetectTables",
+		"Overwrite"				AS "RequestOverwrite",
+		"SegmentationModeName"	AS "RequestSegmentationMode"
+	}
+	#if(Count) {
+		COUNT(*) 				AS "Count"
+	}
+	FROM "OcrRequests"
+	WHERE 1 = 1
+		#param(Operation, "ID")
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	}
+) AS "t"

@@ -1,0 +1,176 @@
+﻿{
+  "Alias": "WfResolutionAuthors",
+  "Caption": "$Views_Names_WfResolutionAuthors",
+  "GroupName": "Kr Wf",
+  "ID": "f3cc3c6c-67c6-477e-a2ab-99fb0bd6e95f",
+  "JsonMetadataSource::txt": "WfResolutionAuthors JSONMETA",
+  "MsQuerySource::txt": "WfResolutionAuthors MSSQL",
+  "PgQuerySource::txt": "WfResolutionAuthors PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART WfResolutionAuthors JSONMETA]
+{
+  "Alias": "WfResolutionAuthors",
+  "Caption": "$Views_Names_WfResolutionAuthors",
+  "Columns": [
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "$KrSettingsTaskAuthor.AuthorID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_WfResolutionAuthors_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.UserName",
+      "Type": "$KrSettingsTaskAuthor.AuthorName"
+    },
+    {
+      "Alias": "Departments",
+      "Caption": "$Views_WfResolutionAuthors_Departments",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "UserName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WfResolutionAuthors_Name_Param",
+      "Type": "$KrSettingsTaskAuthor.AuthorName"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "User",
+      "DisplayValueColumn": "UserName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "WfResolutionAuthors"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WfResolutionAuthors MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[UserID],
+	[t].[UserName],
+	[t].[Departments]
+	}
+	#if(Count) {
+	[t].[cnt]
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].*,
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM (
+		SELECT DISTINCT
+			[ta].[AuthorID]				AS [UserID],
+			[ta].[AuthorName]			AS [UserName],
+			STUFF((
+				SELECT N', ' + [d].[Name]
+				FROM [Roles] AS [d] WITH (NOLOCK)
+				INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK)
+					ON [ru].[ID] = [d].[ID]
+				WHERE [d].[TypeID] = 2
+					AND [ru].[UserID] = [ta].[AuthorID]
+				ORDER BY [d].[Name]
+				FOR XML PATH('')
+			), 1, 2, N'') AS [Departments]
+		FROM [KrSettingsTaskAuthors] AS [tas] WITH (NOLOCK)
+		LEFT JOIN [KrSettingsTaskAuthor] AS [ta] WITH (NOLOCK)
+			ON [ta].[AuthorsRowID] = [tas].[RowID]
+		LEFT JOIN [KrSettingsTaskAuthorReplace] AS [tar] WITH (NOLOCK)
+			ON [tar].[AuthorsRowID] = [tas].[RowID]
+		INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+			ON [r].[ID] = [tar].[AuthorReplaceID]
+		INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK)
+			ON [ru].[ID] = [tar].[AuthorReplaceID]
+		WHERE [r].[Hidden] = 0
+			#param(Name, [ta].[AuthorName])
+			#param(CurrentUserID, [ru].[UserID])
+		) AS [t]
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART WfResolutionAuthors PGSQL]
+SELECT
+	"t".*
+FROM (
+	SELECT
+		#if(Normal) {
+		"t".*
+		}
+		#if(Count) {
+		count(*) AS "cnt"
+		}
+	FROM (
+		SELECT DISTINCT
+			"ta"."AuthorID"				AS "UserID",
+			"ta"."AuthorName"			AS "UserName",
+			(
+				SELECT string_agg("Name", ', ')
+				FROM (
+					SELECT "d"."Name"
+					FROM "Roles" AS "d"
+					INNER JOIN "RoleUsers" AS "ru"
+						ON "ru"."ID" = "d"."ID"
+					WHERE "d"."TypeID" = 2
+						AND "ru"."UserID" = "ta"."AuthorID"
+					ORDER BY "d"."Name") AS "names"
+			) AS "Departments"
+		FROM "KrSettingsTaskAuthors" AS "tas"
+		LEFT JOIN "KrSettingsTaskAuthor" AS "ta"
+			ON "ta"."AuthorsRowID" = "tas"."RowID"
+		LEFT JOIN "KrSettingsTaskAuthorReplace" AS "tar"
+			ON "tar"."AuthorsRowID" = "tas"."RowID"
+		INNER JOIN "Roles" AS "r"
+			ON "r"."ID" = "tar"."AuthorReplaceID"
+		INNER JOIN "RoleUsers" AS "ru"
+			ON "ru"."ID" = "tar"."AuthorReplaceID"
+		WHERE "r"."Hidden" = false
+			#param(Name, "ta"."AuthorName")
+			#param(CurrentUserID, "ru"."UserID")
+		) AS "t"
+	) AS "t"
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

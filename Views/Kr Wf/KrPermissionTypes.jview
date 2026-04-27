@@ -1,0 +1,83 @@
+﻿{
+  "Alias": "KrPermissionTypes",
+  "Caption": "$Views_Names_KrPermissionTypes",
+  "GroupName": "Kr Wf",
+  "ID": "54026b2a-6699-425c-8669-5ad5c75945f9",
+  "JsonMetadataSource::txt": "KrPermissionTypes JSONMETA",
+  "MsQuerySource::txt": "KrPermissionTypes MSSQL",
+  "PgQuerySource::txt": "KrPermissionTypes PGSQL"
+}
+
+[TEXTPART KrPermissionTypes JSONMETA]
+{
+  "Alias": "KrPermissionTypes",
+  "Caption": "$Views_Names_KrPermissionTypes",
+  "Columns": [
+    {
+      "Alias": "KrPermissionTypeID",
+      "Hidden": true,
+      "Type": "$KrPermissionTypes.TypeID"
+    },
+    {
+      "Alias": "KrPermissionTypeCaption",
+      "Caption": "$Views_KrPermissions_Types",
+      "Localizable": true,
+      "SortBy": "lType.Value",
+      "Type": "$KrPermissionTypes.TypeCaption"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "KrPermissionTypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "AccessRule",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "KrPermissions"
+      },
+      "Caption": "$Views_KrPermissionTypes_AccessRule",
+      "Hidden": true,
+      "RefSection": [
+        "KrPermissions"
+      ],
+      "Type": "$KrPermissionTypes.ID"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "KrPermissionType",
+      "DisplayValueColumn": "KrPermissionTypeCaption",
+      "RefSection": [
+        "KrPermissionTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionTypes MSSQL]
+SELECT
+	[t].[TypeID] AS [KrPermissionTypeID],
+	[t].[TypeCaption] AS [KrPermissionTypeCaption]
+FROM [KrPermissionTypes] AS [t] WITH(NOLOCK)
+CROSS APPLY [Localization]([t].[TypeCaption], #param(locale)) AS [lType]
+WHERE 1 = 1
+	#param(AccessRule, [t].[ID])
+ORDER BY #order_by
+
+
+[TEXTPART KrPermissionTypes PGSQL]
+SELECT
+	"t"."TypeID" AS "KrPermissionTypeID",
+	"t"."TypeCaption" AS "KrPermissionTypeCaption"
+FROM "KrPermissionTypes" AS "t"
+CROSS JOIN "Localization"("t"."TypeCaption", #param(locale)) AS "lType"
+WHERE true
+	#param(AccessRule, "t"."ID")
+ORDER BY #order_by

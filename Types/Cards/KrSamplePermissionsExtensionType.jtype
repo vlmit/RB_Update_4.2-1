@@ -1,0 +1,88 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "An example of card type used to extend access rules in standard solution",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "ColumnsCount::int": 2
+          },
+          "Caption": "Amount",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "From",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "12191d26-ab6b-4a63-8941-3da878ca4fa1"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "f45e2e3f-5559-4800-a9f7-45276924234b",
+              "ToolTip": null,
+              "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "To",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "0dfa83e5-b7b3-45ee-91ea-d704847a947f"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "f45e2e3f-5559-4800-a9f7-45276924234b",
+              "ToolTip": null,
+              "Type::uid": "2860b9fd-2592-0ca1-ae99-e8051a04d4bb"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "KrSamplePermissionsExtensionType",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Permissions",
+  "ID::uid": "3e00b804-7905-484e-a50b-191ad1a118a2",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "KrSamplePermissionsExtensionType",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "12191d26-ab6b-4a63-8941-3da878ca4fa1",
+        "0dfa83e5-b7b3-45ee-91ea-d704847a947f"
+      ],
+      "SectionID::uid": "f45e2e3f-5559-4800-a9f7-45276924234b"
+    }
+  ],
+  "Validators": null
+}

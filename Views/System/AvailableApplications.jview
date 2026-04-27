@@ -1,0 +1,233 @@
+﻿{
+  "Alias": "AvailableApplications",
+  "Caption": "$Views_Names_AvailableApplications",
+  "Description": "Используется в TessaAppManager для проверки необходимости обновлений и для определения, доступности приложение пользователю",
+  "GroupName": "System",
+  "ID": "1a272344-a020-452a-b6e9-3720064ed760",
+  "JsonMetadataSource::txt": "AvailableApplications JSONMETA",
+  "MsQuerySource::txt": "AvailableApplications MSSQL",
+  "PgQuerySource::txt": "AvailableApplications PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART AvailableApplications JSONMETA]
+{
+  "Alias": "AvailableApplications",
+  "Caption": "$Views_Names_AvailableApplications",
+  "Columns": [
+    {
+      "Alias": "ID",
+      "Hidden": true,
+      "Type": "$Applications.ID"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Applications_Name",
+      "SortBy": "t.Name",
+      "Type": "$Applications.Name"
+    },
+    {
+      "Alias": "Alias",
+      "Caption": "$Views_Applications_Alias",
+      "FilterParameter": "Alias",
+      "FilterType": "Parameter",
+      "Type": "$Applications.Alias"
+    },
+    {
+      "Alias": "Icon",
+      "Hidden": true,
+      "Type": "$Applications.Icon"
+    },
+    {
+      "Alias": "Client64Bit",
+      "Caption": "$Views_Applications_Client64Bit",
+      "FilterParameter": "Client64Bit",
+      "FilterType": "Parameter",
+      "Type": "$Applications.Client64Bit"
+    },
+    {
+      "Alias": "ExecutableFileName",
+      "Caption": "$Views_Applications_ExecutableFileName",
+      "Type": "$Applications.ExecutableFileName"
+    },
+    {
+      "Alias": "ForAdmin",
+      "Caption": "$Views_Applications_ForAdmin",
+      "Type": "$Applications.ForAdmin"
+    },
+    {
+      "Alias": "AppManagerApiV2",
+      "Hidden": true,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "Hidden",
+      "Caption": "Скрывать приложение в AppManager-e",
+      "Hidden": true,
+      "Type": "$Applications.Hidden"
+    },
+    {
+      "Alias": "AppVersion",
+      "Caption": "$Views_Applications_AppVersion",
+      "Type": "$Applications.AppVersion"
+    },
+    {
+      "Alias": "PlatformVersion",
+      "Caption": "$Views_Applications_PlatformVersion",
+      "Type": "$Applications.PlatformVersion"
+    },
+    {
+      "Alias": "Modified",
+      "Hidden": true,
+      "Type": "$Instances.Modified"
+    },
+    {
+      "Alias": "GroupName",
+      "Caption": "$Views_Applications_GroupName",
+      "Hidden": true,
+      "Type": "$Applications.GroupName"
+    },
+    {
+      "Alias": "LocalizedGroupName",
+      "Caption": "$Views_Applications_GroupName",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Name",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Alias",
+      "Caption": "$Views_AvailableApplications_Alias",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$Applications.Alias"
+    },
+    {
+      "Alias": "Client64Bit",
+      "Caption": "$Views_AvailableApplications_Client64Bit",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$Applications.Client64Bit"
+    },
+    {
+      "Alias": "GetIcon",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_AvailableApplications_GetIcon",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "PublishMode",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_AvailableApplications_PublishMode",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Null"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AvailableApplications MSSQL]
+SELECT
+	[t].[ID],
+	[t].[Name],
+	[t].[Alias],
+	#if(GetIcon && GetIcon.CriteriaName == CriteriaOperatorConst.IsTrue) { [t].[Icon] } { CAST(NULL AS varbinary(max)) } AS [Icon],
+	[t].[Client64Bit],
+	[t].[ExecutableFileName],
+	[t].[ForAdmin],
+	CAST (1 AS bit) AS [AppManagerApiV2], -- communication with Tessa Applications <= 4.0.x
+	[t].[Hidden],
+	[t].[AppVersion],
+	[t].[PlatformVersion],
+	[i].[Modified],
+	[t].[GroupName],
+	[l].[Value] AS [LocalizedGroupName]
+FROM [Applications] AS [t] WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[GroupName], #param(locale)) AS [l]
+INNER JOIN [Instances] AS [i] WITH (NOLOCK)
+	ON [i].[ID] = [t].[ID]
+WHERE 1 = 1
+	#param(Alias, [t].[Alias])
+	#param(Client64Bit, [t].[Client64Bit])
+	#if(!Administrator) {
+	AND [t].[ForAdmin] = 0
+	}
+	#if(!Administrator || !PublishMode) {
+	AND (
+		NOT EXISTS (
+			SELECT NULL
+			FROM [ApplicationRoles] AS [r] WITH (NOLOCK)
+			WHERE [r].[ID] = [t].[ID])
+		OR
+		EXISTS (
+			SELECT NULL
+			FROM [ApplicationRoles] AS [r] WITH (NOLOCK)
+			INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK)
+				ON [ru].[ID] = [r].[RoleID]
+			WHERE [r].[ID] = [t].[ID]
+				AND [ru].[IsDeputy] = 0
+				#param(CurrentUserID, [ru].[UserID])))
+	}
+ORDER BY #order_by
+
+
+[TEXTPART AvailableApplications PGSQL]
+SELECT
+	"t"."ID",
+	"t"."Name",
+	"t"."Alias",
+	#if(GetIcon && GetIcon.CriteriaName == CriteriaOperatorConst.IsTrue) { "t"."Icon" } { NULL::bytea } AS "Icon",
+	"t"."Client64Bit",
+	"t"."ExecutableFileName",
+	"t"."ForAdmin",
+	true AS "AppManagerApiV2", -- communication with Tessa Applications <= 4.0.x
+	"t"."Hidden",
+	"t"."AppVersion",
+	"t"."PlatformVersion",
+	"i"."Modified",
+	"t"."GroupName",
+	"l"."Value" AS "LocalizedGroupName"
+FROM "Applications" AS "t"
+CROSS JOIN "Localization"("t"."GroupName", #param(locale)) AS "l"
+INNER JOIN "Instances" AS "i"
+	ON "i"."ID" = "t"."ID"
+WHERE true
+	#param(Alias, "t"."Alias")
+	#param(Client64Bit, "t"."Client64Bit")
+	#if(!Administrator) {
+	AND "t"."ForAdmin" = false
+	}
+	#if(!Administrator || !PublishMode) {
+	AND (
+		NOT EXISTS (
+			SELECT NULL
+			FROM "ApplicationRoles" AS "r"
+			WHERE "r"."ID" = "t"."ID")
+		OR
+		EXISTS (
+			SELECT NULL
+			FROM "ApplicationRoles" AS "r"
+			INNER JOIN "RoleUsers" AS "ru"
+				ON "ru"."ID" = "r"."RoleID"
+			WHERE "r"."ID" = "t"."ID"
+				AND "ru"."IsDeputy" = false
+				#param(CurrentUserID, "ru"."UserID")))
+	}
+ORDER BY #order_by

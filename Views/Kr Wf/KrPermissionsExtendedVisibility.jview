@@ -1,0 +1,212 @@
+﻿{
+  "Alias": "KrPermissionsExtendedVisibility",
+  "Caption": "$Views_Names_KrPermissionsExtendedVisibility",
+  "GroupName": "Kr Wf",
+  "ID": "acbfb44c-d180-4b5b-9719-5868631b998a",
+  "JsonMetadataSource::txt": "KrPermissionsExtendedVisibility JSONMETA",
+  "MsQuerySource::txt": "KrPermissionsExtendedVisibility MSSQL",
+  "PgQuerySource::txt": "KrPermissionsExtendedVisibility PGSQL"
+}
+
+[TEXTPART KrPermissionsExtendedVisibility JSONMETA]
+{
+  "Alias": "KrPermissionsExtendedVisibility",
+  "Caption": "$Views_Names_KrPermissionsExtendedVisibility",
+  "Columns": [
+    {
+      "Alias": "KrPermissionsID",
+      "Hidden": true,
+      "Type": "$KrPermissions.ID"
+    },
+    {
+      "Alias": "KrPermissionsCaption",
+      "Caption": "$Views_KrPermissionsExtendedVisibility_AccessRule",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "SortBy": "t.Caption",
+      "Type": "$KrPermissions.Caption"
+    },
+    {
+      "Alias": "KrPermissionsControlAlias",
+      "Caption": "$Views_KrPermissionsExtendedVisibility_ControlAlias",
+      "FilterParameter": "Alias",
+      "FilterType": "Parameter",
+      "SortBy": "pe.Alias",
+      "Type": "$KrPermissionExtendedVisibilityRules.Alias"
+    },
+    {
+      "Alias": "KrPermissionsControlType",
+      "Caption": "$Views_KrPermissionsExtendedVisibility_ControlType",
+      "FilterParameter": "ControlType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "pe.ControlTypeID",
+      "Type": "$KrPermissionExtendedVisibilityRules.ControlTypeName"
+    },
+    {
+      "Alias": "KrPermissionsIsHidden",
+      "Caption": "$Views_KrPermissionsExtendedVisibility_HideControl",
+      "FilterParameter": "IsHidden",
+      "FilterType": "Parameter",
+      "SortBy": "pe.IsHidden",
+      "Type": "$KrPermissionExtendedVisibilityRules.IsHidden"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "KrPermissionsCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_KrPermissionsExtendedVisibility_Name_Param",
+      "Type": "$KrPermissions.Caption"
+    },
+    {
+      "Alias": "AccessRule",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "KrPermissions"
+      },
+      "Caption": "$Views_KrPermissionsExtendedVisibility_AccessRule_Param",
+      "RefSection": [
+        "KrPermissions"
+      ],
+      "Type": "$KrPermissions.ID"
+    },
+    {
+      "Alias": "Alias",
+      "Caption": "$Views_KrPermissionsExtendedVisibility_ControlAlias_Param",
+      "Type": "$KrPermissionExtendedVisibilityRules.Alias"
+    },
+    {
+      "Alias": "ControlType",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "KrPermissionsControlTypes"
+      },
+      "Caption": "$Views_KrPermissionsExtendedVisibility_ControlType_Param",
+      "DropDownInfo": {
+        "ViewAlias": "KrPermissionsControlTypes"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "KrPermissionsControlTypes"
+      ],
+      "Type": "$KrPermissionExtendedVisibilityRules.ControlTypeID"
+    },
+    {
+      "Alias": "IsHidden",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_KrPermissionsExtendedVisibility_HideControl_Param",
+      "Type": "$KrPermissionExtendedVisibilityRules.IsHidden"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "KrPermissions",
+      "DisplayValueColumn": "KrPermissionsCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "KrPermissions"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionsExtendedVisibility MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		
+		[t].[ID]					AS [KrPermissionsID],
+		[t].[Caption]				AS [KrPermissionsCaption],
+		[pe].[Alias]				AS [KrPermissionsControlAlias],
+		[pe].[ControlTypeName]		AS [KrPermissionsControlType],
+		[pe].[IsHidden]				AS [KrPermissionsIsHidden],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(1)					AS [cnt]
+		}
+	FROM [KrPermissions] AS [t] WITH (NOLOCK)
+	
+	INNER JOIN [KrPermissionExtendedVisibilityRules] AS [pe] WITH(NOLOCK)
+		ON [t].[ID] = [pe].[ID]
+		
+	WHERE [t].[IsExtended] = 1
+		#param(Caption, [t].[Caption])
+		#param(AccessRule, [t].[ID])
+		#param(Alias, [pe].[Alias])
+		#param(ControlType, [pe].[ControlTypeID])
+		#param(IsHidden, [pe].[IsHidden])
+		
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn];
+}
+
+
+[TEXTPART KrPermissionsExtendedVisibility PGSQL]
+SELECT
+	"t".*
+FROM (
+	SELECT
+		#if(Normal) {
+		
+		"t"."ID"					AS "KrPermissionsID",
+		"t"."Caption"				AS "KrPermissionsCaption",
+		"pe"."Alias"				AS "KrPermissionsControlAlias",
+		"pe"."ControlTypeName"		AS "KrPermissionsControlType",
+		"pe"."IsHidden"				AS "KrPermissionsIsHidden",
+		row_number() OVER (ORDER BY #order_by) AS "rn"
+		}
+		#if(Count) {
+		count(1)					AS "cnt"
+		}
+	FROM "KrPermissions" AS "t"
+	
+	INNER JOIN "KrPermissionExtendedVisibilityRules" AS "pe"
+		ON "t"."ID" = "pe"."ID"
+		
+	WHERE "t"."IsExtended"
+		#param(Caption, "t"."Caption")
+		#param(AccessRule, "t"."ID")
+		#param(Alias, "pe"."Alias")
+		#param(ControlType, "pe"."ControlTypeID")
+		#param(IsHidden, "pe"."IsHidden")
+		
+	) AS "t"
+#if(Normal) {
+ORDER BY "t"."rn"
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value);
+}

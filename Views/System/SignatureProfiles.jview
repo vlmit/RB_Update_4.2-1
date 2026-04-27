@@ -1,0 +1,74 @@
+﻿{
+  "Alias": "SignatureProfiles",
+  "Caption": "$Views_Names_SignatureProfiles",
+  "GroupName": "System",
+  "ID": "8cffc16e-6086-488b-99ce-bba53520e37c",
+  "JsonMetadataSource::txt": "SignatureProfiles JSONMETA",
+  "MsQuerySource::txt": "SignatureProfiles MSSQL",
+  "PgQuerySource::txt": "SignatureProfiles PGSQL"
+}
+
+[TEXTPART SignatureProfiles JSONMETA]
+{
+  "Alias": "SignatureProfiles",
+  "Caption": "$Views_Names_SignatureProfiles",
+  "Columns": [
+    {
+      "Alias": "SignatureProfileID",
+      "Hidden": true,
+      "Type": "$SignatureProfiles.ID"
+    },
+    {
+      "Alias": "SignatureProfileName",
+      "Caption": "$Views_SignatureProfiles_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$SignatureProfiles.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_SignatureProfiles_Name_Param",
+      "Multiple": false,
+      "Type": "$SignatureProfiles.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "SignatureProfile",
+      "DisplayValueColumn": "SignatureProfileName",
+      "RefSection": [
+        "SignatureProfiles"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART SignatureProfiles MSSQL]
+SELECT
+	[st].[ID]		AS [SignatureProfileID],
+	[st].[Name]		AS [SignatureProfileName]
+FROM [SignatureProfiles] AS [st] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([st].[Name], #param(locale)) AS [lName]
+}
+WHERE [st].[ID] <> 0
+	#param(Name, [lName].[Value])
+ORDER BY [st].[ID]
+
+
+[TEXTPART SignatureProfiles PGSQL]
+SELECT
+	"st"."ID"		AS "SignatureProfileID",
+	"st"."Name"		AS "SignatureProfileName"
+FROM "SignatureProfiles" AS "st"
+#if(Name) {
+CROSS JOIN "Localization"("st"."Name", #param(locale)) AS "lName"
+}
+WHERE "st"."ID" != 0
+	#param(Name, "lName"."Value")
+ORDER BY "st"."Name"

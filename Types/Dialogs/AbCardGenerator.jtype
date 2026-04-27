@@ -1,0 +1,106 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$AbTest_CardTypes_Blocks_Tabs_TestCardsCreation",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "fed3de8d-8be1-4976-bee3-92feb841d39c",
+          "Name": "UserCount",
+          "SchemeType": "Int32 Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "be8cfc0a-dd89-4500-913a-2b9675c30151",
+          "Name": "PartnerCount",
+          "SchemeType": "Int32 Not Null"
+        }
+      ],
+      "Description": null,
+      "ID::uid": "f5f4c30c-2ae4-494d-991e-fa149fe31b79",
+      "Name": "Table",
+      "TableType::int": 1
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$AbTest_CardTypes_Blocks_Tabs_TestCardsCreation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$AbTest_CardTypes_Controls_UsersCount",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MinValue": 0
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "fed3de8d-8be1-4976-bee3-92feb841d39c"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "f5f4c30c-2ae4-494d-991e-fa149fe31b79",
+              "ToolTip": null,
+              "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$AbTest_CardTypes_Controls_PartnersCount",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MinValue": 0
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "be8cfc0a-dd89-4500-913a-2b9675c30151"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "f5f4c30c-2ae4-494d-991e-fa149fe31b79",
+              "ToolTip": null,
+              "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Tab",
+      "TabCaption": "$Cards_TabDefaultCaption"
+    }
+  ],
+  "Group": "AbTest",
+  "ID::uid": "6d9a64e1-9db2-44ce-960d-a601e8dfb208",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "AbCardGenerator",
+  "SchemeItems": null,
+  "Validators": null
+}

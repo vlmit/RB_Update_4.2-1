@@ -1,0 +1,86 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "e79da00d-7ff3-4cae-ab9e-51495ada001f",
+  "Name": "FileVault",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "CardTypes_Controls_FileVaultVisibility",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Operating mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим работы"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_TypesNames_FileVaultStorage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File vault storage"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Хранилище центра файлов"
+        }
+      ]
+    },
+    {
+      "Name": "FileVault_Error_NoCreateChildSharedFolderPermission",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Only file vault administrators can create a shared folder"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Только администраторы центра файлов могут создать общую папку"
+        }
+      ]
+    },
+    {
+      "Name": "FileVault_Messages_FileVaultSettingsInvalid",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Errors occurred while checking the structure of the file vault settings object."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Возникли ошибки при проверке структуры объекта настроек центра файлов."
+        }
+      ]
+    },
+    {
+      "Name": "Groups_Descriptions_FileVaultAdministrators",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can edit file vault configuration."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Позволяют редактировать настройки центра файлов"
+        }
+      ]
+    },
+    {
+      "Name": "Groups_Names_FileVaultAdministrators",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File vault administrators"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Администраторы центра файлов"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_ApprovalProcessControl",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ManageMethod",
+              "ComplexColumnID::uid": "de413ed8-e009-41ed-918c-df0aeac34d1a",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "HideSelectorButton": true,
+                "ParameterAlias": "Name",
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "ApprovalProcessControlMethods",
+                "ViewAliasComboBox": "ApprovalProcessControlMethods"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "7a791775-ad11-4b9b-a793-ed0cc0aaf29d",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ManageType",
+              "ComplexColumnID::uid": "d8adf3e0-ba26-4eab-8edf-5a5ccc14dee6",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "HideSelectorButton": true,
+                "ParameterAlias": "Name",
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "ApprovalProcessControlTypes",
+                "ViewAliasComboBox": "ApprovalProcessControlTypes"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "7a791775-ad11-4b9b-a793-ed0cc0aaf29d",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "Block1"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "ChangeStateBlock",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_State",
+              "ComplexColumnID::uid": "93a2b331-702d-4699-9230-169e2134fc03",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "HideSelectorButton": true,
+                "ParameterAlias": "Name",
+                "ViewAlias": "ApprovalProcessStates",
+                "ViewAliasComboBox": "ApprovalProcessStates"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "State",
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "7a791775-ad11-4b9b-a793-ed0cc0aaf29d",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_UpdateCycleNumber",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "95b4a948-9391-4f32-8bff-a17b69184230"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "7a791775-ad11-4b9b-a793-ed0cc0aaf29d",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ShowRevokeButton",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "783fbdd2-f403-448a-9f86-3cdb345a7c3c"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "7a791775-ad11-4b9b-a793-ed0cc0aaf29d",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_InfoMode",
+              "ComplexColumnID::uid": "e26fb627-5619-4780-8011-e04f6ff41b1b",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "HideSelectorButton": true,
+                "ParameterAlias": "Name",
+                "ViewAlias": "ApprovalProcessInfoModes",
+                "ViewAliasComboBox": "ApprovalProcessInfoModes"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "7a791775-ad11-4b9b-a793-ed0cc0aaf29d",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "ChangeStateBlock"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Main",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "WorkflowActions",
+  "ID::uid": "cd3cf5d5-cae6-4e0b-855d-b1b59338faf0",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "WorkflowApprovalProcessControlAction",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "d8adf3e0-ba26-4eab-8edf-5a5ccc14dee6",
+        "de413ed8-e009-41ed-918c-df0aeac34d1a",
+        "93a2b331-702d-4699-9230-169e2134fc03",
+        "95b4a948-9391-4f32-8bff-a17b69184230",
+        "783fbdd2-f403-448a-9f86-3cdb345a7c3c",
+        "e26fb627-5619-4780-8011-e04f6ff41b1b"
+      ],
+      "SectionID::uid": "7a791775-ad11-4b9b-a793-ed0cc0aaf29d"
+    }
+  ],
+  "Validators": null
+}

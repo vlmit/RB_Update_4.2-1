@@ -1,0 +1,247 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$Cards_FileFromTemplate_CreateDialog",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "81859b2c-e86c-4ac4-a58f-d5495402c382",
+          "Name": "ConvertToPDF",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "f1a1d079-dd30-47e2-be91-cac63e7474a4",
+          "Name": "FileTemplateFileName",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "58601b03-1196-494c-8651-0efb511e7543",
+          "Name": "FileTemplateFileExtension",
+          "SchemeType": "String(Max) Not Null"
+        }
+      ],
+      "Description": null,
+      "ID::uid": "7d8c306f-2c1e-4a0e-b166-9803272cd53e",
+      "Name": "FileTemplateParametersVirtual",
+      "TableType::int": 1
+    },
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "7a0b1d6d-ee2c-4276-9bef-eb071705d20a",
+          "Name": "FileTemplateName",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "c54dc8d7-7104-4157-bdbf-6bb47651ff61",
+          "Name": "FileTemplateFileExtension",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "6060b92c-33ba-4d6a-aa70-966f12dd6651",
+          "Name": "FileTemplateFileName",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "d47f9deb-2585-4e44-bf13-08ef67422532",
+          "Name": "FileTemplateID",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "bed1a097-0526-420a-b45c-39fa79d494f9",
+          "Name": "FileTemplateGroupName",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "7f00bebe-f247-4a87-ae34-723a9672aa22",
+          "Name": "ConvertToPdf",
+          "SchemeType": "Boolean Not Null"
+        }
+      ],
+      "Description": null,
+      "ID::uid": "ed862670-9e2f-449c-a0d3-f2afeda6a437",
+      "Name": "CreateFileFromTemplateVirtual",
+      "TableType::int": 2
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "TemplatesList",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": false
+              },
+              "Caption": "FileTemplates",
+              "ControlSettings": {
+                "MinRowHeight::dbl": 40.0,
+                "ScrollWithMouse": true,
+                "ViewAlias": "CreateFileFromTemplate"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "FileTemplates",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "e9a5084d-c76e-4096-ab2d-84f313710812"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 0,
+            "ColumnSpan::int": 1,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 0,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "TemplatesList"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_TemplateSettings",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$Cards_FileFromTemplate_FileName",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 4,
+              "Name": "FileName",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "f1a1d079-dd30-47e2-be91-cac63e7474a4"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "7d8c306f-2c1e-4a0e-b166-9803272cd53e",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Cards_FileFromTemplate_Extension",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": "Extension",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "58601b03-1196-494c-8651-0efb511e7543"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "7d8c306f-2c1e-4a0e-b166-9803272cd53e",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Cards_FileFromTemplate_ConvertToPDF",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "ConvertToPDF",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "81859b2c-e86c-4ac4-a58f-d5495402c382"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "7d8c306f-2c1e-4a0e-b166-9803272cd53e",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 1,
+            "ColumnSpan::int": 1,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 0,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "TemplateParameters"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Columns": [
+          {
+            "::types": [
+              "dbl",
+              "dbl"
+            ]
+          },
+          1.0,
+          1.0
+        ],
+        "Rows": [
+          {
+            "::types": [
+              "dbl"
+            ]
+          },
+          1.0
+        ]
+      },
+      "Name": "CreateFileFromTemplate",
+      "TabCaption": "$Cards_FileFromTemplate_CreateDialog"
+    }
+  ],
+  "Group": "System",
+  "ID::uid": "98662e67-2e75-4d33-97d0-e1cefa096336",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "CreateFileFromTemplate",
+  "SchemeItems": null,
+  "Validators": null
+}

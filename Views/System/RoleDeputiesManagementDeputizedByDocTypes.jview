@@ -1,0 +1,766 @@
+﻿{
+  "Alias": "RoleDeputiesManagementDeputizedByDocTypes",
+  "Caption": "$Views_Names_RoleDeputiesManagementDeputizedByDocTypes",
+  "GroupName": "System",
+  "ID": "ac6ac7d9-e428-491b-94ff-1802da6b88b9",
+  "JsonMetadataSource::txt": "RoleDeputiesManagementDeputizedByDocTypes JSONMETA",
+  "MsQuerySource::txt": "RoleDeputiesManagementDeputizedByDocTypes MSSQL",
+  "PgQuerySource::txt": "RoleDeputiesManagementDeputizedByDocTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART RoleDeputiesManagementDeputizedByDocTypes JSONMETA]
+{
+  "Alias": "RoleDeputiesManagementDeputizedByDocTypes",
+  "Caption": "$Views_Names_RoleDeputiesManagementDeputizedByDocTypes",
+  "Columns": [
+    {
+      "Alias": "RoleDeputizedRoles",
+      "Caption": "$Views_RoleDeputiesManagementDeputized_Roles",
+      "Localizable": true,
+      "Type": "$RoleDeputies.DeputyName"
+    },
+    {
+      "Alias": "RoleDeputizedID",
+      "Hidden": true,
+      "Type": "$RoleDeputies.DeputizedID"
+    },
+    {
+      "Alias": "RoleDeputizedName",
+      "Caption": "$Views_RoleDeputies_RoleDeputized",
+      "FilterParameter": "Deputized",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "Name",
+      "Type": "$RoleDeputies.DeputizedName"
+    },
+    {
+      "Alias": "RoleDeputyTypes",
+      "Caption": "$CardTypes_Controls_DocumentTypes",
+      "FilterParameter": "TypeID",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "RoleDeputyFrom",
+      "Caption": "$Views_RoleDeputies_RoleDeputyFrom",
+      "SortBy": "MinDate",
+      "Type": "$RoleDeputies.MinDate"
+    },
+    {
+      "Alias": "RoleDeputyTo",
+      "Caption": "$Views_RoleDeputies_RoleDeputyTo",
+      "SortBy": "MaxDate",
+      "Type": "$RoleDeputies.MaxDate"
+    },
+    {
+      "Alias": "RoleDeputyIsPermanent",
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsPermanent",
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "RoleDeputyIsEnabled",
+      "Caption": "$Views_RoleDeputies_RoleDeputyAvailable",
+      "FilterParameter": "IsEnabled",
+      "FilterType": "Parameter",
+      "SortBy": "IsEnabled",
+      "Type": "$RoleDeputies.IsEnabled"
+    },
+    {
+      "Alias": "RoleDeputyIsActive",
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsActive",
+      "SortBy": "IsActive",
+      "Type": "$RoleDeputies.IsActive"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RoleDeputizedName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Deputized",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_RoleDeputies_RoleDeputized",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "Deputy",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_RoleDeputies_RoleDeputy",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "AvailableOnDate",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_RoleDeputies_AvailableOnDate",
+      "Multiple": false,
+      "Type": "Date Null"
+    },
+    {
+      "Alias": "IsEnabled",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_RoleDeputies_RoleDeputyAvailable",
+      "Multiple": false,
+      "Type": "$RoleDeputies.IsEnabled"
+    },
+    {
+      "Alias": "ShowAllDeputies",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_RoleDeputies_ShowAllDeputies",
+      "Multiple": false,
+      "Type": "$RoleDeputies.IsActive"
+    },
+    {
+      "Alias": "CardType",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_RoleDeputies_CardType",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "TypeID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Caption": "$Views_CurrentTasks_DocType_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "RefSection": [
+        "TypeForView"
+      ],
+      "Type": "$RoleDeputiesNestedManagementTypes.TypeID"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "RoleDeputized",
+      "DisplayValueColumn": "RoleDeputizedName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Users"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RoleDeputiesManagementDeputizedByDocTypes MSSQL]
+SELECT 
+    #if(Normal) {
+    #if(DeputiesSettings.UseDeputyRoleSeparation){
+    STUFF((
+        SELECT N', ' + [rdmr].[RoleName]
+        FROM [RoleDeputiesManagementRoles] AS [rdmr] WITH(NOLOCK)
+        WHERE [rdmr].[ParentRowID] = [t].[ParentRowID]
+        FOR XML PATH('')), 1, 2, N'')
+    }{ NULL }                       							AS [RoleDeputizedRoles],
+    [t].[RoleID]                        						AS [RoleDeputizedID],
+    [t].[Name]                      							AS [RoleDeputizedName],
+    [t].[RoleDeputyTypes]           							AS [RoleDeputyTypes],
+    [t].[MinDate]                	                            AS [RoleDeputyFrom],
+    [t].[MaxDate]                	                            AS [RoleDeputyTo],
+    CAST(0 as bit)                  							AS [RoleDeputyIsPermanent],
+    [t].[IsEnabled] 			                                AS [RoleDeputyIsEnabled],            
+    [t].[IsActive] 				                                AS [RoleDeputyIsActive],
+    [t].[rn] 													AS [rn]
+    }
+    #if(Count) {
+    count(*)                    								AS [cnt]
+    }
+
+FROM (SELECT *
+		#if(Normal){
+		, ROW_NUMBER() OVER (ORDER BY #order_by) AS [rn]
+		}
+FROM (
+    SELECT 
+        #if(Normal || Deputy){
+        	[r].[ID] as [RoleID], -- ID для соединения ролей
+        	[r].[Name],
+        }
+
+		[combined].[ParentRowID],
+        [combined].[NestedParentRowID],
+
+        CASE 
+            WHEN [combined].[IsFromManagement] = 1 THEN 
+                -- Наследуем типы документов пользователей из RoleDeputiesNestedManagementUsers с которыми были сджойнены пользователи из RoleDeputiesManagementUsers.
+                STUFF((
+    				SELECT N', {' + [rdnmt].[TypeCaption] + N'}'
+    				FROM [RoleDeputiesNestedManagementTypes] AS [rdnmt] WITH(NOLOCK)
+    				WHERE [rdnmt].[ParentRowID] = [combined].[NestedParentRowID]
+    				FOR XML PATH('')), 1, 2, N'')
+            WHEN [combined].[FilterTypes] = 1 THEN 
+                STUFF((
+    				SELECT N', {' + [rdnmt].[TypeCaption] + N'}'
+    				FROM [RoleDeputiesNestedManagementTypes] AS [rdnmt] WITH(NOLOCK)
+    				INNER JOIN [RoleDeputiesNestedManagementTypes] AS [main_types] WITH(NOLOCK) ON 
+        				[main_types].[ParentRowID] = combined.[NestedParentRowID] AND
+        				[main_types].[TypeID] = [rdnmt].[TypeID]
+    				WHERE [rdnmt].[ParentRowID] = [combined].[ParentRowID]
+    				FOR XML PATH('')), 1, 2, N'')
+            ELSE 
+                STUFF((
+    				SELECT N', {' + [rdnmt].[TypeCaption] + N'}'  -- Берем значение напрямую из TypeCaption
+    				FROM [RoleDeputiesNestedManagementTypes] AS [rdnmt] WITH(NOLOCK)
+    				WHERE [rdnmt].[ParentRowID] = [combined].[ParentRowID]
+    				FOR XML PATH('')), 1, 2, N'')
+        END AS [RoleDeputyTypes],
+
+        -- Если дата начала задана также и у вложенного замещения, отображать наибольшую
+        CASE
+            WHEN [combined].[IsFromManagement] = 1 -- подзаместители из RoleDeputiesManagement (флаг "IsFromManagement")
+            THEN
+                -- аналог GREATEST([rdnm].[MinDate], [rdm].[MinDate])
+                CASE 
+                    WHEN [rdm].[MinDate] > [rdnm_nested].[MinDate] THEN [rdm].[MinDate]
+                    ELSE [rdnm_nested].[MinDate]
+                END
+            WHEN [combined].[FilterTypes] = 1 -- подзаместители из RoleDeputiesNestedManagement (флаг "FilterTypes")
+            THEN
+                -- аналог GREATEST([rdnm].[MinDate], [rdnm_nested].[MinDate])
+                CASE 
+                    WHEN [rdnm].[MinDate] > [rdnm_nested].[MinDate] THEN [rdnm].[MinDate]
+                    ELSE [rdnm_nested].[MinDate]
+                END
+            ELSE [rdnm].[MinDate] -- без подзаместителей
+        END AS [MinDate],
+
+        -- Если дата окончания задана также и у вложенного замещения, отображать наименьшую
+        CASE
+            WHEN [combined].[IsFromManagement] = 1 -- подзаместители из RoleDeputiesManagement (флаг "IsFromManagement")
+            THEN
+                -- аналог LEAST([rdnm].[MaxDate], [rdm].[MaxDate])
+                CASE 
+                    WHEN [rdm].[MaxDate] < [rdnm_nested].[MaxDate] THEN [rdm].[MaxDate]
+                    ELSE [rdnm_nested].[MaxDate]
+                END
+            WHEN [combined].[FilterTypes] = 1 -- подзаместители из RoleDeputiesNestedManagement (флаг "FilterTypes")
+            THEN
+                -- аналог LEAST([rdnm].[MaxDate], [rdnm_nested].[MaxDate])
+                CASE 
+                    WHEN [rdnm].[MaxDate] < [rdnm_nested].[MaxDate] THEN [rdnm].[MaxDate]
+                    ELSE [rdnm_nested].[MaxDate]
+                END
+            ELSE [rdnm].[MaxDate] -- без подзаместителей
+        END AS [MaxDate],
+    		
+    	-- Если хоть одно звено в цепочке имеет IsEnabled = false, то весь результат false
+    	CASE
+    		WHEN ([combined].[IsFromManagement] = 1 AND ([rdm].[IsEnabled] = 0 OR [rdnm_nested].[IsEnabled] = 0))
+    			OR ([combined].[FilterTypes] = 1 AND ([rdnm].[IsEnabled] = 0 OR [rdnm_nested].[IsEnabled] = 0))
+    			OR ([rdnm].[IsEnabled] = 0)
+    		THEN CAST(0 as bit)
+    		ELSE COALESCE([rdm].[IsEnabled], [rdnm].[IsEnabled], [rdnm_nested].[IsEnabled], CAST(1 as bit))
+    	END AS [IsEnabled],
+    	
+    	CASE
+    		-- Замещение считается не "прямым", а "через звено", если джойнились подзаместители из RoleDeputiesManagement (флаг "IsFromManagement")
+    		-- или фильтруем типу, это значит, что джойнились подзаместители из таблицы RoleDeputiesNestedManagement (флаг "FilterTypes")
+	    	-- когда замещение через звено, то оба звена должны быть IsActive
+			WHEN (([combined].[IsFromManagement] = 1 AND [rdm].[IsActive] = 1 AND [rdnm_nested].[IsActive] = 1) --  подзаместители из RoleDeputiesManagement
+		    OR ([combined].[FilterTypes] = 1 AND [rdnm].[IsActive] = 1 AND [rdnm_nested].[IsActive] = 1) --  подзаместители из RoleDeputiesNestedManagement
+    		OR ([combined].[IsFromManagement] = 0 AND [combined].[FilterTypes] = 0 AND [rdnm].[IsActive] = 1) -- без подзаместителей
+    		) THEN CAST(1 as bit) ELSE CAST(0 as bit) 
+		END AS [IsActive]
+
+        FROM (
+        -- Исходные записи из RoleDeputiesNestedManagementUsers
+        SELECT
+            [rdnmu].[ID],
+            [rdnmu].[RowID],
+            [rdnmu].[ParentRowID], -- ID для соединения с основной информацией о замещении
+            NULL AS [NestedParentRowID], -- NestedParentRowID для наследования свойств "через звено"
+            CAST(0 as bit) AS [FilterTypes], -- Флаг показывает, что типы документов необходимо будет отфильтровать по пересечениям
+            CAST(0 as bit) AS [IsFromManagement] -- Флаг указывает, что запись из RoleDeputiesManagement
+        FROM [RoleDeputiesNestedManagementUsers] AS [rdnmu] WITH(NOLOCK)
+
+        WHERE 1=1
+            #param(Deputy, [rdnmu].[PersonalRoleID])
+            
+        #if(DeputiesSettings.DeputyTransitivityLevel > 0){
+        
+        UNION
+
+        -- Вложенные записи из RoleDeputiesNestedManagementUsers (только если их типы документов совпадают с основными)
+        SELECT
+            [rdnmu2].[ID],
+            [rdnmu2].[RowID],
+            [rdnmu2].[ParentRowID],
+            [rdnmu].[ParentRowID] AS [NestedParentRowID],
+            CAST(1 as bit) AS [FilterTypes], 
+            CAST(0 as bit) AS [IsFromManagement]
+        FROM [RoleDeputiesNestedManagementUsers] AS [rdnmu] WITH(NOLOCK)
+        INNER JOIN [RoleDeputiesNestedManagementUsers] AS [rdnmu2] WITH(NOLOCK) ON [rdnmu2].[PersonalRoleID] = [rdnmu].[ID]
+        INNER JOIN [RoleDeputiesNestedManagementTypes] AS [main_types] WITH(NOLOCK) ON [main_types].[ParentRowID] = [rdnmu].[ParentRowID]
+        INNER JOIN [RoleDeputiesNestedManagementTypes] AS [nested_types] WITH(NOLOCK) ON 
+            [nested_types].[ParentRowID] = [rdnmu2].[ParentRowID] AND
+            [main_types].[TypeID] = [nested_types].[TypeID]
+
+        WHERE 1=1
+            #param(Deputy, [rdnmu].[PersonalRoleID])
+
+        UNION
+        
+        -- Добавленные записи из RoleDeputiesManagementUsers (например кейс: Замещаемый (user1) -> Заместитель_ОБЩ (user2) -> Заместитель_ДОК (user3, Договор))
+        SELECT 
+            [rdmu].[ID], 
+            [rdmu].[RowID], 
+            [rdmu].[ParentRowID],
+            [rdnmu].[ParentRowID] AS [NestedParentRowID],
+            CAST(0 as bit) AS [FilterTypes],
+            CAST(1 as bit) AS [IsFromManagement]
+        FROM [RoleDeputiesManagementUsers] AS [rdmu] WITH(NOLOCK)
+        INNER JOIN [RoleDeputiesNestedManagementUsers] AS [rdnmu] WITH(NOLOCK) ON [rdnmu].[ID] = [rdmu].[PersonalRoleID]
+    
+        WHERE 1=1
+            #param(Deputy, [rdnmu].[PersonalRoleID])
+        
+        UNION
+        
+        -- Добавленные записи из RoleDeputiesManagementUsers с сопоставлением наоборот (например кейс: Замещаемый (user1) -> Заместитель_ДОК (user2, Договор) -> Заместитель_ОБЩ (user3))
+        SELECT 
+            [rdnmu].[ID],
+            [rdmu].[RowID], 
+            [rdmu].[ParentRowID],
+            [rdnmu].[ParentRowID] AS [NestedParentRowID], -- ParentRowID пользователя, для наследования свойств "через звено" (типы документов, период).
+            CAST(0 as bit) AS [FilterTypes],
+            CAST(1 as bit) AS [IsFromManagement]
+        FROM [RoleDeputiesManagementUsers] AS [rdmu] WITH(NOLOCK)
+        INNER JOIN [RoleDeputiesNestedManagementUsers] AS [rdnmu] WITH(NOLOCK) ON [rdnmu].[PersonalRoleID] = [rdmu].[ID]
+    
+        WHERE 1=1
+            #param(Deputy, [rdmu].[PersonalRoleID])
+        }
+        
+        ) AS [combined]
+        
+    
+    LEFT JOIN [RoleDeputiesNestedManagement] AS [rdnm] WITH(NOLOCK) ON combined.[ParentRowID] = [rdnm].[RowID]
+    LEFT JOIN [RoleDeputiesManagement] AS [rdm] WITH(NOLOCK) ON [combined].[IsFromManagement] = 1 AND [rdm].[RowID] = [combined].[ParentRowID]
+    LEFT JOIN [RoleDeputiesNestedManagementTypes] AS [rdnmt] WITH(NOLOCK) ON [combined].[ParentRowID] = [rdnmt].[ParentRowID] AND [combined].[FilterTypes] = 0 AND [combined].[IsFromManagement] = 0
+	LEFT JOIN [RoleDeputiesNestedManagement] AS [rdnm_nested] WITH(NOLOCK) ON [combined].[NestedParentRowID] = [rdnm_nested].[RowID]
+    
+    #if(Normal || Deputy){
+        INNER JOIN [Roles] AS [r] WITH(NOLOCK) ON [combined].[ID] = [r].[ID]
+    }
+    
+    WHERE 1=1
+        #param(Deputized, [combined].[ID])
+
+		#if(TypeID) {
+		-- Если один из заместителей общий, а не по документам, то необходимо фильтровать по документам из rdnm_nested, иначе из rdnm.
+			AND EXISTS(
+			
+				-- Без подзамещений.
+				SELECT 1
+				FROM [RoleDeputiesNestedManagementTypes] AS [rdnmt_typeID] WITH(NOLOCK)
+				WHERE 1=1
+						#param(TypeID, [rdnmt_typeID].[TypeID])
+						AND [rdnm].[RowID] = [rdnmt_typeID].[ParentRowID]
+						AND [combined].[IsFromManagement] = 0
+						AND [combined].[FilterTypes] = 0
+				
+				UNION
+				
+				-- Второе звено - общее замещение (фильтр должен работать по типам документов первого звена).
+				SELECT 1
+				FROM [RoleDeputiesNestedManagementTypes] AS [rdnmt_typeID] WITH(NOLOCK)
+				WHERE 1=1
+						#param(TypeID, [rdnmt_typeID].[TypeID])
+						AND [rdnm_nested].[RowID] = [rdnmt_typeID].[ParentRowID]
+						AND [combined].[IsFromManagement] = 1
+						
+				UNION
+				
+				-- Оба звена - замещение "по документам" (фильтр должен работать только для "пересекающихся типов").
+				SELECT 1
+				FROM [RoleDeputiesNestedManagementTypes] AS [rdnmt_typeID] WITH(NOLOCK)
+				INNER JOIN [RoleDeputiesNestedManagementTypes] AS [nested_types] WITH(NOLOCK) ON
+        			[nested_types].[ParentRowID] = [combined].[NestedParentRowID] AND
+        			[nested_types].[TypeID] = [rdnmt_typeID].[TypeID]		
+    			WHERE 1=1
+						#param(TypeID, [rdnmt_typeID].[TypeID])
+						AND [rdnm].[RowID] = [rdnmt_typeID].[ParentRowID]
+						AND [combined].[FilterTypes] = 1
+			)	
+		}
+
+        #if(Deputy)
+        {       
+	        -- Заместитель не должен видеть сам себя
+	        AND [r].[ID] != #param(Deputy)
+        }
+        
+    GROUP BY [combined].[ParentRowID]
+            , [combined].[FilterTypes]
+            , [combined].[NestedParentRowID]
+            , [combined].[IsFromManagement]
+            , [rdm].[MinDate]
+            , [rdm].[MaxDate]
+            , [rdm].[IsEnabled]
+            , [rdm].[IsActive]
+            , [rdnm].[MinDate]
+            , [rdnm].[MaxDate]
+            , [rdnm].[IsActive]
+            , [rdnm].[IsEnabled]
+            , [rdnm_nested].[MinDate]
+            , [rdnm_nested].[MaxDate]
+            , [rdnm_nested].[IsActive]
+            , [rdnm_nested].[IsEnabled]
+
+        #if(Normal || Deputy){ -- Если присоединена таблица Roles, группировать также и по "r"."Name"
+            , [r].[ID]
+            , [r].[Name]
+        }
+    ) AS [innerQuery]
+ ) AS [t]
+
+WHERE 1=1
+    #param(IsEnabled, [t].[IsEnabled])
+
+    -- Если не задан ни один параметр из "Замещение доступно", "Замещение на дату" и "Показывать все замещения", фильтруем по IsActive.
+    #if(!IsEnabled && !AvailableOnDate && !ShowAllDeputies) {
+        AND [t].[IsActive] = 1
+    }
+
+    #if(AvailableOnDate)
+    {
+        AND #param(AvailableOnDate) BETWEEN [t].[MinDate] AND [t].[MaxDate]
+    }
+    
+    -- Фильтрация подзамещений с непересекающимися периодами.
+		AND ([t].[NestedParentRowID] IS NULL OR [t].[MinDate] <= [t].[MaxDate])
+
+    #if(PageOffset) {
+    AND [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+    }
+    #if(Normal) {
+    ORDER BY [t].[rn]
+    }
+
+[TEXTPART RoleDeputiesManagementDeputizedByDocTypes PGSQL]
+SELECT 
+    #if(Normal) {
+    #if(DeputiesSettings.UseDeputyRoleSeparation){
+    (
+        SELECT string_agg("rdmr"."RoleName", ', ')
+        FROM "RoleDeputiesManagementRoles" AS "rdmr"
+        WHERE "rdmr"."ParentRowID" = "t"."ParentRowID"
+    )}{ NULL::text }                						AS "RoleDeputizedRoles",
+    "t"."RoleID"                        					AS "RoleDeputizedID",
+    "t"."Name"                      						AS "RoleDeputizedName",
+    "t"."RoleDeputyTypes"           						AS "RoleDeputyTypes",
+    "t"."MinDate"		             						AS "RoleDeputyFrom",
+    "t"."MaxDate"       	      							AS "RoleDeputyTo",
+    false                           						AS "RoleDeputyIsPermanent",
+    "t"."IsEnabled"											AS "RoleDeputyIsEnabled", 
+    "t"."IsActive"											AS "RoleDeputyIsActive",
+    	
+    0::int8                         						AS "rn"
+    }
+    #if(Count) {
+    count(*)                    							AS "cnt"
+    }
+FROM (
+    SELECT 
+    	#if(Normal || Deputy){
+        	"r"."ID" as "RoleID", -- ID для соединения ролей
+        	"r"."Name",
+        }
+        
+        "combined"."ParentRowID",
+        "combined"."NestedParentRowID",
+        
+        CASE 
+            WHEN "combined"."FilterTypes" = true THEN 
+            (
+    			SELECT STRING_AGG('{' || "rdnmt"."TypeCaption" || '}', ', ')
+    			FROM "RoleDeputiesNestedManagementTypes" AS "rdnmt"
+    			INNER JOIN "RoleDeputiesNestedManagementTypes" AS "main_types" ON
+        			"main_types"."ParentRowID" = "combined"."NestedParentRowID" AND
+        			"main_types"."TypeID" = "rdnmt"."TypeID"
+    			WHERE "rdnmt"."ParentRowID" = "combined"."ParentRowID"
+			)
+            WHEN "combined"."IsFromManagement" = true THEN
+                -- Наследуем типы документов пользователей из RoleDeputiesNestedManagementUsers с которыми были сджойнены пользователи из RoleDeputiesManagementUsers.
+            (
+    			SELECT STRING_AGG('{' || "rdnmt"."TypeCaption" || '}', ', ')
+    			FROM "RoleDeputiesNestedManagementTypes" AS "rdnmt"
+    			WHERE "rdnmt"."ParentRowID" = "combined"."NestedParentRowID"
+			)
+            ELSE STRING_AGG('{' || "rdnmt"."TypeCaption" || '}', ', ')
+        END AS "RoleDeputyTypes",
+
+        -- Если дата начала задана также и у вложенного замещения, отображать наибольшую
+        CASE
+    		WHEN "combined"."IsFromManagement" = true -- подзаместители из RoleDeputiesManagement (флаг "IsFromManagement")
+    		THEN GREATEST("rdm"."MinDate", "rdnm_nested"."MinDate")
+    		WHEN "combined"."FilterTypes" = true -- подзаместители из RoleDeputiesNestedManagement (флаг "FilterTypes")
+    		THEN GREATEST("rdnm"."MinDate", "rdnm_nested"."MinDate")
+    		ELSE "rdnm"."MinDate" -- без подзаместителей
+    	END AS "MinDate",
+
+        -- Если дата окончания задана также и у вложенного замещения, отображать наименьшую
+        CASE
+    		WHEN "combined"."IsFromManagement" = true -- подзаместители из RoleDeputiesManagement (флаг "IsFromManagement")
+    		THEN LEAST("rdm"."MaxDate", "rdnm_nested"."MaxDate")
+    		WHEN "combined"."FilterTypes" = true -- подзаместители из RoleDeputiesNestedManagement (флаг "FilterTypes")
+    		THEN LEAST("rdnm"."MaxDate", "rdnm_nested"."MaxDate")
+    		ELSE "rdnm"."MaxDate" -- без подзаместителей
+    	END AS "MaxDate",
+
+    	-- Если хоть одно звено в цепочке имеет IsEnabled = false, то весь результат false
+    	CASE
+    		WHEN ("combined"."IsFromManagement" = true AND ("rdm"."IsEnabled" = false OR "rdnm_nested"."IsEnabled" = false))
+    			OR ("combined"."FilterTypes" = true AND ("rdnm"."IsEnabled" = false OR "rdnm_nested"."IsEnabled" = false))
+    			OR ("rdnm"."IsEnabled" = false)
+    		THEN false
+    		ELSE COALESCE("rdm"."IsEnabled", "rdnm"."IsEnabled", "rdnm_nested"."IsEnabled", true)
+    	END AS "IsEnabled",
+    	
+    	CASE
+    		-- Замещение считается не "прямым", а "через звено", если джойнились подзаместители из RoleDeputiesManagement (флаг "IsFromManagement")
+    		-- или фильтруем типу, это значит, что джойнились подзаместители из таблицы RoleDeputiesNestedManagement (флаг "FilterTypes")
+	    	-- когда замещение через звено, то оба звена должны быть IsActive
+    		WHEN (("combined"."IsFromManagement" = true AND "rdm"."IsActive" = true AND "rdnm_nested"."IsActive" = true) --  подзаместители из RoleDeputiesManagement
+		    OR ("combined"."FilterTypes" = true AND "rdnm"."IsActive" = true AND "rdnm_nested"."IsActive" = true) --  подзаместители из RoleDeputiesNestedManagement
+    		OR ("combined"."IsFromManagement" = false AND "combined"."FilterTypes" = false AND "rdnm"."IsActive" = true) -- без подзаместителей
+		    ) THEN true ELSE false 
+		END AS "IsActive"
+        
+        FROM (
+        -- Исходные записи из RoleDeputiesNestedManagementUsers
+        SELECT
+            "rdnmu"."ID",
+            "rdnmu"."RowID",
+            "rdnmu"."ParentRowID",  -- ID для соединения с основной информацией о замещении
+            NULL::uuid AS "NestedParentRowID",  -- NestedParentRowID для наследования свойств "через звено"
+            false AS "FilterTypes", -- Флаг показывает, что типы документов необходимо будет отфильтровать по пересечениям
+            false AS "IsFromManagement"  -- Флаг указывает, что запись из RoleDeputiesManagement
+        FROM "RoleDeputiesNestedManagementUsers" AS "rdnmu"
+        WHERE true
+            #param(Deputy, "rdnmu"."PersonalRoleID")
+            
+        #if(DeputiesSettings.DeputyTransitivityLevel > 0){
+        
+        UNION
+
+        -- Вложенные записи из RoleDeputiesNestedManagementUsers (только если их типы документов совпадают с основными)
+        SELECT
+            "rdnmu2"."ID",
+            "rdnmu2"."RowID",
+            "rdnmu2"."ParentRowID",
+            "rdnmu"."ParentRowID" AS "NestedParentRowID",
+            true AS "FilterTypes", 
+            false AS "IsFromManagement"
+        FROM "RoleDeputiesNestedManagementUsers" AS "rdnmu"
+        INNER JOIN "RoleDeputiesNestedManagementUsers" AS "rdnmu2" ON "rdnmu2"."PersonalRoleID" = "rdnmu"."ID"
+        INNER JOIN "RoleDeputiesNestedManagementTypes" AS "main_types" ON "main_types"."ParentRowID" = "rdnmu"."ParentRowID"
+        INNER JOIN "RoleDeputiesNestedManagementTypes" AS "nested_types" ON 
+            "nested_types"."ParentRowID" = "rdnmu2"."ParentRowID" AND
+            "main_types"."TypeID" = "nested_types"."TypeID"
+        WHERE true
+            #param(Deputy, "rdnmu"."PersonalRoleID")
+
+        UNION
+        
+        -- Добавленные записи из RoleDeputiesManagementUsers (например кейс: Замещаемый (user1) -> Заместитель_ОБЩ (user2) -> Заместитель_ДОК (user3, Договор))
+        SELECT 
+            "rdmu"."ID", 
+            "rdmu"."RowID", 
+            "rdmu"."ParentRowID",
+            "rdnmu"."ParentRowID" AS "NestedParentRowID",
+            false AS "FilterTypes",
+            true AS "IsFromManagement"
+        FROM "RoleDeputiesManagementUsers" AS "rdmu"
+        INNER JOIN "RoleDeputiesNestedManagementUsers" AS "rdnmu" ON "rdnmu"."ID" = "rdmu"."PersonalRoleID"
+        WHERE true
+            #param(Deputy, "rdnmu"."PersonalRoleID")
+        
+        UNION
+        
+        -- Добавленные записи из RoleDeputiesManagementUsers с сопоставлением наоборот (например кейс: Замещаемый (user1) -> Заместитель_ДОК (user2, Договор) -> Заместитель_ОБЩ (user3))
+        SELECT 
+            "rdnmu"."ID",
+            "rdmu"."RowID", 
+            "rdmu"."ParentRowID",
+            "rdnmu"."ParentRowID" AS "NestedParentRowID",
+            false AS "FilterTypes",
+            true AS "IsFromManagement"
+        FROM "RoleDeputiesManagementUsers" AS "rdmu"
+        INNER JOIN "RoleDeputiesNestedManagementUsers" AS "rdnmu" ON "rdnmu"."PersonalRoleID" = "rdmu"."ID"
+        WHERE true
+            #param(Deputy, "rdmu"."PersonalRoleID")
+        }
+        
+        ) AS "combined"
+        
+    
+    LEFT JOIN "RoleDeputiesNestedManagement" AS "rdnm" ON "combined"."ParentRowID" = "rdnm"."RowID"
+    LEFT JOIN "RoleDeputiesNestedManagementTypes" AS "rdnmt" ON "combined"."ParentRowID" = "rdnmt"."ParentRowID" AND "combined"."FilterTypes" = false AND "combined"."IsFromManagement" = false
+    LEFT JOIN "RoleDeputiesManagement" as "rdm" on "combined"."IsFromManagement" = true AND "rdm"."RowID" = "combined"."ParentRowID"
+	LEFT JOIN "RoleDeputiesNestedManagement" as "rdnm_nested" on "combined"."NestedParentRowID" = "rdnm_nested"."RowID"
+    
+    #if(Normal || Deputy){
+        INNER JOIN "Roles" AS "r" ON "combined"."ID" = "r"."ID"
+    }
+
+    WHERE true
+        #param(Deputized, "combined"."ID")
+        
+        #if(TypeID) {
+			AND EXISTS(
+				
+				-- Без подзамещений.
+				SELECT
+				FROM "RoleDeputiesNestedManagementTypes" AS "rdnmt_typeID"
+				WHERE true
+						#param(TypeID, "rdnmt_typeID"."TypeID")
+						AND "rdnm"."RowID" = "rdnmt_typeID"."ParentRowID"
+						AND NOT "combined"."IsFromManagement"
+						AND NOT "combined"."FilterTypes"
+				
+				UNION
+				
+				-- Второе звено - общее замещение (фильтр должен работать по типам документов первого звена).
+				SELECT
+				FROM "RoleDeputiesNestedManagementTypes" AS "rdnmt_typeID"
+				WHERE true
+						#param(TypeID, "rdnmt_typeID"."TypeID")
+						AND "rdnm_nested"."RowID" = "rdnmt_typeID"."ParentRowID"
+						AND "combined"."IsFromManagement"
+				
+				UNION
+				
+				-- Оба звена - замещение "по документам" (фильтр должен работать только для "пересекающихся типов").
+				SELECT
+				FROM "RoleDeputiesNestedManagementTypes" AS "rdnmt_typeID"
+				INNER JOIN "RoleDeputiesNestedManagementTypes" AS "nested_types" ON
+        			"nested_types"."ParentRowID" = "combined"."NestedParentRowID" AND
+        			"nested_types"."TypeID" = "rdnmt_typeID"."TypeID"
+    			WHERE true
+						#param(TypeID, "rdnmt_typeID"."TypeID")
+						AND "rdnm"."RowID" = "rdnmt_typeID"."ParentRowID"
+						AND "combined"."FilterTypes"
+			)	
+		}
+        
+        #if(Deputy)
+		{
+			-- Заместитель не должен видеть сам себя
+			AND "r"."ID" != #param(Deputy)
+		}
+        
+    GROUP BY
+            "combined"."ParentRowID"
+            , "combined"."FilterTypes"
+            , "combined"."NestedParentRowID"
+            , "combined"."IsFromManagement"
+            , "rdm"."MinDate"
+            , "rdm"."MaxDate"
+            , "rdm"."IsEnabled"
+            , "rdm"."IsActive"
+            , "rdnm"."MinDate"
+            , "rdnm"."MaxDate"
+            , "rdnm"."IsActive"
+            , "rdnm"."IsEnabled"
+            , "rdnm_nested"."MinDate"
+            , "rdnm_nested"."MaxDate"
+            , "rdnm_nested"."IsActive"
+            , "rdnm_nested"."IsEnabled"
+
+        #if(Normal || Deputy){ -- Если присоединена таблица Roles, группировать также и по "r"."Name"
+            , "r"."ID"
+            , "r"."Name"
+        }
+    ) AS "t"
+
+WHERE true
+    #param(IsEnabled, "t"."IsEnabled")
+
+    -- Если не задан ни один параметр из "Замещение доступно", "Замещение на дату" и "Показывать все замещения", фильтруем по IsActive.
+    #if(!IsEnabled && !AvailableOnDate && !ShowAllDeputies) {
+        AND "t"."IsActive" = true
+    }
+
+    #if(AvailableOnDate)
+    {
+        AND #param(AvailableOnDate) BETWEEN "t"."MinDate" AND "t"."MaxDate"
+    }
+    
+    -- Фильтрация подзамещений с непересекающимися периодами.
+		AND ("t"."NestedParentRowID" IS NULL OR "t"."MinDate" <= "t"."MaxDate")
+
+    #if(Normal) {
+    ORDER BY #order_by
+    }
+    #if(PageOffset) {
+        OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+    }

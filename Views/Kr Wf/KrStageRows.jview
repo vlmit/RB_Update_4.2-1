@@ -1,0 +1,169 @@
+﻿{
+  "Alias": "KrStageRows",
+  "Caption": "$Views_Names_KrStageRows",
+  "GroupName": "Kr Wf",
+  "ID": "74f0ec7a-2cb4-4bb9-9eca-942e28374ea9",
+  "JsonMetadataSource::txt": "KrStageRows JSONMETA",
+  "MsQuerySource::txt": "KrStageRows MSSQL",
+  "PgQuerySource::txt": "KrStageRows PGSQL"
+}
+
+[TEXTPART KrStageRows JSONMETA]
+{
+  "Alias": "KrStageRows",
+  "Caption": "$Views_Names_KrStageRows",
+  "Columns": [
+    {
+      "Alias": "StageTemplateID",
+      "FilterParameter": "StageTemplateIDParam",
+      "FilterType": "Parameter",
+      "Hidden": true,
+      "Type": "$KrStages.ID"
+    },
+    {
+      "Alias": "StageRowID",
+      "Hidden": true,
+      "Type": "$KrStages.RowID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_KrStageRows_TypeCaption",
+      "Localizable": true,
+      "Type": "$KrStages.StageTypeCaption"
+    },
+    {
+      "Alias": "StageName",
+      "Caption": "$Views_KrStageRows_Name",
+      "FilterParameter": "StageNameParam",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$KrStages.Name"
+    },
+    {
+      "Alias": "TimeLimit",
+      "Caption": "$Views_KrStageRows_TimeLimit",
+      "Localizable": true,
+      "Type": "$KrStages.DisplayTimeLimit"
+    },
+    {
+      "Alias": "Participants",
+      "Caption": "$Views_KrStageRows_Participants",
+      "Localizable": true,
+      "Type": "$KrStages.DisplayParticipants"
+    },
+    {
+      "Alias": "Settings",
+      "Caption": "$Views_KrStageRows_Settings",
+      "Localizable": true,
+      "Type": "$KrStages.DisplaySettings"
+    },
+    {
+      "Alias": "Order",
+      "Hidden": true,
+      "SortBy": "Order",
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "StageRowGroupID",
+      "Caption": "StageGroupID",
+      "Hidden": true,
+      "Type": "$KrStages.StageGroupID"
+    },
+    {
+      "Alias": "StageRowGroupName",
+      "Caption": "StageGroupName",
+      "Hidden": true,
+      "Type": "$KrStages.StageGroupName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Order",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "Extensions": [
+    {
+      "Order": 0,
+      "TypeName": "Tessa.Extensions.Default.Client.Cards.OpenStageSettingsOnDoubleClickExtension"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "StageTemplateIDParam",
+      "Caption": "$Views_KrStageRows_StageTemplateIDParam",
+      "Hidden": true,
+      "Type": "$KrStageTemplates.ID"
+    },
+    {
+      "Alias": "StageNameParam",
+      "Caption": "$Views_KrStageRows_Name",
+      "Type": "$KrStages.Name"
+    }
+  ],
+  "QuickSearchParam": "StageNameParam",
+  "References": [
+    {
+      "ColPrefix": "Stage",
+      "DisplayValueColumn": "StageName",
+      "RefSection": [
+        "KrStages"
+      ]
+    },
+    {
+      "ColPrefix": "StageTemplate",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "KrStageTemplates"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrStageRows MSSQL]
+SELECT
+	[ks].[ID]					AS [StageTemplateID],
+	[ks].[RowID]				AS [StageRowID],
+	[ks].[StageTypeCaption]		AS [TypeCaption],
+	[ks].[Name]					AS [StageName],
+	[ks].[DisplayTimeLimit]		AS [TimeLimit],
+	[ks].[DisplayParticipants]	AS [Participants],
+	[ks].[DisplaySettings]		AS [Settings],
+	[ks].[Order],
+	[kst].[StageGroupID]		AS [StageRowGroupID],
+	[kst].[StageGroupName]		AS [StageRowGroupName]
+FROM [KrStages] AS [ks] WITH (NOLOCK)
+INNER JOIN [KrStageTemplates] AS [kst] WITH (NOLOCK) ON [kst].[ID] = [ks].[ID]
+#if (StageNameParam) {
+CROSS APPLY [Localization]([ks].[Name], #param(locale)) AS [locName]
+}
+WHERE 1=1
+	#param(StageTemplateIDParam, [kst].[ID])
+	#param(StageNameParam, [locName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART KrStageRows PGSQL]
+SELECT
+	"ks"."ID"					AS "StageTemplateID",
+	"ks"."RowID"				AS "StageRowID",
+	"ks"."StageTypeCaption"		AS "TypeCaption",
+	"ks"."Name"					AS "StageName",
+	"ks"."DisplayTimeLimit"		AS "TimeLimit",
+	"ks"."DisplayParticipants"	AS "Participants",
+	"ks"."DisplaySettings"		AS "Settings",
+	"ks"."Order",
+	"kst"."StageGroupID"		AS "StageRowGroupID",
+	"kst"."StageGroupName"		AS "StageRowGroupName"
+FROM "KrStages" AS "ks"
+INNER JOIN "KrStageTemplates" AS "kst" ON "kst"."ID" = "ks"."ID"
+#if (StageNameParam) {
+CROSS JOIN "Localization"("ks"."Name", #param(locale)) AS "locName"
+}
+WHERE true
+	#param(StageTemplateIDParam,  "kst"."ID")
+	#param(StageNameParam, "locName"."Value")
+ORDER BY #order_by

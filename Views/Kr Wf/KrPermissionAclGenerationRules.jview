@@ -1,0 +1,90 @@
+﻿{
+  "Alias": "KrPermissionAclGenerationRules",
+  "Caption": "$Views_Names_KrPermissionAclGenerationRules",
+  "GroupName": "Kr Wf",
+  "ID": "8adc6a95-fd78-4efa-922d-43c4c4838e39",
+  "JsonMetadataSource::txt": "KrPermissionAclGenerationRules JSONMETA",
+  "MsQuerySource::txt": "KrPermissionAclGenerationRules MSSQL",
+  "PgQuerySource::txt": "KrPermissionAclGenerationRules PGSQL"
+}
+
+[TEXTPART KrPermissionAclGenerationRules JSONMETA]
+{
+  "Alias": "KrPermissionAclGenerationRules",
+  "Caption": "$Views_Names_KrPermissionAclGenerationRules",
+  "Columns": [
+    {
+      "Alias": "KrPermissionAclGenerationRuleID",
+      "Hidden": true,
+      "Type": "$KrPermissionAclGenerationRules.RuleID"
+    },
+    {
+      "Alias": "KrPermissionAclGenerationRuleName",
+      "Caption": "$Views_KrPermissions_AclGenerationRule",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$KrPermissionAclGenerationRules.RuleName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "KrPermissionAclGenerationRuleName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "AccessRule",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "KrPermissions"
+      },
+      "Caption": "$Views_KrPermissionAclGenerationRules_AccessRule",
+      "Hidden": true,
+      "RefSection": [
+        "KrPermissions"
+      ],
+      "Type": "$KrPermissionRoles.ID"
+    }
+  ],
+  "References": [
+    {
+      "CardType": "AclGenerationRule",
+      "ColPrefix": "KrPermissionAclGenerationRule",
+      "DisplayValueColumn": "KrPermissionAclGenerationRuleName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "KrPermissionAclGenerationRules"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionAclGenerationRules MSSQL]
+SELECT
+	[t].[RuleID] AS [KrPermissionAclGenerationRuleID],
+	[t].[RuleName] AS [KrPermissionAclGenerationRuleName]
+FROM [KrPermissionAclGenerationRules] AS [t] WITH(NOLOCK)
+#if(request.SortedBy("KrPermissionAclGenerationRuleName")) {
+CROSS APPLY [Localization]([t].[RuleName], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(AccessRule, [t].[ID])
+ORDER BY #order_by
+
+
+[TEXTPART KrPermissionAclGenerationRules PGSQL]
+SELECT
+	"t"."RuleID" AS "KrPermissionAclGenerationRuleID",
+	"t"."RuleName" AS "KrPermissionAclGenerationRuleName"
+FROM "KrPermissionAclGenerationRules" AS "t"
+#if(request.SortedBy("KrPermissionAclGenerationRuleName")) {
+CROSS JOIN "Localization"("t"."RuleName", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(AccessRule, "t"."ID")
+ORDER BY #order_by

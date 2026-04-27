@@ -1,0 +1,83 @@
+﻿{
+  "Alias": "RefGroupModeEnum",
+  "Caption": "$Views_Names_RefGroupModeEnum",
+  "GroupName": "RefGroups",
+  "ID": "7e7b2f1d-6012-410b-be87-2b2778b33e56",
+  "JsonMetadataSource::txt": "RefGroupModeEnum JSONMETA",
+  "MsQuerySource::txt": "RefGroupModeEnum MSSQL",
+  "PgQuerySource::txt": "RefGroupModeEnum PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART RefGroupModeEnum JSONMETA]
+{
+  "Alias": "RefGroupModeEnum",
+  "Caption": "$Views_Names_RefGroupModeEnum",
+  "Columns": [
+    {
+      "Alias": "ModeID",
+      "Caption": "ModeID",
+      "Hidden": true,
+      "Type": "$RefGroupModeEnum.ID"
+    },
+    {
+      "Alias": "ModeName",
+      "Caption": "$Views_RefGroupModeEnum_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$RefGroupModeEnum.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ModeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_RefGroupModeEnum_Name",
+      "Multiple": false,
+      "Type": "$RefGroupModeEnum.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Mode",
+      "DisplayValueColumn": "ModeName",
+      "RefSection": [
+        "ModeEnum"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RefGroupModeEnum MSSQL]
+SELECT
+	[r].[ID]		AS [ModeID],
+	[r].[Name]		AS [ModeName]
+FROM [RefGroupModeEnum] AS [r] WITH (NOLOCK)
+CROSS APPLY [Localization]([r].[Name], #param(locale)) AS [lName]
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART RefGroupModeEnum PGSQL]
+SELECT
+	"r"."ID"		AS "ModeID",
+	"r"."Name"		AS "ModeName"
+FROM "RefGroupModeEnum" AS "r"
+CROSS JOIN "Localization"("r"."Name", #param(locale)) AS "lName"
+WHERE 1 = 1
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

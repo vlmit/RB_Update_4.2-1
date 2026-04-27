@@ -1,0 +1,148 @@
+﻿{
+  "Alias": "KrStageCommonMethods",
+  "Caption": "$Views_Names_KrStageCommonMethods",
+  "GroupName": "Kr Wf",
+  "ID": "3b31f77a-1667-443c-b4f0-9bdb04798c72",
+  "JsonMetadataSource::txt": "KrStageCommonMethods JSONMETA",
+  "MsQuerySource::txt": "KrStageCommonMethods MSSQL",
+  "PgQuerySource::txt": "KrStageCommonMethods PGSQL"
+}
+
+[TEXTPART KrStageCommonMethods JSONMETA]
+{
+  "Alias": "KrStageCommonMethods",
+  "Caption": "$Views_Names_KrStageCommonMethods",
+  "Columns": [
+    {
+      "Alias": "MethodID",
+      "Hidden": true,
+      "Type": "$KrStageCommonMethods.ID"
+    },
+    {
+      "Alias": "MethodName",
+      "Caption": "$Views_KrStageCommonMethod_MethodName",
+      "FilterParameter": "MethodNameParam",
+      "FilterType": "Parameter",
+      "SortBy": "Name",
+      "Type": "$KrStageCommonMethods.Name"
+    },
+    {
+      "Alias": "Source",
+      "Caption": "$Views_KrStageCommonMethod_Source",
+      "MaxLength": 150,
+      "Type": "$KrStageCommonMethods.Source"
+    },
+    {
+      "Alias": "Description",
+      "Caption": "$Views_KrStageCommonMethod_MethodDescription",
+      "FilterParameter": "MethodDescriptionParam",
+      "FilterType": "Parameter",
+      "MaxLength": 300,
+      "Type": "$KrStageCommonMethods.Description"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "MethodName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "MethodIDParam",
+      "Caption": "$Views_KrStageCommonMethod_MethodIDParam",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$KrStageCommonMethods.ID"
+    },
+    {
+      "Alias": "MethodNameParam",
+      "Caption": "$Views_KrStageCommonMethod_MethodName",
+      "Type": "$KrStageCommonMethods.Name"
+    },
+    {
+      "Alias": "MethodDescriptionParam",
+      "Caption": "$Views_KrStageCommonMethod_MethodDescription",
+      "Type": "$KrStageCommonMethods.Description"
+    }
+  ],
+  "QuickSearchParam": "MethodNameParam",
+  "References": [
+    {
+      "ColPrefix": "Method",
+      "DisplayValueColumn": "MethodName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "KrStageCommonMethods"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrStageCommonMethods MSSQL]
+SELECT *
+FROM (
+	SELECT
+		#if(Normal) {
+		[ID]									AS [MethodID],
+		[Name]									AS [MethodName],
+		[Source]								AS [Source],
+		[Description]							AS [Description],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [KrStageCommonMethods] WITH (NOLOCK)
+	WHERE 1 = 1
+		#param(MethodIDParam, [ID])
+		#param(MethodNameParam, [Name])
+		#param(MethodDescriptionParam, [Description])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART KrStageCommonMethods PGSQL]
+SELECT
+	#if(Normal) {
+	"ID"			AS "MethodID",
+	"Name"			AS "MethodName",
+	"Source"		AS "Source",
+	"Description"	AS "Description",
+	0::int8			AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "KrStageCommonMethods"
+WHERE true
+	#param(MethodIDParam, "ID")
+	#param(MethodNameParam, "Name")
+	#param(MethodDescriptionParam, "Description")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

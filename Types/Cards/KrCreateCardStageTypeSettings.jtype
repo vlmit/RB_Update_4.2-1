@@ -1,0 +1,122 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$KrStages_CreateCard",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "ColumnsCount::int": 2
+          },
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Type",
+              "ComplexColumnID::uid": "82780db1-b412-428e-9017-7f835dcee807",
+              "ControlSettings": {
+                "ParameterAlias": "Caption",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "KrCardTypesVirtual"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "KrTypesEffective"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[RuntimeReadonly]",
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "644515d1-8e3f-419e-b938-f59c5ec07fae",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrCreateCard_Template",
+              "ComplexColumnID::uid": "221bfa7c-9cfd-472b-8d05-76b50069d367",
+              "ControlSettings": {
+                "ParameterAlias": "TemplateCaption",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "Templates"
+                ],
+                "ViewAlias": "Templates"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "644515d1-8e3f-419e-b938-f59c5ec07fae",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrCreateCard_Mode",
+              "ComplexColumnID::uid": "0fad1e89-2473-415a-a98e-93929f12056d",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "HideSelectorButton": true,
+                "ParameterAlias": "Name",
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "KrCreateCardStageTypeModes",
+                "ViewAliasComboBox": "KrCreateCardStageTypeModes"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 4,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "644515d1-8e3f-419e-b938-f59c5ec07fae",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "CreateCardStageTypeSettings"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "KrCreateCardStageTypeSettings",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "KrProcess",
+  "ID::uid": "d444f8d4-be81-4714-b00d-02172fad1c81",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "KrCreateCardStageTypeSettings",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "221bfa7c-9cfd-472b-8d05-76b50069d367",
+        "0fad1e89-2473-415a-a98e-93929f12056d",
+        "82780db1-b412-428e-9017-7f835dcee807"
+      ],
+      "SectionID::uid": "644515d1-8e3f-419e-b938-f59c5ec07fae"
+    }
+  ],
+  "Validators": null
+}

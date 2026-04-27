@@ -1,0 +1,150 @@
+﻿{
+  "Alias": "CompletionOptions",
+  "Caption": "$Views_Names_CompletionOptions",
+  "GroupName": "System",
+  "ID": "7aa4bb6b-2bd0-469b-aac4-90c46c2d3502",
+  "JsonMetadataSource::txt": "CompletionOptions JSONMETA",
+  "MsQuerySource::txt": "CompletionOptions MSSQL",
+  "PgQuerySource::txt": "CompletionOptions PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART CompletionOptions JSONMETA]
+{
+  "Alias": "CompletionOptions",
+  "Caption": "$Views_Names_CompletionOptions",
+  "Columns": [
+    {
+      "Alias": "OptionID",
+      "Hidden": true,
+      "Type": "$CompletionOptions.ID"
+    },
+    {
+      "Alias": "OptionCaption",
+      "Caption": "$Views_CompletionOptions_Caption",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "l.Value",
+      "Type": "$CompletionOptions.Caption"
+    },
+    {
+      "Alias": "OptionName",
+      "Caption": "$Views_CompletionOptions_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "co.Name",
+      "Type": "$CompletionOptions.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "OptionCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "OptionID",
+      "Caption": "$Views_CompletionOptions_OptionID_Param",
+      "Hidden": true,
+      "Type": "$CompletionOptions.ID"
+    },
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_CompletionOptions_Caption_Param",
+      "Type": "$CompletionOptions.Caption"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_CompletionOptions_Alias_Param",
+      "Type": "$CompletionOptions.Name"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "Option",
+      "DisplayValueColumn": "OptionCaption",
+      "RefSection": [
+        "CompletionOptions"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART CompletionOptions MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[co].[ID]								AS [OptionID],
+		[co].[Caption]							AS [OptionCaption],
+		[co].[Name]								AS [OptionName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [CompletionOptions] AS [co] WITH (NOLOCK)
+	#if(Caption || Normal && request.SortedBy("OptionCaption")) {
+	CROSS APPLY [Localization]([co].[Caption], #param(locale)) AS [l]
+	}
+	WHERE 1 = 1
+		#param(OptionID, [co].[ID])
+		#param(Name, [co].[Name])
+		#param(Caption, [l].[Value])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART CompletionOptions PGSQL]
+SELECT
+	#if(Normal) {
+	"co"."ID"			AS "OptionID",
+	"co"."Caption"		AS "OptionCaption",
+	"co"."Name"			AS "OptionName",
+	0::int8				AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "CompletionOptions" AS "co"
+#if(Caption || Normal && request.SortedBy("OptionCaption")) {
+CROSS JOIN "Localization"("co"."Caption", #param(locale)) AS "l"
+}
+WHERE true
+	#param(OptionID, "co"."ID")
+	#param(Name, "co"."Name")
+	#param(Caption, "l"."Value")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

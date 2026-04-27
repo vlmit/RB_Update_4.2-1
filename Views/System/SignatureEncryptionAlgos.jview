@@ -1,0 +1,81 @@
+﻿{
+  "Alias": "SignatureEncryptionAlgos",
+  "Caption": "$Views_Names_SignatureEncryptionAlgos",
+  "GroupName": "System",
+  "ID": "4cb7fef2-7b0d-4300-a9ac-7b2b082bcb75",
+  "JsonMetadataSource::txt": "SignatureEncryptionAlgos JSONMETA",
+  "MsQuerySource::txt": "SignatureEncryptionAlgos MSSQL",
+  "PgQuerySource::txt": "SignatureEncryptionAlgos PGSQL"
+}
+
+[TEXTPART SignatureEncryptionAlgos JSONMETA]
+{
+  "Alias": "SignatureEncryptionAlgos",
+  "Caption": "$Views_Names_SignatureEncryptionAlgos",
+  "Columns": [
+    {
+      "Alias": "SignatureEncryptionAlgorithmID",
+      "Hidden": true,
+      "Type": "$SignatureEncryptionAlgorithms.ID"
+    },
+    {
+      "Alias": "SignatureEncryptionAlgorithmName",
+      "Caption": "$Views_SignatureEncryptionAlgorithms_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$SignatureEncryptionAlgorithms.Name"
+    },
+    {
+      "Alias": "SignatureEncryptionAlgorithmOID",
+      "Caption": "$Views_SignatureEncryptionAlgorithms_OID",
+      "Type": "$SignatureEncryptionAlgorithms.OID"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_SignatureEncryptionAlgorithms_Name_Param",
+      "Multiple": false,
+      "Type": "$SignatureEncryptionAlgorithms.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "SignatureEncryptionAlgorithm",
+      "DisplayValueColumn": "SignatureEncryptionAlgorithmName",
+      "RefSection": [
+        "SignatureEncryptionAlgorithms"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART SignatureEncryptionAlgos MSSQL]
+SELECT
+	[st].[ID]		AS [SignatureEncryptionAlgorithmID],
+	[st].[Name]		AS [SignatureEncryptionAlgorithmName],
+    [st].[OID]		AS [SignatureEncryptionAlgorithmOID]
+FROM [SignatureEncryptionAlgorithms] AS [st] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([st].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY [st].[ID]
+
+
+[TEXTPART SignatureEncryptionAlgos PGSQL]
+SELECT
+	"st"."ID"		AS "SignatureEncryptionAlgorithmID",
+	"st"."Name"		AS "SignatureEncryptionAlgorithmName",
+    "st"."OID"		AS "SignatureEncryptionAlgorithmOID"
+FROM "SignatureEncryptionAlgorithms" AS "st"
+#if(Name) {
+CROSS JOIN "Localization"("st"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY "st"."Name"

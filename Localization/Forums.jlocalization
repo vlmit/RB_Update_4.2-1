@@ -1,0 +1,3921 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "6c0b3a37-ba28-41a6-af9f-a68f846f80a4",
+  "Name": "Forums",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "CardTypes_Blocks_Forums",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Forums"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форумы"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_EnableForum",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Enable forums"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Использовать систему обсуждений"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_UseDefaultDiscussionTab",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Use the default \"Discussions\" tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Использовать стандартную вкладку \"Обсуждения\""
+        }
+      ]
+    },
+    {
+      "Name": "FmParticipantTypes_ParticipantFromRole",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "participant from role"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Участник из роли"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_AddRolesMessageText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "add roles:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавил роли:"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_AddUserMessageText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "add participants:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "добавил участников:"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_AttachedItemsText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Attached Items: "
+        },
+        {
+          "Culture": "ru",
+          "Value": "Приложенные элементы: "
+        }
+      ]
+    },
+    {
+      "Name": "Forum_AttachmentFile_Deleted",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Attachment file has been deleted"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прикрепленный файл был удален"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Author",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Author"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Автор"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Button_AddTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Button_Leave",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Leave"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выйти из участников"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Button_Subscribe",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Subscribe"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подписаться"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Button_SuperModeratorMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Enter elevated privilege mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Войти в режим повышенных привилегий"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Button_Unsubscribe",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unsubscribe"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отписаться"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_AddDiscussionToStart",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add a discussion to start a conversation"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавьте обсуждение, чтобы начать общение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_Archived",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Archived"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Архивировано"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_Caption_ArchiveTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Archive topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заархивировать обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_Caption_LeaveParticipants",
+      "Comment": "Выйти из топика",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Exit the topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выйти из топика"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_Caption_UnArchiveTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unarchive topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разархивировать обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_DeleteQuote",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_EditedBy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edited by"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отредактировано"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_EditMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_EditTextStart",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "(edited by"
+        },
+        {
+          "Culture": "ru",
+          "Value": "(изменено"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_EmptyDiscussionList",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are no discussions yet"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список обсуждений пуст"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_ErrorMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while loading the message."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При загрузке сообщения произошла ошибка."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_ErrorMessageHtml",
+      "Comment": "{0} - текст сообщения об ошибке, который берется из $Forum_Control_ErrorMessage\n{1} - оригинальный HTML текст\n{2} - сообщение исключения\n{3} - полный текст исключения",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "<div class=\"forum-div\"><p><span style=\"color:#FF0000FF\">{0}</span></p></div>"
+        },
+        {
+          "Culture": "ru",
+          "Value": "<div class=\"forum-div\"><p><span style=\"color:#FF0000FF\">{0}</span></p></div>"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_ForumEmpty",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are no topics to participate"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы не являетесь участником ни одного топика"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_ForumLicenseNotFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "License for the \"Forums\" module isn't found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отсутствует лицензия на модуль Форумы."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_HideTopicList",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show/hide discussion list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать/скрыть список обсуждений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_HyperLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Адрес"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_HyperLink_ShowInToolbar",
+      "Comment": "Флаг \"Отображать ссылку под сообщением\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show link beneath message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображать ссылку под сообщением"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_HyperLinkCancel",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Close"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Закрыть"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_HyperLinkName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_InsertHyperLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_NewMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "New messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Новые сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_NoMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_NoMessagesToDisplay",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No messages to display"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет сообщений для показа"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_OldMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Previous messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предыдущие сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_OpenTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_Questions_ArchiveTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Are you sure you want to archive the topic?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы действительно хотите заархивировать обсуждение?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_Questions_LeaveParticipants",
+      "Comment": "Вы действительно хотите выйти из топика?",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Are you sure you want to leave the topic?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы действительно хотите выйти из топика?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_Questions_OpenQuoteLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To see the quote you will be redirected to another page and current changes will be lost. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "При переходе по ссылке текущие изменения будут потеряны. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_Questions_UnArchiveTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Are you sure you want to unarchive the topic?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы действительно хотите разархивировать обсуждение?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_SaveHyperLink",
+      "Comment": "Текст кнопки \"Сохранить\" гиперссылку в диалоге редактирования гиперссылки.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_Search_Placeholder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Search"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Найти"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_SelectDiscussion",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select a discussion from the list on the left side to see the list of messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выберите обсуждение из списка слева, чтобы увидеть список сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_SendEmptyMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You are trying to send empty message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы пытаетесь отправить пустое сообщение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_SendMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Send"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Control_TopicsTitle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Topics"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Controls_AddParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Участники"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Controls_AddRoles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Roles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Роли"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Controls_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Description"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Описание"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Controls_Discussion",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Controls_IsModerator",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Is moderator"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модератор"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Controls_IsReadOnly",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Is read only"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Только чтение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Controls_IsSubscribe",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Is subscribe"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подписать на уведомления"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Controls_Participants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Участники"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Controls_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Title"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заголовок"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Created",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Created"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создан"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Dialog_Button_AddParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Dialog_Button_Cancel",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cancel"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отмена"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Dialog_Button_Save",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_InvalidLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Некорректная ссылка"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_LeaveUserMessageText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "leave"
+        },
+        {
+          "Culture": "ru",
+          "Value": "покинул топик"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_AddParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить участников"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_AddRoleParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add role"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить роль"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_ArchiveTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Archive topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Архивировать обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_ChangeParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_CopyMonoBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy block contents"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скопировать содержимое блока"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_Edit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_OpenParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Участники"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_RemoveParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_Reply",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reply"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_SaveForumSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save forum settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить настройки"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_Subscribe",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Subscribe"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подписаться на уведомления"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_UnArchiveTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unarchive"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разархивировать"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_MenuAction_Unsubscribe",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unsubscribe"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отписаться от уведомлений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Next",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": " ...next"
+        },
+        {
+          "Culture": "ru",
+          "Value": " ...далее"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Next_Page",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Next page"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Следующая страница"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Notification_ForumsLabel",
+      "Comment": "Часть заголовка сообщения уведомления по форумам \"обсуждениях\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "forums"
+        },
+        {
+          "Culture": "ru",
+          "Value": "обсуждениях"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Notification_NewMessagesLabel",
+      "Comment": "Заголовок уведомления о новом сообщении в топике",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "New message in the discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Новое сообщение в обсуждении"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Notification_YouHaveLabel",
+      "Comment": "Часть заголовка сообщения уведомления по форумам \"У вас\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You have"
+        },
+        {
+          "Culture": "ru",
+          "Value": "У вас"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Notifications_ErrorOccurredWhenLoadingMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error occurred when loading topics, it has been added to the log\nPlease, ask the administrator to check it\n\nClick to open the error window"
+        },
+        {
+          "Culture": "ru",
+          "Value": "При загрузке уведомлений возникла ошибка, она была добавлена в лог\nПожалуйста, попросите администратора проверить его\n\nНажмите, чтобы открыть окно с ошибкой"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Notifications_Subscribe_To_AllTopics",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Receive new messages on all discussions where I am a participant"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Получать новые сообщения по всем обсуждениям, где я участник"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_OpenForeignDesktopLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To open the link TessaAppManager and desktop-client are required. Continue the operation?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для обработки ссылки требуются установленные TessaAppManager и desktop-клиент. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_OpenForeignWebLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To open the topic you will be redirected to {0}. Continue the operation?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для открытия топика требуется перейти на {0}. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Permission_ElevatedPermissions_All",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You have got permissions\n- Supemoderator\n- Editing all messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы получили права\n- Супермодератор\n- Редактирование всех сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Permission_ElevatedPermissions_EditingAllMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You have got permissions\n- Editing all messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы получили права\n- Редактирование всех сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Permission_ElevatedPermissions_SuperModerator",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You have got permissions\n- Supermoderator"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы получили права\n- Супермодератор"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Permission_NoPermissionToAddTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No permissions to add topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Недостаточно прав на добавление обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Permission_NoRequiredPermissions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No required permissions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет необходимых прав"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Previous_Messages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Previous messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предыдущие сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_RemoveRoleMessageText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "remove role:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалил роль:"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_RemoveUserMessageText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "remove participant:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалил участника:"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Reply_To_Topic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reply"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Rollup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": " rollup"
+        },
+        {
+          "Culture": "ru",
+          "Value": " свернуть"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_AddParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adding participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавление участников"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_AddRoleParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adding roles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавление ролей"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_AddTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adding topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавление обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_ArchiveTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Archiving topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Архивация обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_NextMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Next messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Следующие сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_OpenTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Opening topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открытие обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_OpenTopics",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Opening topics"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открытие обсуждений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_PrevMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Previous messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предыдущие сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_Refresh",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Refresh"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновление"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_RemoveParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Removing participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление участников"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_SaveForumSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Saving forum settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранение настроек топика"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_SearchMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Searching for messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поиск сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_SendMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Sending message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправка сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_SetSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Set settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Установка настроек"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_Subscribe",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Subscribing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подписывание"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_Unsubscribe",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unsubscribing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отказ от подписки"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_UpdateTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Update topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновление обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Splash_UpdateTopics",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Updating topics"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновление обсуждений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Tabs_AddParticipans",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить участников"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Tabs_AddRoles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add roles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить роль"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Tabs_AddTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Tabs_ChangeParticipans",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить участника"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Tabs_ChangeRoles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change roles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить роль"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Tabs_Discussions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Discussions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Tiles_ChangeParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change Participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить участника"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Tiles_RemoveParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить участников"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_Tiles_ShowMessageIndicator",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show message indicator"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать индикатор сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_TitleIsNullOrEmpty",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You should fill in the topic title"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Необходимо заполнить заголовок топика"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ToolTip_Clear",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Clear"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ToolTip_Close",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Close"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Закрыть"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ToolTip_Update",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Update"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновить"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_TopicUsersForMention_AllUsersFilterCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "All users"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Все пользователи"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_TopicUsersForMention_ParticipantsFilterCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Участники"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_ChangeParticipants_CannotEditYourself",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You cannot edit yourself"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы не можете редактировать сами себя"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_ChangeParticipants_CompletedWithErrors",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change participants completed with errors"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменение участников завершилось с ошибками"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_ChangeParticipants_CompletedWithMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change participants completed with messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить участников завершено с сообщениями"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_ChangeParticipants_TryGetSupermoderatorPermission",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Try to get supermoderator permission?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Попробовать получить права супермодератора?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_ChangeParticipants_YouCanEditOnlyOneEntry",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You can edit only one entry"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать участников можно только по одной записи"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_ChangeParticipantsOnlyOneLine",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You can edit participants with only one line"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать участников можно только по одной строчке"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipant_ConfirmSingle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove participant \"{0}\"?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить участника \"{0}\"?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipants_CannotDeleteParticipantsAndRoles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You can't delete participants and roles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы не можете удалять участников и роли одновременно"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipants_CantRemoveCurrentParticipant",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't remove current participant"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удается удалить текущего участника"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipants_CompletedWithErrors",
+      "Comment": "Удаление участников завершено с ошибками",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The participants removal was completed with errors"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление участников завершено с ошибками"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipants_CompletedWithMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove participants was completed with messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление участников завершено с сообщениями"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipants_ConfirmMultiple",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove Participants \"{0}\"?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить участников \"{0}\"?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipants_NoRequiredPermissions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No required permissions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет необходимых разрешений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipants_SplashMultipleItemsInitial",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Removing forum participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление участников форума"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipants_SplashMultipleItemsProcessing",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Removing forum participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление участников форума"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_RemoveParticipants_SplashSingleItemInitial",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Removing forum participant"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление участника форума"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Cards_SaveCardForAddTopic_Confirm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To add a topic, you must save the card. Save the card?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для добавления обсуждения необходимо сохранить карточку. Сохранить карточку?"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Controls_WindowCaption_AddLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить ссылку"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Controls_WindowCaption_EditLink",
+      "Comment": "Заголовок окна \"Редактировать ссылку\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать ссылку"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_Activities",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Activities"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Активности"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_AnimalsNature",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Animals & Nature"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Животные и природа"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_Flags",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Flags"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Флаги"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_FoodDrink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Food & Drink"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Еда и напитки"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_Frequentlyused",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Frequently used"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Часто используемые"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_Objects",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Objects"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Объекты"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_PeopleBody",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "People & Body"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Люди"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_SmileysEmotion",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Smileys & Emotion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Смайлики и эмоции"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_Symbols",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Symbols"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Символы"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_SmileGroups_TravelPlaces",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Travel & Places"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Путешествия и места"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Smiles_QuickSearchPlaceholder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Quick search"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Быстрый поиск"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_UI_Splash_InsertOutlookObject",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adding Outlook object"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавление объекта Outlook"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_AddMessageInNotificationsError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to get Notification from the DB for the message: {0} and user: {1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось получить Notification из базы для сообщения: {0} и пользователя: {1}"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_AddParticipant",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to add participants {0} to the topic {1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось добавить участников {0} в топик {1}"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_AddRole",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add role {0} to the topic {1} failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось добавить роль {0} в топик {1}"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_AddTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert topic {0} in satellite card {1} failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось вставить обсуждение {0} в карточку сателлит {1}"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_ArchiveTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Discussion failed to archive"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось заархивировать обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_CardNotContainTopicsWarning",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card doesn`t contain discussions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка не содержит обсуждений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_EditingMessagesIsProhibited",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Editing messages is prohibited in server settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование сообщений запрещено в настройках сервера"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_ForumSatelliteID",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to get satellite card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось получить карточку сателлит"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_GetMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Download messages for topic {0} failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось получить сообщения для топика {0}"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_GetTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Discussion download failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось получить обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_InsertAttachment",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert attachment {0} into message {1} failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось вставить приложение {0} в сообщение {1}"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_InsertMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert message from {0} into topic {1} failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось вставить сообщение от {0} в топик {1}"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_InsertTopic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert topic is failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось вставить обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_LicenseError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "License for \"Forums\" module isn't found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отсутствует лицензия на модуль Форумы."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_MaxAttachedFileSizeError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The maximum size of the file attached to the message has been exceeded. Maximum file size: {0} Kb."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Превышен максимальный размер файла, приложенного к сообщению. Максимальный размер файла: {0} Кб."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_MaxMessageInlinesError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The maximum number of embedded attachments in a message (images) was exceeded. Maximum number of attachments: {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Превышено максимальное количество вложений в сообщении (вставленных изображений). Максимальное количество вложений: {0}."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_MaxMessageSizeError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Message has exceeded it's max character limit: {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Превышен лимит количества символов на сообщение: {0}."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_MaxNumberAttachedFilesError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Exceeded the maximum number of files attached to the message. Maximum number of files: {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Превышено максимальное количество файлов, приложенных к сообщению. Максимальное количество файлов: {0}."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_NoPermissionToChangeOtherMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No permissions to change other messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет разрешений на изменение не своих сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_PermissionError",
+      "Comment": "Для данной операции недостаточно прав",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Not enough permissions for the operation"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для данной операции недостаточно прав"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_PermissionWarning",
+      "Comment": "В \"Правилах доступа\" вместе с условием \"Я модератор\" указаны права помимо \"Редактировать мои сообщения\" или \"Редактировать все сообщения\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The \"Permission rules\" with the condition \"I am the moderator\" contain the rules except \"Edit my messages\" and \"Edit all messages\""
+        },
+        {
+          "Culture": "ru",
+          "Value": "В \"Правилах доступа\" вместе с условием \"Я модератор\" указаны права помимо \"Редактировать мои сообщения\" или \"Редактировать все сообщения\""
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_RolesIsExist",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Roles {0} already added to this topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Роли {0} уже добавлены в участники этого обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_TimeToChangeMessagesHasPassed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Time to change messages has passed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Время на изменение сообщений прошло"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_TimeToChangeYourMessagesHasPassed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Time to change your messages has passed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Время на изменение своих сообщений прошло"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_UpdateMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Message update failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось обновить сообщение"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationKey_UpdateRoles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to add roles {0} to the topic {1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось добавить роль {0} в топик {1}"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_CantMentionUser",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee can't be mentioned in this discussion."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудник не может быть упомянут в этом обсуждении"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_CantMentionUserFormat",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee {0} can't be mentioned in this discussion."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудник {0} не может быть упомянут в этом обсуждении."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_MessageNotFoundForEdit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Message isn't found for editing."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найдено сообщение для редактирования."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_ParticipantIsExist",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employees {0} already added to this topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудники {0} уже добавлены в участники этого обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_ParticipantReadOnly",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Participant in read-only mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Участник в режиме только для чтения"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_PermissionError_AddingParticipant",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No permissions to add participant."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет прав на добавление участника."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_PermissionError_MentionUsers",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No permissions to mention participants."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет прав на упоминание участников."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_PermissionError_RemovingParticipant",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No permissions to remove participant."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет прав на удаление участника."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_PermissionError_TopicArchived",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Only a super moderator can get an archived topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Получить архивированное обсуждение может только супермодератор"
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_PermissionError_UpdatingParticipant",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No permissions to modify participant."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет прав на изменение участника."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_ValidationMessage_PermissionError_UserNotParticipant",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "User {0} is not a participant of the topic {1} or supermoderator mode is not enabled."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пользователь {0} не является участником топика {1}, или не включен режим супермодератора."
+        }
+      ]
+    },
+    {
+      "Name": "Forum_View_IsArchived",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": " [is archived]"
+        },
+        {
+          "Culture": "ru",
+          "Value": " [архивировано]"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_Control_LoadingText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Forum loading"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Форумы загружаются"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_AddFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add file"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прикрепить файл"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_AddFileFromCard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add file from card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прикрепить файл из карточки"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_AddLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прикрепить внешнюю ссылку"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_AttachItemToCard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Attach to card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прикрепить в карточку"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_Delete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_Edit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_InsertInMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert in message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить в сообщение"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_MarkAsRead",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mark as read"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отметить как прочитанное"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_PasteFromClipboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste files from clipboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прикрепить файлы из буфера обмена"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_Read",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Read"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прочитать"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_Reply",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reply"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Написать"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_MenuItems_UnRead",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unread"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отметить как непрочитанное"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_Notification_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Notification of new forums posts"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Уведомление о новых сообщениях в обсуждениях"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_Operation_NewMessagesNotificationsSending",
+      "Comment": "Имя операции по отправке уведомления о новых сообщениях в обсуждениях",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Sending discussion notifications"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправка уведомлений по сообщениям в обсуждениях"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_RichTextBox_MenuItems_Edit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать"
+        }
+      ]
+    },
+    {
+      "Name": "Forums_ServerSettings_Negative_Value_Restrict",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Field \"{0}\" should be non-negative."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле \"{0}\" должно иметь неотрицательное значение."
+        }
+      ]
+    },
+    {
+      "Name": "Forums_TopicUsersForMentionViewExtension_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adds a drop-down list with a filter to the view for employee mentions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавляет выпадающий список с фильтром в представление для упоминания сотрудников"
+        }
+      ]
+    },
+    {
+      "Name": "Fourm_Control_Items_File",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Фaйл"
+        }
+      ]
+    },
+    {
+      "Name": "Fourm_Control_Items_InnerItem",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Inner item"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Внутренний элемент"
+        }
+      ]
+    },
+    {
+      "Name": "Fourm_Control_Items_Link",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ссылка"
+        }
+      ]
+    },
+    {
+      "Name": "Fourm_Control_Items_LinkText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Link text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст ссылки"
+        }
+      ]
+    },
+    {
+      "Name": "KrNotifications_ForumEnteringTopicNotificationBody",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You have been added to the new discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы были добавлены в новое обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "KrNotifications_ForumEnteringTopicNotificationSubject",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You have been added to the new discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы были добавлены в новое обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "KrNotifications_ForumEnteringTopicNotificationType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Notification about being added to the discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Уведомление о добавлении в участники обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "KrNotifications_ForumNewMessagesNotification",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Newsletter about a new message for the topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Уведомление о новом сообщении в обсуждении"
+        }
+      ]
+    },
+    {
+      "Name": "KrNotifications_ForumNewMessagesNotificationType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Newsletter about a new message for the topic"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Уведомление о новом сообщении в обсуждении"
+        }
+      ]
+    },
+    {
+      "Name": "KrNotifications_ForumUserMentionNotificationBody",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You were mentioned in a discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вас упомянули в обсуждении"
+        }
+      ]
+    },
+    {
+      "Name": "KrNotifications_ForumUserMentionNotificationSubject",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You were mentioned in a discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вас упомянули в обсуждении"
+        }
+      ]
+    },
+    {
+      "Name": "KrNotifications_ForumUserMentionNotificationType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Notification about a mention in a discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Уведомление об упоминании в обсуждении"
+        }
+      ]
+    },
+    {
+      "Name": "MessageMenu_ToolTip_CopyMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копировать сообщение"
+        }
+      ]
+    },
+    {
+      "Name": "MessageMenu_ToolTip_Edit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать"
+        }
+      ]
+    },
+    {
+      "Name": "MessageMenu_ToolTip_GetDesktopLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy link for desktop client"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Cкопировать ссылку для desktop-клиента"
+        }
+      ]
+    },
+    {
+      "Name": "MessageMenu_ToolTip_GetLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy link to clipboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Cкопировать ссылку в буфер обмена"
+        }
+      ]
+    },
+    {
+      "Name": "MessageMenu_ToolTip_GetWebLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy link for web client"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Cкопировать ссылку для web-клиента"
+        }
+      ]
+    },
+    {
+      "Name": "MessageMenu_ToolTip_OpenMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Go to message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перейти к сообщению"
+        }
+      ]
+    },
+    {
+      "Name": "MessageMenu_ToolTip_Reply",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reply"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответить"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_Done",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Done"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Готово"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_AddBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить блок"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Align_Center",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Center align"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По центру"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Align_Left",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Left align"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По левому краю"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Align_Right",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Right align"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По правому краю"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_AttachImage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert image"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить изображение"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_AttachItem",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Attach item"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прикрепить"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_BackgroundColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Background color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет выделения текста"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Bold",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Bold (Ctrl+B)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Жирный (Ctrl+B)"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Bullets",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Bullets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Маркеры"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Done",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Apply Changes"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Применить изменения"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_FontSize",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Font size"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Размер шрифта"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_ForegroundColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Foreground color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет текста"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_InlineBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert monospaced text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить моноширинный текст"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Italic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Italic (Ctrl+I)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Курсивный (Ctrl+I)"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Justify",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Justify"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По ширине"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Mention",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mention"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Упоминание"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_MonoBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add monospaced block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить моноширинный блок"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_NumberingBullets",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Numbering bullets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нумерация"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_QuoteBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert quote block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить блок-цитату"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_RemoveBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить блок"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_ResetStyle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove all styles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить всё форматирование"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_SelectBlockColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select block color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет блока"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_SoftBreakButton",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert soft line break (without paragraph break)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить мягкий перенос строки (без разрыва параграфа)"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Strikeout",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Strikeout (Ctrl+Alt+S)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Зачеркнутый (Ctrl+Alt+S)"
+        }
+      ]
+    },
+    {
+      "Name": "RichTextBox_ToolTip_Underline",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Underline (Ctrl+U)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подчеркнутый (Ctrl+U)"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_NothingFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "< Searching \"{0}\" nothing found >"
+        },
+        {
+          "Culture": "ru",
+          "Value": "< По запросу: \"{0}\" ничего не найдено >"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_Quote",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Quote"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цитировать"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_SearchingResults",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Searching results: \"{0}\""
+        },
+        {
+          "Culture": "ru",
+          "Value": "Результаты поиска: \"{0}\""
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_ToolTip_BackToTopicList",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Back to topic list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вернуться к списку обсуждений"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_ToolTip_Collapse",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Collapse"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Свернуть"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_ToolTip_Expand",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expand"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Развернуть по ширине"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_ToolTip_Menu",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Menu"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Меню"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_ToolTip_Search",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Search"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Найти"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_ToolTip_SearchBack",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Return to search results"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вернуться к результатам поиска"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_ToolTip_SearchClose",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Close search panel"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Закрыть панель поиска"
+        }
+      ]
+    },
+    {
+      "Name": "TopicControl_ToolTip_Update",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Update"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumAlwaysFullSize",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Always full size"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Всегда отображать в полный размер"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumAlwaysFullSize_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "This control will occupy the entire area provided"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Этот контрол будет занимать всю предоставленную область"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumAutoFocus",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Autofocus"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Автофокус"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumAutoFocus_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When you open the card, the focus will be on the message input area"
+        },
+        {
+          "Culture": "ru",
+          "Value": "При открытии карточки фокус будет в области ввода сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumBoxMaxHeight_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum control height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальная высота контрола"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumMaxHeight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальная высота"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumMaxHeight_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum control height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальная высота контрола"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumMinHeight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Minimum height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Минимальная высота"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumMinHeight_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Minimum control height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Минимальная высота контрола"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumReverseOrder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reverse order for messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обратный порядок сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumReverseOrder_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Display topics' messages in reverse order, from newer to older ones."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображать сообщения топиков в обратном порядке, начиная с более новых."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_Forums",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "discussions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumSingleMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Only discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Единственное обсуждение"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumSingleMode_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Only one discussion can be added/displayed in this control"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Только одно обсуждение можно добавить/отобразить в данном контроле"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumStretchVertically",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Stretch vertical"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Растянуть по вертикали"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumStretchVertically_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Stretch vertical\nЕhe minimum and maximum height fields are ignored"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Растянуть по вертикали\nИгнорируются поля минимальная и максимальная высота"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_ForumType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Discussions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_RichTextBoxMaxHeight_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum control height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальная высота контрола"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_RichTextBoxMinHeight_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Minimum control height"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Минимальная высота контрола"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_TopicType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type of discussion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип обсуждений"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Cards_TypesEditor_TopicType_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type of discussion, to filter discussions.\nDefault is \"Default\""
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип обсуждений, для возможности фильтрации обсуждений\nПо умолчанию \"Default\""
+        }
+      ]
+    },
+    {
+      "Name": "View_Names_TopicUsersForMention",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mention of user"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Упоминание сотрудника"
+        }
+      ]
+    },
+    {
+      "Name": "View_Names_TopicUsersForMentionAutocomplete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Users for mention"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пользователи для упоминания"
+        }
+      ]
+    },
+    {
+      "Name": "View_TopicUsersForMentionAutocomplete_Name",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "View_TopicUsersForMentionAutocomplete_TopicID",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Topic ID"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор топика"
+        }
+      ]
+    },
+    {
+      "Name": "Views_MyTopics_ShowArchived",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show archived topics"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать архивные обсуждения"
+        }
+      ]
+    },
+    {
+      "Name": "Views_TopicParticipants_InvitingUserName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invited by user"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Приглашен пользователем"
+        }
+      ]
+    },
+    {
+      "Name": "Workplaces_User_TopicParticipants",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Участники"
+        }
+      ]
+    }
+  ]
+}

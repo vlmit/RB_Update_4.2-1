@@ -1,0 +1,176 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$KrStages_Edit",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_Comment",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxLength::int": 440,
+                "MaxRows::int": 6,
+                "MinRows::int": 2
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "b823d41a-eb03-4379-a470-6d19efd2bba8"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "ef86e270-047b-4b7c-9c22-dda56e8eef2c",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrEdit_ChangeState",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[DesignTime]",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "f090ed43-c823-4e0a-9a69-3243116e4a25"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "ef86e270-047b-4b7c-9c22-dda56e8eef2c",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrEdit_IncrementCycle",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[DesignTime]",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "831eaaa5-65cb-49df-b614-86a1cb696894"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "ef86e270-047b-4b7c-9c22-dda56e8eef2c",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrEdit_EditApprovalSchemeAccess",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[DesignTime]",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "81e0cd32-d1df-4c0e-a702-2d3abfceb766"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "ef86e270-047b-4b7c-9c22-dda56e8eef2c",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrEdit_DoNotSkipStage",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[DesignTime]",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "d2657c80-9d4f-471d-911d-e2e9a6c74c38"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "ef86e270-047b-4b7c-9c22-dda56e8eef2c",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrEdit_ManageStageVisibility",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[DesignTime]",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "3a83b5cd-f81f-4679-ba76-12788fe7d5a0"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "ef86e270-047b-4b7c-9c22-dda56e8eef2c",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "MainBlock"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "KrEditStageTypeSettings",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "KrProcess",
+  "ID::uid": "995621e3-fdcf-412b-91a6-3f28fe933e70",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "KrEditStageTypeSettings",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "f090ed43-c823-4e0a-9a69-3243116e4a25",
+        "b823d41a-eb03-4379-a470-6d19efd2bba8",
+        "831eaaa5-65cb-49df-b614-86a1cb696894",
+        "d2657c80-9d4f-471d-911d-e2e9a6c74c38",
+        "3a83b5cd-f81f-4679-ba76-12788fe7d5a0",
+        "81e0cd32-d1df-4c0e-a702-2d3abfceb766"
+      ],
+      "SectionID::uid": "ef86e270-047b-4b7c-9c22-dda56e8eef2c"
+    }
+  ],
+  "Validators": null
+}

@@ -1,0 +1,66 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$KrStages_ChangeState",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrChangeState_State",
+              "ComplexColumnID::uid": "0f2bf298-6c8f-45fe-a0bc-c6965f963e12",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "ParameterAlias": "Name",
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "KrDocStates",
+                "ViewAliasComboBox": "KrDocStates"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "bc1450c4-0ddd-4efd-9636-f2ec5d013979",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "MainInfo"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "KrChangeStateStageTypeSettings",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "KrProcess",
+  "ID::uid": "784388f6-dad3-4ce2-a8b9-49e73d71784c",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "KrChangeStateStageTypeSettings",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "0f2bf298-6c8f-45fe-a0bc-c6965f963e12"
+      ],
+      "SectionID::uid": "bc1450c4-0ddd-4efd-9636-f2ec5d013979"
+    }
+  ],
+  "Validators": null
+}

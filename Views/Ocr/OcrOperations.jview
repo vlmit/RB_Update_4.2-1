@@ -1,0 +1,154 @@
+﻿{
+  "Alias": "OcrOperations",
+  "Caption": "$Views_Names_OcrOperations",
+  "GroupName": "Ocr",
+  "ID": "c6047012-cb5c-4fd3-a3d1-3b2b39be7a1f",
+  "JsonMetadataSource::txt": "OcrOperations JSONMETA",
+  "MsQuerySource::txt": "OcrOperations MSSQL",
+  "PgQuerySource::txt": "OcrOperations PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART OcrOperations JSONMETA]
+{
+  "Alias": "OcrOperations",
+  "Caption": "$Views_Names_OcrOperations",
+  "Columns": [
+    {
+      "Alias": "OperationID",
+      "Hidden": true,
+      "Type": "$Instances.ID"
+    },
+    {
+      "Alias": "OperationCreated",
+      "Caption": "$Views_OcrOperations_Created",
+      "SortBy": "i.Created",
+      "Type": "$Instances.Created"
+    },
+    {
+      "Alias": "OperationCreatedByID",
+      "Hidden": true,
+      "Type": "$Instances.CreatedByID"
+    },
+    {
+      "Alias": "OperationCreatedByName",
+      "Caption": "$Views_OcrOperations_CreatedBy",
+      "NormalizationKeyColumn": "OperationCreatedByID",
+      "NormalizationSource": "Users",
+      "Type": "$PersonalRoles.Name"
+    },
+    {
+      "Alias": "OperationFileName",
+      "Caption": "$Views_OcrOperations_FileName",
+      "Localizable": true,
+      "MaxLength": 150,
+      "Type": "$OcrOperations.FileName"
+    },
+    {
+      "Alias": "OperationVersionRowID",
+      "Caption": "$Views_OcrOperations_VersionRowID",
+      "Type": "$OcrOperations.VersionRowID"
+    },
+    {
+      "Alias": "OperationCardID",
+      "Caption": "$Views_OcrOperations_CardID",
+      "Type": "$OcrOperations.CardID"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "OperationCreated",
+      "SortDirection": "Descending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "References": [
+    {
+      "ColPrefix": "Operation",
+      "DisplayValueColumn": "OperationFileName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "OcrOperations"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART OcrOperations MSSQL]
+SELECT
+#if(Normal) {
+	[t].[OperationID],
+	[t].[OperationCreated],
+	[t].[OperationCreatedByID],
+	[t].[OperationFileName],
+	[t].[OperationVersionRowID],
+	[t].[OperationCardID]
+}
+#if(Count) {
+	[t].*
+}
+FROM (
+	SELECT
+	#if(Normal) {
+		[i].[ID]				AS [OperationID],
+		[o].[CardID]			AS [OperationCardID],
+		[o].[VersionRowID]		AS [OperationVersionRowID],
+		[i].[Created]			AS [OperationCreated],
+		[i].[CreatedByID]		AS [OperationCreatedByID],
+		[o].[FileName]			AS [OperationFileName],
+		ROW_NUMBER() OVER (ORDER BY #order_by) AS [rn]
+	}
+	#if(Count) {
+		COUNT(*) 				AS [Count]
+	}
+	FROM [OcrOperations] AS [o] WITH (NOLOCK)
+	#if(Normal || request.SortedBy("Created")) {
+	INNER JOIN [Instances] AS [i] WITH (NOLOCK)
+		ON [i].[ID] = [o].[ID]
+	}
+) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset)
+	AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+
+
+[TEXTPART OcrOperations PGSQL]
+SELECT
+#if(Normal) {
+	"i"."ID"				AS "OperationID",
+	"i"."Created"			AS "OperationCreated",
+	"i"."CreatedByID"		AS "OperationCreatedByID",
+	"o"."FileName"			AS "OperationFileName",
+	"o"."VersionRowID"		AS "OperationVersionRowID",
+	"o"."CardID"			AS "OperationCardID"
+}
+#if(Count) {
+	COUNT(*) 				AS "Count"
+}
+FROM "OcrOperations" AS "o"
+#if(Normal || request.SortedBy("Created")) {
+INNER JOIN "Instances" AS "i"
+	ON "i"."ID" = "o"."ID"
+}
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

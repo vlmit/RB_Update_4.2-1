@@ -1,0 +1,732 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_RefGroup",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": "{f:RefGroups.Name}",
+  "Extensions": null,
+  "Flags::int": 259,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "General",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$RefGroups_Controls_RefGroup_Name",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 4,
+              "Name": "RefGroup_Name",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "df8c6029-ee14-488b-b935-2a3b8e4a067c"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_Type",
+              "ComplexColumnID::uid": "46e6cd0c-28a3-4547-87e7-867d0014acc4",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "RefGroupType"
+                ],
+                "ViewAlias": "RefGroupTypes",
+                "ViewAliasComboBox": "RefGroupTypes"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 4,
+              "Name": "RefGroupType",
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_IntID",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "RefGroupIntID",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "7f356985-e711-4940-883b-db0fe25b6c09"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_Mode",
+              "ComplexColumnID::uid": "c6fc4f8d-553e-44e9-ac05-0464e7de8fb0",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "HideSelectorButton": true,
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "ModeEnum"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "RefGroupModeEnum",
+                "ViewAliasComboBox": "RefGroupModeEnum"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 4,
+              "Name": "RefGroupMode",
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 0,
+            "ColumnSpan::int": 1,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 0,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "General"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "ConditionalControls",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$RefGroups_Controls_RefGroup_SQL",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "AvalonFontType::int": 1,
+                "AvalonSyntaxType::int": 9,
+                "MaxRows::int": 30,
+                "MinRows::int": 7,
+                "TextMode::int": 1,
+                "TextWrap": false
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "RefGroupSQL",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "55cd3077-95a2-4961-9403-917af83ad0a2"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$RefGroups_Controls_RefGroup_Script",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "AvalonFontType::int": 1,
+                "AvalonSyntaxType::int": 2,
+                "MaxRows::int": 30,
+                "MinRows::int": 7,
+                "TextMode::int": 1,
+                "TextWrap": false
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "RefGroupScript",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "e2c2d367-75f4-4e9e-9ab0-f81021265e7a"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_Compile",
+              "ControlSettings": {
+                "Text": "$RefGroups_Controls_RefGroup_Compile"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "CompileBtn",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_CompileAll",
+              "ControlSettings": {
+                "Text": "$RefGroups_Controls_RefGroup_CompileAll"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "CompileAllBtn",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_IncludedValues",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "5a657033-37ce-4cb2-89d5-6f8df9729312",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "IsClearFieldVisible": true,
+                "ReferenceOpenMode::int": 3
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": "RefGroupIncludedValuesGuid",
+              "RequiredText": null,
+              "SectionID::uid": "3c8a0a8b-6c00-44c2-88d8-dfab3b3ae43d",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_IncludedValues",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "fbe3d4d0-6059-4af7-b3ce-34079b50b6d9",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "IsClearFieldVisible": true,
+                "ReferenceOpenMode::int": 3
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": "RefGroupIncludedValuesInt",
+              "RequiredText": null,
+              "SectionID::uid": "d36554bc-ed72-4d07-bede-71c38e0a6dbc",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_ExcludedValues",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "099bd012-e88f-4cb8-8562-37a0e3e9b3b2",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "IsClearFieldVisible": true,
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "ThisMustBeChanged"
+                ],
+                "ReferenceOpenMode::int": 3
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": "RefGroupExcludedValuesGuid",
+              "RequiredText": null,
+              "SectionID::uid": "cafc7228-76c7-4f36-b841-5fa85d673d86",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_ExcludedValues",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "45ec3a9c-6ee6-42b2-85f0-27dce6dc587e",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "IsClearFieldVisible": true,
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "ThisMustBeChanged"
+                ],
+                "ReferenceOpenMode::int": 3
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": "RefGroupExcludedValuesInt",
+              "RequiredText": null,
+              "SectionID::uid": "bc9f3fc4-21ed-4c9b-acb7-997acd12702b",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 0,
+            "ColumnSpan::int": 2,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 1,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "ConditionalControls"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Description",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$RefGroups_Controls_RefGroup_Description",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxRows::int": 10,
+                "MinRows::int": 10,
+                "SpellCheck": true
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "d46f806d-87c5-417c-bdff-2a8aa9cdd2f3"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 1,
+            "ColumnSpan::int": 1,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 0,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "Description"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$RefGroups_Blocks_Values",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_NotCalculatedYet",
+              "ControlSettings": {
+                "Background": "#FFF9F9B0",
+                "BorderColor": "#FF848282",
+                "BorderThickness::dbl": 1.0,
+                "Padding": "3,3,3,3",
+                "Text": "$RefGroups_Controls_NotCalculatedYet"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "NotCalculatedYet",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_CalculatedValues",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "$RefGroups_Columns_Name",
+                  "ComplexColumnID": null,
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [
+                    {
+                      "::single_type": "uid"
+                    },
+                    "7d7251d1-b0a2-4ee1-91bd-cb30712e7769"
+                  ],
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "$RefGroups_Columns_ID",
+                  "ComplexColumnID": null,
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [
+                    {
+                      "::single_type": "uid"
+                    },
+                    "884e4b70-a557-486f-8466-98361dc0227e"
+                  ],
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "IsMultiselectable": false,
+                "MaxHeight::int": 200,
+                "ScrollWithMouse": true
+              },
+              "ControlType::int": 1,
+              "Flags::int": 1,
+              "Form": {
+                "Blocks": null,
+                "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+                "FormSettings": null
+              },
+              "Name": "RefGroupCalculatedValues",
+              "RequiredText": null,
+              "SectionID::uid": "bf3e61e4-082c-4183-8049-1d165886f56f",
+              "ToolTip": null,
+              "Type::uid": "b6038b72-342a-0c8d-ae2e-f2f3d122baa9"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_Calculate",
+              "ControlSettings": {
+                "Text": "$RefGroups_Controls_RefGroup_Calculate"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "CalculateBtn",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_Calculated",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "DateNullable": true
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": "RefGroupCalculated",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "e2334111-eaa8-43f2-a4dc-3e9edad0c723"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$RefGroups_Controls_RefGroup_LastError",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "DateNullable": true
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": "RefGroupLastError",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "e44ab37a-7cf3-47b8-a65a-6301d0b00ce4"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$RefGroups_Controls_RefGroup_MessageText",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "AvalonFontType::int": 1,
+                "MaxRows::int": 10,
+                "MinRows::int": 2,
+                "TextMode::int": 1
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": "RefGroupMessageText",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "2f33fca1-c3b1-42c5-bc22-26c3344a2588"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 0,
+            "ColumnSpan::int": 2,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 2,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Columns": [
+          {
+            "::types": [
+              "dbl",
+              "dbl"
+            ]
+          },
+          1.0,
+          1.0
+        ],
+        "Rows": [
+          null,
+          null,
+          null
+        ]
+      },
+      "Name": "Main",
+      "TabCaption": "$CardTypes_RefGroup"
+    }
+  ],
+  "Group": "Settings",
+  "ID::uid": "76a08bae-778f-4ca4-833d-bc0078f5f2cf",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "RefGroup",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "5a657033-37ce-4cb2-89d5-6f8df9729312"
+      ],
+      "SectionID::uid": "3c8a0a8b-6c00-44c2-88d8-dfab3b3ae43d"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "df8c6029-ee14-488b-b935-2a3b8e4a067c",
+        "7f356985-e711-4940-883b-db0fe25b6c09",
+        "d46f806d-87c5-417c-bdff-2a8aa9cdd2f3",
+        "55cd3077-95a2-4961-9403-917af83ad0a2",
+        "e2334111-eaa8-43f2-a4dc-3e9edad0c723",
+        "4337deaa-f854-4edb-953e-9d1887b92db3",
+        "e2c2d367-75f4-4e9e-9ab0-f81021265e7a",
+        "c6fc4f8d-553e-44e9-ac05-0464e7de8fb0",
+        "46e6cd0c-28a3-4547-87e7-867d0014acc4",
+        "2f33fca1-c3b1-42c5-bc22-26c3344a2588",
+        "e44ab37a-7cf3-47b8-a65a-6301d0b00ce4"
+      ],
+      "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "45ec3a9c-6ee6-42b2-85f0-27dce6dc587e"
+      ],
+      "SectionID::uid": "bc9f3fc4-21ed-4c9b-acb7-997acd12702b"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "884e4b70-a557-486f-8466-98361dc0227e",
+        "7d7251d1-b0a2-4ee1-91bd-cb30712e7769"
+      ],
+      "SectionID::uid": "bf3e61e4-082c-4183-8049-1d165886f56f"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "099bd012-e88f-4cb8-8562-37a0e3e9b3b2"
+      ],
+      "SectionID::uid": "cafc7228-76c7-4f36-b841-5fa85d673d86"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "fbe3d4d0-6059-4af7-b3ce-34079b50b6d9"
+      ],
+      "SectionID::uid": "d36554bc-ed72-4d07-bede-71c38e0a6dbc"
+    }
+  ],
+  "Validators": [
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "df8c6029-ee14-488b-b935-2a3b8e4a067c",
+        "ErrorMessage": "$RefGroups_Validation_RefGroupNameCanNotBeEmpty",
+        "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962"
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "46e6cd0c-28a3-4547-87e7-867d0014acc4",
+        "ErrorMessage": "$RefGroups_Validation_GroupTypeMustBeSet",
+        "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962"
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "c6fc4f8d-553e-44e9-ac05-0464e7de8fb0",
+        "ErrorMessage": "$RefGroups_Validation_GroupModeMustBeSet",
+        "SectionID::uid": "9ba19a3a-ddfd-4d68-9af0-fe7f87345962"
+      }
+    }
+  ]
+}

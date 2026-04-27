@@ -1,0 +1,199 @@
+﻿{
+  "Alias": "RefDocumentsLookup",
+  "Caption": "$Views_Names_RefDocumentsLookup",
+  "GroupName": "KrDocuments",
+  "ID": "57fb8582-bfe3-4ae9-8ee3-1feb96b18803",
+  "JsonMetadataSource::txt": "RefDocumentsLookup JSONMETA",
+  "MsQuerySource::txt": "RefDocumentsLookup MSSQL",
+  "PgQuerySource::txt": "RefDocumentsLookup PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART RefDocumentsLookup JSONMETA]
+{
+  "Alias": "RefDocumentsLookup",
+  "Caption": "$Views_Names_RefDocumentsLookup",
+  "Columns": [
+    {
+      "Alias": "DocID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.ID"
+    },
+    {
+      "Alias": "DocDescription",
+      "Caption": "$Views_RefDocumentsLookup_Description",
+      "SortBy": "dci.Number",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "DocTypeName",
+      "Caption": "$Views_RefDocumentsLookup_Type",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Date",
+      "Caption": "$Views_RefDocumentsLookup_Date",
+      "Type": "$DocumentCommonInfo.DocDate"
+    },
+    {
+      "Alias": "PartnerName",
+      "Caption": "$Views_RefDocumentsLookup_Partner",
+      "Type": "$DocumentCommonInfo.PartnerName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "DocDescription",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Description",
+      "AllowedOperands": [
+        "Contains"
+      ],
+      "Caption": "$Views_RefDocumentsLookup_Description_Param",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Doc",
+      "DisplayValueColumn": "DocDescription",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "DocumentCommonInfo"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RefDocumentsLookup MSSQL]
+#if(Description) {
+DECLARE @Pattern	nvarchar(max)
+DECLARE @PatternContains	nvarchar(max)
+DECLARE @Number	bigint;
+
+SET @Pattern =  #param(Description) + N'%';
+SET @PatternContains =  N'%' + #param(Description) + N'%';
+
+BEGIN TRY
+	SET @Number = CAST(#param(Description) AS bigint);
+END TRY
+BEGIN CATCH
+END CATCH;
+}
+
+SELECT
+	[t].[ID]																	AS [DocID],
+	COALESCE([dci].[FullNumber], N'') + N', ' + COALESCE([dci].[Subject], N'')	AS [DocDescription],
+	COALESCE([dci].[DocTypeTitle], [ts].[Caption])								AS [DocTypeName],
+	[dci].[DocDate]																AS [Date],
+	[dci].[PartnerName]
+FROM (
+	SELECT TOP(#param(PageLimit)) [dci].[ID]
+	#if(Description) {
+	FROM (
+		SELECT TOP(#param(PageLimit)) [dci].[ID]
+		FROM [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+		WHERE [Number] = @Number
+
+		UNION
+
+		SELECT TOP(#param(PageLimit)) [dci].[ID]
+		FROM [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+		WHERE [dci].[PartnerID] IN (
+			SELECT [ID] FROM [Partners] AS [p] WITH (NOLOCK)
+			WHERE [p].[Name] LIKE @PatternContains ESCAPE '\')
+
+		UNION
+
+		SELECT TOP(#param(PageLimit)) [dci].[ID]
+		FROM [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+		WHERE [dci].[FullNumber] LIKE @Pattern ESCAPE N'\'
+
+		UNION
+
+		SELECT TOP(#param(PageLimit)) [dci].[ID]
+		FROM [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+		WHERE [dci].[Subject] LIKE @Pattern ESCAPE N'\'
+		) AS [t]
+	INNER JOIN [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+		ON [dci].[ID] = [t].[ID]
+	} {
+	FROM [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+	}
+	ORDER BY [dci].[DocDate] DESC
+	) AS [t]
+INNER JOIN [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+	ON [dci].[ID] = [t].[ID]
+INNER JOIN [Types] AS [ts] WITH (NOLOCK)
+	ON [ts].[ID] = [dci].[CardTypeID];
+
+
+[TEXTPART RefDocumentsLookup PGSQL]
+SELECT
+	"t"."ID"																	AS "DocID",
+	COALESCE("dci"."FullNumber", '') || ', ' || COALESCE("dci"."Subject", '')	AS "DocDescription",
+	COALESCE("dci"."DocTypeTitle", "ts"."Caption")								AS "DocTypeName",
+	"dci"."DocDate"																AS "Date",
+	"dci"."PartnerName"
+FROM (
+	#if(Description) {
+	(
+		SELECT "dci"."ID", "dci"."DocDate"
+		FROM "DocumentCommonInfo" AS "dci"
+		WHERE "dci"."Number" = "TryCastAsBigint"(#param(Description))
+		LIMIT #eval(PageLimit.Value)
+	)
+	UNION
+	(
+		SELECT "dci"."ID", "dci"."DocDate"
+		FROM "DocumentCommonInfo" AS "dci"
+		WHERE "dci"."PartnerID" IN (
+			SELECT "ID" FROM "Partners" AS "p"
+			WHERE true #param(Description, "p"."Name"))
+		LIMIT #eval(PageLimit.Value)
+	)
+	#if (Description.Value.Length >= 3) {
+	-- Ограничение на как минимум три символа для поиска по полному номеру или заголовку сделано по той причине,
+	-- что pg_trgm умеет обрабатывать поиск по вхождению строки (%pattern%) для трёх символов минимум. В противном
+	-- случае использования индекса нет
+	UNION
+	(
+		SELECT "dci"."ID", "dci"."DocDate"
+		FROM "DocumentCommonInfo" AS "dci"
+		WHERE true #param(Description, "dci"."FullNumber")
+		LIMIT #eval(PageLimit.Value)
+	)
+	UNION
+	(
+		SELECT "dci"."ID", "dci"."DocDate"
+		FROM "DocumentCommonInfo" AS "dci"
+		WHERE true #param(Description, "dci"."Subject")
+		LIMIT #eval(PageLimit.Value)
+	)
+	}
+	} {
+	SELECT "dci"."ID", "dci"."DocDate"
+	FROM "DocumentCommonInfo" AS "dci"
+	}
+	-- LIMIT ограничивает количество для всех вышестоящих SELECT
+	ORDER BY "DocDate" DESC
+	LIMIT #eval(PageLimit.Value)
+	) AS "t"
+INNER JOIN "DocumentCommonInfo" AS "dci"
+	ON "dci"."ID" = "t"."ID"
+INNER JOIN "Types" AS "ts"
+	ON "ts"."ID" = "dci"."CardTypeID"

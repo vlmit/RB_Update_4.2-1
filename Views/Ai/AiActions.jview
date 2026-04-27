@@ -1,0 +1,85 @@
+﻿{
+  "Alias": "AiActions",
+  "Caption": "$Ai_Views_Actions",
+  "GroupName": "Ai",
+  "ID": "68bb98e6-766e-4873-8ff6-93b3ac35f90d",
+  "JsonMetadataSource::txt": "AiActions JSONMETA",
+  "MsQuerySource::txt": "AiActions MSSQL",
+  "PgQuerySource::txt": "AiActions PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART AiActions JSONMETA]
+{
+  "Alias": "AiActions",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Ai_Views_Actions",
+  "Columns": [
+    {
+      "Alias": "ActionID",
+      "Hidden": true,
+      "Type": "$AiToolAction.ID"
+    },
+    {
+      "Alias": "ActionName",
+      "Caption": "$Ai_Views_Columns_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "\"aa\".\"Name\"",
+      "Type": "$AiToolAction.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ActionName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Fields_Name_Param",
+      "Type": "$AiToolAction.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Action",
+      "RefSection": [
+        "AiToolAction"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AiActions MSSQL]
+SELECT
+    [aa].[ID] 		AS [ActionID],
+    [aa].[Name] 	AS [ActionName]
+FROM [AiToolAction] AS [aa]
+#if(Name) {
+CROSS APPLY [Localization]([aa].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+[TEXTPART AiActions PGSQL]
+SELECT
+	"aa"."ID"		AS "ActionID",
+	"aa"."Name"		AS "ActionName"
+FROM "AiToolAction" AS "aa"
+#if(Name) {
+CROSS JOIN "Localization"("aa"."Name", #param(locale)) AS "l"
+}
+WHERE TRUE
+	#param(Name, "l"."Value")
+ORDER BY #order_by

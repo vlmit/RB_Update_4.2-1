@@ -1,0 +1,186 @@
+﻿{
+  "Alias": "KrDocStateCards",
+  "Caption": "$Views_Names_KrDocStateCards",
+  "GroupName": "Kr Wf",
+  "ID": "d9534c6c-ec26-4de9-be78-5df833b70f43",
+  "JsonMetadataSource::txt": "KrDocStateCards JSONMETA",
+  "MsQuerySource::txt": "KrDocStateCards MSSQL",
+  "PgQuerySource::txt": "KrDocStateCards PGSQL"
+}
+
+[TEXTPART KrDocStateCards JSONMETA]
+{
+  "Alias": "KrDocStateCards",
+  "Caption": "$Views_Names_KrDocStateCards",
+  "Columns": [
+    {
+      "Alias": "StateID",
+      "Caption": "$Views_KrDocStates_ID",
+      "FilterParameter": "ID",
+      "FilterType": "Parameter",
+      "SortBy": "s.ID",
+      "Type": "$KrDocState.ID"
+    },
+    {
+      "Alias": "StateName",
+      "Caption": "$Views_KrDocStates_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$KrDocState.Name"
+    },
+    {
+      "Alias": "PartitionID",
+      "Hidden": true,
+      "Type": "$Partitions.ID"
+    },
+    {
+      "Alias": "PartitionName",
+      "Caption": "$Views_KrDocStates_Partition",
+      "FilterParameter": "Partition",
+      "FilterType": "Parameter",
+      "SortBy": "p.Name",
+      "Type": "$Partitions.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "StateID",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "Extensions": [
+    {
+      "Order": 0,
+      "TypeName": "Tessa.Extensions.Default.Client.Cards.OpenFromKrDocStatesOnDoubleClickExtension"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "ID",
+      "Caption": "$Views_KrDocStates_ID",
+      "Multiple": false,
+      "Type": "$KrDocState.ID"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrDocStates_Name",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Partition",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "Partitions"
+      },
+      "Caption": "$Views_KrDocStates_Partition",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "Partitions"
+      },
+      "RefSection": [
+        "Partitions"
+      ],
+      "Type": "$Partitions.ID"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "State",
+      "DisplayValueColumn": "StateName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "KrDocState"
+      ]
+    },
+    {
+      "ColPrefix": "Partition",
+      "DisplayValueColumn": "PartitionName",
+      "RefSection": [
+        "Partitions"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrDocStateCards MSSQL]
+SELECT
+	[s].[ID]		AS [StateID],
+	[s].[Name]		AS [StateName],
+	[p].[ID]		AS [PartitionID],
+	[p].[Name]		AS [PartitionName]
+FROM [KrDocState] AS [s] WITH (NOLOCK)
+OUTER APPLY (
+	SELECT
+		COALESCE(
+			[tt].[Definition].value('(/SchemeRecord/@Partition)[1]', 'uniqueidentifier'),
+			'd1b372f3-7565-4309-9037-5e5a0969d94e' -- Standard solution
+		) AS [PartitionID]
+	FROM (
+		SELECT [tt].[Definition].query('.') AS [Definition]
+		FROM [Tables] AS [t] WITH (NOLOCK)
+		CROSS APPLY [t].[Definition].nodes('/SchemeTable/SchemeRecord') AS [tt]([Definition])
+		WHERE [t].[ID] = '47107d7a-3a8c-47f0-b800-2a45da222ff4' -- KrDocState
+	) AS [tt]
+	WHERE [tt].[Definition].value('(/SchemeRecord/ID)[1]', 'int') = [s].[ID]
+) AS [t]
+LEFT JOIN [Partitions] AS [p] WITH (NOLOCK) ON [p].[ID] = [t].[PartitionID]
+#if(Name || request.SortedBy("StateName")) {
+CROSS APPLY [Localization]([s].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(ID, [s].[ID])
+	#param(Name, [lName].[Value])
+	#param(Partition, [p].[ID])
+ORDER BY #order_by
+
+
+[TEXTPART KrDocStateCards PGSQL]
+SELECT
+	"s"."ID"		AS "StateID",
+	"s"."Name"		AS "StateName",
+	"p"."ID"		AS "PartitionID",
+	"p"."Name"		AS "PartitionName"
+FROM "KrDocState" AS "s"
+LEFT JOIN LATERAL (
+	SELECT
+		"p"."ID",
+		"p"."Name"
+	FROM "Partitions" AS "p"
+	WHERE "p"."ID" = (
+		SELECT
+			coalesce(
+				((xpath('/SchemeRecord/@Partition', "t"."Record")::text[])::uuid[])[1],
+				'd1b372f3-7565-4309-9037-5e5a0969d94e'::uuid -- Standard solution
+			) AS "PartitionID"
+		FROM (
+			SELECT unnest(xpath('/SchemeTable/SchemeRecord', "Definition")) AS "Record"
+			FROM "Tables"
+			WHERE "ID" = '47107d7a-3a8c-47f0-b800-2a45da222ff4' -- KrDocState
+		) AS "t"
+		WHERE ((xpath('/SchemeRecord/ID/text()', "t"."Record")::text[])::int[])[1] = "s"."ID")
+) AS "p" ON TRUE
+#if(Name || request.SortedBy("StateName")) {
+CROSS JOIN "Localization"("s"."Name", #param(locale)) AS "lName"
+}
+WHERE 1 = 1
+	#param(ID, "s"."ID")
+	#param(Name, "lName"."Value")
+	#param(Partition, "p"."ID")
+ORDER BY #order_by

@@ -1,0 +1,419 @@
+﻿{
+  "Alias": "Protocols",
+  "Caption": "$Views_Names_Protocols",
+  "GroupName": "KrDocuments",
+  "ID": "775558fa-2ec3-4c38-819e-9395e94c28c7",
+  "JsonMetadataSource::txt": "Protocols JSONMETA",
+  "MsQuerySource::txt": "Protocols MSSQL",
+  "PgQuerySource::txt": "Protocols PGSQL",
+  "Roles": [
+    {
+      "RoleId": "0071b103-0ffa-49da-8776-53b9c654d815"
+    }
+  ]
+}
+
+[TEXTPART Protocols JSONMETA]
+{
+  "Alias": "Protocols",
+  "Caption": "$Views_Names_Protocols",
+  "Columns": [
+    {
+      "Alias": "DocID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.ID"
+    },
+    {
+      "Alias": "DocNumber",
+      "Caption": "$Views_Registers_Number",
+      "FilterParameter": "Number",
+      "FilterType": "Parameter",
+      "SortBy": "mi.Number",
+      "Type": "$DocumentCommonInfo.FullNumber"
+    },
+    {
+      "Alias": "DocSubject",
+      "Caption": "$Views_Registers_ProtocolSubject",
+      "FilterParameter": "Subject",
+      "FilterType": "Parameter",
+      "SortBy": "mi.Subject",
+      "Type": "$DocumentCommonInfo.Subject"
+    },
+    {
+      "Alias": "DocDescription",
+      "Caption": "$Views_Registers_DocDescription",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "AuthorID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.AuthorID"
+    },
+    {
+      "Alias": "AuthorName",
+      "Caption": "$Views_Registers_Secretary",
+      "FilterParameter": "Author",
+      "FilterType": "Parameter",
+      "SortBy": "mi.AuthorName",
+      "Type": "$DocumentCommonInfo.AuthorName"
+    },
+    {
+      "Alias": "RegistratorID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.RegistratorID"
+    },
+    {
+      "Alias": "RegistratorName",
+      "Caption": "$Views_Registers_Registrator",
+      "FilterParameter": "Registrator",
+      "FilterType": "Parameter",
+      "SortBy": "mi.RegistratorName",
+      "Type": "$DocumentCommonInfo.RegistratorName"
+    },
+    {
+      "Alias": "ProtocolDate",
+      "Caption": "$Views_Registers_ProtocolDate",
+      "FilterParameter": "ProtocolDate",
+      "FilterType": "Parameter",
+      "SortBy": "pr.Date",
+      "Type": "$Protocols.Date"
+    },
+    {
+      "Alias": "CreationDate",
+      "Caption": "$Views_Registers_CreationDate",
+      "SortBy": "mi.CreationDate",
+      "Type": "Date Null"
+    },
+    {
+      "Alias": "Department",
+      "Caption": "$Views_Registers_Department",
+      "FilterParameter": "Department",
+      "FilterType": "Parameter",
+      "Type": "$DocumentCommonInfo.DepartmentName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "CreationDate",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Overrides": [
+    {
+      "Condition": "MSSQL",
+      "Overrides": {
+        "RowCountSubset": "Count"
+      }
+    }
+  ],
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "IsAuthor",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_Registers_IsSecretary_Param",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "IsRegistrator",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_Registers_IsRegistrator_Param",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "Number",
+      "Caption": "$Views_Registers_Number_Param",
+      "Type": "$DocumentCommonInfo.FullNumber"
+    },
+    {
+      "Alias": "Subject",
+      "Caption": "$Views_Registers_ProtocolSubject_Param",
+      "Type": "$DocumentCommonInfo.Subject"
+    },
+    {
+      "Alias": "ProtocolDate",
+      "Caption": "$Views_Registers_ProtocolDate_Param",
+      "Type": "$Protocols.Date"
+    },
+    {
+      "Alias": "Author",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Registers_Secretary_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$DocumentCommonInfo.AuthorID"
+    },
+    {
+      "Alias": "Registrator",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Registers_Registrator_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$DocumentCommonInfo.RegistratorID"
+    },
+    {
+      "Alias": "Department",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3,
+          5
+        ],
+        "ViewAlias": "Departments"
+      },
+      "Caption": "$Views_Registers_Department_Param",
+      "Multiple": false,
+      "RefSection": [
+        "DepartmentRoles"
+      ],
+      "Type": "$DocumentCommonInfo.DepartmentID"
+    }
+  ],
+  "QuickSearchParam": "Number",
+  "References": [
+    {
+      "ColPrefix": "Doc",
+      "DisplayValueColumn": "DocNumber",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "DocumentCommonInfo",
+        "DocRefsSection"
+      ]
+    },
+    {
+      "ColPrefix": "Author",
+      "DisplayValueColumn": "AuthorName",
+      "IsCard": true,
+      "RefSection": [
+        "Roles",
+        "DurableRoles",
+        "PersonalRoles"
+      ]
+    },
+    {
+      "ColPrefix": "Registrator",
+      "DisplayValueColumn": "RegistratorName",
+      "IsCard": true,
+      "RefSection": [
+        "Roles",
+        "DurableRoles",
+        "PersonalRoles"
+      ]
+    }
+  ],
+  "Subsets": [
+    {
+      "Alias": "Count",
+      "Condition": "MSSQL"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Protocols MSSQL]
+#var(UseCommonInfo: Normal || Number || Subject || IsAuthor || IsRegistrator || Author || Registrator || Department)
+
+SELECT
+	#if(Normal) {
+	[t].[ID]																AS [DocID],
+	[t].[FullNumber]														AS [DocNumber],
+	[t].[Subject]															AS [DocSubject],
+	COALESCE([t].[FullNumber], N'') + N', ' + COALESCE([t].[Subject], N'')	AS [DocDescription],		-- autocomplete
+	[t].[AuthorID]															AS [AuthorID],
+	[t].[AuthorName]														AS [AuthorName],
+	[t].[RegistratorID]														AS [RegistratorID],
+	[t].[RegistratorName]													AS [RegistratorName],
+	[t].[Date]																AS [ProtocolDate],
+	CAST([t].[CreationDate] AS date)										AS [CreationDate],
+	[t].[DepartmentName]													AS [Department]
+	}
+	#if(Count) {
+	[t].*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[mi].[ID],
+		[mi].[FullNumber],
+		[mi].[Subject],
+		[mi].[AuthorID],
+		[mi].[AuthorName],
+		[mi].[RegistratorID],
+		[mi].[RegistratorName],
+		[pr].[Date],
+		[mi].[CreationDate],
+		[mi].[DepartmentName],
+		[t].[rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM (
+		SELECT
+			[mi].[ID]
+			#if(Normal) {,
+			row_number() OVER (ORDER BY #order_by) AS [rn]
+			}
+		#if(UseCommonInfo) {
+		FROM [DocumentCommonInfo] AS [mi] WITH (NOLOCK)
+		} {
+		/* Алиас [mi] должен быть таким же, как у DocumentCommonInfo */
+		FROM [Instances] AS [mi] WITH (NOLOCK)
+		}
+		#if(ProtocolDate || request.SortedBy("ProtocolDate")) {
+		INNER JOIN [Protocols] AS [pr] WITH (NOLOCK)
+			ON [pr].[ID] = [mi].[ID]
+		}
+		WHERE
+			#if(UseCommonInfo) {
+			[mi].[CardTypeID]
+			} {
+			[mi].[TypeID]
+			}
+			= '4d9f9590-0131-4d32-9710-5e07c282b5d3'		-- Protocol
+			#param(Number, [mi].[FullNumber])
+			#param(Subject, [mi].[Subject])
+			#param(ProtocolDate, [pr].[Date])
+			#param(Author, [mi].[AuthorID])
+			#param(Registrator, [mi].[RegistratorID])
+			#param(Department, [mi].[DepartmentID])
+			#if(IsAuthor) {
+				#if(IsAuthor.CriteriaName == "IsTrue") {
+			AND [mi].[AuthorID] = #param(CurrentUserID)
+				} {
+			AND ([mi].[AuthorID] IS NULL OR [mi].[AuthorID] <> #param(CurrentUserID))
+				}
+			}
+			#if(IsRegistrator) {
+				#if(IsRegistrator.CriteriaName == "IsTrue") {
+			AND [mi].[RegistratorID] = #param(CurrentUserID)
+				} {
+			AND ([mi].[RegistratorID] IS NULL OR [mi].[RegistratorID] <> #param(CurrentUserID))
+				}
+			}
+		) AS [t]
+	#if(Normal) {
+	INNER JOIN [DocumentCommonInfo] AS [mi] WITH (NOLOCK)
+		ON [mi].[ID] = [t].[ID]
+	INNER JOIN [Protocols] AS [pr] WITH (NOLOCK)
+		ON [pr].[ID] = [t].[ID]
+	}
+	#if(PageOffset) {
+	WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+	}
+	) AS [t]
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+;
+
+
+[TEXTPART Protocols PGSQL]
+#var(UseCommonInfo: Normal || Number || Subject || IsAuthor || IsRegistrator || Author || Registrator || Department)
+
+SELECT
+	#if(Normal) {
+	"mi"."ID"																AS "DocID",
+	"mi"."FullNumber"														AS "DocNumber",
+	"mi"."Subject"															AS "DocSubject",
+	COALESCE("mi"."FullNumber", '') || ', ' || COALESCE("mi"."Subject", '')	AS "DocDescription",		-- autocomplete
+	"mi"."AuthorID"															AS "AuthorID",
+	"mi"."AuthorName"														AS "AuthorName",
+	"mi"."RegistratorID"													AS "RegistratorID",
+	"mi"."RegistratorName"													AS "RegistratorName",
+	"pr"."Date"																AS "ProtocolDate",
+	CAST("mi"."CreationDate" AS date)										AS "CreationDate",
+	"mi"."DepartmentName"													AS "Department"
+	}
+FROM (
+	SELECT
+		"mi"."ID"
+	#if(UseCommonInfo) {
+	FROM "DocumentCommonInfo" AS "mi"
+	} {
+	/* Алиас "mi" должен быть таким же, как у DocumentCommonInfo */
+	FROM "Instances" AS "mi"
+	}
+	#if(ProtocolDate || request.SortedBy("ProtocolDate")) {
+	INNER JOIN "Protocols" AS "pr"
+		ON "pr"."ID" = "mi"."ID"
+	}
+	WHERE
+		#if(UseCommonInfo) {
+		"mi"."CardTypeID"
+		} {
+		"mi"."TypeID"
+		}
+		= '4d9f9590-0131-4d32-9710-5e07c282b5d3'		-- Protocol
+		#param(Number, "mi"."FullNumber")
+		#param(Subject, "mi"."Subject")
+		#param(ProtocolDate, "pr"."Date")
+		#param(Author, "mi"."AuthorID")
+		#param(Registrator, "mi"."RegistratorID")
+		#param(Department, "mi"."DepartmentID")
+		#if(IsAuthor) {
+			#if(IsAuthor.CriteriaName == "IsTrue") {
+		AND "mi"."AuthorID" = #param(CurrentUserID)
+			} {
+		AND ("mi"."AuthorID" IS NULL OR "mi"."AuthorID" <> #param(CurrentUserID))
+			}
+		}
+		#if(IsRegistrator) {
+			#if(IsRegistrator.CriteriaName == "IsTrue") {
+		AND "mi"."RegistratorID" = #param(CurrentUserID)
+			} {
+		AND ("mi"."RegistratorID" IS NULL OR "mi"."RegistratorID" <> #param(CurrentUserID))
+			}
+		}
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	}
+	) AS "t"
+#if(Normal) {
+INNER JOIN "DocumentCommonInfo" AS "mi"
+	ON "mi"."ID" = "t"."ID"
+INNER JOIN "Protocols" AS "pr"
+	ON "pr"."ID" = "t"."ID"
+ORDER BY #order_by
+}
+;

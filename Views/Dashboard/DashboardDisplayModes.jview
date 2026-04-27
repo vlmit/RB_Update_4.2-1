@@ -1,0 +1,78 @@
+﻿{
+  "Alias": "DashboardDisplayModes",
+  "Caption": "$Views_Names_DashboardDisplayModes",
+  "GroupName": "Dashboard",
+  "ID": "24881c64-5213-41c3-9cf3-2f1d19ce905f",
+  "JsonMetadataSource::txt": "DashboardDisplayModes JSONMETA",
+  "MsQuerySource::txt": "DashboardDisplayModes MSSQL",
+  "PgQuerySource::txt": "DashboardDisplayModes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART DashboardDisplayModes JSONMETA]
+{
+  "Alias": "DashboardDisplayModes",
+  "Caption": "$Views_Names_DashboardDisplayModes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$AccessLevels.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "$Views_DashboardDisplayModes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$DashboardDisplayModes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_DashboardDisplayModes_Name",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "DashboardDisplayModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DashboardDisplayModes MSSQL]
+SELECT
+	[ddm].[ID]		AS [RefID],
+	[ddm].[Name]	AS [RefName]
+FROM [DashboardDisplayModes] AS [ddm] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([ddm].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [ddm].[ID]
+
+
+[TEXTPART DashboardDisplayModes PGSQL]
+SELECT
+	"ddm"."ID"		AS "RefID",
+	"ddm"."Name"	AS "RefName"
+FROM "DashboardDisplayModes" AS "ddm"
+#if(Name) {
+CROSS JOIN "Localization"("ddm"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "ddm"."ID"

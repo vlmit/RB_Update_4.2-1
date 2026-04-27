@@ -1,0 +1,73 @@
+﻿{
+  "Alias": "DialogCardStoreModes",
+  "Caption": "$Views_Names_DialogCardStoreModes",
+  "GroupName": "System",
+  "ID": "ad759faa-bfc1-4cd1-a322-f1eb1a42b3bc",
+  "JsonMetadataSource::txt": "DialogCardStoreModes JSONMETA",
+  "MsQuerySource::txt": "DialogCardStoreModes MSSQL",
+  "PgQuerySource::txt": "DialogCardStoreModes PGSQL"
+}
+
+[TEXTPART DialogCardStoreModes JSONMETA]
+{
+  "Alias": "DialogCardStoreModes",
+  "Caption": "$Views_Names_DialogCardStoreModes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$DialogCardStoreModes.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "RefName",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$DialogCardStoreModes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$DialogCardStoreModes_Name",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "DialogCardStoreModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DialogCardStoreModes MSSQL]
+SELECT
+	[a].[ID]		AS [RefID],
+	[a].[Name]		AS [RefName]
+FROM [DialogCardStoreModes] AS [a] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([a].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [a].[ID]
+
+
+[TEXTPART DialogCardStoreModes PGSQL]
+SELECT
+	"a"."ID"		AS "RefID",
+	"a"."Name"		AS "RefName"
+FROM "DialogCardStoreModes" AS "a"
+#if(Name) {
+CROSS JOIN "Localization"("a"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "a"."ID"

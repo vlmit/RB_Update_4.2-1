@@ -1,0 +1,163 @@
+﻿{
+  "Alias": "ActionHistoryTypes",
+  "Caption": "$Views_Names_ActionHistoryTypes",
+  "GroupName": "System",
+  "ID": "07775e91-96d5-4b0c-b978-abc26c55d899",
+  "JsonMetadataSource::txt": "ActionHistoryTypes JSONMETA",
+  "MsQuerySource::txt": "ActionHistoryTypes MSSQL",
+  "PgQuerySource::txt": "ActionHistoryTypes PGSQL"
+}
+
+[TEXTPART ActionHistoryTypes JSONMETA]
+{
+  "Alias": "ActionHistoryTypes",
+  "Caption": "$Views_Names_ActionHistoryTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_Types_Name",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.LocalizedCaption",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_Types_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_Types_Name_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Types_Alias_Param",
+      "Type": "$Types.Name"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "RefSection": [
+        "ActionHistoryTypes"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ActionHistoryTypes MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [TypeID],
+		[t].[Caption]							AS [TypeCaption],
+		[t].[Name]								AS [TypeName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM (
+		SELECT
+			#if(Normal) {
+			[t].[ID],
+			[t].[Caption],
+			[t].[Name]
+			#if(request.SortedBy("TypeCaption")) {
+			, [lCaption].[Value] AS [LocalizedCaption]
+			}
+			}
+			#if(Count) {
+			NULL AS [Column]
+			}
+		FROM [Types] AS [t] WITH (NOLOCK)
+		#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+		CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+		}
+		WHERE [t].[InstanceTypeID] = 0		-- тип карточки, а не файла или задания
+			AND ([t].[Flags] & 1) = 1		-- тип карточки содержит флаг StoreChangesets (1)
+			#param(Name, [t].[Name])
+			#param(Caption, [lCaption].[Value])
+		) AS [t]
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART ActionHistoryTypes PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "TypeID",
+	"t"."Caption"								AS "TypeCaption",
+	"t"."Name"									AS "TypeName",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID",
+		"t"."Caption",
+		"t"."Name"
+		#if(request.SortedBy("TypeCaption")) {
+		, "lCaption"."Value" AS "LocalizedCaption"
+		}
+		}
+	FROM "Types" AS "t"
+	#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+	CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+	}
+	WHERE "t"."InstanceTypeID" = 0		-- тип карточки, а не файла или задания
+		AND ("t"."Flags" & 1) = 1		-- тип карточки содержит флаг StoreChangesets (1)
+		#param(Name, "t"."Name")
+		#param(Caption, "lCaption"."Value")
+	) AS "t"
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

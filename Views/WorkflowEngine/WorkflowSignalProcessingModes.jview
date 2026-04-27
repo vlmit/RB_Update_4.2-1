@@ -1,0 +1,77 @@
+﻿{
+  "Alias": "WorkflowSignalProcessingModes",
+  "Caption": "$Views_Names_WorkflowSignalProcessingModes",
+  "GroupName": "WorkflowEngine",
+  "ID": "718a1f3a-0a06-490d-8a55-654114c93d54",
+  "JsonMetadataSource::txt": "WorkflowSignalProcessingModes JSONMETA",
+  "MsQuerySource::txt": "WorkflowSignalProcessingModes MSSQL",
+  "PgQuerySource::txt": "WorkflowSignalProcessingModes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART WorkflowSignalProcessingModes JSONMETA]
+{
+  "Alias": "WorkflowSignalProcessingModes",
+  "Caption": "$Views_Names_WorkflowSignalProcessingModes",
+  "Columns": [
+    {
+      "Alias": "SignalProcessingModeID",
+      "Hidden": true,
+      "Type": "$WorkflowSignalProcessingModes.ID"
+    },
+    {
+      "Alias": "SignalProcessingModeName",
+      "Caption": "$Views_WorkflowSignalProcessingModes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$WorkflowSignalProcessingModes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WorkflowSignalProcessingModes_Name_Param",
+      "Multiple": false,
+      "Type": "$WorkflowLinkModes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "SignalProcessingMode",
+      "DisplayValueColumn": "SignalProcessingModeName",
+      "RefSection": [
+        "WorkflowSignalProcessingModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WorkflowSignalProcessingModes MSSQL]
+SELECT
+	[lm].[ID] as [SignalProcessingModeID]
+	,[lm].[Name] as [SignalProcessingModeName]
+FROM [WorkflowSignalProcessingModes] [lm] WITH(NOLOCK)
+#if(Name || request.SortedBy("SignalProcessingModeName")) {
+CROSS APPLY [Localization]([lm].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+
+
+[TEXTPART WorkflowSignalProcessingModes PGSQL]
+SELECT
+	"lm"."ID" as "SignalProcessingModeID"
+	,"lm"."Name" as "SignalProcessingModeName"
+FROM "WorkflowSignalProcessingModes" "lm"
+#if(Name || request.SortedBy("SignalProcessingModeName")) {
+CROSS JOIN "Localization"("lm"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")

@@ -1,0 +1,225 @@
+{
+  "Alias": "KrRoutesBlock",
+  "BundleID::uid": "c5bdb424-23c9-45ed-9210-98e8c72afd24",
+  "Child": {
+    "Alias": "f16674b0",
+    "Children": [
+      {
+        "Alias": "5a3b090e",
+        "Children": [
+          {
+            "Alias": "c456c4bf",
+            "Form": "KrDocStateBlock",
+            "ID::uid": "c456c4bf-dfe8-43b0-8113-42193cdb6466",
+            "Type::uid": "1f9a0e3a-c02b-4f11-88e1-16a23b8d23f0"
+          }
+        ],
+        "Column::int": 0,
+        "ID::uid": "5a3b090e-6343-4b3a-929a-b261051098a6",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "e9c0e3bc",
+        "Children": [
+          {
+            "Alias": "Initiator",
+            "BindingType": "Card",
+            "Caption": "$CardTypes_Controls_TheInitiatorOfTheApproval",
+            "ComplexColumnID::uid": "b2aaa575-47df-4c85-b947-1a7dc8bb43a7",
+            "ID::uid": "479b0abf-7c76-4eb4-9948-d2510e5a7548",
+            "IdColumn": "UserID",
+            "MinWidth": "100%",
+            "Mode": "NonDroppable",
+            "NameColumn": "UserName",
+            "ParameterAlias": "Name",
+            "SearchMode": "Contains",
+            "SectionID::uid": "fe5739f6-d64b-45f5-a3a3-75e999f721dd",
+            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+            "View": "Users"
+          }
+        ],
+        "Column::int": 1,
+        "ID::uid": "e9c0e3bc-7391-4118-8a4e-f1ea56cca650",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "3f03420e",
+        "Children": [
+          {
+            "Alias": "ApprovedBy",
+            "BindingType": "Card",
+            "Caption": "$CardTypes_Controls_Agreed",
+            "ID::uid": "d6d2d581-0e8f-4df5-8c2b-63bc2c90190c",
+            "MaxHeight": "125px",
+            "MinWidth": "100%",
+            "PhysicalColumnsArray": [
+              {
+                "::single_type": "uid"
+              },
+              "d1a59a3d-739d-4eae-b2e5-655f8f74cf34"
+            ],
+            "Readonly": true,
+            "SectionID::uid": "fe5739f6-d64b-45f5-a3a3-75e999f721dd",
+            "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+          }
+        ],
+        "Column::int": 0,
+        "ID::uid": "3f03420e-020f-4a7a-82ad-a7e8f1d69d3c",
+        "Row::int": 1,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "dc592dae",
+        "Children": [
+          {
+            "Alias": "RejectedBy",
+            "BindingType": "Card",
+            "Caption": "$CardTypes_Controls_NotAgreed",
+            "ID::uid": "fdef372f-1ff6-4c01-a009-955b3d8d42db",
+            "MaxHeight": "125px",
+            "MinWidth": "100%",
+            "PhysicalColumnsArray": [
+              {
+                "::single_type": "uid"
+              },
+              "1e451b06-db0a-4c38-af57-f114b1a1e529"
+            ],
+            "SectionID::uid": "fe5739f6-d64b-45f5-a3a3-75e999f721dd",
+            "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+          }
+        ],
+        "Column::int": 1,
+        "ID::uid": "dc592dae-7945-4e83-9e60-60df274c5533",
+        "Row::int": 1,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "9d0b0aa0",
+        "Children": [
+          {
+            "Alias": "Comment",
+            "BindingType": "Card",
+            "Caption": "$CardTypes_Controls_CommentToApprovalCycle",
+            "ID::uid": "0baf0295-afd4-49d3-ba62-e14b059b6049",
+            "MaxHeight": "150px",
+            "MinHeight": "75px",
+            "MinWidth": "100%",
+            "PhysicalColumnsArray": [
+              {
+                "::single_type": "uid"
+              },
+              "972b63c0-e78d-4869-901e-8d4d7acb2f10"
+            ],
+            "SectionID::uid": "fe5739f6-d64b-45f5-a3a3-75e999f721dd",
+            "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+          }
+        ],
+        "Column::int": 0,
+        "ID::uid": "9d0b0aa0-05a6-4e02-9f0b-59fdccb9271f",
+        "Row::int": 2,
+        "TakenColumns::int": 2,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "ApprovalStagesTableCell",
+        "Children": [],
+        "Column::int": 0,
+        "ID::uid": "1f445540-08f8-4117-81cb-1900c4436ebb",
+        "Row::int": 3,
+        "TakenColumns::int": 2,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "9bd7e58e",
+        "Children": [
+          {
+            "Alias": "DisclaimerControl",
+            "Caption": "$CardTypes_Controls_Disclaimer",
+            "ID::uid": "61320b1f-ceea-4754-b98c-aa816e2b5661",
+            "IsHidden": true,
+            "MinWidth": "100%",
+            "Text": "$CardTypes_Controls_Disclaimer_StagesInTemplate",
+            "Type::uid": "4afd6c3d-f513-416e-9a09-689f8121a775"
+          }
+        ],
+        "Column::int": 0,
+        "ID::uid": "9bd7e58e-3b4a-48f7-90fa-b708b8fd89f3",
+        "Row::int": 4,
+        "TakenColumns::int": 2,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      }
+    ],
+    "Columns": [
+      {
+        "Alias": "82b9a167",
+        "ID::uid": "82b9a167-70d8-48e8-89b0-6a553c2971aa",
+        "Index::int": 0,
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      },
+      {
+        "Alias": "6217f77b",
+        "ID::uid": "6217f77b-e33c-4a8a-a61f-60e1a4405fb7",
+        "Index::int": 1,
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      }
+    ],
+    "GridGap": "10px 20px",
+    "ID::uid": "f16674b0-8743-4dfe-900f-e312ac4c1b8a",
+    "Rows": [
+      {
+        "Alias": "00760447",
+        "ID::uid": "00760447-c729-4e5e-9872-6241b2a5390b",
+        "Index::int": 0,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      },
+      {
+        "Alias": "634401a7",
+        "ID::uid": "634401a7-7a1c-488b-ba3d-52590efdcc4c",
+        "Index::int": 1,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      },
+      {
+        "Alias": "6a0cd2ab",
+        "ID::uid": "6a0cd2ab-3571-4ca9-a162-d62f63ba3bbf",
+        "Index::int": 2,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      },
+      {
+        "Alias": "a99ce35d",
+        "ID::uid": "a99ce35d-706d-4d69-9314-21973f075756",
+        "Index::int": 3,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      },
+      {
+        "Alias": "b894c0aa",
+        "HideIfEmpty": true,
+        "ID::uid": "b894c0aa-6656-4b5f-a3c3-6615ab898126",
+        "Index::int": 4,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      }
+    ],
+    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+  },
+  "ID::uid": "9abdf39c-f26d-457d-9efa-44bdc5a9db30",
+  "States": null,
+  "SubForms": null,
+  "Version::int": 0
+}

@@ -1,0 +1,453 @@
+{
+  "Alias": "SendToPerformer",
+  "BundleID::uid": "c5bdb424-23c9-45ed-9210-98e8c72afd24",
+  "Caption": "$WfTiles_CreateResolution",
+  "Child": {
+    "Alias": "9ddb8036",
+    "Children": [
+      {
+        "Alias": "786187d0",
+        "Children": [
+          {
+            "Alias": "fbb458a0",
+            "Children": [
+              {
+                "Alias": "571cef95",
+                "Children": [
+                  {
+                    "Alias": "Performers",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_Performers",
+                    "ID::uid": "ee302026-a14c-46c3-8ae5-511ec5c6468c",
+                    "IdColumn": "RoleID",
+                    "IsCard": true,
+                    "MinWidth": "100%",
+                    "Mode": "NonDroppable",
+                    "Multiple": true,
+                    "NameColumn": "RoleName",
+                    "ParameterAlias": "Name",
+                    "Required": true,
+                    "SearchMode": "Contains",
+                    "Tooltip": "$CardTypes_Controls_Performers_Tooltip",
+                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                    "View": "Roles"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "571cef95-5c66-4e8e-8ed9-72f82baf3d0a",
+                "Row::int": 0,
+                "TakenColumns::int": 2,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "e703c178",
+                "Children": [
+                  {
+                    "Alias": "MultiplePerformers",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_SendMassCreation",
+                    "ID::uid": "06da2cb0-82d0-4520-8b08-98545b5f881f",
+                    "Type::uid": "5164e068-669e-49f1-a4f7-3a4bfe0e70e7"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "e703c178-5441-4075-82d7-d73063c8b53d",
+                "Row::int": 1,
+                "TakenColumns::int": 2,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "8bbfe8f9",
+                "Children": [
+                  {
+                    "Alias": "MajorPerformer",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_MajorPerformer",
+                    "ID::uid": "b6ed6845-4696-4383-9976-46a2d047f7c0",
+                    "Type::uid": "5164e068-669e-49f1-a4f7-3a4bfe0e70e7"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "8bbfe8f9-92ab-40b8-94d5-66a1cbf41cdf",
+                "Row::int": 2,
+                "TakenColumns::int": 2,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "a77ce1a5",
+                "Children": [
+                  {
+                    "Alias": "DurationInDays",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_DurationDays",
+                    "DecimalSeparator": "Dot",
+                    "FieldType": "Float",
+                    "ID::uid": "0865dea5-429f-47dd-94e6-8703b5dcc912",
+                    "MinWidth": "100%",
+                    "Tooltip": "$CardTypes_Controls_DurationDays_Tooltip",
+                    "Type::uid": "9c11ba0a-2e8d-46a1-a87d-039458d42da3"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "a77ce1a5-1faa-4c09-a388-47a3a056cec3",
+                "Row::int": 3,
+                "TakenColumns::int": 1,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "9a763119",
+                "Children": [
+                  {
+                    "Alias": "Planned",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_PlannedDate",
+                    "DateType": "DateTime",
+                    "ID::uid": "fc739f0c-7a93-4864-ac6d-86285d38930d",
+                    "MinWidth": "100%",
+                    "Type::uid": "45667845-d112-4ef3-9bb7-d03bd9eb4274"
+                  }
+                ],
+                "Column::int": 1,
+                "Height": "100%",
+                "ID::uid": "9a763119-edc0-4cea-b478-ddd16c568dbe",
+                "Row::int": 3,
+                "TakenColumns::int": 1,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "bc5ff486",
+                "Children": [
+                  {
+                    "Alias": "ShowAdditional",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_ShowAdditional",
+                    "ID::uid": "9cb24668-cd2a-4597-acdd-ae524670ce38",
+                    "Tooltip": "$CardTypes_Controls_ShowAdditional_Tooltip",
+                    "Type::uid": "5164e068-669e-49f1-a4f7-3a4bfe0e70e7"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "bc5ff486-9e46-4f53-9921-020af465a8f4",
+                "Overflow": "hidden",
+                "Row::int": 4,
+                "TakenColumns::int": 1,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "e2d0c465",
+                "Children": [
+                  {
+                    "Alias": "WithControl",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_WithControl",
+                    "ID::uid": "24ed6840-f279-4f19-954b-e1b712a27bf5",
+                    "Tooltip": "$CardTypes_Controls_WithControl_Tooltip",
+                    "Type::uid": "5164e068-669e-49f1-a4f7-3a4bfe0e70e7"
+                  }
+                ],
+                "Column::int": 1,
+                "Height": "100%",
+                "ID::uid": "e2d0c465-7f7a-4e43-876a-9f6c9fd82f78",
+                "Overflow": "hidden",
+                "Row::int": 4,
+                "TakenColumns::int": 1,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "af99f1ed",
+                "Children": [
+                  {
+                    "Alias": "Kind",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_Kind",
+                    "ID::uid": "5be5d93a-ca7f-426e-b066-1f6c8e76114b",
+                    "IdColumn": "KindID",
+                    "MinWidth": "100%",
+                    "Mode": "Full",
+                    "NameColumn": "KindCaption",
+                    "ParameterAlias": "Caption",
+                    "SearchMode": "Contains",
+                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                    "View": "TaskKinds"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "af99f1ed-ed97-4c1f-b7b3-6be1bbc31314",
+                "Row::int": 5,
+                "TakenColumns::int": 2,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "64f7e865",
+                "Children": [
+                  {
+                    "Alias": "From",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_From",
+                    "ID::uid": "cc9b226c-a2ff-46a8-9032-7a30079e28ca",
+                    "IdColumn": "UserID",
+                    "IsCard": true,
+                    "MinWidth": "100%",
+                    "Mode": "Full",
+                    "NameColumn": "UserName",
+                    "ParameterAlias": "Name",
+                    "SearchMode": "Contains",
+                    "Tooltip": "$CardTypes_Controls_From_Tooltip",
+                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                    "View": "WfResolutionAuthors"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "64f7e865-01d4-43e1-99cb-a8e915b676e8",
+                "Row::int": 6,
+                "TakenColumns::int": 2,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "534c1590",
+                "Children": [
+                  {
+                    "Alias": "Controller",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Controls_Controller",
+                    "ID::uid": "8b0d323d-389a-4db3-93ef-f555aa1eef54",
+                    "IdColumn": "RoleID",
+                    "IsCard": true,
+                    "MinWidth": "100%",
+                    "Mode": "NonDroppable",
+                    "NameColumn": "RoleName",
+                    "ParameterAlias": "Name",
+                    "SearchMode": "Contains",
+                    "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34",
+                    "View": "Roles"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "534c1590-6c1b-49c1-88ed-f972d2f117e6",
+                "Row::int": 7,
+                "TakenColumns::int": 2,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              },
+              {
+                "Alias": "e8c2ca3a",
+                "Children": [
+                  {
+                    "Alias": "Comment",
+                    "BindingType": "FormStorage",
+                    "Caption": "$CardTypes_Blocks_Controls_Comment",
+                    "ID::uid": "15291dff-fa87-4205-b3b2-71bd7d4a2bf9",
+                    "MaxHeight": "276px",
+                    "MaxRows::int": 2,
+                    "MinHeight": "46px",
+                    "MinRows::int": 6,
+                    "MinWidth": "100%",
+                    "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+                  }
+                ],
+                "Column::int": 0,
+                "Height": "100%",
+                "ID::uid": "e8c2ca3a-29ec-4e92-bcad-9f0cdaba399d",
+                "Row::int": 8,
+                "TakenColumns::int": 2,
+                "TakenRows::int": 1,
+                "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+              }
+            ],
+            "Columns": [
+              {
+                "Alias": "720ab7da",
+                "ID::uid": "720ab7da-94c2-4ac8-8155-1107ae6e79ec",
+                "Index::int": 0,
+                "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+              },
+              {
+                "Alias": "4ddfa63b",
+                "ID::uid": "4ddfa63b-25fd-4f2c-927e-5b901d1ffca1",
+                "Index::int": 1,
+                "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+              }
+            ],
+            "GridGap": "10px 20px",
+            "Height": "100%",
+            "ID::uid": "fbb458a0-259c-40d6-89cc-75de77f3e00d",
+            "Rows": [
+              {
+                "Alias": "5f65a60b",
+                "ID::uid": "5f65a60b-c8dd-47cc-9e15-5e9a1cd5c050",
+                "Index::int": 0,
+                "Size": "max-content",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              },
+              {
+                "Alias": "0e836f90",
+                "HideIfEmpty": true,
+                "ID::uid": "0e836f90-61f3-47a8-8c64-a121e8783ab3",
+                "Index::int": 1,
+                "Size": "max-content",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              },
+              {
+                "Alias": "a994e8ac",
+                "HideIfEmpty": true,
+                "ID::uid": "a994e8ac-493d-4f7a-8120-34946a826b49",
+                "Index::int": 2,
+                "Size": "max-content",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              },
+              {
+                "Alias": "9ab8c6d7",
+                "ID::uid": "9ab8c6d7-9c8a-46d1-8554-fa1f2524db8b",
+                "Index::int": 3,
+                "Size": "max-content",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              },
+              {
+                "Alias": "773dcc45",
+                "ID::uid": "773dcc45-0a10-4062-8eac-127bd3df9126",
+                "Index::int": 4,
+                "Size": "max-content",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              },
+              {
+                "Alias": "8458d304",
+                "HideIfEmpty": true,
+                "ID::uid": "8458d304-6a71-486b-9dc1-2764189bdad1",
+                "Index::int": 5,
+                "Size": "max-content",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              },
+              {
+                "Alias": "3f57b0dc",
+                "HideIfEmpty": true,
+                "ID::uid": "3f57b0dc-e46e-4604-815a-479b94658247",
+                "Index::int": 6,
+                "Size": "max-content",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              },
+              {
+                "Alias": "62e7da53",
+                "HideIfEmpty": true,
+                "ID::uid": "62e7da53-3b36-46c0-8455-e722a32143c6",
+                "Index::int": 7,
+                "Size": "max-content",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              },
+              {
+                "Alias": "4ddbfd61",
+                "HideIfEmpty": true,
+                "ID::uid": "4ddbfd61-c503-40a6-8afc-9a23f8349876",
+                "Index::int": 8,
+                "Size": "max-content",
+                "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+              }
+            ],
+            "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+          }
+        ],
+        "Column::int": 0,
+        "Height": "100%",
+        "ID::uid": "786187d0-fd74-4add-83c8-42b7c96f088e",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "26d4ce4f",
+        "Children": [
+          {
+            "Alias": "c9c88516",
+            "Children": [
+              {
+                "Alias": "Accept",
+                "ButtonTheme": "primary",
+                "Caption": "$UI_Tasks_CompletionOptions_SendToPerformer",
+                "CaptionPadding": null,
+                "ID::uid": "ce5dd005-21fc-4342-8939-c0ded5ed68da",
+                "MinHeight": "30px",
+                "MinWidth": "170px",
+                "Type::uid": "7c55da95-1f7b-4f88-8b27-5e03406231c6"
+              },
+              {
+                "Alias": "Cancel",
+                "ButtonTheme": "primary",
+                "Caption": "$UI_Tasks_CompletionOptions_Cancel",
+                "CaptionPadding": null,
+                "ID::uid": "019e36b1-e9c4-4a03-bbaf-2d51a75dc805",
+                "MinHeight": "30px",
+                "MinWidth": "170px",
+                "Type::uid": "7c55da95-1f7b-4f88-8b27-5e03406231c6"
+              }
+            ],
+            "Gap": "15px",
+            "Height": "100%",
+            "ID::uid": "c9c88516-1576-43fa-897a-fa0d1d2ca7f8",
+            "JustifyContent": "end",
+            "Type::uid": "a3928585-0c96-406b-a37f-1b49b65fc922"
+          }
+        ],
+        "Column::int": 0,
+        "Height": "100%",
+        "ID::uid": "26d4ce4f-68a3-45a0-a237-65fe9c601ee0",
+        "Row::int": 1,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      }
+    ],
+    "Columns": [
+      {
+        "Alias": "cd6eb678",
+        "ID::uid": "cd6eb678-6270-4947-9949-69c41b4d9e81",
+        "Index::int": 0,
+        "Size": "1fr",
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      }
+    ],
+    "GridGap": "10px",
+    "Height": "fit-content",
+    "ID::uid": "74f34354-330a-4fb4-b58f-1130cbe236e0",
+    "MaxWidth": "720px",
+    "Padding": "15px",
+    "Rows": [
+      {
+        "Alias": "2d5ea696",
+        "ID::uid": "2d5ea696-11b9-4c01-9d0e-631055574500",
+        "Index::int": 0,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      },
+      {
+        "Alias": "0661156e",
+        "ID::uid": "0661156e-d499-4e78-bfd4-a91bc92dbc21",
+        "Index::int": 1,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      }
+    ],
+    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+  },
+  "Description": "$Editor_Forms_Description_SendToPerformer",
+  "ID::uid": "12e60c15-889f-4931-9f1b-1e9c56730779",
+  "States": null,
+  "SubForms": null,
+  "Version::int": 0
+}

@@ -1,0 +1,373 @@
+﻿{
+  "Alias": "SignatureArchive",
+  "Caption": "$Views_Names_SignatureArchive",
+  "GroupName": "System",
+  "ID": "6d17c0fc-3174-4c8f-a2b2-d65be81a9557",
+  "JsonMetadataSource::txt": "SignatureArchive JSONMETA",
+  "MsQuerySource::txt": "SignatureArchive MSSQL",
+  "PgQuerySource::txt": "SignatureArchive PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART SignatureArchive JSONMETA]
+{
+  "Alias": "SignatureArchive",
+  "Caption": "$Views_Names_SignatureArchive",
+  "Columns": [
+    {
+      "Alias": "FileID",
+      "Hidden": true,
+      "Type": "$Files.ID"
+    },
+    {
+      "Alias": "FileName",
+      "Caption": "$Views_SignatureArchive_FileName",
+      "SortBy": "FileName",
+      "Type": "$Files.Name"
+    },
+    {
+      "Alias": "Signed",
+      "Caption": "$Views_SignatureArchive_Signed",
+      "SortBy": "Signed",
+      "Type": "$FileSignatures.Signed"
+    },
+    {
+      "Alias": "NearestCertValidTo",
+      "Caption": "$Views_SignatureArchive_NearestCertValidTo",
+      "SortBy": "NearestCertValidTo",
+      "Type": "$FileSignatures.NearestCertValidTo"
+    },
+    {
+      "Alias": "CategoryID",
+      "Hidden": true,
+      "Type": "$FileCategories.ID"
+    },
+    {
+      "Alias": "CategoryName",
+      "Caption": "$Views_SignatureArchive_FileCategory",
+      "SortBy": "CategoryName",
+      "Type": "$FileCategories.Name"
+    },
+    {
+      "Alias": "CardID",
+      "Caption": "CardID",
+      "Hidden": true,
+      "SortBy": "CardID",
+      "Type": "$DocumentCommonInfo.ID"
+    },
+    {
+      "Alias": "CardFullNumber",
+      "Caption": "$Views_SignatureArchive_DocNumber",
+      "SortBy": "CardFullNumber",
+      "Type": "$DocumentCommonInfo.FullNumber"
+    },
+    {
+      "Alias": "CardTypeID",
+      "Caption": "CardTypeID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.DocTypeID"
+    },
+    {
+      "Alias": "CardTypeName",
+      "Caption": "$Views_SignatureArchive_DocType",
+      "Localizable": true,
+      "NormalizationKeyColumn": "CardTypeID",
+      "NormalizationSource": "KrTypes",
+      "Type": "$DocumentCommonInfo.DocTypeTitle"
+    },
+    {
+      "Alias": "CardStateID",
+      "Caption": "CardStateID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.StateID"
+    },
+    {
+      "Alias": "CardStateName",
+      "Caption": "$Views_SignatureArchive_DocState",
+      "Localizable": true,
+      "SortBy": "CardStateName",
+      "Type": "$DocumentCommonInfo.StateName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "CardFullNumber",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "FileName",
+      "Caption": "$Views_SignatureArchive_FileName",
+      "Type": "$Files.Name"
+    },
+    {
+      "Alias": "CategoryID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "FileCategoriesAll"
+      },
+      "Caption": "$Views_SignatureArchive_FileCategory",
+      "RefSection": [
+        "FileCategory"
+      ],
+      "Type": "$FileCategories.ID"
+    },
+    {
+      "Alias": "CardFullNumber",
+      "Caption": "$Views_SignatureArchive_DocNumber",
+      "Type": "$DocumentCommonInfo.FullNumber"
+    },
+    {
+      "Alias": "CardTypeID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Caption": "$Views_SignatureArchive_DocType",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "RefSection": [
+        "TypeForView"
+      ],
+      "Type": "$DocumentCategories.TypeID"
+    },
+    {
+      "Alias": "CardStateID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrDocStates"
+      },
+      "Caption": "$Views_SignatureArchive_DocState",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrDocStates"
+      },
+      "RefSection": [
+        "KrDocState"
+      ],
+      "Type": "$DocumentCommonInfo.StateID"
+    },
+    {
+      "Alias": "Signed",
+      "Caption": "$Views_SignatureArchive_Signed",
+      "Type": "$FileSignatures.Signed"
+    },
+    {
+      "Alias": "NearestCertValidTo",
+      "Caption": "$Views_SignatureArchive_NearestCertValidTo",
+      "Type": "$FileSignatures.NearestCertValidTo"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Card",
+      "DisplayValueColumn": "CardFullNumber",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "SignatureArchive"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART SignatureArchive MSSQL]
+SELECT
+#if(Normal) {
+	[tt].[FileID]				AS [FileID],
+	[tt].[FileName]				AS [FileName],
+	[tt].[Signed]				AS [Signed],
+	[tt].[NearestCertValidTo]	AS [NearestCertValidTo],
+	[tt].[CategoryID]			AS [CategoryID],
+	[tt].[CategoryName]			AS [CategoryName],
+	[tt].[CardID]				AS [CardID],
+	[tt].[CardFullNumber] 		AS [CardFullNumber],
+	[tt].[CardTypeID]			AS [CardTypeID],
+	[tt].[CardStateID]			AS [CardStateID],
+	[tt].[CardStateName]		AS [CardStateName]
+}
+#if(Count) {
+	[tt].[cnt]
+}
+
+FROM(
+	SELECT
+	#if(Normal) {
+			[t_rule].[FileID]				AS [FileID],
+			[t_rule].[FileName]				AS [FileName],
+			[t_rule].[Signed]				AS [Signed],
+			[t_rule].[NearestCertValidTo]	AS [NearestCertValidTo],
+			[t_rule].[CategoryID]			AS [CategoryID],
+			[t_rule].[CategoryName]			AS [CategoryName],
+			[t_rule].[CardID]				AS [CardID],
+			[t_rule].[CardFullNumber] 		AS [CardFullNumber],
+			[t_rule].[CardTypeID]			AS [CardTypeID],
+			[t_rule].[CardStateID]			AS [CardStateID],
+			[t_rule].[CardStateName]		AS [CardStateName],
+			row_number() OVER (ORDER BY #order_by) AS [rn]
+		}	
+	#if(Count) {
+		COUNT(*) AS [cnt]
+	}
+	FROM (
+		SELECT
+		[fi].[RowID]				AS [FileID],
+		[fi].[Name]					AS [FileName],
+		[fis].[Signed]				AS [Signed],
+		[fis].[NearestCertValidTo]	AS [NearestCertValidTo],
+		[fi].[CategoryID]			AS [CategoryID],
+		[fi].[CategoryCaption]		AS [CategoryName],
+		[dci].[ID]					AS [CardID],
+		[dci].[FullNumber]			AS [CardFullNumber],
+		COALESCE([dci].[DocTypeID], [dci].[CardTypeID]) AS [CardTypeID],
+		[dci].[StateID]				AS [CardStateID],
+		[dci].[StateName]			AS [CardStateName]
+				
+		FROM [DocumentCommonInfo] 	AS [dci] WITH (NOLOCK)
+		INNER JOIN [Files] 			AS [fi] WITH (NOLOCK)
+			ON [fi].[ID] = [dci].[ID]
+		INNER JOIN [FileVersions]	AS [fv] WITH (NOLOCK)
+			ON [fv].[RowID] = [fi].[VersionRowID]
+		INNER JOIN [FileSignatures] AS [fis] WITH (NOLOCK)
+			ON [fis].[VersionRowID] = [fv].[RowID]
+		
+	) AS t_rule
+	
+	-- INJECT POINT
+	#conditions_on_table(t_rule)
+	
+	#param(CardID, [t_rule].[CardID])
+	#param(CardFullNumber, [t_rule].[CardFullNumber])
+	#param(FileName, [t_rule].[FileName])
+	#param(CategoryID, [t_rule].[CategoryID])
+	#param(FileCategory, [t_rule].[FileCategory])
+	#param(Signed, [t_rule].[Signed])
+	#param(NearestCertValidTo, [t_rule].[NearestCertValidTo])
+
+) AS tt
+
+
+#if(Normal) {
+	#if(PageOffset) {
+		WHERE [tt].[rn] >= #param(PageOffset) AND [tt].[rn] < (#param(PageOffset) + #param(PageLimit))
+	}
+	
+	ORDER BY [tt].[rn]
+}
+
+
+
+[TEXTPART SignatureArchive PGSQL]
+SELECT
+#if(Normal) {
+	"tt"."FileID"				AS "FileID",
+	"tt"."FileName"				AS "FileName",
+	"tt"."Signed"				AS "Signed",
+	"tt"."NearestCertValidTo"	AS "NearestCertValidTo",
+	"tt"."CategoryID"			AS "CategoryID",
+	"tt"."CategoryName"			AS "CategoryName",
+	"tt"."CardID"				AS "CardID",
+	"tt"."CardFullNumber" 		AS "CardFullNumber",
+	"tt"."CardTypeID"			AS "CardTypeID",
+	"tt"."CardStateID"			AS "CardStateID",
+	"tt"."CardStateName"		AS "CardStateName"
+}
+#if(Count) {
+	"tt"."cnt"
+}
+
+FROM(
+	SELECT
+	#if(Normal) {
+			"t_rule"."FileID"				AS "FileID",
+			"t_rule"."FileName"				AS "FileName",
+			"t_rule"."Signed"				AS "Signed",
+			"t_rule"."NearestCertValidTo"	AS "NearestCertValidTo",
+			"t_rule"."CategoryID"			AS "CategoryID",
+			"t_rule"."CategoryName"			AS "CategoryName",
+			"t_rule"."CardID"				AS "CardID",
+			"t_rule"."CardFullNumber" 		AS "CardFullNumber",
+			"t_rule"."CardTypeID"			AS "CardTypeID",
+			"t_rule"."CardStateID"			AS "CardStateID",
+			"t_rule"."CardStateName"		AS "CardStateName"
+		}	
+	#if(Count) {
+		COUNT(*) AS "cnt"
+	}
+	FROM (
+		SELECT
+		
+		"fi"."RowID"				AS "FileID",
+		"fi"."Name"					AS "FileName",
+		"fis"."Signed"				AS "Signed",
+		"fis"."NearestCertValidTo"	AS "NearestCertValidTo",
+		"fi"."CategoryID"			AS "CategoryID",
+		"fi"."CategoryCaption"		AS "CategoryName",
+		"dci"."ID"					AS "CardID",
+		"dci"."FullNumber"			AS "CardFullNumber",
+		COALESCE("dci"."DocTypeID", "dci"."CardTypeID") AS "CardTypeID",
+		"dci"."StateID"				AS "CardStateID",
+		"dci"."StateName"			AS "CardStateName"
+				
+		FROM "DocumentCommonInfo" 	AS "dci"
+		INNER JOIN "Files" 			AS "fi"
+			ON "fi"."ID" = "dci"."ID"
+		INNER JOIN "FileVersions"	AS "fv"
+			ON "fv"."RowID" = "fi"."VersionRowID"
+		INNER JOIN "FileSignatures" AS "fis"
+			ON "fis"."VersionRowID" = "fv"."RowID"
+
+		
+	) AS t_rule
+	
+	-- INJECT POINT
+	#conditions_on_table(t_rule)
+	
+	#param(CardID, "t_rule"."CardID")
+	#param(CardFullNumber, "t_rule"."CardFullNumber")
+	#param(FileName, "t_rule"."FileName")
+	#param(CategoryID, "t_rule"."CategoryID")
+	#param(FileCategory, "t_rule"."FileCategory")
+	#param(Signed, "t_rule"."Signed")
+	#param(NearestCertValidTo, "t_rule".NearestCertValidTo")
+	
+	#if(Normal) {
+		ORDER BY #order_by
+	}
+	
+) AS tt
+
+
+#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

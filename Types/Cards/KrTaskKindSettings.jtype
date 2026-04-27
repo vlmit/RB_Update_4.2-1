@@ -1,0 +1,67 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "KrTaskKindSettings",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Controls_Kind",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_Kind",
+              "ComplexColumnID::uid": "858edc9c-50ff-41b6-8c0d-7e4818f93200",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "ParameterAlias": "Caption",
+                "ViewAlias": "TaskKinds",
+                "ViewAliasComboBox": "TaskKinds"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "TaskKindEntryAC",
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "80ab607a-d43f-435d-a1be-a203bb99c2d3",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "TaskKindBlock"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "KrTaskKindSettings",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "KrProcess",
+  "ID::uid": "f1e87ca5-e1f1-4e5a-acbf-d6cfb20bcb11",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "KrTaskKindSettings",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "858edc9c-50ff-41b6-8c0d-7e4818f93200"
+      ],
+      "SectionID::uid": "80ab607a-d43f-435d-a1be-a203bb99c2d3"
+    }
+  ],
+  "Validators": null
+}

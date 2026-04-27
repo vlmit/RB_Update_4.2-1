@@ -1,0 +1,892 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "e7e516f4-67d0-48d2-a37f-fff381428d03",
+  "Name": "SettingsUnits",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "ActionHistory_Action_CreateSettingsUnit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create settings unit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создание юнита настроек"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_Action_DeleteSettingsUnit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete settings unit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление юнита настроек"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_Action_UpdateSettingsUnit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Update settings unit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновление юнита настроек"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_AllUnits",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "All units"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Все юниты"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_Category",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Category"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Категория"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_CreateError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while creating settings unit."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Произошла ошибка при создании юнита настроек."
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_DeleteError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while deleting settings unit."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Произошла ошибка при удалении юнита настроек."
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_FragmentIdentifier",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Fragment identifier"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор фрагмента"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_FragmentName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Fragment name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название фрагмента"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_ReadError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while reading settings unit(s)."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Произошла ошибка при чтении юнита(-ов) настроек."
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_ResetError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while resetting settings unit."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Произошла ошибка при сбросе юнита настроек."
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_Unit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Юнит"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_UnitIdentifier",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unit identifier"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор юнита"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_UnitName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unit name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название юнита"
+        }
+      ]
+    },
+    {
+      "Name": "ActionHistory_SettingsUnits_UpdateError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while updating settings unit."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Произошла ошибка при обновлении юнита настроек."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Category_AiModule",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI module"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модуль ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Category_AiTools",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tools"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструменты"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Category_Dashboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Category_General",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "General settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Общие настройки"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Category_Groups",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группы"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_ConfirmClose",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Close the settings editor without saving changes?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Закрыть редактор настроек без сохранения изменений?"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_ConfirmRefreshMultiple",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Some settings contain unsaved data. Do you want to update?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Некоторые настройки содержат несохранённые данные. Выполнить обновление?"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_ConfirmRefreshSingle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Settings contain unsaved data. Do you want to update?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки содержат несохранённые данные. Выполнить обновление?"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_ConfirmReset",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Some settings contain unsaved data. Do you want to discard changes?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Некоторые настройки содержат несохранённые данные. Отменить внесённые изменения?"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_InvalidImportedFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{$SettingsUnits_Messages_InvalidImportedFileTemplate} {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "{$SettingsUnits_Messages_InvalidImportedFileTemplate} {0}."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_InvalidImportedFileTemplate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Imported file doesn't match the settings with"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Импортированный файл не соответствует настройкам с"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_InvalidUnitVersionWhileUpdating",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't update settings (Name = {6}, ID = {7:B}). Expected version {0}, but was found {1}. Modified by '{3}' ({2}) at {4} ({5} UTC)."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно изменить настройки (Name = {6}, ID = {7:B}). Требуется версия {0}, но в действительности версия {1}. Изменено сотрудником '{3}' ({2}) в {4} ({5} UTC)."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_LinkCopied",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The link has been copied to the clipboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ссылка скопирована в буфер обмена."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_NoSettingsAvailable",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No settings available"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступных настроек"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_NoSettingsAvailableReason",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You may not have sufficient permissions or system settings may not allow you to change configuration parameters."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Возможно, у Вас недостаточно прав или настройки системы не предполагают изменения конфигурационных параметров."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_NoSettingsOnPage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No settings were found on the current page"
+        },
+        {
+          "Culture": "ru",
+          "Value": "На текущей странице настройки не найдены"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_NoSettingsOnPageHint",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Please select a different category from the list of filtered categories or change the search string."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выберите другую категорию из списка отфильтрованных категорий или измените строку поиска."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_PluginNotFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Plugin not found for settings unit \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найден плагин для юнита настроек \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_RefreshingInProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Refreshing in progress"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполняется обновление"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_RefreshSettingsErrorOccurred",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error occurred while refresh settings."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В ходе обновления настроек произошла ошибка."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_SavingInProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Saving in progress"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполняется сохранение"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_SearchBlockedUnsavedChanges",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Search is unavailable while there are unsaved changes. Please save or discard them."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поиск недоступен, пока есть несохранённые изменения. Пожалуйста, сохраните или отмените их."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_StoreSettingsErrorOccurred",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error occurred while store settings."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В ходе сохранения настроек произошла ошибка."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_UnitAlreadyExists",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Settings unit with identifier {0:B} already exists."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Юнит настроек с идентификатором {0:B} уже существует."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Messages_UnitNotFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Settings unit with identifier {0:B} was not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найден юнит настроек с идентификатором {0:B}."
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Tab_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "System settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки системы"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Tab_UnknownSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unknown settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Неизвестные настройки"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Tiles_SettingsUnits",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "System settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки системы"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_AiCommon_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI main settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Основные настройки ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_AiCommon_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Main settings for configuring the AI module"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Основные настройки для конфигурации модуля ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_AiFiles_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI files settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки файлов ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_AiFiles_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI module file send settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки отправки файлов модуля ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_AiTools_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tools settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки инструментов"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_AiTools_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Allows to set up settings for all known card and programm tools"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Позволяет задать настройки для всех известных карточных и программных инструментов"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_FileVault_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File vault"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Центр файлов"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_FileVault_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Settings for configuring the file vault"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки для конфигурации центра файлов"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_Groups_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группы"
+        }
+      ]
+    },
+    {
+      "Name": "SettingsUnits_Unit_Groups_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Allows to administer and manage groups memberships"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Позволяет администрировать и управлять составом групп"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_ActionHistory",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Action history"
+        },
+        {
+          "Culture": "ru",
+          "Value": "История действий"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_Collapse",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Collapse all"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Свернуть все"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_CopyLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копировать ссылку"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_Expand",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expand all"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Развернуть все"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_Export",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Export"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экспортировать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_GroupSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки группы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_GroupSettings_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open a dialog with access parameters for settings unit."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть диалог с параметрами доступа для юнита настроек."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_Import",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Import"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Импортировать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_OpenInDialog",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open in dialog"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть в диалоге"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_OpenInTab",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open in tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть во вкладке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_Refresh",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Refresh"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_Refresh_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Refresh settings unit."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновить юнит настроек."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_RestoreDefaults",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Restore defaults"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Восстановить по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_Save",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SettingsUnits_Save_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save settings unit."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить юнит настроек."
+        }
+      ]
+    }
+  ]
+}

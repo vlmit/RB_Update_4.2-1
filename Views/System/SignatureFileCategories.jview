@@ -1,0 +1,65 @@
+﻿{
+  "Alias": "SignatureFileCategories",
+  "Caption": "$Views_Names_SignatureFileCategories",
+  "GroupName": "System",
+  "ID": "94fa3ee4-608a-4ca8-8c14-ea53f5921cc3",
+  "JsonMetadataSource::txt": "SignatureFileCategories JSONMETA",
+  "MsQuerySource::txt": "SignatureFileCategories MSSQL",
+  "PgQuerySource::txt": "SignatureFileCategories PGSQL"
+}
+
+[TEXTPART SignatureFileCategories JSONMETA]
+{
+  "Alias": "SignatureFileCategories",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_SignatureFileCategories",
+  "Columns": [
+    {
+      "Alias": "CategoryID",
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "CategoryName",
+      "Caption": "$Views_SignatureFileCategories_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Type": "String(128) Not Null"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_SignatureFileCategories_Name_Param",
+      "Multiple": false,
+      "Type": "String(128) Not Null"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART SignatureFileCategories MSSQL]
+SELECT
+	[st].[ID]		AS [CategoryID],
+	[st].[Name]		AS [CategoryName]
+FROM [SignatureFileCategories] AS [st] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([st].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY [st].[ID]
+
+
+[TEXTPART SignatureFileCategories PGSQL]
+SELECT
+	"st"."ID"		AS "CategoryID",
+	"st"."Name"		AS "CategoryName"
+FROM "SignatureFileCategories" AS "st"
+#if(Name) {
+CROSS JOIN "Localization"("st"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY "st"."Name"

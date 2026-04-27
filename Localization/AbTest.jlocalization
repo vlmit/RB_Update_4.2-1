@@ -1,0 +1,1723 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "750eb3f0-1167-4628-9a86-cfbb226feac5",
+  "Name": "AbTest",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "AbTest_AbCustomFolderExtension_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adds content in the area to the right for folder node in the form of an icon of that node. Used for testing purposes."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавляет для узла-папки содержимое в области справа в виде иконки этого же узла. Используется в целях тестирования."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_AbGetDataWithDelayExtension_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adds noticeable delay before acquiring view data. Used for testing purposes."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавляет заметную задержку перед получением данных представления. Используется в целях тестирования."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_AbTreeViewItemExtension_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adds new item in context menu for tree node in workplace. Used for testing purposes."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавляет новый элемент в контекстное меню на узле дерева в рабочем месте. Используется в целях тестирования."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Blocks_Buyer",
+      "Comment": "Заголовок блока \"Покупатель\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Buyer"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Покупатель"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Blocks_Controls_Tabs_FileCopies",
+      "Comment": "Заголовок блока, контрола и вкладки \"Копии файлов\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File copies"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копии файлов"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Blocks_DriverInformation",
+      "Comment": "Заголовок блока \"Информация по водителю\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Driver information"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Информация по водителю"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Blocks_TableViewDemo",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Demonstration of the \"Table in view\" extension"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Демонстрация работы расширения \"Таблица в представлении\""
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Blocks_Tabs_TestCardsCreation",
+      "Comment": "Заголовок блока и вкладки \"Создание карточек для тестирования\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Generate test cards"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создание карточек для тестирования"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Blocks_VirtualFields",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Virtual fields"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виртуальные поля"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Columns_Blocks_Controls_Buyers",
+      "Comment": "Заголовок колонки, блока и контрола \"Покупатели\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Buyers"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Покупатели"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Columns_Blocks_Controls_ManagerName",
+      "Comment": "Заголовок колонки, блока и контрола \"Имя менеджера\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Manager name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Имя менеджера"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Columns_Blocks_Share",
+      "Comment": "Заголовок колонки и блока \"Акция\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Share"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Акция"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Columns_Controls_BuyDate",
+      "Comment": "Заголовок колонки и контрола \"Дата покупки\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Buy date"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата покупки"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Columns_Controls_BuyerName",
+      "Comment": "Заголовок колонки и контрола \"ФИО покупателя\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Buyer name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "ФИО покупателя"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Columns_Controls_BuyerPhone",
+      "Comment": "Заголовок колонки и контрола \"Телефон покупателя\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Buyer phone"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Телефон покупателя"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Columns_Controls_OperationName",
+      "Comment": "Заголовок колонки и контрола \"Название операции\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Operation name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название операции"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Columns_Operations",
+      "Comment": "Заголовок колонки \"Операции\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Operations"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Операции"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Columns_OperationsWithAdditionalInformation",
+      "Comment": "Заголовок колонки \"Операции с дополнительной информацией\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Operations with additional information"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Операции с дополнительной информацией"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_BaseColor",
+      "Comment": "Заголовок контрола \"Базовый цвет\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Base color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Базовый цвет"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_BuyerOperations",
+      "Comment": "Заголовок контрола \"Операции покупателя\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Buyer operations"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Операции покупателя"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_CarModel",
+      "Comment": "Заголовок контрола \"Марка автомобиля\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Car model"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Марка автомобиля"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_CategoriesAreNotUsed",
+      "Comment": "Заголовок контрола \"Категории не используются\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Categories are not used"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Категории не используются"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_CategoryGrouping",
+      "Comment": "Заголовок контрола \"Группировка по категориям\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Category grouping"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группировка по категориям"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_CategoryGroupingMinimized",
+      "Comment": "Заголовок контрола \"Группировка по категориям (свёрнута)\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grouping by categories (minimized)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группировка по категориям (свёрнута)"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_DiscountPrice",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Price with discount"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цена со скидкой"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_DriverName",
+      "Comment": "Заголовок контрола \"Имя водителя\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Driver name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Имя водителя"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_Guid",
+      "Comment": "Заголовок контрола \"Уникальный идентификатор\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unique identifier"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Уникальный идентификатор"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_Images",
+      "Comment": "Заголовок контрола \"Изображения\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Images (\"Image\" category only)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изображения (только категория \"Image\")"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_MaximumSpeed",
+      "Comment": "Заголовок контрола \"Максимальная скорость, км/ч\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum speed, km/h"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальная скорость, км/ч"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_Mileage",
+      "Comment": "Заголовок контрола \"Пробег, км\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mileage, km"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пробег, км"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_OwnersList",
+      "Comment": "Заголовок контрола \"Список владельцев\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Owners list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список владельцев"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_PartnersCount",
+      "Comment": "Заголовок контрола \"Количество контрагентов\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Partners count"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Количество контрагентов"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_Price",
+      "Comment": "Заголовок контрола \"Цена, руб\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Price"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цена, руб"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_ReleaseDate",
+      "Comment": "Заголовок контрола \"Дата выпуска\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Release date"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата выпуска"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_ReleaseDateFrom",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Release date \"from\""
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата выпуска \"с\""
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_ReleaseDateTo",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Release date \"to\""
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата выпуска \"по\""
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_RequestExternalSystem",
+      "Comment": "Заголовок контрола \"Запросить из внешней системы\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Request the external system"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запросить из внешней системы"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_ResolutionDocType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Document type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип документа"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_ResolutionName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Resolution name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название резолюции"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_ShareList",
+      "Comment": "Заголовок контрола \"Список Акций\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Share list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список Акций"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_ShareName",
+      "Comment": "Заголовок контрола \"Название акции\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Share name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название акции"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_ShowTestDialog",
+      "Comment": "Заголовок кнопки \"Показать диалог\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show dialog"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать диалог"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_ShowTestDialog_Tooltip",
+      "Comment": "Тултип кнопки \"Показать диалог\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When you click on the button, a dialog window will open displaying the \"VirtualScheme\" dialog type form."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При нажатии на кнопку откроется диалоговое окно, отображающее форму типа диалога \"VirtualScheme\"."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_TaskKind",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Task kind"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вид задания"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_UsersCount",
+      "Comment": "Заголовок контрола \"Количество сотрудников\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employees count"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Количество сотрудников"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Controls_WithoutImages",
+      "Comment": "Заголовок контрола \"Без изображений\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Without images (everything except \"Image\" category)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Без изображений (всё, кроме категории \"Image\")"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Tab_EmptyHint",
+      "Comment": "Подсказка для пустой вкладки в карточке автомобиля.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "This tab is empty. Look for file control in another tab."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Это пустая вкладка. Контрол с файлами в другой вкладке."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Tabs_CarExternalSystemRequest",
+      "Comment": "Заголовок вкладки \"Запрос к внешней системе\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Query to the external system"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запрос к внешней системе"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Tabs_CarTableRequest",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Getting table"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Получение таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_Tabs_CarViewParameters",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Filter"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройка параметров фильтрации"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_TypesNames_Car",
+      "Comment": "Заголовок типа карточки - \"Автомобиль\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Car"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Автомобиль"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CardTypes_TypesNames_Resolution",
+      "Comment": "Заголовок типа карточки - \"Резолюция (тест)\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Resolution (test)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Резолюция (тест)"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CarTableRequestConfirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Click \"Yes\" to receive data through a custom request.\nClick \"No\" to receive data through the controller.\nTo close the dialog, click \"Cancel\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нажмите \"Да\" для получения данных через кастомный запрос.\nНажмите \"Нет\" для получения данных через контроллер.\nДля закрытия диалога нажмите \"Отмена\"."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CarTableRequestController_NotFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Make sure the \"Tessa.Extensions.Server.Web.dll\" assembly is connected to the controller for this example."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Убедитесь, что подключена сборка \"Tessa.Extensions.Server.Web.dll\" с контроллером для этого примера."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CompletionOptions_OptionA",
+      "Comment": "Текст варианта завершения задания \"OptionA\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Option A"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вариант А"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_CompletionOptions_OptionB",
+      "Comment": "Текст варианта завершения задания \"OptionB\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Option B"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вариант Б"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_ExternalFilesGroup",
+      "Comment": "Группа для внешних файлов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "External files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Внешние файлы"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_ExternalFileType",
+      "Comment": "Название типа для файла из внешней системы.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "External file"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Внешний файл"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_ExternalSourceFiles",
+      "Comment": "Пункт меню файлового контрола, добавляющий файлы из внешнего источника.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Files from external source"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файлы из внешнего источника"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Generator_CreateCardsButton",
+      "Comment": "Название кнопки создания тестовых карточек (контрагенты/пользователи)",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Generate cards"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать карточки"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Generator_CreatePartnersConfirmation",
+      "Comment": "Текст подтверждения создания контрагентов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Partners to generate:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Будет создано контрагентов:"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Generator_CreateUsersConfirmation",
+      "Comment": "Текст подтверждения создания сотрудников",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employees to generate:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Будет создано сотрудников:"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Generator_GenerateTestCards",
+      "Comment": "Название плитки \"Создание карточек для тестирования\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Generate test cards"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создание карточек для тестирования"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Generator_WarnCardsCountNotDefined",
+      "Comment": "Предупреждение о незаданном количестве генерируемых карточек",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Amount of test cards to create is required."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не задано количество создаваемых тестовых карточек."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Generator_WarnPartnerCountNegative",
+      "Comment": "Предупреждение об отрицательном числе контрагентов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Amount of partners can't be negative."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Количество контрагентов не может быть отрицательным числом."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Generator_WarnTooMuchPartners",
+      "Comment": "Текст предупреждения о слишком большом числе создаваемых контрагентов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Amount of partners is too large:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Количество создаваемых контрагентов слишком велико:"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Generator_WarnTooMuchUsers",
+      "Comment": "Текст предупреждения о слишком большом числе создаваемых сотрудников",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Amount of employees to create is too large:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Количество создаваемых сотрудников слишком велико:"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Generator_WarnUserCountNegative",
+      "Comment": "Предупреждение об отрицательном числе сотрудников",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Amount of employees can't be negative."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Количество сотрудников не может быть отрицательным числом."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_GroupingBySource",
+      "Comment": "Группировка файлов по источнику.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By source"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По источнику"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_LoadedFromExternalSystem",
+      "Comment": "Сообщение в карточке \"Автомобиль\" при загрузке данных из виртуальной внешней системы.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Data from the external system is loaded."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Данные из внешней системы загружены."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_MainFilesGroup",
+      "Comment": "Группа для основных файлов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файлы"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_MaxFileSizeExceeded",
+      "Comment": "Превышен максимально допустимый размер файла: {0} Кб.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum allowed file size is exceeded: {0} Kb."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Превышен максимально допустимый размер файла: {0} Кб."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Splash_LoadingFromExternalSystem",
+      "Comment": "Сплэш в карточке \"Автомобиль\" при загрузке данных из виртуальной внешней системы.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Loading data from external system..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Загрузка данных из внешней системы..."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_TestApprovalTile",
+      "Comment": "Плитка \"Тестовое согласование\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Test approval"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тестовое согласование"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_TestSignalTile",
+      "Comment": "Плитка \"Тестовый сигнал подпроцессу\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Test signal to subprocess"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тестовый сигнал подпроцессу"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_TypesNames_TestTask1",
+      "Comment": "Заголовок типа задания - \"Тип1\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type1"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип1"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_TypesNames_TestTask2",
+      "Comment": "Заголовок типа задания - \"Тип2\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type2"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип2"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_UI_FacsimileAndAnnotationsGroup_AddFascimile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add facsimile"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить факсимиле"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_UI_FacsimileAndAnnotationsGroup_DoesntAddPicture",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The image has not been added."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не добавлена картинка."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_UI_FacsimileAndAnnotationsGroup_GoodBoy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Completed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполнено"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_UI_FacsimileAndAnnotationsGroup_GoodBoyResult",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An image added on page number {0}, coordinates: x={1}, y={2}, width={3}, height={4}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Картинка добавлена на {0} страницу, координаты: x={1}, y={2}, width={3}, height={4}"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_UI_FacsimileAndAnnotationsGroup_Man",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ошибка."
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_UI_FacsimileAndAnnotationsGroup_PdfAnnsExamples",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Pdf annotations examples"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Примеры использования аннотаций"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_UI_FacsimileAndAnnotationsGroup_SendButton",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Send"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправить"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_UI_FacsimileAndAnnotationsGroup_SendForSigning",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Send to a signing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправить на подписание"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_CardName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Model"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модель"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_CardName_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Model"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модель"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_CarID_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Identifier"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_DriverName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Driver name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Водитель"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_DriverName_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Driver name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Водитель"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_MaxSpeed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Max speed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скорость"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_MaxSpeed_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Max speed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скорость"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_Mileage_Param",
+      "Comment": "Параметр фильтрации \"Пробег, км\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mileage, km"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пробег, км"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_Price_Param",
+      "Comment": "Параметр фильтрации \"Цена\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Price"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цена"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_ReleaseDate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Release date"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата выпуска"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_ReleaseDateFrom_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Release date \"from\""
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата выпуска \"с\""
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Cars_ReleaseDateTo_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Release date \"to\""
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата выпуска \"по\""
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Groups_Content",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Content"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Содержимое"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Names_Cars",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cars"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Автомобили"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Names_Groups",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группировка"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Names_GroupsWithHierarchy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Groups with hierarchy"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группировка с иерархией"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Names_Hierarchy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hierarchy"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Иерархия"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Names_Resolutions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Resolutions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Резолюции"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Names_ViewFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файлы"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_Author",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Author"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Автор"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_ByAuthor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By author"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По автору"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_ByCategory",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By category"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По категории"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_ByDepartment",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By department"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По подразделению"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_ByState",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By state"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По состоянию"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_Category",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Category"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Категория"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_Department",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Department"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подразделение"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_Name",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_Partner",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Partner"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контрагент"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_State",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "State"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Состояние"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_TaskKind",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Task kind"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вид задания"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_Resolutions_Type",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_ViewFiles_ByFolder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By folder"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По папкам"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_ViewFiles_Folder_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Folder"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Папка"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_ViewFiles_Name_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Views_ViewFiles_ParentFolder_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Full name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Полное название папки"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Workplaces_Cars",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cars"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Автомобили"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Workplaces_Resolutions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Resolutions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Резолюции"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Workplaces_Test",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AbTest"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тестирование"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Workplaces_ViewExtensions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Extensions testing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тест расширений"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Workplaces_ViewExtensions_FilesList",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список файлов"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Workplaces_ViewExtensions_FilesList_ByFolder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By folder"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По папкам"
+        }
+      ]
+    },
+    {
+      "Name": "AbTest_Workplaces_ViewExtensions_Generator",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Generator"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Генератор"
+        }
+      ]
+    }
+  ]
+}

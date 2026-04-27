@@ -1,0 +1,79 @@
+﻿{
+  "Alias": "KrPermissionsControlTypes",
+  "Caption": "$Views_Names_KrPermissionsControlTypes",
+  "GroupName": "Kr Wf",
+  "ID": "8053d28d-666a-4997-b0ef-aff1298c4aaf",
+  "JsonMetadataSource::txt": "KrPermissionsControlTypes JSONMETA",
+  "MsQuerySource::txt": "KrPermissionsControlTypes MSSQL",
+  "PgQuerySource::txt": "KrPermissionsControlTypes PGSQL"
+}
+
+[TEXTPART KrPermissionsControlTypes JSONMETA]
+{
+  "Alias": "KrPermissionsControlTypes",
+  "Caption": "$Views_Names_KrPermissionsControlTypes",
+  "Columns": [
+    {
+      "Alias": "ControlTypeID",
+      "Hidden": true,
+      "Type": "$KrPermissionsControlTypes.ID"
+    },
+    {
+      "Alias": "ControlTypeName",
+      "Caption": "$Views_KrPermissionsControlTypes_Name",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$KrPermissionsControlTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ControlTypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrPermissionsControlTypes_Name_Param",
+      "Type": "$KrPermissionsControlTypes.Name"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "ControlType",
+      "DisplayValueColumn": "ControlTypeName",
+      "RefSection": [
+        "KrPermissionsControlTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionsControlTypes MSSQL]
+SELECT
+	[s].[ID]		AS [ControlTypeID],
+	[s].[Name]		AS [ControlTypeName]
+FROM [KrPermissionsControlTypes] AS [s] WITH (NOLOCK)
+#if(Name || request.SortedBy("ControlTypeName")) {
+CROSS APPLY [Localization]([s].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART KrPermissionsControlTypes PGSQL]
+SELECT
+	"s"."ID"		AS "ControlTypeID",
+	"s"."Name"		AS "ControlTypeName"
+FROM "KrPermissionsControlTypes" AS "s"
+#if(Name || request.SortedBy("ControlTypeName")) {
+CROSS JOIN "Localization"("s"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

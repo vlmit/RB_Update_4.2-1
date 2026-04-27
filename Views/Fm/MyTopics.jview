@@ -1,0 +1,300 @@
+﻿{
+  "Alias": "MyTopics",
+  "Caption": "$Views_Names_MyTopics",
+  "Description": "Представления \"Мои обсуждения\" показывает последние активные топики пользователя. \nСортировка в представлении работает по последнему действию (например, написанию сообщения) в этом топике.",
+  "GroupName": "Fm",
+  "ID": "01629718-ee20-45d9-820f-188b350bcf88",
+  "JsonMetadataSource::txt": "MyTopics JSONMETA",
+  "MsQuerySource::txt": "MyTopics MSSQL",
+  "PgQuerySource::txt": "MyTopics PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART MyTopics JSONMETA]
+{
+  "Alias": "MyTopics",
+  "Appearance": "AppearanceColumn",
+  "Caption": "$Views_Names_MyTopics",
+  "Columns": [
+    {
+      "Alias": "CardID",
+      "Hidden": true,
+      "Type": "$Satellites.MainCardID"
+    },
+    {
+      "Alias": "Created",
+      "Appearance": "AppearanceColumn",
+      "Caption": "$Views_MyTopics_Created",
+      "FilterParameter": "Created",
+      "FilterType": "Parameter",
+      "SortBy": "top.Created",
+      "Type": "$FmTopics.Created"
+    },
+    {
+      "Alias": "TopicID",
+      "Hidden": true,
+      "Type": "$FmTopicParticipants.TopicRowID"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$FmTopics.TypeID"
+    },
+    {
+      "Alias": "TopicName",
+      "Appearance": "AppearanceColumn",
+      "Caption": "$Views_MyTopics_TopicName",
+      "Localizable": true,
+      "MaxLength": 150,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Description",
+      "Appearance": "AppearanceColumn",
+      "Caption": "$Views_MyTopics_Description",
+      "MaxLength": 50,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "AuthorName",
+      "Appearance": "AppearanceColumn",
+      "Caption": "$Views_MyTopics_AuthorName",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "LastMessage",
+      "Appearance": "AppearanceColumn",
+      "Caption": "$Views_MyTopics_LastMessage",
+      "SortBy": "top.LastMessageTime",
+      "Type": "$FmTopics.LastMessageTime"
+    },
+    {
+      "Alias": "LastMessageAuthorName",
+      "Appearance": "AppearanceColumn",
+      "Caption": "$Views_MyTopics_LastMessageAuthorName",
+      "SortBy": "top.LastMessageAuthorName",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "IsArchived",
+      "FilterParameter": "IsArchived",
+      "FilterType": "Parameter",
+      "Hidden": true,
+      "Type": "$FmTopics.IsArchived"
+    },
+    {
+      "Alias": "AppearanceColumn",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "LastMessage",
+      "SortDirection": "Descending"
+    }
+  ],
+  "Extensions": [
+    {
+      "Order": 0,
+      "TypeName": "Tessa.Extensions.Default.Client.Forums.OpenTopicOnDoubleClickExtension"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "Created",
+      "Caption": "$Views_MyTopics_Created",
+      "Type": "$FmTopics.Created"
+    },
+    {
+      "Alias": "IsArchived",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_MyTopics_ShowArchived",
+      "Multiple": false,
+      "Type": "$FmTopics.IsArchived"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Card",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Instances"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART MyTopics MSSQL]
+SELECT
+	#if(Normal) {
+		[tt].[CardID],
+		[tt].[Created],
+		[tt].[TopicID],
+		[tt].[TypeID],
+		CASE
+			WHEN ([tt].[IsArchived] = 1)
+			THEN [tt].[TopicName] + (SELECT [dbo].[Localize]('$Forum_View_IsArchived', #param(locale)))
+			ELSE [tt].[TopicName]
+		END AS [TopicName],		
+		[tt].[Description],
+		[tt].[AuthorName],
+		[tt].[LastMessage],
+		[tt].[LastMessageAuthorName],
+		[tt].[IsArchived],
+		CASE
+			WHEN ([tt].[LastMessage] > DATEADD(millisecond, 3, [tt].[LastRead]) OR [tt].[LastRead] IS NULL)
+			THEN
+			 	N'#appearance(FontWeight: Bold)'
+			ELSE
+				N'#appearance(FontWeight: Normal)'
+		END AS [AppearanceColumn]
+	}
+	#if(Count) {
+		[tt].[cnt]
+	}
+FROM (
+	SELECT
+	#if(Normal) {
+		[fst].[MainCardID] AS [CardID],
+		[t].[TopicRowID] AS [TopicID],
+		[top].[TypeID] AS [TypeID],
+		[top].[IsArchived] AS [IsArchived],
+		[top].[Title] AS [TopicName],
+		[top].[Created] AS [Created],
+		[top].[Description] AS [Description],
+		[top].[AuthorName] AS [AuthorName],
+		[top].[LastMessageTime] AS [LastMessage],
+		[fus].[LastReadMessageTime] AS [LastRead],
+		[top].[LastMessageAuthorName],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+	}
+	#if(Count) {
+		count(*) AS [cnt]
+	}
+	FROM (
+	    SELECT [tpr].[TopicRowID]
+	    FROM [FmTopicParticipantRoles] AS [tpr] WITH (NOLOCK)
+	    WHERE EXISTS (
+	        SELECT NULL
+	        FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+	        WHERE [ru].[ID] = [tpr].[RoleID]
+	            #param(CurrentUserID, [ru].[UserID])
+	    )
+	    
+	    UNION
+	    
+	    SELECT [tp].[TopicRowID]
+	    FROM [FmTopicParticipants] AS [tp] WITH (NOLOCK)
+	    WHERE 1=1 #param(CurrentUserID, [tp].[UserID])
+	) AS [t]
+
+	INNER JOIN [FmTopics] AS [top] WITH (NOLOCK) ON [top].[RowID] = [t].[TopicRowID]
+	INNER JOIN [Satellites] AS [fst] WITH (NOLOCK) ON [fst].[ID] = [top].[ID]
+	LEFT JOIN [FmUserStat] AS [fus] WITH (NOLOCK) ON [top].[RowID] = [fus].[TopicRowID] #param(CurrentUserID, [fus].[UserID])
+	WHERE 1=1
+		#param(Created,[top].[Created])
+		#if(!IsArchived) {
+			AND [top].[IsArchived] = 0
+		}
+) AS [tt]
+#if(PageOffset) {
+WHERE [tt].[rn] >= #param(PageOffset) AND [tt].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+
+
+[TEXTPART MyTopics PGSQL]
+SELECT
+	#if(Normal) {
+		"tt"."CardID",
+		"tt"."Created",
+		"tt"."TopicID",
+		"tt"."TypeID",
+		CASE
+			WHEN ("tt"."IsArchived" = true)
+			THEN "tt"."TopicName" || (SELECT "Localize"('$Forum_View_IsArchived', #param(locale)))
+			ELSE "tt"."TopicName"
+		END AS "TopicName",			
+		"tt"."Description",
+		"tt"."AuthorName",
+		"tt"."LastMessage",
+		"tt"."LastMessageAuthorName",
+		"tt"."IsArchived",
+		CASE
+			WHEN ("tt"."LastMessage" > "tt"."LastRead" + interval '3 millisecond' OR "tt"."LastRead" IS NULL)
+			THEN
+			 	'#appearance(FontWeight: Bold)'
+			ELSE
+				'#appearance(FontWeight: Normal)'
+		END AS "AppearanceColumn"
+	}
+	#if(Count) {
+		"tt"."cnt"
+	}	
+FROM (
+	SELECT
+	#if(Normal) 
+	{
+		"fst"."MainCardID" AS "CardID",
+		"t"."TopicRowID" AS "TopicID",
+		"top"."TypeID" AS "TypeID",
+		"top"."IsArchived" AS "IsArchived",
+		"top"."Title" AS "TopicName",
+		"top"."Created" AS "Created",
+		"top"."Description" AS "Description",
+		"top"."AuthorName" AS "AuthorName",
+		"top"."LastMessageTime" AS "LastMessage",
+		"fus"."LastReadMessageTime" AS "LastRead",
+		"top"."LastMessageAuthorName"
+	}
+	#if(Count) {
+		count(*) AS "cnt"
+	}
+	FROM (
+		SELECT
+			"tpr"."TopicRowID"
+		FROM "FmTopicParticipantRoles" AS "tpr"
+	  	WHERE EXISTS (
+		  	SELECT true
+		  	FROM "RoleUsers" AS "ru"
+		  	WHERE "ru"."ID" = "tpr"."RoleID"
+		  		#param(CurrentUserID, "ru"."UserID"))
+	    
+	  	UNION
+	  	
+	  	SELECT
+	  		"par"."TopicRowID"
+  		FROM "FmTopicParticipants" AS "par"
+	    WHERE true #param(CurrentUserID, "par"."UserID")
+	) AS "t"
+	INNER JOIN "FmTopics" AS "top" ON "top"."RowID" = "t"."TopicRowID"
+	INNER JOIN "Satellites" AS "fst" ON "fst"."ID" = "top"."ID"
+	LEFT JOIN "FmUserStat" AS "fus" ON "top"."RowID" = "fus"."TopicRowID" #param(CurrentUserID, "fus"."UserID")
+	where 1=1
+		#param(Created, "top"."Created")
+		#if(!IsArchived) {
+			AND NOT "top"."IsArchived"
+		}
+	#if(Normal) {
+		ORDER BY #order_by
+	}
+) AS "tt"
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

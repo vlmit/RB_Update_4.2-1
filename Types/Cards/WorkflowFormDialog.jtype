@@ -1,0 +1,25 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "WorkflowFormDialog",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 69648,
+  "Forms": [
+    {
+      "Blocks": null,
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Main",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "WorkflowEngine",
+  "ID::uid": "9de1ffde-031f-4a6f-a983-05bd24316933",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "WorkflowFormDialog",
+  "SchemeItems": null,
+  "Validators": null
+}

@@ -1,0 +1,130 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$Cards_DefaultCaption",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": "Открывать на весь экран",
+          "ID::uid": "a5c4c13d-764e-41ba-b877-2e9fc927a70f",
+          "Name": "OpenInFullscreen",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": "Открывать только первую вкладку без заголовка.",
+          "ID::uid": "f0bee730-1f07-44d9-8159-67c2da1056f9",
+          "Name": "OpenOnlyFirstTab",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": "Обновление представления при закрытии карточки.",
+          "ID::uid": "32f381b1-4ebe-4218-ab6d-5d1c9b747ae9",
+          "Name": "RefreshViewOnClose",
+          "SchemeType": "Boolean Not Null"
+        }
+      ],
+      "Description": null,
+      "ID::uid": "ad8203db-107a-4680-8ebe-d0ed840e47aa",
+      "Name": "OpenInDialogSettings",
+      "TableType::int": 1
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "MainBlock",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$OpenInModalDialogSettings_OpenInFullscreen",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "OpenInFullscreen",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "a5c4c13d-764e-41ba-b877-2e9fc927a70f"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "ad8203db-107a-4680-8ebe-d0ed840e47aa",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$OpenInModalDialogSettings_OpenFirstTab",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "OpenOnlyFirstTab",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "f0bee730-1f07-44d9-8159-67c2da1056f9"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "ad8203db-107a-4680-8ebe-d0ed840e47aa",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$OpenInModalDialogSettings_RefreshViewOnClose",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "RefreshViewOnClose",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "32f381b1-4ebe-4218-ab6d-5d1c9b747ae9"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "ad8203db-107a-4680-8ebe-d0ed840e47aa",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "MainBlock"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "MainForm",
+      "TabCaption": "$CardTypes_OpenInModalDialogSettings"
+    }
+  ],
+  "Group": "System",
+  "ID::uid": "57493ed6-316b-4fb9-b85e-2b931e022640",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "OpenInModalDialogSettings",
+  "SchemeItems": null,
+  "Validators": null
+}

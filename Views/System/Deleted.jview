@@ -1,0 +1,235 @@
+﻿{
+  "Alias": "Deleted",
+  "Caption": "$Views_Names_Deleted",
+  "GroupName": "System",
+  "ID": "52c2fe9f-b0a8-455a-b426-ab5bc2285a05",
+  "JsonMetadataSource::txt": "Deleted JSONMETA",
+  "MsQuerySource::txt": "Deleted MSSQL",
+  "PgQuerySource::txt": "Deleted PGSQL"
+}
+
+[TEXTPART Deleted JSONMETA]
+{
+  "Alias": "Deleted",
+  "Caption": "$Views_Names_Deleted",
+  "Columns": [
+    {
+      "Alias": "DeletedID",
+      "Hidden": true,
+      "Type": "$Deleted.ID"
+    },
+    {
+      "Alias": "DeletedCaption",
+      "Caption": "$Views_Deleted_Caption",
+      "FilterParameter": "DeletedCaption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "d.Digest",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Deleted.TypeID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_Deleted_Type",
+      "FilterParameter": "TypeCaption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "d.TypeCaption",
+      "Type": "$Deleted.TypeCaption"
+    },
+    {
+      "Alias": "Date",
+      "Caption": "$Views_Deleted_Date",
+      "FilterParameter": "Date",
+      "FilterType": "Parameter",
+      "SortBy": "d.Created",
+      "Type": "$Deleted.Created"
+    },
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "$Deleted.CreatedByID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Deleted_User",
+      "FilterParameter": "UserName",
+      "FilterType": "Parameter",
+      "SortBy": "d.CreatedByName",
+      "Type": "$Deleted.CreatedByName"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Date",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "DeletedCaption",
+      "Caption": "$Views_Deleted_Card_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "TypeID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1,
+          2
+        ],
+        "ViewAlias": "Types"
+      },
+      "Caption": "$Views_Deleted_Type_Param",
+      "Multiple": false,
+      "RefSection": [
+        "Types"
+      ],
+      "Type": "$Deleted.TypeID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_Deleted_TypeName_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Date",
+      "Caption": "$Views_Deleted_Date_Param",
+      "Type": "$Deleted.Created"
+    },
+    {
+      "Alias": "UserID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Deleted_User_Param",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$Deleted.CreatedByID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Deleted_UserName_Param",
+      "Type": "$Deleted.CreatedByName"
+    }
+  ],
+  "QuickSearchParam": "DeletedCaption",
+  "References": [
+    {
+      "ColPrefix": "Deleted",
+      "DisplayValueColumn": "DeletedCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Deleted"
+      ]
+    },
+    {
+      "ColPrefix": "User",
+      "DisplayValueColumn": "UserName",
+      "IsCard": true,
+      "RefSection": [
+        "Roles",
+        "PersonalRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Deleted MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[d].[ID]													AS [DeletedID],
+		COALESCE([d].[Digest], N'$Views_CurrentTasks_NoName_Sql')	AS [DeletedCaption],
+		[d].[TypeID],
+		[d].[TypeCaption],
+		[d].[Created]												AS [Date],
+		[d].[CreatedByID]											AS [UserID],
+		[d].[CreatedByName]											AS [UserName],
+		row_number() OVER (ORDER BY #order_by)						AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Deleted] AS [d] WITH (NOLOCK)
+	#if(TypeCaption) {
+	CROSS APPLY [Localization]([d].[TypeCaption], #param(locale)) AS [lTypeCaption]
+	}
+	WHERE 1 = 1
+		#param(DeletedCaption, [d].[Digest])
+		#param(TypeID, [d].[TypeID])
+		#param(TypeCaption, [lTypeCaption].[Value])
+		#param(Date, [d].[Created])
+		#param(UserID, [d].[CreatedByID])
+		#param(UserName, [d].[CreatedByName])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART Deleted PGSQL]
+SELECT
+	#if(Normal) {
+	"d"."ID"													AS "DeletedID",
+	COALESCE("d"."Digest", '$Views_CurrentTasks_NoName_Sql')	AS "DeletedCaption",
+	"d"."TypeID",
+	"d"."TypeCaption",
+	"d"."Created"												AS "Date",
+	"d"."CreatedByID"											AS "UserID",
+	"d"."CreatedByName"											AS "UserName",
+	0::int8														AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "Deleted" AS "d"
+#if(TypeCaption) {
+CROSS JOIN "Localization"("d"."TypeCaption", #param(locale)) AS "lTypeCaption"
+}
+WHERE true
+	#param(DeletedCaption, "d"."Digest")
+	#param(TypeID, "d"."TypeID")
+	#param(TypeCaption, "lTypeCaption"."Value")
+	#param(Date, "d"."Created")
+	#param(UserID, "d"."CreatedByID")
+	#param(UserName, "d"."CreatedByName")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

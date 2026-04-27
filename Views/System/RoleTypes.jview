@@ -1,0 +1,84 @@
+﻿{
+  "Alias": "RoleTypes",
+  "Caption": "$Views_Names_RoleTypes",
+  "GroupName": "System",
+  "ID": "df92983b-2dd3-4092-8603-48d0245cd049",
+  "JsonMetadataSource::txt": "RoleTypes JSONMETA",
+  "MsQuerySource::txt": "RoleTypes MSSQL",
+  "PgQuerySource::txt": "RoleTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART RoleTypes JSONMETA]
+{
+  "Alias": "RoleTypes",
+  "Caption": "$Views_Names_RoleTypes",
+  "Columns": [
+    {
+      "Alias": "RoleTypeID",
+      "Caption": "Id типа роли",
+      "Hidden": true,
+      "Type": "$RoleTypes.ID"
+    },
+    {
+      "Alias": "RoleTypeName",
+      "Caption": "$Views_RoleTypes_Name",
+      "FilterParameter": "RoleTypeNameParam",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$RoleTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RoleTypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "RoleTypeNameParam",
+      "Caption": "$Views_RoleTypes_Name_Param",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "RoleType",
+      "DisplayValueColumn": "RoleTypeName",
+      "RefSection": [
+        "RoleTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RoleTypes MSSQL]
+SELECT
+	[rt].[ID]		AS [RoleTypeID],
+	[rt].[Name]		AS [RoleTypeName]
+FROM [RoleTypes] AS [rt] WITH (NOLOCK)
+CROSS APPLY [Localization]([rt].[Name], #param(locale)) AS [lName]
+WHERE 1 = 1
+	#param(RoleTypeNameParam, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART RoleTypes PGSQL]
+SELECT
+	"rt"."ID"		AS "RoleTypeID",
+	"rt"."Name"		AS "RoleTypeName"
+FROM "RoleTypes" AS "rt"
+CROSS JOIN "Localization"("rt"."Name", #param(locale)) AS "lName"
+WHERE true
+	#param(RoleTypeNameParam, "lName"."Value")
+ORDER BY #order_by

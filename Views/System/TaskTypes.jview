@@ -1,0 +1,180 @@
+﻿{
+  "Alias": "TaskTypes",
+  "Caption": "$Views_Names_TaskTypes",
+  "GroupName": "System",
+  "ID": "fcd3f5ad-545f-41d1-ad85-345157020e33",
+  "JsonMetadataSource::txt": "TaskTypes JSONMETA",
+  "MsQuerySource::txt": "TaskTypes MSSQL",
+  "PgQuerySource::txt": "TaskTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TaskTypes JSONMETA]
+{
+  "Alias": "TaskTypes",
+  "Caption": "$Views_Names_TaskTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_TaskTypes_Name",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_TaskTypes_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_TaskTypes_Name_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_TaskTypes_Alias_Param",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "NameOrCaption",
+      "Caption": "$Views_TaskTypes_NameOrCaption_Param",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "OnlyEnabledForRoutes",
+      "Caption": "$Views_TaskTypes_OnlyEnabledForRoutes_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "HasWysiwyg",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "HasWysiwyg",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Null"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "RefSection": [
+        "TaskTypes"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TaskTypes MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [TypeID],
+		[t].[Caption]							AS [TypeCaption],
+		[t].[Name]								AS [TypeName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Types] AS [t] WITH (NOLOCK)
+	#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+	CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+	}
+	#if(OnlyEnabledForRoutes) {
+	INNER JOIN [KrSettingsRouteExtraTaskTypes] AS [krsrett] WITH(NOLOCK) ON [krsrett].[TaskTypeID] = [t].[ID]
+	}
+	WHERE ([t].[Flags] & 16) = 0		-- тип не Hidden
+		AND [t].[InstanceTypeID] = 2	-- тип задания
+		#if (HasWysiwyg) {
+			AND ([t].[Flags] & 65536) = 65536 -- UseFormEditor
+		}
+		#param(Name, [t].[Name])
+		#param(Caption, [lCaption].[Value])
+		AND (1 = 1 #param(NameOrCaption, "t"."Name") OR 1 = 1 #param(NameOrCaption, "lCaption"."Value"))
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART TaskTypes PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "TypeID",
+	"t"."Caption"								AS "TypeCaption",
+	"t"."Name"									AS "TypeName",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "Types" AS "t"
+#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+}
+#if(OnlyEnabledForRoutes) {
+INNER JOIN "KrSettingsRouteExtraTaskTypes" AS "krsrett" ON "krsrett"."TaskTypeID" = "t"."ID"
+}
+WHERE ("t"."Flags" & 16) = 0		-- тип не Hidden
+	AND "t"."InstanceTypeID" = 2	-- тип задания
+	#if (HasWysiwyg) {
+		AND ("t"."Flags" & 65536) = 65536 -- UseFormEditor
+	}
+	#param(Name, "t"."Name")
+	#param(Caption, "lCaption"."Value")
+	AND (true #param(NameOrCaption, "t"."Name") or true #param(NameOrCaption, "lCaption"."Value"))
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

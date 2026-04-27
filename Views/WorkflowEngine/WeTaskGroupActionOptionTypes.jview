@@ -1,0 +1,77 @@
+﻿{
+  "Alias": "WeTaskGroupActionOptionTypes",
+  "Caption": "$Views_Names_WeTaskGroupActionOptionTypes",
+  "GroupName": "WorkflowEngine",
+  "ID": "6a66914d-790f-480a-9976-cb85cc67e028",
+  "JsonMetadataSource::txt": "WeTaskGroupActionOptionTypes JSONMETA",
+  "MsQuerySource::txt": "WeTaskGroupActionOptionTypes MSSQL",
+  "PgQuerySource::txt": "WeTaskGroupActionOptionTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART WeTaskGroupActionOptionTypes JSONMETA]
+{
+  "Alias": "WeTaskGroupActionOptionTypes",
+  "Caption": "$Views_Names_WeTaskGroupActionOptionTypes",
+  "Columns": [
+    {
+      "Alias": "OptionTypeID",
+      "Hidden": true,
+      "Type": "$WeTaskGroupActionOptionTypes.ID"
+    },
+    {
+      "Alias": "OptionTypeName",
+      "Caption": "$Views_WeTaskGroupActionOptionTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$WeTaskGroupActionOptionTypes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WeTaskGroupActionOptionTypes_Name_Param",
+      "Multiple": false,
+      "Type": "$WeTaskGroupActionOptionTypes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "OptionType",
+      "DisplayValueColumn": "OptionTypeName",
+      "RefSection": [
+        "WeTaskGroupActionOptionTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WeTaskGroupActionOptionTypes MSSQL]
+SELECT
+	[ot].[ID] as [OptionTypeID]
+	,[ot].[Name] as [OptionTypeName]
+FROM [WeTaskGroupActionOptionTypes] [ot] WITH(NOLOCK)
+#if(Name || request.SortedBy("OptionTypeName")) {
+CROSS APPLY [Localization]([ot].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+
+
+[TEXTPART WeTaskGroupActionOptionTypes PGSQL]
+SELECT
+	"ot"."ID" as "OptionTypeID"
+	,"ot"."Name" as "OptionTypeName"
+FROM "WeTaskGroupActionOptionTypes" "ot"
+#if(Name || request.SortedBy("OptionTypeName")) {
+CROSS JOIN "Localization"("ot"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")

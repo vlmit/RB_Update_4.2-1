@@ -1,0 +1,391 @@
+﻿{
+  "Alias": "ApprovalProcessTemplates",
+  "Caption": "$Views_Names_ApprovalProcessTemplates",
+  "GroupName": "ApprovalProcessEditor",
+  "ID": "7361c2ee-4620-4b2b-9e23-91c5285be932",
+  "JsonMetadataSource::txt": "ApprovalProcessTemplates JSONMETA",
+  "MsQuerySource::txt": "ApprovalProcessTemplates MSSQL",
+  "PgQuerySource::txt": "ApprovalProcessTemplates PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART ApprovalProcessTemplates JSONMETA]
+{
+  "Alias": "ApprovalProcessTemplates",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_ApprovalProcessTemplates",
+  "Columns": [
+    {
+      "Alias": "ApprovalProcessTemplateID",
+      "Caption": "ApprovalProcessTemplateID",
+      "Hidden": true,
+      "Type": "$ApprovalProcessTemplates.ID"
+    },
+    {
+      "Alias": "ApprovalProcessTemplateName",
+      "Caption": "$Views_ApprovalProcessTemplates_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$ApprovalProcessTemplates.Name"
+    },
+    {
+      "Alias": "ApprovalProcessTemplateAuthor",
+      "Caption": "$Views_ApprovalProcessTemplates_Author",
+      "FilterParameter": "Author",
+      "FilterType": "Parameter",
+      "SortBy": "t.AuthorName",
+      "Type": "$ApprovalProcessTemplates.AuthorName"
+    },
+    {
+      "Alias": "ApprovalProcessTemplateDescription",
+      "Caption": "$Views_ApprovalProcessTemplates_Description",
+      "FilterParameter": "Description",
+      "FilterType": "Parameter",
+      "Type": "$ApprovalProcessTemplates.Description"
+    },
+    {
+      "Alias": "ApprovalProcessTemplateTypes",
+      "Caption": "$Views_ApprovalProcessTemplates_Types",
+      "FilterParameter": "Type",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$ApprovalProcessTemplateTypes.TypeCaption"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ApprovalProcessTemplateName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_ApprovalProcessTemplates_Name_Param",
+      "Type": "$ApprovalProcessTemplates.Name"
+    },
+    {
+      "Alias": "Type",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          2,
+          4,
+          6
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Caption": "$Views_ApprovalProcessTemplates_Type_Param",
+      "Multiple": false,
+      "RefSection": [
+        "Types",
+        "TypeForView"
+      ],
+      "Type": "$ApprovalProcessTemplateTypes.TypeID"
+    },
+    {
+      "Alias": "Author",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_ApprovalProcessTemplates_Author_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$ApprovalProcessTemplates.AuthorID"
+    },
+    {
+      "Alias": "Description",
+      "Caption": "$Views_ApprovalProcessTemplates_Description_Param",
+      "Type": "$ApprovalProcessTemplates.Description"
+    },
+    {
+      "Alias": "ShowAll",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_ApprovalProcessTemplates_ShowAll_Param",
+      "Hidden": true,
+      "IgnoreCase": false,
+      "Multiple": false,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "CardID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_ApprovalProcessTemplates_CardID_Param",
+      "Hidden": true,
+      "Type": "Guid Not Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "CardType": "ApprovalProcessTemplate",
+      "ColPrefix": "ApprovalProcessTemplate",
+      "DisplayValueColumn": "ApprovalProcessTemplateName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "ApprovalProcessTemplates"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ApprovalProcessTemplates MSSQL]
+SELECT
+#if(Normal) {
+	[t].[ID] 			AS [ApprovalProcessTemplateID],
+	[t].[Name] 			AS [ApprovalProcessTemplateName],
+	[t].[AuthorName] 	AS [ApprovalProcessTemplateAuthor],
+	[t].[Description] 	AS [ApprovalProcessTemplateDescription],
+	STUFF((
+		SELECT CHAR(10) +
+			CASE WHEN left([tt].[TypeCaption], 1) = N'$'
+				THEN N'{' + [tt].[TypeCaption] + N'}'
+				ELSE [tt].[TypeCaption]
+			END
+		FROM [ApprovalProcessTemplateTypes] AS [tt] WITH (NOLOCK)
+		WHERE [tt].[ID] = [t].[ID]
+		FOR XML PATH, TYPE
+	).value(N'.[1]', N'nvarchar(max)'), 1, 1, N'') AS [ApprovalProcessTemplateTypes]
+	}	
+#if(Count) {
+	[t].[cnt]
+	}
+FROM (
+	SELECT
+	#if(Normal) {
+		[t].[ID],
+		[t].[Name],
+		[t].[AuthorName],
+		[t].[Description],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}	
+	#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [ApprovalProcessTemplates] AS [t] WITH(NOLOCK)
+	#if(Name || request.SortedBy("ApprovalProcessTemplateName")) {
+	CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+	}
+	WHERE
+	#if(Administrator && ShowAll){
+		1 = 1
+	}{
+		([t].[AuthorID] = #param(CurrentUserID)
+		#if(CardID){
+			OR EXISTS (
+				SELECT NULL
+				FROM [ApprovalProcessTemplateUsers] AS [aptu] WITH(NOLOCK)
+				INNER JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+					ON [aptu].[RoleID] = [ru].[ID]
+				WHERE [aptu].[ID] = [t].[ID]
+					AND [ru].[UserID] = #param(CurrentUserID)
+			)
+		}
+		OR EXISTS (
+			SELECT NULL
+			FROM [ApprovalProcessTemplateWriters] AS [aptw] WITH(NOLOCK)
+			INNER JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+				ON [aptw].[RoleID] = [ru].[ID]
+			WHERE [aptw].[ID] = [t].[ID]
+				AND [ru].[UserID] = #param(CurrentUserID)
+		))
+	}
+	#param(Name, [lName].[Value])
+	#param(Author, [t].[AuthorID])
+	#param(Description, [t].[Description])
+	#if(Type) {
+	    AND (
+	    	NOT EXISTS (
+		        SELECT NULL
+		        FROM [ApprovalProcessTemplateTypes] AS [tt] WITH(NOLOCK)
+		        WHERE [tt].[ID] = [t].[ID])
+	    	OR
+		    	EXISTS (
+		        SELECT NULL
+		        FROM [ApprovalProcessTemplateTypes] AS [tt] WITH(NOLOCK)
+		        WHERE [tt].[ID] = [t].[ID]
+		        	#param(Type, [tt].[TypeID])
+		        
+		        UNION ALL
+		        
+		        SELECT NULL
+		        FROM [ApprovalProcessTemplateTypes] AS [tt] WITH(NOLOCK)
+		        INNER JOIN [KrDocType] AS [kdt] WITH(NOLOCK)
+		        	ON [tt].[TypeID] = [kdt].[CardTypeID]
+		        WHERE [tt].[ID] = [t].[ID]
+		        	#param(Type, [kdt].[ID])
+	        	
+		        UNION ALL
+		        
+		        SELECT NULL
+		        FROM [ApprovalProcessTemplateTypes] AS [tt] WITH(NOLOCK)
+		        INNER JOIN [RefGroupsGuidValues] AS [rggv] WITH(NOLOCK)
+		        	ON [rggv].[ID] = [tt].[TypeID]
+		        WHERE [tt].[ID] = [t].[ID]
+		        	#param(Type, [rggv].[Value])
+	        	
+		        UNION ALL
+		        
+		        SELECT NULL
+		        FROM [ApprovalProcessTemplateTypes] AS [tt] WITH(NOLOCK)
+		        INNER JOIN [RefGroupsGuidValues] AS [rggv] WITH(NOLOCK)
+		        	ON [rggv].[ID] = [tt].[TypeID]
+		        INNER JOIN [KrDocType] AS [kdt] WITH(NOLOCK)
+		        	ON [rggv].[Value] = [kdt].[CardTypeID]
+		        WHERE [tt].[ID] = [t].[ID]
+		        	#param(Type, [kdt].[ID])))
+	}) AS [t]
+
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+
+
+[TEXTPART ApprovalProcessTemplates PGSQL]
+SELECT
+#if(Normal) {
+	"t"."ID" 			AS "ApprovalProcessTemplateID",
+	"t"."Name" 			AS "ApprovalProcessTemplateName",
+	"t"."AuthorName" 	AS "ApprovalProcessTemplateAuthor",
+	"t"."Description"	AS "ApprovalProcessTemplateDescription",
+	(
+		SELECT string_agg("TypeCaption", chr(10))
+		FROM (
+			SELECT
+				CASE WHEN substring("tt"."TypeCaption", 1, 1) = '$'
+					THEN '{' || "tt"."TypeCaption" || '}'
+					ELSE "tt"."TypeCaption"
+				END
+			FROM "ApprovalProcessTemplateTypes" AS "tt"
+			WHERE "tt"."ID" = "t"."ID") AS "TypeCaption"
+	) 								AS "ApprovalProcessTemplateTypes"
+	}	
+#if(Count) {
+	"t"."cnt"
+	}
+FROM (
+	SELECT
+	#if(Normal) {
+		"t"."ID",
+		"t"."Name",
+		"t"."AuthorName",
+		"t"."Description",
+		row_number() OVER (ORDER BY #order_by) AS "rn"
+		}	
+	#if(Count) {
+		count(*) AS "cnt"
+		}
+	FROM "ApprovalProcessTemplates" AS "t"
+	#if(Name || request.SortedBy("ApprovalProcessTemplateName")) {
+	CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+	}
+	WHERE 
+	#if(Administrator && ShowAll){
+		true
+	}{
+		("t"."AuthorID" = #param(CurrentUserID)
+		#if(CardID){
+			OR EXISTS (
+				SELECT NULL
+				FROM "ApprovalProcessTemplateUsers" AS "aptu"
+				INNER JOIN "RoleUsers" AS "ru"
+					ON "aptu"."RoleID" = "ru"."ID"
+				WHERE "aptu"."ID" = "t"."ID"
+					AND "ru"."UserID" = #param(CurrentUserID)
+			)
+		}
+		OR EXISTS (
+			SELECT NULL
+			FROM "ApprovalProcessTemplateWriters" AS "aptw"
+			INNER JOIN "RoleUsers" AS "ru"
+				ON "aptw"."RoleID" = "ru"."ID"
+			WHERE "aptw"."ID" = "t"."ID"
+				AND "ru"."UserID" = #param(CurrentUserID)
+		))
+	}
+	#param(Name, "lName"."Value")
+	#param(Author, "t"."AuthorID")
+	#param(Description, "t"."Description")
+	#if(Type) {
+	    AND (
+	    	NOT EXISTS (
+		        SELECT NULL
+		        FROM "ApprovalProcessTemplateTypes" AS "tt"
+		        WHERE "tt"."ID" = "t"."ID")
+	    	OR
+		    	EXISTS (
+		        SELECT NULL
+		        FROM "ApprovalProcessTemplateTypes" AS "tt"
+		        WHERE "tt"."ID" = "t"."ID"
+		        	#param(Type, "tt"."TypeID")
+		        
+		        UNION ALL
+		        
+		        SELECT NULL
+		        FROM "ApprovalProcessTemplateTypes" AS "tt"
+		        INNER JOIN "KrDocType" AS "kdt"
+		        	ON "tt"."TypeID" = "kdt"."CardTypeID"
+		        WHERE "tt"."ID" = "t"."ID"
+		        	#param(Type, "kdt"."ID")
+	        	
+		        UNION ALL
+		        
+		        SELECT NULL
+		        FROM "ApprovalProcessTemplateTypes" AS "tt"
+		        INNER JOIN "RefGroupsGuidValues" AS "rggv"
+		        	ON "rggv"."ID" = "tt"."TypeID"
+		        WHERE "tt"."ID" = "t"."ID"
+		        	#param(Type, "rggv"."Value")
+	        	
+		        UNION ALL
+		        
+		        SELECT NULL
+		        FROM "ApprovalProcessTemplateTypes" AS "tt"
+		        INNER JOIN "RefGroupsGuidValues" AS "rggv"
+		        	ON "rggv"."ID" = "tt"."TypeID"
+		        INNER JOIN "KrDocType" AS "kdt"
+		        	ON "rggv"."Value" = "kdt"."CardTypeID"
+		        WHERE "tt"."ID" = "t"."ID"
+		        	#param(Type, "kdt"."ID")))
+	}
+	
+		
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	}
+	) AS "t"
+#if(Normal) {
+ORDER BY "t"."rn"
+}

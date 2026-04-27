@@ -1,0 +1,141 @@
+﻿{
+  "Alias": "Views",
+  "Caption": "$Views_Names_Views",
+  "GroupName": "System",
+  "ID": "54614ef7-6a51-46c4-aa03-93814eb79126",
+  "JsonMetadataSource::txt": "Views JSONMETA",
+  "MsQuerySource::txt": "Views MSSQL",
+  "PgQuerySource::txt": "Views PGSQL"
+}
+
+[TEXTPART Views JSONMETA]
+{
+  "Alias": "Views",
+  "Caption": "$Views_Names_Views",
+  "Columns": [
+    {
+      "Alias": "ViewID",
+      "Hidden": true,
+      "Type": "$Views.ID"
+    },
+    {
+      "Alias": "ViewAlias",
+      "Caption": "$Views_KrTypes_Alias",
+      "Localizable": true,
+      "SortBy": "t.Alias",
+      "Type": "$Views.Alias"
+    },
+    {
+      "Alias": "ViewCaption",
+      "Caption": "$Views_KrTypes_Caption",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$Views.Caption"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ViewAlias",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "Extensions": [
+    {
+      "Order": 0,
+      "TypeName": "Tessa.Extensions.Platform.Client.Cards.OpenFromViewsOnDoubleClickExtension"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "AliasOrCaption",
+      "Caption": "$Views_KrTypes_AliasOrCaption_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "AliasOrCaption",
+  "References": [
+    {
+      "ColPrefix": "View",
+      "DisplayValueColumn": "ViewCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Views"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Views MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[ID]			AS [ViewID],
+	[tt].[Alias]		AS [ViewAlias],
+	[tt].[Caption]		AS [ViewCaption]
+	}
+	#if(Count) {
+	[t].*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Views] AS [t] WITH (NOLOCK)
+	#if(AliasOrCaption || request.SortedBy("ViewCaption")) {
+	CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+	}
+	WHERE 1 = 1
+		#if(AliasOrCaption) {
+		AND (1 = 1 #param(AliasOrCaption, [t].[Alias]) OR 1 = 1 #param(AliasOrCaption, [lCaption].[Value]))
+		}
+	) AS [t]
+#if(Normal) {
+INNER JOIN [Views] AS [tt] WITH (NOLOCK)
+	ON [tt].[ID] = [t].[ID]
+}
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART Views PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"			AS "ViewID",
+	"t"."Alias"			AS "ViewAlias",
+	"t"."Caption"		AS "ViewCaption"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "Views" AS "t"
+#if(AliasOrCaption || request.SortedBy("ViewCaption")) {
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+}
+WHERE true
+	#if(AliasOrCaption) {
+	AND (true #param(AliasOrCaption, "t"."Alias") OR true #param(AliasOrCaption, "lCaption"."Value"))
+	}
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

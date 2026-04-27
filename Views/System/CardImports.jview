@@ -1,0 +1,350 @@
+﻿{
+  "Alias": "CardImports",
+  "Caption": "$Views_Names_CardImports",
+  "GroupName": "System",
+  "ID": "2a8636ea-d725-4131-b82f-c43897a470ec",
+  "JsonMetadataSource::txt": "CardImports JSONMETA",
+  "MsQuerySource::txt": "CardImports MSSQL",
+  "PgQuerySource::txt": "CardImports PGSQL"
+}
+
+[TEXTPART CardImports JSONMETA]
+{
+  "Alias": "CardImports",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_CardImports",
+  "Columns": [
+    {
+      "Alias": "CardID",
+      "Hidden": true,
+      "Type": "$CardImports.ID"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_CardImports_Created",
+      "DisableGrouping": true,
+      "FilterParameter": "Created",
+      "FilterType": "Parameter",
+      "SortBy": "ci.Created",
+      "Type": "$CardImports.Created"
+    },
+    {
+      "Alias": "CreatedByID",
+      "Hidden": true,
+      "Type": "$CardImports.CreatedByID"
+    },
+    {
+      "Alias": "CreatedByName",
+      "Caption": "$Views_CardImports_CreatedBy",
+      "FilterParameter": "CreatedBy",
+      "FilterType": "Parameter",
+      "NormalizationKeyColumn": "CreatedByID",
+      "NormalizationSource": "Users",
+      "Type": "$CardImports.CreatedByName"
+    },
+    {
+      "Alias": "StateID",
+      "Hidden": true,
+      "Type": "$CardImports.StateID"
+    },
+    {
+      "Alias": "StateName",
+      "Caption": "$Views_CardImports_State",
+      "FilterParameter": "State",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "ci.StateID",
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "TotalCount",
+      "Caption": "$Views_CardImports_TotalCount",
+      "SortBy": "ci.TotalCount",
+      "Type": "$CardImports.TotalCount"
+    },
+    {
+      "Alias": "ImportedCount",
+      "Caption": "$Views_CardImports_ImportedCount",
+      "SortBy": "ci.ImportedCount",
+      "Type": "$CardImports.ImportedCount"
+    },
+    {
+      "Alias": "WarningCount",
+      "Caption": "$Views_CardImports_WarningCount",
+      "SortBy": "ci.WarningCount",
+      "Type": "$CardImports.WarningCount"
+    },
+    {
+      "Alias": "SkippedCount",
+      "Caption": "$Views_CardImports_SkippedCount",
+      "SortBy": "ci.SkippedCount",
+      "Type": "$CardImports.SkippedCount"
+    },
+    {
+      "Alias": "ErrorCount",
+      "Caption": "$Views_CardImports_ErrorCount",
+      "SortBy": "ci.ErrorCount",
+      "Type": "$CardImports.ErrorCount"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Created",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Created",
+      "AllowedOperands": [
+        "Between",
+        "GreatOrEquals",
+        "LessOrEquals",
+        "Equality",
+        "NonEquality"
+      ],
+      "Caption": "$Views_CardImports_Created_Param",
+      "DateTimeType": "DateTime",
+      "Type": "DateTime Not Null"
+    },
+    {
+      "Alias": "CreatedBy",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_CardImports_CreatedBy_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$CardImports.CreatedByID"
+    },
+    {
+      "Alias": "State",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "StateName",
+        "RefPrefix": "State",
+        "ViewAlias": "CardImportStates"
+      },
+      "Caption": "$Views_CardImports_State_Param",
+      "DropDownInfo": {
+        "RefPrefix": "State",
+        "ViewAlias": "CardImportStates"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "CardImportStates"
+      ],
+      "Type": "$CardImports.StateID"
+    },
+    {
+      "Alias": "HasErrors",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_CardImports_HasErrors_Param",
+      "Multiple": false,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "HasWarnings",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_CardImports_HasWarnings_Param",
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "References": [
+    {
+      "CardType": "CardImport",
+      "ColPrefix": "Card",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Instances"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART CardImports MSSQL]
+SELECT *
+FROM
+(
+	SELECT 
+	#if(Normal)
+		{
+			[ci].[CardID],
+			[ci].[Created],
+			[ci].[CreatedByID],
+			[ci].[StateID],
+			CASE 
+				WHEN [ci].[StateID] = 1 THEN '$Enum_CardImportStates_Import'
+				WHEN [ci].[StateID] = 2 THEN '$Enum_CardImportStates_Cancelled'
+				WHEN [ci].[StateID] = 3 THEN '$Enum_CardImportStates_FinishedWithErrors'
+				WHEN [ci].[StateID] = 4 THEN '$Enum_CardImportStates_Finished' 
+				ELSE '$Enum_CardImportStates_Created'
+				END AS [StateName],
+			[ci].[TotalCount],
+			[ci].[ImportedCount],
+			[ci].[WarningCount],
+			[ci].[SkippedCount],
+			[ci].[ErrorCount],
+			ROW_NUMBER() OVER (ORDER BY #order_by) as [rn]
+		}
+		{
+			COUNT(*) as [Count]
+		}
+	FROM
+	(
+		SELECT
+			[ci].[ID] as [CardID],
+			[i].[Created],
+			[i].[CreatedByID],
+			[ci].[StateID],
+			[ci].[TotalCount],
+			[ci].[ImportedCount],
+			[ci].[WarningCount],
+			[ci].[SkippedCount],
+			[ci].[ErrorCount]
+		FROM [CardImports] as [ci] WITH(NOLOCK)
+		INNER JOIN [Instances] as [i] WITH(NOLOCK)
+		ON [ci].[ID] = [i].[ID]
+		WHERE 1 = 1
+		#param(Created, [i].[Created])
+		#param(CreatedBy, [i].[CreatedByID])
+		#param(State, [ci].[StateID])
+		#if(HasErrors) 
+		{
+			#if(HasErrors.CriteriaName == "IsTrue") 
+			{ 
+		AND [ci].[ErrorCount] > 0
+			} 
+			{
+		AND [ci].[ErrorCount] = 0
+			}
+		}
+		#if(HasWarnings) 
+		{
+			#if(HasWarnings.CriteriaName == "IsTrue") 
+			{ 
+		AND [ci].[WarningCount] > 0
+			} 
+			{
+		AND [ci].[WarningCount] = 0
+			}
+		}
+	) as [ci]
+) as [ci]
+#if(PageOffset)
+{
+WHERE [ci].[rn] >= #param(PageOffset) AND [ci].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal)
+{
+ORDER BY [ci].[rn]
+}
+
+
+[TEXTPART CardImports PGSQL]
+SELECT
+	#if(Normal)
+	{
+		"ci"."CardID",
+		"ci"."Created",
+		"ci"."CreatedByID",
+		"ci"."StateID",
+		"ci"."StateName",
+		"ci"."TotalCount",
+		"ci"."ImportedCount",
+		"ci"."WarningCount",
+		"ci"."SkippedCount",
+		"ci"."ErrorCount"
+	}
+	{
+		*
+	}
+FROM
+(
+	SELECT
+	#if(Normal)
+	{
+		"ci"."ID" as "CardID",
+		"i"."Created",
+		"i"."CreatedByID",
+		"ci"."StateID",
+		CASE 
+			WHEN "ci"."StateID" = 1 THEN '$Enum_CardImportStates_Import'
+			WHEN "ci"."StateID" = 2 THEN '$Enum_CardImportStates_Cancelled'
+			WHEN "ci"."StateID" = 3 THEN '$Enum_CardImportStates_FinishedWithErrors'
+			WHEN "ci"."StateID" = 4 THEN '$Enum_CardImportStates_Finished' 
+			ELSE '$Enum_CardImportStates_Created'
+			END AS "StateName",
+		"ci"."TotalCount",
+		"ci"."ImportedCount",
+		"ci"."WarningCount",
+		"ci"."SkippedCount",
+		"ci"."ErrorCount"
+	}
+	{
+		COUNT(*) as "Count"
+	}
+	FROM "CardImports" as "ci"
+	INNER JOIN "Instances" as "i"
+	ON "ci"."ID" = "i"."ID"
+	WHERE true
+	#param(Created, "i"."Created")
+	#param(CreatedBy, "i"."CreatedByID")
+	#param(State, "ci"."StateID")
+	#if(HasErrors) 
+	{
+		#if(HasErrors.CriteriaName == "IsTrue") 
+		{ 
+	AND "ci"."ErrorCount" > 0
+		} 
+		{
+	AND "ci"."ErrorCount" = 0
+		}
+	}
+	#if(HasWarnings) 
+	{
+		#if(HasWarnings.CriteriaName == "IsTrue") 
+		{ 
+	AND "ci"."WarningCount" > 0
+		} 
+		{
+	AND "ci"."WarningCount" = 0
+		}
+	}
+) as "ci"
+#if(Normal)
+{
+ORDER BY #order_by
+}
+#if(PageOffset)
+{
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

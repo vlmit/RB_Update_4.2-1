@@ -1,0 +1,146 @@
+﻿{
+  "Alias": "DocumentTypes",
+  "Caption": "$Views_Names_DocumentTypes",
+  "GroupName": "System",
+  "ID": "b05eebcc-eb4b-4f5c-b4b8-d8bd134e27c6",
+  "JsonMetadataSource::txt": "DocumentTypes JSONMETA",
+  "MsQuerySource::txt": "DocumentTypes MSSQL",
+  "PgQuerySource::txt": "DocumentTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART DocumentTypes JSONMETA]
+{
+  "Alias": "DocumentTypes",
+  "Caption": "$Views_Names_DocumentTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$View_DocumentTypes_Caption",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$View_DocumentTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$View_DocumentTypes_Caption_Param",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$View_DocumentTypes_Name_Param",
+      "Type": "$Types.Name"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "RefSection": [
+        "DocumentTypes"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DocumentTypes MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [TypeID],
+		[t].[Caption]							AS [TypeCaption],
+		[t].[Name]								AS [TypeName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Types] AS [t] WITH (NOLOCK)
+	#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+	CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+	}
+	WHERE
+		-- Проверяем что тип не hidden (16), не административный (256), и для него разрешены задания (8)
+		([t].[Flags] & 280) = 8
+		#param(Caption, [lCaption].[Value])
+		#param(Name, [t].[Name])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART DocumentTypes PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "TypeID",
+	"t"."Caption"								AS "TypeCaption",
+	"t"."Name"									AS "TypeName",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "Types" AS "t"
+#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+}
+WHERE
+	-- Проверяем что тип не hidden (16), не административный (256), и для него разрешены задания (8)
+	("t"."Flags" & 280) = 8
+	#param(Caption, "lCaption"."Value")
+	#param(Name, "t"."Name")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

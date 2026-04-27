@@ -1,0 +1,399 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "eff97480-d426-4490-87e3-1d94e8621143",
+  "Name": "Deski",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "Deski_Available",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Deski connected"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Deski подключен"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Bind",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Bind"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Связать"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Cant_Load_Content",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't load file content"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно загрузить файл"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Deski: assistant app"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Deski: приложение-помощник"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_CheckConnection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Check connection"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Проверить связь"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_ConnectionAfterLaunchFirst",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "2. After launching, the Deski icon "
+        },
+        {
+          "Culture": "ru",
+          "Value": "2. После запуска иконка Deski "
+        }
+      ]
+    },
+    {
+      "Name": "Deski_ConnectionAfterLaunchSecond",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": " will appear in the notification area, usually at the bottom right, next to the clock."
+        },
+        {
+          "Culture": "ru",
+          "Value": " появится в области уведомлений, обычно внизу справа, рядом с часами."
+        }
+      ]
+    },
+    {
+      "Name": "Deski_ConnectionBind",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "4. Paste the token into the field below and click \"Bind\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "4. Вставьте токен в поле ниже и нажмите «Связать»."
+        }
+      ]
+    },
+    {
+      "Name": "Deski_ConnectionBrowserClipboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Also, a page with information about the program may open in your browser, you can close it."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Также, у вас может открыться страница в браузере с информацией о программе, её можно просто закрыть."
+        }
+      ]
+    },
+    {
+      "Name": "Deski_ConnectionClipboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "3. Right-click the deski icon in the notification area and select \"Copy token to clipboard\" from the context menu."
+        },
+        {
+          "Culture": "ru",
+          "Value": "3. Щелкните правой кнопкой мыши на иконке deski в области уведомлений и в контекстном меню выберите пункт \"Копировать токен в буфер обмена\". "
+        }
+      ]
+    },
+    {
+      "Name": "Deski_ConnectionSetup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "1. Make sure Deski is installed and running."
+        },
+        {
+          "Culture": "ru",
+          "Value": "1. Убедитесь, что Deski установлен и запущен."
+        }
+      ]
+    },
+    {
+      "Name": "Deski_ConnectionSteps",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To connect, follow these steps:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для подключения выполните следующие шаги:"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_DownloadButton",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Download"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скачать"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Failed_Response",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to contact Deski."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось обратиться к Deski."
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Higher_Version_Require",
+      "Comment": "{0} - минимально требуемая версия, {1} - текущая версия пользователя",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are no versions available for updating, please contact the system's administrator. This functionality requires version >={0}. Your current version is {1}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступных для обновления версий, обратитесь к администратору системы. Для данной функциональности требуется версия >={0}. Ваша текущая версия {1}."
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Info",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Deski is an assistant program for convenient viewing and editing of files saved in the TESSA system."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Deski — это программа-помощник для удобного просмотра и редактирования файлов, сохранённых в системе TESSA."
+        }
+      ]
+    },
+    {
+      "Name": "Deski_InfoCheckConnection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Make sure Deski is running and click \"Perform Connection\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Убедитесь, что Deski запущен и нажмите «Проверить связь»."
+        }
+      ]
+    },
+    {
+      "Name": "Deski_InfoDownload",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": " You can download the program distribution by the link "
+        },
+        {
+          "Culture": "ru",
+          "Value": " Вы можете скачать дистрибутив программы по ссылке "
+        }
+      ]
+    },
+    {
+      "Name": "Deski_InfoReconnect",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "If you want to reconnect Deski, click "
+        },
+        {
+          "Culture": "ru",
+          "Value": "Если вы хотите заново подключить Deski, нажмите "
+        }
+      ]
+    },
+    {
+      "Name": "Deski_InputPlaceholder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Enter token"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Введите токен"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_InvalidToken",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid token"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Некорректный токен"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_LoadingCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Connection to Deski"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Соединение с Deski"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_No_Connection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No connection with Deski"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет связи с Deski"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_PastAndBind",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste from clipboard and bind"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить из буфера и связать"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Reconnect",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reconnect"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Переподключить"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Unavailable",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Deski not connected"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Deski не подключен"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Unlock_Feature",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "It is required to update assistant application Deski. Download update?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Требуется обновить приложение-помощник Deski. Скачать новую версию?"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_UpdateConfirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The installed version of assistant application \"{0}\" is out of date. Version \"{1}\" is available. Download update?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Установленная версия приложения-ассистента \"{0}\" устарела, доступна версия \"{1}\". Скачать обновление?"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Version",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Version: {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Версия: {0}"
+        }
+      ]
+    },
+    {
+      "Name": "Deski_Warning_OpenForRead",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The edited version and the version for reading are different. Save the card so that the versions match."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отредактированная версия и версия на чтение отличаются. Сохраните карточку, чтобы версии совпадали."
+        }
+      ]
+    }
+  ]
+}

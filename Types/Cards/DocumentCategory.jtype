@@ -1,0 +1,121 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_Category",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": "{f:DocumentCategories.Name}",
+  "Extensions": null,
+  "Flags::int": 275,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_DocumentCategoryTitle",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxLength::int": 128
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "3dd39fa6-b8bd-4084-8aeb-f129f796f450"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "f939aa52-dc1a-40b2-af4a-cb2757e8390a",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_DocumentType",
+              "ComplexColumnID::uid": "35ae46da-2264-46ac-a339-9f41ef4acffd",
+              "ControlSettings": {
+                "ParameterAlias": "Caption",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "KrCardTypesVirtual"
+                ],
+                "ViewAlias": "KrTypesEffective"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "f939aa52-dc1a-40b2-af4a-cb2757e8390a",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "DocumentCategory",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Dictionaries",
+  "ID::uid": "5da46e89-f932-4a48-b5a3-ec6285bfe3ea",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "DocumentCategory",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "3dd39fa6-b8bd-4084-8aeb-f129f796f450",
+        "35ae46da-2264-46ac-a339-9f41ef4acffd"
+      ],
+      "SectionID::uid": "f939aa52-dc1a-40b2-af4a-cb2757e8390a"
+    }
+  ],
+  "Validators": [
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "3dd39fa6-b8bd-4084-8aeb-f129f796f450",
+        "ErrorMessage": "$CardTypes_Validators_DocumentCategoryTitle",
+        "SectionID::uid": "f939aa52-dc1a-40b2-af4a-cb2757e8390a"
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "35ae46da-2264-46ac-a339-9f41ef4acffd",
+        "ErrorMessage": "$CardTypes_Validators_DocType",
+        "SectionID::uid": "f939aa52-dc1a-40b2-af4a-cb2757e8390a"
+      }
+    },
+    {
+      "TypeID::uid": "9cd89f16-8482-4382-943b-1db0469481ae",
+      "ValidatorSettings": {
+        "ColumnID::uid": "3dd39fa6-b8bd-4084-8aeb-f129f796f450",
+        "ErrorMessage": "$KrMessages_DocumentCategoryNameIsNotUnique",
+        "ParentColumnID::uid": "35ae46da-2264-46ac-a339-9f41ef4acffd",
+        "ParentSectionID::uid": "f939aa52-dc1a-40b2-af4a-cb2757e8390a",
+        "SectionID::uid": "f939aa52-dc1a-40b2-af4a-cb2757e8390a"
+      }
+    }
+  ]
+}

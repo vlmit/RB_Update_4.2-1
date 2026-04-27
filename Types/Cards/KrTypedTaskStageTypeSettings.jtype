@@ -1,0 +1,157 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$KrStages_TypedTask",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "ColumnsCount::int": 2
+          },
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_TaskType",
+              "ComplexColumnID::uid": "34bd7831-7cd2-4e2b-8642-f3c8ae88cd8d",
+              "ControlSettings": {
+                "ParameterAlias": "NameOrCaption",
+                "PopupColumnsIndexes": "1, 2",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "TaskTypes"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "TaskTypes",
+                "ViewMap": [
+                  {
+                    "CardColumn": null,
+                    "CardSection": null,
+                    "ColumnType::int": 5,
+                    "ConstantValue": true,
+                    "ConstantValueType::int": 4,
+                    "SkipNullParams": false,
+                    "ViewParamName": "OnlyEnabledForRoutes"
+                  }
+                ]
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": "{2} ({1})",
+              "Flags::int": 4,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "e06fa88f-35a2-48fc-8ce4-6e20521b5238",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_Digest",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxRows::int": 2,
+                "MinRows::int": 2
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "b438f8bf-335a-41ef-9af7-b6021793e443"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "e06fa88f-35a2-48fc-8ce4-6e20521b5238",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$KrStages_TypedTask_AfterTask",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "AvalonFontType::int": 1,
+                "AvalonSyntaxType::int": 2,
+                "MaxRows::int": 14,
+                "MinRows::int": 14,
+                "TextMode::int": 1
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[DesignTime]",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "c7819aa8-cf3d-4066-a548-05166eb3c341"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "e06fa88f-35a2-48fc-8ce4-6e20521b5238",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Placeholders",
+              "ControlSettings": {
+                "Background": "#FFF7F7F7",
+                "BorderColor": "#FFABADB3",
+                "BorderThickness::dbl": 1.0,
+                "Padding": "5,3,5,3",
+                "Text": "$CardTypes_Controls_TypedTaskAfterTaskTooltip",
+                "TextColor": "#FF383838"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "[DesignTime]",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "KrTypedTaskStageTypeSettings",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "KrProcess",
+  "ID::uid": "d8e1c89c-12b2-44e5-9bd0-c6a01c49b1e9",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "KrTypedTaskStageTypeSettings",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "34bd7831-7cd2-4e2b-8642-f3c8ae88cd8d",
+        "c7819aa8-cf3d-4066-a548-05166eb3c341",
+        "b438f8bf-335a-41ef-9af7-b6021793e443"
+      ],
+      "SectionID::uid": "e06fa88f-35a2-48fc-8ce4-6e20521b5238"
+    }
+  ],
+  "Validators": null
+}

@@ -1,0 +1,81 @@
+﻿{
+  "Alias": "TwoFactorAuthModes",
+  "Caption": "$Views_Names_TwoFactorAuthModes",
+  "GroupName": "System",
+  "ID": "2835775b-80f7-4c50-a515-7f40964d26db",
+  "JsonMetadataSource::txt": "TwoFactorAuthModes JSONMETA",
+  "MsQuerySource::txt": "TwoFactorAuthModes MSSQL",
+  "PgQuerySource::txt": "TwoFactorAuthModes PGSQL"
+}
+
+[TEXTPART TwoFactorAuthModes JSONMETA]
+{
+  "Alias": "TwoFactorAuthModes",
+  "Caption": "$Views_Names_TwoFactorAuthModes",
+  "Columns": [
+    {
+      "Alias": "ModeID",
+      "Hidden": true,
+      "Type": "$TwoFactorAuthModes.ID"
+    },
+    {
+      "Alias": "ModeName",
+      "Caption": "$Views_TwoFactorAuthModes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$TwoFactorAuthModes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ModeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_TwoFactorAuthModes_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Mode",
+      "DisplayValueColumn": "ModeName",
+      "RefSection": [
+        "TwoFactorAuthModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TwoFactorAuthModes MSSQL]
+SELECT
+	[t].[ID]		AS [ModeID],
+	[t].[Name]		AS [ModeName]
+FROM [TwoFactorAuthModes] AS [t] WITH (NOLOCK)
+#if(Name || request.SortedBy("ModeName")) {
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART TwoFactorAuthModes PGSQL]
+SELECT
+	"t"."ID"	AS "ModeID",
+	"t"."Name"	AS "ModeName"
+FROM "TwoFactorAuthModes" AS "t"
+#if(Name || request.SortedBy("ModeName")) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

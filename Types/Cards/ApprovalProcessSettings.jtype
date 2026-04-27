@@ -1,0 +1,70 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_ApprovalProcessSettings",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": "$CardTypes_TypesNames_ApprovalProcessSettings",
+  "Extensions": null,
+  "Flags::int": 2433,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$ApprovalProcess_Settings_Duration",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxValue::dbl": 1000.0,
+                "MinValue::dbl": 0.0
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "7d3e0dae-9b74-4faf-b9e9-d202b2839345"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "37d8cfe8-6b12-4b5e-a537-c77d7e168f4f",
+              "ToolTip": "$ApprovalProcess_Settings_Duration_Tooltip",
+              "Type::uid": "65ad3578-b6a2-045f-9d55-c915a19dbc96"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Main",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Settings",
+  "ID::uid": "d19f3b26-5b40-49b9-9bd8-94db5cada90a",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "ApprovalProcessSettings",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "7d3e0dae-9b74-4faf-b9e9-d202b2839345"
+      ],
+      "SectionID::uid": "37d8cfe8-6b12-4b5e-a537-c77d7e168f4f"
+    }
+  ],
+  "Validators": null
+}

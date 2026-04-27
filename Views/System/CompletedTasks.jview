@@ -1,0 +1,474 @@
+﻿{
+  "Alias": "CompletedTasks",
+  "Caption": "$Views_Names_CompletedTasks",
+  "GroupName": "System",
+  "ID": "c480683b-b3b4-4f8a-8786-3899b5bf7f00",
+  "JsonMetadataSource::txt": "CompletedTasks JSONMETA",
+  "MsQuerySource::txt": "CompletedTasks MSSQL",
+  "PgQuerySource::txt": "CompletedTasks PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART CompletedTasks JSONMETA]
+{
+  "Alias": "CompletedTasks",
+  "Caption": "$Views_Names_CompletedTasks",
+  "Columns": [
+    {
+      "Alias": "CardID",
+      "Hidden": true,
+      "Type": "$TaskHistory.ID"
+    },
+    {
+      "Alias": "CardName",
+      "Caption": "$Views_CompletedTasks_Card",
+      "Type": "$DocumentCommonInfo.FullNumber"
+    },
+    {
+      "Alias": "TaskID",
+      "Hidden": true,
+      "Type": "$TaskHistory.RowID"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$TaskHistory.TypeID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_CompletedTasks_TaskType",
+      "FilterParameter": "TaskType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$TaskHistory.KindCaption"
+    },
+    {
+      "Alias": "CardTypeID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.DocTypeID"
+    },
+    {
+      "Alias": "CardTypeCaption",
+      "Caption": "$Views_CompletedTasks_CardType",
+      "FilterParameter": "TypeParam",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "NormalizationKeyColumn": "CardTypeID",
+      "NormalizationSource": "KrTypes",
+      "Type": "$DocumentCommonInfo.DocTypeTitle"
+    },
+    {
+      "Alias": "OptionID",
+      "Hidden": true,
+      "Type": "$TaskHistory.OptionID"
+    },
+    {
+      "Alias": "OptionCaption",
+      "Caption": "$Views_CompletedTasks_CompletionOption",
+      "Localizable": true,
+      "Type": "$TaskHistory.OptionCaption"
+    },
+    {
+      "Alias": "RoleID",
+      "Hidden": true,
+      "Type": "$TaskHistory.CompletedByID"
+    },
+    {
+      "Alias": "RoleName",
+      "Caption": "$Views_CompletedTasks_Role",
+      "FilterParameter": "Role",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$TaskHistory.CompletedByRole"
+    },
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "$TaskHistory.UserID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_CompletedTasks_User",
+      "SortBy": "th.UserName",
+      "Type": "$TaskHistory.UserName"
+    },
+    {
+      "Alias": "CompletedByID",
+      "Hidden": true,
+      "Type": "$TaskHistory.CompletedByID"
+    },
+    {
+      "Alias": "CompletedByName",
+      "Caption": "$Views_CompletedTasks_CompletedBy",
+      "FilterParameter": "CompletedBy",
+      "FilterType": "Parameter",
+      "SortBy": "th.CompletedByName",
+      "Type": "$TaskHistory.CompletedByName"
+    },
+    {
+      "Alias": "AuthorID",
+      "Hidden": true,
+      "Type": "$TaskHistory.AuthorID"
+    },
+    {
+      "Alias": "AuthorName",
+      "Caption": "$Views_CompletedTasks_Author",
+      "Type": "$TaskHistory.AuthorName"
+    },
+    {
+      "Alias": "Result",
+      "Caption": "$Views_CompletedTasks_Result",
+      "Localizable": true,
+      "MaxLength": 150,
+      "Type": "$TaskHistory.Result"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_CompletedTasks_Created",
+      "SortBy": "th.Created",
+      "Type": "$TaskHistory.Created"
+    },
+    {
+      "Alias": "Planned",
+      "Caption": "$Views_CompletedTasks_Planned",
+      "SortBy": "th.Planned",
+      "Type": "$TaskHistory.Planned"
+    },
+    {
+      "Alias": "Completed",
+      "Caption": "$Views_CompletedTasks_Completed",
+      "SortBy": "th.Completed",
+      "Type": "$TaskHistory.Completed"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Completed",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "CompletionDate",
+      "Caption": "$Views_CompletedTasks_CompletionDate_Param",
+      "Hidden": true,
+      "Type": "$TaskHistory.Completed"
+    },
+    {
+      "Alias": "TypeParam",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Caption": "$Views_CompletedTasks_CardType_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Multiple": false,
+      "RefSection": [
+        "TypeForView"
+      ],
+      "Type": "$DocumentCommonInfo.DocTypeID"
+    },
+    {
+      "Alias": "TaskType",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "TaskTypes"
+      },
+      "Caption": "$Views_CompletedTasks_TaskType_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "TaskTypes"
+      },
+      "Hidden": true,
+      "RefSection": [
+        "TaskTypes"
+      ],
+      "Type": "$TaskHistory.TypeID"
+    },
+    {
+      "Alias": "SelUser",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_CompletedTasks_User_Param",
+      "Hidden": true,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$TaskHistory.UserID"
+    },
+    {
+      "Alias": "CompletedBy",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_CompletedTasks_CompletedBy_Param",
+      "Hidden": true,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$TaskHistory.CompletedByID"
+    },
+    {
+      "Alias": "Role",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3
+        ],
+        "RefPrefix": "Role",
+        "ViewAlias": "DurableRoles"
+      },
+      "Caption": "$Views_CompletedTasks_RoleGroup_Param",
+      "Hidden": true,
+      "RefSection": [
+        "Roles"
+      ],
+      "Type": "$RoleUsers.ID"
+    },
+    {
+      "Alias": "Option",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "CompletionOptions"
+      },
+      "Caption": "$Views_CompletedTasks_CompletionOption_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "CompletionOptions"
+      },
+      "Hidden": true,
+      "RefSection": [
+        "CompletionOptions"
+      ],
+      "Type": "$TaskHistory.OptionID"
+    },
+    {
+      "Alias": "IsDelayed",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_CompletedTasks_IsDelayed_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Card",
+      "DisplayValueColumn": "CardName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Instances"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART CompletedTasks MSSQL]
+DECLARE @NoName nvarchar(1024);
+SET @NoName = [dbo].[GetString](N'Views_CompletedTasks_NoName_Sql', #param(locale));
+
+SELECT
+	[th].[ID]											AS [CardID],
+	COALESCE([dci].[FullNumber], @NoName)				AS [CardName],
+	[th].[RowID]										AS [TaskID],
+	[th].[TypeID],
+	COALESCE([th].[KindCaption], [th].[TypeCaption])	AS [TypeCaption],
+	COALESCE([dci].[DocTypeID], [i].[TypeID])			AS [CardTypeID],
+	[th].[OptionID],
+	[th].[OptionCaption],
+	[th].[CompletedByID]								AS [RoleID],
+	[th].[CompletedByRole]								AS [RoleName],
+	[th].[UserID],
+	[th].[UserName],
+	[th].[CompletedByID],
+	[th].[CompletedByName],
+	[th].[AuthorID]										AS [AuthorID],
+	[th].[AuthorName]									AS [AuthorName],
+	[th].[Result],
+	[th].[Created],
+	[th].[Planned],
+	[th].[Completed],
+	[t].[rn]
+FROM (
+	SELECT
+		[th].[RowID],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+	FROM [TaskHistory] AS [th] WITH (NOLOCK)
+	#if(TypeParam) {
+	LEFT JOIN [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+		ON [dci].[ID] = [th].[ID]
+	}
+	WHERE [th].[Completed] IS NOT NULL
+		-- Исключаем из отчёта задания, завершённые вариантами: Отозвать, Запросить дополнительное согласование, Запросить комментарии,
+		-- Вернуть документ на доработку, Начать новый цикл, Отменить регистрацию, Отозвать процесс, Отменить процесс, Отмена.
+		AND [th].[OptionID] NOT IN ('6472fea9-f818-4ab5-9f31-9ccdaea9b412', 'c726d8ba-73b9-4867-87fe-387d4c61a75a', 'fffb3209-2b67-09f0-bd25-ba4ec94ca5e8',
+		'174d3f96-c658-07b7-ba6a-d51a893390d8',  'c0b704b3-3ac5-4a0d-bcb6-1210e9cdb0b3', '66e0a7e1-484a-40a6-b123-06118ce3b160',
+		'd97d75a9-96ae-00ca-83ad-baa5c6aa811b', '6e244482-2e2f-46fd-8ec3-0de6daea2930', '2582b66f-375a-0d59-ae86-a149309c5785')
+		#if(Role) {
+		AND EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [fr] WITH (NOLOCK)
+			WHERE [fr].[UserID] = [th].[UserID]
+				#param(Role, [fr].[ID]))
+		}
+		#param(CompletionDate, [th].[Completed])
+		#if(TypeParam) {
+		AND COALESCE([dci].[DocTypeID], [dci].[CardTypeID]) = #param(TypeParam)
+		}
+		#param(TaskType, [th].[TypeID])
+		#param(SelUser, [th].[UserID])
+		#param(CompletedBy, [th].[CompletedByID])
+		#param(Option, [th].[OptionID])
+		#if(IsDelayed) {
+			#if(IsDelayed.CriteriaName == "IsTrue") {
+			AND [th].[Completed] > [th].[Planned]
+			} {
+			AND [th].[Completed] <= [th].[Planned]
+			}
+		}
+	) AS [t]
+INNER JOIN [TaskHistory] AS [th] WITH (NOLOCK)
+	ON [th].[RowID] = [t].[RowID]
+INNER JOIN [Instances] AS [i] WITH (NOLOCK)
+	ON [i].[ID] = [th].[ID]
+LEFT JOIN [DocumentCommonInfo] AS [dci] WITH (NOLOCK)
+	ON [dci].[ID] = [th].[ID]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+;
+
+
+[TEXTPART CompletedTasks PGSQL]
+WITH "ExcludedIDs" ("OptionID") as
+	(
+		-- Исключаем из отчёта задания, завершённые вариантами: Отозвать, Запросить дополнительное согласование, Запросить комментарии,
+		-- Вернуть документ на доработку, Начать новый цикл, Отменить регистрацию, Отозвать процесс, Отменить процесс, Отмена.
+		SELECT * FROM ( VALUES
+			('6472fea9-f818-4ab5-9f31-9ccdaea9b412'::uuid), ('c726d8ba-73b9-4867-87fe-387d4c61a75a'::uuid), ('fffb3209-2b67-09f0-bd25-ba4ec94ca5e8'::uuid),
+			('174d3f96-c658-07b7-ba6a-d51a893390d8'::uuid), ('c0b704b3-3ac5-4a0d-bcb6-1210e9cdb0b3'::uuid), ('66e0a7e1-484a-40a6-b123-06118ce3b160'::uuid),
+			('d97d75a9-96ae-00ca-83ad-baa5c6aa811b'::uuid), ('6e244482-2e2f-46fd-8ec3-0de6daea2930'::uuid), ('2582b66f-375a-0d59-ae86-a149309c5785'::uuid)
+		) "OptionID"
+	)
+	SELECT
+		"th"."ID"											AS "CardID",
+		COALESCE("dci"."FullNumber", "GetString"('Views_CompletedTasks_NoName_Sql', #param(locale)))
+															AS "CardName",
+		"th"."RowID"										AS "TaskID",
+		"th"."TypeID"										AS "TypeID",
+		COALESCE("th"."KindCaption", "th"."TypeCaption")	AS "TypeCaption",
+		COALESCE("dci"."DocTypeID", "i"."TypeID")			AS "CardTypeID",
+		"th"."OptionID"										AS "OptionID",
+		"th"."OptionCaption"								AS "OptionCaption",
+		"th"."CompletedByID"								AS "RoleID",
+		"th"."CompletedByRole"								AS "RoleName",
+		"th"."UserID",
+		"th"."UserName",
+		"th"."CompletedByID",
+		"th"."CompletedByName",
+		"th"."AuthorID"										AS "AuthorID",
+		"th"."AuthorName"									AS "AuthorName",
+		"th"."Result",
+		"th"."Created",
+		"th"."Planned",
+		"th"."Completed",
+		0::int8												AS "rn"
+	FROM (
+		SELECT
+			"th"."RowID"
+		FROM "TaskHistory" AS "th"
+		#if(TypeParam) {
+		LEFT JOIN "DocumentCommonInfo" AS "dci"
+			ON "dci"."ID" = "th"."ID"
+		}
+		WHERE "th"."Completed" IS NOT NULL
+			AND NOT EXISTS (
+				SELECT NULL
+				FROM "ExcludedIDs" "eid"
+				WHERE "eid"."OptionID" = "th"."OptionID"
+			)
+			#if(Role) {
+			AND EXISTS (
+				SELECT NULL
+				FROM "RoleUsers" AS "fr"
+				WHERE "fr"."UserID" = "th"."UserID"
+					#param(Role, "fr"."ID"))
+			}
+			#param(CompletionDate, "th"."Completed")
+			#if(TypeParam) {
+			AND COALESCE("dci"."DocTypeID", "dci"."CardTypeID") = #param(TypeParam)
+			}
+			#param(TaskType, "th"."TypeID")
+			#param(SelUser, "th"."UserID")
+			#param(CompletedBy, "th"."CompletedByID")
+			#param(Option, "th"."OptionID")
+			#if(IsDelayed) {
+				#if(IsDelayed.CriteriaName == "IsTrue") {
+				AND "th"."Completed" > "th"."Planned"
+				} {
+				AND "th"."Completed" <= "th"."Planned"
+				}
+			}
+		#if(Normal) {
+		ORDER BY #order_by
+		}
+		#if(PageOffset) {
+		OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+		}
+	) AS "t"
+	INNER JOIN "TaskHistory" AS "th"
+		ON "th"."RowID" = "t"."RowID"
+	INNER JOIN "Instances" AS "i"
+		ON "i"."ID" = "th"."ID"
+	LEFT JOIN "DocumentCommonInfo" AS "dci"
+		ON "dci"."ID" = "th"."ID"
+	;

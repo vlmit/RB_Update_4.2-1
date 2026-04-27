@@ -1,0 +1,188 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$Cards_DefaultCaption",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "0d23b76c-cbd1-4d50-8746-47ccd13de598",
+          "Name": "Name",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "5c7aaba5-7e4c-432f-83e6-08a3730163b1",
+          "Name": "Code",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "e59600c2-9abb-4fd4-a991-6fcbe4174e54",
+          "Name": "RichText",
+          "SchemeType": "String(Max) Not Null"
+        }
+      ],
+      "Description": null,
+      "ID::uid": "7ec35ee9-e48b-48b3-a568-1a5eafc5a8f4",
+      "Name": "HelpSectionDialog",
+      "TableType::int": 1
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Code",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "Code",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "5c7aaba5-7e4c-432f-83e6-08a3730163b1"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "7ec35ee9-e48b-48b3-a568-1a5eafc5a8f4",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Caption",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "Name",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "0d23b76c-cbd1-4d50-8746-47ccd13de598"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "7ec35ee9-e48b-48b3-a568-1a5eafc5a8f4",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 0,
+            "ColumnSpan::int": 1,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 0,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "Block1"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "StretchVertically": true
+          },
+          "Caption": "Block2",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true,
+                "HideCaption": true,
+                "Margin": "0,0,0,10"
+              },
+              "Caption": "$CardTypes_Controls_RichText",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "DisableAttachingFile": false,
+                "HelpMode::int": 0,
+                "HelpValue": "",
+                "MaxHeight": null,
+                "MinHeight::dbl": 100.0
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "RichText",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "e59600c2-9abb-4fd4-a991-6fcbe4174e54"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "7ec35ee9-e48b-48b3-a568-1a5eafc5a8f4",
+              "ToolTip": null,
+              "Type::uid": "7a25c32c-79f8-4554-a502-fff3ffddaab4"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 0,
+            "ColumnSpan::int": 1,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 1,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "Block2"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Columns": [
+          {
+            "::types": [
+              "dbl"
+            ]
+          },
+          1.0
+        ],
+        "Rows": [
+          {
+            "::types": [
+              "unk",
+              "dbl"
+            ]
+          },
+          null,
+          1.0
+        ]
+      },
+      "Name": "MainTab",
+      "TabCaption": "$Cards_TabDefaultCaption"
+    }
+  ],
+  "Group": "System",
+  "ID::uid": "dc32f94b-82fb-48a1-8c44-79c5240d5f22",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "HelpSectionDialogs",
+  "SchemeItems": null,
+  "Validators": null
+}

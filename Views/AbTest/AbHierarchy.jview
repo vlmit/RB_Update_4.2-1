@@ -1,0 +1,62 @@
+﻿{
+  "Alias": "AbHierarchy",
+  "Caption": "$AbTest_Views_Names_Hierarchy",
+  "GroupName": "AbTest",
+  "ID": "29929a97-79f8-4eda-a6ee-b9621aa9ae49",
+  "JsonMetadataSource::txt": "AbHierarchy JSONMETA",
+  "MsQuerySource::txt": "AbHierarchy MSSQL",
+  "PgQuerySource::txt": "AbHierarchy PGSQL"
+}
+
+[TEXTPART AbHierarchy JSONMETA]
+{
+  "Alias": "AbHierarchy",
+  "Caption": "$AbTest_Views_Names_Hierarchy",
+  "Columns": [
+    {
+      "Alias": "ID",
+      "Hidden": true,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "ParentID",
+      "Hidden": true,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "Content",
+      "Caption": "$AbTest_Views_Groups_Content",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "TreatAsSingleQuery": true,
+  "TreeId": "ID",
+  "TreeParentId": "ParentID"
+}
+
+[TEXTPART AbHierarchy MSSQL]
+SELECT *
+FROM (VALUES
+	(0, NULL, N'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
+	(1, 0, N'Phasellus id euismod sem.'),
+	(2, 0, N'Quisque porttitor sapien non nunc mollis, ut fringilla elit facilisis.'),
+	(3, 0, N'Ut.'),
+	(4, NULL, N'Pellentesque faucibus facilisis neque a faucibus. Nunc bibendum ultrices fermentum.'),
+	(5, 4, N'Vestibulum ac elementum felis, sed faucibus urna.'),
+	(6, 5, N'Mauris id turpis tempus, ornare magna nec, fringilla felis.')
+	) AS [Items] ([ID], [ParentID], [Content]);
+
+
+[TEXTPART AbHierarchy PGSQL]
+SELECT *
+FROM (VALUES
+	(0, NULL, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
+	(1, 0, 'Phasellus id euismod sem.'),
+	(2, 0, 'Quisque porttitor sapien non nunc mollis, ut fringilla elit facilisis.'),
+	(3, 0, 'Ut.'),
+	(4, NULL, 'Pellentesque faucibus facilisis neque a faucibus. Nunc bibendum ultrices fermentum.'),
+	(5, 4, 'Vestibulum ac elementum felis, sed faucibus urna.'),
+	(6, 5, 'Mauris id turpis tempus, ornare magna nec, fringilla felis.')
+	) AS "Items" ("ID", "ParentID", "Content");

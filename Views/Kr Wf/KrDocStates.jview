@@ -1,0 +1,88 @@
+﻿{
+  "Alias": "KrDocStates",
+  "Caption": "$Views_Names_KrDocStates",
+  "GroupName": "Kr Wf",
+  "ID": "51e63141-3564-4819-8bb8-c324cf772aae",
+  "JsonMetadataSource::txt": "KrDocStates JSONMETA",
+  "MsQuerySource::txt": "KrDocStates MSSQL",
+  "PgQuerySource::txt": "KrDocStates PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART KrDocStates JSONMETA]
+{
+  "Alias": "KrDocStates",
+  "Caption": "$Views_Names_KrDocStates",
+  "Columns": [
+    {
+      "Alias": "StateID",
+      "Hidden": true,
+      "Type": "$KrDocState.ID"
+    },
+    {
+      "Alias": "StateName",
+      "Caption": "$Views_KrDocStates_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$KrDocState.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "StateName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrDocStates_Name",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "State",
+      "DisplayValueColumn": "StateName",
+      "RefSection": [
+        "KrDocState"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrDocStates MSSQL]
+SELECT
+	[s].[ID]		AS [StateID],
+	[s].[Name]		AS [StateName]
+FROM [KrDocState] AS [s] WITH (NOLOCK)
+#if(Name || request.SortedBy("StateName")) {
+CROSS APPLY [Localization]([s].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART KrDocStates PGSQL]
+SELECT
+	"s"."ID"		AS "StateID",
+	"s"."Name"		AS "StateName"
+FROM "KrDocState" AS "s"
+#if(Name || request.SortedBy("StateName")) {
+CROSS JOIN "Localization"("s"."Name", #param(locale)) AS "lName"
+}
+WHERE 1 = 1
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

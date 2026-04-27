@@ -1,0 +1,273 @@
+﻿{
+  "Alias": "RoleDeputies",
+  "Caption": "$Views_Names_RoleDeputies",
+  "GroupName": "System",
+  "ID": "181eafda-939b-4b38-9f71-21c699133396",
+  "JsonMetadataSource::txt": "RoleDeputies JSONMETA",
+  "MsQuerySource::txt": "RoleDeputies MSSQL",
+  "PgQuerySource::txt": "RoleDeputies PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART RoleDeputies JSONMETA]
+{
+  "Alias": "RoleDeputies",
+  "Caption": "$Views_Names_RoleDeputies",
+  "Columns": [
+    {
+      "Alias": "RoleDeputyID",
+      "Hidden": true,
+      "Type": "$RoleDeputies.DeputyID"
+    },
+    {
+      "Alias": "RoleDeputyName",
+      "Caption": "$Views_RoleDeputies_RoleDeputy",
+      "FilterParameter": "Deputy",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "rd.DeputyName",
+      "Type": "$RoleDeputies.DeputyName"
+    },
+    {
+      "Alias": "RoleDeputizedID",
+      "Hidden": true,
+      "Type": "$RoleDeputies.DeputizedID"
+    },
+    {
+      "Alias": "RoleDeputizedName",
+      "Caption": "$Views_RoleDeputies_RoleDeputized",
+      "FilterParameter": "Deputized",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "rd.DeputizedName",
+      "Type": "$RoleDeputies.DeputizedName"
+    },
+    {
+      "Alias": "RoleDeputyFrom",
+      "Caption": "$Views_RoleDeputies_RoleDeputyFrom",
+      "SortBy": "rd.MinDate",
+      "Type": "$RoleDeputies.MinDate"
+    },
+    {
+      "Alias": "RoleDeputyTo",
+      "Caption": "$Views_RoleDeputies_RoleDeputyTo",
+      "SortBy": "rd.MaxDate",
+      "Type": "$RoleDeputies.MaxDate"
+    },
+    {
+      "Alias": "RoleDeputyIsPermanent",
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsPermanent",
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "RoleDeputyIsEnabled",
+      "Caption": "$Views_RoleDeputies_RoleDeputyAvailable",
+      "FilterParameter": "IsEnabled",
+      "FilterType": "Parameter",
+      "SortBy": "rd.IsEnabled",
+      "Type": "$RoleDeputies.IsEnabled"
+    },
+    {
+      "Alias": "RoleDeputyIsActive",
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsActive",
+      "FilterParameter": "IsActive",
+      "FilterType": "Parameter",
+      "SortBy": "rd.IsActive",
+      "Type": "$RoleDeputies.IsActive"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RoleDeputizedName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Role",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Roles"
+      },
+      "Caption": "$Views_RoleDeputies_Role",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "Roles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "Deputized",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_RoleDeputies_RoleDeputized",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "Deputy",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_RoleDeputies_RoleDeputy",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "AvailableOnDate",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_RoleDeputies_AvailableOnDate",
+      "Multiple": false,
+      "Type": "Date Null"
+    },
+    {
+      "Alias": "IsEnabled",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_RoleDeputies_RoleDeputyAvailable",
+      "Multiple": false,
+      "Type": "$RoleDeputies.IsEnabled"
+    },
+    {
+      "Alias": "IsActive",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsActive",
+      "Multiple": false,
+      "Type": "$RoleDeputies.IsActive"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "RoleDeputized",
+      "DisplayValueColumn": "RoleDeputizedName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Users"
+      ]
+    },
+    {
+      "ColPrefix": "RoleDeputy",
+      "DisplayValueColumn": "RoleDeputyName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Users"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RoleDeputies MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[rd].[DeputyID]							AS [RoleDeputyID],
+		[rd].[DeputyName]						AS [RoleDeputyName],
+		[rd].[DeputizedID]						AS [RoleDeputizedID],
+		[rd].[DeputizedName]					AS [RoleDeputizedName],
+		[rd].[MinDate]							AS [RoleDeputyFrom],
+		[rd].[MaxDate]							AS [RoleDeputyTo],
+		CAST(0 as bit)							AS [RoleDeputyIsPermanent],
+		[rd].[IsEnabled]						AS [RoleDeputyIsEnabled],
+		[rd].[IsActive]							AS [RoleDeputyIsActive],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*)								AS [cnt]
+		}
+	FROM [RoleDeputies] AS [rd] WITH (NOLOCK)
+	WHERE 1 = 1
+		#param(Role, [rd].[ID])
+		#param(Deputized, [rd].[DeputizedID])
+		#param(Deputy, [rd].[DeputyID])
+		#param(IsEnabled, [rd].[IsEnabled])
+		#param(IsActive, [rd].[IsActive])
+		#if(AvailableOnDate) { AND #param(AvailableOnDate) BETWEEN [rd].[MinDate] AND [rd].[MaxDate] }
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART RoleDeputies PGSQL]
+SELECT
+	#if(Normal) {
+	"rd"."DeputyID"							AS "RoleDeputyID",
+	"rd"."DeputyName"						AS "RoleDeputyName",
+	"rd"."DeputizedID"						AS "RoleDeputizedID",
+	"rd"."DeputizedName"					AS "RoleDeputizedName",
+	"rd"."MinDate"							AS "RoleDeputyFrom",
+	"rd"."MaxDate"							AS "RoleDeputyTo",
+	false									AS "RoleDeputyIsPermanent",
+	"rd"."IsEnabled"						AS "RoleDeputyIsEnabled",
+	"rd"."IsActive"							AS "RoleDeputyIsActive",
+	0::int8									AS "rn"
+	}
+	#if(Count) {
+	count(*)								AS "cnt"
+	}
+FROM "RoleDeputies" AS "rd"
+WHERE true
+	#param(Role, "rd"."ID")
+	#param(Deputized, "rd"."DeputizedID")
+	#param(Deputy, "rd"."DeputyID")
+	#param(IsEnabled, "rd"."IsEnabled")
+	#param(IsActive, "rd"."IsActive")
+	#if(AvailableOnDate) { AND #param(AvailableOnDate) BETWEEN "rd"."MinDate" AND "rd"."MaxDate" }
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

@@ -1,0 +1,161 @@
+﻿{
+  "Alias": "HelpSectionsGrouped",
+  "Caption": "$Views_Names_HelpSections",
+  "GroupName": "System",
+  "ID": "d1c6d207-39c9-41c5-98d7-fa8751dd6450",
+  "JsonMetadataSource::txt": "HelpSectionsGrouped JSONMETA",
+  "MsQuerySource::txt": "HelpSectionsGrouped MSSQL",
+  "PgQuerySource::txt": "HelpSectionsGrouped PGSQL"
+}
+
+[TEXTPART HelpSectionsGrouped JSONMETA]
+{
+  "Alias": "HelpSectionsGrouped",
+  "Caption": "$Views_Names_HelpSections",
+  "Columns": [
+    {
+      "Alias": "HelpSectionCode",
+      "Caption": "$Views_HelpSections_Code",
+      "SortBy": "t.Code",
+      "Type": "$HelpSections.Code"
+    },
+    {
+      "Alias": "HelpSectionName",
+      "Caption": "$Views_HelpSections_Name",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$HelpSections.Name"
+    },
+    {
+      "Alias": "HelpSectionLanguages",
+      "Caption": "$Views_HelpSections_Languages",
+      "Localizable": true,
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "HelpSectionCode",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "PlainText",
+      "AllowedOperands": [
+        "Contains"
+      ],
+      "Caption": "$Views_HelpSections_PlainText",
+      "Multiple": false,
+      "Type": "$HelpSections.PlainText"
+    },
+    {
+      "Alias": "Code",
+      "AllowedOperands": [
+        "Contains"
+      ],
+      "Caption": "$Views_HelpSections_Code",
+      "Multiple": false,
+      "Type": "$HelpSections.Code"
+    }
+  ],
+  "QuickSearchParam": "PlainText",
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART HelpSectionsGrouped MSSQL]
+WITH [summary] as (
+	SELECT
+		[t].[Code],
+		[t].[Name],
+		ROW_NUMBER() OVER(partition by [t].[Code] ORDER BY [t].[LanguageCode]) as [rank]
+	FROM [HelpSections] AS [t]
+	WHERE 1 = 1
+		#if(PlainText && PlainText.Value != "") {
+		AND (CONTAINS([t].[PlainText], #param(PlainText)))
+		}
+		#param(Code, [t].[Code])
+	)
+SELECT
+#if(Normal) {
+	[t].[HelpSectionCode],
+	[t].[HelpSectionName],
+	[t].[HelpSectionLanguages]
+}
+#if(Count) {
+	[t].*
+}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[Code]								AS [HelpSectionCode],
+		[t].[Name]								AS [HelpSectionName],
+		stuff(
+			(SELECT ', ' + ISNULL([t1].[LanguageCaption], '{$HelpSections_Default_Language}')
+			FROM [HelpSections] as [t1]
+			WHERE [t1].[Code] = [t].[Code]
+			ORDER BY [t1].[LanguageCode]
+			for xml path ('')), 1,2,'') 		AS [HelpSectionLanguages],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [summary] AS [t] WITH (NOLOCK)
+	#if (Normal && request.SortedBy("HelpSectionName")) {
+	CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+	}
+	WHERE [t].[rank] = 1
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART HelpSectionsGrouped PGSQL]
+with "summary" as (
+	SELECT
+		"t"."Code",
+		"t"."Name",
+		ROW_NUMBER() OVER(partition by "t"."Code" ORDER BY "t"."LanguageCode" ASC NULLS FIRST) as "rank"
+	FROM "HelpSections" AS "t"
+	WHERE true
+		#if(PlainText && PlainText.Value != "") {
+		AND to_tsvector('tessa', lower("t"."PlainText")) @@ to_tsquery('tessa', lower(#param(PlainText)))
+		}
+		#param(Code, "t"."Code")
+	)
+SELECT
+	#if(Normal) {
+	"t"."Code"			AS "HelpSectionCode",
+	"t"."Name"			AS "HelpSectionName",
+	(SELECT string_agg(COALESCE("t1"."LanguageCaption", '{$HelpSections_Default_Language}'), ', ' ORDER BY "t1"."LanguageCode" ASC NULLS FIRST)
+	FROM "HelpSections" as "t1"
+	WHERE "t1"."Code" = "t"."Code") AS "HelpSectionLanguages"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "summary" AS "t"
+#if (Normal && request.SortedBy("HelpSectionName")) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE "t"."rank" = 1
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

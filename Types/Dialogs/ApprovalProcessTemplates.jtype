@@ -1,0 +1,70 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_ApprovalProcessTemplatesDialog",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": false
+              },
+              "Caption": "ApprovalProcessTemplates",
+              "ControlSettings": {
+                "ViewAlias": "ApprovalProcessTemplates",
+                "ViewMap": [
+                  {
+                    "::single_type": "obj"
+                  },
+                  {
+                    "CardColumn": null,
+                    "CardSection": null,
+                    "ColumnType::int": 1,
+                    "ConstantValue": false,
+                    "ConstantValueType::int": 4,
+                    "SkipNullParams": false,
+                    "ViewMasterLinkName": "",
+                    "ViewMasterLinkType::int": 0,
+                    "ViewParamName": "CardID",
+                    "ViewParamSetName": "",
+                    "ViewSourceParameterName": ""
+                  }
+                ]
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "ApprovalProcessTemplates",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "e9a5084d-c76e-4096-ab2d-84f313710812"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "ApprovalProcessTemplates",
+      "TabCaption": "$Cards_TabDefaultCaption"
+    }
+  ],
+  "Group": "System",
+  "ID::uid": "6a859c79-1ae3-4ac0-ba86-570ef4e542b4",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "ApprovalProcessTemplates",
+  "SchemeItems": null,
+  "Validators": null
+}

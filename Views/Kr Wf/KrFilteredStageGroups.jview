@@ -1,0 +1,323 @@
+﻿{
+  "Alias": "KrFilteredStageGroups",
+  "Caption": "$Views_Names_KrFilteredStageGroups",
+  "GroupName": "Kr Wf",
+  "ID": "888b6543-2e85-45d3-8325-7a80f230560f",
+  "JsonMetadataSource::txt": "KrFilteredStageGroups JSONMETA",
+  "MsQuerySource::txt": "KrFilteredStageGroups MSSQL",
+  "PgQuerySource::txt": "KrFilteredStageGroups PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART KrFilteredStageGroups JSONMETA]
+{
+  "Alias": "KrFilteredStageGroups",
+  "Caption": "$Views_Names_KrFilteredStageGroups",
+  "Columns": [
+    {
+      "Alias": "StageGroupID",
+      "Caption": "$Views_KrStageGroups_ID",
+      "Hidden": true,
+      "Type": "$KrStageGroups.ID"
+    },
+    {
+      "Alias": "StageGroupName",
+      "Caption": "$Views_KrStageGroups_Name",
+      "Localizable": true,
+      "SortBy": "locName.Value",
+      "Type": "$KrStageGroups.Name"
+    },
+    {
+      "Alias": "Description",
+      "Caption": "$Views_KrStageGroups_Description",
+      "Type": "$KrStageGroups.Description"
+    },
+    {
+      "Alias": "IsGroupReadonly",
+      "Caption": "$Views_KrStageGroups_IsGroupReadonly",
+      "Type": "$KrStageGroups.IsGroupReadonly"
+    },
+    {
+      "Alias": "Order",
+      "Caption": "$Views_KrStageGroups_Order",
+      "Localizable": true,
+      "SortBy": "ksg.Order",
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "Types",
+      "Caption": "$Views_KrStageGroups_Types",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Roles",
+      "Caption": "$Views_KrStageGroups_Roles",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "StageGroupName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "StageGroupIDParam",
+      "Caption": "$Views_KrStageGroups_ID",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$KrStageGroups.ID"
+    },
+    {
+      "Alias": "StageGroupNameParam",
+      "Caption": "$Views_KrStageGroups_Name",
+      "Type": "$KrStageGroups.Name"
+    },
+    {
+      "Alias": "StageGroupDescriptionParam",
+      "Caption": "$Views_KrStageGroups_Description",
+      "Type": "$KrStageGroups.Description"
+    },
+    {
+      "Alias": "TypeId",
+      "Caption": "$Views_KrStageGroups_TypeID",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "IsGroupReadonlyParam",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_KrStageGroups_IsGroupReadonly",
+      "Type": "$KrStageGroups.IsGroupReadonly"
+    },
+    {
+      "Alias": "TypeParam",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          2,
+          6,
+          4
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Caption": "$Views_KrStageGroups_Types",
+      "DropDownInfo": {
+        "PopupColumns": [
+          2,
+          6,
+          4
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "RefSection": [
+        "KrCardTypesVirtual"
+      ],
+      "Type": "$KrStageTypes.TypeID"
+    },
+    {
+      "Alias": "RoleParam",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3
+        ],
+        "ViewAlias": "Roles"
+      },
+      "Caption": "$Views_KrStageGroups_Roles",
+      "RefSection": [
+        "Roles"
+      ],
+      "Type": "$KrStageRoles.RoleID"
+    }
+  ],
+  "QuickSearchParam": "StageGroupNameParam",
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrFilteredStageGroups MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[StageGroupID],
+	[t].[StageGroupName],
+	[t].[Description],
+	[t].[IsGroupReadonly],
+	[t].[Order],
+	[t].[Types],
+	[t].[Roles]
+	} {
+	[t].*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[ksg].[ID] AS [StageGroupID],
+		[ksg].[Name] AS [StageGroupName],
+		[ksg].[Description],
+		[ksg].[IsGroupReadonly],
+		[ksg].[Order],
+		STUFF((
+			SELECT CHAR(10) +
+				CASE WHEN substring([stt].[TypeCaption], 1, 1) = N'$'
+					THEN N'{' + [stt].[TypeCaption] + N'}'
+					ELSE [stt].[TypeCaption]
+				END
+			FROM [KrStageTypes] AS [stt] WITH (NOLOCK)
+			WHERE [stt].[ID] = [ksg].[ID]
+			FOR XML PATH('')
+		), 1, 1, N'') AS [Types],
+		STUFF((
+			SELECT char(10) + 
+			CASE WHEN substring([str].[RoleName], 1, 1) = N'$'
+					THEN N'{' + [str].[RoleName] + N'}'
+					ELSE [str].[RoleName]
+				END
+			FROM [KrStageRoles] AS [str] WITH (NOLOCK)
+			WHERE [str].[ID] = [ksg].[ID]
+			FOR XML PATH('')
+		), 1, 1, N'') AS [Roles],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [KrStageGroups] AS [ksg] WITH (NOLOCK)
+	#if (StageGroupNameParam || Normal && request.SortedBy("StageGroupName")) {
+	CROSS APPLY [Localization]([ksg].[Name], #param(locale)) AS [locName]
+	}
+	WHERE 1 = 1
+		AND EXISTS (
+			SELECT NULL
+			FROM [KrSettingsRouteRoles] AS [r] WITH (NOLOCK)
+			INNER JOIN [KrSettingsRouteStageGroups] AS [asg] WITH (NOLOCK) ON [asg].[ParentRowID] = [r].[ParentRowID] AND [asg].[StageGroupID] = [ksg].[ID]
+			INNER JOIN [KrSettingsRouteDocTypes] AS [act] WITH(NOLOCK) ON [act].[ParentRowID] = [r].[ParentRowID] #param(TypeId, [act].[CardTypeID])
+			LEFT JOIN  [NestedRoles] AS [nr] WITH (NOLOCK) ON [nr].[ParentID] = [r].[StageRolesID] #param(TypeId, [nr].[ContextID])
+			INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) ON ([ru].[ID] = [r].[StageRolesID] OR [ru].[ID] = [nr].[ID]) #param(CurrentUserID, [ru].[UserID]))
+		#param(StageGroupIDParam, [ksg].[ID])
+		#param(StageGroupNameParam, [locName].[Value])
+		#param(StageGroupDescriptionParam, [ksg].[Description])
+		#param(IsGroupReadonlyParam, [ksg].[IsGroupReadonly])
+		#if(TypeParam) {
+		AND EXISTS (
+			SELECT NULL
+			FROM [KrStageTypes] AS [stt] WITH (NOLOCK)
+			WHERE [stt].[ID] = [ksg].[ID]
+				#param(TypeParam, [stt].[TypeID])
+			)
+		}
+		#if(RoleParam) {
+		AND EXISTS (
+			SELECT NULL
+			FROM [KrStageRoles] AS [str] WITH (NOLOCK)
+			WHERE [str].[ID] = [ksg].[ID]
+				#param(RoleParam, [str].[RoleID])
+			)
+		}
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART KrFilteredStageGroups PGSQL]
+SELECT
+	#if(Normal) {
+	"ksg"."ID" as "StageGroupID",
+	"ksg"."Name" as "StageGroupName",
+	"ksg"."Description",
+	"ksg"."IsGroupReadonly",
+	"ksg"."Order",
+	(
+		SELECT string_agg("TypeCaption", chr(10))
+		FROM (
+			SELECT
+				CASE WHEN substring("stt"."TypeCaption", 1, 1) = '$'
+					THEN '{' || "stt"."TypeCaption" || '}'
+					ELSE "stt"."TypeCaption"
+				END
+			FROM "KrStageTypes" AS "stt"
+			WHERE "stt"."ID" = "ksg"."ID") AS "captions"
+	) AS "Types",
+	(
+		SELECT string_agg("RoleName", ',' || chr(10))
+		FROM (
+			SELECT
+				CASE WHEN substring("str"."RoleName", 1, 1) = '$'
+					THEN '{' || "str"."RoleName" || '}'
+					ELSE "str"."RoleName"
+				END
+			FROM "KrStageRoles" AS "str"
+			WHERE "str"."ID" = "ksg"."ID") AS "names"
+	) AS "Roles"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "KrStageGroups" as "ksg"
+#if (StageGroupNameParam || Normal && request.SortedBy("StageGroupName")) {
+CROSS JOIN "Localization"("ksg"."Name", #param(locale)) AS "locName"
+}
+WHERE true
+	AND EXISTS (
+		SELECT NULL
+		FROM "KrSettingsRouteRoles" AS "r"
+		INNER JOIN "KrSettingsRouteStageGroups" AS "asg" ON "asg"."ParentRowID" = "r"."ParentRowID" AND "asg"."StageGroupID" = "ksg"."ID"
+		INNER JOIN "KrSettingsRouteDocTypes" AS "act" ON "act"."ParentRowID" = "r"."ParentRowID" #param(TypeId, "act"."CardTypeID")
+		LEFT JOIN  "NestedRoles" AS "nr" ON "nr"."ParentID" = "r"."StageRolesID" #param(TypeId, "nr"."ContextID")
+		INNER JOIN "RoleUsers" AS "ru" ON ("ru"."ID" = "r"."StageRolesID" OR "ru"."ID" = "nr"."ID") #param(CurrentUserID, "ru"."UserID"))
+	#param(StageGroupIDParam, "ksg"."ID")
+	#param(StageGroupNameParam, "locName"."Value")
+	#param(StageGroupDescriptionParam, "ksg"."Description")
+	#param(IsGroupReadonlyParam, "ksg"."IsGroupReadonly")
+	#if(TypeParam) {
+	AND EXISTS (
+		SELECT NULL
+		FROM "KrStageTypes" AS "stt"
+		WHERE "stt"."ID" = "ksg"."ID"
+			#param(TypeParam, "stt"."TypeID")
+		)
+	}
+	#if(RoleParam) {
+	AND EXISTS (
+		SELECT NULL
+		FROM "KrStageRoles" AS "str"
+		WHERE "str"."ID" = "ksg"."ID"
+			#param(RoleParam, "str"."RoleID")
+		)
+	}
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

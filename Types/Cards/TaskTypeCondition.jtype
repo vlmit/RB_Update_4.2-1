@@ -1,0 +1,174 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_TaskTypeCondition",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_TaskTypes",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "bd4916ff-5aef-4566-88c4-0f82e1b2b153",
+                  "DisplayFormat": "{1}",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Caption",
+                "PopupColumnsIndexes": "1,2",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "TaskTypes",
+                  "TaskTypeRefGroup"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "TaskTypes"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "0209ddc9-6457-406e-8a09-ab8ac6916e26",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Control_FunctionRoles",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "565d55f9-fe3c-4314-8eb7-a1200574dd1e",
+                  "DisplayFormat": "{1}",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Caption",
+                "PopupColumnsIndexes": "1,2",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "FunctionRoles"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "FunctionRoleCards"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "dc7396ff-b154-42e7-b54a-05cd51eb4620",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_IsInProgress",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "14b9ba40-3ed4-43e5-ad61-080257a4817b"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "4b9735f4-7db4-46e1-bbdd-4bd71f5234bd",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "TaskTypeCondition",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Conditions",
+  "ID::uid": "c463100c-8a7b-4c31-a23f-743d8b3eb29f",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "TaskTypeCondition",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "bd4916ff-5aef-4566-88c4-0f82e1b2b153"
+      ],
+      "SectionID::uid": "0209ddc9-6457-406e-8a09-ab8ac6916e26"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "14b9ba40-3ed4-43e5-ad61-080257a4817b"
+      ],
+      "SectionID::uid": "4b9735f4-7db4-46e1-bbdd-4bd71f5234bd"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "565d55f9-fe3c-4314-8eb7-a1200574dd1e"
+      ],
+      "SectionID::uid": "dc7396ff-b154-42e7-b54a-05cd51eb4620"
+    }
+  ],
+  "Validators": null
+}

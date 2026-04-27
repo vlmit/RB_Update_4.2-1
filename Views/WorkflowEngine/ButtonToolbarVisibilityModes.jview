@@ -1,0 +1,71 @@
+﻿{
+  "Alias": "ButtonToolbarVisibilityModes",
+  "Caption": "$Views_Names_ButtonToolbarVisibilityModes",
+  "GroupName": "WorkflowEngine",
+  "ID": "a337a41d-99b2-40f7-92d1-d3ea798af95c",
+  "JsonMetadataSource::txt": "ButtonToolbarVisibilityModes JSONMETA",
+  "MsQuerySource::txt": "ButtonToolbarVisibilityModes MSSQL",
+  "PgQuerySource::txt": "ButtonToolbarVisibilityModes PGSQL"
+}
+
+[TEXTPART ButtonToolbarVisibilityModes JSONMETA]
+{
+  "Alias": "ButtonToolbarVisibilityModes",
+  "Caption": "$Views_Names_ButtonToolbarVisibilityModes",
+  "Columns": [
+    {
+      "Alias": "ModeID",
+      "Hidden": true,
+      "Type": "$BusinessProcessButtonToolbarVisibilityModes.ID"
+    },
+    {
+      "Alias": "ModeName",
+      "Caption": "$Views_ButtonToolbarVisibilityModes_Name_Param",
+      "Localizable": true,
+      "Type": "$BusinessProcessButtonToolbarVisibilityModes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_ButtonToolbarVisibilityModes_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Mode",
+      "DisplayValueColumn": "ModeName",
+      "RefSection": [
+        "ButtonToolbarVisibilityModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ButtonToolbarVisibilityModes MSSQL]
+SELECT
+	[a].[ID]		AS [ModeID],
+	[a].[Name]		AS [ModeName]
+FROM [BusinessProcessButtonToolbarVisibilityModes] AS [a] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([a].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [a].[ID]
+
+
+[TEXTPART ButtonToolbarVisibilityModes PGSQL]
+SELECT
+	"a"."ID"		AS "ModeID",
+	"a"."Name"		AS "ModeName"
+FROM "BusinessProcessButtonToolbarVisibilityModes" AS "a"
+#if(Name) {
+CROSS JOIN "Localization"("a"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "a"."ID"

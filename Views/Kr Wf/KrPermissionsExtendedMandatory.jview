@@ -1,0 +1,356 @@
+﻿{
+  "Alias": "KrPermissionsExtendedMandatory",
+  "Caption": "$Views_Names_KrPermissionsExtendedMandatory",
+  "GroupName": "Kr Wf",
+  "ID": "73970cb5-843d-49ec-821f-cb069463c1aa",
+  "JsonMetadataSource::txt": "KrPermissionsExtendedMandatory JSONMETA",
+  "MsQuerySource::txt": "KrPermissionsExtendedMandatory MSSQL",
+  "PgQuerySource::txt": "KrPermissionsExtendedMandatory PGSQL"
+}
+
+[TEXTPART KrPermissionsExtendedMandatory JSONMETA]
+{
+  "Alias": "KrPermissionsExtendedMandatory",
+  "Caption": "$Views_Names_KrPermissionsExtendedMandatory",
+  "Columns": [
+    {
+      "Alias": "KrPermissionsID",
+      "Hidden": true,
+      "Type": "$KrPermissions.ID"
+    },
+    {
+      "Alias": "KrPermissionsCaption",
+      "Caption": "$Views_KrPermissionsExtendedMandatory_AccessRule",
+      "SortBy": "t.Caption",
+      "Type": "$KrPermissions.Caption"
+    },
+    {
+      "Alias": "KrPermissionsSection",
+      "Caption": "$Views_KrPermissionsExtendedMandatory_Section",
+      "SortBy": "pe.SectionName",
+      "Type": "$KrPermissionExtendedMandatoryRules.SectionName"
+    },
+    {
+      "Alias": "KrPermissionsFields",
+      "Caption": "$Views_KrPermissionsExtendedMandatory_Fields",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "KrPermissionsValidationType",
+      "Caption": "$Views_KrPermissionsExtendedMandatory_ValidationType",
+      "Localizable": true,
+      "SortBy": "pe.ValidationTypeID",
+      "Type": "$KrPermissionExtendedMandatoryRules.ValidationTypeName"
+    },
+    {
+      "Alias": "KrPermissionsTaskTypes",
+      "Caption": "$Views_KrPermissionsExtendedMandatory_TaskTypes",
+      "Localizable": true,
+      "Type": "$KrPermissionExtendedMandatoryRuleTypes.TaskTypeCaption"
+    },
+    {
+      "Alias": "KrPermissionsCompletionOptions",
+      "Caption": "$Views_KrPermissionsExtendedMandatory_CompletionOptions",
+      "Localizable": true,
+      "Type": "$KrPermissionExtendedMandatoryRuleOptions.OptionCaption"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "KrPermissionsCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_KrPermissionsExtendedMandatory_Name_Param",
+      "Type": "$KrPermissions.Caption"
+    },
+    {
+      "Alias": "AccessRule",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "KrPermissions"
+      },
+      "Caption": "$Views_KrPermissionsExtendedMandatory_AccessRule_Param",
+      "RefSection": [
+        "KrPermissions"
+      ],
+      "Type": "$KrPermissions.ID"
+    },
+    {
+      "Alias": "Section",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Sections"
+      },
+      "Caption": "$Views_KrPermissionsExtendedMandatory_Section_Param",
+      "RefSection": [
+        "Sections"
+      ],
+      "Type": "$KrPermissionExtendedMandatoryRules.SectionID"
+    },
+    {
+      "Alias": "Field",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_KrPermissionsExtendedMandatory_Field_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "ValidationType",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "KrPermissionsMandatoryValidationTypes"
+      },
+      "Caption": "$Views_KrPermissionsExtendedMandatory_ValidationType_Param",
+      "DropDownInfo": {
+        "ViewAlias": "KrPermissionsMandatoryValidationTypes"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "KrPermissionsMandatoryValidationTypes"
+      ],
+      "Type": "$KrPermissionExtendedMandatoryRules.ValidationTypeID"
+    },
+    {
+      "Alias": "TaskType",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1,
+          2
+        ],
+        "ViewAlias": "TaskTypes"
+      },
+      "Caption": "$Views_KrPermissionsExtendedMandatory_TaskType_Param",
+      "RefSection": [
+        "TaskTypes"
+      ],
+      "Type": "$KrPermissionExtendedMandatoryRuleTypes.TaskTypeID"
+    },
+    {
+      "Alias": "CompletionOption",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1,
+          2
+        ],
+        "ViewAlias": "CompletionOptions"
+      },
+      "Caption": "$Views_KrPermissionsExtendedMandatory_CompletionOption_Param",
+      "RefSection": [
+        "CompletionOptions"
+      ],
+      "Type": "$KrPermissionExtendedMandatoryRuleOptions.OptionID"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "KrPermissions",
+      "DisplayValueColumn": "KrPermissionsCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "KrPermissions"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionsExtendedMandatory MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		
+		[t].[ID]					AS [KrPermissionsID],
+		[t].[Caption]				AS [KrPermissionsCaption],
+		[pe].[SectionName]			AS [KrPermissionsSection],
+		STUFF((
+			SELECT CHAR(10) + [pef].[FieldName]
+			FROM [KrPermissionExtendedMandatoryRuleFields] AS [pef] WITH (NOLOCK)
+			WHERE [pef].[RuleRowID] = [pe].[RowID]
+			FOR XML PATH('')
+		), 1, 1, N'') AS [KrPermissionsFields],
+		[pe].[ValidationTypeName]	AS [KrPermissionsValidationType],
+		STUFF((
+			SELECT CHAR(10) +
+				CASE WHEN left([pet].[TaskTypeCaption], 1) = N'$'
+					THEN N'{' + [pet].[TaskTypeCaption] + N'}'
+					ELSE [pet].[TaskTypeCaption]
+				END
+			FROM [KrPermissionExtendedMandatoryRuleTypes] AS [pet] WITH (NOLOCK)
+			WHERE [pet].[RuleRowID] = [pe].[RowID]
+			FOR XML PATH('')
+		), 1, 1, N'') AS [KrPermissionsTaskTypes],
+		STUFF((
+			SELECT CHAR(10) +
+				CASE WHEN left([peo].[OptionCaption], 1) = N'$'
+					THEN N'{' + [peo].[OptionCaption] + N'}'
+					ELSE [peo].[OptionCaption]
+				END
+			FROM [KrPermissionExtendedMandatoryRuleOptions] AS [peo] WITH (NOLOCK)
+			WHERE [peo].[RuleRowID] = [pe].[RowID]
+			FOR XML PATH('')
+		), 1, 1, N'') AS [KrPermissionsCompletionOptions],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(1)					AS [cnt]
+		}
+	FROM [KrPermissions] AS [t] WITH (NOLOCK)
+	
+	INNER JOIN [KrPermissionExtendedMandatoryRules] AS [pe] WITH(NOLOCK)
+		ON [t].[ID] = [pe].[ID]
+		
+	#if(TaskType){
+	CROSS APPLY (
+		SELECT TOP 1 1 AS TMP FROM [KrPermissionExtendedMandatoryRuleTypes] AS [pet] WITH(NOLOCK)
+		WHERE [pet].[RuleRowID] = [pe].[RowID]			
+			#param(TaskType, [pet].[TaskTypeID])) AS tt
+	}
+		
+	#if(CompletionOption){
+	CROSS APPLY (
+		SELECT TOP 1 1 AS TMP FROM [KrPermissionExtendedMandatoryRuleOptions] AS [peo] WITH(NOLOCK)
+		WHERE [peo].[RuleRowID] = [pe].[RowID]			
+			#param(CompletionOption, [peo].[OptionID])) AS tco
+	}
+	
+	#if(Field){
+	CROSS APPLY (
+		SELECT TOP 1 1 AS TMP FROM [KrPermissionExtendedMandatoryRuleFields] AS [pef] WITH(NOLOCK)
+		WHERE [pef].[RuleRowID] = [pe].[RowID]			
+			#param(Field, [pef].[FieldName])) AS tf
+	}	
+	
+	WHERE [t].[IsExtended] = 1
+		#param(Caption, [t].[Caption])
+		#param(AccessRule, [t].[ID])
+		#param(Section, [pe].[SectionID])
+		#param(ValidationType, [pe].[ValidationTypeID])
+		
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn];
+}
+
+
+[TEXTPART KrPermissionsExtendedMandatory PGSQL]
+SELECT
+	"t".*
+FROM (
+	SELECT
+		#if(Normal) {
+		
+		"t"."ID"					AS "KrPermissionsID",
+		"t"."Caption"				AS "KrPermissionsCaption",
+		"pe"."SectionName"			AS "KrPermissionsSection",
+		(
+			SELECT string_agg("FieldName", chr(10))
+			FROM (
+				SELECT "pef"."FieldName" AS "FieldName"
+				FROM "KrPermissionExtendedMandatoryRuleFields" AS "pef"
+				WHERE "pef"."RuleRowID" = "pe"."RowID"
+			) AS "groupFields"
+		) AS "KrPermissionsFields",
+		"pe"."ValidationTypeName"	AS "KrPermissionsValidationType",
+		(
+			SELECT string_agg("TaskTypeCaption", chr(10))
+			FROM (
+				SELECT
+					CASE WHEN substring("pet"."TaskTypeCaption", 1, 1) = '$'
+						THEN '{' || "pet"."TaskTypeCaption" || '}'
+						ELSE "pet"."TaskTypeCaption"
+					END
+				FROM "KrPermissionExtendedMandatoryRuleTypes" AS "pet"
+				WHERE "pet"."RuleRowID" = "pe"."RowID"	) AS "groupCaptions"
+		) AS "KrPermissionsTaskTypes",
+		(
+			SELECT string_agg("OptionCaption", chr(10))
+			FROM (
+				SELECT
+					CASE WHEN substring("peo"."OptionCaption", 1, 1) = '$'
+						THEN '{' || "peo"."OptionCaption" || '}'
+						ELSE "peo"."OptionCaption"
+					END
+				FROM "KrPermissionExtendedMandatoryRuleOptions" AS "peo"
+				WHERE "peo"."RuleRowID" = "pe"."RowID"	) AS "groupCaptions"
+		) AS "KrPermissionsCompletionOptions",
+		row_number() OVER (ORDER BY #order_by) AS "rn"
+		}
+		#if(Count) {
+		count(1)					AS "cnt"
+		}
+	FROM "KrPermissions" AS "t"
+	
+	INNER JOIN "KrPermissionExtendedMandatoryRules" AS "pe"
+		ON "t"."ID" = "pe"."ID"
+	
+	#if(TaskType){
+	INNER JOIN LATERAL (
+		SELECT null AS TMP FROM "KrPermissionExtendedMandatoryRuleTypes" AS "pet"
+		WHERE "pet"."RuleRowID" = "pe"."RowID"			
+			#param(TaskType, "pet"."TaskTypeID")
+		LIMIT 1) AS tt ON true
+	}
+	
+	#if(CompletionOption){
+	INNER JOIN LATERAL (
+		SELECT null AS TMP FROM "KrPermissionExtendedMandatoryRuleOptions" AS "peo"
+		WHERE "peo"."RuleRowID" = "pe"."RowID"			
+			#param(CompletionOption, "peo"."OptionID")
+		LIMIT 1) AS tco ON true
+	}
+	
+	#if(Field){
+	INNER JOIN LATERAL (
+		SELECT null AS TMP FROM "KrPermissionExtendedMandatoryRuleFields" AS "pef"
+		WHERE "pef"."RuleRowID" = "pe"."RowID"			
+			#param(Field, "pef"."FieldName")
+		LIMIT 1) AS tf ON true
+	}
+	
+	WHERE "t"."IsExtended"
+		#param(Caption, "t"."Caption")
+		#param(AccessRule, "t"."ID")
+		#param(Section, "pe"."SectionID")
+		#param(ValidationType, "pe"."ValidationTypeID")
+		
+	) AS "t"
+#if(Normal) {
+ORDER BY "t"."rn"
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value);
+}

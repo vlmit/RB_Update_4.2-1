@@ -1,0 +1,165 @@
+﻿{
+  "Alias": "SmartRoles",
+  "Caption": "$Views_Names_SmartRoles",
+  "GroupName": "Acl",
+  "ID": "30591f7d-1c2a-4d4c-bc51-ab162079840b",
+  "JsonMetadataSource::txt": "SmartRoles JSONMETA",
+  "MsQuerySource::txt": "SmartRoles MSSQL",
+  "PgQuerySource::txt": "SmartRoles PGSQL"
+}
+
+[TEXTPART SmartRoles JSONMETA]
+{
+  "Alias": "SmartRoles",
+  "Caption": "$Views_Names_SmartRoles",
+  "Columns": [
+    {
+      "Alias": "SmartRoleID",
+      "Hidden": true,
+      "Type": "$Roles.ID"
+    },
+    {
+      "Alias": "SmartRoleName",
+      "Caption": "$Views_SmartRoles_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "r.Name",
+      "Type": "$Roles.Name"
+    },
+    {
+      "Alias": "SmartRoleOwner",
+      "Caption": "$Views_SmartRoles_Owner",
+      "Localizable": true,
+      "SortBy": "lOwnerName.Value",
+      "Type": "$SmartRoles.OwnerName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "SmartRoleName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_SmartRoles_Name_Param",
+      "Type": "$Roles.Name"
+    },
+    {
+      "Alias": "Generator",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "SmartRoleGenerators"
+      },
+      "Caption": "$Views_SmartRoles_Generator_Param",
+      "IgnoreCase": false,
+      "Multiple": false,
+      "RefSection": [
+        "SmartRoleGenerators"
+      ],
+      "Type": "$SmartRoles.RuleID"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "SmartRole",
+      "DisplayValueColumn": "SmartRoleName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Roles",
+        "SmartRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART SmartRoles MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[SmartRoleID],
+	[t].[SmartRoleName],
+	[t].[SmartRoleOwner]
+	}
+	#if(Count) {
+	[t].*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [SmartRoleID],
+		[r].[Name]								AS [SmartRoleName],
+		[t].[OwnerName]							AS [SmartRoleOwner],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*)								AS [cnt]
+		}
+	FROM [SmartRoles] AS [t] WITH (NOLOCK)
+	INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+		ON [t].[ID] = [r].[ID]
+	#if(request.SortedBy("SmartRoleOwner")) {
+	CROSS APPLY [Localization]([t].[OwnerName], #param(locale)) AS [lOwnerName]
+	}
+	WHERE 1 = 1
+		#param(Name, [r].[Name])
+		#param(Generator, [t].[RuleID])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+[TEXTPART SmartRoles PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."SmartRoleID",
+	"t"."SmartRoleName",
+	"t"."SmartRoleOwner"
+	}
+	#if(Count) {
+	"t".*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID"								AS "SmartRoleID",
+		"r"."Name"								AS "SmartRoleName",
+		"t"."OwnerName"							AS "SmartRoleOwner",
+		row_number() OVER (ORDER BY #order_by)	AS "rn"
+		}
+		#if(Count) {
+		count(*)								AS "cnt"
+		}
+	FROM "SmartRoles" AS "t"
+	INNER JOIN "Roles" AS "r"
+		ON "t"."ID" = "r"."ID"
+	#if(request.SortedBy("SmartRoleOwner")) {
+	CROSS JOIN "Localization"("t"."OwnerName", #param(locale)) AS "lOwnerName"
+	}
+	WHERE true
+		#param(Name, "r"."Name")
+		#param(Generator, "t"."RuleID")
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	}
+	) AS "t"

@@ -1,0 +1,79 @@
+﻿{
+  "Alias": "RefGroupValueTypesEnum",
+  "Caption": "$Views_Names_RefGroupValueTypesEnum",
+  "GroupName": "RefGroups",
+  "ID": "bd95f9cf-80ef-4418-be87-f6e5a96c8a7e",
+  "JsonMetadataSource::txt": "RefGroupValueTypesEnum JSONMETA",
+  "MsQuerySource::txt": "RefGroupValueTypesEnum MSSQL",
+  "PgQuerySource::txt": "RefGroupValueTypesEnum PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART RefGroupValueTypesEnum JSONMETA]
+{
+  "Alias": "RefGroupValueTypesEnum",
+  "Caption": "$Views_Names_RefGroupValueTypesEnum",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$RefGroupValueTypesEnum.ID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_RefGroupTypesEnum_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "r.Name",
+      "Type": "$RefGroupValueTypesEnum.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_RefGroupValueTypesEnum_Name",
+      "Multiple": false,
+      "Type": "$RefGroupValueTypesEnum.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeName",
+      "RefSection": [
+        "TypeEnum"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RefGroupValueTypesEnum MSSQL]
+SELECT
+	[r].[ID]		AS [TypeID],
+	[r].[Name]		AS [TypeName]
+FROM [RefGroupValueTypesEnum] AS [r] WITH (NOLOCK)
+WHERE 1 = 1
+	#param(Name, [r].[Name])
+ORDER BY #order_by
+
+
+[TEXTPART RefGroupValueTypesEnum PGSQL]
+SELECT
+	"r"."ID"		AS "TypeID",
+	"r"."Name"		AS "TypeName"
+FROM "RefGroupValueTypesEnum" AS "r"
+WHERE 1 = 1
+	#param(Name, "r"."Name")
+ORDER BY #order_by

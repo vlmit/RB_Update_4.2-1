@@ -1,0 +1,177 @@
+﻿{
+  "Alias": "Applications",
+  "Caption": "$Views_Names_Applications",
+  "Description": "Возвращает список доступных приложений",
+  "GroupName": "System",
+  "ID": "87345860-1b95-4fdd-887e-bf632fb3752d",
+  "JsonMetadataSource::txt": "Applications JSONMETA",
+  "MsQuerySource::txt": "Applications MSSQL",
+  "PgQuerySource::txt": "Applications PGSQL"
+}
+
+[TEXTPART Applications JSONMETA]
+{
+  "Alias": "Applications",
+  "Caption": "$Views_Names_Applications",
+  "Columns": [
+    {
+      "Alias": "AppID",
+      "Caption": "ID",
+      "Hidden": true,
+      "Type": "$Applications.ID"
+    },
+    {
+      "Alias": "AppName",
+      "Caption": "$Views_Applications_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Applications.Name"
+    },
+    {
+      "Alias": "GroupName",
+      "Caption": "$Views_Applications_GroupName",
+      "Hidden": true,
+      "Type": "$Applications.GroupName"
+    },
+    {
+      "Alias": "LocalizedGroupName",
+      "Caption": "$Views_Applications_GroupName",
+      "SortBy": "l.Value",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Alias",
+      "Caption": "$Views_Applications_Alias",
+      "Type": "$Applications.Alias"
+    },
+    {
+      "Alias": "Icon",
+      "Caption": "Icon",
+      "Hidden": true,
+      "Type": "$Applications.Icon"
+    },
+    {
+      "Alias": "Client64Bit",
+      "Caption": "$Views_Applications_Client64Bit",
+      "SortBy": "t.Client64Bit",
+      "Type": "$Applications.Client64Bit"
+    },
+    {
+      "Alias": "ExecutableFileName",
+      "Caption": "$Views_Applications_ExecutableFileName",
+      "Type": "$Applications.ExecutableFileName"
+    },
+    {
+      "Alias": "ForAdmin",
+      "Caption": "$Views_Applications_ForAdmin",
+      "Type": "$Applications.ForAdmin"
+    },
+    {
+      "Alias": "AppVersion",
+      "Caption": "$Views_Applications_AppVersion",
+      "Type": "$Applications.AppVersion"
+    },
+    {
+      "Alias": "PlatformVersion",
+      "Caption": "$Views_Applications_PlatformVersion",
+      "Type": "$Applications.PlatformVersion"
+    },
+    {
+      "Alias": "AvailableRoles",
+      "Caption": "$Views_Applications_AvailableRoles",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "LocalizedGroupName",
+      "SortDirection": "Ascending"
+    },
+    {
+      "Alias": "AppName",
+      "SortDirection": "Ascending"
+    },
+    {
+      "Alias": "Client64Bit",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "GroupingColumn": "LocalizedGroupName",
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Applications_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "App",
+      "DisplayValueColumn": "AppName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Applications"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Applications MSSQL]
+SELECT
+	[t].[ID]					AS [AppID],
+	[t].[Name]					AS [AppName],
+	[t].[GroupName],
+	[l].[Value]					AS [LocalizedGroupName],
+	[t].[Alias],
+	[t].[Icon],
+	[t].[Client64Bit],
+	[t].[ExecutableFileName],
+	[t].[ForAdmin],
+	[t].[AppVersion],
+	[t].[PlatformVersion],
+	STUFF((
+		SELECT N', ' + [r].[RoleName]
+		FROM [ApplicationRoles] AS [r] WITH (NOLOCK)
+		WHERE [r].[ID] = [t].[ID]
+		ORDER BY [r].[RoleName]
+		FOR XML PATH('')
+	), 1, 2, N'') AS [AvailableRoles]
+FROM [Applications] AS [t] WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[GroupName], #param(locale)) AS [l]
+WHERE 1 = 1
+	#param(Name, [t].[Name])
+ORDER BY #order_by
+
+
+[TEXTPART Applications PGSQL]
+SELECT
+	"t"."ID"					AS "AppID",
+	"t"."Name"					AS "AppName",
+	"t"."GroupName",
+	"l"."Value"					AS "LocalizedGroupName",
+	"t"."Alias",
+	"t"."Icon",
+	"t"."Client64Bit",
+	"t"."ExecutableFileName",
+	"t"."ForAdmin",
+	"t"."AppVersion",
+	"t"."PlatformVersion",
+	(
+		SELECT string_agg("RoleName", ', ')
+		FROM (
+			SELECT "r"."RoleName"
+			FROM "ApplicationRoles" AS "r"
+			WHERE "r"."ID" = "t"."ID"
+			ORDER BY "r"."RoleName") AS "r"
+	) AS "AvailableRoles"
+FROM "Applications" AS "t"
+CROSS JOIN "Localization"("t"."GroupName", #param(locale)) AS "l"
+WHERE true
+	#param(Name, "t"."Name")
+ORDER BY #order_by

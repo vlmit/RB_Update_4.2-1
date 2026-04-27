@@ -1,0 +1,78 @@
+﻿{
+  "Alias": "ApplicationNames",
+  "Caption": "$Views_Names_ApplicationNames",
+  "GroupName": "System",
+  "ID": "1e314e13-904d-491d-93fb-d9f2f912498e",
+  "JsonMetadataSource::txt": "ApplicationNames JSONMETA",
+  "MsQuerySource::txt": "ApplicationNames MSSQL",
+  "PgQuerySource::txt": "ApplicationNames PGSQL"
+}
+
+[TEXTPART ApplicationNames JSONMETA]
+{
+  "Alias": "ApplicationNames",
+  "Caption": "$Views_Names_ApplicationNames",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$ApplicationNames.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "$Views_ApplicationNames_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "l.Value",
+      "Type": "$ApplicationNames.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RefName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_ApplicationNames_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "ApplicationNames"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ApplicationNames MSSQL]
+SELECT
+	[t].[ID]		AS [RefID],
+	[t].[Name]		AS [RefName]
+FROM [ApplicationNames] AS [t] WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [l]
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+	AND [IsHidden] = 0
+ORDER BY #order_by
+
+
+[TEXTPART ApplicationNames PGSQL]
+SELECT
+	"t"."ID"		AS "RefID",
+	"t"."Name"		AS "RefName"
+FROM "ApplicationNames" AS "t"
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "l"
+WHERE true
+	#param(Name, "l"."Value")
+	AND "IsHidden" = false
+ORDER BY #order_by

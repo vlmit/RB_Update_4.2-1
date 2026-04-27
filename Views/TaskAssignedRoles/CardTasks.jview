@@ -1,0 +1,598 @@
+﻿{
+  "Alias": "CardTasks",
+  "Caption": "$Views_Names_CardTasks",
+  "GroupName": "TaskAssignedRoles",
+  "ID": "eff8e7b5-0874-4e7d-ab09-2537e821b43d",
+  "JsonMetadataSource::txt": "CardTasks JSONMETA",
+  "MsQuerySource::txt": "CardTasks MSSQL",
+  "PgQuerySource::txt": "CardTasks PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART CardTasks JSONMETA]
+{
+  "Alias": "CardTasks",
+  "Caption": "$Views_Names_CardTasks",
+  "Columns": [
+    {
+      "Alias": "ID",
+      "Hidden": true,
+      "Type": "$Tasks.ID"
+    },
+    {
+      "Alias": "TaskID",
+      "Hidden": true,
+      "Type": "$Tasks.RowID"
+    },
+    {
+      "Alias": "StateID",
+      "Hidden": true,
+      "Type": "$Tasks.StateID"
+    },
+    {
+      "Alias": "StateName",
+      "Caption": "$Views_MyTasks_State",
+      "FilterParameter": "State",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$TaskStates.Name"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Tasks.TypeID"
+    },
+    {
+      "Alias": "PlannedDate",
+      "Caption": "$Views_MyTasks_Planned",
+      "FilterParameter": "Planned",
+      "FilterType": "Parameter",
+      "SortBy": "tt.PlannedDate",
+      "Type": "$Tasks.Planned"
+    },
+    {
+      "Alias": "TaskDigest",
+      "Caption": "$Views_MyTasks_Info",
+      "Localizable": true,
+      "MaxLength": 150,
+      "Type": "$Tasks.Digest"
+    },
+    {
+      "Alias": "RoleID",
+      "Hidden": true,
+      "Type": "$TaskAssignedRoles.RoleID"
+    },
+    {
+      "Alias": "RoleName",
+      "Caption": "$Views_MyTasks_Performer",
+      "Localizable": true,
+      "Type": "$TaskAssignedRoles.RoleName"
+    },
+    {
+      "Alias": "AuthorID",
+      "Hidden": true,
+      "Type": "$TaskAssignedRoles.RoleID"
+    },
+    {
+      "Alias": "AuthorName",
+      "Caption": "$Views_MyTasks_Author",
+      "FilterParameter": "Author",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$TaskAssignedRoles.RoleName"
+    },
+    {
+      "Alias": "Modified",
+      "Caption": "$Views_MyTasks_Modified",
+      "SortBy": "tt.Modified",
+      "Type": "$Tasks.Modified"
+    },
+    {
+      "Alias": "Created",
+      "Hidden": true,
+      "SortBy": "tt.Created",
+      "Type": "$Tasks.Created"
+    },
+    {
+      "Alias": "CreatedByID",
+      "Hidden": true,
+      "Type": "$Tasks.CreatedByID"
+    },
+    {
+      "Alias": "CreatedByName",
+      "Hidden": true,
+      "Type": "$Tasks.CreatedByName"
+    },
+    {
+      "Alias": "TimeZoneUtcOffsetMinutes",
+      "Hidden": true,
+      "Type": "$Tasks.TimeZoneUtcOffsetMinutes"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_MyTasks_TaskType",
+      "Localizable": true,
+      "Type": "$TaskCommonInfo.KindCaption"
+    },
+    {
+      "Alias": "TimeToCompletion",
+      "Appearance": "AppearanceColumn",
+      "CalendarIDColumn": "CalendarID",
+      "CalendarOverdueFormat": "$Format_DateDiff_DefaultOverdueFormat",
+      "CalendarQuantsColumn": "QuantsToFinish",
+      "Caption": "$Views_MyTasks_TimeToCompletion",
+      "FilterParameter": "Planned",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "PlannedColumn": "PlannedDate",
+      "SortBy": "tt.PlannedDate",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "CalendarID",
+      "Hidden": true,
+      "Type": "$Tasks.CalendarID"
+    },
+    {
+      "Alias": "QuantsToFinish",
+      "Hidden": true,
+      "Type": "$CalendarQuants.QuantNumber"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    },
+    {
+      "Alias": "AppearanceColumn",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Modified",
+      "SortDirection": "Descending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "CardIDParam",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_CardTasks_CardID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$Tasks.ID"
+    },
+    {
+      "Alias": "Token",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_CardTasks_Token_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "FunctionRoleAuthorParam",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "FunctionRoleCards"
+      },
+      "Caption": "$Views_MyTasks_FunctionRole_Author_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "FunctionRoles"
+      ],
+      "Type": "$TaskAssignedRoles.TaskRoleID"
+    },
+    {
+      "Alias": "FunctionRolePerformerParam",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "FunctionRoleCards"
+      },
+      "Caption": "$Views_MyTasks_FunctionRole_Performer_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "FunctionRoles"
+      ],
+      "Type": "$TaskAssignedRoles.TaskRoleID"
+    },
+    {
+      "Alias": "Performer",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "DurableRoles"
+      },
+      "Caption": "$Views_CardTasks_Performer_Param",
+      "RefSection": [
+        "DurableRoles"
+      ],
+      "Type": "$TaskAssignedRoles.RoleID"
+    },
+    {
+      "Alias": "Author",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "DurableRoles"
+      },
+      "Caption": "$Views_CardTasks_Author_Param",
+      "RefSection": [
+        "DurableRoles"
+      ],
+      "Type": "$TaskAssignedRoles.RoleID"
+    },
+    {
+      "Alias": "State",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "TaskStates"
+      },
+      "Caption": "$Views_CardTasks_State_Param",
+      "DropDownInfo": {
+        "ViewAlias": "TaskStates"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "TaskStates"
+      ],
+      "Type": "$TaskStates.ID"
+    },
+    {
+      "Alias": "Planned",
+      "AllowedOperands": [
+        "Between",
+        "GreatOrEquals",
+        "GreatThan",
+        "LessOrEquals",
+        "LessThan"
+      ],
+      "Caption": "$Views_CardTasks_Planned_Param",
+      "Type": "$Tasks.Planned"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Task",
+      "DisplayValueColumn": "TaskDigest",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Tasks"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART CardTasks MSSQL]
+BEGIN
+	#if(Normal) {
+	DECLARE @RedThreshold			int;
+	DECLARE @NowTimestamp			datetime;
+	}
+	
+	#if(Normal) {	
+	SET @RedThreshold		= 320; -- задания, просроченные более чем на две недели (320 квантов), будут одинаково красные
+	SET @NowTimestamp		= GETUTCDATE();
+	}
+
+	SELECT
+		[ttt].*	
+	FROM (
+		SELECT
+			#if(Count) 
+			{
+			count(*) 												AS [cnt]
+			}
+			#if(Normal)
+			{
+			[tt].*,
+			row_number() OVER (ORDER BY #order_by) 					AS [rn],
+			CASE
+				WHEN ([tt].[QuantsToFinish] < 0) THEN
+					CASE WHEN ([tt].[QuantsToFinish] < (-1 * @RedThreshold))
+						THEN N'#appearance(Background: #A0FF0000)'
+						ELSE N'#appearance(Background: ' + CAST(abs([tt].[QuantsToFinish]) * 160 / @RedThreshold * 256 * 256 * 256 + 255 * 256 * 256 AS nvarchar(max)) + N')'
+					END
+				ELSE N''
+			END 													AS [AppearanceColumn]
+			}	
+			
+		FROM (
+			SELECT
+				[t].[ID]											AS [ID]
+				#if(Normal)
+				{
+				,[t].[RowID]										AS [TaskID]
+				,[t].[StateID]										AS [StateID]
+				,[ts].[Name]										AS [StateName]
+				,[t].[TypeID]										AS [TypeID]
+				,[t].[Planned]										AS [PlannedDate]
+				,[t].[Digest] 										AS [TaskDigest]
+				,[rl].[RoleID]										AS [RoleID]
+				,STUFF((
+					SELECT N', ' + [tar].[RoleName]
+					FROM [TaskAssignedRoles] AS [tar] WITH (NOLOCK)
+					WHERE [tar].[ID] = [t].[RowID]
+						AND [tar].[ParentRowID] IS NULL
+						#param(FunctionRolePerformerParam, [tar].[TaskRoleID])
+					FOR XML PATH('')), 1, 2, N'') 
+																	AS [RoleName]
+				,[au].[RoleID]										AS [AuthorID]
+				,STUFF((
+					SELECT N', ' + [tar].[RoleName]
+					FROM [TaskAssignedRoles] AS [tar] WITH (NOLOCK)
+					WHERE [tar].[ID] = [t].[RowID]
+						AND [tar].[ParentRowID] IS NULL
+						#param(FunctionRoleAuthorParam, [tar].[TaskRoleID])
+					FOR XML PATH('')), 1, 2, N'') 
+																	AS [AuthorName]	
+				,[t].[Modified] 									AS [Modified]
+				,[t].[Created] 										AS [Created]
+				,[t].[CreatedByID] 									AS [CreatedByID]
+				,[t].[CreatedByName] 								AS [CreatedByName]
+				,[t].[TimeZoneUtcOffsetMinutes]						AS [TimeZoneUtcOffsetMinutes]
+				,COALESCE([tci].[KindCaption], [t].[TypeCaption])	AS [TypeCaption]
+				,CAST(null as varchar(1024))						AS [TimeToCompletion]
+				,[t].[CalendarID]									AS [CalendarID]
+				,([qq].[QuantNumber] - [qq1].[QuantNumber])			AS [QuantsToFinish]
+				}
+				
+			FROM [Tasks] AS [t] with(nolock)
+			#if(Normal) {
+			INNER JOIN [TaskStates] AS [ts] WITH (NOLOCK)
+				ON [ts].[ID] = [t].[StateID]
+			LEFT JOIN [TaskCommonInfo] AS [tci] WITH (NOLOCK)
+				ON [tci].[ID] = [t].[RowID]
+			OUTER APPLY (
+				SELECT TOP(1) [tar].[RoleID]
+				FROM [TaskAssignedRoles] AS [tar] WITH (NOLOCK)
+				WHERE [t].[RowID] = [tar].[ID]			
+					AND [tar].[ParentRowID] IS NULL
+					#param(FunctionRoleAuthorParam, [tar].[TaskRoleID])
+				) AS [au]
+			OUTER APPLY (
+				SELECT TOP(1) [tar].[RoleID], [tar].[RoleType]
+				FROM [TaskAssignedRoles] AS [tar] WITH (NOLOCK)
+				WHERE [t].[RowID] = [tar].[ID]
+					AND [tar].[ParentRowID] IS NULL
+					#param(FunctionRolePerformerParam, [tar].[TaskRoleID])
+				) AS [rl]
+			OUTER APPLY (
+				SELECT TOP (1) [q].[QuantNumber]
+				FROM [CalendarQuants] AS [q] WITH (NOLOCK)
+				INNER JOIN [CalendarSettings] AS [cs] WITH (NOLOCK)
+					ON [q].[ID] = [cs].[CalendarID]
+				WHERE [cs].[ID] = [t].[CalendarID]
+					AND [q].[StartTime] <= DATEADD(minute, [t].[TimeZoneUtcOffsetMinutes], [t].[Planned])
+				ORDER BY [q].[StartTime] DESC
+				) AS [qq]
+			OUTER APPLY (
+				SELECT TOP (1) [q1].[QuantNumber]
+				FROM [CalendarQuants] AS [q1] WITH (NOLOCK)
+				INNER JOIN [CalendarSettings] AS [cs] WITH (NOLOCK)
+					ON [q1].[ID] = [cs].[CalendarID]
+				WHERE [cs].[ID] = [t].[CalendarID]
+					AND [q1].[StartTime] <= DATEADD(minute, [t].[TimeZoneUtcOffsetMinutes], @NowTimestamp)
+				ORDER BY [q1].[StartTime] DESC
+				) AS [qq1]
+			}
+			WHERE 1 = 1
+				#param(State, [t].[StateID])
+				#if(Performer) { 
+				AND EXISTS (
+					SELECT TOP(1) 1
+					FROM [TaskAssignedRoles] AS [tar] WITH (NOLOCK)
+					WHERE [t].[RowID] = [tar].[ID]
+						#param(Performer, [tar].[RoleID])
+						#param(FunctionRolePerformerParam, [tar].[TaskRoleID])
+				)}
+				#if(Author) { 
+				AND EXISTS (
+					SELECT TOP(1) 1
+					FROM [TaskAssignedRoles] AS [tar] WITH (NOLOCK)
+					WHERE [t].[RowID] = [tar].[ID]
+						#param(Author, [tar].[RoleID])
+						#param(FunctionRoleAuthorParam, [tar].[TaskRoleID])
+				)}
+		) AS [tt]
+		WHERE
+		#if(CardIDParam) {
+		1 = 1
+		} {
+		1 = 0
+		}
+		#param(CardIDParam, [tt].[ID])
+		
+	) as [ttt]
+	#if(PageOffset) {
+	WHERE [ttt].[rn] >= #param(PageOffset) AND [ttt].[rn] < (#param(PageOffset) + #param(PageLimit))
+	}
+	#if(Normal) {
+	ORDER BY [ttt].[rn]
+	}
+END;
+
+[TEXTPART CardTasks PGSQL]
+-- "red_threshold"			= 320; -- задания, просроченные более чем на две недели (320 квантов), будут одинаково красные
+#var(red_threshold: 320)
+SELECT
+		"ttt".*	
+	FROM (
+		SELECT
+			#if(Count) 
+			{
+			count(*) AS "cnt"
+			}
+			#if(Normal)
+			{
+			"tt".*,
+			0::int8													AS "rn",
+			CASE
+				WHEN ("tt"."QuantsToFinish" < 0) THEN
+					CASE WHEN ("tt"."QuantsToFinish" < (-1 * #eval(red_threshold)))
+						THEN '#appearance(Background: #A0FF0000)'
+						ELSE '\#appearance(Background: ' || CAST(abs("tt"."QuantsToFinish") * 160 / #eval(red_threshold) * 256 * 256 * 256 + 255 * 256 * 256 AS text) || ')'
+					END
+				ELSE ''
+			END 													AS "AppearanceColumn"	
+			}
+			
+		FROM (
+			SELECT
+				"t"."ID"											AS "ID"
+				#if(Normal)
+				{
+				,"t"."RowID"										AS "TaskID"
+				,"t"."StateID"										AS "StateID"
+				,"ts"."Name"										AS "StateName"
+				,"t"."TypeID"										AS "TypeID"
+				,"t"."Planned"										AS "PlannedDate"
+				,"t"."Digest" 										AS "TaskDigest"
+				,"rl"."RoleID"										AS "RoleID"
+				,(
+					SELECT string_agg("tar"."RoleName", ', ')
+					FROM "TaskAssignedRoles" AS "tar"
+					WHERE "tar"."ID" = "t"."RowID"
+						AND "tar"."ParentRowID" IS NULL
+						#param(FunctionRolePerformerParam, "tar"."TaskRoleID"))
+					
+																	AS "RoleName"
+				,"au"."RoleID"										AS "AuthorID"
+				,(
+					SELECT string_agg("tar"."RoleName", ', ')
+					FROM "TaskAssignedRoles" AS "tar"
+					WHERE "tar"."ID" = "t"."RowID"
+						AND "tar"."ParentRowID" IS NULL
+						#param(FunctionRoleAuthorParam, "tar"."TaskRoleID"))
+																	AS "AuthorName"		
+				,"t"."Modified" 									AS "Modified"
+				,"t"."Created" 										AS "Created"
+				,"t"."CreatedByID" 									AS "CreatedByID"
+				,"t"."CreatedByName" 								AS "CreatedByName"
+				,"t"."TimeZoneUtcOffsetMinutes"						AS "TimeZoneUtcOffsetMinutes"
+				,COALESCE("tci"."KindCaption", "t"."TypeCaption")	AS "TypeCaption"
+				,NULL::text											AS "TimeToCompletion"
+				,"t"."CalendarID"									AS "CalendarID"
+				,("qq"."QuantNumber" - "qq1"."QuantNumber")			AS "QuantsToFinish"
+				}
+				
+			FROM "Tasks" AS "t"
+			#if(Normal) {
+			INNER JOIN "TaskStates" AS "ts"
+				ON "ts"."ID" = "t"."StateID"
+			LEFT JOIN "TaskCommonInfo" AS "tci"
+				ON "tci"."ID" = "t"."RowID"
+			LEFT JOIN LATERAL (
+				SELECT "tar"."RoleID"
+					FROM "TaskAssignedRoles" AS "tar"
+					WHERE "t"."RowID" = "tar"."ID"
+						AND "tar"."ParentRowID" IS NULL
+						#param(FunctionRoleAuthorParam, "tar"."TaskRoleID")
+				LIMIT 1
+				) AS "au" ON true
+			LEFT JOIN LATERAL (
+				SELECT "tar"."RoleID", "tar"."RoleType"
+					FROM "TaskAssignedRoles" AS "tar"
+					WHERE "t"."RowID" = "tar"."ID"
+						AND "tar"."ParentRowID" IS NULL
+						#param(FunctionRolePerformerParam, "tar"."TaskRoleID")
+				LIMIT 1
+				) AS "rl" ON true
+			LEFT JOIN LATERAL (
+				SELECT "q"."QuantNumber"
+				FROM "CalendarQuants" AS "q"
+				INNER JOIN "CalendarSettings" AS "cs"
+					ON "q"."ID" = "cs"."CalendarID"
+				WHERE "cs"."ID" = "t"."CalendarID"
+					AND "q"."StartTime" <= "t"."Planned" + "t"."TimeZoneUtcOffsetMinutes" * interval '1 minute'
+				ORDER BY "q"."StartTime" DESC
+				LIMIT 1
+				) AS "qq" ON true
+			LEFT JOIN LATERAL (
+				SELECT "q"."QuantNumber"
+				FROM "CalendarQuants" AS "q"
+				INNER JOIN "CalendarSettings" AS "cs"
+					ON "q"."ID" = "cs"."CalendarID"
+				WHERE "cs"."ID" = "t"."CalendarID"
+					AND "q"."StartTime" <= current_timestamp + "t"."TimeZoneUtcOffsetMinutes" * interval '1 minute'
+				ORDER BY "q"."StartTime" DESC
+				LIMIT 1
+				) AS "qq1" ON true
+			WHERE true
+				#param(State, "t"."StateID")
+				#if(Performer) { 
+				AND EXISTS (
+					SELECT null
+					FROM "TaskAssignedRoles" AS "tar"
+					WHERE "t"."RowID" = "tar"."ID"
+						#param(Performer, "tar"."RoleID")
+						#param(FunctionRolePerformerParam, "tar"."TaskRoleID")
+				)}
+				#if(Author) { 
+				AND EXISTS (
+					SELECT null
+					FROM "TaskAssignedRoles" AS "tar"
+					WHERE "t"."RowID" = "tar"."ID"
+						#param(Author, "tar"."RoleID")
+						#param(FunctionRoleAuthorParam, "tar"."TaskRoleID")
+				)}
+			}				
+		) AS "tt"
+		#if(CardIDParam) {
+		WHERE true
+		} {
+		WHERE false
+		}
+		#param(CardIDParam, "tt"."ID")	
+		
+		#if(Normal) {
+		ORDER BY #order_by
+		}
+	) AS "ttt"
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	};

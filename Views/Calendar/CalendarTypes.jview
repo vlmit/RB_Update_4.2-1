@@ -1,0 +1,126 @@
+﻿{
+  "Alias": "CalendarTypes",
+  "Caption": "$Views_Names_CalendarTypes",
+  "GroupName": "Calendar",
+  "ID": "422a7b6e-9d7f-4d76-aba1-d3487cae216d",
+  "JsonMetadataSource::txt": "CalendarTypes JSONMETA",
+  "MsQuerySource::txt": "CalendarTypes MSSQL",
+  "PgQuerySource::txt": "CalendarTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART CalendarTypes JSONMETA]
+{
+  "Alias": "CalendarTypes",
+  "Caption": "$Views_Names_CalendarTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$CalendarTypes.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_CalendarCalcMethods_Name",
+      "Localizable": true,
+      "SortBy": "lTypeCaption.Value",
+      "Type": "$CalendarTypes.Caption"
+    },
+    {
+      "Alias": "TypeWorkDaysInWeek",
+      "Caption": "$CardTypes_Controls_WorkingDaysInWeek",
+      "Type": "$CalendarTypes.WorkDaysInWeek"
+    },
+    {
+      "Alias": "TypeHoursInDay",
+      "Caption": "$CardTypes_Controls_HoursInDay",
+      "Type": "$CalendarTypes.HoursInDay"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_CalendarCalcMethods_Name_Param",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "CalendarTypes"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART CalendarTypes MSSQL]
+SELECT
+#if(Normal) 
+{
+	[t].[ID]				AS [TypeID],
+	[t].[Caption]			AS [TypeCaption],
+	[t].[WorkDaysInWeek]	AS [TypeWorkDaysInWeek],
+	[t].[HoursInDay]		AS [TypeHoursInDay]
+}
+#if(Count) 
+{
+	count(*) AS [cnt]
+}
+FROM [CalendarTypes] AS [t] WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lTypeCaption]
+
+WHERE 1 = 1
+	#param(Name, [lTypeCaption].[Value])
+#if(Normal) 
+{
+ORDER BY #order_by
+}
+
+
+[TEXTPART CalendarTypes PGSQL]
+SELECT
+#if(Normal) 
+{
+	"t"."ID"				AS "TypeID",
+	"t"."Caption"			AS "TypeCaption",
+	"t"."WorkDaysInWeek"	AS "TypeWorkDaysInWeek",
+	"t"."HoursInDay"		AS "TypeHoursInDay"
+}
+#if(Count) 
+{
+	count(*) AS "cnt"
+}
+FROM "CalendarTypes" AS "t"
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lTypeCaption"
+
+WHERE true
+	#param(Name, "lTypeCaption"."Value")
+#if(Normal) 
+{
+ORDER BY #order_by
+}

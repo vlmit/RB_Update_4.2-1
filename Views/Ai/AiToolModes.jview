@@ -1,0 +1,85 @@
+﻿{
+  "Alias": "AiToolModes",
+  "Caption": "$Ai_Views_ToolModes",
+  "GroupName": "Ai",
+  "ID": "6d07f19b-1a90-45a5-8fb9-5f3677ac91a7",
+  "JsonMetadataSource::txt": "AiToolModes JSONMETA",
+  "MsQuerySource::txt": "AiToolModes MSSQL",
+  "PgQuerySource::txt": "AiToolModes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART AiToolModes JSONMETA]
+{
+  "Alias": "AiToolModes",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Ai_Views_ToolModes",
+  "Columns": [
+    {
+      "Alias": "TMID",
+      "Hidden": true,
+      "Type": "$AiToolMode.ID"
+    },
+    {
+      "Alias": "TMName",
+      "Caption": "$Ai_Views_Columns_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "\"tm\".\"Name\"",
+      "Type": "$AiToolMode.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TMName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Fields_Name_Param",
+      "Type": "$AiToolMode.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "TM",
+      "RefSection": [
+        "AiToolMode"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AiToolModes MSSQL]
+SELECT
+    [tm].[ID] 		AS [TMID],
+    [tm].[Name] 	AS [TMName]
+FROM [AiToolMode] AS [tm]
+#if(Name) {
+CROSS APPLY [Localization]([tm].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+[TEXTPART AiToolModes PGSQL]
+SELECT
+	"tm"."ID"			AS "TMID",
+	"tm"."Name"			AS "TMName"
+FROM "AiToolMode" AS "tm"
+#if(Name) {
+CROSS JOIN "Localization"("tm"."Name", #param(locale)) AS "l"
+}
+WHERE TRUE
+	#param(Name, "l"."Value")
+ORDER BY #order_by

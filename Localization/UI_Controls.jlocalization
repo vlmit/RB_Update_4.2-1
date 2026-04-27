@@ -1,0 +1,6691 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "62b83263-1b0e-4dff-8880-7344145d27ed",
+  "Name": "UI_Controls",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "HashEditor_ActionTabCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Action parameters"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Параметры действия"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_AddItem",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add item"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить элемент"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_AddItemIntoKey",
+      "Comment": "{0} - ключ элемента, куда идет добавление",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add item into '{0}'"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить элемент в '{0}'"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_AddItemTitle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add item"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить элемент"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_AddItemToBeginning",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add item to the beginning"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить элемент в начало"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_AddItemToCollectionAfter",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add item to collection after"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить элемент в список после"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_AddItemToCollectionBefore",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add item to collection before"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить элемент в список до"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_AddItemToEnd",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add item to the end"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить элемент в конец"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_AddValuesButton",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить значения"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_BooleanValueCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_ChangeValue",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить значение"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_ChangeValueTitle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить значение"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_ClearCollection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Clear collection"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить список"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_CopyItem",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копировать"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_CreateAndInputButtonCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create and input value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать и заполнить"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_CreateButtonCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_DeleteItem",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_DeleteItemFromCollection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete from collection"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить из списка"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_DeleteItemWithKey",
+      "Comment": "{0} - ключ удаляемого элемента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete '{0}'"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить '{0}'"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_InputData",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Input data"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Введите данные"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_KeyCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Имя:"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_NewParamCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "New parameter:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Новый параметр"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_NodeTabCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Node parameters"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Параметры узла"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_ObjectTypeCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Object type:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип объекта:"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_PasteAndMergeIntoKey",
+      "Comment": "{0} - ключ элемента, куда идет добавление",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste and merge into '{0}'"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить и объединить в '{0}'"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_PasteAndMergeItem",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste and merge"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить и объединить"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_PasteItem",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_PasteItemIntoKey",
+      "Comment": "{0} - ключ элемента, куда идет вставка",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste into '{0}'"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить в '{0}'"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_PasteItemToBeginning",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste to the beginning"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить в начало"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_PasteItemToCollectionAfter",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste to collection after"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить в список после"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_PasteItemToCollectionBefore",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste to collection before"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить в список до"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_PasteItemToEnd",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste to the end"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить в конец"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_ProcessTabCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process parameters"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Параметры процесса"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_SectionMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Section mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим секции"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_SectionModeTooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When the section mode is on, the editor generates objects with the RowID field."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При включенном режиме секции редактор генерирует объекты с полем RowID."
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_SelectedParamCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Selected parameter"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбранный параметр"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_SelectValueButton",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбрать значение"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_ShowAllowedOnlyCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show allowed only"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показывать только доступные"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_SignalTabCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Signal parameters"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Параметры сигнала"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_SignalTabContent",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "This type of binding does not support the selection of values in the editor"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Данный вид привязки не поддерживает выбор значения в редакторе"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_TypeCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Data type:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип данных:"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_Boolean",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Boolean"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Да/Нет"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_DateTime",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Date/time"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата/время"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_Decimal",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Decimal number"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Десятичное число"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_Dictionary",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Object (hash table)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Объект (хеш-таблица)"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_Double",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Float number"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вещественное число"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_EmptyType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "<without type>"
+        },
+        {
+          "Culture": "ru",
+          "Value": "<без типа>"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_Guid",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Guid"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_Integer",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Integer"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Целое число"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_List",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "List"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_Types_String",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "String"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Строка"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_UseUTCCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "UTC"
+        },
+        {
+          "Culture": "ru",
+          "Value": "UTC"
+        }
+      ]
+    },
+    {
+      "Name": "HashEditor_ValueCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение:"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_ApplicationCantClosing",
+      "Comment": "Текст сообщения, выдаваемый пользователю при невозможности закрытия приложения",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Application can't be closed for the following reasons:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В настоящий момент приложение не может быть закрыто по следующим причинам:"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_ApplicationCloseQuestion",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Close application?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Завершить приложение?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_ApplicationClosingWarning",
+      "Comment": "Текст сообщения, выдаваемый пользователю при попытке закрытия приложения, которое содержит неподтвержденные данные.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Closing of the application won't consider the following operations:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "При завершении приложения не будут учтены следующие операции:"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_CollapseAll",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Collapse all"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Свернуть все"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_ConvertToLowerCase",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Convert to lower case"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Преобразовать в прописные"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_ConvertToNameCase",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Convert to name case"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Преобразовать в имя"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_ConvertToUpperCase",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Convert to upper case"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Преобразовать в заглавные"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_ExpandAll",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expand all"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Развернуть все"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_IdentSelection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Indent selection"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Увеличить отступ"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_InvertCase",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invert Case"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить регистр"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_Redo",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Redo"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вернуть"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_SelectAll",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select all"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбрать все"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Common_Undo",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Undo"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отменить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AutoComplete_InvalidData",
+      "Comment": "Сообщение об ошибке несоответствия типа данных",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Scheme column data type \"{0}\" does not match the field data type of the view \"{1}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип данных колонки схемы \"{0}\" не соответствует типу данных колонки представления \"{1}\"."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AutoComplete_InvalidPopupColumnIndex",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid popup column index - {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Неверный индекс колонки выпадающего списка - {0}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AutoComplete_InvalidViewMapping",
+      "Comment": "{0} - алиас представления.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't map the control with associated view {0}. Please, check that the control`s settings (card fields and column names inside complex column, view mapping, RefSection and ColPrefix) for the control are corresponding to #reference settings in the view metadata. Also check if ColPrefix in #reference are present in columns returned by SQL query."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно связать элемент управления с представлением {0}. Проверьте, что настройки контрола (поля карточки и названия колонок внутри ссылочной колонки, маппинг представления, RefSection и ColPrefix) соответствуют метаинформации представления #reference. Также проверьте, что ColPrefix в #reference представления указан корректно и соответствует колонкам, возвращаемым в SQL."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AutoComplete_NotAllItemsShown",
+      "Comment": "Сообщение об ошибке несоответствия типа данных",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are more items"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показаны не все элементы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AutoComplete_ViewParameterIsRequired",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View parameter alias is required."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Алиас параметра представления не задан."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AutoComplete_ViewWithoutDataToDisplay",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View doesn't contain data available for display by default."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Представление не содержит данных, подходящих для отображения по умолчанию."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_CantCheckAccessCardTaskMissing",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't check permissions - missing a task. Maybe it has already been completed by another user."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно проверить права доступа - отсутствует задание. Возможно, задание уже завершено другим пользователем."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_CantFindSelectedTaskAssignedRoleRow",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't find a selected row with task assigned role"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти выбранную строку роли, связанной с заданием"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_CantFindTaskAssignedRoleInCardTask",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't find a task assigned role to modify in the task"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти в задании связанную роль, которая должна была быть изменена"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_CardViewControl_InitException_ControlAlias",
+      "Comment": "Алиас контрола.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Control alias: \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Алиас контрола: \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_CardViewControl_InitException_ControlCaption",
+      "Comment": "Наименование контрола.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Control сaption: \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Наименование контрола: \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_CardViewControl_InitException_Message",
+      "Comment": "Текст ошибки при возникновении исключения во время инициализации контрола \"Представление\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error has been occurred while loading view data."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При загрузке данных представления произошла ошибка."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_CardViewControl_InitException_ViewAlias",
+      "Comment": "Алиас представления.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View alias: \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Алиас представления: \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_CarTableRequest",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Get table"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Получить таблицу"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ChangeOldMasterConfirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Task assigned roles list already contains role with \"Main\" attribute.\nDo you want to remove this attribute from other row and make this row a new \"Main\"?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В списке ролей, связанных с заданием, уже есть роль с атрибутом \"Основная\".\nВы хотите удалить этот атрибут из другой строки и сделать эту строку новым \"Основной\"?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ColorPicker_DropDown_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Click to pick a color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нажмите, чтобы выбрать цвет"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ColorSelector_InvalidText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid value specified. Use format: #RGB, #RRGGBB or #AARRGGBB"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Введено неверное значение. Укажите цвет в формате: #RGB, #RRGGBB или #AARRGGBB"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ConfirmDeleteOfTaskAssignedRole",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Are you sure, that you want to delete selected task assigned roles?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы уверены, что хотите удалить выбранные роли, связанные с заданием?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_DateTime_InvalidType",
+      "Comment": "{0} - имя контрола.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Control \"{0}\" should have at least one of the options specified: Date / Time."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для контрола \"{0}\" должно быть указано по крайней мере одно из значений: Дата / Время."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Decimal_InvalidValue",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value is not a valid decimal number."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение не является десятичным числом."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_DecimalSeparatorViolation",
+      "Comment": "{0} - максимальное количество знаков после запятой, которое было разрешено.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are more than {0} digits after the decimal separator."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Количество знаков после разделителя не может быть больше {0}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Double_InvalidValue",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value is not a valid real number."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение не является вещественным числом."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_AddFromTemplate",
+      "Comment": "Пункт меню - \"Создать файл по шаблону\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create file from template"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать файл по шаблону"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_AddImage",
+      "Comment": "Добавить изображение",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add image"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить изображение"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ApplicationAvailabilityProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Please, wait...\n\nApplication availability check in progress"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пожалуйста, подождите...\n\nВыполняется проверка доступности приложения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Ascending",
+      "Comment": "{0} - название сортировки, которая выполняется в режиме \"по возрастанию\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0} (ascending)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0} (по возрастанию)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ByCategory",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By category"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По категории"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ByChangeDate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By modification date"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По дате изменения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ByCopy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By copy"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По копии"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ByCopy_Copy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копия"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ByCopy_Description",
+      "Comment": "{0} - копия или оригинал.\n{1} - пользователь, который последним изменил файл.\n{2} - дата последнего изменения файла.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0}: {1}   of {2}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0}: {1}   от {2}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ByCopy_Format",
+      "Comment": "{0} - имя файла.\n{1} - копия или оригинал.\n{2} - пользователь, который последним изменил файл.\n{3} - дата последнего изменения файла.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0}\n{1}: {2}   of {3}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0}\n{1}: {2}   от {3}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ByCopy_Original",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Original"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Оригинал"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ByName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По имени"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_BySize",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By size"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По размеру"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CantAddFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Files can't be added."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя добавлять файлы."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CantOpenForEdit",
+      "Comment": "{0} - имя файла.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File \"{0}\" can't be opened for edit.\n\nOpen for read?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл \"{0}\" нельзя открыть для редактирования.\n\nОткрыть для чтения?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Category",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0}\n{1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0}\n{1}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ChangeCategory",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change category"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить категорию"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CheckDS",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Check digital signatures"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Проверить ЭП"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CommentDialogCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Signature comment"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Комментарий подписи"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CompareFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Compare files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сравнение файлов"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CompareInWord",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Compare in Word"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сравнить в Word"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ConvertImage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Convert image to PDF / TIFF"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Преобразовать изображение в PDF / TIFF"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ConvertToPDFWithReplace",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Convert file to PDF and replace"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Преобразовать файл в PDF и заменить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CopyLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копировать ссылку"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CopyToClipboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy to clipboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копировать в буфер обмена"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CreateCopy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create copy"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать копию"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CreateNewCategory",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Or create a new category"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Или создайте новую категорию"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CreatePdf",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create PDF"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать PDF"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CreatePdf_FileName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Document"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Документ"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CycleFilesDefaultMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Default display mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим отображения по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CycleFilesMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Files by cycles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файлы по циклам"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_CycleGroup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cycle {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цикл {0}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Delete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Descending",
+      "Comment": "{0} - название сортировки, которая выполняется в режиме \"по убыванию\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0} (descending)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0} (по убыванию)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_DiscardFileChangesQuestion",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Discard all changes in file content, name and category?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отменить все изменения в содержимом, имени и категории файла?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_DocumentSigningProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Please, wait...\n\nDocument signing in progress\n\n"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пожалуйста, подождите...\n\nВыполняется подпись документа\n\n"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_DocumentsOnApprovalGroup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Documents on approval"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Согласуемые документы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_DocumentVerifyProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Please, wait...\n\nDocument verification in progress\n\n"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пожалуйста, подождите...\n\nВыполняется проверка подписи документа\n\n"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Done",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Done"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Готово"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Download",
+      "Comment": "Текст элемента контекстного меню для веба",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Download"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скачать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_DragAndDropFilesHere",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Drag and drop files here or click to select"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перетащите файлы сюда или нажмите для выбора"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_EDCWindowHeader",
+      "Comment": "Электронные подписи файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Digital signatures of file"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Электронные подписи файла"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_EditImages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit images"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать изображения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_EditImagesWithMerge",
+      "Comment": "{0} - имя файла, в который выполняется объединение.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit images and merge into {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать изображения и объединить в {0}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_EDSMenuGroup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Digital signatures"
+        },
+        {
+          "Culture": "ru",
+          "Value": "ЭП"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_EnterCategoryTitle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Enter title"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Введите название"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ErrorNoFileControl",
+      "Comment": "Нельзя прикрепить файл. Откройте карточку, в которую может быть добавлен файл",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File cannot be attached. Open a card that can have a file attached."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя прикрепить файл. Откройте карточку, в которую может быть добавлен файл."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ExportEDS",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Export digital signatures"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экспортировать подписи"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ExportFilewithEDS",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Export file with digital signatures"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экспортировать файл с электронными подписями"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ExportSignature",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Export signature"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экспортировать подпись"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ExportSignatureWithFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Export signature (with file)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экспортировать версию (вместе с файлом)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileCopy_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy:  {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копия:  {0}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileExportReplaceDialogCaption",
+      "Comment": "Заголовок окна при обнаружении совпавшего имени файла в папке экспорта",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Concurrent file names found"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обнаружены совпадающие имена файлов"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileExportReplaceDialogMessage",
+      "Comment": "Содержимое окна при обнаружении совпавшего имени файла в папке экспорта",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File \"{0}\" is already contained in the folder: \"{1}\".\nReplace it and all subsequent matches?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл \"{0}\" уже содержится в папке: \"{1}\".\nЗаменить его и все последующие совпадения?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileIsNotYetUploaded",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File has not yet been uploaded to server."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл ещё не загружен на сервер."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FilesOpeningMesage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You are going to open more than one file at a time.\nContinue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы собираетесь открыть более одного файла одновременно.\nПродолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileVerrsionWithError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File version is uploaded with an error."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Версия файла загружена с ошибкой."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileVersionErrorDate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error date:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата ошибки:"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileVersionErrorText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст ошибки:"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileVersionsChangeDate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change date"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата изменения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileVersionsChangedBy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Changed by"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменён"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FileVersionsFileName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Имя файла"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_FilterFormat",
+      "Comment": "Заголовок группы с названием активной фильтрации в контроле \"Список файлов\".\n{0} - имя группы, по которой выполняется фильтрация.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "filter:  {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "фильтр:  {0}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Filtering",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Filtering"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Фильтрация"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Gallery",
+      "Comment": "Галерея",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Gallery"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Галерея"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Grouping",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Grouping"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Группировка"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_GroupingByCycle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By approval cycle"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По циклу согласования"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_HidePreview",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hide preview area"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрыть область предпросмотра"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ImportEDS",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Import digital signatures"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Импортировать подписи"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_MakePhoto",
+      "Comment": "Сделать фото",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To make a photo"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сделать фото"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_MaxFileSizeExceeded",
+      "Comment": "Сообщение, выводимое в случае, если превышен максимальный размер файла.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Action is cancelled. It is allowed to attach file with a maximum size 2 GB."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Действие отменено. Разрешается прикладывать файл размером не более 2 ГБ."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_MergeFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Merge files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Объединение файлов"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_MergeNewVersionWithFollowingInWord",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Merge to new version with the following in Word"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Объединить в Word с текущим в новую версию"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_MergeWithFollowingInWord",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Merge with the following in Word"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Объединить с текущим в Word"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_MultiSelectEnable",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select multiple files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбрать несколько файлов"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_NewFileName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "New file name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Новое имя файла"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_NoAvailableCategories",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No available categories"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступных категорий"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_NoCategory",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No category"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Без категории"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_NoCopy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Other"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прочие"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_NoFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файлы отсутствуют"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_NoFilter",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No filter"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Без фильтра"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_NoGrouping",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No grouping"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Без группировки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_OpenForEdit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open for edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть для редактирования"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_OpenForRead",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open for read"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть для чтения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_OpenInFolderForEdit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open for edit in folder"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть для редактирования в папке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_OpenInFolderForRead",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open for read in folder"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть для чтения в папке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_PasteFromClipboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste from clipboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить из буфера обмена"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_PermissionsError",
+      "Comment": "Ошибка разрешений",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insufficient rights to work with the storage. Grant permissions in the application settings."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Недостаточно прав для работы с хранилищем. Предоставьте права в настройках приложения."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Preview",
+      "Comment": "Текст элемента контекстного меню для веба",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preview"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предпросмотр"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RemoveExternalSourceFileMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File \"{0}\" is an external source for another copied files. Copied files will be deleted. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл \"{0}\" является источником для других скопированных файлов. Скопированные файлы будут удалены. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RemoveExternalSourceFilesMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The following files are external sources for another copied files: {0}. Copied files will be deleted. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Следующие файлы являются источником для других скопированных файлов: {0}. Скопированные файлы будут удалены. Продолжить?\""
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RemoveOriginalFileMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File \"{0}\" has copies which will not be copies after its removal. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл \"{0}\" содержит копии, которые перестанут быть копиями в случае его удаления. Продолжить удаление?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RemoveOriginalFilesMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Files have copies which will not be copies after their removal: {0}. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Следующие файлы содержат копии, которые перестанут быть копиями в случае удаления файлов: {0}. Продолжить удаление?\""
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RemoveSelectedFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove file \"{0}\"?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить файл \"{0}\"?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RemoveSelectedFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove selected files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить выбранные файлы?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RemoveSignature",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove signature"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить подпись"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Rename",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Rename"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Переименовать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Replace",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Replace"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заменить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ReplaceFromTemplate",
+      "Comment": "Пункт меню - \"Заменить файл по шаблону\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Replace file from template"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заменить файл по шаблону"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RestoreFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Restore file"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Восстановить файл"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RestorePreview",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show preview area"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать область предпросмотра"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RestoreSelectedFileMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File \"{0}\" is selected for restoring. When the file is restored, the card will be saved. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбран файл \"{0}\" для восстановления. При восстановлении файла выполнится сохранение карточки. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_RevertFileChanges",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Revert file changes"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отменить изменения в файле"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_SaveAs",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save as…"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить как…"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_SaveCardBeforeAddFileTemplate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Before adding a file, the card will be saved. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перед добавлением файла карточка будет сохранена. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_SelectCategory",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select a category"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбрать категорию"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_SelectFileName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select file name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выберите имя файла"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_SelectImageSource",
+      "Comment": "Выберите источник изображения",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select image source"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выберите источник изображения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Share",
+      "Comment": "Поделиться",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Share"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поделиться"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ShowAllCycleFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "All files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Все файлы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ShowCurrentAndLastCycleFilesOnly",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Current and previous cycles files only"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файлы текущего и предыдущего циклов"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ShowCurrentCycleFilesOnly",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Current cycle files only"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файлы текущего цикла"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ShowEDS",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show digital signatures list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать список электронных подписей"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_SignDS",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Sign"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подписать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_SignDS_SelectCertificateText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "(select certificate)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "(выбрать сертификат)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Sorting",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Sorting"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сортировка"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_TempLink",
+      "Comment": "Название пункта меню \"Временная ссылка\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Access via temporary link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступ по временной ссылке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_UploadFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Upload files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Загрузить файлы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_UploadFiles_CanAttach",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Click to add a file or drag it here."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для добавления файла щелкните мышью или перетащите его сюда."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_UseAsCurrent",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Use as current"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Использовать как текущую"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_ValidationInfo",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Validation info"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Информация о проверке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Version",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0}\nVersion {1}: {2}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0}\nВерсия {1}: {2}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_Version_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Version {0}: {1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Версия {0}: {1}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_VersionExportFormat",
+      "Comment": "Шаблон имени файла версии при выгрузке\n{0} - имя файла\n{1} - номер версии\n{2} - расширение",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0} (v{1}){2}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0} (в{1}){2}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_VersionsList",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File versions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список версий"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_FilesControl_VersionsOfFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File versions {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Версии файла {0}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Grid_Add",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Grid_Add_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add new row"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить новую строку"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Grid_Delete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Grid_Delete_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete selected rows    [Delete]"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаляет выделенные строки из таблицы    [ Delete ]"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Grid_MoveDown_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Move selected rows down"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сдвинуть выбранные строки вниз"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Grid_MoveUp_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Move selected rows up"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сдвинуть выбранные строки вверх"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Grid_SortByOrder_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Sort rows in ascending order"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отсортировать строки в порядке возрастания порядка"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_GridControl_Delete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Guid_InvalidValue",
+      "Comment": "Сообщение о том, что значение не является уникальным идентификатором.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value is not a valid unique identifier."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение не является уникальным идентификатором."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ImageEditor_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Editing document"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование документа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Integer_InvalidValue",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value is not a valid integer number."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение не является целым числом."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_InvalidDecimalSeparator",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Digits count after decimal separator can't be negative value."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Количество символов после разделителя не может быть отрицательным числом."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_LinkPlaceholder_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tessa"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Tessa"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_LinkPlaceholder_Uri",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "https://tessa.ru"
+        },
+        {
+          "Culture": "ru",
+          "Value": "https://tessa.ru"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_MaxValueViolation",
+      "Comment": "{0} - максимально разрешённое значение.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value is greater than the maximum permitted value {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение больше, чем максимально разрешённое значение {0}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_MinValueViolation",
+      "Comment": "{0} - минимально разрешённое значение.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value is less than the minimum permitted value {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение меньше, чем минимально разрешённое значение {0}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_FullScreenToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Fullscreen view"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Полноэкранный просмотр"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_NavigateFirstToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Navigate to first page"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перейти на первую страницу"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_NavigateLastToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Navigate to last page"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перейти на последнюю страницу"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_NavigateNextToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Navigate to next page"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перейти на следующую страницу"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_NavigatePrevToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Navigate to previous page"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перейти на предыдущую страницу"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_PagingModeToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paging view"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Постраничное отображение"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_PreparingPage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preparing page"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подготовка страницы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_RotateLeftToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Rotate page 90 degrees counterclockwise"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Повернуть страницу на 90 градусов против часовой стрелки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_RotateRightToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Rotate page 90 degrees clockwise"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Повернуть страницу на 90 градусов по часовой стрелке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Paging_ScrollingModeToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Scrolling view"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прокрутка между страницами"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_PrepareProtocolSplash",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Building protocol"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Формирование протокола"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_AutoEncoding",
+      "Comment": "Название автоматического варианта кодировки для веб-клиента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Auto"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Авто"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_AutoScale",
+      "Comment": "Название варианта автоматического масштабирования для веб-клиента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Auto"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Авто"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_ScaleWidth",
+      "Comment": "Название варианта автоматического масштабирования по ширине для веб-клиента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Auto (Fit width)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Авто (По ширине)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_ScaleHeight",
+      "Comment": "Название варианта автоматического масштабирования по высоте для веб-клиента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Auto (Fit height)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Авто (По высоте)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_ConvertingFile",
+      "Comment": "Предпросмотр файла в desktop-клиенте с конвертацией в PDF. Крупный текст.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preparing preview"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подготовка предпросмотра"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_ConvertingFile_FullText",
+      "Comment": "Предпросмотр файла в desktop-клиенте с конвертацией в PDF. Мелкий поясняющий текст.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Please, wait...\n\nFile conversion is requested in order to show file in preview without using third party apps (such as Word or Excel).\n\nIf its the first time when current version is being prepared, then it should take from several seconds for small files up to several minutes. Next time file will show up in preview instantly, because it will have been prepared already.\n\nYou can double click the file or use context menu, in that case it will open without preparations. If you close or refresh the card, then preparation process will continue intact, and next time preview will load quickly, if preview will be ready in that time. File conversion is performed on the server in background mode.\n\nIf after a long period of time (20-30 minutes) file preview is still not completed, then contact system administrator."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пожалуйста, подождите...\n\nЗапрошено преобразование файла для отображения в области предпросмотра без использования сторонних приложений (таких как Word или Excel).\n\nЕсли подготовка текущей версии файла выполняется первый раз, то она может занять от нескольких секунд для небольших файлов до нескольких минут. Впоследствии файл будет отображаться мгновенно, поскольку подготовка уже выполнена.\n\nВы можете открыть файл двойным кликом или через контекстное меню, в этом случае он загрузится без подготовки. Если вы закроете или обновите карточку, то процесс подготовки не прервётся, и при следующем открытии файла его предпросмотр загрузится быстро, если подготовка завершится к этому моменту. Преобразование файла выполняется на сервере в фоновом режиме.\n\nЕсли спустя длительное время (20-30 минут) подготовка файла не завершилась, то обратитесь к администратору системы."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_Error",
+      "Comment": "{0} - дата и время возникновения ошибки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Latest file version is uploaded with error.\nDate: {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Последняя версия файла загружена с ошибкой.\nДата ошибки: {0}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_ErrorText",
+      "Comment": "{0} - сокращённый текст ошибки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error: {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст ошибки: {0}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_FileNotLoaded",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File is not loaded"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл не загружен"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_FilesNotYetLoaded",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File is not yet uploaded to server"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл ещё не загружен на сервер"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_FilesNotYetLoaded_FullText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee who created or modified the file isn't completed its uploading to the server yet.\nPlease, update the card in a few minutes.\n\nIf the color of the file becomes yellow, then it is downloaded and ready to open.\nIf the file stays gray then contact the administrator."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудник, создавший или изменивший файл, ещё не закончил его загрузку на сервер.\nПожалуйста, обновите карточку через несколько минут.\n\nЕсли цвет файла станет жёлтым, то он загружен и доступен для просмотра.\nЕсли файл будет по-прежнему серым, то обратитесь к администратору."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_FilesSelected",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Selected files:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выделены файлы:"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_HiddenNotification",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You can show the preview area again using the context menu near the files list."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В контекстном меню рядом со списком файлов можно отобразить скрытую область предпросмотра."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_Loading",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Loading..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Загрузка..."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_MouseMode_Auto",
+      "Comment": "Название варианта автоматического режима мыши для веб-клиента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cursor (Auto)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Курсор (Авто)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_MouseMode_Grab",
+      "Comment": "Название варианта режима перемещения мышью для веб-клиента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Page moving"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перемещение страницы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_MouseMode_Select",
+      "Comment": "Название варианта режима выделения мышью для веб-клиента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text selection"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выделение текста"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_MouseMode_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mouse mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим работы мыши"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_NotAvailable",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preview is not available"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предварительный просмотр недоступен"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_NotAvailable_IsDirty",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preview is not available: file is opened for editing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предварительный просмотр недоступен: файл открыт на редактирование"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_OpeningError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error opening file"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ошибка при открытии файла"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_OriginalScale",
+      "Comment": "Название варианта масштабирования для веб-клиента с настоящим размером",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Original"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Оригинал"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_PreviewArea",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File preview"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Область\nпредпросмотра"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_PreviewAreaAdditional",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select a file to display its preview"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выберите файл, чтобы отобразить его предварительный вид"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_Print_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Print"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Печать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_RotateLeft_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Rotate 90 degrees to the left"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Повернуть на 90 градусов влево"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_RotateRight_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Rotate 90 degrees to the right"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Повернуть на 90 градусов вправо"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_Scale_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Scale"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Масштаб"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_Thumbnails_Visibility",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Thumbnails"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Миниатюры"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_Thumbnails_Visibility_Hide",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hide thumbnails"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрыть миниатюры"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_Thumbnails_Visibility_Left",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Thumbnails on the left"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Миниатюры слева"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Preview_Thumbnails_Visibility_Right",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Thumbnails on the right"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Миниатюры справа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_QuickSearch_Placeholder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Quick search"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Быстрый поиск"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ReferenceError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't find #reference in view that corresponds to section settings of the control."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти #reference в представлении, который бы соответствовал настройкам секции контрола."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_RefSectionError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't find #reference in view that has RefSection, which is equal to \"RefSection\" setting in control."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти #reference в представлении, который бы содержал RefSection, равный значению настройки \"RefSection\" в контроле."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_AddFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add file"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить файл"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_AddLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить ссылку"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Attachment_Delete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Attachment_InsertInText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert in text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить в текст"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Autocomplete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Autocomplete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выпадающий список"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Checkbox",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Checkbox"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Флажок"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Checklist",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Checklist"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Чек-лист"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_CodeBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Code block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Блок кода"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Controls",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Controls"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контролы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_DeleteQuote",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "удалить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_EditLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать ссылку"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Emoji",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Emoji"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Эмодзи"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Emojies_QuickSearchPlaceholder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Quick search"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Быстрый поиск"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_File",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_FileTooltipSize",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Size: {0} {1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Размер: {0} {1}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Headers_H1",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "H1"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заг. 1"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Headers_H2",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "H2"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заг. 2"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Headers_H3",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "H3"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заг. 3"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Headers_H4",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "H4"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заг. 4"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Headers_H5",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "H5"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заг. 5"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Headers_H6",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "H6"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заг. 6"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Headers_Normal",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_InsertHyperLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_InsertLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить ссылку"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Link",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ссылка"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_LinkPlaceholderText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ссылка"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_LinkPlaceholderUri",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "https://example.ru"
+        },
+        {
+          "Culture": "ru",
+          "Value": "https://example.ru"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_LinkText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Link text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст ссылки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Save",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_SaveHyperLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_CellSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cell settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки ячейки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_ColumnSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Column settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки колонки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_DeleteColumn",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить колонку"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_DeleteRow",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete row"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить строку"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_DeleteTable",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete table"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить таблицу"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_InsertColumnAtLeft",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert column left"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить колонку слева"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_InsertColumnAtRight",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert column right"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить колонку справа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_InsertRowAbove",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert row above"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить строку выше"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_InsertRowBelow",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert row below"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить строку ниже"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_InsertTable",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert table"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить таблицу"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_AlignCenter_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Center"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По центру"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_AlignLeft_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Left"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Слева"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_AlignRight_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Right"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Справа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_Background",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Background"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Фон"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_Background_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Цвет фона ячеек таблицы."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет фона ячеек таблицы."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет рамки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderColor_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border color of table cells."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет рамки ячеек таблицы."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderSettingsGroup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки рамки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border style"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Стиль рамки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyle_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cell border style."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Стиль рамки ячеек."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyles_Dashed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дефис"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyles_Dotted",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dotted"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пунктир"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyles_Double",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Double"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Двойной"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyles_Groove",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Groove"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Граница канавки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyles_Inset",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Inset"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Врезная рамка"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyles_None",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "None"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyles_Outset",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Outset"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Внешняя граница"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyles_Ridge",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Ridge"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ребристая граница"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderStyles_Solid",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Solid"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сплошной"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderWidth",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Border width"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Толщина рамки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_BorderWidth_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The thickness of the table cell in pixels."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Толщина рамки ячейки таблицы в пикcелях."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_CellSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cell settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки ячейки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_CellSettingsGroup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cell settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки содержимого ячейки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_Clear",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Clear"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_ClearStyles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Clear styles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить стили"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_ClearStyles_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Clear styles applied to cells."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить примененные к ячейкам стили."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_ColumnSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Column settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки колонки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_FontColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Font color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет текста"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_FontColor_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Font color."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет текста."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_Justify_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Justify"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Растянуть по ширине"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_OtherSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Other settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прочие настройки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_RowSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Row settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки строки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TableAlign",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table alignment"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TableAlign_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Horizontal alignment of the table in the text."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание таблицы по горизонтали в тексте."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TableAlignCenter_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Center"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По центру"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TableAlignLeft_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Left"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Слева"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TableAlignRight_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Right"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Справа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TableJustify_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Justify"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Растянуть по ширине"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TableSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TableSettingsGroup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TextAlign",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text alignment (horizontal)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание текст (по горизонтали)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_TextAlign_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Align text in cells horizontally."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание текста в ячейках по горизонтали."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_VerticalAlignBottom_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Bottom"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Снизу"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_VerticalAlignMiddle_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Middle"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По центру"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_VerticalAlignTop_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Top"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сверху"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_VerticalTextAlign",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text alignment (vertical)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание текста (по вертикали)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_PropertyGrid_VerticalTextAlign_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Align text in cells vertically."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание текста в ячейках по вертикали."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_RowSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Row settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки строки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Table_TableSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки таблицы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_TextArea",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text area"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текстовое поле (многострочное)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_TextField",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text field"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текстовое поле (однострочное)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Toc_AddPanelIntoText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert panel into text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить панель в текст"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Toc_LeftPanel",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Panel on the left"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Панель слева"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Toc_NoPanel",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Not display"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не отображать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Toc_PanelCollapsed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hide panel by default"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрывать панель по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Toc_RightPanel",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Panel on the right"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Панель справа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_Toc_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table of Contents"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Содержание"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_AddBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить блок"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Align",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text align"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выравнивание текста"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Align_Center",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Center align"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По центру"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Align_Left",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Left align"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По левому краю"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Align_Right",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Right align"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По правому краю"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_AttachImage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert image"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить изображение"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_BackgroundColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Background color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет выделения текста"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_BlockBackgroundColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Block background"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Фон блока"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Bold",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Bold (Ctrl+B)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Жирный (Ctrl+B)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Bullets",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Bullets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Маркеры"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Collapse",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Collapse"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Свернуть"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Edit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Expand",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expand"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Развернуть"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_FontSize",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Font size"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Размер шрифта"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_ForegroundColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Foreground color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет текста"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Headers",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Headers"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заголовки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_InlineBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert monospaced text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить моноширинный текст"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Italic",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Italic (Ctrl+I)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Курсивный (Ctrl+I)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Justify",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Justify"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По ширине"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Lock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Lock"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заблокировать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Mention",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mention"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Упоминание"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_MonoBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add monospaced block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить моноширинный блок"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_NumberingBullets",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Numbering bullets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нумерация"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_PlaygroundRestore",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Restore"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Восстановить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_PlaygroundSave",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_QuoteBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Insert quote block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить блок-цитату"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_RemoveBlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить блок"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_ResetStyle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove all styles"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить всё форматирование"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Strikeout",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Strikeout (Ctrl+Alt+S)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Зачеркнутый (Ctrl+Alt+S)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_TableOfContents",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Table of contents panel"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Панель оглавления"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Underline",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Underline (Ctrl+U)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подчеркнутый (Ctrl+U)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Rich_ToolTip_Unlock",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unlock"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разблокировать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_RichTextBox_ForwardedMessage_Edit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_RichTextBox_ForwardedMessage_Expand",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expand"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Развернуть"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_RichTextBox_ForwardedMessage_Hide",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hide"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Свернуть"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_RoleNotSpecified",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Role not specified"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Роль не указана"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SaveTaskAssignedRoles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save changes?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить изменения?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_AddFileError",
+      "Comment": "Сообщение об ошибке, возникающее при невозможности добавить файл с изображением.\n{0} - имя файла.\n{1} - краткое сообщение об ошибке.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to add file \"{0}\": {1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось добавить файл \"{0}\": {1}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_AddFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add images"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить изображения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_AddFilesSplash",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adding files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавление файлов"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_AddFilesTitle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select image files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выберите файлы с изображениями"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_DateStamp",
+      "Comment": "Строка формата для вывода даты в штамп.\n{0} - выводимая дата (например: 01.02.2003)",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Date: {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата: {0}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_DeleteMultiplePagesConfirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete pages?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить страницы?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_DeletePageConfirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete page?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить страницу?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_DeletePageToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete page from the list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить страницу из списка"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_DeleteSelectedPagesToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete selected pages from the list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить выбранные страницы из списка"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_DocumentFormatCaption",
+      "Comment": "Отображаемое пользователю название типа документа, в который будут сохранены скан-образы.\n{0} - название типа документа, обычно соответствует расширению файла без точки.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "document format {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "формат документа {0}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_DriverLabel",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Driver version"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Версия драйвера"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_EditPageToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open page using an external Windows program for PNG extension"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть страницу во внешней программе, настраиваемой в Windows для расширения PNG"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_ErrorCodeText",
+      "Comment": "Текст ошибки сканирования, которая не содержит исключения, но имеет код ошибки и код состояния.\n{0} - код ошибки.\n{1} - код состояния.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Return code: {0}\nCondition code: {1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Код ошибки: {0}\nКод состояния: {1}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_ExtractSelectedPages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Extract the selected"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Извлечь выбранные"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_ExtractSelectedPages_Confirm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove selected pages from current document and reopen them to save in a new document?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить выбранные страницы из текущего документа и повторно открыть их для сохранения в новый документ?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_ExtractSelectedPages_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove selected pages from current document and reopen them to save in a new document."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить выбранные страницы из текущего документа и повторно открыть их для сохранения в новый документ."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_LargeSizeTag",
+      "Comment": "Информация о том, что тип документа приведёт к формированию файла большого размера.\n{0} - название типа документа и остальная часть строки до добавления предупреждения.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0}  (larger file size)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0}  (больше размер файла)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_LowQualityTag",
+      "Comment": "Информация о том, что тип документа приведёт к формированию файла низкого качества.\n{0} - название типа документа и остальная часть строки до добавления предупреждения.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0}  (lower image quality)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0}  (ниже качество изображений)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_NotEnoughMemory",
+      "Comment": "Сообщение об ошибке, возникающее при недостатке памяти в процессе генерации сканированного документа.\nВ этом случае пользователю подсказывается, что можно использовать TIFF, чтобы гарантированно сгенерировать документ.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Not enough memory to save the document. When creating very large documents, it is recommended to select TIFF document format."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Недостаточно памяти для сохранения документа. При создании очень больших документов рекомендуется выбрать формат документа TIFF."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_PrepareFileSplash",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preparing document"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подготовка документа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_PrepareFileSplashMultiple",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preparing document {0} / {1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подготовка документа {0} / {1}"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_PrepareScanSplash",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preparing scanning"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подготовка сканирования"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_ProcessingImageSplash",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Processing image"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обработка изображения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_ProtocolLabel",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "API version"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Версия API"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_RefreshPageToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Refresh page after opening in external program"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновить страницу после открытия во внешней программе"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_RotateLeftToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Rotate selected page 90 degrees counterclockwise"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Повернуть выбранную страницу на 90 градусов против часовой стрелки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_RotateRightToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Rotate selected page 90 degrees clockwise"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Повернуть выбранную страницу на 90 градусов по часовой стрелке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_SaveAndClose",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save and close"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить и закрыть"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_SaveConfirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save pages to file before closing?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить страницы в файл перед закрытием?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_SaveFilesAsCommandToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save selected pages to chosen location"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить выбранные страницы в указанное местоположение"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_SavingDocumentSplash",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Saving document"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранение документа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_SavingFilesSplash",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Saving files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранение файлов"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Creating document"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создание документа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_WithoutStampTag",
+      "Comment": "Информация о том, что тип документа формируется без штампа.\n{0} - название типа документа и остальная часть строки до добавления предупреждения.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0}  (without stamp)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0}  (без штампа)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Scan_WithStampTag",
+      "Comment": "Информация о том, что тип документа формируется со штампом.\n{0} - название типа документа и остальная часть строки до добавления предупреждения.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0}  (with stamp)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0}  (со штампом)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ScrollingZoom_OriginalSize_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Click to select 100% scale.\n\nCtrl+mouse wheel - modify scale\nShift+mouse wheel - horizontal scroll"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нажмите, чтобы выбрать масштаб 100%\n\nCtrl+колесо мыши - изменить масштаб\nShift+колесо мыши - горизонтальная прокрутка"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_SelectorOpenningError",
+      "Comment": "Текст, который показывается пользователю, если произошла проблема при открытии автокомплита в режиме выбора",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cannot open autocomplete in selector mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось открыть автокомплит в режиме выбора"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TableViewControl_WrongTypeMasterException",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Master control for the table-view is of type {0} but its expected to be {1}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Мастер-контрол таблицы-представления имеет тип {0}, но ожидался тип {1}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TaskAssignedRolesToolbar_Add_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add new task assigned role."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить новую роль, связанную с заданием."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TaskAssignedRolesToolbar_Delete_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete selected task assigned roles."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить выбранную роль из списка связанных с заданием ролей."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TaskAssignedRolesToolbar_SetMaster_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Set \"Main\" attribute for selected task's assigned role.\nPrevious task's assigned role with the \"Main\" attribute will no longer be the \"Main\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Установить признак \"Основная\" для выбранной роли из списка связанных с заданием ролей.\nПредыдущая связанная с заданием роль, которая имела признак \"Основная\" - больше не будет являться \"Основной\"."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TaskAssignedRolesToolbar_SetShowInTaskDetails_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Set \"Show in task details\" attribute for the selected task's assigned role.\nThe task assigned role with that attribute will be shown in task details."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Установить признак \"Отображать в задании\" для выбранной роли из списка связанных с заданием ролей.\nСвязанная с заданием роль с этим признаком, будет показана в информации о задании."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TaskRoleNotSpecified",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Function role not specified"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указана функциональная роль"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TextBox_InvalidRowCount",
+      "Comment": "{0} - минимальное количество строк.\n{1} - максимальное количество строк.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The minimum row count {0} is greater than the maximum row count {1}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Минимальное количество строк {0} больше, чем максимальное {1}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TextMaxLengthViolation",
+      "Comment": "{0} - максимально разрешённая длина текста.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text length is greater than the maximum permitted value {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Длина текста больше, чем максимально разрешённое значение {0}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TextMinLengthViolation",
+      "Comment": "{0} - минимально разрешённая длина текста.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text length is less than the minimum permitted value {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Длина текста меньше, чем минимально разрешённое значение {0}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ThisRowAlreadyMaster",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "This task assigned role has been set already as \"Main\""
+        },
+        {
+          "Culture": "ru",
+          "Value": "Эта функциональная роль задания уже установлена как \"Основная\""
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TreeControl_DragItemHere",
+      "Comment": "Отображается в контроле дерева при отсутствующих узлах и с возможностью добавлять новые элементы с помощью перетаскивания",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Drag item here"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перетащите элемент сюда"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TreeControl_EmptyTreeDefaultMessage",
+      "Comment": "Отображается в контроле дерева при отсутствующих узлах.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No items to display"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет элементов для отображения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TreeControl_MoveIntoDescendant",
+      "Comment": "Нельзя переместить элемент в потомков",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An item cannot be moved into one of its descendants."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя переместить элемент в его дочерний элемент."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TreeControl_MoveIntoItself",
+      "Comment": "Нельзя переместить элемент в себя",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An item cannot be moved into itself."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя переместить элемент в самого себя."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TreeControl_NotFound",
+      "Comment": "Отображается, если поиск по элементам дерева не дал результатов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No results found"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ничего не найдено"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TreeControl_ReadonlyError",
+      "Comment": "Ошибка возникающая при перемещении элемента, если хотя бы один узел имеет значение isReadonly",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The item cannot be moved because the source or target is read-only."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перемещение элемента запрещено, так как элемент или его цель доступны только для чтения."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ViewMapping_CantFindSectionOrColumn",
+      "Comment": "{0} - имя секции.\n{1} - имя колонки.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't find section ({0}) or column ({1}), used in view mapping."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти секцию ({0}) или колонку ({1}), записанную в маппинге на представление."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ViewMapping_InvalidSectionOrColumn",
+      "Comment": "{0} - алиас параметра.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mapping for parameter {0} has an empty value for section or column."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Маппинг на параметр {0} имеет пустые значения для секции или колонки."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ViewMapping_NoViewParam",
+      "Comment": "{0} - алиас представления.\n{1} - алиас параметра.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View {0} doesn't contain the parameter {1}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Представление {0} не содержит параметра {1}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_ViewReferencePrefixError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't find #reference in view that has ColPrefix which is equal to \"Reference prefix\" setting in control."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти #reference в представлении, у которого ColPrefix равен значению настройки \"Префикс референса\" в контроле."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Views_CollapseAll",
+      "Comment": "Тултип кнопки для сворачивания групп в контроле представления",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Collapse all groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Свернуть все группы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Views_ExpandAll",
+      "Comment": "Тултип кнопки для разворачивания групп в контроле представления",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expand all groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Развернуть все группы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_WE_ChangeOldMasterConfirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The action task's function roles list already contains role with \"Main\" attribute.\nDo you want to remove this attribute from other row and make this row a new \"Main\"?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В списке функциональных ролей, связанных с действием, уже есть роль с атрибутом \"Основная\".\nВы хотите удалить этот атрибут из другой строки и сделать эту строку новым \"Основным\"?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_WE_ChangeRolesMasterConfirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The \"Main\" attribute is already set for the entries from the list of roles.\nDo you want to remove this attribute from the entries in the list of roles and make the current row the new \"Main\"?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Атрибут \"Основная\" уже установлен для записей из списка ролей.\nВы хотите удалить этот атрибут у записей из списка ролей и сделать текущую строку новым \"Основным\"?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_WE_ChangeTaskRolesOldMasterConfirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The action task's function roles list already contains role with \"Main\" attribute.\nDo you want to remove this attribute and set the\"Main\" attribute for entries from the roles list?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В списке функциональных ролей, связанных с действием, уже есть роль с атрибутом \"Основная\".\nВы хотите удалить этот атрибут и установить признак \"Основной\" для записей из списка ролей?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_YouMustSelectOnlyOneRow",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You must select only one task assigned role row"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вы должны выбрать только одну роль, связанную с заданием"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_YouNotAuthorizedToDoThis",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You are not authorized to do this"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Недостаточно прав для выполнения операции"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Zoom_FitToScreen",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "fit to screen"
+        },
+        {
+          "Culture": "ru",
+          "Value": "вписать"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Zoom_FitToScreen_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Fit the page into the preview area."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вписать страницу в размеры области предпросмотра."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Zoom_FitWidth",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "fit width"
+        },
+        {
+          "Culture": "ru",
+          "Value": "по ширине"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Zoom_FitWidth_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Fit the page by width, use vertical scroll when the page doesn't fit into the preview area."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вписать страницу по ширине, оставив вертикальную прокрутку там, где страница не умещается в размеры области."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Zoom_OriginalSize_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Click to select 100% scale.\n\nCtrl+mouse wheel - modify scale\nDouble click on image - scroll to point\nShift+left click or \"plus\" - zoom in\nShift+right click or \"minus\" - zoom out\nBackspace - return to previous scale"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нажмите, чтобы выбрать масштаб 100%\n\nCtrl+колесо мыши - изменить масштаб\nДвойной клик по изображению - переместиться к точке\nShift+левый клик или \"плюс\" - увеличить масштаб\nShift+правый клик или \"минус\" - уменьшить масштаб\nBackspace - вернуться к предыдущему масштабу"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Zoom_ToggleQuality",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "quality"
+        },
+        {
+          "Culture": "ru",
+          "Value": "качество"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_Zoom_ToggleQuality_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Click to enable or disable high quality rendering mode."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нажмите, чтобы включить или отключить режим повышенного качества."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Differences_ChangesCalculation",
+      "Comment": "Метка Расчет изменений в контроле SubmittingQueueControl",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Changes calculation..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Расчет изменений..."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Differences_NoChanges",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No changes"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет изменений"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewHideCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hide preview"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрыть предпросмотр"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewHideToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hides preview area. In order to restore it, use the context menu for a list of files."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрывает область предпросмотра. Восстановить её можно через контекстное меню рядом со списком файлов."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewResetCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reset preview"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сбросить предпросмотр"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewResetSizeCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Default size"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Размер по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewResetSizeToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Divides in equal proportions card area and file preview area."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разделяет в равных долях область карточки и область предпросмотра файлов."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewResetToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reset current file preview."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сбрасывает предпросмотр текущего файла."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewRestartPreviewToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Retries attempt to load currently selected file to the preview area.\nUse it when preview is unavailable due to error in the previewer application."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Повторяет попытку загрузки текущего выбранного файла для предпросмотра.\nИспользуйте, когда предпросмотр недоступен из-за ошибки программы предпросмотра."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewSwitchLeftCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preview on the left"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предпросмотр слева"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewSwitchPreviewToMainTabCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show preview"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать предпросмотр"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewSwitchPreviewToMainTabCaption_WithCompactMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show card in compact mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать карточку в компактном режиме"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewSwitchPreviewToMainTabCaption_WithFullMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show card in full screen mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать карточку в полноэкранном режиме"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewSwitchPreviewToSeparateTabCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show in tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отобразить во вкладке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewSwitchRightCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preview on the right"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предпросмотр справа"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewSwitchSideToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Switch sides for card area and file preview area."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Меняет местами область карточки и область предпросмотра файлов."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewSwithPreviewToMainTabToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Switch preview to main tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать область предпросмотра в основной вкладке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_PreviewSwithPreviewToSeparateTabToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Switch preview to separate tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать область предпросмотра в отдельной вкладке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Files_WebPreviewHideToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hides preview area. In order to restore it, use the menu next to the card tabs."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрывает область предпросмотра. Восстановить её можно через меню рядом со вкладками карточки."
+        }
+      ]
+    },
+    {
+      "Name": "UI_PropertyGrid_Alphabet_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Sort properties alphabetically"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сортировать свойства в алфавитном порядке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_PropertyGrid_Categorize_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Enable properties grouping"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Включить группировку свойств"
+        }
+      ]
+    },
+    {
+      "Name": "UI_PropertyGrid_ConfirmClose",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Closing editor without saving changes?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Закрыть редактор без сохранения изменений?"
+        }
+      ]
+    },
+    {
+      "Name": "UI_PropertyGrid_ContextMenu_CollapseGroups",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Collapse groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Свернуть группы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_PropertyGrid_ContextMenu_ExpandGroups",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expand groups"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Развернуть группы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_PropertyGrid_Search_Placeholder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Search by property caption"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поиск по названию свойства"
+        }
+      ]
+    },
+    {
+      "Name": "ViewsControl_FileViews_MenuToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Files menu"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Меню файлов"
+        }
+      ]
+    },
+    {
+      "Name": "Web_MobileSelectionModePopup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Selection mode. Press to exit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим выбора. Нажмите здесь для выхода"
+        }
+      ]
+    }
+  ]
+}

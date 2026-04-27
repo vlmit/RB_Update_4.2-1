@@ -1,0 +1,182 @@
+﻿{
+  "Alias": "UsersBirthdays",
+  "Caption": "$Views_Names_UsersBirthdays",
+  "GroupName": "Dashboard",
+  "ID": "9f9fe49a-a409-4838-8a43-60d78363b63d",
+  "JsonMetadataSource::txt": "UsersBirthdays JSONMETA",
+  "MsQuerySource::txt": "UsersBirthdays MSSQL",
+  "PgQuerySource::txt": "UsersBirthdays PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART UsersBirthdays JSONMETA]
+{
+  "Alias": "UsersBirthdays",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_UsersBirthdays",
+  "Columns": [
+    {
+      "Alias": "UserID",
+      "Caption": "UserID",
+      "Type": "$PersonalRoles.ID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "UserName",
+      "Type": "$PersonalRoles.Name"
+    },
+    {
+      "Alias": "Birthday",
+      "Caption": "Birthday",
+      "Type": "$PersonalRoles.BirthDate"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Departments",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_UsersBirthdays_Departments",
+      "Type": "$RoleUsers.ID"
+    },
+    {
+      "Alias": "IncludeSubsidiaryDepartments",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_UsersBirthdays_IncludeSubsidiaryDepartments",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "DaysAfter",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_UsersBirthdays_DaysAfter",
+      "Multiple": false,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "DaysBefore",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_UsersBirthdays_DaysBefore",
+      "Multiple": false,
+      "Type": "Int32 Null"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART UsersBirthdays MSSQL]
+#if(Departments && IncludeSubsidiaryDepartments && IncludeSubsidiaryDepartments.CriteriaName == "IsTrue") {
+WITH [SubsidiaryDepartments] AS
+(
+	SELECT [r].[ID]
+	FROM [Roles] AS [r] WITH (NOLOCK)
+	WHERE [r].[TypeID] = 2 -- Department
+		#param(Departments, [r].[ParentID])
+		
+	UNION ALL
+	
+	SELECT [r].[ID]
+	FROM [Roles] AS [r] WITH (NOLOCK)
+	INNER JOIN [SubsidiaryDepartments] AS [d]
+		ON [r].[ParentID] = [d].[ID]
+	WHERE [r].[TypeID] = 2 -- Department
+)
+}
+SELECT
+	[pr].[ID]			AS [UserID],
+	[pr].[Name]			AS [UserName],
+	[pr].[BirthDate]	AS [Birthday]
+FROM [PersonalRoles] AS [pr] WITH (NOLOCK)
+INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+	ON [r].[ID] = [pr].[ID] AND [r].[Hidden] = 0
+WHERE [pr].[BirthDate] IS NOT NULL
+	#if(Departments) {
+	AND (
+		EXISTS (
+		SELECT NULL
+		FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+		WHERE [ru].[UserID] = [pr].[ID]
+			#param(Departments, [ru].[ID])
+		)
+	#if(IncludeSubsidiaryDepartments) {
+		OR EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+			INNER JOIN [SubsidiaryDepartments] AS [d] WITH (NOLOCK)
+				ON [d].[ID] = [ru].[ID]
+			WHERE [ru].[UserID] = [pr].[ID]
+		)
+	}
+	)
+	}
+	AND (
+		DATEADD(DAY, #if(DaysAfter){ -1 * #param(DaysAfter) }{0}, CAST (GETDATE() AS DATE)) <= DATEADD(YEAR, DATEDIFF(YEAR, [pr].[BirthDate], GETDATE()), [pr].[BirthDate])
+		AND
+		DATEADD(DAY, #if(DaysBefore){ #param(DaysBefore) }{0}, CAST (GETDATE() AS DATE)) >= DATEADD(YEAR, DATEDIFF(YEAR, [pr].[BirthDate], GETDATE()), [pr].[BirthDate])
+	)
+ORDER BY [pr].[Name]
+
+[TEXTPART UsersBirthdays PGSQL]
+#if(Departments && IncludeSubsidiaryDepartments && IncludeSubsidiaryDepartments.CriteriaName == "IsTrue") {
+WITH RECURSIVE "SubsidiaryDepartments" AS
+(
+	SELECT "r"."ID"
+	FROM "Roles" AS "r"
+	WHERE "r"."TypeID" = 2 -- Department
+		#param(Departments, "r"."ParentID")
+		
+	UNION ALL
+	
+	SELECT "r"."ID"
+	FROM "Roles" AS "r" 
+	INNER JOIN "SubsidiaryDepartments" AS "d"
+		ON "r"."ParentID" = "d"."ID"
+	WHERE "r"."TypeID" = 2 -- Department
+)
+}
+SELECT
+	"pr"."ID" 			AS "UserID",
+	"pr"."Name" 		AS "UserName",
+	"pr"."BirthDate"	AS "Birthday"
+FROM "PersonalRoles" AS "pr"
+INNER JOIN "Roles" AS "r"
+	ON "r"."ID" = "pr"."ID" AND NOT "r"."Hidden"
+WHERE "pr"."BirthDate" IS NOT NULL
+	#if(Departments) {
+	AND (
+		EXISTS (
+		SELECT NULL
+		FROM "RoleUsers" AS "ru"
+		WHERE "ru"."UserID" = "r"."ID"
+			#param(Departments, "ru"."ID")
+		)
+	#if (IncludeSubsidiaryDepartments) {
+		OR EXISTS (
+			SELECT NULL
+			FROM "RoleUsers" AS "ru"
+			INNER JOIN "SubsidiaryDepartments" AS "d"
+				ON "d"."ID" = "ru"."ID"
+			WHERE "ru"."UserID" = "r"."ID"
+		)
+	}
+	)
+	}
+	AND (
+		current_date #if(DaysAfter){ - make_interval(days => #param(DaysAfter))} <= ("pr"."BirthDate" + make_interval(years => extract(year FROM current_date)::int - extract(year FROM "pr"."BirthDate")::int))
+		AND
+		current_date #if(DaysBefore){ + make_interval(days => #param(DaysBefore)) } >= ("pr"."BirthDate" + make_interval(years => extract(year FROM current_date)::int - extract(year FROM "pr"."BirthDate")::int))
+	)
+ORDER BY "pr"."Name"

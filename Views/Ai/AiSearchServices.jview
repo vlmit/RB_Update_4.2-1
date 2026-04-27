@@ -1,0 +1,85 @@
+﻿{
+  "Alias": "AiSearchServices",
+  "Caption": "$Ai_Views_SearchService",
+  "GroupName": "Ai",
+  "ID": "a24c04d1-70e7-4b43-b3a8-dabd4e9d57c2",
+  "JsonMetadataSource::txt": "AiSearchServices JSONMETA",
+  "MsQuerySource::txt": "AiSearchServices MSSQL",
+  "PgQuerySource::txt": "AiSearchServices PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART AiSearchServices JSONMETA]
+{
+  "Alias": "AiSearchServices",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Ai_Views_SearchService",
+  "Columns": [
+    {
+      "Alias": "ServiceID",
+      "Hidden": true,
+      "Type": "$AiToolSearchService.ID"
+    },
+    {
+      "Alias": "ServiceName",
+      "Caption": "$Ai_Views_Columns_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "\"ss\".\"Name\"",
+      "Type": "$AiToolSearchService.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ServiceName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Fields_Name_Param",
+      "Type": "$AiToolSearchService.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Service",
+      "RefSection": [
+        "AiSearchService"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AiSearchServices MSSQL]
+SELECT
+    [ss].[ID] 		AS [ServiceID],
+    [ss].[Name] 	AS [ServiceName]
+FROM [AiToolSearchService] AS [ss]
+#if(Name) {
+CROSS APPLY [Localization]([ss].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+[TEXTPART AiSearchServices PGSQL]
+SELECT
+	"ss"."ID"			AS "ServiceID",
+	"ss"."Name"			AS "ServiceName"
+FROM "AiToolSearchService" AS "ss"
+#if(Name) {
+CROSS JOIN "Localization"("ss"."Name", #param(locale)) AS "l"
+}
+WHERE TRUE
+	#param(Name, "l"."Value")
+ORDER BY #order_by

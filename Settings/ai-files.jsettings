@@ -1,0 +1,44 @@
+[
+  {
+    "Data": {
+      "ContentExtractionCheckInterval": 1.0,
+      "ContentExtractionTimeout": 7200.0,
+      "FileOperationSettings": [
+        {
+          "DefaultOperation": "Text",
+          "FileExtensions": "txt",
+          "Group": "$Ai_FileOperationGroup_Text"
+        },
+        {
+          "DefaultOperation": "Text",
+          "FileExtensions": "jpg jpeg png",
+          "Group": "$Ai_FileOperationGroup_Image"
+        },
+        {
+          "DefaultOperation": "Text",
+          "FileExtensions": "pdf",
+          "Group": "$Ai_FileOperationGroup_PDF"
+        },
+        {
+          "DefaultOperation": "Text",
+          "FileExtensions": "doc docx xls xlsx ppt pptx odt ods odp",
+          "Group": "$Ai_FileOperationGroup_Office"
+        }
+      ],
+      "FileTypeSettings": [
+        {
+          "FileExtensions": "txt htm html xml csv",
+          "FileType": "Text"
+        },
+        {
+          "FileExtensions": "png jpg jpeg",
+          "FileType": "Image"
+        }
+      ],
+      "MaxFileCount": 3,
+      "MaxFileSizeKb": 10000
+    },
+    "Name": "ai-files",
+    "SchemeVersion": 2
+  }
+]

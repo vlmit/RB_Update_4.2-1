@@ -1,0 +1,187 @@
+﻿{
+  "Alias": "DialogTypes",
+  "Caption": "$Views_Names_DialogTypes",
+  "GroupName": "System",
+  "ID": "19c8a14b-8c83-4d92-8e35-0c99b10a5b25",
+  "JsonMetadataSource::txt": "DialogTypes JSONMETA",
+  "MsQuerySource::txt": "DialogTypes MSSQL",
+  "PgQuerySource::txt": "DialogTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART DialogTypes JSONMETA]
+{
+  "Alias": "DialogTypes",
+  "Caption": "$Views_Names_DialogTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_Types_Name",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.LocalizedCaption",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_Types_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_Types_Name_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Types_Alias_Param",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "ShowHidden",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_Types_ShowHidden_Param",
+      "Multiple": false,
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "RefSection": [
+        "DialogTypes"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DialogTypes MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [TypeID],
+		[t].[Caption]							AS [TypeCaption],
+		[t].[Name]								AS [TypeName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM (
+		SELECT
+			#if(Normal) {
+			[t].[ID],
+			[t].[Caption],
+			[t].[Name],
+			[t].[Flags]
+			#if(request.SortedBy("TypeCaption")) {
+			, [lCaption].[Value] AS [LocalizedCaption]
+			}
+			}
+			#if(Count) {
+			NULL AS [Column]
+			}
+		FROM [Types] AS [t] WITH (NOLOCK)
+		#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+		CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+		}
+		WHERE [t].[InstanceTypeID] = 3		-- тип диалога
+			#if (!ShowHidden || ShowHidden.CriteriaName != "IsTrue") {
+				AND ([t].[Flags] & 16) = 0		-- тип карточки не содержит флаг Hidden
+			}
+			#param(Name, [t].[Name])
+			#param(Caption, [lCaption].[Value])
+		) AS [t]
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART DialogTypes PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "TypeID",
+	"t"."Caption"								AS "TypeCaption",
+	"t"."Name"									AS "TypeName",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID",
+		"t"."Caption",
+		"t"."Name",
+		"t"."Flags"
+		#if(request.SortedBy("TypeCaption")) {
+		, "lCaption"."Value" AS "LocalizedCaption"
+		}
+		}
+		#if(Count) {
+		NULL
+		}
+	FROM "Types" AS "t"
+	#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+	CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+	}
+	WHERE "t"."InstanceTypeID" = 3		-- тип диалога
+		#if (!ShowHidden || ShowHidden.CriteriaName != "IsTrue") {
+			AND ("t"."Flags" & 16) = 0		-- тип карточки не содержит флаг Hidden
+		}
+		#param(Name, "t"."Name")
+		#param(Caption, "lCaption"."Value")
+	) AS "t"
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

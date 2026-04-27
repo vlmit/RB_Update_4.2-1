@@ -1,0 +1,223 @@
+﻿{
+  "Alias": "Types",
+  "Caption": "$Views_Names_Types",
+  "GroupName": "System",
+  "ID": "77b991d4-3f6d-4827-ae02-354e514f6c60",
+  "JsonMetadataSource::txt": "Types JSONMETA",
+  "MsQuerySource::txt": "Types MSSQL",
+  "PgQuerySource::txt": "Types PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART Types JSONMETA]
+{
+  "Alias": "Types",
+  "Caption": "$Views_Names_Types",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_Types_Name",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.LocalizedCaption",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_Types_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_Types_Name_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Types_Alias_Param",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "IsTypeForSettings",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_Types_IsTypeForSettings_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "ShowAll",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_Types_ShowAll_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "HasWysiwyg",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "HasWysiwyg",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Null"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "RefSection": [
+        "Types"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Types MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [TypeID],
+		[t].[Caption]							AS [TypeCaption],
+		[t].[Name]								AS [TypeName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM (
+		SELECT
+			#if(Normal) {
+			[t].[ID],
+			[t].[Caption],
+			[t].[Name]
+			#if(request.SortedBy("TypeCaption")) {
+			, [lCaption].[Value] AS [LocalizedCaption]
+			}
+			}
+			#if(Count) {
+			NULL AS [Column]
+			}
+		FROM [Types] AS [t] WITH (NOLOCK)
+		#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+		CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+		}
+		WHERE [t].[InstanceTypeID] = 0		-- тип карточки, а не файла или задания#
+			#if (!ShowAll){
+				#if(IsTypeForSettings) {
+				AND ([t].[Flags] & 272) = 272	-- 400 = 16 + 128 + 256; тип карточки содержит флаги Hidden и Administrative
+				AND ([t].[Flags] & 128) = 0		-- 128; тип карточки не содержит флаг Signleton
+				} {
+				AND ([t].[Flags] & 400) = 0		-- 400 = 16 + 128 + 256; тип карточки не содержит флагов Hidden, Singleton и Administrative
+				}
+				AND ([t].[Group] IS NULL OR [t].[Group] NOT IN (N'Settings', N'System', N'KrProcess'))
+			}
+			#if (HasWysiwyg) {
+				AND ([t].[Flags] & 65536) = 65536 -- UseFormEditor
+			}
+			#param(Name, [t].[Name])
+			#param(Caption, [lCaption].[Value])
+		) AS [t]
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART Types PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "TypeID",
+	"t"."Caption"								AS "TypeCaption",
+	"t"."Name"									AS "TypeName",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID",
+		"t"."Caption",
+		"t"."Name"
+		#if(request.SortedBy("TypeCaption")) {
+		, "lCaption"."Value" AS "LocalizedCaption"
+		}
+		}
+		#if(Count) {
+		NULL
+		}
+	FROM "Types" AS "t"
+	#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+	CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+	}
+	WHERE "t"."InstanceTypeID" = 0		-- тип карточки, а не файла или задания
+		#if (!ShowAll){
+			#if(IsTypeForSettings) {
+			AND ("t"."Flags" & 272) = 272	-- 400 = 16 + 128 + 256; тип карточки содержит флаги Hidden и Administrative
+			AND ("t"."Flags" & 128) = 0		-- 128; тип карточки не содержит флаг Signleton
+			} {
+			AND ("t"."Flags" & 400) = 0		-- 400 = 16 + 128 + 256; тип карточки не содержит флагов Hidden, Singleton и Administrative
+			}
+			AND ("t"."Group" IS NULL OR "t"."Group" NOT IN ('Settings', 'System', 'KrProcess'))
+		}
+		#if (HasWysiwyg) {
+			AND ("t"."Flags" & 65536) = 65536 -- UseFormEditor
+		}
+		#param(Name, "t"."Name")
+		#param(Caption, "lCaption"."Value")
+	) AS "t"
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

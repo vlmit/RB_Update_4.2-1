@@ -1,0 +1,371 @@
+﻿{
+  "Alias": "DeletedFiles",
+  "Caption": "$Views_Names_DeletedFiles",
+  "GroupName": "System",
+  "ID": "d348a9d5-f8ab-4f44-bb94-e7bc175cceb3",
+  "JsonMetadataSource::txt": "DeletedFiles JSONMETA",
+  "MsQuerySource::txt": "DeletedFiles MSSQL",
+  "PgQuerySource::txt": "DeletedFiles PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART DeletedFiles JSONMETA]
+{
+  "Alias": "DeletedFiles",
+  "Appearance": "DeletedAppearance",
+  "Caption": "$Views_Names_DeletedFiles",
+  "Columns": [
+    {
+      "Alias": "DeletedID",
+      "Hidden": true,
+      "Type": "$DeletedFiles.ID"
+    },
+    {
+      "Alias": "DeletedRowID",
+      "Hidden": true,
+      "Type": "$DeletedFiles.RowID"
+    },
+    {
+      "Alias": "DeletedName",
+      "Caption": "$Views_DeletedFiles_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$DeletedFiles.Name"
+    },
+    {
+      "Alias": "DeletedCopy",
+      "Caption": "$Views_DeletedFiles_Copy",
+      "FilterParameter": "Copy",
+      "FilterType": "Parameter",
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "DeletedAuthorID",
+      "Hidden": true,
+      "Type": "$DeletedFiles.CreatedByID"
+    },
+    {
+      "Alias": "DeletedAuthor",
+      "Caption": "$Views_DeletedFiles_CreatedBy",
+      "NormalizationKeyColumn": "DeletedAuthorID",
+      "NormalizationSource": "Users",
+      "Type": "$DeletedFiles.CreatedByName"
+    },
+    {
+      "Alias": "DeletedDate",
+      "Caption": "$Views_DeletedFiles_Deleted",
+      "FilterParameter": "Deleted",
+      "FilterType": "Parameter",
+      "SortBy": "f.Deleted",
+      "Type": "$DeletedFiles.Deleted"
+    },
+    {
+      "Alias": "DeletedByID",
+      "Hidden": true,
+      "Type": "$DeletedFiles.DeletedByID"
+    },
+    {
+      "Alias": "DeletedByName",
+      "Caption": "$Views_DeletedFiles_DeletedBy",
+      "FilterParameter": "DeletedBy",
+      "FilterType": "Parameter",
+      "NormalizationKeyColumn": "DeletedByID",
+      "NormalizationSource": "Users",
+      "Type": "$DeletedFiles.DeletedByName"
+    },
+    {
+      "Alias": "DeletedCategory",
+      "Caption": "$Views_DeletedFiles_DeletedCategory",
+      "Localizable": true,
+      "Type": "$DeletedFiles.CategoryCaption"
+    },
+    {
+      "Alias": "DeletedNumber",
+      "Caption": "$Views_DeletedFiles_Number",
+      "Type": "$DeletedFileVersions.Number"
+    },
+    {
+      "Alias": "DeletedSize",
+      "Caption": "$Views_DeletedFiles_Size",
+      "Type": "$DeletedFileVersions.Size"
+    },
+    {
+      "Alias": "DeletedSignatures",
+      "Caption": "$Views_DeletedFiles_Signatures",
+      "DisableGrouping": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "DeletedAppearance",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "DeletedDate",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "GroupingColumn": "DeletedCategory",
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_DeletedFiles_Name_Param",
+      "Type": "$DeletedFiles.Name"
+    },
+    {
+      "Alias": "Copy",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_DeletedFiles_Copy_Param",
+      "IgnoreCase": false,
+      "Multiple": false,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "CreatedBy",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_DeletedFiles_CreatedBy_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$DeletedFiles.CreatedByID"
+    },
+    {
+      "Alias": "Deleted",
+      "Caption": "$Views_DeletedFiles_Deleted_Param",
+      "Type": "$DeletedFiles.Deleted"
+    },
+    {
+      "Alias": "DeletedBy",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_DeletedFiles_DeletedBy_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$DeletedFiles.DeletedByID"
+    },
+    {
+      "Alias": "Card",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_DeletedFiles_Card_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$DeletedFiles.ID"
+    },
+    {
+      "Alias": "ShowAll",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_DeletedFiles_ShowAll_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Deleted",
+      "DisplayValueColumn": "DeletedName",
+      "RefSection": [
+        "DeletedFiles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DeletedFiles MSSQL]
+SELECT
+	#if(Normal) {
+	[f].[ID]					AS [DeletedID],
+	[f].[RowID]					AS [DeletedRowID],
+	[f].[Name]					AS [DeletedName],
+	CAST(
+		CASE
+			WHEN [f].[OriginalFileID] IS NOT NULL
+				THEN 1
+			ELSE 0
+		END
+	AS BIT)						AS [DeletedCopy],
+	[f].[CreatedByID]			AS [DeletedAuthorID],
+	[f].[Deleted]				AS [DeletedDate],
+	[f].[DeletedByID]			AS [DeletedByID],
+	[f].[CategoryCaption]		AS [DeletedCategory],
+	[fv].[Number]				AS [DeletedNumber],
+	[fv].[Size]					AS [DeletedSize],
+	STUFF((
+		SELECT
+			CHAR(10) +
+			[fs].[UserName] +
+			CASE WHEN [fs].[SubjectName] IS NOT NULL
+				THEN ' (' + [fs].[SubjectName] + ')'
+				ELSE ''
+			END
+		FROM [DeletedFileSignatures] AS [fs] WITH (NOLOCK)
+		WHERE [fs].[VersionRowID] = [f].[VersionRowID]
+		ORDER BY [fs].[Signed]
+		FOR XML PATH('')),
+		1, 1, N'')				AS [DeletedSignatures],
+	N'#appearance(Background: ' +
+		CASE [fv].[StateID]
+			WHEN 2 THEN N'#FFFF0000'	-- Error => Red
+			ELSE N'#00000000'			-- Transparent
+		END + N')'				AS [DeletedAppearance]
+	}
+	#if(Count) {
+	[f].*
+	}
+FROM (
+	SELECT
+		[t].*
+	FROM (
+		SELECT
+			#if(Normal) {
+			[f].*,
+			ROW_NUMBER() OVER (ORDER BY #order_by)	AS [rn]
+			}
+			#if(Count) {
+			COUNT(*)								AS [cnt]
+			}
+		FROM [DeletedFiles] AS [f] WITH (NOLOCK)
+		#if(Name || request.SortedBy("DeletedName")) {
+		CROSS APPLY [Localization]([f].[Name], #param(locale)) AS [lName]
+		}
+		WHERE 1 = 1
+			#param(Name, [lName].[Value])
+			#param(CreatedBy, [f].[CreatedByID])
+			#param(Deleted, [f].[Deleted])
+			#param(DeletedBy, [f].[DeletedByID])
+			#param(Card, [f].[ID])
+			#if(!ShowAll) {
+				#param(CurrentUserID, [f].[DeletedByID]) 
+			}
+			#if(Copy && Copy.CriteriaName == CriteriaOperatorConst.IsTrue) {
+				AND [f].[OriginalFileID] IS NOT NULL
+			}
+			#if(Copy && Copy.CriteriaName == CriteriaOperatorConst.IsFalse) {
+				AND [f].[OriginalFileID] IS NULL
+			}
+		) AS [t]
+	#if(PageOffset) {
+	WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+	}
+) AS [f]
+#if(Normal) {
+INNER JOIN [DeletedFileVersions] AS [fv] WITH (NOLOCK)
+	ON [fv].[RowID] = [f].[VersionRowID]
+ORDER BY [f].[rn]
+}
+
+[TEXTPART DeletedFiles PGSQL]
+SELECT
+	#if(Normal) {
+	"f"."ID"					AS "DeletedID",
+	"f"."RowID"					AS "DeletedRowID",
+	"f"."Name"					AS "DeletedName",
+	CASE
+		WHEN "f"."OriginalFileID" IS NOT NULL
+			THEN true
+		ELSE false
+	END							AS "DeletedCopy",
+	"f"."CreatedByID"			AS "DeletedAuthorID",
+	"f"."Deleted"				AS "DeletedDate",
+	"f"."DeletedByID"			AS "DeletedByID",
+	"f"."CategoryCaption"		AS "DeletedCategory",
+	"fv"."Number"				AS "DeletedNumber",
+	"fv"."Size"					AS "DeletedSize",
+	(
+		SELECT string_agg(
+			"fs"."UserName" ||
+			CASE WHEN "fs"."SubjectName" IS NOT NULL
+				THEN ' (' || "fs"."SubjectName" || ')'
+				ELSE ''
+			END,
+			chr(10)
+			ORDER BY "fs"."Signed")
+		FROM "DeletedFileSignatures" AS "fs"
+		WHERE "fs"."VersionRowID" = "f"."VersionRowID"
+	 )							AS "DeletedSignatures",
+	'#appearance(Background: ' ||
+		CASE "fv"."StateID"
+			WHEN 2 THEN N'#FFFF0000'	-- Error => Red
+			ELSE '#00000000'			-- Transparent
+		END || ')' AS "DeletedAppearance"
+	}
+	#if(Count) {
+	"f".*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"f".*
+		}
+		#if(Count) {
+		count(*)					AS "cnt"
+		}
+	FROM "DeletedFiles" AS "f"
+	#if(Name || request.SortedBy("DeletedName")) {
+	CROSS JOIN "Localization"("f"."Name", #param(locale)) AS "lName"
+	}
+	WHERE true
+		#param(Name, "lName"."Value")
+		#param(CreatedBy, "f"."CreatedByID")
+		#param(Deleted, "f"."Deleted")
+		#param(DeletedBy, "f"."DeletedByID")
+		#param(Card, "f"."ID")
+		#if(!ShowAll) {
+			#param(CurrentUserID, "f"."DeletedByID") 
+		}
+		#if(Copy && Copy.CriteriaName == CriteriaOperatorConst.IsTrue) {
+			AND "f"."OriginalFileID" IS NOT NULL
+		}
+		#if(Copy && Copy.CriteriaName == CriteriaOperatorConst.IsFalse) {
+			AND "f"."OriginalFileID" IS NULL
+		}
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	}
+) AS "f"
+#if(Normal) {
+INNER JOIN "DeletedFileVersions" AS "fv"
+	ON "fv"."RowID" = "f"."VersionRowID"
+}

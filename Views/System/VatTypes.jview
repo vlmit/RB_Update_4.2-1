@@ -1,0 +1,79 @@
+﻿{
+  "Alias": "VatTypes",
+  "Caption": "$Views_Names_VatTypes",
+  "GroupName": "System",
+  "ID": "c14070dd-219a-4340-91f3-7c2ffd891382",
+  "JsonMetadataSource::txt": "VatTypes JSONMETA",
+  "MsQuerySource::txt": "VatTypes MSSQL",
+  "PgQuerySource::txt": "VatTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART VatTypes JSONMETA]
+{
+  "Alias": "VatTypes",
+  "Caption": "$Views_Names_VatTypes",
+  "Columns": [
+    {
+      "Alias": "VatTypeID",
+      "Hidden": true,
+      "Type": "$VatTypes.ID"
+    },
+    {
+      "Alias": "VatTypeName",
+      "Caption": "$Views_VatTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$VatTypes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_VatTypes_Name_Param",
+      "Multiple": false,
+      "Type": "$VatTypes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "VatType",
+      "DisplayValueColumn": "VatTypeName",
+      "RefSection": [
+        "VatTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART VatTypes MSSQL]
+SELECT
+	[vt].[ID]		AS [VatTypeID],
+	[vt].[Name]		AS [VatTypeName]
+FROM [VatTypes] AS [vt] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([vt].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY [vt].[ID]
+
+
+[TEXTPART VatTypes PGSQL]
+SELECT
+	"vt"."ID"		AS "VatTypeID",
+	"vt"."Name"		AS "VatTypeName"
+FROM "VatTypes" AS "vt"
+#if(Name) {
+CROSS JOIN "Localization"("vt"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY "vt"."ID"

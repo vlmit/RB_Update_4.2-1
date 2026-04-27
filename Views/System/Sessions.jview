@@ -1,0 +1,744 @@
+﻿{
+  "Alias": "Sessions",
+  "Caption": "$Views_Names_Sessions",
+  "GroupName": "System",
+  "ID": "567e7c41-536e-47af-8c2d-b6d8cb6b64fb",
+  "JsonMetadataSource::txt": "Sessions JSONMETA",
+  "MsQuerySource::txt": "Sessions MSSQL",
+  "PgQuerySource::txt": "Sessions PGSQL"
+}
+
+[TEXTPART Sessions JSONMETA]
+{
+  "Alias": "Sessions",
+  "Caption": "$Views_Names_Sessions",
+  "Columns": [
+    {
+      "Alias": "SessionID",
+      "Hidden": true,
+      "Type": "$Sessions.ID"
+    },
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "$Sessions.UserID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Sessions_User",
+      "FilterParameter": "UserID",
+      "FilterType": "Parameter",
+      "NormalizationKeyColumn": "UserID",
+      "NormalizationSource": "Users",
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "UserLogin",
+      "Caption": "$Views_Sessions_Login",
+      "FilterParameter": "Login",
+      "FilterType": "Parameter",
+      "SortBy": "t.UserLogin",
+      "Type": "$Sessions.UserLogin"
+    },
+    {
+      "Alias": "HostName",
+      "Caption": "$Views_Sessions_Host",
+      "FilterParameter": "HostName",
+      "FilterType": "Parameter",
+      "SortBy": "t.HostName",
+      "Type": "$Sessions.HostName"
+    },
+    {
+      "Alias": "HostIP",
+      "Caption": "$Views_Sessions_HostIP",
+      "FilterParameter": "HostIP",
+      "FilterType": "Parameter",
+      "SortBy": "t.HostIP",
+      "Type": "$Sessions.HostIP"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_Sessions_Created",
+      "FilterParameter": "Created",
+      "FilterType": "Parameter",
+      "SortBy": "t.Created",
+      "Type": "$Sessions.Created"
+    },
+    {
+      "Alias": "LastActivity",
+      "Caption": "$Views_Sessions_LastActivity",
+      "FilterParameter": "LastActivity",
+      "FilterType": "Parameter",
+      "SortBy": "sa.LastActivity",
+      "Type": "$SessionActivity.LastActivity"
+    },
+    {
+      "Alias": "IsActive",
+      "Caption": "$Views_Sessions_IsActive",
+      "FilterParameter": "IsActive",
+      "FilterType": "Parameter",
+      "SortBy": "sa.IsActive",
+      "Type": "$SessionActivity.IsActive"
+    },
+    {
+      "Alias": "ApplicationID",
+      "Hidden": true,
+      "Type": "$Sessions.ApplicationID"
+    },
+    {
+      "Alias": "ApplicationName",
+      "Caption": "$Views_Sessions_Application",
+      "FilterParameter": "Application",
+      "FilterSubset": "ByApplication",
+      "FilterType": "Subset",
+      "Localizable": true,
+      "Type": "$ApplicationNames.Name"
+    },
+    {
+      "Alias": "AccessLevelID",
+      "Hidden": true,
+      "Type": "$Sessions.AccessLevelID"
+    },
+    {
+      "Alias": "AccessLevelName",
+      "Caption": "$Views_Sessions_AccessLevel",
+      "FilterParameter": "AccessLevel",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$AccessLevels.Name"
+    },
+    {
+      "Alias": "LoginTypeID",
+      "Hidden": true,
+      "Type": "$Sessions.LoginTypeID"
+    },
+    {
+      "Alias": "LoginTypeName",
+      "Caption": "$Views_Sessions_LoginType",
+      "FilterParameter": "LoginType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$LoginTypes.Name"
+    },
+    {
+      "Alias": "LicenseTypeID",
+      "Hidden": true,
+      "Type": "$Sessions.LicenseTypeID"
+    },
+    {
+      "Alias": "LicenseTypeName",
+      "Caption": "$Views_Sessions_LicenseType",
+      "FilterParameter": "LicenseType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$LicenseTypes.Name"
+    },
+    {
+      "Alias": "DeviceTypeID",
+      "Hidden": true,
+      "Type": "$Sessions.DeviceTypeID"
+    },
+    {
+      "Alias": "DeviceTypeName",
+      "Caption": "$Views_Sessions_DeviceType",
+      "FilterParameter": "DeviceType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$DeviceTypes.Name"
+    },
+    {
+      "Alias": "OSName",
+      "Caption": "$Views_Sessions_OSName",
+      "FilterParameter": "OSName",
+      "FilterType": "Parameter",
+      "SortBy": "t.OSName",
+      "Type": "$Sessions.OSName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "LastActivity",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "UserID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Sessions_User_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$Sessions.UserID"
+    },
+    {
+      "Alias": "Login",
+      "Caption": "$Views_Sessions_Login_Param",
+      "Type": "$Sessions.UserLogin"
+    },
+    {
+      "Alias": "HostName",
+      "Caption": "$Views_Sessions_Host_Param",
+      "Type": "$Sessions.HostName"
+    },
+    {
+      "Alias": "HostIP",
+      "Caption": "$Views_Sessions_HostIP_Param",
+      "Type": "$Sessions.HostIP"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_Sessions_Created_Param",
+      "Multiple": false,
+      "Type": "$Sessions.Created"
+    },
+    {
+      "Alias": "LastActivity",
+      "Caption": "$Views_Sessions_LastActivity_Param",
+      "Multiple": false,
+      "Type": "$SessionActivity.LastActivity"
+    },
+    {
+      "Alias": "IsActive",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_Sessions_IsActive",
+      "Multiple": false,
+      "Type": "$SessionActivity.IsActive"
+    },
+    {
+      "Alias": "Application",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "ApplicationNames"
+      },
+      "Caption": "$Views_Sessions_Application_Param",
+      "DropDownInfo": {
+        "ViewAlias": "ApplicationNames"
+      },
+      "HideAutoCompleteButton": true,
+      "Multiple": false,
+      "RefSection": [
+        "ApplicationNames"
+      ],
+      "Type": "$Sessions.ApplicationID"
+    },
+    {
+      "Alias": "AccessLevel",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "AccessLevels"
+      },
+      "Caption": "$Views_Sessions_AccessLevel_Param",
+      "DropDownInfo": {
+        "ViewAlias": "AccessLevels"
+      },
+      "HideAutoCompleteButton": true,
+      "Multiple": false,
+      "RefSection": [
+        "AccessLevels"
+      ],
+      "Type": "$Sessions.AccessLevelID"
+    },
+    {
+      "Alias": "LoginType",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "LoginTypes"
+      },
+      "Caption": "$Views_Sessions_LoginType_Param",
+      "DropDownInfo": {
+        "ViewAlias": "LoginTypes"
+      },
+      "HideAutoCompleteButton": true,
+      "Multiple": false,
+      "RefSection": [
+        "LoginTypes"
+      ],
+      "Type": "$Sessions.LoginTypeID"
+    },
+    {
+      "Alias": "LicenseType",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "LicenseTypes"
+      },
+      "Caption": "$Views_Sessions_LicenseType_Param",
+      "DropDownInfo": {
+        "ViewAlias": "LicenseTypes"
+      },
+      "HideAutoCompleteButton": true,
+      "Multiple": false,
+      "RefSection": [
+        "LicenseTypes"
+      ],
+      "Type": "$Sessions.LicenseTypeID"
+    },
+    {
+      "Alias": "DeviceType",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "DeviceTypes"
+      },
+      "Caption": "$Views_Sessions_DeviceType_Param",
+      "DropDownInfo": {
+        "ViewAlias": "DeviceTypes"
+      },
+      "HideAutoCompleteButton": true,
+      "Multiple": false,
+      "RefSection": [
+        "DeviceTypes"
+      ],
+      "Type": "$Sessions.DeviceTypeID"
+    },
+    {
+      "Alias": "OSName",
+      "Caption": "$Views_Sessions_OSName_Param",
+      "Type": "$Sessions.OSName"
+    },
+    {
+      "Alias": "Department",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3,
+          5
+        ],
+        "ViewAlias": "Departments"
+      },
+      "Caption": "$Views_Sessions_Department_Param",
+      "RefSection": [
+        "DepartmentRoles"
+      ],
+      "Type": "$RoleUsers.ID"
+    }
+  ],
+  "QuickSearchParam": "Login",
+  "References": [
+    {
+      "ColPrefix": "Session",
+      "RefSection": [
+        "Sessions"
+      ]
+    },
+    {
+      "ColPrefix": "User",
+      "DisplayValueColumn": "UserName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Roles",
+        "PersonalRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "ByApplication",
+      "Caption": "$Views_Sessions_Application_Param",
+      "CaptionColumn": "Name",
+      "CountColumn": "cnt",
+      "RefColumn": "ID",
+      "RefParam": "Application"
+    },
+    {
+      "Alias": "ByAccessLevel",
+      "Caption": "$Views_Sessions_AccessLevel_Param",
+      "CaptionColumn": "Name",
+      "CountColumn": "cnt",
+      "RefColumn": "ID",
+      "RefParam": "AccessLevel"
+    },
+    {
+      "Alias": "ByLoginType",
+      "Caption": "$Views_Sessions_LoginType_Param",
+      "CaptionColumn": "Name",
+      "CountColumn": "cnt",
+      "RefColumn": "ID",
+      "RefParam": "LoginType"
+    },
+    {
+      "Alias": "ByLicenseType",
+      "Caption": "$Views_Sessions_LicenseType_Param",
+      "CaptionColumn": "Name",
+      "CountColumn": "cnt",
+      "RefColumn": "ID",
+      "RefParam": "LicenseType"
+    },
+    {
+      "Alias": "ByDeviceType",
+      "Caption": "$Views_Sessions_DeviceType_Param",
+      "CaptionColumn": "Name",
+      "CountColumn": "cnt",
+      "RefColumn": "ID",
+      "RefParam": "DeviceType"
+    },
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Sessions MSSQL]
+#if(IsActive) {
+DECLARE @UtcNow datetime;
+SET @UtcNow = GETUTCDATE();
+}
+
+SELECT
+	#if(Normal) {
+	[t].[ID]					AS [SessionID],
+	[t2].[UserID],
+	[t2].[UserLogin],
+	[t2].[HostName],
+	[t2].[HostIP],
+	[t2].[Created],
+	[sa].[LastActivity],
+	[sa].[IsActive],
+	[t2].[ApplicationID],
+	COALESCE([an].[Name], N'$Enum_ApplicationNames_Other') AS [ApplicationName],
+	[t2].[AccessLevelID],
+	[al].[Name]					AS [AccessLevelName],
+	[t2].[LoginTypeID],
+	[lt].[Name]					AS [LoginTypeName],
+	[t2].[LicenseTypeID],
+	[lt2].[Name]				AS [LicenseTypeName],
+	[t2].[DeviceTypeID],
+	[dt2].[Name]				AS [DeviceTypeName],
+	[t2].[OSName]
+	}
+	#if(ByApplication || ByAccessLevel || ByLoginType || ByLicenseType || ByDeviceType || Count) {
+	[t].*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(ByApplication) {
+		[t].[ApplicationID] AS [ID],
+		[lName].[Value] AS [Name],
+		count(*) AS [cnt]
+		}
+		#if(ByAccessLevel) {
+		[t].[AccessLevelID] AS [ID],
+		[lName].[Value] AS [Name],
+		count(*) AS [cnt]
+		}
+		#if(ByLoginType) {
+		[t].[LoginTypeID] AS [ID],
+		[lName].[Value] AS [Name],
+		count(*) AS [cnt]
+		}
+		#if(ByLicenseType) {
+		[t].[LicenseTypeID] AS [ID],
+		[lName].[Value] AS [Name],
+		count(*) AS [cnt]
+		}
+		#if(ByDeviceType) {
+		[t].[DeviceTypeID] AS [ID],
+		[lName].[Value] AS [Name],
+		count(*) AS [cnt]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Sessions] AS [t] WITH (NOLOCK)
+	INNER JOIN [SessionActivity] AS [sa] WITH (NOLOCK)
+		ON [sa].[SessionID] = [t].[ID]
+	#if(ByApplication) {
+	INNER JOIN [ApplicationNames] AS [tt] WITH (NOLOCK)
+		ON [tt].[ID] = [t].[ApplicationID]
+	CROSS APPLY [Localization]([tt].[Name], #param(locale)) AS [lName]
+	}
+	#if(ByAccessLevel) {
+	INNER JOIN [AccessLevels] AS [tt] WITH (NOLOCK)
+		ON [tt].[ID] = [t].[AccessLevelID]
+	CROSS APPLY [Localization]([tt].[Name], #param(locale)) AS [lName]
+	}
+	#if(ByLoginType) {
+	INNER JOIN [LoginTypes] AS [tt] WITH (NOLOCK)
+		ON [tt].[ID] = [t].[LoginTypeID]
+	CROSS APPLY [Localization]([tt].[Name], #param(locale)) AS [lName]
+	}
+	#if(ByLicenseType) {
+	INNER JOIN [LicenseTypes] AS [tt] WITH (NOLOCK)
+		ON [tt].[ID] = [t].[LicenseTypeID]
+	CROSS APPLY [Localization]([tt].[Name], #param(locale)) AS [lName]
+	}
+	#if(ByDeviceType) {
+	INNER JOIN [DeviceTypes] AS [tt] WITH (NOLOCK)
+		ON [tt].[ID] = [t].[DeviceTypeID]
+	CROSS APPLY [Localization]([tt].[Name], #param(locale)) AS [lName]
+	}
+	WHERE 1 = 1
+		#param(UserID, [t].[UserID])
+		#param(Login, [t].[UserLogin])
+		#param(HostName, [t].[HostName])
+		#param(HostIP, [t].[HostIP])
+		#param(Created, [t].[Created])
+		#param(LastActivity, [sa].[LastActivity])
+		#param(Application, [t].[ApplicationID])
+		#param(AccessLevel, [t].[AccessLevelID])
+		#param(LoginType, [t].[LoginTypeID])
+		#param(LicenseType, [t].[LicenseTypeID])
+		#param(DeviceType, [t].[DeviceTypeID])
+		#param(OSName, [t].[OSName])
+		#if(IsActive && IsActive.CriteriaName == CriteriaOperatorConst.IsTrue) {
+		AND [sa].[IsActive] = 1
+		AND [t].[Expires] > @UtcNow
+		}
+		#if(IsActive && IsActive.CriteriaName == CriteriaOperatorConst.IsFalse) {
+		AND ([sa].[IsActive] = 0 OR [t].[Expires] <= @UtcNow)
+		}
+		#if(Department) {
+		AND EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+			WHERE [ru].[UserID] = [t].[UserID]
+				AND [ru].[TypeID] = 2
+				#param(Department, [ru].[ID]))
+		}
+	#if(ByApplication) {
+	GROUP BY [t].[ApplicationID], [lName].[Value]
+	}
+	#if(ByAccessLevel) {
+	GROUP BY [t].[AccessLevelID], [lName].[Value]
+	}
+	#if(ByLoginType) {
+	GROUP BY [t].[LoginTypeID], [lName].[Value]
+	}
+	#if(ByLicenseType) {
+	GROUP BY [t].[LicenseTypeID], [lName].[Value]
+	}
+	#if(ByDeviceType) {
+	GROUP BY [t].[DeviceTypeID], [lName].[Value]
+	}
+	) AS [t]
+#if(Normal) {
+INNER JOIN [Sessions] AS [t2] WITH (NOLOCK)
+	ON [t2].[ID] = [t].[ID]
+INNER JOIN [SessionActivity] AS [sa] WITH (NOLOCK)
+	ON [sa].[SessionID] = [t].[ID]
+INNER JOIN [AccessLevels] AS [al] WITH (NOLOCK)
+	ON [al].[ID] = [t2].[AccessLevelID]
+INNER JOIN [LoginTypes] AS [lt] WITH (NOLOCK)
+	ON [lt].[ID] = [t2].[LoginTypeID]
+INNER JOIN [LicenseTypes] AS [lt2] WITH (NOLOCK)
+	ON [lt2].[ID] = [t2].[LicenseTypeID]
+INNER JOIN [DeviceTypes] AS [dt2] WITH (NOLOCK)
+	ON [dt2].[ID] = [t2].[DeviceTypeID]
+LEFT JOIN [ApplicationNames] AS [an] WITH (NOLOCK)
+	ON [an].[ID] = [t2].[ApplicationID]
+CROSS APPLY [Localization]([an].[Name], #param(locale)) AS [lAppName]
+}
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+#if(ByApplication || ByAccessLevel || ByLoginType || ByLicenseType || ByDeviceType) {
+ORDER BY [t].[Name]
+}
+
+
+[TEXTPART Sessions PGSQL]
+SELECT
+	#if(Normal) {
+	"tt"."ID"					AS "SessionID",
+	"t"."UserID",
+	"t"."UserLogin",
+	"t"."HostName",
+	"t"."HostIP",
+	"t"."Created",
+	"sa"."LastActivity",
+	"sa"."IsActive",
+	"t"."ApplicationID",
+	COALESCE("an"."Name", '$Enum_ApplicationNames_Other') AS "ApplicationName",
+	"t"."AccessLevelID",
+	"al"."Name"					AS "AccessLevelName",
+	"t"."LoginTypeID",
+	"lt"."Name"					AS "LoginTypeName",
+	"t"."LicenseTypeID",
+	"lt2"."Name"				AS "LicenseTypeName",
+	"t"."DeviceTypeID",
+	"dt2"."Name"				AS "DeviceTypeName",
+	"t"."OSName"
+	}
+	#if(ByApplication || ByAccessLevel || ByLoginType || ByLicenseType || ByDeviceType || Count) {
+	"tt".*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID"
+		}
+		#if(ByApplication) {
+		"t"."ApplicationID" AS "ID",
+		"lName"."Value" AS "Name",
+		count(*) AS "cnt"
+		}
+		#if(ByAccessLevel) {
+		"t"."AccessLevelID" AS "ID",
+		"lName"."Value" AS "Name",
+		count(*) AS "cnt"
+		}
+		#if(ByLoginType) {
+		"t"."LoginTypeID" AS "ID",
+		"lName"."Value" AS "Name",
+		count(*) AS "cnt"
+		}
+		#if(ByLicenseType) {
+		"t"."LicenseTypeID" AS "ID",
+		"lName"."Value" AS "Name",
+		count(*) AS "cnt"
+		}
+		#if(ByDeviceType) {
+		"t"."DeviceTypeID" AS "ID",
+		"lName"."Value" AS "Name",
+		count(*) AS "cnt"
+		}
+		#if(Count) {
+		count(*) AS "cnt"
+		}
+	FROM "Sessions" AS "t"
+	INNER JOIN "SessionActivity" as "sa"
+		ON "sa"."SessionID" = "t"."ID"
+	#if(ByApplication) {
+	INNER JOIN "ApplicationNames" AS "tt"
+		ON "tt"."ID" = "t"."ApplicationID"
+	CROSS JOIN "Localization"("tt"."Name", #param(locale)) AS "lName"
+	}
+	#if(ByAccessLevel) {
+	INNER JOIN "AccessLevels" AS "tt"
+		ON "tt"."ID" = "t"."AccessLevelID"
+	CROSS JOIN "Localization"("tt"."Name", #param(locale)) AS "lName"
+	}
+	#if(ByLoginType) {
+	INNER JOIN "LoginTypes" AS "tt"
+		ON "tt"."ID" = "t"."LoginTypeID"
+	CROSS JOIN "Localization"("tt"."Name", #param(locale)) AS "lName"
+	}
+	#if(ByLicenseType) {
+	INNER JOIN "LicenseTypes" AS "tt"
+		ON "tt"."ID" = "t"."LicenseTypeID"
+	CROSS JOIN "Localization"("tt"."Name", #param(locale)) AS "lName"
+	}
+	#if(ByDeviceType) {
+	INNER JOIN "DeviceTypes" AS "tt"
+		ON "tt"."ID" = "t"."DeviceTypeID"
+	CROSS JOIN "Localization"("tt"."Name", #param(locale)) AS "lName"
+	}
+	WHERE true
+		#param(UserID, "t"."UserID")
+		#param(Login, "t"."UserLogin")
+		#param(HostName, "t"."HostName")
+		#param(HostIP, "t"."HostIP")
+		#param(Created, "t"."Created")
+		#param(LastActivity, "sa"."LastActivity")
+		#param(Application, "t"."ApplicationID")
+		#param(AccessLevel, "t"."AccessLevelID")
+		#param(LoginType, "t"."LoginTypeID")
+		#param(LicenseType, "t"."LicenseTypeID")
+		#param(DeviceType, "t"."DeviceTypeID")
+		#param(OSName, "t"."OSName")
+		#if(IsActive && IsActive.CriteriaName == CriteriaOperatorConst.IsTrue) {
+		AND "sa"."IsActive" = true
+		AND "t"."Expires" > CURRENT_TIMESTAMP
+		}
+		#if(IsActive && IsActive.CriteriaName == CriteriaOperatorConst.IsFalse) {
+		AND ("sa"."IsActive" = false OR "t"."Expires" <= CURRENT_TIMESTAMP)
+		}
+		#if(Department) {
+		AND EXISTS (
+			SELECT NULL
+			FROM "RoleUsers" AS "ru"
+			WHERE "ru"."UserID" = "t"."UserID"
+				AND "ru"."TypeID" = 2
+				#param(Department, "ru"."ID"))
+		}
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	}
+	#if(ByApplication) {
+	GROUP BY "t"."ApplicationID", "lName"."Value"
+	}
+	#if(ByAccessLevel) {
+	GROUP BY "t"."AccessLevelID", "lName"."Value"
+	}
+	#if(ByLoginType) {
+	GROUP BY "t"."LoginTypeID", "lName"."Value"
+	}
+	#if(ByLicenseType) {
+	GROUP BY "t"."LicenseTypeID", "lName"."Value"
+	}
+	#if(ByDeviceType) {
+	GROUP BY "t"."DeviceTypeID", "lName"."Value"
+	}
+	) AS "tt"
+#if(Normal) {
+INNER JOIN "Sessions" AS "t"
+	ON "t"."ID" = "tt"."ID"
+INNER JOIN "SessionActivity" as "sa"
+	ON "sa"."SessionID" = "t"."ID"
+INNER JOIN "AccessLevels" AS "al"
+	ON "al"."ID" = "t"."AccessLevelID"
+INNER JOIN "LoginTypes" AS "lt"
+	ON "lt"."ID" = "t"."LoginTypeID"
+INNER JOIN "LicenseTypes" AS "lt2"
+	ON "lt2"."ID" = "t"."LicenseTypeID"
+INNER JOIN "DeviceTypes" AS "dt2"
+	ON "dt2"."ID" = "t"."DeviceTypeID"
+LEFT JOIN "ApplicationNames" AS "an"
+	ON "an"."ID" = "t"."ApplicationID"
+CROSS JOIN "Localization"("an"."Name", #param(locale)) AS "lAppName"
+ORDER BY #order_by
+}
+#if(ByApplication || ByAccessLevel || ByLoginType || ByLicenseType || ByDeviceType) {
+ORDER BY "tt"."Name"
+}
+;

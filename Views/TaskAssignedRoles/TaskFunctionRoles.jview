@@ -1,0 +1,190 @@
+﻿{
+  "Alias": "TaskFunctionRoles",
+  "Caption": "$Views_Names_TaskFunctionRoles",
+  "GroupName": "TaskAssignedRoles",
+  "ID": "20a41d67-4807-496f-b5f8-1ae3f036eb2f",
+  "JsonMetadataSource::txt": "TaskFunctionRoles JSONMETA",
+  "MsQuerySource::txt": "TaskFunctionRoles MSSQL",
+  "PgQuerySource::txt": "TaskFunctionRoles PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TaskFunctionRoles JSONMETA]
+{
+  "Alias": "TaskFunctionRoles",
+  "Caption": "$Views_Names_TaskFunctionRoles",
+  "Columns": [
+    {
+      "Alias": "FunctionRoleID",
+      "Hidden": true,
+      "Type": "$TaskAssignedRoles.TaskRoleID"
+    },
+    {
+      "Alias": "RoleName",
+      "Caption": "$Views_TaskAssignedRoles_TaskRoleName",
+      "SortBy": "tt.RoleName",
+      "Type": "$FunctionRoles.Name"
+    },
+    {
+      "Alias": "RoleCaption",
+      "Caption": "$Views_TaskAssignedRoles_TaskRoleCaption",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$FunctionRoles.Caption"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RoleName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "TaskRowID",
+      "Caption": "$Views_TaskAssignedRoles_TaskRowID",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "AssignedRoleTaskRoleCaptionOrAlias",
+      "Caption": "$Views_TaskAssignedRoles_TaskRoleCaptionAlias",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "AssignedRoleTaskRoleCaptionOrAlias",
+  "References": [
+    {
+      "ColPrefix": "FunctionRole",
+      "DisplayValueColumn": "RoleCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "TaskAssignedRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TaskFunctionRoles MSSQL]
+SELECT
+	[ttt].*	
+FROM (
+	SELECT
+		#if(Count) 
+		{
+		count(*) 									AS [cnt]
+		}
+		#if(Normal)
+		{
+		[tt].*, 
+		row_number() OVER (ORDER BY #order_by) 		AS [rn]
+		}
+	FROM (
+		SELECT 
+			'00000000-0000-0000-0000-000000000000' 	AS [FunctionRoleID],
+			'All' 								  	AS [RoleName],
+			'$Views_TaskAssignedRoles_All'			AS [RoleCaption]
+		UNION ALL 		
+		SELECT
+			[t].[TaskRoleID]						AS [FunctionRoleID],
+			[fr].[Name] 							AS [RoleName],
+			[fr].[Caption] 							AS [RoleCaption]			
+		FROM (
+			SELECT 
+				DISTINCT [tar].[TaskRoleID]
+			FROM [TaskAssignedRoles] AS [tar] with(nolock)
+			WHERE 1 = 1
+				#param(TaskRowID, [tar].[ID])			
+			) AS [t]		
+			LEFT JOIN [FunctionRoles] AS [fr] with(nolock)
+				ON [fr].[ID] = [t].[TaskRoleID]
+			
+	) AS [tt]
+	#if(AssignedRoleTaskRoleCaptionOrAlias || request.SortedBy("RoleCaption")) {
+	CROSS APPLY [Localization]([tt].[RoleCaption], #param(locale)) AS [lCaption]
+	}
+	
+	WHERE 1 = 1
+	#if(AssignedRoleTaskRoleCaptionOrAlias) {
+		AND (1 = 1 #param(AssignedRoleTaskRoleCaptionOrAlias, [tt].[RoleName]) OR 1 = 1 #param(AssignedRoleTaskRoleCaptionOrAlias, [lCaption].[Value]))
+		}
+) AS [ttt]
+#if(PageOffset) {
+WHERE [ttt].[rn] >= #param(PageOffset) AND [ttt].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [ttt].[rn]
+}
+
+
+[TEXTPART TaskFunctionRoles PGSQL]
+SELECT 
+	"ttt".*
+FROM (
+	SELECT
+		#if(Count) 
+		{
+		count(*) AS "cnt"
+		}
+		#if(Normal)
+		{
+		"tt".*,
+		0::int8										AS "rn"
+		}
+	FROM (		
+		SELECT 
+			'00000000-0000-0000-0000-000000000000' 	AS "FunctionRoleID",
+			'All' 								  	AS "RoleName",
+			'$Views_TaskAssignedRoles_All'			AS "RoleCaption"
+		UNION ALL 		
+		SELECT
+			"t"."TaskRoleID"						AS "FunctionRoleID",
+			"fr"."Name" 							AS "RoleName",
+			"fr"."Caption" 							AS "RoleCaption"			
+		FROM (
+			SELECT 
+				DISTINCT "tar"."TaskRoleID"
+			FROM "TaskAssignedRoles" AS "tar"
+			WHERE true
+				#param(TaskRowID, "tar"."ID")
+			) AS "t"	
+			LEFT JOIN "FunctionRoles" as "fr"
+				ON "fr"."ID" = "t"."TaskRoleID"
+		
+	) as "tt"
+	#if(AssignedRoleTaskRoleCaptionOrAlias || request.SortedBy("RoleCaption")) {
+	CROSS JOIN "Localization"("tt"."RoleCaption", #param(locale)) AS "lCaption"
+	}
+	
+	WHERE true
+	#if(AssignedRoleTaskRoleCaptionOrAlias) {
+		AND (true #param(AssignedRoleTaskRoleCaptionOrAlias, "tt"."RoleName") OR true #param(AssignedRoleTaskRoleCaptionOrAlias, "lCaption"."Value"))
+		}
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+) AS "ttt"
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

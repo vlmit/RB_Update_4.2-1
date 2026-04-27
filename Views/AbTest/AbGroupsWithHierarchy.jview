@@ -1,0 +1,83 @@
+﻿{
+  "Alias": "AbGroupsWithHierarchy",
+  "Caption": "$AbTest_Views_Names_GroupsWithHierarchy",
+  "GroupName": "AbTest",
+  "ID": "5de1d29e-41ce-4279-90d5-573d2a81f009",
+  "JsonMetadataSource::txt": "AbGroupsWithHierarchy JSONMETA",
+  "MsQuerySource::txt": "AbGroupsWithHierarchy MSSQL",
+  "PgQuerySource::txt": "AbGroupsWithHierarchy PGSQL"
+}
+
+[TEXTPART AbGroupsWithHierarchy JSONMETA]
+{
+  "Alias": "AbGroupsWithHierarchy",
+  "Caption": "$AbTest_Views_Names_GroupsWithHierarchy",
+  "Columns": [
+    {
+      "Alias": "ID",
+      "Hidden": true,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "ParentID",
+      "Hidden": true,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "GroupID",
+      "Hidden": true,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "GroupParentID",
+      "Hidden": true,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "GroupName",
+      "Caption": "$AbTest_Views_Groups_Content",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Content",
+      "Caption": "Содержимое",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "TreatAsSingleQuery": true,
+  "TreeGroupDisplayValue": "GroupName",
+  "TreeGroupId": "GroupID",
+  "TreeGroupParentId": "GroupParentID",
+  "TreeId": "ID",
+  "TreeParentId": "ParentID"
+}
+
+[TEXTPART AbGroupsWithHierarchy MSSQL]
+SELECT *
+FROM (VALUES
+	(0, NULL, 0, NULL, N'Donec blandit ut mauris in ornare.', N'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
+	(1, NULL, 1, 0, N'Vestibulum ante nisi, scelerisque et dui sit amet, pretium lobortis erat.', N'Phasellus id euismod sem.'),
+	(2, NULL, 1, 0, N'Vestibulum ante nisi, scelerisque et dui sit amet, pretium lobortis erat.', N'Quisque porttitor sapien non nunc mollis, ut fringilla elit facilisis.'),
+	(3, 2, NULL, NULL, NULL, N'In fermentum quam et ultrices mattis.'),
+	(4, NULL, 2, 0, N'Morbi nunc ex, finibus vitae elit at, pretium ornare diam.', N'Ut.'),
+	(5, NULL, 3, NULL, N'Nunc aliquam lectus vel arcu pulvinar commodo.', N'Pellentesque faucibus facilisis neque a faucibus. Nunc bibendum ultrices fermentum.'),
+	(6, NULL, 4, 3, N'Quisque scelerisque, nisl sit amet tincidunt convallis, nisl nunc auctor arcu, quis dapibus risus odio ut quam.', N'Vestibulum ac elementum felis, sed faucibus urna.'),
+	(7, NULL, 5, 4, N'Pellentesque cursus, diam in aliquet mattis, justo libero ultricies eros, nec pharetra erat dui non quam.', N'Mauris id turpis tempus, ornare magna nec, fringilla felis.')
+	) AS [Items] ([ID], [ParentID], [GroupID], [GroupParentID], [GroupName], [Content]);
+
+
+[TEXTPART AbGroupsWithHierarchy PGSQL]
+SELECT *
+FROM (VALUES
+	(0, NULL, 0, NULL, 'Donec blandit ut mauris in ornare.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'),
+	(1, NULL, 1, 0, 'Vestibulum ante nisi, scelerisque et dui sit amet, pretium lobortis erat.', 'Phasellus id euismod sem.'),
+	(2, NULL, 1, 0, 'Vestibulum ante nisi, scelerisque et dui sit amet, pretium lobortis erat.', 'Quisque porttitor sapien non nunc mollis, ut fringilla elit facilisis.'),
+	(3, 2, NULL, NULL, NULL, 'In fermentum quam et ultrices mattis.'),
+	(4, NULL, 2, 0, 'Morbi nunc ex, finibus vitae elit at, pretium ornare diam.', 'Ut.'),
+	(5, NULL, 3, NULL, 'Nunc aliquam lectus vel arcu pulvinar commodo.', 'Pellentesque faucibus facilisis neque a faucibus. Nunc bibendum ultrices fermentum.'),
+	(6, NULL, 4, 3, 'Quisque scelerisque, nisl sit amet tincidunt convallis, nisl nunc auctor arcu, quis dapibus risus odio ut quam.', 'Vestibulum ac elementum felis, sed faucibus urna.'),
+	(7, NULL, 5, 4, 'Pellentesque cursus, diam in aliquet mattis, justo libero ultricies eros, nec pharetra erat dui non quam.', 'Mauris id turpis tempus, ornare magna nec, fringilla felis.')
+	) AS "Items" ("ID", "ParentID", "GroupID", "GroupParentID", "GroupName", "Content");

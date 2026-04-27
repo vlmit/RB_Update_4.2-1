@@ -1,0 +1,290 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$Cards_CardTypes_ApprovalProcessTemplate",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": "{f:ApprovalProcessTemplates.Name}",
+  "Extensions": null,
+  "Flags::int": 1,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Title",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxLength::int": 128,
+                "ShowExpandButton": false,
+                "TextWrap": false
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "08289207-172a-4899-ba7c-4f47967af3a4"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "5cfc5ed0-ba1e-4068-8385-c2e7e8178a93",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Description",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxLength::int": 128,
+                "MaxRows::int": 8,
+                "MinRows::int": 3,
+                "ShowExpandButton": false,
+                "TextWrap": false
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "0089e31f-dd3e-486f-bb77-9ae4323792c1"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "5cfc5ed0-ba1e-4068-8385-c2e7e8178a93",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Blocks_Controls_Types",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "8bccc2f4-4d97-4681-982c-12bf08f7e90b",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Caption",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "Types",
+                  "TypeForView",
+                  "CardTypeRefGroup",
+                  "KrDocTypeRefGroup"
+                ],
+                "ViewAlias": "KrTypesEffective"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "191e5dcd-69a6-4ac0-8e1e-77a4224aba34",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Author",
+              "ComplexColumnID::uid": "43b0d8f4-da73-48c5-8c49-0d2923868161",
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "5cfc5ed0-ba1e-4068-8385-c2e7e8178a93",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_EditAccess",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "e80843b9-b486-4c3d-822b-8f8c82a609c3",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "ViewAlias": "Roles"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "1d350f24-c25b-495c-9704-28e02a412631",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "Доступ на использование",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "b68feea8-808c-446f-9039-2cf5f0ed5946",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "ViewAlias": "Roles"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "1a33e40c-bf9c-4506-bebd-45b9c20f8512",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Main",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Dictionaries",
+  "ID::uid": "bb80cc8a-edf1-4f2e-a15e-929fa129e161",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "ApprovalProcessTemplate",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "8bccc2f4-4d97-4681-982c-12bf08f7e90b"
+      ],
+      "SectionID::uid": "191e5dcd-69a6-4ac0-8e1e-77a4224aba34"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "b68feea8-808c-446f-9039-2cf5f0ed5946"
+      ],
+      "SectionID::uid": "1a33e40c-bf9c-4506-bebd-45b9c20f8512"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "e80843b9-b486-4c3d-822b-8f8c82a609c3"
+      ],
+      "SectionID::uid": "1d350f24-c25b-495c-9704-28e02a412631"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "08289207-172a-4899-ba7c-4f47967af3a4",
+        "1659cd18-5cba-450d-b37b-41ce44d9e7e9",
+        "43b0d8f4-da73-48c5-8c49-0d2923868161",
+        "0089e31f-dd3e-486f-bb77-9ae4323792c1"
+      ],
+      "SectionID::uid": "5cfc5ed0-ba1e-4068-8385-c2e7e8178a93"
+    }
+  ],
+  "Validators": [
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "08289207-172a-4899-ba7c-4f47967af3a4",
+        "ErrorMessage": "$CardTypes_Validators_ApprovalProcessTemplatesName",
+        "SectionID::uid": "5cfc5ed0-ba1e-4068-8385-c2e7e8178a93"
+      }
+    },
+    {
+      "TypeID::uid": "9cd89f16-8482-4382-943b-1db0469481ae",
+      "ValidatorSettings": {
+        "ColumnID::uid": "8bccc2f4-4d97-4681-982c-12bf08f7e90b",
+        "RemoveDuplicates": true,
+        "SectionID::uid": "191e5dcd-69a6-4ac0-8e1e-77a4224aba34"
+      }
+    },
+    {
+      "TypeID::uid": "9cd89f16-8482-4382-943b-1db0469481ae",
+      "ValidatorSettings": {
+        "ColumnID::uid": "b68feea8-808c-446f-9039-2cf5f0ed5946",
+        "RemoveDuplicates": true,
+        "SectionID::uid": "1a33e40c-bf9c-4506-bebd-45b9c20f8512"
+      }
+    },
+    {
+      "TypeID::uid": "9cd89f16-8482-4382-943b-1db0469481ae",
+      "ValidatorSettings": {
+        "ColumnID::uid": "e80843b9-b486-4c3d-822b-8f8c82a609c3",
+        "RemoveDuplicates": true,
+        "SectionID::uid": "1d350f24-c25b-495c-9704-28e02a412631"
+      }
+    }
+  ]
+}

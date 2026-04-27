@@ -1,0 +1,110 @@
+﻿{
+  "Alias": "SignatureDigestAlgos",
+  "Caption": "$Views_Names_SignatureDigestAlgos",
+  "GroupName": "System",
+  "ID": "c6f08c11-6dae-4e7f-a1d7-260134e9b3ff",
+  "JsonMetadataSource::txt": "SignatureDigestAlgos JSONMETA",
+  "MsQuerySource::txt": "SignatureDigestAlgos MSSQL",
+  "PgQuerySource::txt": "SignatureDigestAlgos PGSQL"
+}
+
+[TEXTPART SignatureDigestAlgos JSONMETA]
+{
+  "Alias": "SignatureDigestAlgos",
+  "Caption": "$Views_Names_SignatureDigestAlgos",
+  "Columns": [
+    {
+      "Alias": "SignatureDigestAlgorithmID",
+      "Hidden": true,
+      "Type": "$SignatureDigestAlgorithms.ID"
+    },
+    {
+      "Alias": "SignatureDigestAlgorithmName",
+      "Caption": "$Views_SignatureDigestAlgorithms_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$SignatureDigestAlgorithms.Name"
+    },
+    {
+      "Alias": "SignatureDigestAlgorithmOID",
+      "Caption": "$Views_SignatureDigestAlgorithms_OID",
+      "FilterParameter": "EncAlgoOid",
+      "FilterType": "Parameter",
+      "Type": "$SignatureDigestAlgorithms.OID"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_SignatureDigestAlgorithms_Name_Param",
+      "Multiple": false,
+      "Type": "$SignatureDigestAlgorithms.Name"
+    },
+    {
+      "Alias": "EncAlgoOid",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_SignatureDigestAlgorithms_EncAlgoOid",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "SignatureDigestAlgorithm",
+      "DisplayValueColumn": "SignatureDigestAlgorithmName",
+      "RefSection": [
+        "SignatureDigestAlgorithms"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART SignatureDigestAlgos MSSQL]
+SELECT
+	[st].[ID]		AS [SignatureDigestAlgorithmID],
+	[st].[Name]		AS [SignatureDigestAlgorithmName],
+  [st].[OID]		AS [SignatureDigestAlgorithmOID]
+FROM [SignatureDigestAlgorithms] AS [st] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([st].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+	#if(EncAlgoOid) {
+		and (
+			#param(EncAlgoOid) =  '1.2.643.7.1.1.1.1' and [st].[OID] = '1.2.643.7.1.1.2.2'
+			or #param(EncAlgoOid) = '1.2.643.7.1.1.1.2' and [st].[OID] = '1.2.643.7.1.1.2.3'
+			or #param(EncAlgoOid) = '1.2.643.2.2.19' and [st].[OID] = '1.2.643.2.2.9'
+			or #param(EncAlgoOid) not in ('1.2.643.7.1.1.1.1', '1.2.643.7.1.1.1.2', '1.2.643.2.2.19') 
+				and ([st].[OID] not in ('1.2.643.7.1.1.2.2', '1.2.643.7.1.1.2.3', '1.2.643.2.2.9'))
+		)
+	}
+ORDER BY [st].[ID]
+
+
+[TEXTPART SignatureDigestAlgos PGSQL]
+SELECT
+	"st"."ID"		AS "SignatureDigestAlgorithmID",
+	"st"."Name"		AS "SignatureDigestAlgorithmName",
+  "st"."OID"		AS "SignatureDigestAlgorithmOID"
+FROM "SignatureDigestAlgorithms" AS "st"
+#if(Name) {
+CROSS JOIN "Localization"("st"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+	#if(EncAlgoOid) {
+		and (
+			#param(EncAlgoOid) =  '1.2.643.7.1.1.1.1' and "st"."OID" = '1.2.643.7.1.1.2.2'
+			or #param(EncAlgoOid) = '1.2.643.7.1.1.1.2' and "st"."OID" = '1.2.643.7.1.1.2.3'
+			or #param(EncAlgoOid) = '1.2.643.2.2.19' and "st"."OID" = '1.2.643.2.2.9'
+			or #param(EncAlgoOid) not in ('1.2.643.7.1.1.1.1', '1.2.643.7.1.1.1.2', '1.2.643.2.2.19') 
+				and ("st"."OID" not in ('1.2.643.7.1.1.2.2', '1.2.643.7.1.1.2.3', '1.2.643.2.2.9'))
+		)
+	}
+ORDER BY "st"."Name"

@@ -1,0 +1,203 @@
+﻿{
+  "Alias": "FileTemplates",
+  "Caption": "$Views_Names_FileTemplates",
+  "GroupName": "System",
+  "ID": "86b47fab-4522-4d84-9cf1-d0db3fd06c75",
+  "JsonMetadataSource::txt": "FileTemplates JSONMETA",
+  "MsQuerySource::txt": "FileTemplates MSSQL",
+  "PgQuerySource::txt": "FileTemplates PGSQL"
+}
+
+[TEXTPART FileTemplates JSONMETA]
+{
+  "Alias": "FileTemplates",
+  "Caption": "$Views_Names_FileTemplates",
+  "Columns": [
+    {
+      "Alias": "FileTemplateID",
+      "Hidden": true,
+      "Type": "$FileTemplates.ID"
+    },
+    {
+      "Alias": "FileTemplateName",
+      "Caption": "$Views_FileTemplate_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$FileTemplates.Name"
+    },
+    {
+      "Alias": "FileTemplateGroupName",
+      "Caption": "$Views_FileTemplate_Group",
+      "FilterParameter": "GroupName",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lGroupName.Value",
+      "Type": "$FileTemplates.GroupName"
+    },
+    {
+      "Alias": "FileTemplateType",
+      "Caption": "$Views_FileTemplate_Type",
+      "FilterParameter": "Type",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lTypeName.Value",
+      "Type": "$FileTemplates.TypeName"
+    },
+    {
+      "Alias": "FileTemplateSystem",
+      "Caption": "$Views_FileTemplate_System",
+      "FilterParameter": "System",
+      "FilterType": "Parameter",
+      "SortBy": "t.System",
+      "Type": "$FileTemplates.System"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "FileTemplateName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_FileTemplate_Name_Param",
+      "Type": "$FileTemplates.Name"
+    },
+    {
+      "Alias": "GroupName",
+      "Caption": "$Views_FileTemplate_Group_Param",
+      "Type": "$FileTemplates.GroupName"
+    },
+    {
+      "Alias": "Type",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "FileTemplateTemplateTypes"
+      },
+      "Caption": "$Views_FileTemplate_Type_Param",
+      "DropDownInfo": {
+        "ViewAlias": "FileTemplateTemplateTypes"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "FileTemplateTemplateTypes"
+      ],
+      "Type": "$FileTemplates.TypeID"
+    },
+    {
+      "Alias": "System",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_FileTemplate_System_Param",
+      "Multiple": false,
+      "Type": "$FileTemplates.System"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "FileTemplate",
+      "DisplayValueColumn": "FileTemplateName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "FileTemplates"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART FileTemplates MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [FileTemplateID],
+		[t].[Name]								AS [FileTemplateName],
+		[t].[GroupName]							AS [FileTemplateGroupName],
+		[t].[TypeName]							AS [FileTemplateType],
+		[t].[System]							AS [FileTemplateSystem],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [FileTemplates] AS [t] WITH (NOLOCK)
+	#if(Name || Normal && request.SortedBy("FileTemplateName")) {
+	CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+	}
+	#if(GroupName || Normal && request.SortedBy("FileTemplateGroupName")) {
+	CROSS APPLY [Localization]([t].[GroupName], #param(locale)) AS [lGroupName]
+	}
+	#if(Normal && request.SortedBy("FileTemplateType")) {
+	CROSS APPLY [Localization]([t].[TypeName], #param(locale)) AS [lTypeName]
+	}
+	WHERE 1 = 1
+		#param(Name, [lName].[Value])
+		#param(GroupName, [lGroupName].[Value])
+		#param(Type, [t].[TypeID])
+		#param(System, [t].[System])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART FileTemplates PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"								AS "FileTemplateID",
+	"t"."Name"								AS "FileTemplateName",
+	"t"."GroupName"							AS "FileTemplateGroupName",
+	"t"."TypeName"							AS "FileTemplateType",
+	"t"."System"							AS "FileTemplateSystem",
+	0::int8									AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "FileTemplates" AS "t"
+#if(Name || Normal && request.SortedBy("FileTemplateName")) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+#if(GroupName || Normal && request.SortedBy("FileTemplateGroupName")) {
+CROSS JOIN "Localization"("t"."GroupName", #param(locale)) AS "lGroupName"
+}
+#if(Normal && request.SortedBy("FileTemplateType")) {
+CROSS JOIN "Localization"("t"."TypeName", #param(locale)) AS "lTypeName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+	#param(GroupName, "lGroupName"."Value")
+	#param(Type, "t"."TypeID")
+	#param(System, "t"."System")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

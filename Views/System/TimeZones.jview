@@ -1,0 +1,138 @@
+﻿{
+  "Alias": "TimeZones",
+  "Caption": "$Views_Names_TimeZones",
+  "GroupName": "System",
+  "ID": "24ed3370-f3c0-4074-a3f2-4614a7baaebb",
+  "JsonMetadataSource::txt": "TimeZones JSONMETA",
+  "MsQuerySource::txt": "TimeZones MSSQL",
+  "PgQuerySource::txt": "TimeZones PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TimeZones JSONMETA]
+{
+  "Alias": "TimeZones",
+  "Caption": "$Views_Names_TimeZones",
+  "Columns": [
+    {
+      "Alias": "ZoneID",
+      "Caption": "$Views_TimeZones_ZoneID",
+      "SortBy": "t.ZoneID",
+      "Type": "$TimeZones.ID"
+    },
+    {
+      "Alias": "ZoneShortName",
+      "Caption": "$Views_TimeZones_ShortName",
+      "SortBy": "t.ZoneShortName",
+      "Type": "$TimeZones.ShortName"
+    },
+    {
+      "Alias": "ZoneCodeName",
+      "Caption": "$Views_TimeZones_CodeName",
+      "SortBy": "t.ZoneCodeName",
+      "Type": "$TimeZones.CodeName"
+    },
+    {
+      "Alias": "ZoneUtcOffsetMinutes",
+      "Caption": "$Views_TimeZones_UtcOffsetMinutes",
+      "SortBy": "t.ZoneUtcOffsetMinutes",
+      "Type": "$TimeZones.UtcOffsetMinutes"
+    },
+    {
+      "Alias": "ZoneDisplayName",
+      "Caption": "$Views_TimeZones_DisplayName",
+      "Localizable": true,
+      "SortBy": "t.ZoneDisplayName",
+      "Type": "$TimeZones.DisplayName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ZoneID",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_TimeZones_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Zone",
+      "DisplayValueColumn": "ZoneShortName",
+      "RefSection": [
+        "TimeZones"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TimeZones MSSQL]
+SELECT
+	[t].[ZoneID],
+	[t].[ZoneShortName],
+	[t].[ZoneCodeName],
+	[t].[ZoneUtcOffsetMinutes],
+	[t].[ZoneDisplayName]
+FROM 
+	(SELECT 
+		[dtz].[ZoneID] 				AS [ZoneID],
+		[dtz].[ShortName] 			AS [ZoneShortName], 
+		[dtz].[CodeName] 			AS [ZoneCodeName],
+		[dtz].[UtcOffsetMinutes] 	AS [ZoneUtcOffsetMinutes],	
+		[dtz].[DisplayName] 		AS [ZoneDisplayName]	
+	FROM [DefaultTimeZone] AS [dtz] WITH (NOLOCK)
+	UNION ALL
+	SELECT
+		[tz].[ID] 					AS [ZoneID],
+		[tz].[ShortName] 			AS [ZoneShortName], 
+		[tz].[CodeName] 			AS [ZoneCodeName],
+		[tz].[UtcOffsetMinutes] 	AS [ZoneUtcOffsetMinutes],	
+		[tz].[DisplayName] 			AS [ZoneDisplayName]	
+	FROM [TimeZones] AS [tz] WITH (NOLOCK)) AS [t]
+WHERE 1 = 1
+	#if(Name) {
+	AND (1 = 1 #param(Name, [t].[ZoneShortName]) OR 1 = 1 #param(Name, [t].[ZoneCodeName]) OR 1 = 1 #param(Name, [t].[ZoneDisplayName]))
+	}
+ORDER BY #order_by
+
+
+[TEXTPART TimeZones PGSQL]
+SELECT
+	"t"."ZoneID",
+	"t"."ZoneShortName",
+	"t"."ZoneCodeName",
+	"t"."ZoneUtcOffsetMinutes",
+	"t"."ZoneDisplayName"
+FROM 
+	(SELECT 
+		"dtz"."ZoneID" 				AS "ZoneID",
+		"dtz"."ShortName" 			AS "ZoneShortName", 
+		"dtz"."CodeName" 			AS "ZoneCodeName",
+		"dtz"."UtcOffsetMinutes" 	AS "ZoneUtcOffsetMinutes",	
+		"dtz"."DisplayName" 		AS "ZoneDisplayName"	
+	FROM "DefaultTimeZone" AS "dtz"
+	UNION ALL
+	SELECT
+		"tz"."ID" 					AS "ZoneID",
+		"tz"."ShortName" 			AS "ZoneShortName", 
+		"tz"."CodeName" 			AS "ZoneCodeName",
+		"tz"."UtcOffsetMinutes" 	AS "ZoneUtcOffsetMinutes",	
+		"tz"."DisplayName" 			AS "ZoneDisplayName"	
+	FROM "TimeZones" AS "tz") AS "t"
+WHERE true
+	#if(Name) {
+	AND (true #param(Name, "t"."ZoneShortName") OR true #param(Name, "t"."ZoneCodeName") OR true #param(Name, "t"."ZoneDisplayName"))
+	}
+ORDER BY #order_by

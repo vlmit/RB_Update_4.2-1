@@ -1,0 +1,473 @@
+﻿{
+  "Alias": "LinkedDocuments",
+  "Caption": "$Views_Names_LinkedDocuments",
+  "Description": "Used for gradual replacement of DocumentsAllTypes",
+  "GroupName": "KrDocuments",
+  "ID": "88069520-441a-4f38-a103-c8f2ac8a2101",
+  "JsonMetadataSource::txt": "LinkedDocuments JSONMETA",
+  "MsQuerySource::txt": "LinkedDocuments MSSQL",
+  "PgQuerySource::txt": "LinkedDocuments PGSQL",
+  "Roles": [
+    {
+      "RoleId": "0071b103-0ffa-49da-8776-53b9c654d815"
+    }
+  ]
+}
+
+[TEXTPART LinkedDocuments JSONMETA]
+{
+  "Alias": "LinkedDocuments",
+  "Caption": "$Views_Names_LinkedDocuments",
+  "Columns": [
+    {
+      "Alias": "DocID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.ID"
+    },
+    {
+      "Alias": "DocNumber",
+      "Caption": "$Views_Registers_Number",
+      "FilterParameter": "Number",
+      "FilterType": "Parameter",
+      "Type": "$DocumentCommonInfo.FullNumber"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_Registers_Type",
+      "FilterParameter": "Type",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$DocumentCommonInfo.DocTypeTitle"
+    },
+    {
+      "Alias": "DocSubject",
+      "Caption": "$Views_Registers_Subject",
+      "FilterParameter": "Subject",
+      "FilterType": "Parameter",
+      "Type": "$DocumentCommonInfo.Subject"
+    },
+    {
+      "Alias": "DocDescription",
+      "Caption": "$Views_Registers_DocDescription",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "PartnerID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.PartnerID"
+    },
+    {
+      "Alias": "PartnerName",
+      "Caption": "$Views_Registers_Partner",
+      "FilterParameter": "Partner",
+      "FilterType": "Parameter",
+      "Type": "$DocumentCommonInfo.PartnerName"
+    },
+    {
+      "Alias": "AuthorID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.AuthorID"
+    },
+    {
+      "Alias": "AuthorName",
+      "Caption": "$Views_Registers_Author",
+      "FilterParameter": "Author",
+      "FilterType": "Parameter",
+      "Type": "$DocumentCommonInfo.AuthorName"
+    },
+    {
+      "Alias": "RegistratorID",
+      "Hidden": true,
+      "Type": "$DocumentCommonInfo.RegistratorID"
+    },
+    {
+      "Alias": "RegistratorName",
+      "Caption": "$Views_Registers_Registrator",
+      "FilterParameter": "Registrator",
+      "FilterType": "Parameter",
+      "Type": "$DocumentCommonInfo.RegistratorName"
+    },
+    {
+      "Alias": "DocDate",
+      "Caption": "$Views_Registers_DocDate",
+      "FilterParameter": "DocDate",
+      "FilterType": "Parameter",
+      "Type": "$DocumentCommonInfo.DocDate"
+    },
+    {
+      "Alias": "CreationDate",
+      "Caption": "$Views_Registers_CreationDate",
+      "FilterParameter": "CreationDate",
+      "FilterType": "Parameter",
+      "SortBy": "mi.CreationDate",
+      "Type": "Date Null"
+    },
+    {
+      "Alias": "Department",
+      "Caption": "$Views_Registers_Department",
+      "FilterParameter": "Department",
+      "FilterType": "Parameter",
+      "Type": "$DocumentCommonInfo.DepartmentName"
+    },
+    {
+      "Alias": "KrState",
+      "Caption": "$Views_Registers_State",
+      "FilterParameter": "State",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$DocumentCommonInfo.StateName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "CreationDate",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Partner",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          2
+        ],
+        "ViewAlias": "Partners"
+      },
+      "Caption": "$Views_Registers_Partner_Param",
+      "RefSection": [
+        "Partners"
+      ],
+      "Type": "$DocumentCommonInfo.PartnerID"
+    },
+    {
+      "Alias": "Number",
+      "Caption": "$Views_Registers_Number_Param",
+      "Type": "$DocumentCommonInfo.FullNumber"
+    },
+    {
+      "Alias": "Subject",
+      "Caption": "$Views_Registers_Subject_Param",
+      "Type": "$DocumentCommonInfo.Subject"
+    },
+    {
+      "Alias": "DocDate",
+      "Caption": "$Views_Registers_DocDate_Param",
+      "Type": "Date Null"
+    },
+    {
+      "Alias": "Author",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Registers_Author_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$DocumentCommonInfo.AuthorID"
+    },
+    {
+      "Alias": "Registrator",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Registers_Registrator_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$DocumentCommonInfo.RegistratorID"
+    },
+    {
+      "Alias": "State",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality",
+        "IsNull",
+        "IsNotNull"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrDocStates"
+      },
+      "Caption": "$Views_Registers_State_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrDocStates"
+      },
+      "RefSection": [
+        "KrDocState"
+      ],
+      "Type": "$DocumentCommonInfo.StateID"
+    },
+    {
+      "Alias": "Type",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Caption": "$Views_Registers_Type_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "RefSection": [
+        "KrCardTypesVirtual"
+      ],
+      "Type": "$DocumentCommonInfo.DocTypeID"
+    },
+    {
+      "Alias": "Department",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3,
+          5
+        ],
+        "ViewAlias": "Departments"
+      },
+      "Caption": "$Views_Registers_Department_Param",
+      "Multiple": false,
+      "RefSection": [
+        "DepartmentRoles"
+      ],
+      "Type": "$DocumentCommonInfo.DepartmentID"
+    },
+    {
+      "Alias": "CreationDate",
+      "Caption": "$Views_Registers_CreationDate_Param",
+      "Multiple": false,
+      "Type": "$DocumentCommonInfo.CreationDate"
+    },
+    {
+      "Alias": "LinkedDocID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_Registers_LinkedDocID_Param",
+      "Hidden": true,
+      "Type": "$OutgoingRefDocs.ID"
+    }
+  ],
+  "QuickSearchParam": "Number",
+  "References": [
+    {
+      "ColPrefix": "Doc",
+      "DisplayValueColumn": "DocNumber",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "DocumentCommonInfo",
+        "DocRefsSection"
+      ]
+    },
+    {
+      "ColPrefix": "Author",
+      "DisplayValueColumn": "AuthorName",
+      "IsCard": true,
+      "RefSection": [
+        "Roles",
+        "DurableRoles",
+        "PersonalRoles"
+      ]
+    },
+    {
+      "ColPrefix": "Registrator",
+      "DisplayValueColumn": "RegistratorName",
+      "IsCard": true,
+      "RefSection": [
+        "Roles",
+        "DurableRoles",
+        "PersonalRoles"
+      ]
+    },
+    {
+      "ColPrefix": "Partner",
+      "DisplayValueColumn": "PartnerName",
+      "IsCard": true,
+      "RefSection": [
+        "Partners"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART LinkedDocuments MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[DocID],
+	[t].[DocNumber],
+	[t].[TypeName],
+	[t].[DocSubject],
+	COALESCE([t].[DocNumber], N'') + N', ' + COALESCE([t].[DocSubject], N'') AS [DocDescription], 	-- autocomplete
+	[t].[PartnerID],
+	[t].[PartnerName],
+	[t].[AuthorID],
+	[t].[AuthorName],
+	[t].[RegistratorID],
+	[t].[RegistratorName],
+	[t].[DocDate],
+	[t].[CreationDate],
+	[t].[Department],
+	[t].[KrState]
+	}
+	#if(Count) {
+	[t].[cnt]
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[mi].[ID]									AS [DocID],
+		[mi].[FullNumber]							AS [DocNumber],
+		[mi].[DocTypeTitle]							AS [TypeName],
+		[mi].[Subject]								AS [DocSubject],
+		[mi].[PartnerID],
+		[mi].[PartnerName],
+		[mi].[AuthorID],
+		[mi].[AuthorName],
+		[mi].[RegistratorID],
+		[mi].[RegistratorName],
+		[mi].[DocDate],
+		CAST([mi].[CreationDate] AS date)			AS [CreationDate],
+		[mi].[DepartmentName]						AS [Department],
+		[mi].[StateName]							AS [KrState],
+		row_number() OVER (ORDER BY #order_by)		AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM (
+		/* UNION ALL made specifically to use indexes */
+		SELECT [ord].[ID] AS [ID]
+		FROM [OutgoingRefDocs] AS [ord] WITH (NOLOCK)
+		#if(LinkedDocID) {
+		WHERE 1 = 1 #param(LinkedDocID, [ord].[DocID])
+
+		UNION ALL
+
+		SELECT [ord].[DocID] AS [ID]
+		FROM [OutgoingRefDocs] AS [ord] WITH (NOLOCK)
+		WHERE 1 = 1 #param(LinkedDocID, [ord].[ID])
+		}
+		) AS [t]
+	INNER JOIN [DocumentCommonInfo] AS [mi] WITH (NOLOCK)
+		ON [t].[ID] = mi.[ID]
+	WHERE 1 = 1
+			#param(Partner, [mi].[PartnerID])
+			#param(Number, [mi].[FullNumber])
+			#param(Subject, [mi].[Subject])
+			#param(DocDate, [mi].[DocDate])
+			#param(State, [mi].[StateID])
+			#if(Type) {
+			AND (1 = 1 #param(Type, [mi].[DocTypeID]) OR 1 = 1 #param(Type, [mi].[CardTypeID]))
+			}
+			#param(Author, [mi].[AuthorID])
+			#param(Registrator, [mi].[RegistratorID])
+			#param(Department, [mi].[DepartmentID])
+			#param(CreationDate, [mi].[CreationDate])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+};
+
+
+[TEXTPART LinkedDocuments PGSQL]
+SELECT
+	#if(Normal) {
+	"mi"."ID"																AS "DocID",
+	"mi"."FullNumber"														AS "DocNumber",
+	"mi"."DocTypeTitle"														AS "TypeName",
+	"mi"."Subject"															AS "DocSubject",
+	COALESCE("mi"."FullNumber", '') || ', ' || COALESCE("mi"."Subject", '')	AS "DocDescription",	-- autocomplete
+	"mi"."PartnerID",
+	"mi"."PartnerName",
+	"mi"."AuthorID",
+	"mi"."AuthorName",
+	"mi"."RegistratorID",
+	"mi"."RegistratorName",
+	"mi"."DocDate",
+	CAST("mi"."CreationDate" AS date)										AS "CreationDate",
+	"mi"."DepartmentName"													AS "Department",
+	"mi"."StateName"														AS "KrState"
+	}
+	#if(Count) {
+	count(*)																AS "cnt"
+	}
+FROM (
+	/* UNION ALL made specifically to use indexes */
+	SELECT "ord"."ID" AS "ID"
+	FROM "OutgoingRefDocs" AS "ord"
+	#if(LinkedDocID) {
+	WHERE 1 = 1 #param(LinkedDocID, "ord"."DocID")
+
+	UNION ALL
+
+	SELECT "ord"."DocID" AS "ID"
+	FROM "OutgoingRefDocs" AS "ord"
+	WHERE 1 = 1 #param(LinkedDocID, "ord"."ID")
+	}
+	) AS "t"
+INNER JOIN "DocumentCommonInfo" AS "mi"
+	ON "t"."ID" = mi."ID"
+WHERE true
+	#param(Partner, "mi"."PartnerID")
+	#param(Number, "mi"."FullNumber")
+	#param(Subject, "mi"."Subject")
+	#param(DocDate, "mi"."DocDate")
+	#param(State, "mi"."StateID")
+	#if(Type) {
+	AND (true #param(Type, "mi"."DocTypeID") OR true #param(Type, "mi"."CardTypeID"))
+	}
+	#param(Author, "mi"."AuthorID")
+	#param(Registrator, "mi"."RegistratorID")
+	#param(Department, "mi"."DepartmentID")
+	#param(CreationDate, "mi"."CreationDate")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+};

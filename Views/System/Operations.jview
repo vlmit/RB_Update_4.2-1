@@ -1,0 +1,275 @@
+﻿{
+  "Alias": "Operations",
+  "Caption": "$Views_Names_Operations",
+  "GroupName": "System",
+  "ID": "c0bc56cb-0868-4108-996f-a87fe290d90d",
+  "JsonMetadataSource::txt": "Operations JSONMETA",
+  "MsQuerySource::txt": "Operations MSSQL",
+  "PgQuerySource::txt": "Operations PGSQL"
+}
+
+[TEXTPART Operations JSONMETA]
+{
+  "Alias": "Operations",
+  "Caption": "$Views_Names_Operations",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Operations.TypeID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_Operations_Type",
+      "FilterParameter": "TypeName",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lot.Value",
+      "Type": "$OperationTypes.Name"
+    },
+    {
+      "Alias": "OperationID",
+      "Hidden": true,
+      "Type": "$Operations.ID"
+    },
+    {
+      "Alias": "OperationName",
+      "Caption": "$Views_Operations_Name",
+      "FilterParameter": "Digest",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "o.Digest",
+      "Type": "$Operations.Digest"
+    },
+    {
+      "Alias": "StateID",
+      "Hidden": true,
+      "Type": "$OperationUpdates.StateID"
+    },
+    {
+      "Alias": "StateName",
+      "Caption": "$Views_Operations_State",
+      "FilterParameter": "StateName",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "los.Value",
+      "Type": "$OperationStates.Name"
+    },
+    {
+      "Alias": "Progress",
+      "Caption": "%",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "CreatedByID",
+      "Hidden": true,
+      "Type": "$Operations.CreatedByID"
+    },
+    {
+      "Alias": "CreatedByName",
+      "Caption": "$Views_Operations_User",
+      "NormalizationKeyColumn": "CreatedByID",
+      "NormalizationSource": "Users",
+      "Type": "$PersonalRoles.Name"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_Operations_Created",
+      "FilterParameter": "Created",
+      "FilterType": "Parameter",
+      "SortBy": "o.Created",
+      "Type": "$Operations.Created"
+    },
+    {
+      "Alias": "InProgress",
+      "Caption": "$Views_Operations_InProgress",
+      "FilterParameter": "InProgress",
+      "FilterType": "Parameter",
+      "SortBy": "ou.InProgress",
+      "Type": "$OperationUpdates.InProgress"
+    },
+    {
+      "Alias": "Completed",
+      "Caption": "$Views_Operations_Completed",
+      "FilterParameter": "Completed",
+      "FilterType": "Parameter",
+      "SortBy": "ou.Completed",
+      "Type": "$OperationUpdates.Completed"
+    },
+    {
+      "Alias": "Postponed",
+      "Caption": "$Views_Operations_Postponed",
+      "FilterParameter": "Postponed",
+      "FilterType": "Parameter",
+      "SortBy": "o.Postponed",
+      "Type": "$Operations.Postponed"
+    },
+    {
+      "Alias": "CreationFlags",
+      "Hidden": true,
+      "Type": "$Operations.CreationFlags"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Created",
+      "SortDirection": "Descending"
+    }
+  ],
+  "Extensions": [
+    {
+      "Order": 0,
+      "TypeName": "Tessa.Extensions.Platform.Client.Cards.OpenFromOperationsOnDoubleClickExtension"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_Operations_Type_Param",
+      "Multiple": false,
+      "Type": "$OperationTypes.Name"
+    },
+    {
+      "Alias": "Digest",
+      "Caption": "$Views_Operations_Name_Param",
+      "Type": "$Operations.Digest"
+    },
+    {
+      "Alias": "StateName",
+      "Caption": "$Views_Operations_State_Param",
+      "Multiple": false,
+      "Type": "$OperationStates.Name"
+    },
+    {
+      "Alias": "CreatedByID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Operations_User_Param",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$Operations.CreatedByID"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_Operations_Created_Param",
+      "Type": "$Operations.Created"
+    },
+    {
+      "Alias": "InProgress",
+      "Caption": "$Views_Operations_InProgress_Param",
+      "Type": "$OperationUpdates.InProgress"
+    },
+    {
+      "Alias": "Completed",
+      "Caption": "$Views_Operations_Completed_Param",
+      "Type": "$OperationUpdates.Completed"
+    },
+    {
+      "Alias": "Postponed",
+      "Caption": "$Views_Operations_Postponed_Param",
+      "Type": "$Operations.Postponed"
+    }
+  ],
+  "QuickSearchParam": "TypeName",
+  "References": [
+    {
+      "ColPrefix": "Operation",
+      "DisplayValueColumn": "TypeName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Operations"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Operations MSSQL]
+SELECT
+	[o].[TypeID],
+	[ot].[Name]							AS [TypeName],
+	[o].[ID]							AS [OperationID],
+	[o].[Digest]						AS [OperationName],
+	[ou].[StateID],
+	[os].[Name]							AS [StateName],
+	CAST(NULL AS nvarchar)				AS [Progress],
+	[o].[CreatedByID],
+	[o].[Created],
+	[ou].[InProgress],
+	[ou].[Completed],
+	[o].[Postponed],
+	[o].[CreationFlags]
+FROM [Operations] AS [o] WITH (NOLOCK)
+INNER JOIN [OperationUpdates] AS [ou] WITH (NOLOCK)
+	ON [o].[ID] = [ou].[ID]
+INNER JOIN [OperationTypes] AS [ot] WITH (NOLOCK)
+	ON [ot].[ID] = [o].[TypeID]
+#if(TypeName || request.SortedBy("TypeName")) {
+CROSS APPLY [Localization]([ot].[Name], #param(locale)) AS [lot]
+}
+INNER JOIN [OperationStates] AS [os] WITH (NOLOCK)
+	ON [os].[ID] = [ou].[StateID]
+#if(StateName || request.SortedBy("StateName")) {
+CROSS APPLY [Localization]([os].[Name], #param(locale)) AS [los]
+}
+WHERE 1 = 1
+	#param(TypeName, [lot].[Value])
+	#param(Digest, [o].[Digest])
+	#param(StateName, [los].[Value])
+	#param(CreatedByID, [o].[CreatedByID])
+	#param(Created, [o].[Created])
+	#param(InProgress, [ou].[InProgress])
+	#param(Completed, [ou].[Completed])
+	#param(Postponed, [o].[Postponed])
+ORDER BY #order_by
+
+
+[TEXTPART Operations PGSQL]
+SELECT
+	"o"."TypeID",
+	"ot"."Name"					AS "TypeName",
+	"o"."ID"					AS "OperationID",
+	"o"."Digest"				AS "OperationName",
+	"ou"."StateID",
+	"os"."Name"					AS "StateName",
+	NULL::text					AS "Progress",
+	"o"."CreatedByID",
+	"o"."Created",
+	"ou"."InProgress",
+	"ou"."Completed",
+	"o"."Postponed",
+	"o"."CreationFlags"
+FROM "Operations" AS "o"
+INNER JOIN "OperationUpdates" AS "ou"
+	ON "o"."ID" = "ou"."ID"
+INNER JOIN "OperationTypes" AS "ot"
+	ON "ot"."ID" = "o"."TypeID"
+#if(TypeName || request.SortedBy("TypeName")) {
+CROSS JOIN "Localization"("ot"."Name", #param(locale)) AS "lot"
+}
+INNER JOIN "OperationStates" AS "os"
+	ON "os"."ID" = "ou"."StateID"
+#if(StateName || request.SortedBy("StateName")) {
+CROSS JOIN "Localization"("os"."Name", #param(locale)) AS "los"
+}
+WHERE true
+	#param(TypeName, "lot"."Value")
+	#param(Digest, "o"."Digest")
+	#param(StateName, "los"."Value")
+	#param(CreatedByID, "o"."CreatedByID")
+	#param(Created, "o"."Created")
+	#param(InProgress, "ou"."InProgress")
+	#param(Completed, "ou"."Completed")
+	#param(Postponed, "o"."Postponed")
+ORDER BY #order_by

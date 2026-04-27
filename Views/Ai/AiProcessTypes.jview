@@ -1,0 +1,85 @@
+﻿{
+  "Alias": "AiProcessTypes",
+  "Caption": "$Ai_Views_ProcessType",
+  "GroupName": "Ai",
+  "ID": "2361444d-bb97-487a-9a5d-ef8df70375f4",
+  "JsonMetadataSource::txt": "AiProcessTypes JSONMETA",
+  "MsQuerySource::txt": "AiProcessTypes MSSQL",
+  "PgQuerySource::txt": "AiProcessTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART AiProcessTypes JSONMETA]
+{
+  "Alias": "AiProcessTypes",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Ai_Views_ProcessType",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$AiToolProcessType.ID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Ai_Views_Columns_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "\"pt\".\"Name\"",
+      "Type": "$AiToolProcessType.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Fields_Name_Param",
+      "Type": "$AiToolProcessType.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "RefSection": [
+        "AiProcessType"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AiProcessTypes MSSQL]
+SELECT
+    [pt].[ID] 		AS [TypeID],
+    [pt].[Name] 	AS [TypeName]
+FROM [AiToolProcessType] AS [pt]
+#if(Name) {
+CROSS APPLY [Localization]([pt].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+[TEXTPART AiProcessTypes PGSQL]
+SELECT
+	"pt"."ID"			AS "TypeID",
+	"pt"."Name"			AS "TypeName"
+FROM "AiToolProcessType" AS "pt"
+#if(Name) {
+CROSS JOIN "Localization"("pt"."Name", #param(locale)) AS "l"
+}
+WHERE TRUE
+	#param(Name, "l"."Value")
+ORDER BY #order_by

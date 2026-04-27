@@ -1,0 +1,557 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "TopicDialogs",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": null,
+          "ID::uid": "ec31de5e-b466-45f1-9ecf-7e1d5a9d7df8",
+          "Name": "IsReadOnly",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": null,
+          "ID::uid": "45caba91-f2eb-49d1-b59b-b0b1a2344a36",
+          "Name": "IsModerator",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": null,
+          "ID::uid": "4e2d1c8d-df69-4267-9e84-2a961dcc643d",
+          "Name": "IsSubscribed",
+          "SchemeType": "Boolean Not Null"
+        }
+      ],
+      "Description": "Settings for participants users to add or modify.",
+      "ID::uid": "27b033d8-9631-4934-ad14-560c3bc31405",
+      "Name": "TopicParticipantsInfo",
+      "TableType::int": 1
+    },
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 1,
+          "Description": null,
+          "ID::uid": "fd524350-73f0-4896-8ab0-31b205831ae5",
+          "IsReferencedToOwner": false,
+          "Name": "Participant",
+          "ReferencedColumns": [
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": null,
+              "ID::uid": "11316b6a-0b27-43a7-a4f6-1a02346973ec",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "81f6010b-9641-00a5-2000-08e8603fbf4b"
+            },
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": null,
+              "ID::uid": "c23c66e1-ea92-4940-876c-abea7d364c93",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "616d6b2e-35d5-424d-846b-618eb25962d0"
+            }
+          ],
+          "ReferencedTableID::uid": "81f6010b-9641-4aa5-8897-b8e8603fbf4b"
+        }
+      ],
+      "Description": "Participants list.",
+      "ID::uid": "ba2dcbd3-8454-4bb4-9d04-5cc018d579c9",
+      "Name": "TopicParticipants",
+      "TableType::int": 2
+    },
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": null,
+          "ID::uid": "eae7c6d4-1371-4c19-9dd9-6d7a0c422cde",
+          "Name": "IsReadOnly",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": null,
+          "ID::uid": "4c56555a-b697-4367-b770-f89c385296f1",
+          "Name": "IsSubscribed",
+          "SchemeType": "Boolean Not Null"
+        }
+      ],
+      "Description": "Settings for participants roles to add or modify.",
+      "ID::uid": "bf181a7b-8456-439e-bbe7-cf0e0a5ceda9",
+      "Name": "TopicRoleParticipantsInfo",
+      "TableType::int": 1
+    },
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "415a4b2a-ca96-48cd-a9d0-85ae12c625e2",
+          "Name": "Title",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "0d636255-d7cf-4d02-bcaa-1b92efb9eee1",
+          "Name": "Description",
+          "SchemeType": "String(Max) Not Null"
+        }
+      ],
+      "Description": "Title and description for the topic to add.",
+      "ID::uid": "f9a0cca3-551e-41d1-bef1-3ec8036e7a48",
+      "Name": "AddTopicInfo",
+      "TableType::int": 1
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$Forum_Controls_Title",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxLength::int": 1024
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 4,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "415a4b2a-ca96-48cd-a9d0-85ae12c625e2"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "f9a0cca3-551e-41d1-bef1-3ec8036e7a48",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_Description",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxRows::int": 4,
+                "MinRows::int": 4
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "0d636255-d7cf-4d02-bcaa-1b92efb9eee1"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "f9a0cca3-551e-41d1-bef1-3ec8036e7a48",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": false
+              },
+              "Caption": "$Forum_Controls_Participants",
+              "Columns": null,
+              "ControlSettings": {
+                "MaxHeight::int": 800
+              },
+              "ControlType::int": 1,
+              "Flags::int": 2,
+              "Form": {
+                "Blocks": null,
+                "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+                "FormSettings": null
+              },
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "ba2dcbd3-8454-4bb4-9d04-5cc018d579c9",
+              "ToolTip": null,
+              "Type::uid": "b6038b72-342a-0c8d-ae2e-f2f3d122baa9"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_AddParticipants",
+              "ControlSettings": {
+                "Text": "Добавить участника"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 1,
+              "Name": "AddParticipants",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "AddTopicBlock"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block2",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_AddParticipants",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "fd524350-73f0-4896-8ab0-31b205831ae5",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "ViewAlias": "Roles"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "ba2dcbd3-8454-4bb4-9d04-5cc018d579c9",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_IsReadOnly",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "IsReadOnly",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "ec31de5e-b466-45f1-9ecf-7e1d5a9d7df8"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "27b033d8-9631-4934-ad14-560c3bc31405",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_IsModerator",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "IsModerator",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "45caba91-f2eb-49d1-b59b-b0b1a2344a36"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "27b033d8-9631-4934-ad14-560c3bc31405",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_IsSubscribe",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "IsSubscribed",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "4e2d1c8d-df69-4267-9e84-2a961dcc643d"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "27b033d8-9631-4934-ad14-560c3bc31405",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block2"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "AddTopicTab",
+      "TabCaption": "$Forum_Tabs_AddTopic"
+    },
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_AddParticipants",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "fd524350-73f0-4896-8ab0-31b205831ae5",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "ViewAlias": "Roles"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "ba2dcbd3-8454-4bb4-9d04-5cc018d579c9",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_IsReadOnly",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "IsReadOnly",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "ec31de5e-b466-45f1-9ecf-7e1d5a9d7df8"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "27b033d8-9631-4934-ad14-560c3bc31405",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_IsModerator",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "IsModerator",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "45caba91-f2eb-49d1-b59b-b0b1a2344a36"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "27b033d8-9631-4934-ad14-560c3bc31405",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_IsSubscribe",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "IsSubscribed",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "4e2d1c8d-df69-4267-9e84-2a961dcc643d"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "27b033d8-9631-4934-ad14-560c3bc31405",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "AddParticipantsTabName",
+      "TabCaption": "$Forum_Tabs_AddParticipans"
+    },
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_AddRoles",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "fd524350-73f0-4896-8ab0-31b205831ae5",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "DurableRoles"
+                ],
+                "ViewAlias": "DurableRoles"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "ba2dcbd3-8454-4bb4-9d04-5cc018d579c9",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_IsReadOnly",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "eae7c6d4-1371-4c19-9dd9-6d7a0c422cde"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "bf181a7b-8456-439e-bbe7-cf0e0a5ceda9",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$Forum_Controls_IsSubscribe",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "4c56555a-b697-4367-b770-f89c385296f1"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "bf181a7b-8456-439e-bbe7-cf0e0a5ceda9",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "AddRoleParticipantsTabName",
+      "TabCaption": "$Forum_Tabs_AddRoles"
+    }
+  ],
+  "Group": "Forums",
+  "ID::uid": "e8c0c3a0-80cb-4f92-9fee-d38f1dddacd2",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "TopicDialogs",
+  "SchemeItems": null,
+  "Validators": null
+}

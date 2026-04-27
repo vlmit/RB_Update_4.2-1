@@ -1,0 +1,55 @@
+﻿{
+  "Alias": "EdsManagers",
+  "Caption": "$Views_Names_EdsManagers",
+  "GroupName": "System",
+  "ID": "18d94578-ee8e-49f7-9fbb-50b3ad3bf76b",
+  "JsonMetadataSource::txt": "EdsManagers JSONMETA",
+  "MsQuerySource::txt": "EdsManagers MSSQL",
+  "PgQuerySource::txt": "EdsManagers PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART EdsManagers JSONMETA]
+{
+  "Alias": "EdsManagers",
+  "Caption": "$Views_Names_EdsManagers",
+  "Columns": [
+    {
+      "Alias": "EdsName",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "AllowedOperands": [
+        "Contains",
+        "Equality"
+      ],
+      "Caption": "$Views_EdsManagers_Name",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Eds",
+      "DisplayValueColumn": "EdsName",
+      "RefSection": [
+        "SignatureManagerVirtual"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART EdsManagers MSSQL]
+
+
+
+[TEXTPART EdsManagers PGSQL]

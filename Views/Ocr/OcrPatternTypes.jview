@@ -1,0 +1,102 @@
+﻿{
+  "Alias": "OcrPatternTypes",
+  "Caption": "$Views_Names_OcrPatternTypes",
+  "GroupName": "Ocr",
+  "ID": "a1f31945-fbbb-4ae2-aa5a-db3354d75693",
+  "JsonMetadataSource::txt": "OcrPatternTypes JSONMETA",
+  "MsQuerySource::txt": "OcrPatternTypes MSSQL",
+  "PgQuerySource::txt": "OcrPatternTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART OcrPatternTypes JSONMETA]
+{
+  "Alias": "OcrPatternTypes",
+  "Caption": "$Views_Names_OcrPatternTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "SortBy": "ID",
+      "Type": "$OcrPatternTypes.ID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_OcrPatternTypes_Name",
+      "DisableGrouping": true,
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "Name",
+      "Type": "$OcrPatternTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_OcrPatternTypes_Name_Param",
+      "Multiple": false,
+      "Type": "$OcrPatternTypes.Name"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeName",
+      "RefSection": [
+        "OcrPatternTypes"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART OcrPatternTypes MSSQL]
+SELECT
+#if(Normal) {
+	[ID]		AS [TypeID],
+	[Name]		AS [TypeName]
+}
+#if(Count) {
+	COUNT(*) 	AS [Count]
+}
+FROM [OcrPatternTypes] WITH (NOLOCK)
+WHERE 1 = 1
+	#param(Name, [Name])
+#if(Normal) {
+ORDER BY #order_by
+}
+
+[TEXTPART OcrPatternTypes PGSQL]
+SELECT
+#if(Normal) {
+	"ID"		AS "TypeID",
+	"Name"		AS "TypeName"
+}
+#if(Count) {
+	COUNT(*) 	AS "Count"
+}
+FROM "OcrPatternTypes"
+WHERE 1 = 1
+	#param(Name, "Name")
+#if(Normal) {
+ORDER BY #order_by
+}

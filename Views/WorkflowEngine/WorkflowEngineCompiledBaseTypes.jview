@@ -1,0 +1,56 @@
+﻿{
+  "Alias": "WorkflowEngineCompiledBaseTypes",
+  "Caption": "$Views_Names_WorkflowEngineCompiledBaseTypes",
+  "Description": "Данное представление обрабатывается серверным расширением WorkflowEngineTileManagerExtendersViewInterceptor",
+  "GroupName": "WorkflowEngine",
+  "ID": "d3ba4765-6a54-465e-8803-323050fd951e",
+  "JsonMetadataSource::txt": "WorkflowEngineCompiledBaseTypes JSONMETA",
+  "MsQuerySource::txt": "WorkflowEngineCompiledBaseTypes MSSQL",
+  "PgQuerySource::txt": "WorkflowEngineCompiledBaseTypes PGSQL"
+}
+
+[TEXTPART WorkflowEngineCompiledBaseTypes JSONMETA]
+{
+  "Alias": "WorkflowEngineCompiledBaseTypes",
+  "Caption": "$Views_Names_WorkflowEngineCompiledBaseTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_WorkflowEngineCompiledBaseTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WorkflowEngineCompiledBaseTypes_Name_Param",
+      "Multiple": false,
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeName",
+      "RefSection": [
+        "WorkflowEngineCompiledBaseTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WorkflowEngineCompiledBaseTypes MSSQL]
+
+
+[TEXTPART WorkflowEngineCompiledBaseTypes PGSQL]

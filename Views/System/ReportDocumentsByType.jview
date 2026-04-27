@@ -1,0 +1,98 @@
+﻿{
+  "Alias": "ReportDocumentsByType",
+  "Caption": "$Views_Names_ReportDocumentsByType",
+  "GroupName": "System",
+  "ID": "35ebb779-0abd-411b-bc6b-358d2e2cabca",
+  "JsonMetadataSource::txt": "ReportDocumentsByType JSONMETA",
+  "MsQuerySource::txt": "ReportDocumentsByType MSSQL",
+  "PgQuerySource::txt": "ReportDocumentsByType PGSQL",
+  "Roles": [
+    {
+      "RoleId": "0071b103-0ffa-49da-8776-53b9c654d815"
+    }
+  ]
+}
+
+[TEXTPART ReportDocumentsByType JSONMETA]
+{
+  "Alias": "ReportDocumentsByType",
+  "Caption": "$Views_Names_ReportDocumentsByType",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_ReportDocumentsByType_TypeName",
+      "SortBy": "l.Value",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Total",
+      "Caption": "$Views_ReportDocumentsByType_Total",
+      "SortBy": "i.Total",
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "DocDate",
+      "Caption": "$Views_ReportDocumentsByType_DocDate_Param",
+      "Multiple": false,
+      "Type": "$DocumentCommonInfo.DocDate"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ReportDocumentsByType MSSQL]
+SELECT
+	[i].[TypeID],
+	[l].[Value] AS [TypeName],
+	[i].[Total]
+FROM (
+	SELECT
+		COALESCE([i].[DocTypeID], [i].[CardTypeID]) AS [TypeID],
+		COUNT(*) AS [Total]
+	FROM [DocumentCommonInfo] AS [i] WITH (NOLOCK)
+	WHERE 1 = 1
+		#param(DocDate, [i].[DocDate])
+	GROUP BY COALESCE([i].[DocTypeID], [i].[CardTypeID])
+	) AS [i]
+LEFT JOIN [KrDocType] AS [kdt] WITH (NOLOCK)
+	ON [kdt].[ID] = [i].[TypeID]
+LEFT JOIN [Types] AS [t] WITH (NOLOCK)
+	ON [t].[ID] = [i].[TypeID]
+CROSS APPLY [Localization](COALESCE([kdt].[Title], [t].[Caption]), #param(locale)) AS [l]
+ORDER BY #order_by;
+
+
+[TEXTPART ReportDocumentsByType PGSQL]
+SELECT
+	"i"."TypeID",
+	"l"."Value" AS "TypeName",
+	"i"."Total"
+FROM (
+	SELECT
+		COALESCE("i"."DocTypeID", "i"."CardTypeID") AS "TypeID",
+		COUNT(*) AS "Total"
+	FROM "DocumentCommonInfo" AS "i"
+	WHERE true
+		#param(DocDate, "i"."DocDate")
+	GROUP BY COALESCE("i"."DocTypeID", "i"."CardTypeID")
+	) AS "i"
+LEFT JOIN "KrDocType" AS "kdt"
+	ON "kdt"."ID" = "i"."TypeID"
+LEFT JOIN "Types" AS "t"
+	ON "t"."ID" = "i"."TypeID"
+CROSS JOIN "Localization"(COALESCE("kdt"."Title", "t"."Caption"), #param(locale)) AS "l"
+ORDER BY #order_by;

@@ -1,0 +1,397 @@
+﻿{
+  "Alias": "Tags",
+  "Caption": "$Views_Names_Tags",
+  "Description": "Представление с тегами, доступными пользователю.",
+  "GroupName": "Tags",
+  "ID": "99751083-96ea-435b-8331-4e0de99d69d6",
+  "JsonMetadataSource::txt": "Tags JSONMETA",
+  "MsQuerySource::txt": "Tags MSSQL",
+  "PgQuerySource::txt": "Tags PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART Tags JSONMETA]
+{
+  "Alias": "Tags",
+  "Caption": "$Views_Names_Tags",
+  "Columns": [
+    {
+      "Alias": "TagID",
+      "Hidden": true,
+      "Type": "$Tags.ID"
+    },
+    {
+      "Alias": "TagName",
+      "Caption": "$Views_Tags_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Tags.Name"
+    },
+    {
+      "Alias": "TagOwnerID",
+      "Hidden": true,
+      "Type": "$Tags.OwnerID"
+    },
+    {
+      "Alias": "TagOwnerName",
+      "Caption": "$Views_Tags_Owner",
+      "FilterParameter": "Owner",
+      "FilterType": "Parameter",
+      "Type": "$Tags.OwnerName"
+    },
+    {
+      "Alias": "TagBackground",
+      "Caption": "$CardTypes_Controls_Background",
+      "Hidden": true,
+      "Type": "$Tags.Background"
+    },
+    {
+      "Alias": "TagIsCommon",
+      "Caption": "$Tags_IsCommon",
+      "Hidden": true,
+      "Type": "$Tags.IsCommon"
+    },
+    {
+      "Alias": "TagCanEdit",
+      "Hidden": true,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "TagCanAddToCard",
+      "Hidden": true,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "TagCanRead",
+      "Hidden": true,
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TagName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "ID",
+      "Caption": "$Views_Tags_ID_Param",
+      "Hidden": true,
+      "IgnoreCase": false,
+      "Type": "$Tags.ID"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Tags_Name_Param",
+      "Type": "$Tags.Name"
+    },
+    {
+      "Alias": "Owner",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Tags_Owner_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$Tags.OwnerID"
+    },
+    {
+      "Alias": "MyTagsOnly",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_Tags_MyTagsOnly_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "IgnoreCardID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Tags_ExcludeCardTags",
+      "Hidden": true,
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "AddToCardDialogMode",
+      "Caption": "$Tags_AddToCardMode",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "CardType": "Tag",
+      "ColPrefix": "Tag",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Tags"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TagsPosition": "InColumn",
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Tags MSSQL]
+SELECT
+	#if(Normal) {
+		[tt].[ID]			AS [TagID],
+		[tt].[Name]			AS [TagName],
+		[t].[OwnerID]		AS [TagOwnerID],
+		[t].[OwnerName]		AS [TagOwnerName],
+		[t].[Background]	AS [TagBackground],
+		[t].[IsCommon]		AS [TagIsCommon],
+		CAST (CASE WHEN (EXISTS (
+			SELECT NULL
+			FROM [TagEditors] AS [te]
+			INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) ON [ru].[ID] = [te].[RoleID]
+			WHERE [ru].[UserID] = #param(CurrentUserID) AND [te].[ID] = [t].[ID]))
+			OR #param(CurrentUserID) = [t].[OwnerID] THEN (1) ELSE (0) END AS bit) AS [TagCanEdit],
+		CAST (CASE WHEN (EXISTS (
+			SELECT NULL
+			FROM [TagSharedWith] AS [tsw]
+			INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) ON [ru].[ID] = [tsw].[RoleID]
+			WHERE [ru].[UserID] = #param(CurrentUserID) AND [tsw].[ID] = [t].[ID]))
+			OR (EXISTS (
+			SELECT NULL
+			FROM [TagEditors] AS [tsw]
+			INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) ON [ru].[ID] = [tsw].[RoleID]
+			WHERE [ru].[UserID] = #param(CurrentUserID) AND [tsw].[ID] = [t].[ID]))
+			OR #param(CurrentUserID) = [t].[OwnerID] THEN (1) ELSE (0) END AS bit) AS [TagCanAddToCard],
+		CAST (CASE WHEN (EXISTS (
+			SELECT NULL
+			FROM [TagSharedWith] AS [tsw]
+			INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) ON [ru].[ID] = [tsw].[RoleID]
+			WHERE [ru].[UserID] = #param(CurrentUserID) AND [tsw].[ID] = [t].[ID]))
+			OR (EXISTS (
+			SELECT NULL
+			FROM [TagReaders] AS [tr]
+			INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) ON [ru].[ID] = [tr].[RoleID]
+			WHERE [ru].[UserID] = #param(CurrentUserID) AND [tr].[ID] = [t].[ID]))
+			OR (EXISTS (
+			SELECT NULL
+			FROM [TagEditors] AS [tsw]
+			INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) ON [ru].[ID] = [tsw].[RoleID]
+			WHERE [ru].[UserID] = #param(CurrentUserID) AND [tsw].[ID] = [t].[ID]))
+			OR #param(CurrentUserID) = [t].[OwnerID] THEN (1) ELSE (0) END AS bit) AS [TagCanRead]
+	}
+	#if(Count) {
+	[tt].*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]
+		,[t].[Name]
+		#if(Owner) {
+			,[t].[OwnerID]
+		}
+		,row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*)				AS [cnt]
+		}
+	FROM (
+		SELECT
+			[t].[ID]
+			#if(!Count || Name) {
+			,[dbo].[Localize]([t].[Name], #param(locale)) AS [Name]
+			}
+			#if(Owner) {
+			,[t].[OwnerID]
+			}
+		FROM [Tags] AS [t] WITH (NOLOCK)
+		WHERE 1 = 1
+		AND [t].[OwnerID] = #param(CurrentUserID)
+		#if(!MyTagsOnly) {
+			OR (EXISTS (
+				SELECT NULL
+				FROM [TagSharedWith] AS [tsw] WITH(NOLOCK)
+				INNER JOIN [RoleUsers] AS [rutsw] WITH(NOLOCK)
+					ON [rutsw].[ID] = [tsw].[RoleID]
+				WHERE [rutsw].[UserID] = #param(CurrentUserID)
+					AND [tsw].[ID] = [t].[ID]
+				))
+			OR (EXISTS (
+				SELECT NULL
+				FROM [TagEditors] AS [te] WITH(NOLOCK)
+				INNER JOIN [RoleUsers] AS [rute] WITH(NOLOCK)
+					ON [rute].[ID] = [te].[RoleID]
+				WHERE [rute].[UserID] = #param(CurrentUserID)
+					AND [te].[ID] = [t].[ID]
+				))
+			#if(!AddToCardDialogMode) {
+			OR (EXISTS (
+				SELECT NULL
+				FROM [TagReaders] AS [tr] WITH(NOLOCK)
+				INNER JOIN [RoleUsers] AS [rutr] WITH(NOLOCK)
+					ON [rutr].[ID] = [tr].[RoleID]
+				WHERE [rutr].[UserID] = #param(CurrentUserID)
+					AND [tr].[ID] = [t].[ID]
+				))
+			}
+		}
+	) AS [t]
+	WHERE 1 = 1
+		#param(ID, [t].[ID])
+		#param(Name, [t].[Name])
+		#param(Owner, [t].[OwnerID])
+		#if(IgnoreCardID) {
+			AND (SELECT COUNT([lc].[CardID])
+				FROM [TagCards] AS [lc] WITH(NOLOCK)
+				WHERE [lc].[TagID] = [t].[ID]
+					#param(IgnoreCardID, [lc].[CardID])) <> #eval(IgnoreCardID.CriteriaCount)
+		}
+) AS [tt]
+#if(Normal) {
+INNER JOIN [Tags] AS [t] WITH(NOLOCK)
+	ON [t].[ID] = [tt].[ID]
+#if(PageOffset) {
+WHERE [tt].[rn] >= #param(PageOffset) AND [tt].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+ORDER BY [tt].[rn]
+}
+
+[TEXTPART Tags PGSQL]
+SELECT
+	#if(Normal) {
+		"tt"."ID"			AS "TagID",
+		"tt"."Name"			AS "TagName",
+		"t"."OwnerID"		AS "TagOwnerID",
+		"t"."OwnerName"		AS "TagOwnerName",
+		"t"."Background"	AS "TagBackground",
+		"t"."IsCommon"		AS "TagIsCommon",
+		CASE WHEN (EXISTS (
+			SELECT NULL
+			FROM "TagEditors" AS "te"
+			INNER JOIN "RoleUsers" AS "ru" ON "ru"."ID" = "te"."RoleID"
+			WHERE "ru"."UserID" = #param(CurrentUserID) AND "te"."ID" = "t"."ID"))
+			OR #param(CurrentUserID) = "t"."OwnerID" THEN true ELSE false END AS "TagCanEdit",
+		CASE WHEN (EXISTS (
+			SELECT NULL
+			FROM "TagSharedWith" AS "tsw"
+			INNER JOIN "RoleUsers" AS "ru"  ON "ru"."ID" = "tsw"."RoleID"
+			WHERE "ru"."UserID" = #param(CurrentUserID) AND "tsw"."ID" = "t"."ID"))
+			OR (EXISTS (
+			SELECT NULL
+			FROM "TagEditors" AS "te"
+			INNER JOIN "RoleUsers" AS "ru"  ON "ru"."ID" = "te"."RoleID"
+			WHERE "ru"."UserID" = #param(CurrentUserID) AND "te"."ID" = "t"."ID"))
+			OR #param(CurrentUserID) = "t"."OwnerID" THEN true ELSE false END AS "TagCanAddToCard",
+		CASE WHEN (EXISTS (
+			SELECT NULL
+			FROM "TagSharedWith" AS "tsw"
+			INNER JOIN "RoleUsers" AS "ru"  ON "ru"."ID" = "tsw"."RoleID"
+			WHERE "ru"."UserID" = #param(CurrentUserID) AND "tsw"."ID" = "t"."ID"))
+			OR (EXISTS (
+			SELECT NULL
+			FROM "TagReaders" AS "tr"
+			INNER JOIN "RoleUsers" AS "ru"  ON "ru"."ID" = "tr"."RoleID"
+			WHERE "ru"."UserID" = #param(CurrentUserID) AND "tr"."ID" = "t"."ID"))
+			OR (EXISTS (
+			SELECT NULL
+			FROM "TagEditors" AS "te"
+			INNER JOIN "RoleUsers" AS "ru"  ON "ru"."ID" = "te"."RoleID"
+			WHERE "ru"."UserID" = #param(CurrentUserID) AND "te"."ID" = "t"."ID"))
+			OR #param(CurrentUserID) = "t"."OwnerID" THEN true ELSE false END AS "TagCanRead"
+	}
+	#if(Count) {
+	"tt".* AS "cnt"
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID"
+		,"t"."Name"
+		#if(Owner) {
+			,"t"."OwnerID"
+		}
+		,row_number() OVER (ORDER BY #order_by) AS "rn"
+		}
+		#if(Count) {
+		count(*)				AS "cnt"
+		}
+	FROM (
+		SELECT
+			"t"."ID"
+			#if(!Count || Name) {
+			,"Localize"("t"."Name", #param(locale)) AS "Name"
+			}
+			#if(Owner) {
+			,"t"."OwnerID"
+			}
+		FROM "Tags" AS "t"
+		WHERE 1 = 1
+		AND "t"."OwnerID" = #param(CurrentUserID)
+		#if(!MyTagsOnly) {
+			OR (EXISTS (
+				SELECT NULL
+				FROM "TagSharedWith" AS "tsw"
+				INNER JOIN "RoleUsers" AS "rutsw"
+					ON "rutsw"."ID" = "tsw"."RoleID"
+				WHERE "rutsw"."UserID" = #param(CurrentUserID)
+					AND "tsw"."ID" = "t"."ID"
+				))
+			OR (EXISTS (
+				SELECT NULL
+				FROM "TagEditors" AS "te"
+				INNER JOIN "RoleUsers" AS "rute"
+					ON "rute"."ID" = "te"."RoleID"
+				WHERE "rute"."UserID" = #param(CurrentUserID)
+					AND "te"."ID" = "t"."ID"
+				))
+			#if(!AddToCardDialogMode) {
+			OR (EXISTS (
+				SELECT NULL
+				FROM "TagReaders" AS "tr"
+				INNER JOIN "RoleUsers" AS "rutr"
+					ON "rutr"."ID" = "tr"."RoleID"
+				WHERE "rutr"."UserID" = #param(CurrentUserID)
+					AND "tr"."ID" = "t"."ID"
+				))
+			}
+		}
+	) AS "t"
+	WHERE 1 = 1
+		#param(ID, "t"."ID")
+		#param(Name, "t"."Name")
+		#param(Owner, "t"."OwnerID")
+		#if(IgnoreCardID) {
+			AND (SELECT COUNT("lc"."CardID")
+				FROM "TagCards" AS "lc"
+				WHERE "lc"."TagID" = "t"."ID"
+					#param(IgnoreCardID, "lc"."CardID")) <> #eval(IgnoreCardID.CriteriaCount)
+		}
+) AS "tt"
+#if(Normal) {
+INNER JOIN "Tags" AS "t"
+	ON "t"."ID" = "tt"."ID"
+#if(PageOffset) {
+WHERE "tt"."rn" >= #param(PageOffset) AND "tt"."rn" < (#param(PageOffset) + #param(PageLimit))
+}
+ORDER BY "tt"."rn"
+}

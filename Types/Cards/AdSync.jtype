@@ -1,0 +1,555 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_ADSync",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 2433,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "License",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "LicenseHint",
+              "ControlSettings": {
+                "Background": "#FFF9F9B0",
+                "BorderColor": "#FF848282",
+                "BorderThickness::dbl": 1.0,
+                "Hyperlink": false,
+                "Padding": "3,3,3,3",
+                "Text": "$CardTypes_Labels_AdSyncLicenseHint"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "LicenseHint",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "License"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Tabs_GeneralSettings",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "CommonSettingsHint",
+              "ControlSettings": {
+                "Background": "#FFF9F9B0",
+                "BorderColor": "#FF848282",
+                "BorderThickness::dbl": 1.0,
+                "Hyperlink": false,
+                "Padding": "3,3,3,3",
+                "Text": "$CardTypes_Labels_CommonSettingsHint"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": null,
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_AdSyncGroup",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "c79406d5-07de-4760-b069-2e6e40713a09"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "6b7f7b41-7ba8-4549-b965-f3a2aa9a168b",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_AdDisableStaticRoleRename",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "7fe9ace1-0f85-4f5b-a349-c44ae7376500"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "6b7f7b41-7ba8-4549-b965-f3a2aa9a168b",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "MainInfo"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_AdRootOU",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "OUSettingsHint",
+              "ControlSettings": {
+                "Background": "#FFF9F9B0",
+                "BorderColor": "#FF848282",
+                "BorderThickness::dbl": 1.0,
+                "Hyperlink": false,
+                "Padding": "3,3,3,3",
+                "Text": "$CardTypes_Labels_OUSettingsHint"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": null,
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+            },
+            {
+              "BlockSettings": {
+                "HideCaption": true
+              },
+              "Caption": "$CardTypes_Controls_AdRootOU",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "$CardTypes_Controls_AdElementOU",
+                  "ComplexColumnID": null,
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [
+                    {
+                      "::single_type": "uid"
+                    },
+                    "c02c101c-871a-4e65-a1b9-e5f0d2d90ef0"
+                  ],
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "$CardTypes_Controls_AdSyncDepartments",
+                  "ComplexColumnID": null,
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [
+                    {
+                      "::single_type": "uid"
+                    },
+                    "4835b141-cac6-49e5-bc03-fe934c13abb8"
+                  ],
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                },
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "$CardTypes_Controls_AdSyncStaticRoles",
+                  "ComplexColumnID": null,
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 2,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": [
+                    {
+                      "::single_type": "uid"
+                    },
+                    "86673210-8ce9-4161-8a07-42573f52551f"
+                  ],
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "MaxHeight::int": 800
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": {
+                "Blocks": [
+                  {
+                    "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                    "BlockSettings": null,
+                    "Caption": "$CardTypes_Controls_AdElementOU",
+                    "Controls": [
+                      {
+                        "BlockSettings": null,
+                        "Caption": "$CardTypes_Controls_AdElementOU",
+                        "ComplexColumnID": null,
+                        "ControlSettings": null,
+                        "ControlType::int": 0,
+                        "DisplayFormat": null,
+                        "Flags::int": 0,
+                        "Name": null,
+                        "PhysicalColumnIDList": [
+                          {
+                            "::single_type": "uid"
+                          },
+                          "c02c101c-871a-4e65-a1b9-e5f0d2d90ef0"
+                        ],
+                        "RequiredText": null,
+                        "SectionID::uid": "68543b32-9960-4b90-9c67-72a297f4feff",
+                        "ToolTip": null,
+                        "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+                      },
+                      {
+                        "BlockSettings": null,
+                        "Caption": "$CardTypes_Controls_AdSyncDepartments",
+                        "ComplexColumnID": null,
+                        "ControlSettings": null,
+                        "ControlType::int": 0,
+                        "DisplayFormat": null,
+                        "Flags::int": 0,
+                        "Name": null,
+                        "PhysicalColumnIDList": [
+                          {
+                            "::single_type": "uid"
+                          },
+                          "4835b141-cac6-49e5-bc03-fe934c13abb8"
+                        ],
+                        "RequiredText": null,
+                        "SectionID::uid": "68543b32-9960-4b90-9c67-72a297f4feff",
+                        "ToolTip": null,
+                        "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+                      },
+                      {
+                        "BlockSettings": null,
+                        "Caption": "$CardTypes_Controls_AdSyncStaticRoles",
+                        "ComplexColumnID": null,
+                        "ControlSettings": null,
+                        "ControlType::int": 0,
+                        "DisplayFormat": null,
+                        "Flags::int": 0,
+                        "Name": null,
+                        "PhysicalColumnIDList": [
+                          {
+                            "::single_type": "uid"
+                          },
+                          "86673210-8ce9-4161-8a07-42573f52551f"
+                        ],
+                        "RequiredText": null,
+                        "SectionID::uid": "68543b32-9960-4b90-9c67-72a297f4feff",
+                        "ToolTip": null,
+                        "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+                      }
+                    ],
+                    "FormSettings": {
+                      "HideCaption": true
+                    },
+                    "Name": "Block1"
+                  }
+                ],
+                "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+                "FormSettings": null
+              },
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "68543b32-9960-4b90-9c67-72a297f4feff",
+              "ToolTip": null,
+              "Type::uid": "b6038b72-342a-0c8d-ae2e-f2f3d122baa9"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "SyncRoots"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_AdRecurrentSync",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "RecurrentSyncHint",
+              "ControlSettings": {
+                "Background": "#FFF9F9B0",
+                "BorderColor": "#FF848282",
+                "BorderThickness::dbl": 1.0,
+                "Hyperlink": false,
+                "Padding": "3,3,3,3",
+                "Text": "$CardTypes_Labels_RecurrentSyncHint"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": null,
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_AdSyncUsers",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "6e475a70-01ee-4368-bdcc-a0ad197bc951"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "6b7f7b41-7ba8-4549-b965-f3a2aa9a168b",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_AdSyncDepartments",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "041c7e20-15ec-4ad4-9c41-394ed74737d1"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "6b7f7b41-7ba8-4549-b965-f3a2aa9a168b",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_AdSyncStaticRoles",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "5ee15b92-b087-47e9-a314-e88a2f91d5d9"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "6b7f7b41-7ba8-4549-b965-f3a2aa9a168b",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "RecurrentSync"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_AdManualSync",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_AdSyncStart",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_AdSyncStart"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "AdSyncStart",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "SyncActions"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Interval::int": 20
+      },
+      "Name": "AdSync",
+      "TabCaption": "$CardTypes_Tabs_Settings"
+    },
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "$CardTypes_Blocks_AdManualSync",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_AdSyncUsers",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "1413f99e-d07a-4139-ad89-3e2832e7f7cd"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c993000f-40d8-4639-a25d-e9a25d47e19c",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_AdSyncDepartments",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "90e03b40-e9c8-4c6a-8b57-0b1d755bc7aa"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c993000f-40d8-4639-a25d-e9a25d47e19c",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_AdSyncStaticRoles",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "e728e9da-b31e-4a49-9c8b-e6f030cb9bae"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c993000f-40d8-4639-a25d-e9a25d47e19c",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "SyncActions"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "IsHidden": true
+      },
+      "Name": "Manual_sync",
+      "TabCaption": "$CardTypes_Blocks_AdManualSync"
+    }
+  ],
+  "Group": "Settings",
+  "ID::uid": "cdaa9e03-9e06-4b4d-9a21-cfc446d2d9d1",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "AdSync",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "c02c101c-871a-4e65-a1b9-e5f0d2d90ef0",
+        "86673210-8ce9-4161-8a07-42573f52551f",
+        "4835b141-cac6-49e5-bc03-fe934c13abb8"
+      ],
+      "SectionID::uid": "68543b32-9960-4b90-9c67-72a297f4feff"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "6e475a70-01ee-4368-bdcc-a0ad197bc951",
+        "041c7e20-15ec-4ad4-9c41-394ed74737d1",
+        "c79406d5-07de-4760-b069-2e6e40713a09",
+        "5ee15b92-b087-47e9-a314-e88a2f91d5d9",
+        "7fe9ace1-0f85-4f5b-a349-c44ae7376500"
+      ],
+      "SectionID::uid": "6b7f7b41-7ba8-4549-b965-f3a2aa9a168b"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "1413f99e-d07a-4139-ad89-3e2832e7f7cd",
+        "90e03b40-e9c8-4c6a-8b57-0b1d755bc7aa",
+        "e728e9da-b31e-4a49-9c8b-e6f030cb9bae"
+      ],
+      "SectionID::uid": "c993000f-40d8-4639-a25d-e9a25d47e19c"
+    }
+  ],
+  "Validators": null
+}

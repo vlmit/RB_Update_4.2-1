@@ -1,0 +1,136 @@
+﻿{
+  "Alias": "Sequences",
+  "Caption": "$Views_Names_Sequences",
+  "GroupName": "System",
+  "ID": "b712a7be-2796-4986-b226-8bbcb26d1648",
+  "JsonMetadataSource::txt": "Sequences JSONMETA",
+  "MsQuerySource::txt": "Sequences MSSQL",
+  "PgQuerySource::txt": "Sequences PGSQL"
+}
+
+[TEXTPART Sequences JSONMETA]
+{
+  "Alias": "Sequences",
+  "Caption": "$Views_Names_Sequences",
+  "Columns": [
+    {
+      "Alias": "SequenceID",
+      "Hidden": true,
+      "Type": "$SequencesInfo.ID"
+    },
+    {
+      "Alias": "SequenceName",
+      "Caption": "$Views_Sequences_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$SequencesInfo.Name"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_Sequences_Created",
+      "FilterParameter": "Created",
+      "FilterType": "Parameter",
+      "SortBy": "i.Created",
+      "Type": "$Instances.Created"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Created",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Sequences_Name_Param",
+      "Type": "$SequencesInfo.Name"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_Sequences_Created_Param",
+      "Type": "$Instances.Created"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Sequence",
+      "DisplayValueColumn": "SequenceName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "SequencesInfo"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Sequences MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [SequenceID],
+		[t].[Name]								AS [SequenceName],
+		[i].[Created],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [SequencesInfo] AS [t] WITH (NOLOCK)
+	INNER JOIN [Instances] AS [i] WITH (NOLOCK)
+		ON [i].[ID] = [t].[ID]
+	WHERE 1 = 1
+		#param(Name, [t].[Name])
+		#param(Created, [i].[Created])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART Sequences PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "SequenceID",
+	"t"."Name"									AS "SequenceName",
+	"i"."Created",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "SequencesInfo" AS "t"
+INNER JOIN "Instances" AS "i"
+	ON "i"."ID" = "t"."ID"
+WHERE true
+	#param(Name, "t"."Name")
+	#param(Created, "i"."Created")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

@@ -1,0 +1,297 @@
+﻿{
+  "Alias": "ErrorWorkflows",
+  "Caption": "$Views_Names_ErrorWorkflows",
+  "GroupName": "WorkflowEngine",
+  "ID": "91bae5ac-e846-4b71-a87b-3cee38381c66",
+  "JsonMetadataSource::txt": "ErrorWorkflows JSONMETA",
+  "MsQuerySource::txt": "ErrorWorkflows MSSQL",
+  "PgQuerySource::txt": "ErrorWorkflows PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART ErrorWorkflows JSONMETA]
+{
+  "Alias": "ErrorWorkflows",
+  "Caption": "$Views_Names_ErrorWorkflows",
+  "Columns": [
+    {
+      "Alias": "ProcessID",
+      "Hidden": true,
+      "Type": "$WorkflowEngineProcesses.ID"
+    },
+    {
+      "Alias": "ProcessRowID",
+      "Hidden": true,
+      "Type": "$WorkflowEngineProcesses.RowID"
+    },
+    {
+      "Alias": "ProcessName",
+      "Caption": "$Views_ErrorWorkflows_ProcessName",
+      "Localizable": true,
+      "SortBy": "pr.Name",
+      "Type": "$WorkflowEngineProcesses.Name"
+    },
+    {
+      "Alias": "ProcessCreated",
+      "Caption": "$Views_ErrorWorkflows_Created",
+      "SortBy": "pr.Created",
+      "Type": "$WorkflowEngineProcesses.Created"
+    },
+    {
+      "Alias": "ProcessErrorAdded",
+      "Caption": "$Views_ErrorWorkflows_LastErrorAdded",
+      "SortBy": "e.ErrorAdded",
+      "Type": "$WorkflowEngineErrors.Added"
+    },
+    {
+      "Alias": "ProcessCardID",
+      "Hidden": true,
+      "Type": "$Instances.TypeID"
+    },
+    {
+      "Alias": "ProcessCardDigest",
+      "Caption": "$Views_ErrorWorkflows_CardDigest",
+      "FilterParameter": "CardDigest",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "pr.CardDigest",
+      "Type": "$WorkflowEngineProcesses.CardDigest"
+    },
+    {
+      "Alias": "ProcessCardType",
+      "Caption": "$Views_ErrorWorkflows_CardType",
+      "FilterParameter": "CardType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "LCaption.Value",
+      "Type": "$Instances.TypeCaption"
+    },
+    {
+      "Alias": "ProcessResumable",
+      "Caption": "$Views_ErrorWorkflows_Resumable",
+      "Localizable": true,
+      "SortBy": "e.Resumable",
+      "Type": "$WorkflowEngineErrors.Resumable"
+    },
+    {
+      "Alias": "ProcessVersion",
+      "Caption": "$Views_ActiveWorkflows_ProcessVersion",
+      "FilterParameter": "ProcessVersion",
+      "FilterType": "Parameter",
+      "SortBy": "bpv.Version",
+      "Type": "$BusinessProcessVersions.Version"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ProcessErrorAdded",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "ProcessTemplate",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "BusinessProcesses"
+      },
+      "Caption": "$Views_ErrorWorkflows_ProcessTemplate_Param",
+      "RefSection": [
+        "BusinessProcessInfo"
+      ],
+      "Type": "$BusinessProcessVersions.ID"
+    },
+    {
+      "Alias": "CardType",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "Types"
+      },
+      "Caption": "$Views_ErrorWorkflows_CardType_Param",
+      "RefSection": [
+        "Types"
+      ],
+      "Type": "$Instances.TypeID"
+    },
+    {
+      "Alias": "CardDigest",
+      "Caption": "$Views_ErrorWorkflows_CardDigest",
+      "Type": "$WorkflowEngineProcesses.CardDigest"
+    },
+    {
+      "Alias": "CardID",
+      "Caption": "$Views_ErrorWorkflows_CardID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$WorkflowEngineProcesses.CardID"
+    },
+    {
+      "Alias": "ErrorText",
+      "Caption": "$Views_ErrorWorkflows_ErrorText_Param",
+      "Type": "$Errors.Text"
+    },
+    {
+      "Alias": "ResumableOnly",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_ErrorWorkflows_ResumableOnly_Param",
+      "Multiple": false,
+      "Type": "$WorkflowEngineErrors.Resumable"
+    },
+    {
+      "Alias": "ProcessVersion",
+      "Caption": "$Views_ActiveWorkflows_ProcessVersion",
+      "Type": "$BusinessProcessVersions.Version"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Process",
+      "DisplayValueColumn": "ProcessName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "BusinessProcessInfo"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ErrorWorkflows MSSQL]
+DECLARE @false bit = 0;
+DECLARE @true bit = 1;
+
+SELECT
+	[t].[ProcessID]
+	,[t].[ProcessRowID]
+	,[t].[ProcessName]
+	,[t].[ProcessCreated]
+	,[t].[ProcessErrorAdded]
+	,[t].[ProcessCardID]
+	,COALESCE([t].[ProcessCardDigest], N'$Views_ErrorWorkflows_NoNameStr_Sql') as [ProcessCardDigest]
+	,[t].[ProcessCardType]
+	,[t].[ProcessResumable]
+	,[t].[ProcessVersion]
+FROM
+(
+	SELECT
+		[pr].[ID] as [ProcessID]
+		,[pr].[RowID] as [ProcessRowID]
+		,[pr].[Name] as [ProcessName]
+		,[pr].[Created] as [ProcessCreated]
+		,[e].[ErrorAdded] as [ProcessErrorAdded]
+		,[pr].[CardID] as [ProcessCardID]
+		,[pr].[CardDigest] as [ProcessCardDigest]
+		,[t].[Caption] as [ProcessCardType]
+		,[e].[Resumable] as [ProcessResumable]
+		,[bpv].[Version] as [ProcessVersion]
+		,row_number() OVER (ORDER BY #order_by) as [rn]
+		
+	FROM [WorkflowEngineProcesses] [pr] WITH(NOLOCK)
+	INNER JOIN [Instances] [i] WITH(NOLOCK) ON [pr].[CardID] = [i].[ID]
+	INNER JOIN [Types] [t] WITH(NOLOCK) ON [i].[TypeID] = [t].[ID]
+	INNER JOIN [BusinessProcessVersions] [bpv] WITH(NOLOCK) ON [bpv].[RowID] = [pr].[ProcessTemplateRowID]
+	#if(Normal && request.SortedBy("ProcessCardType")) {
+		CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [LCaption]
+	}
+	CROSS APPLY
+	(
+		SELECT TOP 1 
+			#if(ResumableOnly){
+				@true as [Resumable]
+			}{
+				COALESCE([res].[Resumable], @false) as [Resumable]
+			}
+			,[wee].[Added] as [ErrorAdded]
+		FROM [WorkflowEngineNodes] [wen] WITH(NOLOCK)
+		INNER JOIN [WorkflowEngineErrors] [wee] WITH(NOLOCK) ON [wen].[RowID] = [wee].[NodeRowID] 
+		#if(ErrorText){
+		INNER JOIN [Errors] [e] WITH(NOLOCK) ON [e].[ID] = [wee].[ErrorCardID]
+		}
+		#if(!ResumableOnly){
+		OUTER APPLY
+		(
+			SELECT TOP 1 [ee].[Resumable] as [Resumable]
+			FROM [WorkflowEngineNodes] [nn] WITH(NOLOCK) 
+			JOIN [WorkflowEngineErrors] [ee] WITH(NOLOCK) ON [nn].[RowID] = [ee].[NodeRowID]
+			WHERE [nn].[ProcessRowID] = [pr].[RowID] AND [ee].[Resumable] = 1
+		) [res]
+		}
+		WHERE  [wen].[ProcessRowID] = [pr].[RowID] 
+			AND [wee].[Active] = 1
+			#param(ResumableOnly, [wee].[Resumable])
+			#param(ErrorText, [e].[Text])
+		ORDER BY [wee].[Added] DESC
+	) e
+	WHERE 1 = 1
+		#param(CardID, [pr].[CardID])
+		#param(CardDigest, [pr].[CardDigest])
+		#param(CardType, [i].[TypeID])
+		#param(ProcessTemplate, [bpv].[ID])
+		#param(ProcessVersion, [bpv].[Version])
+) t
+#if(PageOffset) {
+    WHERE [t].[rn] >= #param(PageOffset) and [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+ ORDER BY [t].[rn]
+
+
+[TEXTPART ErrorWorkflows PGSQL]
+SELECT
+		"pr"."ID" 																as "ProcessID"
+		,"pr"."RowID" 															as "ProcessRowID"
+		,"pr"."Name" 															as "ProcessName"
+		,"pr"."Created" 														as "ProcessCreated"
+		,"e"."ErrorAdded" 							as "ProcessErrorAdded"
+		,"pr"."CardID" 															as "ProcessCardID"
+		,COALESCE("pr"."CardDigest", '$Views_ErrorWorkflows_NoNameStr_Sql') 	as "ProcessCardDigest"
+		,"t"."Caption" 															as "ProcessCardType"
+		,"e"."Resumable" 							as "ProcessResumable"
+		,"bpv"."Version" 														as "ProcessVersion"
+FROM (
+	SELECT "wen"."ProcessRowID",
+			bool_or("WorkflowEngineErrorsUniqueByNode"."Resumable") as "Resumable",
+			max("WorkflowEngineErrorsUniqueByNode"."ErrorAdded") as "ErrorAdded"
+    FROM (
+			SELECT "wee"."NodeRowID",
+					bool_or("wee"."Resumable") as "Resumable",
+					max("wee"."Added")	AS "ErrorAdded"
+			FROM "WorkflowEngineErrors" "wee"
+			#if(ErrorText){
+			INNER JOIN "Errors" "e" ON "e"."ID" = "wee"."ErrorCardID"
+			}
+			WHERE "wee"."Active"
+					#param(ResumableOnly, "wee"."Resumable")
+					#param(ErrorText, "e"."Text")
+			GROUP BY "wee"."NodeRowID"
+	) "WorkflowEngineErrorsUniqueByNode"
+	INNER JOIN "WorkflowEngineNodes" "wen" on "wen"."RowID" = "WorkflowEngineErrorsUniqueByNode"."NodeRowID"
+    GROUP BY "wen"."ProcessRowID"
+) "e"
+INNER JOIN "WorkflowEngineProcesses" "pr" on "pr"."RowID" = "e"."ProcessRowID"
+INNER JOIN "Instances" "i" ON "pr"."CardID" = "i"."ID"
+INNER JOIN "Types" "t" ON "i"."TypeID" = "t"."ID"
+INNER JOIN "BusinessProcessVersions" "bpv" ON "bpv"."RowID" = "pr"."ProcessTemplateRowID"
+#if(Normal && request.SortedBy("ProcessCardType")) {
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "LCaption"
+}
+WHERE	true
+		#param(CardID, "pr"."CardID")
+		#param(CardDigest, "pr"."CardDigest")
+		#param(CardType, "i"."TypeID")
+		#param(ProcessTemplate, "bpv"."ID")
+		#param(ProcessVersion, "bpv"."Version")
+ORDER BY #order_by
+#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}
+;

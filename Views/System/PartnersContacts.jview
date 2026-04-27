@@ -1,0 +1,230 @@
+﻿{
+  "Alias": "PartnersContacts",
+  "Caption": "$Views_Names_PartnersContacts",
+  "GroupName": "System",
+  "ID": "d0971b0f-42a0-433c-b3f4-a1d1b279156c",
+  "JsonMetadataSource::txt": "PartnersContacts JSONMETA",
+  "MsQuerySource::txt": "PartnersContacts MSSQL",
+  "PgQuerySource::txt": "PartnersContacts PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART PartnersContacts JSONMETA]
+{
+  "Alias": "PartnersContacts",
+  "Caption": "$Views_Names_PartnersContacts",
+  "Columns": [
+    {
+      "Alias": "PartnerContactPartnerID",
+      "Hidden": true,
+      "Type": "$Partners.ID"
+    },
+    {
+      "Alias": "PartnerContactPartnerName",
+      "Caption": "$CardTypes_Controls_Partner",
+      "FilterParameter": "PartnerID",
+      "FilterType": "Parameter",
+      "SortBy": "p.Name",
+      "Type": "$Partners.Name"
+    },
+    {
+      "Alias": "PartnerContactRowID",
+      "Hidden": true,
+      "Type": "$Partners.ID"
+    },
+    {
+      "Alias": "PartnerContactFullName",
+      "Caption": "$CardTypes_Controls_Columns_FullName",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "pc.Name",
+      "Type": "$PartnersContacts.Name"
+    },
+    {
+      "Alias": "Department",
+      "Caption": "$CardTypes_Controls_Columns_Department",
+      "SortBy": "pc.Department",
+      "Type": "$PartnersContacts.Department"
+    },
+    {
+      "Alias": "PartnerContactName",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "PhoneNumber",
+      "Caption": "$CardTypes_Controls_Columns_PhoneNumber",
+      "SortBy": "pc.PhoneNumber",
+      "Type": "$PartnersContacts.PhoneNumber"
+    },
+    {
+      "Alias": "Email",
+      "Caption": "$CardTypes_Controls_Columns_Email",
+      "SortBy": "pc.Email",
+      "Type": "$PartnersContacts.Email"
+    },
+    {
+      "Alias": "ContactAddress",
+      "Caption": "$CardTypes_Controls_ContactAddress",
+      "SortBy": "p.ContactAddress",
+      "Type": "$Partners.ContactAddress"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "PartnerContactFullName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "PartnerID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          2
+        ],
+        "ViewAlias": "Partners"
+      },
+      "Caption": "$CardTypes_Controls_Partner",
+      "Multiple": false,
+      "RefSection": [
+        "Partners"
+      ],
+      "Type": "$Partners.ID"
+    },
+    {
+      "Alias": "PartnerIDHidden",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          2
+        ],
+        "ViewAlias": "Partners"
+      },
+      "Caption": "$CardTypes_Controls_Partner",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "Partners"
+      ],
+      "Type": "$Partners.ID"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$CardTypes_Controls_Columns_FullName",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "PartnerContact",
+      "DisplayValueColumn": "PartnerContactName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "PartnersContacts",
+        "PaCo"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART PartnersContacts MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		[p].[ID]							AS [PartnerContactPartnerID],
+		[p].[Name]							AS [PartnerContactPartnerName],
+		COALESCE([pc].[RowID], [p].[ID])	AS [PartnerContactRowID],
+		[pc].[Name]							AS [PartnerContactFullName],
+		[pc].[Department],
+		CASE
+			WHEN (([pc].[Name] IS NULL OR [pc].[Name] = N'') AND ([pc].[Department] IS NULL OR [pc].[Department] = N'')) THEN N''
+			ELSE CASE
+					WHEN ([pc].[Name] IS NULL OR [pc].[Name] = N'') THEN [pc].[Department]
+					ELSE [pc].[Name]
+				END
+		END									AS [PartnerContactName],
+		[pc].[PhoneNumber],
+		[pc].[Email],
+		[p].[ContactAddress],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+	FROM [PartnersContacts] AS [pc] WITH (NOLOCK)
+	#if(PartnerIDHidden) {
+	/* Находимся в входящем */
+	INNER JOIN [Partners] AS [p] WITH (NOLOCK)
+		ON [p].[ID] = [pc].[ID]
+	}
+	/* Находимся в представлении или карточке исходящего */
+	#if(!PartnerIDHidden) {
+	RIGHT JOIN [Partners] AS [p] WITH (NOLOCK)
+		ON [p].[ID] = [pc].[ID]
+	}
+	WHERE (1 = 1 #param(Name, [pc].[Name]) OR 1 = 1 #param(Name, [pc].[Department]))
+	#if(PartnerID) {
+		#param(PartnerID, [p].[ID])
+	}
+	#if(!PartnerID && PartnerIDHidden) {
+		#param(PartnerIDHidden, [p].[ID])
+	}
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+ORDER BY [t].[rn]
+
+
+[TEXTPART PartnersContacts PGSQL]
+SELECT
+	"p"."ID"							AS "PartnerContactPartnerID",
+	"p"."Name"							AS "PartnerContactPartnerName",
+	COALESCE("pc"."RowID", "p"."ID")	AS "PartnerContactRowID",
+	"pc"."Name"							AS "PartnerContactFullName",
+	"pc"."Department",
+	CASE
+		WHEN (("pc"."Name" IS NULL OR "pc"."Name" ='') AND ("pc"."Department" IS NULL OR "pc"."Department" = '')) THEN ''
+		ELSE CASE
+				WHEN ("pc"."Name" IS NULL OR "pc"."Name" = '') THEN "pc"."Department"
+				ELSE "pc"."Name"
+			END
+	END									AS "PartnerContactName",
+	"pc"."PhoneNumber",
+	"pc"."Email",
+	"p"."ContactAddress",
+	0::int8								AS "rn"
+FROM "PartnersContacts" AS "pc"
+#if(PartnerIDHidden) {
+/* Находимся в входящем */
+INNER JOIN "Partners" AS "p"
+	ON "p"."ID" = "pc"."ID"
+}
+/* Находимся в представлении или карточке исходящего */
+#if(!PartnerIDHidden) {
+RIGHT JOIN "Partners" AS "p"
+	ON "p"."ID" = "pc"."ID"
+}
+WHERE (true #param(Name, "pc"."Name") OR true #param(Name, "pc"."Department"))
+	#param(PartnerID, "p"."ID")
+	#if(!PartnerID && PartnerIDHidden) {
+	#param(PartnerIDHidden, "p"."ID")
+	}
+ORDER BY #order_by
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

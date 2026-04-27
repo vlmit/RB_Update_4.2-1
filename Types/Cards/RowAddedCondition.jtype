@@ -1,0 +1,72 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_RowAddedCondition",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Section",
+              "ComplexColumnID::uid": "9c54d18e-5f42-49cd-aa95-8463351a60c6",
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "Sections"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "Sections"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "3b9d9643-ed47-4301-94b2-8eedcabc23bc",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "RowAddedCondition",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Conditions",
+  "ID::uid": "ad464749-98a9-480f-a59b-41ef203d00ce",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "RowAddedCondition",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "9c54d18e-5f42-49cd-aa95-8463351a60c6"
+      ],
+      "SectionID::uid": "3b9d9643-ed47-4301-94b2-8eedcabc23bc"
+    }
+  ],
+  "Validators": null
+}

@@ -1,0 +1,76 @@
+﻿{
+  "Alias": "AiCollectionDisplayMethods",
+  "Caption": "$Ai_Views_CollectionDisplayMethod",
+  "GroupName": "Ai",
+  "ID": "f0d3f62d-c21d-490a-89d0-c0b6851f4408",
+  "JsonMetadataSource::txt": "AiCollectionDisplayMethods JSONMETA",
+  "MsQuerySource::txt": "AiCollectionDisplayMethods MSSQL",
+  "PgQuerySource::txt": "AiCollectionDisplayMethods PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART AiCollectionDisplayMethods JSONMETA]
+{
+  "Alias": "AiCollectionDisplayMethods",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Ai_Views_CollectionDisplayMethod",
+  "Columns": [
+    {
+      "Alias": "MethodID",
+      "Hidden": true,
+      "Type": "$AiToolCollectionDisplayMethods.ID"
+    },
+    {
+      "Alias": "MethodName",
+      "Caption": "$Ai_Views_Columns_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$AiToolCollectionDisplayMethods.Name"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Fields_Name_Param",
+      "Type": "$AiToolCollectionDisplayMethods.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Method",
+      "RefSection": [
+        "AiCollectionDisplayMethod"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AiCollectionDisplayMethods MSSQL]
+SELECT
+    [cdm].[ID] 			AS [MethodID],
+	[cdm].[Name] 		AS [MethodName]
+FROM [AiToolCollectionDisplayMethods] AS [cdm]
+#if(Name) {
+CROSS APPLY [Localization]([cdm].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+
+[TEXTPART AiCollectionDisplayMethods PGSQL]
+SELECT
+	"cdm"."ID"			AS "MethodID",
+	"cdm"."Name"		AS "MethodName"
+FROM "AiToolCollectionDisplayMethods" AS "cdm"
+#if(Name) {
+CROSS JOIN "Localization"("cdm"."Name", #param(locale)) AS "l"
+}
+WHERE TRUE
+	#param(Name, "l"."Value")

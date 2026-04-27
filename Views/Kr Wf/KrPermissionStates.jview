@@ -1,0 +1,83 @@
+﻿{
+  "Alias": "KrPermissionStates",
+  "Caption": "$Views_Names_KrPermissionStates",
+  "GroupName": "Kr Wf",
+  "ID": "44026b2a-6699-425c-8669-5ad5c75945f9",
+  "JsonMetadataSource::txt": "KrPermissionStates JSONMETA",
+  "MsQuerySource::txt": "KrPermissionStates MSSQL",
+  "PgQuerySource::txt": "KrPermissionStates PGSQL"
+}
+
+[TEXTPART KrPermissionStates JSONMETA]
+{
+  "Alias": "KrPermissionStates",
+  "Caption": "$Views_Names_KrPermissionStates",
+  "Columns": [
+    {
+      "Alias": "KrPermissionStateID",
+      "Hidden": true,
+      "Type": "$KrPermissionStates.StateID"
+    },
+    {
+      "Alias": "KrPermissionStateName",
+      "Caption": "$Views_KrPermissions_States",
+      "Localizable": true,
+      "SortBy": "lState.Value",
+      "Type": "$KrPermissionStates.StateName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "KrPermissionStateName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "AccessRule",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "KrPermissions"
+      },
+      "Caption": "$Views_KrPermissionStates_AccessRule",
+      "Hidden": true,
+      "RefSection": [
+        "KrPermissions"
+      ],
+      "Type": "$KrPermissionStates.ID"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "KrPermissionState",
+      "DisplayValueColumn": "KrPermissionStateName",
+      "RefSection": [
+        "KrPermissionStates"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionStates MSSQL]
+SELECT
+	[t].[StateID] AS [KrPermissionStateID],
+	[t].[StateName] AS [KrPermissionStateName]
+FROM [KrPermissionStates] AS [t] WITH(NOLOCK)
+CROSS APPLY [Localization]([t].[StateName], #param(locale)) AS [lState]
+WHERE 1 = 1
+	#param(AccessRule, [t].[ID])
+ORDER BY #order_by
+
+
+[TEXTPART KrPermissionStates PGSQL]
+SELECT
+	"t"."StateID" AS "KrPermissionStateID",
+	"t"."StateName" AS "KrPermissionStateName"
+FROM "KrPermissionStates" AS "t"
+CROSS JOIN "Localization"("t"."StateName", #param(locale)) AS "lState"
+WHERE true
+	#param(AccessRule, "t"."ID")
+ORDER BY #order_by

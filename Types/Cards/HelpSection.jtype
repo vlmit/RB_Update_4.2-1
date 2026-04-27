@@ -1,0 +1,214 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$Cards_HelpSection",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": "{f:HelpSections.Code}{f:HelpSections.LanguageCode format as (.[0]):}",
+  "Extensions": null,
+  "Flags::int": 3,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Header",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Code",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "Code",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "a10e8dcf-87c7-46c2-ab7f-8efe74cd4016"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "741301fd-f38a-4cca-bab9-df1328d53b53",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Language",
+              "ComplexColumnID::uid": "832d7ae8-13d6-4146-bfeb-e358ad0e81b0",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "IsClearFieldVisible": true,
+                "ParameterAlias": "CaptionParam",
+                "ViewAlias": "Languages",
+                "ViewAliasComboBox": "Languages"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "Language",
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "741301fd-f38a-4cca-bab9-df1328d53b53",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Caption",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "Name",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "0864dbe9-b490-4a87-b352-f0878ea82668"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "741301fd-f38a-4cca-bab9-df1328d53b53",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 0,
+            "ColumnSpan::int": 1,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 0,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "Header"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "StretchVertically": true
+          },
+          "Caption": "Main",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_RichText",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "DisableAttachingFile": false,
+                "HelpMode::int": 0,
+                "HelpValue": "",
+                "MaxHeight": null,
+                "MinHeight::dbl": 100.0,
+                "SpellCheck": false
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "RichText",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "1f115761-97a5-448a-a3cd-0430290b7d24"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "741301fd-f38a-4cca-bab9-df1328d53b53",
+              "ToolTip": null,
+              "Type::uid": "7a25c32c-79f8-4554-a502-fff3ffddaab4"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 0,
+            "ColumnSpan::int": 1,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 1,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "Main"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Columns": [
+          {
+            "::types": [
+              "dbl"
+            ]
+          },
+          1.0
+        ],
+        "Rows": [
+          {
+            "::types": [
+              "unk",
+              "dbl"
+            ]
+          },
+          null,
+          1.0
+        ]
+      },
+      "Name": "HelpSection",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Dictionaries",
+  "ID::uid": "3442db47-ab96-4d9c-870f-535e1fc8d42f",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "HelpSection",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "a10e8dcf-87c7-46c2-ab7f-8efe74cd4016",
+        "0864dbe9-b490-4a87-b352-f0878ea82668",
+        "1f115761-97a5-448a-a3cd-0430290b7d24",
+        "6cfe8eb4-82de-4094-8864-58b00edc8bbc",
+        "832d7ae8-13d6-4146-bfeb-e358ad0e81b0"
+      ],
+      "SectionID::uid": "741301fd-f38a-4cca-bab9-df1328d53b53"
+    }
+  ],
+  "Validators": [
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "a10e8dcf-87c7-46c2-ab7f-8efe74cd4016",
+        "ErrorMessage": "$UI_HelpSections_CodeShouldBeNotEmpty",
+        "SectionID::uid": "741301fd-f38a-4cca-bab9-df1328d53b53"
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "0864dbe9-b490-4a87-b352-f0878ea82668",
+        "ErrorMessage": "$UI_HelpSections_NameShouldBeNotEmpty",
+        "SectionID::uid": "741301fd-f38a-4cca-bab9-df1328d53b53"
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "1f115761-97a5-448a-a3cd-0430290b7d24",
+        "ErrorMessage": "$UI_HelpSections_RichTextShouldBeNotEmpty",
+        "SectionID::uid": "741301fd-f38a-4cca-bab9-df1328d53b53"
+      }
+    }
+  ]
+}

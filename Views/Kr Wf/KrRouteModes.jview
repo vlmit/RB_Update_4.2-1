@@ -1,0 +1,79 @@
+﻿{
+  "Alias": "KrRouteModes",
+  "Caption": "$Views_Names_KrRouteModes",
+  "GroupName": "Kr Wf",
+  "ID": "3179625f-bf5e-478a-ba44-07fd2babede7",
+  "JsonMetadataSource::txt": "KrRouteModes JSONMETA",
+  "MsQuerySource::txt": "KrRouteModes MSSQL",
+  "PgQuerySource::txt": "KrRouteModes PGSQL"
+}
+
+[TEXTPART KrRouteModes JSONMETA]
+{
+  "Alias": "KrRouteModes",
+  "Caption": "$Views_Names_KrRouteModes",
+  "Columns": [
+    {
+      "Alias": "ModeID",
+      "Hidden": true,
+      "Type": "$KrRouteModes.ID"
+    },
+    {
+      "Alias": "ModeName",
+      "Caption": "$Views_KrRouteModes_Name",
+      "FilterParameter": "ModeNameParam",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$KrRouteModes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Name",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "ModeNameParam",
+      "Caption": "$Views_KrRouteModes_Name",
+      "Type": "$KrRouteModes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Mode",
+      "DisplayValueColumn": "ModeName",
+      "RefSection": [
+        "KrRouteModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrRouteModes MSSQL]
+SELECT
+	[rm].[ID]		AS [ModeID],
+	[rm].[Name]		AS [ModeName]
+FROM [KrRouteModes] AS [rm] WITH (NOLOCK)
+#if(ModeNameParam) {
+CROSS APPLY [dbo].[Localization]([rm].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(ModeNameParam, [lName].[Value])
+ORDER BY [rm].[ID]
+
+
+[TEXTPART KrRouteModes PGSQL]
+SELECT
+	"rm"."ID"		AS "ModeID",
+	"rm"."Name"		AS "ModeName"
+FROM "KrRouteModes" AS "rm"
+#if(ModeNameParam) {
+CROSS JOIN "Localization"("rm"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(ModeNameParam, "lName"."Value")
+ORDER BY "rm"."ID"

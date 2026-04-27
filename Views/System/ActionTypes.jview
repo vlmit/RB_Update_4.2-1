@@ -1,0 +1,76 @@
+﻿{
+  "Alias": "ActionTypes",
+  "Caption": "$Views_Names_ActionTypes",
+  "GroupName": "System",
+  "ID": "12532568-f56f-4399-9a86-5e76871c33aa",
+  "JsonMetadataSource::txt": "ActionTypes JSONMETA",
+  "MsQuerySource::txt": "ActionTypes MSSQL",
+  "PgQuerySource::txt": "ActionTypes PGSQL"
+}
+
+[TEXTPART ActionTypes JSONMETA]
+{
+  "Alias": "ActionTypes",
+  "Caption": "$Views_Names_ActionTypes",
+  "Columns": [
+    {
+      "Alias": "ActionID",
+      "Hidden": true,
+      "Type": "$ActionTypes.ID"
+    },
+    {
+      "Alias": "ActionName",
+      "Caption": "$Views_ActionTypes_Caption",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "l.Value",
+      "Type": "$ActionTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ActionName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_ActionTypes_Caption_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Action",
+      "DisplayValueColumn": "ActionName",
+      "RefSection": [
+        "ActionTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ActionTypes MSSQL]
+SELECT
+	[t].[ID]		AS [ActionID],
+	[t].[Name]		AS [ActionName]
+FROM [ActionTypes] AS [t] WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [l]
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART ActionTypes PGSQL]
+SELECT
+	"t"."ID"		AS "ActionID",
+	"t"."Name"		AS "ActionName"
+FROM "ActionTypes" AS "t"
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "l"
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY #order_by

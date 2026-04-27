@@ -1,0 +1,455 @@
+﻿{
+  "Alias": "AbResolutions",
+  "Caption": "$AbTest_Views_Names_Resolutions",
+  "GroupName": "AbTest",
+  "ID": "002ac65c-fe48-4877-a92d-8ff1fcf2ce08",
+  "JsonMetadataSource::txt": "AbResolutions JSONMETA",
+  "MsQuerySource::txt": "AbResolutions MSSQL",
+  "PgQuerySource::txt": "AbResolutions PGSQL"
+}
+
+[TEXTPART AbResolutions JSONMETA]
+{
+  "Alias": "AbResolutions",
+  "Caption": "$AbTest_Views_Names_Resolutions",
+  "Columns": [
+    {
+      "Alias": "DocID",
+      "Hidden": true,
+      "Type": "$AbResolutions.ID"
+    },
+    {
+      "Alias": "DocName",
+      "Caption": "$AbTest_Views_Resolutions_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$AbResolutions.Name"
+    },
+    {
+      "Alias": "CategoryID",
+      "Hidden": true,
+      "Type": "$AbResolutions.CategoryID"
+    },
+    {
+      "Alias": "CategoryName",
+      "Caption": "$AbTest_Views_Resolutions_Category",
+      "FilterParameter": "Category",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "NormalizationKeyColumn": "CategoryID",
+      "NormalizationSource": "DocumentCategories",
+      "Type": "$AbResolutions.CategoryName"
+    },
+    {
+      "Alias": "StateID",
+      "Hidden": true,
+      "Type": "$AbResolutions.StateID"
+    },
+    {
+      "Alias": "StateName",
+      "Caption": "$AbTest_Views_Resolutions_State",
+      "FilterParameter": "State",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "NormalizationKeyColumn": "StateID",
+      "NormalizationSource": "KrDocStates",
+      "Type": "$AbResolutions.StateName"
+    },
+    {
+      "Alias": "DepartmentID",
+      "Hidden": true,
+      "Type": "$AbResolutions.DepartmentID"
+    },
+    {
+      "Alias": "DepartmentName",
+      "Caption": "$AbTest_Views_Resolutions_Department",
+      "FilterParameter": "Department",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "NormalizationKeyColumn": "DepartmentID",
+      "NormalizationSource": "Roles",
+      "Type": "$AbResolutions.DepartmentName"
+    },
+    {
+      "Alias": "AuthorID",
+      "Hidden": true,
+      "Type": "$AbResolutions.AuthorID"
+    },
+    {
+      "Alias": "AuthorName",
+      "Caption": "$AbTest_Views_Resolutions_Author",
+      "FilterParameter": "Author",
+      "FilterType": "Parameter",
+      "NormalizationKeyColumn": "AuthorID",
+      "NormalizationSource": "Users",
+      "Type": "$AbResolutions.AuthorName"
+    },
+    {
+      "Alias": "PartnerID",
+      "Hidden": true,
+      "Type": "$AbResolutions.PartnerID"
+    },
+    {
+      "Alias": "PartnerName",
+      "Caption": "$AbTest_Views_Resolutions_Partner",
+      "NormalizationKeyColumn": "PartnerID",
+      "NormalizationSource": "Partners",
+      "Type": "$AbResolutions.PartnerName"
+    },
+    {
+      "Alias": "RefTypeID",
+      "Hidden": true,
+      "Type": "$AbResolutions.RefTypeID"
+    },
+    {
+      "Alias": "RefTypeCaption",
+      "Caption": "$AbTest_Views_Resolutions_Type",
+      "Localizable": true,
+      "NormalizationKeyColumn": "RefTypeID",
+      "NormalizationSource": "KrTypes",
+      "Type": "$AbResolutions.RefTypeCaption"
+    },
+    {
+      "Alias": "TaskKindID",
+      "Hidden": true,
+      "Type": "$AbResolutions.TaskKindID"
+    },
+    {
+      "Alias": "TaskKindCaption",
+      "Caption": "$AbTest_Views_Resolutions_TaskKind",
+      "Localizable": true,
+      "NormalizationKeyColumn": "TaskKindID",
+      "NormalizationSource": "TaskKinds",
+      "Type": "$AbResolutions.TaskKindCaption"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Not Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "DocName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$AbTest_Views_Resolutions_Name",
+      "Type": "$AbResolutions.Name"
+    },
+    {
+      "Alias": "Category",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "DocumentCategories"
+      },
+      "Caption": "$AbTest_Views_Resolutions_Category",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "DocumentCategories"
+      },
+      "RefSection": [
+        "DocumentCategories"
+      ],
+      "Type": "$AbResolutions.CategoryID"
+    },
+    {
+      "Alias": "State",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrDocStates"
+      },
+      "Caption": "$AbTest_Views_Resolutions_State",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrDocStates"
+      },
+      "RefSection": [
+        "KrDocState"
+      ],
+      "Type": "$AbResolutions.StateID"
+    },
+    {
+      "Alias": "Department",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3,
+          5
+        ],
+        "ViewAlias": "Departments"
+      },
+      "Caption": "$AbTest_Views_Resolutions_Department",
+      "RefSection": [
+        "DepartmentRoles"
+      ],
+      "Type": "$AbResolutions.DepartmentID"
+    },
+    {
+      "Alias": "Author",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$AbTest_Views_Resolutions_Author",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$AbResolutions.AuthorID"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Doc",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "AbResolutions"
+      ]
+    },
+    {
+      "ColPrefix": "Category",
+      "IsCard": true,
+      "RefSection": [
+        "DocumentCategories"
+      ]
+    },
+    {
+      "ColPrefix": "Department",
+      "IsCard": true,
+      "RefSection": [
+        "DepartmentRoles",
+        "Roles",
+        "DurableRoles"
+      ]
+    },
+    {
+      "ColPrefix": "Author",
+      "IsCard": true,
+      "RefSection": [
+        "PersonalRoles",
+        "Roles",
+        "DurableRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "ByCategory",
+      "Caption": "$AbTest_Views_Resolutions_ByCategory",
+      "CaptionColumn": "CategoryName",
+      "CountColumn": "cnt",
+      "NormalizationSource": "DocumentCategories",
+      "NullRefCaption": "$UI_Cards_FileNoCategory",
+      "RefColumn": "CategoryID",
+      "RefParam": "Category",
+      "SortingColumns": [
+        {
+          "Alias": "Count",
+          "SortDirection": "Descending"
+        },
+        {
+          "Alias": "LocalizedCaption",
+          "SortDirection": "Ascending"
+        }
+      ]
+    },
+    {
+      "Alias": "ByState",
+      "Caption": "$AbTest_Views_Resolutions_ByState",
+      "CaptionColumn": "StateName",
+      "CountColumn": "cnt",
+      "NormalizationSource": "KrDocStates",
+      "RefColumn": "StateID",
+      "RefParam": "State",
+      "SortingColumns": [
+        {
+          "Alias": "RefColumn",
+          "SortDirection": "Ascending"
+        }
+      ]
+    },
+    {
+      "Alias": "ByDepartment",
+      "Caption": "$AbTest_Views_Resolutions_ByDepartment",
+      "CaptionColumn": "DepartmentName",
+      "CountColumn": "cnt",
+      "NormalizationSource": "Roles",
+      "RefColumn": "DepartmentID",
+      "RefParam": "Department",
+      "SortingColumns": [
+        {
+          "Alias": "Count",
+          "SortDirection": "Descending"
+        },
+        {
+          "Alias": "Caption",
+          "SortDirection": "Ascending"
+        }
+      ]
+    },
+    {
+      "Alias": "ByAuthor",
+      "Caption": "$AbTest_Views_Resolutions_ByAuthor",
+      "CaptionColumn": "AuthorName",
+      "NormalizationSource": "Users",
+      "RefColumn": "AuthorID",
+      "RefParam": "Author",
+      "SortingColumns": [
+        {
+          "Alias": "Caption",
+          "SortDirection": "Ascending"
+        }
+      ]
+    },
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AbResolutions MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [DocID],
+		[t].[Name]								AS [DocName],
+		[t].[CategoryID],
+		[t].[StateID],
+		[t].[DepartmentID],
+		[t].[AuthorID],
+		[t].[PartnerID],
+		[t].[RefTypeID],
+		[t].[TaskKindID],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(ByCategory) {
+		[t].[CategoryID],
+		count(*) AS [cnt]
+		}
+		#if(ByState) {
+		[t].[StateID],
+		count(*) AS [cnt]
+		}
+		#if(ByDepartment) {
+		[t].[DepartmentID],
+		count(*) AS [cnt]
+		}
+		#if(ByAuthor) {
+		[t].[AuthorID]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [AbResolutions] AS [t] WITH (NOLOCK)
+	WHERE 1 = 1
+		#param(Name, [t].[Name])
+		#param(Category, [t].[CategoryID])
+		#param(State, [t].[StateID])
+		#param(Department, [t].[DepartmentID])
+		#param(Author, [t].[AuthorID])
+	#if(ByCategory) {
+	GROUP BY [t].[CategoryID]
+	}
+	#if(ByState) {
+	GROUP BY [t].[StateID]
+	}
+	#if(ByDepartment) {
+	GROUP BY [t].[DepartmentID]
+	}
+	#if(ByAuthor) {
+	GROUP BY [t].[AuthorID]
+	}
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+[TEXTPART AbResolutions PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "DocID",
+	"t"."Name"									AS "DocName",
+	"t"."CategoryID",
+	"t"."StateID",
+	"t"."DepartmentID",
+	"t"."AuthorID",
+	"t"."PartnerID",
+	"t"."RefTypeID",
+	"t"."TaskKindID",
+	0::int8										AS "rn"
+	}
+	#if(ByCategory) {
+	"t"."CategoryID",
+	count(*) AS "cnt"
+	}
+	#if(ByState) {
+	"t"."StateID",
+	count(*) AS "cnt"
+	}
+	#if(ByDepartment) {
+	"t"."DepartmentID",
+	count(*) AS "cnt"
+	}
+	#if(ByAuthor) {
+	"t"."AuthorID"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "AbResolutions" AS "t"
+WHERE true
+	#param(Name, "t"."Name")
+	#param(Category, "t"."CategoryID")
+	#param(State, "t"."StateID")
+	#param(Department, "t"."DepartmentID")
+	#param(Author, "t"."AuthorID")
+#if(ByCategory) {
+GROUP BY "t"."CategoryID"
+}
+#if(ByState) {
+GROUP BY "t"."StateID"
+}
+#if(ByDepartment) {
+GROUP BY "t"."DepartmentID"
+}
+#if(ByAuthor) {
+GROUP BY "t"."AuthorID"
+}
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

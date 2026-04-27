@@ -1,0 +1,90 @@
+﻿{
+  "Alias": "KrStageTypes",
+  "Caption": "$Views_Names_KrStageTypes",
+  "GroupName": "Kr Wf",
+  "ID": "a7ea0334-626e-41d8-9ae3-80cf3c710daa",
+  "JsonMetadataSource::txt": "KrStageTypes JSONMETA",
+  "MsQuerySource::txt": "KrStageTypes MSSQL",
+  "PgQuerySource::txt": "KrStageTypes PGSQL"
+}
+
+[TEXTPART KrStageTypes JSONMETA]
+{
+  "Alias": "KrStageTypes",
+  "Caption": "$Views_Names_KrStageTypes",
+  "Columns": [
+    {
+      "Alias": "StageTypeID",
+      "Hidden": true,
+      "Type": "$KrProcessStageTypes.ID"
+    },
+    {
+      "Alias": "StageTypeCaption",
+      "Caption": "$Views_KrProcessStageTypes_Caption",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "locCaption.Value",
+      "Type": "$KrProcessStageTypes.Caption"
+    },
+    {
+      "Alias": "StageTypeDefaultStageName",
+      "Caption": "$Views_KrProcessStageTypes_DefaultStageName",
+      "Localizable": true,
+      "Type": "$KrProcessStageTypes.DefaultStageName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "StageTypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_KrProcessStageTypes_Name",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "StageType",
+      "DisplayValueColumn": "StageTypeCaption",
+      "RefSection": [
+        "KrProcessStageTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrStageTypes MSSQL]
+SELECT
+	[t].[ID] AS [StageTypeID],
+	[t].[Caption] AS [StageTypeCaption],
+	[t].[DefaultStageName] AS [StageTypeDefaultStageName]
+FROM [KrProcessStageTypes] AS [t] WITH (NOLOCK)
+#if (Caption || request.SortedBy("StageTypeCaption")) {
+CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [locCaption]
+}
+WHERE 1=1
+	#param(Caption, [locCaption].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART KrStageTypes PGSQL]
+SELECT
+	"t"."ID" AS "StageTypeID",
+	"t"."Caption" AS "StageTypeCaption",
+	"t"."DefaultStageName" AS "StageTypeDefaultStageName"
+FROM "KrProcessStageTypes" AS "t"
+#if (Caption || request.SortedBy("StageTypeCaption")) {
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "locCaption"
+}
+WHERE true
+	#param(Caption, "locCaption"."Value")
+ORDER BY #order_by

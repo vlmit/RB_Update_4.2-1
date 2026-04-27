@@ -1,0 +1,85 @@
+﻿{
+  "Alias": "ApprovalProcessInfoModes",
+  "Caption": "$Views_Names_ApprovalProcessInfoModes",
+  "GroupName": "ApprovalProcessEditor",
+  "ID": "1222edd2-1573-4265-adfb-67068b8bd8ed",
+  "JsonMetadataSource::txt": "ApprovalProcessInfoModes JSONMETA",
+  "MsQuerySource::txt": "ApprovalProcessInfoModes MSSQL",
+  "PgQuerySource::txt": "ApprovalProcessInfoModes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART ApprovalProcessInfoModes JSONMETA]
+{
+  "Alias": "ApprovalProcessInfoModes",
+  "Caption": "$Views_Names_ApprovalProcessInfoModes",
+  "Columns": [
+    {
+      "Alias": "InfoModeID",
+      "Hidden": true,
+      "Type": "$ApprovalProcessInfoModes.ID"
+    },
+    {
+      "Alias": "InfoModeName",
+      "Caption": "$Views_ApprovalProcessInfoModes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$ApprovalProcessInfoModes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "InfoModeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_ApprovalProcessInfoModes_Name_Param",
+      "Multiple": false,
+      "Type": "$ApprovalProcessInfoModes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "InfoMode",
+      "DisplayValueColumn": "InfoModeName",
+      "RefSection": [
+        "ApprovalProcessInfoModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ApprovalProcessInfoModes MSSQL]
+SELECT
+	[ct].[ID]	AS [InfoModeID],
+	[ct].[Name]	AS [InfoModeName]
+FROM [ApprovalProcessInfoModes] AS [ct] WITH(NOLOCK)
+#if(Name || request.SortedBy("InfoModeName")) {
+CROSS APPLY [Localization]([ct].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+[TEXTPART ApprovalProcessInfoModes PGSQL]
+SELECT
+	"ct"."ID"	AS "InfoModeID",
+	"ct"."Name"	AS "InfoModeName"
+FROM "ApprovalProcessInfoModes" AS "ct"
+#if(Name || request.SortedBy("InfoModeName")) {
+CROSS JOIN "Localization"("ct"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

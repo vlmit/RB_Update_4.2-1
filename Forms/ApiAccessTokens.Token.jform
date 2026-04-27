@@ -1,0 +1,92 @@
+{
+  "Alias": "ApiAccessTokens.Token",
+  "BundleID::uid": "c5bdb424-23c9-45ed-9210-98e8c72afd24",
+  "Caption": "$CardTypes_Tabs_ApiAccessToken",
+  "Child": {
+    "Alias": "MainInformationBlock",
+    "Caption": "$CardTypes_Blocks_MainInformation",
+    "Children": [
+      {
+        "Alias": "d6008ce8",
+        "Children": [
+          {
+            "Alias": "TokenHint",
+            "Caption": "Token hint",
+            "HideCaption": true,
+            "ID::uid": "e1cd4e18-49e0-4292-b3dc-218440778d22",
+            "MinWidth": "100%",
+            "Text": "$CardTypes_Labels_ApiAccessTokenHint",
+            "Type::uid": "4afd6c3d-f513-416e-9a09-689f8121a775"
+          }
+        ],
+        "Column::int": 0,
+        "Height": "100%",
+        "ID::uid": "d6008ce8-f6cd-4e66-9bc4-38ca982a41d6",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "075e0fa4",
+        "Children": [
+          {
+            "Alias": "Token",
+            "BindingType": "FormStorage",
+            "Caption": "Token",
+            "HideCaption": true,
+            "ID::uid": "cc0d32a0-41dd-4a1d-b2d1-b644be64a395",
+            "MinWidth": "100%",
+            "Readonly": true,
+            "Type::uid": "86a9b619-4e22-4dd8-909c-262b46ae273e"
+          }
+        ],
+        "Column::int": 0,
+        "Height": "100%",
+        "ID::uid": "075e0fa4-b627-4499-862b-9d992f590f8c",
+        "Row::int": 1,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      }
+    ],
+    "Columns": [
+      {
+        "Alias": "e9903e08",
+        "HideIfEmpty": true,
+        "ID::uid": "e9903e08-4443-41ec-9ba0-6e03a3b408fa",
+        "Index::int": 0,
+        "Size": "1fr",
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      }
+    ],
+    "GridGap": "10px 20px",
+    "Height": "100%",
+    "HideCaption": true,
+    "ID::uid": "f8a99a27-3cb9-44bf-8f02-4744d06076b7",
+    "Padding": "10px",
+    "Rows": [
+      {
+        "Alias": "453b1e9d",
+        "HideIfEmpty": true,
+        "ID::uid": "453b1e9d-dc81-42c3-b17f-d8c0f52b561a",
+        "Index::int": 0,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      },
+      {
+        "Alias": "09db4a34",
+        "HideIfEmpty": true,
+        "ID::uid": "09db4a34-c610-40e1-a865-7fba3c912be0",
+        "Index::int": 1,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      }
+    ],
+    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+  },
+  "ID::uid": "6d682c25-2f16-441f-aadb-d8d1820ff29c",
+  "States": null,
+  "SubForms": null,
+  "Version::int": 0
+}

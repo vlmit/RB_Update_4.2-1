@@ -1,0 +1,76 @@
+﻿{
+  "Alias": "KrDocNumberRegistrationAutoAssigment",
+  "Caption": "$Views_Names_KrDocNumberRegistrationAutoAssigment",
+  "GroupName": "Kr Wf",
+  "ID": "65867469-2aec-4c13-a807-a2784a023d6b",
+  "JsonMetadataSource::txt": "KrDocNumberRegistrationAutoAssigment JSONMETA",
+  "MsQuerySource::txt": "KrDocNumberRegistrationAutoAssigment MSSQL",
+  "PgQuerySource::txt": "KrDocNumberRegistrationAutoAssigment PGSQL"
+}
+
+[TEXTPART KrDocNumberRegistrationAutoAssigment JSONMETA]
+{
+  "Alias": "KrDocNumberRegistrationAutoAssigment",
+  "Caption": "$Views_Names_KrDocNumberRegistrationAutoAssigment",
+  "Columns": [
+    {
+      "Alias": "DocNumberRegistrationAutoAssignmentID",
+      "Hidden": true,
+      "Type": "$KrDocNumberRegistrationAutoAssignment.ID"
+    },
+    {
+      "Alias": "DocNumberRegistrationAutoAssignmentDescription",
+      "Caption": "$Views_KrDocNumberRegistrationAutoAssigment_Option",
+      "FilterParameter": "Description",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$KrDocNumberRegistrationAutoAssignment.Description"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "DocNumberRegistrationAutoAssignmentDescription",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Description",
+      "Caption": "$Views_KrDocNumberRegistrationAutoAssigment_Option_Param",
+      "Type": "$KrDocNumberRegistrationAutoAssignment.Description"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "DocNumberRegistrationAutoAssignment",
+      "DisplayValueColumn": "DocNumberRegistrationAutoAssignmentDescription",
+      "RefSection": [
+        "DocNumberRegistrationAutoAssignment"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrDocNumberRegistrationAutoAssigment MSSQL]
+SELECT
+	[dn].[ID]			AS [DocNumberRegistrationAutoAssignmentID],
+	[dn].[Description]	AS [DocNumberRegistrationAutoAssignmentDescription]
+FROM [KrDocNumberRegistrationAutoAssignment] AS [dn] WITH (NOLOCK)
+CROSS APPLY [Localization]([dn].[Description], #param(locale)) AS [lCaption]
+WHERE 1 = 1
+	#param(Description, [lCaption].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART KrDocNumberRegistrationAutoAssigment PGSQL]
+SELECT
+	"dn"."ID"			AS "DocNumberRegistrationAutoAssignmentID",
+	"dn"."Description"	AS "DocNumberRegistrationAutoAssignmentDescription"
+FROM "KrDocNumberRegistrationAutoAssignment" AS "dn"
+CROSS JOIN "Localization"("dn"."Description", #param(locale)) AS "lCaption"
+WHERE true
+	#param(Description, "lCaption"."Value")
+ORDER BY #order_by

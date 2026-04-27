@@ -1,0 +1,97 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_AiCache",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 4480,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "VerticalInterval::int": 10
+          },
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "StartAtNewLine": true
+              },
+              "Caption": "$CardTypes_Controls_AiCache_LastCleanup",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "DateNullable": true
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "975cee50-69d2-4c16-a74f-01e3e42a4575"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "62ec8a40-5bc5-41b3-9e8a-9f2c52fc318a",
+              "ToolTip": null,
+              "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "MainInformation"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "VerticalInterval::int": 10
+          },
+          "Caption": "$CardTypes_Blocks_CacheMaintenance",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_RemoveAllFilesFromCache",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_RemoveAllFilesFromCache"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "PurgeButton",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "CacheMaintenance"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Main",
+      "TabCaption": "$CardTypes_TypesNames_AiCache"
+    }
+  ],
+  "Group": "Settings",
+  "ID::uid": "463b0c85-0d2a-483a-a21b-de5b044234b9",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "AiCache",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "975cee50-69d2-4c16-a74f-01e3e42a4575"
+      ],
+      "SectionID::uid": "62ec8a40-5bc5-41b3-9e8a-9f2c52fc318a"
+    }
+  ],
+  "Validators": null
+}

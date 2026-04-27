@@ -1,0 +1,410 @@
+﻿{
+  "Alias": "TopicUsersForMention",
+  "Caption": "$View_Names_TopicUsersForMention",
+  "GroupName": "Fm",
+  "ID": "3d2c4c3a-7737-401e-bbf7-06e281b47164",
+  "JsonMetadataSource::txt": "TopicUsersForMention JSONMETA",
+  "MsQuerySource::txt": "TopicUsersForMention MSSQL",
+  "PgQuerySource::txt": "TopicUsersForMention PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TopicUsersForMention JSONMETA]
+{
+  "Alias": "TopicUsersForMention",
+  "Caption": "$View_Names_TopicUsersForMention",
+  "Columns": [
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "$Roles.ID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Users_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$PersonalRoles.Name"
+    },
+    {
+      "Alias": "Email",
+      "Caption": "$Views_Users_Email",
+      "Type": "$PersonalRoles.Email"
+    },
+    {
+      "Alias": "Position",
+      "Caption": "$Views_Users_Position",
+      "Type": "$PersonalRoles.Position"
+    },
+    {
+      "Alias": "Departments",
+      "Caption": "$Views_Users_Departments",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "StaticRoles",
+      "Caption": "$Views_Users_StaticRoles",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "UserName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "Extensions": [
+    {
+      "Order": 0,
+      "TypeName": "Tessa.Extensions.Default.Client.Forums.TopicUsersForMentionViewExtension"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Users_Name_Param",
+      "Type": "$RoleUsers.UserName"
+    },
+    {
+      "Alias": "RoleID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3
+        ],
+        "RefPrefix": "Role",
+        "ViewAlias": "DurableRoles"
+      },
+      "Caption": "$Views_Users_Role_Param",
+      "Multiple": false,
+      "RefSection": [
+        "DurableRoles"
+      ],
+      "Type": "$RoleUsers.ID"
+    },
+    {
+      "Alias": "RoleExclusionID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3
+        ],
+        "RefPrefix": "Role",
+        "ViewAlias": "DurableRoles"
+      },
+      "Caption": "$Views_Users_RoleExclusion_Param",
+      "Multiple": false,
+      "RefSection": [
+        "DurableRoles"
+      ],
+      "Type": "$RoleUsers.ID"
+    },
+    {
+      "Alias": "DepartmentRoleID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_Users_Role_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "DurableRoles"
+      ],
+      "Type": "$RoleUsers.ID"
+    },
+    {
+      "Alias": "StaticRoleID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_Users_Role_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "DurableRoles"
+      ],
+      "Type": "$RoleUsers.ID"
+    },
+    {
+      "Alias": "ParentRoleID",
+      "Caption": "$Views_Users_ParentRole_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$Roles.ParentID"
+    },
+    {
+      "Alias": "ShowHidden",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_Users_ShowHidden_Param",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "ShowAllUsers",
+      "Caption": "$Views_Users_ShowAllUsers_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "TopicID",
+      "Caption": "$Views_Users_TopicID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Guid Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "User",
+      "DisplayValueColumn": "UserName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Roles",
+        "DurableRoles",
+        "PersonalRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TopicUsersForMention MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[ID]					AS [UserID],
+	[pr].[Name]					AS [UserName],
+	[pr].[Email],
+	[pr].[Position],
+	STUFF((
+		SELECT N', ' + [r].[Name]
+		FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+		INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+			ON [r].[ID] = [ru].[ID]
+		WHERE [ru].[UserID] = [t].[ID]
+			AND [ru].[TypeID] = 2
+		ORDER BY [r].[Name]
+		FOR XML PATH('')
+	), 1, 2, N'') AS [Departments],
+	STUFF((
+		SELECT N', ' + [r].[Name]
+		FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+		INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+			ON [r].[ID] = [ru].[ID]
+		WHERE [ru].[UserID] = [t].[ID]
+			AND [ru].[TypeID] = 0
+		ORDER BY [r].[Name]
+		FOR XML PATH('')
+	), 1, 2, N'') AS [StaticRoles]
+	} {
+	[t].*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Roles] AS [t] WITH (NOLOCK)
+	WHERE
+		[t].[TypeID] = 1
+		#param(Name, [t].[Name])
+		#if(RoleID) {
+		AND EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+			WHERE [ru].[UserID] = [t].[ID]
+				#param(RoleID, [ru].[ID]))
+		}
+		#if(RoleExclusionID) {
+		AND NOT EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+			WHERE [ru].[UserID] = [t].[ID]
+				#param(RoleExclusionID, [ru].[ID]))
+		}
+		#if(DepartmentRoleID) {
+		AND EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+			WHERE [ru].[UserID] = [t].[ID]
+				#param(DepartmentRoleID, [ru].[ID]))
+		}
+		#if(StaticRoleID) {
+		AND EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+			WHERE [ru].[UserID] = [t].[ID]
+				#param(StaticRoleID, [ru].[ID]))
+		}
+		#if(TopicID && (!ShowAllUsers || ShowAllUsers.CriteriaName == "IsFalse")){
+		AND EXISTS (
+			SELECT NULL
+			FROM [FmTopicParticipants] AS [tp] WITH (NOLOCK)
+			WHERE 
+				[t].[ID] = [tp].[UserID]
+				#param(TopicID, [tp].[TopicRowID])
+				
+			UNION ALL
+			
+			SELECT NULL
+			FROM [FmTopicParticipantRoles] AS [tpr] WITH (NOLOCK)
+			INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) 
+				ON [ru].[ID] = [tpr].[RoleID]
+			WHERE 
+				[t].[ID] = [ru].[UserID]
+				#param(TopicID, [tpr].[TopicRowID])
+			)
+		}
+		#if(!ShowHidden || ShowHidden.CriteriaName != "IsTrue") {
+		AND [t].[Hidden] = 0
+		}
+	) AS [t]
+#if(Normal) {
+INNER JOIN [PersonalRoles] AS [pr] WITH (NOLOCK)
+	ON [pr].[ID] = [t].[ID]
+}
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART TopicUsersForMention PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"				AS "UserID",
+	"t"."Name"				AS "UserName",
+	"t"."Email",
+	"t"."Position",
+	(
+		SELECT string_agg("Name", ', ')
+		FROM (
+			SELECT "r"."Name"
+			FROM "RoleUsers" AS "ru"
+			INNER JOIN "Roles" AS "r"
+				ON "r"."ID" = "ru"."ID"
+			WHERE "ru"."UserID" = "t"."ID"
+				AND "ru"."TypeID" = 2
+			ORDER BY "r"."Name") AS "names"
+	)						AS "Departments",
+	(
+		SELECT string_agg("Name", ', ')
+		FROM (
+			SELECT "r"."Name"
+			FROM "RoleUsers" AS "ru"
+			INNER JOIN "Roles" AS "r"
+				ON "r"."ID" = "ru"."ID"
+			WHERE "ru"."UserID" = "t"."ID"
+				AND "ru"."TypeID" = 0
+			ORDER BY "r"."Name") AS "names"
+	)						AS "StaticRoles"
+	} {
+	"r".*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID"
+		}
+		#if(Count) {
+		count(*) AS "cnt"
+		}
+	FROM "Roles" AS "t"
+	WHERE
+		"t"."TypeID" = 1
+		#param(Name, "t"."Name")
+		#if(RoleID) {
+		AND EXISTS (
+			SELECT NULL
+			FROM "RoleUsers" AS "ru"
+			WHERE "ru"."UserID" = "t"."ID"
+				#param(RoleID, "ru"."ID"))
+		}
+		#if(RoleExclusionID) {
+		AND NOT EXISTS (
+			SELECT NULL
+			FROM "RoleUsers" AS "ru"
+			WHERE "ru"."UserID" = "t"."ID"
+				#param(RoleExclusionID, "ru"."ID"))
+		}
+		#if(DepartmentRoleID) {
+		AND EXISTS (
+			SELECT NULL
+			FROM "RoleUsers" AS "ru"
+			WHERE "ru"."UserID" = "t"."ID"
+				#param(DepartmentRoleID, "ru"."ID"))
+		}
+		#if(StaticRoleID) {
+		AND EXISTS (
+			SELECT NULL
+			FROM "RoleUsers" AS "ru"
+			WHERE "ru"."UserID" = "t"."ID"
+				#param(StaticRoleID, "ru"."ID"))
+		}
+		#if(TopicID && (!ShowAllUsers || ShowAllUsers.CriteriaName == "IsFalse")){
+		AND EXISTS (
+			SELECT NULL
+			FROM "FmTopicParticipants" AS "tp"
+			WHERE 
+				"t"."ID" = "tp"."UserID"
+				#param(TopicID, "tp"."TopicRowID")
+			
+			UNION ALL
+				
+			SELECT NULL
+			FROM "FmTopicParticipantRoles" AS "tpr"
+			INNER JOIN "RoleUsers" AS "ru"
+				ON "ru"."ID" = "tpr"."RoleID"
+			WHERE 
+				"t"."ID" = "ru"."UserID"
+				#param(TopicID, "tpr"."TopicRowID")
+			)
+		}
+		#if(!ShowHidden || ShowHidden.CriteriaName != "IsTrue") {
+		AND "t"."Hidden" = false
+		}
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	}
+	) AS "r"
+#if(Normal) {
+INNER JOIN "PersonalRoles" AS "t"
+	ON "t"."ID" = "r"."ID"
+ORDER BY #order_by
+}

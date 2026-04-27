@@ -1,0 +1,181 @@
+﻿{
+  "Alias": "MyTags",
+  "Caption": "$Views_Names_MyTags",
+  "Description": "Представление с тегами, владельцем которых является текущий пользователь.",
+  "GroupName": "Tags",
+  "ID": "b206c96c-de91-4bc5-aa55-d00bf7eb9604",
+  "JsonMetadataSource::txt": "MyTags JSONMETA",
+  "MsQuerySource::txt": "MyTags MSSQL",
+  "PgQuerySource::txt": "MyTags PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART MyTags JSONMETA]
+{
+  "Alias": "MyTags",
+  "Caption": "$Views_Names_MyTags",
+  "Columns": [
+    {
+      "Alias": "TagID",
+      "Hidden": true,
+      "Type": "$Tags.ID"
+    },
+    {
+      "Alias": "TagName",
+      "Caption": "$Views_Tags_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Tags.Name"
+    },
+    {
+      "Alias": "TagBackground",
+      "Caption": "$CardTypes_Controls_Background",
+      "Hidden": true,
+      "Type": "$Tags.Background"
+    },
+    {
+      "Alias": "TagIsCommon",
+      "Caption": "$Tags_IsCommon",
+      "Hidden": true,
+      "Type": "$Tags.IsCommon"
+    },
+    {
+      "Alias": "TagCanEdit",
+      "Hidden": true,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "TagCanAddToCard",
+      "Hidden": true,
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "TagCanRead",
+      "Hidden": true,
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TagName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Tags_Name_Param",
+      "Type": "$Tags.Name"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "CardType": "Tag",
+      "ColPrefix": "Tag",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Tags"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TagsPosition": "InColumn",
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART MyTags MSSQL]
+SELECT
+	#if(Normal) {
+	[tt].[ID]			AS [TagID],
+	[tt].[Name]			AS [TagName],
+	[t].[Background]	AS [TagBackground],
+	[t].[IsCommon]		AS [TagIsCommon],
+	CAST (1 AS bit)		AS [TagCanEdit],
+	CAST (1 AS bit)		AS [TagCanAddToCard],
+	CAST (1 AS bit)		AS [TagCanRead]
+	}
+	#if(Count) {
+	[tt].[cnt]
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID],
+		[t].[Name],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*)					AS [cnt]
+		}
+	FROM (
+		SELECT
+			[t].[ID]
+			#if(!Count || Name) {
+			,[dbo].[Localize]([t].[Name], #param(locale)) AS [Name]
+			}
+		FROM [Tags] AS [t] WITH (NOLOCK)
+		WHERE [t].[OwnerID] = #param(CurrentUserID)
+	) AS [t]
+	WHERE 1 = 1
+		#param(Name, [t].[Name])
+) AS [tt]
+#if(Normal) {
+INNER JOIN [Tags] AS [t] WITH (NOLOCK)
+	ON [t].[ID] = [tt].[ID]
+#if(PageOffset) {
+WHERE [tt].[rn] >= #param(PageOffset) AND [tt].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+ORDER BY [tt].[rn];
+}
+
+[TEXTPART MyTags PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"			AS "TagID",
+	"t"."Name"			AS "TagName",
+	"t"."Background"	AS "TagBackground",
+	"t"."IsCommon"		AS "TagIsCommon",
+	true				AS "TagCanEdit",
+	true				AS "TagCanAddToCard",
+	true				AS "TagCanRead"
+	}
+	#if(Count) {
+	count(*)				AS "cnt"
+	}
+FROM (
+	SELECT
+		"t"."ID"
+		#if(!Count || Name) {
+		,"Localize"("t"."Name", #param(locale)) AS "Name"
+		}
+		#if(Normal) {
+		,"t"."Background"
+		,"t"."IsCommon"
+		}
+	FROM "Tags" AS "t"
+	WHERE "t"."OwnerID" = #param(CurrentUserID)
+) AS "t"
+WHERE 1 = 1
+	#param(Name, "t"."Name")
+#if(Normal) {
+ORDER BY #order_by
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}
+}

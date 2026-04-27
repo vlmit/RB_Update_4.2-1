@@ -1,0 +1,88 @@
+﻿{
+  "Alias": "KrCycleGroupingModes",
+  "Caption": "$Views_Names_KrCycleGroupingModes",
+  "GroupName": "Kr Wf",
+  "ID": "ac33bea6-af04-4e73-b9ca-5fedb8fcf64f",
+  "JsonMetadataSource::txt": "KrCycleGroupingModes JSONMETA",
+  "MsQuerySource::txt": "KrCycleGroupingModes MSSQL",
+  "PgQuerySource::txt": "KrCycleGroupingModes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART KrCycleGroupingModes JSONMETA]
+{
+  "Alias": "KrCycleGroupingModes",
+  "Caption": "$Views_Names_KrCycleGroupingModes",
+  "Columns": [
+    {
+      "Alias": "ModeID",
+      "Hidden": true,
+      "Type": "$KrCycleGroupingModes.ID"
+    },
+    {
+      "Alias": "ModeName",
+      "Caption": "$Views_KrCycleGroupingModes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$KrCycleGroupingModes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ModeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrCycleGroupingModes_Name",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Mode",
+      "DisplayValueColumn": "ModeName",
+      "RefSection": [
+        "KrCycleGroupingModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrCycleGroupingModes MSSQL]
+SELECT
+	[m].[ID]		AS [ModeID],
+	[m].[Name]		AS [ModeName]
+FROM [KrCycleGroupingModes] AS [m] WITH (NOLOCK)
+#if(Name || request.SortedBy("ModeName")) {
+CROSS APPLY [Localization]([m].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART KrCycleGroupingModes PGSQL]
+SELECT
+	"m"."ID"		AS "ModeID",
+	"m"."Name"		AS "ModeName"
+FROM "KrCycleGroupingModes" AS "m"
+#if(Name || request.SortedBy("ModeName")) {
+CROSS JOIN "Localization"("m"."Name", #param(locale)) AS "lName"
+}
+WHERE 1 = 1
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

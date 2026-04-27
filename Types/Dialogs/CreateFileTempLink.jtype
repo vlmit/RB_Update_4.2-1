@@ -1,0 +1,176 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$Cards_DefaultCaption",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": "Link is available until",
+          "ID::uid": "810923a6-79f7-4974-9beb-6866beca2dff",
+          "Name": "ValidTo",
+          "SchemeType": "DateTime Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": "Don't limit availability period",
+          "ID::uid": "ef27e66b-9d44-4be0-a7d7-0e26e329d624",
+          "Name": "IsInfinite",
+          "SchemeType": "Boolean Not Null"
+        }
+      ],
+      "Description": null,
+      "ID::uid": "95cc8045-dfed-49a1-b3cf-e814673eb76a",
+      "Name": "FileTempLinkCreationSettings",
+      "TableType::int": 1
+    },
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": "Link to a file",
+          "ID::uid": "249919b5-694b-4165-9ad1-619c60a93c2c",
+          "Name": "Link",
+          "SchemeType": "String(Max) Not Null"
+        }
+      ],
+      "Description": null,
+      "ID::uid": "eadf6a0a-4b44-4dc5-a200-8360ffbc7397",
+      "Name": "FileTempLink",
+      "TableType::int": 1
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Main",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_LinkAvailableUntil",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "ValidTo",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "810923a6-79f7-4974-9beb-6866beca2dff"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "95cc8045-dfed-49a1-b3cf-e814673eb76a",
+              "ToolTip": null,
+              "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_LinkAvailableInfinite",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "IsInfinite",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "ef27e66b-9d44-4be0-a7d7-0e26e329d624"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "95cc8045-dfed-49a1-b3cf-e814673eb76a",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Main"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "MainForm",
+      "TabCaption": "$CardTypes_CreateFileTempLinkSettings"
+    },
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Main",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "HideCaption": false
+              },
+              "Caption": "$CardTypes_Controls_FileTempLink",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "Background": null,
+                "BorderColor": null,
+                "TextMode::int": 2
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "Link",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "249919b5-694b-4165-9ad1-619c60a93c2c"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "eadf6a0a-4b44-4dc5-a200-8360ffbc7397",
+              "ToolTip": null,
+              "Type::uid": "2b5e1a3a-28ec-08bf-9f95-961abea3cb7a"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "CopyButton",
+              "ControlSettings": {
+                "Text": "Copy"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "CopyButton",
+              "RequiredText": null,
+              "ToolTip": "$CardTypes_Controls_CopyToСlipboard",
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Main"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "FileLink",
+      "TabCaption": "$CardTypes_FileTempLink"
+    }
+  ],
+  "Group": "System",
+  "ID::uid": "72882a9d-302c-4fd5-8578-630e874b6225",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "CreateFileTempLink",
+  "SchemeItems": null,
+  "Validators": null
+}

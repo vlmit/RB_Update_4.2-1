@@ -1,0 +1,113 @@
+﻿{
+  "Alias": "KrFilteredStageTypes",
+  "Caption": "$Views_Names_KrFilteredStageTypes",
+  "GroupName": "Kr Wf",
+  "ID": "e046d0cf-be7c-4965-b2d4-47cb943a8a7d",
+  "JsonMetadataSource::txt": "KrFilteredStageTypes JSONMETA",
+  "MsQuerySource::txt": "KrFilteredStageTypes MSSQL",
+  "PgQuerySource::txt": "KrFilteredStageTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART KrFilteredStageTypes JSONMETA]
+{
+  "Alias": "KrFilteredStageTypes",
+  "Caption": "$Views_Names_KrFilteredStageTypes",
+  "Columns": [
+    {
+      "Alias": "StageTypeID",
+      "Hidden": true,
+      "Type": "$KrProcessStageTypes.ID"
+    },
+    {
+      "Alias": "StageTypeCaption",
+      "Caption": "$Views_KrProcessStageTypes_Caption",
+      "Localizable": true,
+      "SortBy": "locCaption.Value",
+      "Type": "$KrProcessStageTypes.Caption"
+    },
+    {
+      "Alias": "StageTypeDefaultStageName",
+      "Caption": "$Views_KrProcessStageTypes_DefaultStageName",
+      "Localizable": true,
+      "Type": "$KrProcessStageTypes.DefaultStageName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "StageTypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "IsTemplate",
+      "Caption": "$Views_KrFilteredStageTypes_IsTemplate",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "TypeId",
+      "Caption": "$Views_KrFilteredStageTypes_TypeId",
+      "Hidden": true,
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "StageGroupIDParam",
+      "Caption": "$Views_KrFilteredStageTypes_StageGroupIDParam",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$KrStageGroups.ID"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrFilteredStageTypes MSSQL]
+SELECT
+	[t].[ID] AS [StageTypeID],
+	[t].[Caption] AS [StageTypeCaption],
+	[t].[DefaultStageName] AS [StageTypeDefaultStageName]
+FROM [KrProcessStageTypes] AS [t] WITH (NOLOCK)
+#if (request.SortedBy("StageTypeCaption")) {
+CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [locCaption]
+}
+#if(!IsTemplate) {
+WHERE EXISTS (
+	SELECT NULL
+	FROM [KrSettingsRouteRoles] AS [r] WITH (NOLOCK)
+	INNER JOIN [KrSettingsRouteStageGroups] AS [asg] WITH (NOLOCK) ON [asg].[ParentRowID] = [r].[ParentRowID] #param(StageGroupIDParam, [asg].[StageGroupID])
+	INNER JOIN [KrSettingsRouteDocTypes] AS [act] WITH(NOLOCK) ON [act].[ParentRowID] = [r].[ParentRowID] #param(TypeId, [act].[CardTypeID])
+	INNER JOIN [KrSettingsRouteStageTypes] AS [ast] WITH(NOLOCK) ON [ast].[ParentRowID] = [r].[ParentRowID] AND [ast].[StageTypeID] = [t].[ID]
+	LEFT JOIN  [NestedRoles] AS [nr] WITH (NOLOCK) ON [nr].[ParentID] = [r].[StageRolesID] #param(TypeId, [nr].[ContextID])
+	INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) ON ([ru].[ID] = [r].[StageRolesID] OR [ru].[ID] = [nr].[ID]) #param(CurrentUserID, [ru].[UserID]))
+}
+ORDER BY #order_by
+
+
+[TEXTPART KrFilteredStageTypes PGSQL]
+SELECT
+	"t"."ID" AS "StageTypeID",
+	"t"."Caption" AS "StageTypeCaption",
+	"t"."DefaultStageName" AS "StageTypeDefaultStageName"
+FROM "KrProcessStageTypes" AS "t"
+#if (request.SortedBy("StageTypeCaption")) {
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "locCaption"
+}
+ #if(!IsTemplate) {
+WHERE EXISTS (
+	SELECT NULL
+	FROM "KrSettingsRouteRoles" AS "r"
+	INNER JOIN "KrSettingsRouteStageGroups" AS "asg" ON "asg"."ParentRowID" = "r"."ParentRowID" #param(StageGroupIDParam, "asg"."StageGroupID")
+	INNER JOIN "KrSettingsRouteDocTypes" AS "act" ON "act"."ParentRowID" = "r"."ParentRowID" #param(TypeId, "act"."CardTypeID")
+	INNER JOIN "KrSettingsRouteStageTypes" AS "ast" ON "ast"."ParentRowID" = "r"."ParentRowID" AND "ast"."StageTypeID" = "t"."ID"
+	LEFT JOIN  "NestedRoles" AS "nr" ON "nr"."ParentID" = "r"."StageRolesID" #param(TypeId, "nr"."ContextID")
+	INNER JOIN "RoleUsers" AS "ru" ON ("ru"."ID" = "r"."StageRolesID" OR "ru"."ID" = "nr"."ID") #param(CurrentUserID, "ru"."UserID"))
+}
+ORDER BY #order_by

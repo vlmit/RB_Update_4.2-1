@@ -1,0 +1,63 @@
+﻿{
+  "Alias": "BusinessProcessTileHandlers",
+  "Caption": "$Views_Names_BusinessProcessTileHandlers",
+  "Description": "Данное представление обрабатывается серверным расширением BusinessProcessTileHandlersViewInterceptor",
+  "GroupName": "WorkflowEngine",
+  "ID": "f5a9fe3c-46e8-4e52-94bf-39d8cd166daf",
+  "JsonMetadataSource::txt": "BusinessProcessTileHandlers JSONMETA",
+  "MsQuerySource::txt": "BusinessProcessTileHandlers MSSQL",
+  "PgQuerySource::txt": "BusinessProcessTileHandlers PGSQL"
+}
+
+[TEXTPART BusinessProcessTileHandlers JSONMETA]
+{
+  "Alias": "BusinessProcessTileHandlers",
+  "Caption": "$Views_Names_BusinessProcessTileHandlers",
+  "Columns": [
+    {
+      "Alias": "BusinessProcessTileHandlerID",
+      "Caption": "ID",
+      "Hidden": true,
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "BusinessProcessTileHandlerName",
+      "Caption": "$Views_BusinessProcessTileHandlers_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "Name",
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "BusinessProcessTileHandlerName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_BusinessProcessTileHandlers_Name_Param",
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "BusinessProcessTileHandler",
+      "DisplayValueColumn": "BusinessProcessTileHandlerName",
+      "RefSection": [
+        "BusinessProcessTileHandlers"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART BusinessProcessTileHandlers MSSQL]
+
+
+[TEXTPART BusinessProcessTileHandlers PGSQL]

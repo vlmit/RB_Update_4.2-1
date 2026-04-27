@@ -1,0 +1,102 @@
+﻿{
+  "Alias": "OcrRecognitionModes",
+  "Caption": "$Views_Names_OcrRecognitionModes",
+  "GroupName": "Ocr",
+  "ID": "ab45451f-974d-4231-a182-16c6d04bdfba",
+  "JsonMetadataSource::txt": "OcrRecognitionModes JSONMETA",
+  "MsQuerySource::txt": "OcrRecognitionModes MSSQL",
+  "PgQuerySource::txt": "OcrRecognitionModes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART OcrRecognitionModes JSONMETA]
+{
+  "Alias": "OcrRecognitionModes",
+  "Caption": "$Views_Names_OcrRecognitionModes",
+  "Columns": [
+    {
+      "Alias": "ModeID",
+      "Hidden": true,
+      "Type": "$OcrRecognitionModes.ID"
+    },
+    {
+      "Alias": "ModeName",
+      "Caption": "$Views_OcrRecognitionModes_Name",
+      "DisableGrouping": true,
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$OcrRecognitionModes.Name"
+    },
+    {
+      "Alias": "ModeDescription",
+      "Caption": "$Views_OcrRecognitionModes_Description",
+      "DisableGrouping": true,
+      "Localizable": true,
+      "Type": "$OcrRecognitionModes.Description"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ModeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "References": [
+    {
+      "ColPrefix": "Mode",
+      "DisplayValueColumn": "ModeName",
+      "RefSection": [
+        "OcrRecognitionModes"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART OcrRecognitionModes MSSQL]
+SELECT
+#if(Normal) {
+	[ID]				AS [ModeID],
+	[Name]				AS [ModeName],
+	[Description]		AS [ModeDescription]
+}
+#if(Count) {
+	COUNT(*) 			AS [Count]
+}
+FROM [OcrRecognitionModes] WITH (NOLOCK)
+#if(Normal) {
+#if(request.SortedBy("ModeName")) {
+CROSS APPLY [Localization]([Name], #param(locale)) AS [lName]
+}
+ORDER BY #order_by
+}
+
+[TEXTPART OcrRecognitionModes PGSQL]
+SELECT
+#if(Normal) {
+	"ID"				AS "ModeID",
+	"Name"				AS "ModeName",
+	"Description"		AS "ModeDescription"
+}
+#if(Count) {
+	COUNT(*)			AS "Count"
+}
+FROM "OcrRecognitionModes"
+#if(Normal && request.SortedBy("ModeName")) {
+CROSS JOIN "Localization"("Name", #param(locale)) AS "lName"
+}
+#if(Normal) {
+ORDER BY #order_by
+}

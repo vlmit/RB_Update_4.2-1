@@ -1,0 +1,66 @@
+﻿{
+  "Alias": "StampsConstructor",
+  "Caption": "$UI_FacsimileAndAnnotationsGroup_StampsConstructor",
+  "GroupName": "PdfAnnotations",
+  "ID": "8f3359c5-06b2-48e4-8899-8207a307df8f",
+  "JsonMetadataSource::txt": "StampsConstructor JSONMETA",
+  "MsQuerySource::txt": "StampsConstructor MSSQL",
+  "PgQuerySource::txt": "StampsConstructor PGSQL"
+}
+
+[TEXTPART StampsConstructor JSONMETA]
+{
+  "Alias": "StampsConstructor",
+  "AutoSelectFirstRow": false,
+  "Caption": "$UI_FacsimileAndAnnotationsGroup_StampsConstructor",
+  "Columns": [
+    {
+      "Alias": "StampsConstructorID",
+      "Caption": "ID",
+      "Hidden": true,
+      "Type": "$StampsConstructor.ID"
+    },
+    {
+      "Alias": "StampsConstructorName",
+      "Caption": "$UI_FacsimileAndAnnotationsGroup_Name",
+      "SortBy": "StampsConstructorID",
+      "Type": "$StampsConstructor.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "StampsConstructorName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "References": [
+    {
+      "ColPrefix": "StampsConstructor",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "StampsConstructor"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART StampsConstructor MSSQL]
+SELECT
+	[s].[ID]				AS [StampsConstructorID],
+	[s].[Name]				AS [StampsConstructorName]
+
+FROM [StampsConstructor] AS [s] WITH (NOLOCK)
+ORDER BY #order_by
+
+
+[TEXTPART StampsConstructor PGSQL]
+SELECT
+	"s"."ID"				AS "StampsConstructorID",
+	"s"."Name"				AS "StampsConstructorName"
+
+FROM "StampsConstructor" AS "s"
+ORDER BY #order_by

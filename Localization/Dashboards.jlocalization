@@ -1,0 +1,2700 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "d6bba778-6c94-4341-8973-2c0b76d4db79",
+  "Name": "Dashboards",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "Dashboard_CannotRetrieveDashboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to retrieve the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось получить дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_CardTypeSelectorDialog_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type of a card or a document"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип карточки или документа"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_ContinueTour_Tile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Start introduction"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запустить обучение"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_DashboardAlreadyExists",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard already exists at the system."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд уже существует в системе."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_DashboardHasModifiedWidgets",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Some shared widgets have been changed. Save the local changes and refresh the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Некоторые общие виджеты были изменены. Сохраните локальные изменения и обновите дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_DashboardNotExists",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard does not exists at the system."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд отсутствует в системе."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_DashboardNotFoundError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard with identifier {0} was not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найден дашборд с идентификатором {0}."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Dialog_ClearPersonalDashboard_ClearButton",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Clear"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Dialog_ClearPersonalDashboard_Success",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The employee's dashboard has been successfully cleared."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд сотрудника был успешно очищен."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Dialog_ClearPersonalDashboard_User",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудник"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Dialog_ClearPersonalDashboard_Warning",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The dashboard will be completely cleaned: all widgets, including their content, will be irrevocably deleted. If a user has created shared widgets that are used by other users - they will also be irrevocably deleted from everyone who uses these widgets. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд будет полностью очищен: безвозвратно удалены все виджеты, включая их контент. Если у пользователя были созданы общие виджеты, которые используют другие пользователи - они также будут безвозвратно удалены у всех, кто использует данные виджеты. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Edit_ConfirmSave",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are unsaved changes. Save?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Есть несохраненные изменения. Сохранить?"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_EditMode_HasUnsavedChanges",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The dashboard contains unsaved changes that will be saved when you switch to edit mode. Continue? "
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд содержит не сохраненные изменения, которые будут сохранены при переходе в режим редактирования. Продолжить? "
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_EditMode_Tile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим редактирования"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_InvalidDashboardVersionWhileUpdating",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't update dashboard (ID = {6}). Expected version {0}, but was found {1}. Modified by '{3}' ({2}) at {4} ({5} UTC)."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно изменить дашборд (ID = {6}). Требуется версия {0}, но в действительности версия {1}. Дашборд был изменён сотрудником '{3}' ({2}) в {4} ({5} UTC)."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_InvalidWidgetVersionWhileUpdating",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can't update widget (ID = {6}). Expected version {0}, but was found {1}. Modified by '{3}' ({2}) at {4} ({5} UTC)."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно изменить виджет (ID = {6}). Требуется версия {0}, но в действительности версия {1}. Виджет был изменён сотрудником '{3}' ({2}) в {4} ({5} UTC)."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Loading_Error",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while loading the dashboard. Try to update the dashboard or contact your administrator."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Произошла ошибка при загрузке дашборда. Попробуйте обновить дашборд или обратитесь к администратору."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Messages_ClosingInProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Closing in progress..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Закрытие в процессе..."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Messages_DeletionInProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Deletion in progress..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление в процессе..."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Messages_LoadingInProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Loading in progress..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Загрузка в процессе..."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Messages_RefreshInProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Refresh in progress..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполняется обновление..."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Messages_SettingsEditorInitialization",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Settings editor initialization..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инициализация редактора настроек..."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_MultipleDashboardsOfType",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "More than one dashboard with the specified type exists for the current user."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для текущего сотрудника существует более одного дашборда с указанным типом."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_MultipleWidgetsBySameOrigin",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A dashboard can only contain one widget created by a particular shared widget."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд может содержать только один виджет, созданный по определенному общему виджету."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_NoAccessToChangeTheDashboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The current user does not have access to edit the specified dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У текущего пользователя отсутсвует доступ для редактирования заданного дашборда."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_PermissionsDenied",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Not enough permissions to perform the operation."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Недостаточно прав для выполнения операции."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Refresh_Error_Confirm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while saving data during the update process. The dashboard can only be updated by resetting unsaved data. Update?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Возникла ошибка при сохранении данных в процессе обновления. Обновление дашборда возможно только со сбросом не сохраненных данных. Обновить?"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Saving_Error",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while saving the dashboard. Try to update the dashboard or contact your administrator."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Произошла ошибка при сохранении дашборда. Попробуйте обновить дашборд или обратитесь к администратору."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_SingleWidgetTemplateAtDashboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A template dashboard must contain a single template widget."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Шаблонный дашборд должен содержать единственный шаблонный виджет."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tab_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tiles_ClearPersonalDashboard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Clear the employee dashboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить дашборд сотрудника"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tiles_DashboardsAndWidgets",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboards and widgets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборды и виджеты"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tiles_Refresh",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Refresh"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновить"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tiles_WidgetSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Widget settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки виджетов"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tiles_WidgetTemplates",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Widget templates"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Шаблоны виджетов"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Toolbar_ExitEditMode",
+      "Comment": "Кнопка \"Выйти из режима редактирования\" на тулбаре.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Exit edit mode."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выйти из режима редактирования."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Toolbar_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Toolbar"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструменты"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Toolbar_Widgets",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Widgets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджеты"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Postponeed_Info_Message",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You can restart the introduction by opening the Dashboard tab and selecting \"Start introduction\" option in the system menu"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запустить обучение повторно можно открыв вкладку дашборда и выбрав в меню системы пункт \"Запустить обучение\""
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step0_SubTitle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "and how to Set It Up"
+        },
+        {
+          "Culture": "ru",
+          "Value": "и как его настроить"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step0_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The dashboard allows users to configure a personalized virtual workspace using widgets. To get acquainted with the functionality of the dashboard, click the \"Continue\" button. "
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд позволяет настроить собственное виртуальное пространство с помощью виджетов. Для того чтобы познакомиться с работой дашборда, нажмите кнопку \"Продолжить\"."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step0_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step1_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To configure the dashboard, it is necessary enter editing mode. Right-click on any empty area of the dashboard and select the \"Edit mode\" option from the context menu."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для настройки дашборда необходимо перейти в режим его редактирования. Нажмите правой кнопкой мыши в любом свободном месте дашборда и выберите пункт контекстного меню \"Режим редактирования\"."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step10_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Let's review other available widgets. Open the list of available widgets."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Посмотрим какие еще есть виджеты. Откройте список доступных виджетов."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step11_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The widget displays the employees' birthdays from the dictionary. When configuring this widget, it is possible to filter the selection of employees by specific departments, as well as to configure the display of both past and upcoming birthdays, rather than only those occurring today."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет отображает дни рождения сотрудников из справочника. При настройке данного виджета есть возможность ограничить выборку сотрудников из определенных подразделений, а также возможность настроить отображение прошедших и предстоящих дней рождения, а не только сегодняшних."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step12_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The button widget allows for the quick creation of a new card using a pre-configured card template."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет-кнопка позволяет быстро создать новую карточку по указанному заранее подготовленному шаблону карточки."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step12a_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The list of available card templates is displayed in the «User» workspace under the «Templates» view. A button widget for creating a new card can be created based on any of these templates. To create a new template, open any existing card and select «Misc -> Create template» from the system menu. For more details, refer to the TESSA User Guide."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список доступных шаблонов карточек отображается на рабочем месте \"Пользователь\" в представлении \"Шаблоны\" - по любому из них можно создать виджет-кнопку создания новой карточки. Создать же новый шаблон можно открыв любую существующую карточку и выбрав в меню системы \"Другие -> Создать шаблон\". Подробней в руководстве пользователя TESSA."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step13_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The button widget allows for the quick creation of a new card of the specified type."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет-кнопка позволяет быстро создать новую карточку указанного вида."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step14_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The widget displays a view with a pre-configured filter. To add a widget, it is required to select a saved search query."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет выводит представление с заранее настроенным фильтром. Для добавления виджета потребуется выбрать сохраненный поисковый запрос."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step14a_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To create a saved query (which can subsequently be displayed on the dashboard as a widget), the user must select the desired view within their workspace, open the filter settings window (click the \"Filter\" button in the upper left corner of the view), configure the required filter parameters, and then click the \"Save as...\" button."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для создания сохраненного запроса (который впоследствии можно будет вывести на дашборд в виде виджета) необходимо на рабочем месте пользователя выбрать нужное представление, вызвать окно настроек фильтрации (кнопка \"Фильтр\" в левой верхней части представления) и после настройки нужных параметров фильтрации нажать на кнопку \"Сохранить как...\""
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step15_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The widget enables the display of any view on the dashboard. The procedure for adding this widget differs from the others."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет позволяет вывести на дашборд любое представление. Процедура добавления данного виджета отличается от остальных."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step16_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open the workspace to select the view that will be added to the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Откройте рабочее место для выбора представления, которое будем добавлять на дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step17_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "For example, open this view."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Откройте, например, это представление."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step18_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Click the button to copy the settings to the clipboard – these settings will allow us to add the view widget to the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нажмите на кнопку для копирования в буфер обмена настроек - с помощью них мы сможем добавить виджет-представление на дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step19_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Return to the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вернитесь на дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step2_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Toolbar for dashboard management. While the toolbar is visible, the system is in editing mode, allowing for widget configuration, but the widgets cannot be used during this time."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тулбар для работы с дашбордом. Пока он отображается - мы находимся в режиме редактирования и можем настраивать виджеты, но не использовать их."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step20_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Next, add the view widget."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Теперь добавьте виджет-представление."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step21_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The required widget is now the first in the list; select it to add."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нужный нам виджет теперь первый в списке, выберите его для добавления."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step22_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The widget has settings that can be adjusted as required."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У виджета есть настройки, которые, при необходимости, можно изменить."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step23_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save the settings to add the widget."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохраняем настройки для добавления виджета."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step24_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Widget control buttons: open the settings window or delete the widget. For button-type widgets (e.g., the card creation widget), the control buttons appear only after the widget is selected."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Кнопки управления виджетом: вызвать окно настроек или удалить виджет. Для виджетов в виде кнопок (например, виджет создания карточки), кнопки управления появляются только после выделения виджета."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step25_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The dashboard is configured! Now, it needs to be saved."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд настроен! Теперь его необходимо сохранить."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step26_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Exit the editing mode to begin using the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выходим из режима редактирования, чтобы начать использовать дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step27_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The data in the dashboard view is updated every 15 minutes."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Данные в представлении на дашборде обновляются раз в 15 минут."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step28_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To add a note, hover the cursor over the notes area and click on the icon with the lock image."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для внесения заметок подведите указатель мыши к области заметок и нажмите на иконку с изображением замка."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step29_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "In the notes, you can add images, files, and links in addition to text."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В заметках, помимо текста, можно добавлять изображения, файлы и ссылки."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step3_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The full set of available widgets is located here. Click to add a new widget."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тут располагается набор всех доступных виджетов. Нажмите для добавления нового виджета."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step30_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You may now configure the widgets as required. Please note that dashboard customization is only available in edit mode (right-click on an empty area), and the widgets can be used once edit mode is exited. Additionally, in the \"My Settings\" section of the user menu, you can configure the visibility of the dashboard upon system startup."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Теперь вы можете настроить нужные вам виджеты! Не забудьте, что настройка дашборда доступна только при переходе в режим редактирования (клик правой кнопкой мыши на пустой области), а их использование - после выхода из режима редактирования. Также в \"Мои настройки\" меню пользователя можно настроить видимость дашборда при запуске системы."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step4_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add the \"Notes\" widget, which enables the creation of personal notes."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавим виджет \"Заметки\", который позволяет вести личные заметки."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step5_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The text and color of the header can be adjusted here (or the header can be hidden)."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тут можно изменить текст и цвет заголовка (или скрыть его)."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step6_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The background color is set automatically, but it can be modified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет фона задается автоматически, но его можно изменить."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step7_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save the settings in order to add the widget to the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохраните настройки для добавления виджета на дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step8_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select the widget and try to resize it by dragging the corners that appear."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выделите виджет и попробуйте изменить его размер, потянув за появившиеся уголки."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Tour_Step9_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hold down the left mouse button on the widget and drag it. Widgets always occupy the top-most available position on the dashboard; however, they can be placed freely along the horizontal axis."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удерживая нажатую левую кнопку мыши на виджете, перетащите его. Виджеты всегда занимают максимально доступное верхнее положение на дашборде, однако по горизонтали их можно располагать произвольно."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Background",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Background"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет фона"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Displays the nearest birthdays."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображает ближайшие дни рождения."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Groups_Past",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Past"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Прошедшие"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Groups_Soon",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Soon"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скоро"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Groups_Today",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Today"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сегодня"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Groups_Tomorrow",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tomorrow"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Завтра"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_NoDates",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are no upcoming dates to display"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет ближайших дат для отображения"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Preview_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Birthdays"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дни рождения"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Settings_DaysAfter",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Days after birthday"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дней после дня рождения"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Settings_DaysAfter_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "From 1 to 10 days"
+        },
+        {
+          "Culture": "ru",
+          "Value": "От 1 до 10 дней"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Settings_DaysBefore",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Days before birthday"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дней до дня рождения"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Settings_DaysBefore_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "From 3 to 20 days"
+        },
+        {
+          "Culture": "ru",
+          "Value": "От 3 до 20 дней"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Settings_Departments",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employees from the departments"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудники из подразделений"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Settings_IncludeSubsidiaryDepartments",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Include subsidiary departments"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Включая дочерние подразделения"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Settings_ShowPast",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show past"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображать прошедшие"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Settings_ShowUpcoming",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show upcoming"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображать предстоящие"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Birthday_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "🥳 Birthdays"
+        },
+        {
+          "Culture": "ru",
+          "Value": "🥳 Дни рождения"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Button_Background",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Background"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет фона"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Button_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Button_Foreground",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Foreground"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет текста и иконки"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Button_HideCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hide caption"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрывать название"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Button_Icon",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Icon"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Иконка"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_CommonSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Common settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Общие настройки"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_ConfirmRemove",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The {0} widget will be deleted. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет {0} будет удален. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_CreateCardByTemplate_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Creates a card by the selected template"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создает карточку по выбранному шаблону"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_CreateCardByTemplate_Template",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create a card by template"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать карточку по шаблону"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_CreateCardByTemplate_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create a card by template"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать карточку по шаблону"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_CreateCardByType_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Creates a card of the specified type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создает карточку указанного типа"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_CreateCardByType_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create a card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать карточку"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_CreateCardByType_Type",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create a card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать карточку"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_CreatingError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while creating widget of type \"{0}\". The widget needs to be recreated."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При создании виджета типа \"{0}\" возникла ошибка. Виджет необходимо пересоздать."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Data_ErrorOnSavingOrRefreshing",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while saving or synchronizing. Refresh the page."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Возникла ошибка при сохранении или синхронизации. Обновите страницу."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_DeleteForEveryone",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete for everyone"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить у всех"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_DeleteForYourself",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete for yourself"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить у себя"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_GetChanges_Version_Error",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The dashboard version on the server was changed by employee {0} ({1}) at {2} ({3} UTC). Save your changes and update the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Версия дашборда на сервере была изменена сотрудником {0} ({1}) в {2} ({3} UTC). Сохраните свои изменения и обновите дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_HeaderCaption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Header caption"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заголовок"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_HeaderCaptionColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Header caption color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет текста заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_HeaderHidden",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Header hidden"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрывать заголовок"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_HeaderSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Header settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки заголовка"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Navigator_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Click on a link: it can be an external link or a link in TESSA. Before creating the widget, copy the required link to the clipboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполняет переход по ссылке: это может быть внешняя ссылка или ссылка в TESSA. Перед созданием виджета следует скопировать необходимую ссылку в буфер обмена."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Navigator_Preview",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Navigator"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Навигатор"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Navigator_Settings_Link",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ссылка"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Navigator_Settings_OpenViewInSeparateTab",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open view in a separate tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть представление в отдельной вкладке"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Navigator_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "🧭 Navigator"
+        },
+        {
+          "Culture": "ru",
+          "Value": "🧭 Навигатор"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_NoAccessToChangeSomeWidgets",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The current user does not have access to edit some widgets."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У текущего пользователя отсутствует доступ для редактирования некоторых виджетов."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Notes_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Allows to leave notes as formatted text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Позволяет оставлять заметки в виде текста с форматированием"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Notes_Settings_EditorBackground",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Editor background"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет фона редактора"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Notes_Settings_EditorBorder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Editor border"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет рамки редактора"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Notes_Settings_NoPadding",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hide the area around the editor"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрыть область вокруг редактора"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Notes_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Notes"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заметки"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_OriginHasChanged",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Widget \"{0}\" was changed by employee {1} at {2}. Save the local changes and refresh the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет \"{0}\" был изменен сотрудником {1} в {2}. Сохраните локальные изменения и обновите дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_OriginWasDeleted",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Widget \"{0}\" was deleted. Save the local changes and refresh the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет \"{0}\" был удален. Сохраните локальные изменения и обновите дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_SavingLayoutVersionError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The version of the dashboard on the server has been change. Save your changes and update the dashboard."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Версия дашборда на сервере была изменена. Сохраните свои изменения и обновите дашборд."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_SavingSomeWidgetsVersionError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The version of some widgets on the server has been changed. Refresh the page, apply your changes and save."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Версия некоторых виджетов на сервере была изменена. Обновите страницу, примените свои изменения и выполните сохранение."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_SavingWidgetsDataError",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error saving widget data."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ошибка в данных виджетов при сохранении."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_SearchQuery_Error_NotFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The specified search query is not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Указанный поисковый запрос не найден."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_SearchQuery_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Search query"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поисковый запрос"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Settings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Widget settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки виджета"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Shared_ConfirmRemove",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The {0} widget will be deleted. Delete widget only for yourself or for everyone?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет {0} будет удален. Удалить виджет только у себя или у всех?"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_SharedNotes_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Shared notes"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Общие заметки"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_SpecialSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Special settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Специализированные настройки"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tag_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Opens in a separate tab the list of documents to which a certain tag has been assigned."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открывает в отдельной вкладке список документов, которым присвоен определенный тег."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tag_Messages_NotFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tag \"{0}\" was not found in the system."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тег \"{0}\" не был найден в системе."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tag_Preview_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tag"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тег"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tag_Settings_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Caption"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заголовок"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tag_Settings_DisplayTypes",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Display types"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображать типы"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tag_Settings_DisplayTypes_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "List of types for cards/documents displayed in a separate tab when a tag is clicked."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список типов карточек/документов, отображаемых в отдельной вкладке при клике по тегу."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tag_Settings_Tag",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tag"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тег"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tag_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "🏷️ Tag"
+        },
+        {
+          "Culture": "ru",
+          "Value": "🏷️ Тег"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tasks_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Displays a view with the user's current tasks"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображает представление с текущими заданиями пользователя"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tasks_Preview_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "My tasks"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Мои задания"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tasks_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "💼 Tasks"
+        },
+        {
+          "Culture": "ru",
+          "Value": "💼 Задания"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tasks_View_Author",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Author"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Автор"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tasks_View_Completion",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Complete before"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Завершить до"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tasks_View_Info",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card and task"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка и задание"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tasks_View_More",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "More"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ещё"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Tasks_View_Performer",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Performer"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Исполнитель"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Unavailable_Message",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The widget is not available. It may have been removed by the owner or you may have been excluded from the access list."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет недоступен. Возможно, он был удален владельцем, либо Вас исключили из списка доступа."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Unavailable_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unavailable widget"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виджет недоступен"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Unknown_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unknown widget"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Неизвестный виджет"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Users_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Displays employees according to the filter parameters."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображает сотрудников с учётом параметров фильтрации."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Users_Filter",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Enter name, surname, department or email"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Введите имя, фамилию, подразделение или email"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Users_Filter_Hint",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Seach query lenght must be at least 3 characters long."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Длина поискового запроса должна быть не менее 3 символов."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Users_NoDates",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Nothing found. Try changing the search parameters."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ничего не найдено. Попробуйте изменить параметры поиска."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Users_Preview_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Users dictionary"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Справочник сотрудников"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Users_ShowMore",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show more ..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать больше ..."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_Users_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "📒 Users dictionary"
+        },
+        {
+          "Culture": "ru",
+          "Value": "📒 Справочник сотрудников"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_View_CopyButton_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy to dashboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скопировать на дашборд"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_View_CopyButton_Notification",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The settings of the view are copied. To add a widget to the dashboard, select the appropriate widget from the list of available widgets in the dashboard settings menu."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки представления скопированы. Для добавления виджета на дашборд выберите соответствующий виджет из списка доступных в меню настроек дашборда."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_View_CopyButton_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy settings to add to the dashboard"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скопировать настройки для добавления на дашборд"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_View_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "It is necessary to copy the settings of the required view beforehand by finding it on the workplace and clicking the corresponding button on the view's toolbar."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Необходимо предварительно скопировать настройки нужного представления, найдя его на рабочем месте и нажав соответствующую кнопку на тулбаре представления."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_View_InfoTile_Message",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To add the ‘View’ widget, go to the required workplace when the dashboard editing mode is on, select the view and click the ‘Copy to dashboard’ button on the view toolbar, and then add the widget."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для добавления виджета \"Представление\" необходимо при запущенном режиме редактирования дашборда перейти на нужное рабочее место, выбрать представление и на панели инструментов представления нажать на кнопку \"Скопировать на дашборд\", после чего выполнить добавление виджета."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_View_PasteTile_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Paste copied view"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вставить скопированное представление"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_View_Settings_DisableHorizontalScroll",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disable horizontal scroll"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отключить горизонтальный скролл"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_View_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Представление"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widgets_List_Empty",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No widgets available for display"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступных виджетов для отображения"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widgets_List_SeparatorText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Templates and shared widgets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Шаблоны и общие виджеты"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_AccessAndContentManaging",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Access and content managing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Управление доступом и контентом"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_AccessAndContentManaging_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The specified employees will have rights both to edit the template parameters and to edit the widget content itself."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Указанные сотрудники будут обладать правами как на редактирование параметров шаблона, так и на редактирование самого контента виджета."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_AccessSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Access settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки доступа"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_AllowedForAllEmployees",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Allowed for all employees"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступен для всех сотрудников"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_AvailableForEmployees",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Available for employees"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступен сотрудникам"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_AvailableForEmployees_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Specified employees will have the widget template available to add to their dashboard, with the widget content available for reading but not editing."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Указанным сотрудникам шаблон виджета будет доступен для добавления на свой дашбоард, при этом контент виджета будет доступен на чтение, но не редактирование."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_BaseSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Base settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Базовые настройки"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_ConfirmDelete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Widget template will be deleted. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Шаблон будет удалён. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Template description"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Описание шаблона"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_List_Delete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_List_Info",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Description"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Описание"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_List_Modified",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Modified"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменён"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_List_ModifiedBy",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Modified by"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Кем изменён"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_List_Type",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_LoadingSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Loading settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Загрузка настроек"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_Name",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Template name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название шаблона"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_ProhibitAllEmployeesSelection",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Prohibit all employees selection for access to shared widgets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запретить выбор всех сотрудников для доступа к общим виджетам"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_ProhibitAllEmployeesSelection_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "If the flag is checked when a user creates a shared widget, he/she will be able to make it available only to employees of his/her department and children. Template administrators can make shared widgets for all employees."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При выставлении флага при создании общего виджета пользователем, он сможет его сделать доступным только с сотрудниками своего подразделения и дочерних. Администраторы шаблонов при этом могут делать общие виджеты для всех сотрудников."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_SavingSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Saving settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранение настроек"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_Settings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Templates settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки шаблона"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_TemplatesEditors",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Templates editors"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редакторы шаблонов"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_Toolbar_Add",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_Toolbar_Edit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_Toolbar_ExitEdit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Exit edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выйти из редактирования"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_Toolbar_Refresh",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Refresh"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обновить"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_Toolbar_Remove",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Remove"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_WidgetTemplates_Toolbar_Save",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Save"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сохранить"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_DashboardDisplayModes_Available",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard is available"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд доступен"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_DashboardDisplayModes_Hidden",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard hidden (unavailable)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд скрыт (недоступен)"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_DashboardDisplayModes_OpensFirst",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard is available and opens at system startup"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дашборд доступен и открывается при запуске системы"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_DashboardTypes_Personal",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Personal"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Личный"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_DashboardTypes_Template",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Template"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Шаблон"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_WidgetTemplatesKinds_Shared",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Shared widgets"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Общие виджеты"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_WidgetTemplatesKinds_Template",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Widget templates"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Шаблоны виджетов"
+        }
+      ]
+    },
+    {
+      "Name": "Views_DashboardDisplayModes_Name",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "Views_Names_DashboardDisplayModes",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Dashboard display modes"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режимы отображения дашборда"
+        }
+      ]
+    }
+  ]
+}

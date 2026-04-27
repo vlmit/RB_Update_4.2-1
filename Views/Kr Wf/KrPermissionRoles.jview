@@ -1,0 +1,82 @@
+﻿{
+  "Alias": "KrPermissionRoles",
+  "Caption": "$Views_Names_KrPermissionRoles",
+  "GroupName": "Kr Wf",
+  "ID": "34026b2a-6699-425c-8669-5ad5c75945f9",
+  "JsonMetadataSource::txt": "KrPermissionRoles JSONMETA",
+  "MsQuerySource::txt": "KrPermissionRoles MSSQL",
+  "PgQuerySource::txt": "KrPermissionRoles PGSQL"
+}
+
+[TEXTPART KrPermissionRoles JSONMETA]
+{
+  "Alias": "KrPermissionRoles",
+  "Caption": "$Views_Names_KrPermissionRoles",
+  "Columns": [
+    {
+      "Alias": "KrPermissionRoleID",
+      "Hidden": true,
+      "Type": "$KrPermissionRoles.RoleID"
+    },
+    {
+      "Alias": "KrPermissionRoleName",
+      "Caption": "$Views_KrPermissions_Roles",
+      "SortBy": "t.RoleName",
+      "Type": "$KrPermissionRoles.RoleName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "KrPermissionRoleName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "AccessRule",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "KrPermissions"
+      },
+      "Caption": "$Views_KrPermissions_AccessRule",
+      "Hidden": true,
+      "RefSection": [
+        "KrPermissions"
+      ],
+      "Type": "$KrPermissionRoles.ID"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "KrPermissionRole",
+      "DisplayValueColumn": "KrPermissionRoleName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "KrPermissionRoles"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionRoles MSSQL]
+SELECT
+	[t].[RoleID] AS [KrPermissionRoleID],
+	[t].[RoleName] AS [KrPermissionRoleName]
+FROM [KrPermissionRoles] AS [t] WITH(NOLOCK)
+WHERE 1 = 1
+	#param(AccessRule, [t].[ID])
+ORDER BY #order_by
+
+
+[TEXTPART KrPermissionRoles PGSQL]
+SELECT
+	"t"."RoleID" AS "KrPermissionRoleID",
+	"t"."RoleName" AS "KrPermissionRoleName"
+FROM "KrPermissionRoles" AS "t"
+WHERE true
+	#param(AccessRule, "t"."ID")
+ORDER BY #order_by

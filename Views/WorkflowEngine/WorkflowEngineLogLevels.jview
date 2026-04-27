@@ -1,0 +1,73 @@
+﻿{
+  "Alias": "WorkflowEngineLogLevels",
+  "Caption": "$Views_Names_WorkflowEngineLogLevels",
+  "GroupName": "WorkflowEngine",
+  "ID": "e91f6c3a-c8a0-46d3-bc07-5277f0e7d3f7",
+  "JsonMetadataSource::txt": "WorkflowEngineLogLevels JSONMETA",
+  "MsQuerySource::txt": "WorkflowEngineLogLevels MSSQL",
+  "PgQuerySource::txt": "WorkflowEngineLogLevels PGSQL"
+}
+
+[TEXTPART WorkflowEngineLogLevels JSONMETA]
+{
+  "Alias": "WorkflowEngineLogLevels",
+  "Caption": "$Views_Names_WorkflowEngineLogLevels",
+  "Columns": [
+    {
+      "Alias": "LogLevelID",
+      "Hidden": true,
+      "SortBy": "ll.ID",
+      "Type": "$WorkflowEngineLogLevels.ID"
+    },
+    {
+      "Alias": "LogLevelName",
+      "Caption": "$Views_WorkflowEngineLogLevels_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "ll.Name",
+      "Type": "$WorkflowEngineLogLevels.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "LogLevelID",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WorkflowEngineLogLevels_Name_Param",
+      "Multiple": false,
+      "Type": "$WorkflowEngineLogLevels.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "LogLevel",
+      "DisplayValueColumn": "LogLevelName",
+      "RefSection": [
+        "WorkflowEngineLogLevels"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WorkflowEngineLogLevels MSSQL]
+SELECT
+	[ll].[ID] as [LogLevelID]
+	,[ll].[Name] as [LogLevelName]
+FROM [WorkflowEngineLogLevels] [ll] WITH(NOLOCK)
+WHERE 1=1 
+	#param(Name, [ll].[Name])
+
+
+[TEXTPART WorkflowEngineLogLevels PGSQL]
+SELECT
+	"ll"."ID" as "LogLevelID"
+	,"ll"."Name" as "LogLevelName"
+FROM "WorkflowEngineLogLevels" "ll"
+WHERE true
+	#param(Name, "ll"."Name")

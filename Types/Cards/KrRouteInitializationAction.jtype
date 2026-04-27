@@ -1,0 +1,96 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$KrActions_RouteInitialization",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "DoNotCollapseWithTopBlock": true
+          },
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_TheInitiatorOfTheApproval",
+              "ComplexColumnID::uid": "0b1dc4ca-a1be-486b-918e-2c7d6ebad17f",
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "Users"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[Param]",
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "bbdef4f8-22b0-4075-83f2-1c6e89d1ba7b",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_CommentToApprovalCycle",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxRows::int": 15,
+                "MinRows::int": 3
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[Param]",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "736025ab-c92b-4c3c-92ff-f28d8a538d19"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "bbdef4f8-22b0-4075-83f2-1c6e89d1ba7b",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "FilePreviewIsDisabled": true
+      },
+      "Name": "KrRouteInitializationAction",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "WorkflowActions",
+  "ID::uid": "25ca876a-50b2-4c27-b847-56d4fc597934",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "KrRouteInitializationAction",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "0b1dc4ca-a1be-486b-918e-2c7d6ebad17f",
+        "736025ab-c92b-4c3c-92ff-f28d8a538d19"
+      ],
+      "SectionID::uid": "bbdef4f8-22b0-4075-83f2-1c6e89d1ba7b"
+    }
+  ],
+  "Validators": null
+}

@@ -1,0 +1,214 @@
+﻿{
+  "Alias": "AclGenerationRules",
+  "Caption": "$Views_Names_AclGenerationRules",
+  "GroupName": "Acl",
+  "ID": "edf05d46-215d-4c33-826a-568e626f60c6",
+  "JsonMetadataSource::txt": "AclGenerationRules JSONMETA",
+  "MsQuerySource::txt": "AclGenerationRules MSSQL",
+  "PgQuerySource::txt": "AclGenerationRules PGSQL"
+}
+
+[TEXTPART AclGenerationRules JSONMETA]
+{
+  "Alias": "AclGenerationRules",
+  "Caption": "$Views_Names_AclGenerationRules",
+  "Columns": [
+    {
+      "Alias": "AclGenerationRuleID",
+      "Hidden": true,
+      "Type": "$AclGenerationRules.ID"
+    },
+    {
+      "Alias": "AclGenerationRuleName",
+      "Caption": "$Views_AclGenerationRules_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$AclGenerationRules.Name"
+    },
+    {
+      "Alias": "AclGenerationRuleTypes",
+      "Caption": "$Views_AclGenerationRules_Types",
+      "FilterParameter": "Type",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$AclGenerationRuleTypes.TypeCaption"
+    },
+    {
+      "Alias": "AclGenerationRuleUseSmartRoles",
+      "Caption": "$Views_AclGenerationRules_UseSmartRoles",
+      "FilterParameter": "UseSmartRoles",
+      "FilterType": "Parameter",
+      "SortBy": "s.UseSmartRoles",
+      "Type": "$AclGenerationRules.UseSmartRoles"
+    },
+    {
+      "Alias": "AclGenerationRuleSmartRoleGenerator",
+      "Caption": "$Views_AclGenerationRules_SmartRoleGenerator",
+      "FilterParameter": "SmartRoleGenerator",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$AclGenerationRules.SmartRoleGeneratorName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "AclGenerationRuleName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_AclGenerationRules_Name",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Type",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "Types"
+      },
+      "Caption": "$Views_AclGenerationRules_Type",
+      "RefSection": [
+        "Types",
+        "TypeForView",
+        "CardTypeRefGroup",
+        "KrDocTypeRefGroup"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "UseSmartRoles",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_AclGenerationRules_UseSmartRoles",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "SmartRoleGenerator",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "SmartRoleGenerators"
+      },
+      "Caption": "$Views_AclGenerationRules_SmartRoleGenerator",
+      "Multiple": false,
+      "RefSection": [
+        "SmartRoleGenerators"
+      ],
+      "Type": "Guid Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "AclGenerationRule",
+      "DisplayValueColumn": "AclGenerationRuleName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "AclGenerationRules"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AclGenerationRules MSSQL]
+SELECT
+	[s].[ID]						AS [AclGenerationRuleID],
+	[s].[Name]						AS [AclGenerationRuleName],
+	STUFF((
+		SELECT CHAR(10) +
+			CASE WHEN left([st].[TypeCaption], 1) = N'$'
+				THEN N'{' + [st].[TypeCaption] + N'}'
+				ELSE [st].[TypeCaption]
+			END
+		FROM [AclGenerationRuleTypes] AS [st] WITH (NOLOCK)
+		WHERE [st].[ID] = [s].[ID]
+		FOR XML PATH, TYPE
+	).value(N'.[1]', N'nvarchar(max)'), 1, 1, N'') AS [AclGenerationRuleTypes],
+	[s].[UseSmartRoles]				AS [AclGenerationRuleUseSmartRoles],
+	[s].[SmartRoleGeneratorName]	AS [AclGenerationRuleSmartRoleGenerator]
+	
+FROM [AclGenerationRules] AS [s] WITH (NOLOCK)
+#if(Name || request.SortedBy("AclGenerationRuleName")) {
+CROSS APPLY [Localization]([s].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+	#param(UseSmartRoles, [s].[UseSmartRoles])
+	#param(SmartRoleGenerator, [s].[SmartRoleGeneratorID])
+	#if(Type){
+	AND EXISTS (
+		SELECT NULL
+		FROM [AclGenerationRuleTypes] [st] WITH (NOLOCK)
+		WHERE [st].[ID] = [s].[ID]
+			#param(Type, [st].[TypeID])
+
+		UNION
+
+		SELECT NULL
+		FROM [AclGenerationRuleTypes] [st] WITH (NOLOCK)
+		INNER JOIN [RefGroupsGuidValues] [rgv] WITH(NOLOCK)
+			ON [st].[TypeID] = [rgv].[ID]
+		WHERE [st].[ID] = [s].[ID]
+			#param(Type, [rgv].[Value]))
+	}
+ORDER BY #order_by
+
+
+
+[TEXTPART AclGenerationRules PGSQL]
+SELECT
+	"s"."ID"						AS "AclGenerationRuleID",
+	"s"."Name"						AS "AclGenerationRuleName",
+	(
+		SELECT string_agg("TypeCaption", chr(10))
+		FROM (
+			SELECT
+				CASE WHEN substring("st"."TypeCaption", 1, 1) = '$'
+					THEN '{' || "st"."TypeCaption" || '}'
+					ELSE "st"."TypeCaption"
+				END
+			FROM "AclGenerationRuleTypes" AS "st"
+			WHERE "st"."ID" = "s"."ID") AS "TypeCaption"
+	) 								AS "AclGenerationRuleTypes",
+	"s"."UseSmartRoles"				AS "AclGenerationRuleUseSmartRoles",
+	"s"."SmartRoleGeneratorName"	AS "AclGenerationRuleSmartRoleGenerator"
+	
+FROM "AclGenerationRules" AS "s"
+#if(Name || request.SortedBy("AclGenerationRuleName")) {
+CROSS JOIN "Localization"("s"."Name", #param(locale)) AS "lName"
+}
+WHERE 1 = 1
+	#param(Name, "lName"."Value")
+	#param(UseSmartRoles, "s"."UseSmartRoles")
+	#param(SmartRoleGenerator, "s"."SmartRoleGeneratorID")
+	#if(Type){
+	AND EXISTS (
+		SELECT NULL
+		FROM "AclGenerationRuleTypes" AS "st"  
+	  	WHERE "st"."ID" = "s"."ID"
+				#param(Type, "st"."TypeID")
+
+		UNION
+
+		SELECT NULL
+		FROM "AclGenerationRuleTypes" "st"
+		INNER JOIN "RefGroupsGuidValues" "rgv"
+			ON "st"."TypeID" = "rgv"."ID"
+		WHERE "st"."ID" = "s"."ID"
+			#param(Type, "rgv"."Value"))
+	}
+ORDER BY #order_by

@@ -1,0 +1,87 @@
+﻿{
+  "Alias": "Partitions",
+  "Caption": "$Views_Names_Partitions",
+  "GroupName": "System",
+  "ID": "9500e883-9c8e-427e-930b-e93adfd0f56a",
+  "JsonMetadataSource::txt": "Partitions JSONMETA",
+  "MsQuerySource::txt": "Partitions MSSQL",
+  "PgQuerySource::txt": "Partitions PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART Partitions JSONMETA]
+{
+  "Alias": "Partitions",
+  "Caption": "$Views_Names_Partitions",
+  "Columns": [
+    {
+      "Alias": "PartitionID",
+      "Hidden": true,
+      "Type": "$Partitions.ID"
+    },
+    {
+      "Alias": "PartitionName",
+      "Caption": "$Views_Partitions_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Partitions.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "PartitionName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "PartitionID",
+      "Caption": "$Views_Partitions_PartitionID_Param",
+      "Hidden": true,
+      "Type": "$Partitions.ID"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Partitions_Name_Param",
+      "Type": "$Partitions.Name"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Partition",
+      "DisplayValueColumn": "PartitionName",
+      "RefSection": [
+        "Partitions"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Partitions MSSQL]
+SELECT
+	[t].[ID]			AS [PartitionID],
+	[t].[Name]			AS [PartitionName]
+FROM [Partitions] AS [t] WITH (NOLOCK)
+WHERE 1 = 1
+	#param(PartitionID, [t].[ID])
+	#param(Name, [t].[Name])
+ORDER BY #order_by
+
+
+[TEXTPART Partitions PGSQL]
+SELECT
+	"t"."ID"			AS "PartitionID",
+	"t"."Name"			AS "PartitionName"
+FROM "Partitions" AS "t"
+WHERE true
+	#param(PartitionID, "t"."ID")
+	#param(Name, "t"."Name")
+ORDER BY #order_by

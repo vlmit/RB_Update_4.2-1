@@ -1,0 +1,84 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_Dashboard",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 4112,
+  "Forms": [
+    {
+      "Blocks": null,
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Main",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Dashboards",
+  "ID::uid": "31596547-b15c-432e-ac55-9a8177047188",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "Dashboard",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "dff3e546-671f-4f84-95d4-343ee0557201",
+        "5e6f1243-357c-4946-a292-b7e76dec3034"
+      ],
+      "SectionID::uid": "114555ad-161c-4ccb-9c1a-c19c0c21a4a3"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "82649a13-ba29-464e-905d-799792a11208",
+        "b56da0d4-7167-4920-a6ca-46fa9a67f62b",
+        "d88d7f2d-0cb1-4710-8ba1-4b097df06c2f",
+        "570b92be-0c51-4437-b31f-2d8bbd6f3ec9"
+      ],
+      "SectionID::uid": "21f74d15-3eb4-41bb-ae78-07977c63734f"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "3d6c3c36-5545-4e43-9180-f8594aedac0f",
+        "15c843a4-4959-4809-a6ff-10446c74901b",
+        "aa42882e-3d24-47e0-bb3b-0db2aaf797f7",
+        "42594051-ed14-4c74-8370-52005d3e9351",
+        "cbace907-55f5-4ace-9769-f68be1bc3dc3"
+      ],
+      "SectionID::uid": "44c27d15-a840-476e-a4fb-e9e4aa7f077b"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "d7e90d0b-17e7-46c8-ba6a-c3f4da7a4a62",
+        "80725e68-6fad-4dc5-b84e-886e23f44c4b"
+      ],
+      "SectionID::uid": "477bf78a-44c5-45e5-8f41-a05c28536d19"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "9713f989-a8ab-4187-b782-e066c19a17cf",
+        "da53f124-7dc3-45f5-8561-d968755ab339",
+        "91913c6d-ae5c-4274-87b0-0ab381faa365",
+        "7fbb3250-67c9-4d92-99ba-d3efb302002f",
+        "05ce2949-8616-4425-87ea-c9223179ddde"
+      ],
+      "SectionID::uid": "81f82693-1ce7-433d-a554-1cca3e01843d"
+    }
+  ],
+  "Validators": null
+}

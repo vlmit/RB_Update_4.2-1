@@ -1,0 +1,114 @@
+﻿{
+  "Alias": "KrPermissionRuleAccessSettings",
+  "Caption": "$Views_Names_KrPermissionRuleAccessSettings",
+  "GroupName": "Kr Wf",
+  "ID": "e9005e6d-e9d0-4643-86aa-8f0c72826e28",
+  "JsonMetadataSource::txt": "KrPermissionRuleAccessSettings JSONMETA",
+  "MsQuerySource::txt": "KrPermissionRuleAccessSettings MSSQL",
+  "PgQuerySource::txt": "KrPermissionRuleAccessSettings PGSQL"
+}
+
+[TEXTPART KrPermissionRuleAccessSettings JSONMETA]
+{
+  "Alias": "KrPermissionRuleAccessSettings",
+  "Caption": "$Views_Names_KrPermissionRuleAccessSettings",
+  "Columns": [
+    {
+      "Alias": "AccessSettingID",
+      "Hidden": true,
+      "Type": "$KrPermissionRuleAccessSettings.ID"
+    },
+    {
+      "Alias": "AccessSettingName",
+      "Caption": "$Views_KrPermissionRuleAccessSettings_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$KrPermissionRuleAccessSettings.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "AccessSettingName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrPermissionRuleAccessSettings_Name_Param",
+      "Type": "$KrPermissionRuleAccessSettings.Name"
+    },
+    {
+      "Alias": "SectionType",
+      "Caption": "$Views_KrPermissionRuleAccessSettings_SectionType",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "WithMaskLevel",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_KrPermissionRuleAccessSettings_WithMaskLevel",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Boolean Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "AccessSetting",
+      "DisplayValueColumn": "AccessSettingName",
+      "RefSection": [
+        "KrPermissionRuleAccessSettings"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionRuleAccessSettings MSSQL]
+SELECT
+	[s].[ID]		AS [AccessSettingID],
+	[s].[Name]		AS [AccessSettingName]
+FROM [KrPermissionRuleAccessSettings] AS [s] WITH (NOLOCK)
+#if(Name || request.SortedBy("AccessSettingName")) {
+CROSS APPLY [Localization]([s].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+	#if(SectionType && SectionType.Value < 2) { 
+	-- Если настройка определяется для секции с типом Перечисление или Строковая, 
+	-- то возвращаем только Разрешить редактирование и Запретить редактирование 
+		AND [s].[ID] not in (2, 3, 5)
+	}
+	#if(!WithMaskLevel){
+		AND [s].[ID] != 4
+	}
+ORDER BY #order_by
+
+
+[TEXTPART KrPermissionRuleAccessSettings PGSQL]
+SELECT
+	"s"."ID"		AS "AccessSettingID",
+	"s"."Name"		AS "AccessSettingName"
+FROM "KrPermissionRuleAccessSettings" AS "s"
+#if(Name || request.SortedBy("AccessSettingName")) {
+CROSS JOIN "Localization"("s"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+	#if(SectionType && SectionType.Value < 2) { 
+	-- Если настройка определяется для секции с типом Перечисление или Строковая, 
+	-- то возвращаем только Разрешить редактирование и Запретить редактирование 
+		AND "s"."ID" not in (2, 3)
+	} 
+	#if(!WithMaskLevel){
+		AND "s"."ID" != 4
+	}
+ORDER BY #order_by

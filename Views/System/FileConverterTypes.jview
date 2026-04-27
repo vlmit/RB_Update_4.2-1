@@ -1,0 +1,86 @@
+﻿{
+  "Alias": "FileConverterTypes",
+  "Caption": "$Views_Names_FileConverterTypes",
+  "GroupName": "System",
+  "ID": "cab50857-4492-4521-8779-9ef0f5055b44",
+  "JsonMetadataSource::txt": "FileConverterTypes JSONMETA",
+  "MsQuerySource::txt": "FileConverterTypes MSSQL",
+  "PgQuerySource::txt": "FileConverterTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART FileConverterTypes JSONMETA]
+{
+  "Alias": "FileConverterTypes",
+  "Caption": "$Views_Names_FileConverterTypes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "SortBy": "t.ID",
+      "Type": "$FileConverterTypes.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "$Views_FileConverterTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.Name",
+      "Type": "$FileConverterTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RefID",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_FileConverterTypes_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "FileConverterTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART FileConverterTypes MSSQL]
+SELECT
+	[t].[ID]		AS [RefID],
+	[t].[Name]		AS [RefName]
+FROM [FileConverterTypes] AS [t] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART FileConverterTypes PGSQL]
+SELECT
+	"t"."ID"		AS "RefID",
+	"t"."Name"		AS "RefName"
+FROM "FileConverterTypes" AS "t"
+#if(Name) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

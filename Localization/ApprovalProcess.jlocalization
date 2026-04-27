@@ -1,0 +1,919 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "6bda7aaf-8eab-4363-99eb-2f35de347269",
+  "Name": "ApprovalProcess",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "ApprovalProcess_ControlMethods_ByLink",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "By link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По связи"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ControlMethods_CardApprovalProcess",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card approval process"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Процесс согласования карточки"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ControlTypes_ChangeState",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Change state"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменить состояние"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ControlTypes_Delete",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete process"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить процесс"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ControlTypes_Revoke",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Revoke process"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отозвать процесс"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_CrateFromScratch_Button",
+      "Comment": "Кнопка на тулбаре диалога - \"Создать с нуля\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create from scratch"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать с нуля"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_ActionHasNoProcessSettings",
+      "Comment": "{0} - идентификатор экземпляра процесса.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The settings for action \"{0}\" do not contain information about the approval process to be launched. Please contact the administrator."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки действия \"{0}\" не содержат информации о запускаемом процессе согласования. Обратитесь к администратору."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_NoAccessToDeleteTemplate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to delete approval process scheme template."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа на удаление шаблона схемы согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_NoAccessToEdit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to edit approval process scheme."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа на редактирование схемы согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_NoAccessToEditTemplate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to edit approval process scheme template."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа на редактирование шаблона схемы согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_NoAccessToReadInstance",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to read approval process scheme."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа на чтение схемы согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_NoAccessToUseTemplate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to use approval process scheme template."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа на использование шаблона схемы согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_ProcessInstanceAlreadyInProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An instance of the process is already in progress."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экземпляр процесса уже запущен."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_ProcessInstanceForCardNotFound",
+      "Comment": "{0} - идентификатор карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process instance for card with ID='{0}' not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экземпляр процесса для карточки c ID='{0}' не найден."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_ProcessInstanceNotFound",
+      "Comment": "{0} - идентификатор экземпляра процесса.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process instance with ID='{0}' not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экземпляр процесса с ID='{0}' не найден."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_ProcessTemplateNotFound",
+      "Comment": "{0} - идентификатор шаблона процесса.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process template with ID='{0}' not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Шаблон процесса с ID='{0}' не найден."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_UnableToRevokeProcess",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to revoke approval process. Refresh process scheme and try again."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно отозвать процесс согласования. Обновите схему процесса и повторите попытку."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_UnableToStartProcess",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to start approval process. It may already be running. Refresh process scheme and try again."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно запустить процесс согласования. Возможно он уже запущен. Обновите схему процесса и повторите попытку."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Errors_UnknownRunner",
+      "Comment": "{0} - тип раннера процесса согласования",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unknown approval process runner \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Неизвестный раннер процесса согласования \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_InfoModes_None",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Don't display"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не отображать"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_InfoModes_Show",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Display"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображать"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_InfoModes_ShowIfActive",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Display while the process is active"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображать, пока активен процесс"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_Cycle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Approval cycle"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цикл согласования"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_Cycle_Short",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cycle"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цикл"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_EmptyApprovers",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No approvers to display"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет согласующих для отображения"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_PendingTooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0} approvers are thinking"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0} согласующих думают"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_PendingTooltipWithoutTask",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0} approvers are thinking\n{1} approvers have not yet received the task"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0} согласующих думают\n{1} согласующих ещё не получили задание"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_SentTo",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Sent to"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Назначено на"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_State",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "State"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Статус"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_Tab_All",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "All"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Все"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_Tab_Approved",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "For"
+        },
+        {
+          "Culture": "ru",
+          "Value": "За"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_Tab_Disapproved",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Against"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Против"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_ProcessInfo_Tab_Pending",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Thinking"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Думают"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Settings_Duration",
+      "Comment": "Срок задания по умолчанию",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Default task duration"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Срок задания по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Settings_Duration_Tooltip",
+      "Comment": "Срок задания по умолчанию - подсказка",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "In working days"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В рабочих днях"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_State_Approved",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Approved"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Согласован"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_State_Disapproved",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disapproved"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не согласован"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_State_Pending",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Pending"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В ожидании"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_State_Revoked",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Revoked"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отозван"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_State_Running",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Running"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запущен"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_TileHandlers_StartApprovalProcess",
+      "Comment": "Обработчик - \"Начать процесс согласования\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Start approval process"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Начать процесс согласования"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Tiles_ApprovalScheme",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Approval scheme"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Схема согласования"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Tiles_OpenScheme",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open approval scheme"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть схему согласования"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_ApprovalNodeMustHaveApprover",
+      "Comment": "{0} - имя узла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Approver node \"{0}\" must have at least one approver."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Узел согласования \"{0}\" должен иметь хотя бы одного согласующего."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_CompletedApprovalChanged",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to modify completed approval."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя изменить завершенное согласование."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_FinishNodeMustBeOne",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There must be one finish node."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Должен быть один конечный узел."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_FinishNodeMustHaveNoOutgoingEdges",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Finish node must have no outgoing edges."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Конечный узел не должен иметь исходящих стрелок."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_NodeHasManyIncomingEdges",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Node \"{0}\" has more than one incoming edge."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Узел \"{0}\" имеет больше одной входящей стрелки."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_NodeHasManyOutgoingEdges",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Node \"{0}\" has more than one outgoing edge."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Узел \"{0}\" имеет больше одной исходящей стрелки."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_ProcessHasNodeNotInMainPath",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are nodes which are not part of the approval process sequence."
+        },
+        {
+          "Culture": "ru",
+          "Value": "На схеме есть узлы, которые не входят в цепочку схемы согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_ProcessHasNoMainPath",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process has no path from start node to finish node."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Процесс не имеет пути от узла начала до узла окончания."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_PropertyChangingNotAllowed",
+      "Comment": "{0} - имя валидируемого объекта\n{1} - изменённое свойство",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0} property \"{1}\" changing are not allowed from client."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменение свойства {0} \"{1}\" не разрешено с клиента."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_PropertyChangingNotAllowed_Node",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Node"
+        },
+        {
+          "Culture": "ru",
+          "Value": "узла"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_PropertyChangingNotAllowed_Process",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process"
+        },
+        {
+          "Culture": "ru",
+          "Value": "процесса"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_StartNodeMustBeOne",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There must be one start node."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Должен быть один начальный узел."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_StartNodeMustHaveNoIncomingEdges",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Start node must have no incoming edges."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Начальный узел не должен иметь входящих стрелок."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_UnableToAddApprover",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to add approver to completed approval node."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя добавить согласующего в завершенный узел согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_UnableToChangeApprover",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to change approver in a running approval node."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя изменить согласующего в запущенном узле согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_UnableToDeleteApprover",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to delete approver with completed task from approval node."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя удалить согласующего, завершившего задание, из узла согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_UnableToDeleteNode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to delete node with completed approval tasks."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя удалить узел с завершенными заданиями согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_UnableToEditEdge",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to change an edge entering a completed approver node."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя изменить стрелку, входящую в завершенный узел согласования."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_UnknownEdgeSource",
+      "Comment": "{0} - имя узла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edge has unknown source node \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Стрелка исходит из неизвестного узла \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_UnknownEdgeTarget",
+      "Comment": "{0} - имя узла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edge has unknown target node \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Стрелка входит в неизвестный узел \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Validation_UnknownNodeType",
+      "Comment": "{0} - имя узла\n{1} - тип узла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Node \"{0}\" has unknown node type \"{1}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Узел \"{0}\" имеет неизвестный тип узла \"{1}\"."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Warnings_RoleHidden",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The {0} in the dictionary is hidden and will probably not be able to participate in the approval. It is recommended to delete/replace it."
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0} в справочнике является скрытой записью и, вероятно, не сможет принять участие в согласовании. Рекомендуется замена."
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Warnings_RoleHidden_Short",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Hidden in the dictionary"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скрыт в справочнике"
+        }
+      ]
+    },
+    {
+      "Name": "ApprovalProcess_Warnings_RoleHidden_WithRoleName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The {0} {1} in the dictionary is hidden and will probably not be able to participate in the approval. It is recommended to delete/replace it."
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0} {1} в справочнике является скрытой записью и, вероятно, не сможет принять участие в согласовании. Рекомендуется замена."
+        }
+      ]
+    },
+    {
+      "Name": "CreateNewApprovalProcessTemplateExtension_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Adds a button to the paging panel that, when clicked, creates a approval process template and opens their editor."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавляет кнопку на панель пейджинга, при нажатии на которую создается карточка шаблона процесса согласования и открывается её редактор."
+        }
+      ]
+    },
+    {
+      "Name": "Views_CreateApprovalProcessTemplate_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Press to create approval process template"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нажмите, чтобы создать шаблон процесса согласования"
+        }
+      ]
+    }
+  ]
+}

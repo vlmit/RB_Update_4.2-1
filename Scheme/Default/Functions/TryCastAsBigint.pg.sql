@@ -1,0 +1,18 @@
+﻿CREATE FUNCTION "TryCastAsBigint"
+(
+	str text
+)
+RETURNS bigint
+IMMUTABLE STRICT PARALLEL SAFE
+AS $$
+DECLARE
+	"number" bigint DEFAULT NULL;
+BEGIN
+	BEGIN
+		"number" = CAST(str AS bigint);
+	EXCEPTION WHEN OTHERS THEN
+	END;
+
+	RETURN "number";
+END; $$
+LANGUAGE PLPGSQL;

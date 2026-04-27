@@ -1,0 +1,156 @@
+﻿{
+  "Alias": "FormatSettings",
+  "Caption": "$Views_Names_FormatSettings",
+  "GroupName": "System",
+  "ID": "038628a6-a2c0-4276-a986-2ab73428ca42",
+  "JsonMetadataSource::txt": "FormatSettings JSONMETA",
+  "MsQuerySource::txt": "FormatSettings MSSQL",
+  "PgQuerySource::txt": "FormatSettings PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART FormatSettings JSONMETA]
+{
+  "Alias": "FormatSettings",
+  "Caption": "$Views_Names_FormatSettings",
+  "Columns": [
+    {
+      "Alias": "SettingsID",
+      "FilterParameter": "ID",
+      "FilterType": "Parameter",
+      "Hidden": true,
+      "Type": "$FormatSettings.ID"
+    },
+    {
+      "Alias": "SettingsCaption",
+      "Caption": "$Views_FormatSettings_Caption",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$FormatSettings.Caption"
+    },
+    {
+      "Alias": "SettingsName",
+      "Caption": "$Views_FormatSettings_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$FormatSettings.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "SettingsCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_FormatSettings_Caption_Param",
+      "Multiple": false,
+      "Type": "$FormatSettings.Caption"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_FormatSettings_Name_Param",
+      "Type": "$FormatSettings.Name"
+    },
+    {
+      "Alias": "ID",
+      "Caption": "$Views_FormatSettings_ID_Param",
+      "Hidden": true,
+      "Type": "$FormatSettings.ID"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "CardType": "FormatSettings",
+      "ColPrefix": "Settings",
+      "DisplayValueColumn": "SettingsCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "FormatSettings"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART FormatSettings MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [SettingsID],
+		[t].[Caption]							AS [SettingsCaption],
+		[t].[Name]								AS [SettingsName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [FormatSettings] AS [t] WITH (NOLOCK)
+	#if (Caption || Normal && request.SortedBy("SettingsCaption")) {
+	CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+	}
+	WHERE 1 = 1
+		#param(Caption, [lCaption].[Value])
+		#param(Name, [t].[Name])
+		#param(ID, [t].[ID])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART FormatSettings PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"					AS "SettingsID",
+	"t"."Caption"				AS "SettingsCaption",
+	"t"."Name"					AS "SettingsName",
+	0::int8						AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "FormatSettings" AS "t"
+#if (Caption || Normal && request.SortedBy("SettingsCaption")) {
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+}
+WHERE true
+	#param(Caption, "lCaption"."Value")
+	#param(Name, "t"."Name")
+	#param(ID, "t"."ID")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

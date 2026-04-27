@@ -1,0 +1,213 @@
+﻿{
+  "Alias": "RefGroups",
+  "Caption": "$Views_Names_RefGroups",
+  "GroupName": "RefGroups",
+  "ID": "a612a24b-fab4-4b32-a3bf-42007431d2e6",
+  "JsonMetadataSource::txt": "RefGroups JSONMETA",
+  "MsQuerySource::txt": "RefGroups MSSQL",
+  "PgQuerySource::txt": "RefGroups PGSQL"
+}
+
+[TEXTPART RefGroups JSONMETA]
+{
+  "Alias": "RefGroups",
+  "Caption": "$Views_Names_RefGroups",
+  "Columns": [
+    {
+      "Alias": "RefGroupID",
+      "Hidden": true,
+      "Type": "$RefGroups.ID"
+    },
+    {
+      "Alias": "RefGroupName",
+      "Caption": "$Views_Names_RefGroups_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$RefGroups.Name"
+    },
+    {
+      "Alias": "RefGroupTypeID",
+      "Hidden": true,
+      "Type": "$RefGroupTypes.ID"
+    },
+    {
+      "Alias": "RefGroupTypeName",
+      "Caption": "$Views_Names_RefGroupTypes_Name",
+      "FilterParameter": "TypeID",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$RefGroupTypes.Name"
+    },
+    {
+      "Alias": "IntID",
+      "Hidden": true,
+      "Type": "$RefGroups.IntID"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RefGroupName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_RefGroups_Name_Param",
+      "Multiple": false,
+      "Type": "$RefGroups.Name"
+    },
+    {
+      "Alias": "TypeID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_RefGroups_TypeID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$RefGroupTypes.ID"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "RefGroup",
+      "DisplayValueColumn": "RefGroupName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "RefGroups"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count",
+      "CountColumn": "Count"
+    },
+    {
+      "Alias": "ByRefGroupType",
+      "Caption": "$Views_RefGroups_ByRefGroupType_Subset",
+      "CaptionColumn": "RefGroupTypeName",
+      "CountColumn": "Count",
+      "RefColumn": "RefGroupTypeID",
+      "RefParam": "TypeID"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RefGroups MSSQL]
+SELECT
+	[t].*
+FROM (
+
+	SELECT
+	#if(Normal) 
+	{
+		[rg].[ID]						AS [RefGroupID],
+		[rg].[Name]						AS [RefGroupName],
+		[rg].[RefGroupTypeID]			AS [RefGroupTypeID],
+		[rg].[RefGroupTypeName]			AS [RefGroupTypeName],
+		[rg].[IntID]					AS [IntID],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+	}
+	#if(ByRefGroupType)
+	{
+		[rg].[RefGroupTypeID]		AS [RefGroupTypeID],
+		[rg].[RefGroupTypeName]		AS [RefGroupTypeName],
+		count(*) as [Count]
+	}
+	#if(Count) 
+	{
+		count(*) AS [Count]
+	}
+	FROM [RefGroups] AS [rg] WITH (NOLOCK)
+    #if(Name || Normal && request.SortedBy("RefGroupName")) {
+	CROSS APPLY [Localization]([rg].[Name], #param(locale)) AS [lName]
+	}
+	WHERE 1 = 1
+		#param(Name, [lName].[Value])
+		#param(TypeID, [rg].[RefGroupTypeID])
+		
+	#if(ByRefGroupType) {
+		GROUP BY [rg].[RefGroupTypeID], [rg].[RefGroupTypeName]
+	}
+		
+) AS [t]
+
+#if(PageOffset) {
+	WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) 
+{
+	ORDER BY [t].[rn]
+}
+#if(ByRefGroupType)
+{
+    GROUP BY [t].[RefGroupTypeID], [t].[RefGroupTypeName], [t].[Count]
+    ORDER BY [t].[RefGroupTypeName]
+}
+
+[TEXTPART RefGroups PGSQL]
+SELECT
+	"t".*
+FROM (
+
+	SELECT
+	#if(Normal) 
+	{
+		"rg"."ID"						AS "RefGroupID",
+		"rg"."Name"						AS "RefGroupName",
+		"rg"."RefGroupTypeID"			AS "RefGroupTypeID",
+		"rg"."RefGroupTypeName"			AS "RefGroupTypeName",
+		"rg"."IntID"					AS "IntID",
+		row_number() OVER (ORDER BY #order_by)	AS "rn"
+	}
+	#if(ByRefGroupType)
+	{
+		"rg"."RefGroupTypeID"		AS "RefGroupTypeID",
+		"rg"."RefGroupTypeName"		AS "RefGroupTypeName",
+		count(*) as "Count"
+	}
+	#if(Count) 
+	{
+		count(*) AS "Count"
+	}
+	FROM "RefGroups" AS "rg"	
+    #if(Name || Normal && request.SortedBy("RefGroupName")) {
+	CROSS JOIN "Localization"("rg"."Name", #param(locale)) AS "lName"
+	}
+	WHERE 1 = 1
+		#param(Name, "lName"."Value")
+		#param(TypeID, "rg"."RefGroupTypeID")
+		
+	#if(ByRefGroupType) {
+		GROUP BY "rg"."RefGroupTypeID", "rg"."RefGroupTypeName"
+	}
+	
+) AS "t"
+
+#if(PageOffset) {
+	WHERE "t"."rn" >= #param(PageOffset) AND "t"."rn" < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) 
+{
+	ORDER BY "t"."rn"
+}
+#if(ByRefGroupType)
+{
+    GROUP BY "t"."RefGroupTypeID", "t"."RefGroupTypeName", "t"."Count"
+    ORDER BY "t"."RefGroupTypeName"
+}

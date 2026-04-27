@@ -1,0 +1,419 @@
+﻿{
+  "Alias": "ActionHistory",
+  "Caption": "$Views_Names_ActionHistory",
+  "GroupName": "System",
+  "ID": "7b10287f-31bb-4d4c-a515-ae754e452ed3",
+  "JsonMetadataSource::txt": "ActionHistory JSONMETA",
+  "MsQuerySource::txt": "ActionHistory MSSQL",
+  "PgQuerySource::txt": "ActionHistory PGSQL"
+}
+
+[TEXTPART ActionHistory JSONMETA]
+{
+  "Alias": "ActionHistory",
+  "Caption": "$Views_Names_ActionHistory",
+  "Columns": [
+    {
+      "Alias": "RecordID",
+      "Hidden": true,
+      "Type": "$ActionHistory.RowID"
+    },
+    {
+      "Alias": "RecordCaption",
+      "Hidden": true,
+      "NullValue": "$Views_ActionHistory_UnknownName_Sql",
+      "Type": "$ActionHistory.Digest"
+    },
+    {
+      "Alias": "CardID",
+      "Hidden": true,
+      "Type": "$ActionHistory.ID"
+    },
+    {
+      "Alias": "CardCaption",
+      "Caption": "$Views_ActionHistory_Caption",
+      "FilterParameter": "CardCaption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "NullValue": "$Views_ActionHistory_UnknownName_Sql",
+      "Type": "$ActionHistory.Digest"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$ActionHistory.TypeID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_ActionHistory_Type",
+      "FilterParameter": "TypeID",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "NormalizationKeyColumn": "TypeID",
+      "NormalizationSource": "Types",
+      "Type": "$ActionHistory.TypeCaption"
+    },
+    {
+      "Alias": "ActionID",
+      "Hidden": true,
+      "Type": "$ActionHistory.ActionID"
+    },
+    {
+      "Alias": "ActionName",
+      "Caption": "$Views_ActionHistory_Action",
+      "FilterParameter": "ActionID",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Modified",
+      "Caption": "$Views_ActionHistory_DateTime",
+      "FilterParameter": "Modified",
+      "FilterType": "Parameter",
+      "SortBy": "h.Modified",
+      "Type": "$ActionHistory.Modified"
+    },
+    {
+      "Alias": "ModifiedByID",
+      "Hidden": true,
+      "Type": "$ActionHistory.ModifiedByID"
+    },
+    {
+      "Alias": "ModifiedByName",
+      "Caption": "$Views_ActionHistory_User",
+      "FilterParameter": "ModifiedByID",
+      "FilterType": "Parameter",
+      "NormalizationKeyColumn": "ModifiedByID",
+      "NormalizationSource": "Users",
+      "Type": "$ActionHistory.ModifiedByName"
+    },
+    {
+      "Alias": "ApplicationID",
+      "Hidden": true,
+      "Type": "$ActionHistory.ApplicationID"
+    },
+    {
+      "Alias": "ApplicationName",
+      "Caption": "$Views_ActionHistory_Application",
+      "FilterParameter": "ApplicationID",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "HostName",
+      "Caption": "$Views_ActionHistory_HostName",
+      "FilterParameter": "HostName",
+      "FilterType": "Parameter",
+      "Type": "$ActionHistory.HostName"
+    },
+    {
+      "Alias": "HostIP",
+      "Caption": "$Views_ActionHistory_HostIP",
+      "FilterParameter": "HostIP",
+      "FilterType": "Parameter",
+      "Type": "$ActionHistory.HostIP"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Modified",
+      "SortDirection": "Descending"
+    }
+  ],
+  "Extensions": [
+    {
+      "Order": 0,
+      "TypeName": "Tessa.Extensions.Platform.Client.Cards.OpenFromActionHistoryOnDoubleClickExtension"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "CardCaption",
+      "Caption": "$Views_ActionHistory_Card_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "TypeID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1,
+          2
+        ],
+        "ViewAlias": "ActionHistoryTypes"
+      },
+      "Caption": "$Views_ActionHistory_Type_Param",
+      "Multiple": false,
+      "RefSection": [
+        "ActionHistoryTypes"
+      ],
+      "Type": "$ActionHistory.TypeID"
+    },
+    {
+      "Alias": "ActionID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "ActionTypes"
+      },
+      "Caption": "$Views_ActionHistory_Action_Param",
+      "DropDownInfo": {
+        "ViewAlias": "ActionTypes"
+      },
+      "Multiple": false,
+      "RefSection": [
+        "ActionTypes"
+      ],
+      "Type": "$ActionHistory.ActionID"
+    },
+    {
+      "Alias": "ApplicationID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "ApplicationNames"
+      },
+      "Caption": "$Views_ActionHistory_Application_Param",
+      "DropDownInfo": {
+        "ViewAlias": "ApplicationNames"
+      },
+      "Multiple": false,
+      "RefSection": [
+        "ApplicationNames"
+      ],
+      "Type": "$ActionHistory.ApplicationID"
+    },
+    {
+      "Alias": "Modified",
+      "Caption": "$Views_ActionHistory_DateTime_Param",
+      "Type": "$ActionHistory.Modified"
+    },
+    {
+      "Alias": "ModifiedByID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_ActionHistory_User_Param",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$ActionHistory.ModifiedByID"
+    },
+    {
+      "Alias": "CardID",
+      "Caption": "{$Views_ActionHistory_CardId_Param} (hidden)",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$ActionHistory.ID"
+    },
+    {
+      "Alias": "CardIDVisible",
+      "Caption": "$Views_ActionHistory_CardId_Param",
+      "Multiple": false,
+      "Type": "$ActionHistory.ID"
+    },
+    {
+      "Alias": "SessionID",
+      "Caption": "$Views_ActionHistory_SessionOrTokenId_Param",
+      "Type": "$ActionHistory.SessionID"
+    },
+    {
+      "Alias": "SessionIDHidden",
+      "Caption": "{$Views_ActionHistory_SessionOrTokenId_Param} (hidden)",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$ActionHistory.SessionID"
+    },
+    {
+      "Alias": "DepartmentID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3,
+          5
+        ],
+        "ViewAlias": "Departments"
+      },
+      "Caption": "$Views_ActionHistory_UserDepartment_Param",
+      "Multiple": false,
+      "RefSection": [
+        "DepartmentRoles"
+      ],
+      "Type": "$RoleUsers.ID"
+    },
+    {
+      "Alias": "HostName",
+      "Caption": "$Views_ActionHistory_HostName",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "HostIP",
+      "Caption": "$Views_ActionHistory_HostIP",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "DatabaseID",
+      "Caption": "$Views_ActionHistory_DatabaseID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$ActionHistoryDatabases.ID"
+    }
+  ],
+  "QuickSearchParam": "CardCaption",
+  "References": [
+    {
+      "ColPrefix": "Record",
+      "DisplayValueColumn": "RecordCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "ActionHistoryVirtual"
+      ]
+    },
+    {
+      "ColPrefix": "Card",
+      "DisplayValueColumn": "CardCaption",
+      "IsCard": true,
+      "RefSection": [
+        "Instances"
+      ]
+    }
+  ],
+  "Subsets": [
+    {
+      "Alias": "ByConfigurationString",
+      "Caption": "$Views_ActionHistory_ByConfigurationString_Param",
+      "CaptionColumn": "DatabaseName",
+      "RefColumn": "DatabaseID",
+      "RefParam": "DatabaseID"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ActionHistory MSSQL]
+#if(ByConfigurationString)
+{
+	SELECT
+		[ID] AS [DatabaseID],
+		[Name] AS [DatabaseName]
+	FROM [ActionHistoryDatabases] WITH (NOLOCK)
+}
+{
+	SELECT
+		[t].[RowID] AS [RecordID],
+		[h].[Digest] AS [RecordCaption],
+		[h].[ID] AS CardID,
+		[h].[Digest] AS [CardCaption],
+		[h].[TypeID],
+		[h].[ActionID],
+		CAST(NULL AS NVARCHAR) AS [ActionName],
+		[h].[Modified],
+		[h].[ModifiedByID],
+		[h].[ApplicationID],
+		CAST(NULL AS NVARCHAR) AS [ApplicationName],
+		[h].[HostName],
+		[h].[HostIP]
+	FROM (
+		SELECT
+			[h].[RowID],
+			row_number() OVER (ORDER BY #order_by) AS [rn]
+		FROM [ActionHistory] AS [h] WITH (NOLOCK)
+		WHERE 1 = 1
+			#param(CardID, [h].[ID])
+			#param(CardIDVisible, [h].[ID])
+			#param(CardCaption, [h].[Digest])
+			#param(TypeID, [h].[TypeID])
+			#param(ActionID, [h].[ActionID])
+			#param(ApplicationID, [h].[ApplicationID])
+			#param(Modified, [h].[Modified])
+			#param(ModifiedByID, [h].[ModifiedByID])
+			#param(SessionID, [h].[SessionID])
+			#param(SessionIDHidden, [h].[SessionID])
+			#param(HostName, [h].[HostName])
+			#param(HostIP, [h].[HostIP])
+			#if(DepartmentID) {
+			AND EXISTS (
+				SELECT NULL
+				FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+				WHERE [ru].[UserID] = [h].[ModifiedByID]
+				#param(DepartmentID, [ru].[ID]))
+			}
+		) AS [t]
+	INNER JOIN [ActionHistory] AS [h] WITH (NOLOCK)
+		ON [h].[RowID] = [t].[RowID]
+	#if(PageOffset) {
+	WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+	}
+	ORDER BY [t].[rn]
+}
+
+
+[TEXTPART ActionHistory PGSQL]
+#if(ByConfigurationString)
+{
+	SELECT
+		"ID" AS "DatabaseID",
+		"Name" AS "DatabaseName"
+	FROM "ActionHistoryDatabases"
+}
+{
+	SELECT
+		"t"."RowID" AS "RecordID",
+		"h"."Digest" AS "RecordCaption",
+		"h"."ID" AS CardID,
+		"h"."Digest" AS "CardCaption",
+		"h"."TypeID",
+		"h"."ActionID",
+		NULL::text AS "ActionName",
+		"h"."Modified",
+		"h"."ModifiedByID",
+		"h"."ApplicationID",
+		NULL::text AS "ApplicationName",
+		"h"."HostName",
+		"h"."HostIP"
+	FROM (
+		SELECT
+			"h"."RowID"
+		FROM "ActionHistory" AS "h"
+		WHERE true
+			#param(CardID, "h"."ID")
+			#param(CardIDVisible, "h"."ID")
+			#param(CardCaption, "h"."Digest")
+			#param(TypeID, "h"."TypeID")
+			#param(ActionID, "h"."ActionID")
+			#param(ApplicationID, "h"."ApplicationID")
+			#param(Modified, "h"."Modified")
+			#param(ModifiedByID, "h"."ModifiedByID")
+			#param(SessionID, "h"."SessionID")
+			#param(SessionIDHidden, "h"."SessionID")
+			#param(HostName, "h"."HostName")
+			#param(HostIP, "h"."HostIP")
+			#if(DepartmentID) {
+			AND EXISTS (
+				SELECT NULL
+				FROM "RoleUsers" AS "ru"
+				WHERE "ru"."UserID" = "h"."ModifiedByID"
+				#param(DepartmentID, "ru"."ID"))
+			}
+		ORDER BY #order_by
+		#if(PageOffset) {
+		OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+		}
+		) AS "t"
+	INNER JOIN "ActionHistory" AS "h"
+		ON "h"."RowID" = "t"."RowID"
+	ORDER BY #order_by
+}

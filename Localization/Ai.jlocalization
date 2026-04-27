@@ -1,0 +1,6432 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "dc64190e-6a76-4660-9aa2-e387bd085a4c",
+  "Name": "Ai",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "Ai_Actions_CreateAndOpenCard",
+      "Comment": "Название действия \"Создать и открыть карточку\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "create and open a card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "создать и открыть карточку"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Actions_CreateAndSaveCard",
+      "Comment": "Название действия \"Создать и сохранить карточку\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "create and save a card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "создать и сохранить карточку"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Actions_CreateCardAndStartProcess",
+      "Comment": "Название действия \"Создать карточку и запустить процесс\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "create a card and start the process"
+        },
+        {
+          "Culture": "ru",
+          "Value": "создать карточку и запустить процесс"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_InvalidDocumentType",
+      "Comment": "Ошибка при неудачной попытке найти тип документа по распознанному названию",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Document type with name \"{0}\" was not found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось определить тип документа по названию \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_OutMessage_BlockCaption",
+      "Comment": "Начало блока замещаемого сотрудника в выходном сообщении",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "### Substitutions settings for:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "### Настройка замещений для сотрудника:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_OutMessage_DeputyCaption",
+      "Comment": "Заместитель",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "- **Deputy:**"
+        },
+        {
+          "Culture": "ru",
+          "Value": "- **Заместитель:**"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_OutMessage_DocTypeCaption",
+      "Comment": "Типы документов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "- **Document types:**"
+        },
+        {
+          "Culture": "ru",
+          "Value": "- **Типы документов:**"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_OutMessage_Remark",
+      "Comment": "Примечание, что изменения вступят в силу через 15 минут",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "_The configured replacements will take effect in 15 minutes_"
+        },
+        {
+          "Culture": "ru",
+          "Value": "_Настроенные замещения вступят в силу через 15 минут_"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_OutMessage_SubstitutionPeriodCaption",
+      "Comment": "Период замещения",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "- **Substitution period:**"
+        },
+        {
+          "Culture": "ru",
+          "Value": "- **Период замещения:**"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_SameEmployeeAndDeputy",
+      "Comment": "Ошибка когда заместитель совпадает с замещаемым",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An employee cannot be his own deputy ({0})."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нельзя быть заместителем самого себя ({0})."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_SuccessMessage",
+      "Comment": "Начало сообщения об успешном выполнении замещений",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Substitutions for employees have been successfully configured for:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Успешно настроены замещения для сотрудников:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_Validation_InvalidEndDate",
+      "Comment": "Ошибка когда конечная дата меньше начальной",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Substitution end date cannot be earlier than the start date."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата окончания замещения не может быть раньше даты начала."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_Validation_NoDeputy",
+      "Comment": "Ошибка отсутствия заместителя в запросе",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Deputy user is not speciofied in the request."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В запросе не указан заместитель."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_Validation_NoEmployee",
+      "Comment": "Ошибка отсутствия пользователя в запросе замещения",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee to be substituted is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В запросе не указан замещаемый сотрудник."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AddDeputyPlugin_Validation_NoEndDate",
+      "Comment": "Ошибка отсутствия даты окончания замещения",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "End date is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата окончания замещения не указана."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AdditionalInstructionKind_CurrentDatetime",
+      "Comment": "Наименование доп. данных для промта — \"Текущая дата/время\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Current datetime"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текущая дата/время"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AdditionalInstructionKind_Department",
+      "Comment": "Наименование доп. данных для промта — \"Подразделение\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Department"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подразделение"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AdditionalInstructionKind_Employee",
+      "Comment": "Наименование доп. данных для промта — \"Сотрудник\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудник"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Actions_Apply",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Apply"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Применить"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Actions_Confirm",
+      "Comment": "Заголовок действия \"Подтвердить\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Confirm"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подтвердить"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Actions_Create",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Actions_Reject",
+      "Comment": "Заголовок действия \"Отклонить\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reject"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отклонить"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Actions_Tools",
+      "Comment": "Заголовок действия \"Список инструментов\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "List of tools"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Список инструментов"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_AmbiguousTools_Message",
+      "Comment": "Сообщение, что определено несколько инструментов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to clearly identify the tool in accordance with your request, as several tools are suitable, or there are actions for which no tool has been found. The following tools have been identified for the following actions:\n\n{0}\n\nSelect the tool you want to execute."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось однозначно определить инструмент в соответствии с Вашим запросом, поскольку подходит несколько инструментов, либо есть действия, к которым инструмент не найден. Для следующих действий определены следующие инструменты:\n\n{0}\n\nВыберите инструмент, который нужно выполнить."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_NotFound",
+      "Comment": "Заголовок \"Не найден\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "_Not found_"
+        },
+        {
+          "Culture": "ru",
+          "Value": "_Не найден_"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_ToolCaption",
+      "Comment": "Заголовок \"Инструмент\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "**Tool:**"
+        },
+        {
+          "Culture": "ru",
+          "Value": "**Инструмент:**"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_AiModuleDisabled",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The AI module is disabled in the system."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модуль ИИ отключён в системе."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_CardToolNotFound",
+      "Comment": "Ошибка отсутствия карточного инструмента по заданному ID.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No card tool with requested ID ({0}) was found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточный инструмент с запрошенным ID ({0}) не найден."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_Error",
+      "Comment": "Общее сообщение об ошибке.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred while executing the request."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Во время выполнения запроса произошла ошибка."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_InvalidContext",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid context type, cannot perform action."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Неверный тип контекста, невозможно выполнить действие."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_InvalidMessageToReplace",
+      "Comment": "Ошибка при невалидном сообщении для замены.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The transmitted message cannot be used for replacement."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Переданное сообщение не может использоваться для замены."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_InvalidToolID",
+      "Comment": "Ошибка при невалидном названии инструмента.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to find an appropriate tool with the provided id \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти подходящий инструмент по представленному идентификатору \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_MissingAction",
+      "Comment": "Ошибка об отсутствии идентификатора действия в сообщении",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The request is missing an action identifier."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В запросе отсутствует идентификатор действия."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_MissingAiModel",
+      "Comment": "Ошибка при отсутствии заданной языковой модели",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Language model not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указана языковая модель."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_MissingContent",
+      "Comment": "Ошибка об отсутствии содержимого в сообщении",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The request is missing message content."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В запросе отсутствует содержимое сообщения."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_MissingTool",
+      "Comment": "Ошибка, когда не указан инструмент там, где он обязательно должен быть.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There is no tool identifier in the request."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В запросе отсутствует идентификатор инструмента."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_NoAppropriateTools",
+      "Comment": "Сообщение о том, что нет подходящих инструментов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No suitable tools were found according to your request."
+        },
+        {
+          "Culture": "ru",
+          "Value": "По вашему запросу не было найдено подходящих инструментов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_NoAppropriateToolsForCard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are no tools available for the selected card."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для выбираемой карточки нет доступных инструментов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_NoArtiMessages",
+      "Comment": "Ошибка отсутствия сообщений от Arti при успешном ответе.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Arti has not returned any messages."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Arti не вернул ни одного ответа."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_NoArtiResponse",
+      "Comment": "Ошибка отсутствия ответа от Arti.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to get response from Arti."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось получить ответ от Arti."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_NoInstructionsResult",
+      "Comment": "Ошибка отсутствия инструкций инструмента.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The selected tool has no execution instructions."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У выбранного инструмента отсутствуют инструкции выполнения."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_NoRequestMessages",
+      "Comment": "Ошибка отсутствия сообщений в запросе.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There are no messages in the request."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отсутствуют сообщения в запросе."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_NoTools",
+      "Comment": "Ошибка отсутствия инструментов по переданному контексту.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No available tools."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступных инструментов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_RejectIsForbidden",
+      "Comment": "Ошибка, возникающая при отправке действия Reject в запрос к агенту.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The \"Reject\" action is not allowed on the server side and should only be handled by the client."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Действие \"Отклонить\" не разрешено на серверной стороне и должно обрабатываться только клиентом."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_ReplacingIsNotAvailable",
+      "Comment": "Ошибка о недоступности замены сообщения",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to replace message."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно выполнить замену сообщения."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_TextEnhancementTool_NoText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There is no text to apply."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отсутствует текст для применения."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_TextFormatNotSupported",
+      "Comment": "Ошибка при указании неподдерживаемого текстового формата.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text format specified is not supported."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Указанный текстовый формат не поддерживается."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_ToolContextMismatch",
+      "Comment": "Ошибка инструмент не соответствует контексту.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The supplied tool \"{0}\" does not match the tool being used in the context."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Переданный инструмент \"{0}\" не соответствует используемому инструменту в контексте."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_ToolIDNotUnique",
+      "Comment": "Ошибка коллизии имён инструментов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tools with the following identificators are not unique (the names of the plugins where they are found are in parentheses):\n{0}\n\nThey will not be included to the selection."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструменты со следующими идентификаторами не уникальны (в скобках названия плагинов, где они найдены):\n{0}\n\nОни будут исключены из выборки."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiAgent_Validation_ToolSelectionPromptGenerationFailed",
+      "Comment": "Ошибка при неудачной попытке сформировать супер-промпт для определения инструмента.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to generate prompt for tools selection."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось сформировать промпт выбора инструментов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiCache_Messages_ConfirmPurge",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Attention! All files in the cache will be removed.\n\nOperation can take a long time. Continue?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Внимание! Все файлы в кэше будут удалены.\n\nОперация может занять длительное время. Продолжить?"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiCache_Messages_PurgeIsAlreadyInProgress",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI cache cleanup is already in progress, try again later."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистка кэша ИИ уже выполняется, повторите попытку позднее."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiFileRequestOperation_AsIs",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Send file without preprocessing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправить файл без предобработки"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiFileRequestOperation_Page",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Send pages as images"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправить изображения страниц"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_AiFileRequestOperation_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Send only text content from file"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправить только текст из файла"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Message_LinkToViewText",
+      "Comment": "Сообщение о кликабельной ссылке на представление.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The full list of data can be obtained here: {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Полный список данных можно получить здесь: {0}"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Message_ParametersUsed",
+      "Comment": "Сообщение об использованных параметрах представления.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The search was performed according to the parameters:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поиск выполнялся по параметрам:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Message_RequiredValueMissing",
+      "Comment": "Сообщение об отсуствиии обязательного значения.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Required value is not filled in \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не заполнено обязательное значение \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Message_ResultTable",
+      "Comment": "Сообщение, если нашлась хотябы одна строка в представлении.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The data was found for your query:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По вашему запросу были найдены данные:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Message_ViewResultSliced",
+      "Comment": "Сообщение о том, что результирующие данные представления были отсечены.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The response is based on {0} from {1} found rows."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответ сформирован на основе {0} строк из {1} найденных."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Validation_AiAnswerIsEmpty",
+      "Comment": "Не удалось получить ответ от ИИ.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to get a response from the AI for the user's request."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось получить ответ от ИИ по запросу пользователя."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Validation_CardTypeNotFound",
+      "Comment": "Не удалось найти создаваемый тип карточки.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to find created card type by ID: {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти создаваемый тип карточки по идентификатору: {0}"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Validation_InvalidFieldInSection",
+      "Comment": "Не удалось найти поле в секции по идентификатору.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "During processing in section \"{0}\" field by ID could not be found: {1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В процессе обработки в секции \"{0}\" не удалось найти поле по идентификатору: {1}"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Validation_InvalidSection",
+      "Comment": "Не удалось найти секцию по идентификатору.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "During processing, the section with the ID could not be found: {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В процессе обработки не удалось найти секцию с идентификатором: {0}"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Validation_RangeMechanismAndSearchService",
+      "Comment": "Невозможно использовать механзим поиска по диапазонам и поиск значения в справочнике одновременно.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "It is not possible to use the range search mechanism and the search for the value in the directory at the same time."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно использовать механизм поиска диапазонов и поиск значения по справочнику одновременно."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CardTool_Validation_UnexpectedData",
+      "Comment": "В процессе обработки были получены непредвиденные данные.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unexpected data was received during processing."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В процессе обработки были получены непредвиденные данные."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CollectionDisplayMethods_BulletedList",
+      "Comment": "Вывод через маркированный список.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Bulleted list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Маркированный список"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CollectionDisplayMethods_InRow",
+      "Comment": "Вывод списка в строку.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "In a row"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В строку"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CollectionDisplayMethods_NumberedList",
+      "Comment": "Вывод через нумерованный список.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Numbered list"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нумерованный список"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_EqualsAmountSearchType",
+      "Comment": "Тип поиска по сумме - равно",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "equals"
+        },
+        {
+          "Culture": "ru",
+          "Value": "равно"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_GreaterThanAmountSearchType",
+      "Comment": "Тип поиска по сумме - больше",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "greater than"
+        },
+        {
+          "Culture": "ru",
+          "Value": "больше"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_InvalidAmountSearchType",
+      "Comment": "Ошибка неизвестный тип поиска по сумме",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid amount search type {0}. You can use only: equals, greater then and lower than."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Указан неизвестный тип поиска по сумме {0}. Можно использовать только: равно, больше и меньше."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_LowerThanAmountSearchType",
+      "Comment": "Тип поиска по сумме - меньше",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "lower than"
+        },
+        {
+          "Culture": "ru",
+          "Value": "меньше"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_Message_ClarifyParameters",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To search for contracts information, type it`s date, number, partner name or author."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для поиска информации по договорам напишите его дату, номер, контрагента или автора."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_Message_ContractsRowsNotFound",
+      "Comment": "Сообщение \"Не удалось найти договоры по указанным данным.\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No contracts could be found for the specified data."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти договоры по указанным данным."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_Message_InvalidDocDate",
+      "Comment": "Ошибка неверно указана дата.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid document date. Specify only one date if you want exact date. Or specify period if you want to search in period."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Неверно задана дата документа. Укажите только одну дату, если нужна точная дата. Или укажите период, если требуется поиск по периоду."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_Message_NotAllResultsDisplayed",
+      "Comment": "Сообщение выводимое в случае если удалось найти слошком много записей с договорами и выводится таблица.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Not all found contracts are displayed, the full list can be found in {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображены не все найденные договоры, полный список можно посмотреть в {0}."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_Message_ResultTable",
+      "Comment": "Сообщение выводимое в случае если удалось найти хотябы одну запись с договорами и выводится таблица.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The following contracts were found in the system:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В системе найдены следующие договоры:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_Messages_View",
+      "Comment": "Текст \"представлении\" для ссылки на представление",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "view"
+        },
+        {
+          "Culture": "ru",
+          "Value": "представлении"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ContractInfoPlugin_NoAmountSearchType",
+      "Comment": "Ошибка отсутствия типа поиска по сумме",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Amount search type is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указана типо поиска по сумме."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CreateIncomingAiAgentPlugin_CardCreated",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The incoming document card has been created. To save it in the system, you need to save it yourself."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка входящего документа создана. Для ее сохранения в системе надо самостоятельно ее сохранить."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CreateIncomingAiAgentPlugin_DocDate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Document date"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата документа"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CreateIncomingAiAgentPlugin_NotPermissions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You don't have the permissions to create incoming document cards."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У вас нет прав на создание карточек входящих документов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CreateIncomingAiAgentPlugin_OutgoingNumber",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Outgoing number"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Исходящий номер"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CreateIncomingAiAgentPlugin_Partner",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Partner"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контрагент"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CreateIncomingAiAgentPlugin_PartnerNotFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "⚠️ Not found:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "⚠️ Не найден:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CreateIncomingAiAgentPlugin_PropsTitle",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An Incoming document card will be created with the following parameters:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Будет создана карточка Входящего документа со следующими параметрами:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_CreateIncomingAiAgentPlugin_Receivers",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Receivers"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Получатели"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DepartmentSearch_Ambiguous",
+      "Comment": "Ошибка, возникающая когда найдено более 1 подразделения (но меньше 3)",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When searching for an department by \"{0}\" in the dictionary, several records were found:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "При поиске подразделения по \"{0}\" в справочнике найдено несколько записей:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DepartmentSearch_Error_NameMissing",
+      "Comment": "Сообщение об ошибке \"В предоставленных для поиска данных отсутсвует название подразделения\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The name of the department is missing from the data provided for the search."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В предоставленных для поиска данных отсутсвует название подразделения."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DepartmentSearch_TooMany",
+      "Comment": "Сообщение с ошибкой когда найденных подразделений слишком много",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When searching for an department by \"{0}\" in the dictionary, too many records were found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При поиске подразделения по \"{0}\" в справочнике найдено слишком много записей."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DepartmentSearch_Validation_NotFound",
+      "Comment": "Ошибка при неудачной попытке найти подразделение",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to find department \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найдено подразделение \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_Message_ClarifyEmployees",
+      "Comment": "Сообщение \"Для получения информации о настроенных замещениях необходимо указать ФИО замещаемого или заместителя.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To obtain information about the configured substitutions, you must specify full name of deputized employee or deputy."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для получения информации о настроенных замещениях необходимо указать ФИО замещаемого или заместителя."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_Message_DeputiesRowsNotFound",
+      "Comment": "Сообщение \"Не найдены заместители для сотрудников: \"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No deputized found for employees: "
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найдены замещаемые для сотрудников: "
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_Message_DeputyRowsNotFound",
+      "Comment": "Сообщение \"Не найдены заместители для сотрудника {0}.\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No deputized found for employee {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найдены замещаемые для сотрудника {0}."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_Message_EmployeeRowsNotFound",
+      "Comment": "Сообщение \"У сотрудника {0} нет заместителей.\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee {0} has no deputies."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У сотрудника {0} нет заместителей."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_Message_EmployeesRowsNotFound",
+      "Comment": "Сообщение \"У сотрудников нет заместителей: \"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employees have no deputies: "
+        },
+        {
+          "Culture": "ru",
+          "Value": "У сотрудников нет заместителей: "
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_Message_ResultTable",
+      "Comment": "Сообщение выводимое в случае если удалось найти хотябы одну запись о замещнии и выводится таблица.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The following active substitution settings were found in the system:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В системе найдены следующие активные настройки замещений:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_ResultColumns_Deputy",
+      "Comment": "Заголовок колонки таблицы \"Заместитель\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Deputy"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заместитель"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_ResultColumns_DocumentTypes",
+      "Comment": "Заголовок колонки таблицы \"Виды документов\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Document types"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Виды документов"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_ResultColumns_Employee",
+      "Comment": "Заголовок колонки таблицы \"Замещаемый\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Замещаемый"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_ResultColumns_Period",
+      "Comment": "Заголовок колонки таблицы \"Замещаемый\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Period"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Период"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_DeputyInfoPlugin_ResultConstants_AllDocumentTypes",
+      "Comment": "Константа, отображающаяся когда у замещения нет конкретного вида документа.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "All document types"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Все документы"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_EmployeeSearch_AmbiguousUsers",
+      "Comment": "Ошибка, возникающая когда найдено более 1 пользователя (но меньше 3)",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When searching for an employee by \"{0}\" in the dictionary, several records were found:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "При поиске сотрудника по \"{0}\" в справочнике найдено несколько записей:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_EmployeeSearch_Error_EmployeesNotFound",
+      "Comment": "Сообщение об ошибке \"Не удалось найти сотрудников по заданным параметрам\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "It was not possible to find employees according to the specified parameters."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти сотрудников по заданным параметрам."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_EmployeeSearch_Error_LastNameMissing",
+      "Comment": "Сообщение об ошибке \"В предоставленных для поиска данных отсутсвует фамилия сотрудника\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The last name of the employee is missing from the data provided for the search."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В предоставленных для поиска данных отсутсвует фамилия сотрудника."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_EmployeeSearch_TooManyUsers",
+      "Comment": "Сообщение с ошибкой когда найденных пользователей слишком много",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When searching for an employee by \"{0}\" in the dictionary, too many records were found. Try to specify the the full name."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При поиске сотрудника по \"{0}\" в справочнике найдено слишком много записей. Попробуйте указать полное ФИО."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_EmployeeSearch_Validation_UserNotFound",
+      "Comment": "Ошибка при неудачной попытке найти пользователя по ФИО",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to find employee \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найден пользователь \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_EmployeeSearch_Warning_TooManyEmployeesFound",
+      "Comment": "Сообщение о предупреждении \"По заданным параметрам найдено более {0} сотрудников\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "More than {0} employees were found using the specified parameters."
+        },
+        {
+          "Culture": "ru",
+          "Value": "По заданным параметрам найдено более {0} сотрудников."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FakeFileTool_Caption",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File tools"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файловые инструменты"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FakeFileTool_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To display the available tools by file, attach at least one file to the chat."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для отображения доступных инструментов по файлам, приложите в чат хотя бы один файл."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileDiscussionPlugin_CompleteSession",
+      "Comment": "Текст кнопки \"Завершить работу с файлом\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Finish file review"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Завершить работу с файлом"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileDiscussionPlugin_DialogTitle",
+      "Comment": "Заголовок диалога с чатом по инструменту \"Свободеное общение по файлу\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Questions about file \"{0}\""
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вопросы по файлу \"{0}\""
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileDiscussionPlugin_MenuItemCaption",
+      "Comment": "Текст пункта контекстного меню файла \"ИИ Ассистент\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI assistant"
+        },
+        {
+          "Culture": "ru",
+          "Value": "ИИ Ассистент"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileDiscussionPlugin_StartupMessage",
+      "Comment": "Титульное сообщение в чате ИИ Ассистента по инструменту \"Свободное общение по файлу\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "I am your AI assistant. Do you have any questions about the file \"{0}\"? Feel free to ask, and we'll figure it out together!"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Я Ваш ИИ-ассистент. Появились вопросы по файлу \"{0}\"? Спрашивайте, вместе разберёмся!"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileDiscussionPlugin_Validation_NoResponse",
+      "Comment": "Ошибка отсутствия ответа от ИИ",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to get the response from AI."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось получить ответ от ИИ."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileOperationGroup_Image",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Image"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изображение"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileOperationGroup_Office",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Office"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Офисный"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileOperationGroup_PDF",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "PDF"
+        },
+        {
+          "Culture": "ru",
+          "Value": "PDF"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileOperationGroup_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текстовый"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Files_InvalidToken",
+      "Comment": "{0} - идентификатор файла в кэше ИИ, токен которого невалиден.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid token for accessing the file ID={0} in AI cache."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Некорректный токен для доступа к файлу ID={0} в кэше ИИ."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileTemplate_OutgoingLetter",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Outgoing letter"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Исходящее письмо"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileTemplate_OutgoingLetter_FileName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Outgoing letter"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Исходящее письмо"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileType_Image",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Image"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изображение"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileType_Pdf",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "PDF"
+        },
+        {
+          "Culture": "ru",
+          "Value": "PDF"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_FileType_Text",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текстовый"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Message_NoDataInViewResult",
+      "Comment": "В представлении не было найдено данных по запросу.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The requested data was not found in the \"{0}\" view."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В представлении \"{0}\" не было найдено запрашиваемых данных."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Message_NoToolPermissions",
+      "Comment": "Сообщение о недостатке прав на выполнение инструмента.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You don't have the permissions to execute this tool."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У вас нет прав на выполнение этого инструмента."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Message_PermanentCaption",
+      "Comment": "Одно из возможных значений для периода замещения (бессрочно)",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Permanent"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Постоянное"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Messages_AiModuleSettingsInvalid",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Errors occurred while checking the structure of the AI module settings object."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Возникли ошибки при проверке структуры объекта настроек модуля ИИ."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Messages_CardTypeInvalid",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid card type value."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Некорректное значение типа карточки."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Messages_FileExtensionIsNotUnique",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "More than one line with the same extension is specified for attachments."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для вложений указано более одной строки с одним и тем же расширением."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Messages_FileSettingGroupNameIsNotUnique",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "For an group name, more than one row is specified in the file operation settings."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для названия группы указано более одной строки в настройках обработки файлов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Messages_ThesaurusNameIsNotUnique",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "More than one line with the same term list name is specified for a thesaurus."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для словаря указано более одной строки с одним и тем же названием списка терминов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Messages_ThesaurusTermsAreNotUnique",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "For terms in the thesaurus, more than one line with the same value is listed."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для терминов в словаре указано более одной строки с одним и тем же значением."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Model_NotUsed",
+      "Comment": "Наименование ИИ провайдера в случае неиспользования.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Not used"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не используется"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Model_Unknown",
+      "Comment": "Модель неизвестна или не задана.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unknown"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Неизвестна"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Names_AiModule",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI module"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модуль ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_OutgoingWriterAiAgentPlugin_CardCreated",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The outgoing document card has been created."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка исходящего документа создана."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_OutgoingWriterAiAgentPlugin_DialogStartupMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "I'm your AI writing assistant. Write the main accents for writing a reply letter and I will formulate it 😎"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Я Ваш ИИ-ассистент по составлению писем. Напишите основные акценты для составления ответного письма и я его сформулирую 😎"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_OutgoingWriterAiAgentPlugin_NoFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "At least one file must be attached to execute the \"{0}\" tool."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для выполнения инструмента \"{0}\" должен быть прикреплён хотя бы один файл."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_OutgoingWriterAiAgentPlugin_NotPermissions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You don't have the permissions to create outgoing document cards."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У вас нет прав на создание карточек исходящих документов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_OutgoingWriterAiAgentPlugin_TileName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create outgoing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать исходящий"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerCreateCardAiAgentPlugin_CardCreated",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The partner card has been successfully created:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка контрагента успешно создана:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerCreateCardAiAgentPlugin_CardWillBeCreated",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A partner will be created:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Будет создан контрагент:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerCreateCardAiAgentPlugin_DuplicatesFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The partners directory already has a partner with the specified data:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В справочнике контрагентов уже есть контрагент с указанными данными:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerCreateCardAiAgentPlugin_NotPermissions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You don't have the permissions to create partner cards."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У вас нет прав на создание карточек контрагентов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerCreateCardAiAgentPlugin_PartnerFullName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Full name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Полное наименование"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerCreateCardAiAgentPlugin_PartnerInn",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "INN"
+        },
+        {
+          "Culture": "ru",
+          "Value": "ИНН"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerCreateCardAiAgentPlugin_PartnerKpp",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "KPP"
+        },
+        {
+          "Culture": "ru",
+          "Value": "КПП"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerCreateCardAiAgentPlugin_PartnerShortName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Short name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Краткое наименование"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerSearch_Ambiguous",
+      "Comment": "Ошибка, возникающая когда найдено более 1 контрагента (но меньше 3)",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When searching for an partner by \"{0}\" in the dictionary, several records were found:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "При поиске контрагента по \"{0}\" в справочнике найдено несколько записей:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerSearch_TooMany",
+      "Comment": "Сообщение с ошибкой когда найденных контрагентов слишком много",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When searching for an partner by \"{0}\" in the dictionary, too many records were found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При поиске контрагента по \"{0}\" в справочнике найдено слишком много записей."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_PartnerSearch_Validation_NotFound",
+      "Comment": "Ошибка при неудачной попытке найти контрагента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to find partner \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найден контрагент \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Message_Clarify",
+      "Comment": "Сообщение \"Необходимо уточнить параметры запроса.\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The request data need to be clarified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Необходимо уточнить параметры запроса."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Message_NoAuthorLastName",
+      "Comment": "Ошибка отсутствия фамилии автора",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Author last name is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указана фамилия автора."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Message_NoDeputyLastName",
+      "Comment": "Ошибка отсутствия фамилии заместителя",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Deputy last name is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указана фамилия заместителя."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Message_NoEmployeeLastName",
+      "Comment": "Ошибка отсутствия фамилии сотрудника",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee last name is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указана фамилия сотрудника."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Message_NoEmployeeName",
+      "Comment": "Ошибка отсутствия имени сотрудника",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employee name is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указано имя сотрудника."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Message_NoPartnerName",
+      "Comment": "Ошибка отсутствия наименования контрагента.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Partner name is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указана наименование контрагента."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Message_NoPartnerShortName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Partner short name is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указано краткое наименование контрагента."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Message_ReplacementEmployeeHasNoLastName",
+      "Comment": "Ошибка отсутствия фамилии замещаемого",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The last name of replaced employee is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указана фамилия замещаемого."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Validation_FailedToDeserialize",
+      "Comment": "Ошибка при неудачной попытке десериализовать распознанные данные",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to deserialize recognized data."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось десериализовать распознанные данные."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugin_Validation_InvalidData",
+      "Comment": "Ошибка невалидных данных в контексте",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unexpected data type in the AI agent context."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип данных в контексте ИИ агента невалиден."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugins_Validation_NoResponse",
+      "Comment": "Ошибка отсутствия ответа от ИИ",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to get the response from AI."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось получить ответ от ИИ."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Plugins_Validation_NotApplicable",
+      "Comment": "Сообщение валидации, когда инструмент неприменим.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tool is not applicable."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Данный инструмент неприменим."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ProcessType_KrRoutes",
+      "Comment": "Название типа процесса \"Система маршрутов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Secondary process"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Система маршрутов"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ProcessType_WorkflowEngine",
+      "Comment": "Название типа процесса \"Workflow engine\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Workflow engine"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Workflow engine"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_SearchService_Departments",
+      "Comment": "Название сервиса поиска \"Подразделения\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Departments"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подразделения"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_SearchService_Employees",
+      "Comment": "Название сервиса поиска \"Сотрудники\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employees"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сотрудники"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_SearchService_Partners",
+      "Comment": "Название сервиса поиска \"Контрагенты\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Partners"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контрагенты"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_SearchService_States",
+      "Comment": "Название сервиса поиска \"Состояния\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "States"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Состояния"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_AccessRoles",
+      "Comment": "Роли, которым доступен инструмент",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Access"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступ"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_CardTool_ReadonlyFields_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The property can only be edited in the tool card."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Свойство можно редактировать только в карточке инструмента."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Create",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создать"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_DefaultValues",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Default values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значения по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Description",
+      "Comment": "Описание инструмента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Description"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Описание"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Disabled",
+      "Comment": "Признак, что инструмент отключен.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disabled"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отключен"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Edit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактировать"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Error_InvalidStructure",
+      "Comment": "Сообщение об ошибке структуры настроек",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Errors occurred while checking the structure of the settings object."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Возникли ошибки при проверке структуры объекта настроек."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Error_SchemeDoesNotMatch",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The structure of the scheme does not match the one defined in the tool."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Структура схемы не соответствует определенной в инструменте."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Error_ToolNotFoundOrNotUnique",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The tool with ID {0} was not found or is not unique."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструмент с идентификатором {0} не найден или не является уникальным."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Error_UnknownPrompts",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The settings contain unknown prompts."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В настройках содержатся неизвестные промпты."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Info_VersionChanged",
+      "Comment": "Сообщение о том, что версия настроек инструмента уже была изменена.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The tool settings have been changed by employee {0} at {1}. Please update the list of tool settings."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки инструментов были изменены сотрудником {0} в {1}. Пожалуйста, обновите список настроек инструментов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Model",
+      "Comment": "Предпочитаемая модель",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preferred model"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Предпочитаемая модель"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Name",
+      "Comment": "Название инструмента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_NoValue",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "<value not specified>"
+        },
+        {
+          "Culture": "ru",
+          "Value": "<значение не задано>"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_OpenToolCard",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open the tool card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть карточку инструмента"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_OpenToolSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open the tool settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть настройки инструмента"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Prompts",
+      "Comment": "Промпты инструмента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Prompts"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Промпты"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Prompts_Name",
+      "Comment": "Название промпта",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Prompts_Value",
+      "Comment": "Значение промпта",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Reset_Confirmation",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The tool settings contain changes. Continue? "
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки инструмента содержат изменения, продолжить? "
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Scheme",
+      "Comment": "Описание промптов в схеме данных инструмента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Scheme"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Схема"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Scheme_Description",
+      "Comment": "Подробное описание свойства схемы",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Description"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Описание"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Scheme_Name",
+      "Comment": "Название промпта",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Scheme_Reset_Button",
+      "Comment": "Кнопка \"Сбросить до значений по умолчанию\" в редактора свойства схемы",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Reset to default values"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сбросить до значений по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Scheme_Title",
+      "Comment": "Краткое описание свойства схемы",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Title"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Заголовок"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Scheme_Value",
+      "Comment": "Значение промпта",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_System",
+      "Comment": "Признак, что инструмент служебный",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "System"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Служебный"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_System_Indicator",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "{0} (system)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "{0} (служебный)"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Table_Name",
+      "Comment": "Заголовок колонки \"Название\" в таблице инструментов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Table_ToolKind",
+      "Comment": "Заголовок колонки \"Вид инструмента\" в таблице инструментов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tool kind"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вид инструмента "
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_ToolKind_Card",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточный"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_ToolKind_Program",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Program"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Программный"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_ValueEditor_Value",
+      "Comment": "Значение",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_ValueEditor_Value_Default",
+      "Comment": "Значение по умолчанию",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Default value"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_Tools_Warning_Duplicate",
+      "Comment": "Сообщение о наличии дубликатов для инструмента",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Editing the properties of the \"{0}\" tool is prohibited because another tool with the same code has been found. Duplicates have been found in the following plugins:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запрещено редактирование свойств инструмента  \"{0}\", т.к. найден другой инструмент с таким же кодом. Найдены дубликаты в следующих плагинах:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_ToolSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tool Settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки инструмента"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Settings_ToolSettings_ToolTip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open tool in a settings subsystem"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть инструмент в подсистеме настроек"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_StateSearch_Error_NameMissing",
+      "Comment": "Сообщение об ошибке \"В предоставленных для поиска данных отсутсвует название состояния\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The name of the state is missing from the data provided for the search."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В предоставленных для поиска данных отсутсвует название состояния."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_StateSearch_Message_InvalidState",
+      "Comment": "Ошибка неизвестное состояние",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid state {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Указано неизвестное состояние {0}."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_EmptyTests",
+      "Comment": "Ошибка когда в тестовых файлах не указан ни один тест-кейс.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Not a single test case was found."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найдено ни одного тест-кейса."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_FileNotFound",
+      "Comment": "Ошибка когда не удалось найти указанный файл.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The file could not be found on the path \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось найти файл по пути \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_FileProcessingTimeout",
+      "Comment": "Ошибка когда обработка файла заняла слишком много времени.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File processing timeout after {0} minutes."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Превышено время ожидания обработки файла в {0} минут."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_InvalidActualResponse",
+      "Comment": "Ошибка когда действительный ответ не соответствует схеме.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The response from AI does not match the specified JSON schema."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответ от ИИ не соответствуют указанной JSON схеме."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_InvalidExpectedResponse",
+      "Comment": "Ошибка когда ожидаемый ответ не соответствует схеме.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The expected response does not match the specified JSON schema."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ожидаемый ответ не соответствует указанной JSON схеме."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_InvalidFilesProcessingMode",
+      "Comment": "Ошибка когда не указан тип обработки файлов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The file processing mode is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим обработки файлов не указан."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_InvalidTestFile",
+      "Comment": "Ошибка когда не удалось обработать тестовый файл.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Errors occurred while processing the test file."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При обработке тестового файла возникли ошибки."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_NoAiResponse",
+      "Comment": "Ошибка когда ИИ не прислал ни одного ответа.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No response was received from the AI."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не было получено ни одного ответа от ИИ."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_NoFileAccess",
+      "Comment": "Ошибка когда нет доступа на чтение из файловой системы.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There is no access to the file system to read the files specified in the test."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа к файловой системе для чтения файлов, указанных в тесте."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_TestResultsNotReady",
+      "Comment": "Ошибка когда результат тестирования ещё не сформирован.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The test results are not ready yet."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Результаты теста еще не готовы."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_TestsExecutionFailed",
+      "Comment": "Ошибка когда не удалось выполнить тесты.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An unexpected error occurred during the processing of the tests."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В процессе обработки тестов произошла непредвиденная ошибка."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Error_TestsResultSerializationFailed",
+      "Comment": "Ошибка когда не удалось сериализовать результаты тестирования.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An unexpected error occurred during the serialization of test results."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В процессе сериализации результатов тестов произошла непредвиденная ошибка."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Actual",
+      "Comment": "Текст \"Получено\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Actual:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Получено:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Error",
+      "Comment": "Текст \"Ошибка\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ошибка:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Expected",
+      "Comment": "Текст \"Ожидалось\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expected:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ожидалось:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Failed",
+      "Comment": "Заголовок колонки \"Провалено\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Провалено"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_FailedTestsHeader",
+      "Comment": "Заголовок блока \"Проваленные тесты\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed tests"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Проваленные тесты"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_File",
+      "Comment": "Текст \"Файл\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Header",
+      "Comment": "Заголовок в файле результатов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Report on AI agent autotests"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отчёт по автотестам ИИ-агента"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Model",
+      "Comment": "Заголовок колонки \"Модель\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Model"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модель"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_ModelResult",
+      "Comment": "Заголовок таблицы \"Результаты по моделям\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Model results"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Результаты по моделям"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Passed",
+      "Comment": "Заголовок колонки \"Пройдено\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Passed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пройдено"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Result",
+      "Comment": "Текст \"Результат\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Result"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Результат"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Skipped",
+      "Comment": "Заголовок колонки \"Пропущено\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Skipped"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пропущено"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_Result_Total",
+      "Comment": "Заголовок колонки \"Всего\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Total"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Всего"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_TadminCommand_DeserializingMessage",
+      "Comment": "Сообщение о начале десериализации файлов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Deserializing {0} test files."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Десериализуются {0} файлов тестов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_TadminCommand_DoneMessage",
+      "Comment": "Сообщение об успешном завершении.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Completed successfully."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Успешно завершено."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_TadminCommand_OutputFilePathMessage",
+      "Comment": "Сообщение о том, что результаты будут созданы по пути тестовых файлов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The result file will be created along the path of the test files."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл результата будет создан по пути к тестовым файлам."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_TadminCommand_PerformingMessage",
+      "Comment": "Сообщение о начале выполнения тест-кейсов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Performing {0} test cases."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполнение {0} тестовых кейсов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TestEngine_TadminCommand_PreparingResultMessage",
+      "Comment": "Сообщение о начале создания результатов тест-кейсов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Preparing a summary based on the results of test cases."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подготавливается сводка по результатам тест кейсов."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TextEnhancementAiAgentPlugin_TextField_StartupMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "I'm your AI assistant. I'll help you transform your text: correct errors and make it look professional ✍"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Я Ваш ИИ-ассистент. Помогу преобразовать текст: исправить ошибки и привести к деловому виду ✍"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_TextEnhancementPlugin_CompleteSession",
+      "Comment": "Текст кнопки \"Завершить работу инструмента\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Finish tool processing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Завершить работу инструмента"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ToolModes_EnterData",
+      "Comment": "Название режима работы \"Внести данные\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "enter data"
+        },
+        {
+          "Culture": "ru",
+          "Value": "внести данные"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_ToolModes_GetData",
+      "Comment": "Название режима работы \"Получить данные\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "get data"
+        },
+        {
+          "Culture": "ru",
+          "Value": "получить данные"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_ActionConfirmation",
+      "Comment": "Подсказка для поля \"Подтверждение выполнения действия\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Placeholders used:\n• card_fields - a formatted list of processed card field data from the user's request."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Используемые плейсхолдеры:\n• card_fields - форматированный список обработанных данных полей карточки из запроса пользователя."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_AdditionalDescription",
+      "Comment": "Подсказка для поля \"Дополнительное описание\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "These additional parameters will be inserted into the tool definition query. \nFor example, for the \"Vacation information\" tool, you can add a condition (to avoid confusion with the \"Vacation creation\" tool):\n\"If the query contains a last name, then this applies to the \"Vacation information\" tool.\" \"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Эти дополнительные параметры будут вставляться в запрос на определение инструмента. \nНапример, для инструмента \"Информация об отпуске\" можно добавить условие (чтобы не путать с инструментом \"Создание отпуска\"):\n\"Если в запросе есть фамилия, то это относится к инструменту \"Информация об отпуске\" \"."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_AiAnswer",
+      "Comment": "Подсказка для поля \"По результатам фильтрации ответ формирует AI\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The flag controls the algorithm for processing data received from the system.\nIf the flag is set, the data is transmitted to the AI for processing, and the user will receive a response from the AI in the chat (without additional processing).\nIf the flag is disabled, then the data processing is handled by the tool itself."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Флаг управляет алгоритмом обработки полученных из системы данных.\nЕсли флаг взведён, то данные передаются для обработки в ИИ, при этом в чат пользователю будет выведен ответ, полученный от ИИ (без дополнительной его обработки).\nЕсли флаг опущен, то обработкой данных занимается сам инструмент."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_AutoPrompt",
+      "Comment": "Подсказка для поля \"Автопромт\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When autopromt is enabled, the system automatically uses a specially selected optimal prompt.\nIf you need to set a specific prompt to obtain parameters at the user's request, you can set it manually by disabling autopromt."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При включенном автопромте система автоматически использует специально подобранный оптимальный промт. \nЕсли же требуется задать специфичный промт для получения параметров по запросу пользователя, то его можно задать вручную, выключив автопромт."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_FieldDescription",
+      "Comment": "Подсказка для поля \"Описание\" в таблице маппинга полей.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "This description will be passed to the AI to determine the value of the specified field."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Данное описание будет передано ИИ для определения значения указанного поля."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_MissingDataResponse",
+      "Comment": "Подсказка для поля \"Ответ, если данных не хватает\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Placeholders used:\n• missed_values - a list of values that should be clarified in order for the tool to continue working."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Используемые плейсхолдеры:\n• missed_values - список значений, которые следует уточнить для продолжения работы инструмента."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_ParameterDescription",
+      "Comment": "Подсказка для поля \"Описание\" в таблице параметров фильтрации.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "This description will be passed to the AI to determine the value of the specified parameter."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Данное описание будет передано ИИ для определения значения указанного параметра."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_Prompt",
+      "Comment": "Подсказка для поля \"Промт\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Prompt for getting parameters for mapping/filtering from a user request. \nPlaceholders used:\n• params - parameters from the Field mapping/Filter parameters table, collected as:\n    - name 1 - description 1\n    - name 2 - description 2\n    - ..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Промт для получения из запроса пользователя параметров для маппинга/фильтрации. \nИспользуемые плейсхолдеры:\n• params - параметры из таблицы Маппинг полей/Параметры фильтрации, собираются в виде: \n    - название 1 - описание 1\n    - название 2 - описание 2\n    - ..."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_RangeMechanism",
+      "Comment": "Подсказка для поля \"Использовать механизм поиска диапазонов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When the flag is set, the system will automatically split this search parameter into three parameters: \"Exact value\", \"Start value\", and \"End value\". For each value, a prompt will be automatically added to ensure correct filling based on the user's query (only for parameters that are applicable to the user's request).\n\nFor example, setting this flag will ensure correct data search for user queries such as:\n    • Find documents from July (uses the \"between\" operand)\n    • Find documents costing from 10 thousand (uses the \"greater than or equal\" operand)\n    • Find the document created on July 15 (uses the \"equals\" operand)\n    • etc.\n\nWhen setting the flag, it is recommended to ensure that the following operands are allowed for the parameter: equals, between, greater than or equal (or greater than), less than or equal (or less than)."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При выставлении флага система автоматически данный параметр поиска разобьет на три параметра: \"Точное значение\", \"Начальное значение\", \"Конечное значение\". Для каждого из значений автоматически будет добавлен промт для корректного их заполнения из запроса пользователя (только тех параметров, которые применимы по запросу пользователя).\n\nНапример, выставленный флаг обеспечит корректный поиск данных при запросах пользователя вида:\n    • Найди документы за июль (операнд \"между\")\n    • Найди документы стоимостью от 10 тыс (операнд \"больше или равно\")\n    • Найди документ, созданный 15 июля (операнд \"равно\")\n    • И т.п.\n\nПри выставлении флага рекомендуется убедиться, что для параметра разрешены операнды: равно, между, больше или равно (или больше), меньше или равно (или меньше)."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_SearchService",
+      "Comment": "Подсказка для поля \"Поиск значения по справочнику\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Use the functionality built into the system to search for the required card of the specified directory based on the information extracted from the user's request."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Использовать заложенную в системе функциональность для поиска нужной карточки указанного справочника по извлеченной из запроса пользователя информации."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Tooltips_SuccessResponse",
+      "Comment": "Подсказка для поля \"Ответ при успешном выполнении\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Placeholders used:\n• card_link - a link to a created card in markdown format, works for all types of actions except \"create and open a card\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Используемые плейсхолдеры:\n• card_link - ссылка на созданную карточку в markdown формате, работает для всех типов действий кроме \"создать и открыть карточку\"."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_AccessLevelName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Access level"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Уровень доступа"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_BirthDate",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Birth date"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата рождения"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_CardCreated",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The employee card has been successfully created:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка сотрудника успешно создана:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_CardWillBeCreated",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An employee will be created:"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Будет создан сотрудник:"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_DepartmentName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Department"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подразделение"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_DuplicatesFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Employees directory already has an employee with login"
+        },
+        {
+          "Culture": "ru",
+          "Value": "В справочнике сотрудников уже есть учетная запись с логином"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_Email",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Email"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Email"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_FirstName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "First name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Имя"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_LastName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Last name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Фамилия"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_Login",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Login"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Логин"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_LoginTypeName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Login type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип входа в систему"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_MiddleName",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Middle name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отчество"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_MobilePhone",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mobile phone"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Номер мобильного телефона"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_NoAdminAccess",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You have no access for creating an administrator user."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У вас нет прав на создание административной учетной записи."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_NoPassword",
+      "Comment": "Ошибка отсутствия пароля",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Password is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не указан пароль."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_NotPermissions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "You don't have the permissions to create employee cards."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У вас нет прав на создание карточек сотрудников."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_Password",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Password"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пароль"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_Phone",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Phone number"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Номер телефона"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_UserCreateCardPlugin_Position",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Position"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Должность"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Validators_FieldIsRequired",
+      "Comment": "Универсальное сообщение валидации о необходимости заполнения поля.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Field \"{0}\" is required."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле \"{0}\" обязательно к заполнению."
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_Actions",
+      "Comment": "Наименование представления \"Действия\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Actions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Действия"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_AiModels_Caption",
+      "Comment": "Заголовок представления \"Модели ИИ\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI Models"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модели ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_AiModels_Family",
+      "Comment": "Заголовок колонки \"Семейство\" представления AiModels",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Family"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Семейство"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_AiModels_Name",
+      "Comment": "Заголовок колонки \"Название\" представления AiModels",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_CollectionDisplayMethod",
+      "Comment": "Наименование представления \"Способ вывода списка\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Collection display method"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Способ вывода списка"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_Columns_Alias",
+      "Comment": "Наименование колонки \"Алиас\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Alias"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Алиас"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_Columns_Name",
+      "Comment": "Наименование колонки \"Название\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_Fields_IntOnly_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Integer fields only"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Только целочисленные поля"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_Fields_RangeMechanism_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The range search mechanism is used"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Использован механизм поиска по диапазону"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_Fields_SearchService_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type of search service"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип сервиса поиска"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_ProcessType",
+      "Comment": "Наименование представления \"Тип процесса\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип процесса"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_SearchService",
+      "Comment": "Наименование представления \"Сервис поиска\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Search service"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сервис поиска"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_ToolAdditionalInstructionKinds",
+      "Comment": "Наименование представления \"Дополнительные данные\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Additional data"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дополнительные данные"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_ToolModes",
+      "Comment": "Наименование представления \"Режимы работы ИИ инструмента\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI tool operating modes"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режимы работы ИИ инструмента"
+        }
+      ]
+    },
+    {
+      "Name": "Ai_Views_ViewColumns_OnlyGuid_Param",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show only columns with type Guid"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показывать только колонки с типом Guid"
+        }
+      ]
+    },
+    {
+      "Name": "AiFiles_ErrorDigest_Cancel",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The AI file content extraction operation was canceled."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Операция получения содержимого файла для ИИ была отменена."
+        }
+      ]
+    },
+    {
+      "Name": "AiFiles_ErrorDigest_Error",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "An error occurred during the AI file content extraction operation."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Во время получения содержимого файла для ИИ произошла ошибка."
+        }
+      ]
+    },
+    {
+      "Name": "AiFiles_OperationCanceledByAdmin",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The file content extraction operation was canceled by administrator."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Операция извлечения содержимого из файла отменена администратором."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiActionConfirmation",
+      "Comment": "Заголовок контрола \"Подтверждение выполнения действия\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Confirmation of action completion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подтверждение выполнения действия"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiActionFailureText",
+      "Comment": "Заголовок контрола \"Текст ошибки, если не удалось выполнить действие\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Error text if the action failed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст ошибки, если не удалось выполнить действие"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiAdditionalInstructionKind",
+      "Comment": "Заголовок контрола \"Контекст (дополнительные данные для промта)\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Context (additional data for prompt)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контекст (дополнительные данные для промта)"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiAdditionalToolDescription",
+      "Comment": "Заголовок контрола \"Дополнительное описание инструмента\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Additional tool description"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дополнительное описание инструмента"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiAutoPrompt",
+      "Comment": "Заголовок контрола \"Автопромт\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Autoprompt"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Автопромт"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiAvailableForUsers",
+      "Comment": "Заголовок контрола \"Доступно пользователям\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Available for users"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступно пользователям"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiCache_LastCleanup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Last cleanup date and time"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Дата и время последней очистки"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiCardIDColumn",
+      "Comment": "Заголовок контрола \"Колонка с идентификатором карточки\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card ID column"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Колонка с идентификатором карточки"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiCollectionDisplayMethod",
+      "Comment": "Заголовок контрола \"Способ вывода списка\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Collection display method"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Способ вывода списка"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiContentExtractionCheckInterval",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The interval for state checks of jinni operation for the AI files content extraction (seconds)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Интервал между проверками состояния для операции jinni по извлечению контента для файлов ИИ (секунд)"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiContentExtractionTimeout",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The timeout for AI files content extraction operation in jinni (seconds)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Таймаут операции jinni по извлечению содержимого для файлов ИИ (секунд)"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiDisableTool",
+      "Comment": "Заголовок контрола \"Отключить инструмент\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disable the tool"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отключить инструмент"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiEmployeeSearch",
+      "Comment": "Заголовок контрола \"Поиск значения по справочнику сотрудников\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Search for the value in the employee directory"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поиск значения по справочнику сотрудников"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFieldsMapping",
+      "Comment": "Заголовок контрола таблицы \"Маппинг полей\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Field mapping"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Маппинг полей"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFileOperationSettings",
+      "Comment": "Наименование контрола \"Настройки обработки файлов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File processing settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки обработки файлов"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFileSettings_DefaultOperation",
+      "Comment": "Наименование контрола и заголовок колонки \"Операция по умолчанию\" в таблице \"Настройки файлов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Default operation"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Операция по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFileSettings_FileExtensions",
+      "Comment": "Наименование контрола и заголовок колонки \"Расширения файлов\" в таблице \"Настройки файлов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File extensions"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Расширения файлов"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFileSettings_FileExtensions_ToolTip",
+      "Comment": "Всплывающая подсказка для контрола \"Расширения файлов\" в таблице \"Настройки файлов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File extensions without a leading dot, separated by spaces. Example: doc docx xls xlsx"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Расширения файлов без ведущей точки, разделённые пробелами. Например: doc docx xls xlsx"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFileSettings_FileType",
+      "Comment": "Наименование контрола и заголовок колонки \"Тип файла\" в секции настроек файлов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File Type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип файла"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFileSettings_GroupName",
+      "Comment": "Наименование контрола и заголовок колонки \"Название группы\" в таблице \"Настройки обработки файлов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Group name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название группы"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFileSettings_GroupName_ToolTip",
+      "Comment": "Всплывающая подсказка для контрола \"Название группы\" в таблице \"Настройки обработки файлов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "For each group name there should be no more than one row."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Для каждого названия группы должно быть указано не более одной строки."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFileTypeSettings",
+      "Comment": "Наименование контрола \"Поддерживаемые в ИИ типы файлов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File types supported in AI"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поддерживаемые в ИИ типы файлов"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiFilterParams",
+      "Comment": "Заголовок контрола \"Параметры фильтрации\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Filter parameters"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Параметры фильтрации"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiIntField",
+      "Comment": "Заголовок контрола \"Колонка с целочисленным идентификатором\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Column with an integer identifier"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Колонка с целочисленным идентификатором"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiIsTable",
+      "Comment": "Заголовок контрола \"Является таблицей\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Is a table"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Является таблицей"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiMaxFileCount",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum number of files in the chat message (empty - unrestricted)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальное количество файлов в сообщении чата (пусто - неограничено)"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiMaxFileSizeKb",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Maximum file size, Kb (empty - unrestricted)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимальный размер файла, Кб (пусто - неограничено)"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiModel",
+      "Comment": "Модель ИИ по умолчанию",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Default AI model"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модель ИИ по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiModuleAdministrators",
+      "Comment": "Заголовок контрола \"Администраторы модуля ИИ\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI module administrators"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Администраторы модуля ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiModuleCardTypes",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card types for which the AI assistant is enabled"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Типы карточек, для которых включён ИИ ассистент"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiModuleEnabled",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI module is enabled"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модуль ИИ включён"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiModuleExperts",
+      "Comment": "Заголовок контрола \"Эксперты модуля ИИ\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI module experts"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Эксперты модуля ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiModuleSettings",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI module settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройки модуля ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiPerformAction",
+      "Comment": "Заголовок контрола \"Выполнить действие\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Perform action"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполнить действие"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiProcessID",
+      "Comment": "Заголовок контрола \"Идентификатор процесса\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process ID"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор процесса"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiProcessType",
+      "Comment": "Заголовок контрола \"Тип процесса\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Process type"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип процесса"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiPrompt",
+      "Comment": "Заголовок контрола \"Промт\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Prompt"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Промт"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiRangeMechanism",
+      "Comment": "Заголовок контрола \"Использовать механизм поиска диапазонов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Use the range search mechanism"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Использовать механизм поиска диапазонов"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiResponseIfDataMissing",
+      "Comment": "Заголовок контрола \"Ответ, если данных не хватает\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Response if data is missing"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответ, если данных не хватает"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiResponseIfNoTool",
+      "Comment": "Наименование контрола \"Ответ, если инструмент не определён\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Response if the tool is not defined"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответ, если инструмент не определён"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiSearchService",
+      "Comment": "Заголовок контрола \"Поиск значения по справочнику\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Search for the value in the directory"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поиск значения по справочнику"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiSectionSettings",
+      "Comment": "Заголовок контрола таблицы \"Настройка секций\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Section settings"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Настройка секций"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiStartupMessage",
+      "Comment": "Наименование контрола \"Приветственное сообщение\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Welcome message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Приветственное сообщение"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiSuccessResponse",
+      "Comment": "Заголовок контрола \"Ответ при успешном выполнении\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Response on success"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответ при успешном выполнении"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiToolCode",
+      "Comment": "Заголовок контрола \"Код инструмента\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tool code"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Код инструмента"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiToolName",
+      "Comment": "Заголовок контрола \"Название инструмента\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tool name"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название инструмента"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiViewColumns",
+      "Comment": "Заголовок контрола \"Колонки представления\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View columns"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Колонки представления"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_AiViewParam",
+      "Comment": "Заголовок контрола \"Параметр представления\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View parameter"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Параметр представления"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_IsAiAnswerBasedOnFilteredData",
+      "Comment": "Заголовок контрола \"По результатам фильтрации ответ формирует ИИ\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Based on the filtering results, the AI generates a response"
+        },
+        {
+          "Culture": "ru",
+          "Value": "По результатам фильтрации ответ формирует ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Controls_LinesMaxNumberForAI",
+      "Comment": "Заголовок контрола \"Отправлять ИИ не более строк\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Send AI no more than lines"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправлять ИИ не более строк"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Tooltips_AiFileTypeSettings",
+      "Comment": "Подсказка контрола таблицы \"Поддерживаемые в ИИ типы файлов\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "These settings determine the type of file that will be specified when sending the AI file without preprocessing."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Данные настройки определяют тип файла, который будет указан при отправке файла ИИ без предварительной обработки."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Tooltips_AiSectionSettings",
+      "Comment": "Подсказка контрола таблицы \"Настройка секций\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "This table is used to configure the output of a confirmation message for creating a card, as well as for additional configuration of the table section."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Данная таблица служит для настройки вывода сообщения подтверждения для создания карточки, а также для дополнительной настройки табличной секции."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Tooltips_LinesMaxNumberForAI",
+      "Comment": "Подсказка контрола \"Отправлять ИИ не более строк\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The specified number determines how many rows from the view will be sent to the AI for data processing.\nIf set to 0 rows, the AI data processing stage will be skipped, and only the view result will be displayed in the chat."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Указанное число означает, сколько строк представления будет отправлено в ИИ для обработки данных.\nЕсли указано 0 строк, то этап обработки данных от ИИ будет пропущен, в чате выведется только результат представления."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_TypesNames_AiCache",
+      "Comment": "Заголовок типа карточки и вкладки - \"Кэш ИИ\"",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI cache"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Кэш ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_TypesNames_AiTool",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI tool"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструмент ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiActionFailureTextIsRequired",
+      "Comment": "Сообщение валидатора непустого поля \"Текст ошибки, если не удалось выполнить действие\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The error text if the action failed is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Текст ошибки, если не удалось выполнить действие не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiCodeAllowedCharacters",
+      "Comment": "Сообщение о допустимых символах в коде.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Only latin letters (a-z, A-Z), numbers, dashes (-) and underscores (_) are allowed. The first character must be a letter."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разрешены только латинские буквы (a-z, A-Z), цифры, тире (-) и подчёркивание (_). Первый символ должен быть буквой."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiColumnsAliasCanNotBeNull",
+      "Comment": "Сообщение об ошибке, когда не указан алиас колонки представления.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The specified view column is missing an alias."
+        },
+        {
+          "Culture": "ru",
+          "Value": "У указанной колонки представления отсутствует алиас."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiDisplayMethodIsRequired",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The collection display method is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Способ вывода списка не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiFieldDescriptionIsNotUnique",
+      "Comment": "Сообщение валидатора уникальности поля \"Описание\" в таблице \"Маппинг полей\" .",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The description in the field mapping must be unique."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Описание в маппинге полей должно быть уникальным."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiFieldIsRequired",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The field is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле не указано."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiFilterParamDescriptionIsNotUnique",
+      "Comment": "Сообщение валидатора уникальности поля \"Описание\" в таблице \"Параметры фильтрации\" .",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The description in the filter parameters must be unique."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Описание в параметрах фильтрации должно быть уникальным."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiMappingFieldIsNotUnique",
+      "Comment": "Сообщение валидатора уникальности поля \"Поле\" в таблице \"Маппинг полей\" .",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The field in the field mapping must be unique."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Поле в маппинге полей должно быть уникальным."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiMissingDataResponseIsRequired",
+      "Comment": "Сообщение о незаполненном поле \"Ответ, если данных не хватает\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Response if data is missing is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответ, если данных не хватает не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiPerformActionIsRequired",
+      "Comment": "Сообщение валидатора непустого поля \"Выполнить действие\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The action performed is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполняемое действие не указано."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiProcessIDIsRequired",
+      "Comment": "Сообщения валидатора непустого поля \"Идентификатор процесса не указан\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The process ID is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Идентификатор процесса не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiProcessTypeIsRequired",
+      "Comment": "Сообщения валидатора непустого поля \"Тип процесса не указан\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The process type is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип процесса не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiPromptIsRequired",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Prompt is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Промт не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiSectionIsRequired",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The section is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Секция не указана."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiSettingsSectionIsNotUnique",
+      "Comment": "Сообщение валидатора уникальности поля \"Секция\" в таблице \"Настройка секций\" .",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The section in the section settings must be unique."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Секция в настройках секций должна быть уникальной."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiSuccessResponseIsRequired",
+      "Comment": "Сообщение валидатора непустого поля \"Ответ при успешном выполнении\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The response on success is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ответ при успешном выполнении не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiToolCodeIsNotUnique",
+      "Comment": "Сообщение валидатора уникальности поля \"Код инструмента\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The tool code must be unique."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Код инструмента должен быть уникальным."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiToolCodeIsRequired",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The code of the tool is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Код инструмента не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiToolModeIsRequired",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tool mode is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим работы инструмента не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiToolModeIsUndefined",
+      "Comment": "Сообщение об ошибке когда неизвестен вид инструмента.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unknown tool mode."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Неизвестный режим работы инструмента."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiToolNameIsRequired",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The name of the tool is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Название инструмента не указано."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiTypeIsDocTypeIsRequired",
+      "Comment": "Сообщение валидатора непустого поля \"Тип\" на признак использования типа документов.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "It is necessary to specify whether the selected type is a document type."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Необходимо указать, является ли выбранный тип типом документа."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiTypeIsRequired",
+      "Comment": "Сообщение валидатора непустого поля \"Тип\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Type is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiViewIsRequired",
+      "Comment": "Сообщение валидатора непустого поля \"Представление\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Представление не указано."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiViewParamIsNotUnique",
+      "Comment": "Сообщение валидатора уникальности поля \"Параметр представления\".",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The view parameter must be unique."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Параметр представления должен быть уникальным."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiViewParamIsRequired",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The view parameter is not specified."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Параметр представления не указан."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_AiWrongSettingsSection",
+      "Comment": "Сообщение об ошибке, когда в настройках секций указана секция которой нету в таблице маппинга.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The specified section is missing from the mapping table."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Указанная секция отсутствует в таблице маппинга."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_InvalidCharactersInAiToolCode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Invalid characters in AI tool code ."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Некорректные символы в коде инструмента ИИ."
+        }
+      ]
+    },
+    {
+      "Name": "CardTypes_Validators_MaxRowsBelowZero",
+      "Comment": "Максимальное число отправляемых строк ниже ноля.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The value of \"Send AI no more than lines\" cannot be less than 0."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Значение \"Отправлять ИИ не более строк\" не может быть меньше 0."
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_AiTests",
+      "Comment": "Описание команды для tadmin.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Allows you to run AI prompt tests on the specified path."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Позволяет запускать тесты промптов ИИ по указанному пути."
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_JoinResults",
+      "Comment": "Описание аргумента \"join\" команды для tadmin.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Combine all the test results into one file."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Объединить все результаты тестов в один файл."
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_ResultFormat",
+      "Comment": "Описание аргумента \"f\" команды для tadmin.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The desired output format. Available for selection: html, yaml. Yaml will be selected by default."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Желаемый формат вывода. Доступны для выбора: html, yaml. По умолчанию будет выбран yaml."
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_ResultPath",
+      "Comment": "Описание аргумента \"o\" команды для tadmin.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The path to the output of the result."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Путь к выводу результата."
+        }
+      ]
+    },
+    {
+      "Name": "Common_CLI_TestPath",
+      "Comment": "Описание аргумента \"path\" команды для tadmin.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The path to the test files."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Путь к файлам тестов."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_AiAssistantWidget_Unavailable_Message",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The AI module is disabled. To use the AI assistant, you need to enable the module in the system settings."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модуль ИИ отключен. Для пользования ИИ ассистентом необходимо включить модуль в настройках системы."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Description",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Chat with assistant powered by artifitial intelligence to automate tasks"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Чат с помощником на основе искусственного интеллекта для автоматизации задач"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Preview",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI assistant"
+        },
+        {
+          "Culture": "ru",
+          "Value": "ИИ ассистент"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_ChatBackgroundColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Chat background color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет фона чата"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_IncomingMessageColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Incoming message color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет входящего сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_IncomingMessageTypingSpeed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Message character typing speed, (ms)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скорость вывода символов в сообщении, (мс)"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_IncomingMessageTypingSpeed_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The typing characters speed in the content of the incoming message in milliseconds.\nThe value must be an integer from 0 to 100. If the value is set to 0, the output will be instantaneous."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Скорость вывода символов в содержимом входящего сообщения в миллисекундах.\nЗначение должно быть целым числом от 0 до 100. Если установлено значение 0, то вывод будет мгновенным."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_MessageShowFooter",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Display footer in message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показывать нижний колонтитул в сообщении"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_MessageShowHeader",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Display header in message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показывать верхний колонтитул в сообщении"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_OutgoingMessageColor",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Outgoing message color"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Цвет исходящего сообщения"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_OutgoingMessageMarkdown",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Display outgoing message in Markdown"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отображать исходящее сообщение в Markdown"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_OutgoingMessageMarkdown_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "If the flag is set, the outgoing message will be rendered according to Markdown syntax."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Если признак установлен, то исходящее сообщение будет отображено в соответствии с синтаксисом Markdown."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_PredefinedTool",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Default tool"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструмент по умолчанию"
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Settings_PredefinedTool_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A tool that will be used in the context of an AI agent to process messages."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструмент, который будет использоваться в контексте ИИ агента для обработки сообщений."
+        }
+      ]
+    },
+    {
+      "Name": "Dashboard_Widget_AiAssistant_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "🤖 AI assistant"
+        },
+        {
+          "Culture": "ru",
+          "Value": "🤖 ИИ ассистент"
+        }
+      ]
+    },
+    {
+      "Name": "DocLoad_AI_Incoming_Create_Card_Behavior",
+      "Comment": "Понятное название для обработчика потокового ввода для создания входящих с помощью инструмента ИИ.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI-powered incoming document creation"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Потоковый ввод входящих писем с использованием ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "DocLoad_AI_Incoming_Create_Card_Behavior_Description",
+      "Comment": "Описание для обработчика потокового ввода для создания входящих с помощью инструмента ИИ.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A new incoming document card will be created for each file in the folder, with the following details populated using AI: counterparty, document subject, date, and outgoing document number. A registration secondary process will be launched for these documents."
+        },
+        {
+          "Culture": "ru",
+          "Value": "По каждому файлу папки будет создана новая карточка входящего документа с заполнением реквизитов, значения которых будут получены с помощью ИИ: контрагент, тема документа, дата и номер исходящего. По документам будет запущен вторичный процесс регистрации."
+        }
+      ]
+    },
+    {
+      "Name": "Enum_OperationTypes_AiCache_Cleanup",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI cache cleanup"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистка кэша ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_OperationTypes_AiCache_PageExtraction",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Pages extraction from file in AI cache"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Извлечение страниц из файла в кэше ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_OperationTypes_AiCache_TextExtraction",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text extraction from file in AI cache"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Извлечение текста из файла в кэше ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "Enum_OperationTypes_AiPrompTest_Execute",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Testing of AI prompts"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тестирование промптов ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "Groups_Descriptions_AiModuleAdministrators",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can edit AI module settings."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Позволяют редактировать настройки модуля ИИ."
+        }
+      ]
+    },
+    {
+      "Name": "Groups_Descriptions_AiModuleExperts",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can edit AI assistant configuration."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Позволяют редактировать конфигурацию ИИ ассистента."
+        }
+      ]
+    },
+    {
+      "Name": "Groups_Names_AiModuleAdministrators",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI module administrators"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Администраторы модуля ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "Groups_Names_AiModuleExperts",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI module experts"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Эксперты модуля ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Attachment_Validation_AttachmentExtensionNotSupported",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File \"{0}\" with this extension is not supported - {1}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл \"{0}\" с таким расширением не поддерживается - {1}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Attachment_Validation_FilesAreDisabled",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Work with files is forbidden in the AI module settings."
+        },
+        {
+          "Culture": "ru",
+          "Value": "В настройках модуля ИИ установлен запрет на работу с файлами."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Attachment_Validation_MaxAttachmentsCount",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The maximum number of files allowed in a message has been exceeded - {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Превышено максимально допустимое количество файлов в сообщении - {0}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Attachment_Validation_MaxAttachmentSize",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The maximum file size for \"{0}\" has been exceeded - {1}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Превышен максимально допустимый размер файла \"{0}\" - {1}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Attachment_Validation_PagesExtraction",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Images extraction..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Извлечение изображений..."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Attachment_Validation_Processing",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Processing..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Обработка..."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Attachment_Validation_TextExtraction",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Text extraction..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Извлечение текста..."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Chat_ContextRemoved",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The context has been removed."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контекст был удален."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Chat_SelectedAction",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Selected action - \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбрано действие - \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Chat_SelectedContext",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Selected card context -  \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбран контекст карточки - \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Chat_SelectedTool",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Selected tool - \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбран инструмент - \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Chat_ToolRemoved",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The tool has been removed."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструмент был удалён."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Chat_ToolsHelp",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "To view reference information on the list of available tools and, if necessary, to select the desired one using the button below."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Посмотреть справочную информацию по списку доступных инструментов и, при необходимости, выставить нужный можно по кнопке ниже."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_AttachmentOperations",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Attachment processing operations"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Операции обработки вложений"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_AttachmentOperations_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Defines how attachments should be processed and sent to the AI model."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Определяет, как вложения должны обрабатываться и отправляться в модель ИИ."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_ExpertMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expert mode enabled"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экспертный режим включён"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_ExpertMode_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Expert mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Экспертный режим"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_ExpertMode_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Indicates that the assistant is in expert mode. This setting controls the display of chat options. In addition, when the mode is enabled, advanced options that are usually hidden from the average user become visible in the interface."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показывает, что ассистент находится в экспертном режиме. Эта настройка управляет отображением параметров чата. Когда режим включен, в интерфейсе становятся видны дополнительные, расширенные опции, которые обычно скрыты от обычного пользователя."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_IncludeFullHistory",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Take into account the history in the chat when running the tool"
+        },
+        {
+          "Culture": "ru",
+          "Value": "При выполнении инструмента учитывать историю в чате"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_IncludeFullHistory_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When running the tool, the full chat history is analyzed, including all previously defined tools, not just the messages for the most recent tool."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При выполнении инструмента анализируется полная история чата, включая все ранее определённые инструменты, а не только сообщения для последнего инструмента."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_LoggingEnabled",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Logging mode is enabled"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим протоколирования включён"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_LoggingEnabled_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When logging mode is enabled, debugging information will be displayed in the AI assistant."
+        },
+        {
+          "Culture": "ru",
+          "Value": "При включённом режиме протоколирования в ИИ ассистенте будет отображаться отладочная информация."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_Model",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI assistant model"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модель ИИ ассистента"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_Model_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A large language model of the AI assistant that will be used for further interaction with the chat."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Большая языковая модель ИИ ассистента, которая будет использоваться для дальнейшего взаимодействия с чатом."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI assistant configuration"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Конфигурация ИИ ассистента"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_Tool",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tool"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструмент"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Configuration_Tool_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "A tool that will be used in the context of an AI agent to process messages."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инструмент, который будет использоваться в контексте ИИ агента для обработки сообщений."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Dialogs_FileSelection_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Select Files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выберите файлы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Dialogs_Logs_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Logs"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Логи"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Dialogs_Message_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сообщение"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Dialogs_ToolSelection_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tool selection"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выбор инструмента"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Dropzone_PrimaryText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Drag and drop a file to attach to the message."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перетащите файл для прикрепления к сообщению."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Dropzone_SecondaryText",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Max {0} file(s) at the message per {1} each. Text extraction only."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Максимум файлов {0} в сообщении по {1} каждый. Только извлечение текста."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Input_Placeholder",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Write a message..."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Введите сообщение..."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Input_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Enter a query or message for the assistant. For a better response, you need to enter a more specific message."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Введите запрос или сообщение для ассистента. Для лучшего ответа необходимо вводить более конкретное сообщение."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Log_Content",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Content"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Содержимое"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Log_Model",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI Model"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Модель ИИ"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Log_Schema",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "JSON Schema"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Схема JSON"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_MaxFileCount_Unrestricted",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "(unrestricted)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "(неограничено)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_MaxFileSize_Unrestricted",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "(unrestricted size)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "(неограниченный размер)"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Message_ContextCard",
+      "Comment": "{0} - Дайджест карточки.",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The AI assistant has switched to card mode {0}. Type what needs to be done."
+        },
+        {
+          "Culture": "ru",
+          "Value": "ИИ ассистент перешел в режим работы по карточке {0}. Напишите, что нужно сделать."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Message_Copy_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Copy message contents to clipboard.\n\nTo copy a table while preserving its structure, hold down the Ctrl key and click."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Копировать содержимое сообщения в буфер обмена.\n\nДля копирования таблицы с сохранением её структуры выполните клик с зажатой клавишей Ctrl."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Message_Expand_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open a dialog window with a message."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть диалоговое окно с сообщением."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Message_Logs_Title",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Message"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Сообщение"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Message_Retry_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Resend the message."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Выполнить повторную отправку сообщения."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Message_ShowLogs",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Show logs"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Показать логи"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Message_ShowLogs_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open a dialog box to display logs."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть диалоговое окно для отображения логов."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Message_Validation_ToolNotFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "No tool found with this name - {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не найден инструмент с таким именем - {0}."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Model_Validation_AttachmentsExists",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Changing the model is unavailable. Please, remove files from the input area."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Изменение модели недоступно. Удалите файлы из области ввода."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Panel_AttachFile_Add_From_Card",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Add files from the card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавить файлы из карточки"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Panel_AttachFile_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Upload a file with text or image."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Загрузить файл с текстом или изображением."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Panel_AttachFile_Upload_File",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Upload new files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Загрузить новые файлы"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Panel_CancelMessage_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cancel an ongoing AI assistant request."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отменить выполняющийся запрос ИИ ассистента."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Panel_ClearHistory_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Clear chat history with AI assistant."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Очистить историю чата с ИИ ассистентом."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Panel_Configuration_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Open AI assistant configuration"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Открыть конфигурацию ИИ ассистента"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Panel_FreeCommunication_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Switch to free communication mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перейти в режим свободного общения"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Panel_SendMessage_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Send a message to the AI assistant."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отправить сообщение ИИ ассистенту."
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Role_Assistant",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI assistant"
+        },
+        {
+          "Culture": "ru",
+          "Value": "ИИ ассистент"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Role_System",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "System"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Система"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Role_User",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "User"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пользователь"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_StartupMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Welcome! 👋  \nI am your AI assistant. Type what needs to be done, and I will try to help as effectively as possible.  \nLet's get started! How can I help you? 🤖"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добро пожаловать! 👋  \nЯ ваш ИИ ассистент. Напишите, что нужно сделать, и я постараюсь помочь максимально эффективно.  \nДавайте начнём! Чем вам помочь? 🤖"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_AiAssistant_Table_ContextIcon_Tooltip",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Enable the AI assistant on card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Включить работу ИИ ассистента по карточке"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Controls_TextBox_AiAssistant_Button",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI assistant"
+        },
+        {
+          "Culture": "ru",
+          "Value": "ИИ ассистент"
+        }
+      ]
+    },
+    {
+      "Name": "UI_Tiles_AiAssistant",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "AI assistant"
+        },
+        {
+          "Culture": "ru",
+          "Value": "ИИ ассистент"
+        }
+      ]
+    }
+  ]
+}

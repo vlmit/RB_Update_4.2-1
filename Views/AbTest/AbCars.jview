@@ -1,0 +1,207 @@
+﻿{
+  "Alias": "AbCars",
+  "Caption": "$AbTest_Views_Names_Cars",
+  "GroupName": "AbTest",
+  "ID": "257b72ba-9bba-457a-8456-d90d55d440e2",
+  "JsonMetadataSource::txt": "AbCars JSONMETA",
+  "MsQuerySource::txt": "AbCars MSSQL",
+  "PgQuerySource::txt": "AbCars PGSQL"
+}
+
+[TEXTPART AbCars JSONMETA]
+{
+  "Alias": "AbCars",
+  "Caption": "$AbTest_Views_Names_Cars",
+  "Columns": [
+    {
+      "Alias": "CarID",
+      "Hidden": true,
+      "Type": "$AbCarMainInfo.ID"
+    },
+    {
+      "Alias": "CarName",
+      "Caption": "$AbTest_Views_Cars_CardName",
+      "FilterParameter": "CarName",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name t.MaxSpeed desc",
+      "SortByFormat": "SUBSTRING({0}, 1, 1) {1}, {2} {3}",
+      "Type": "$AbCarMainInfo.Name"
+    },
+    {
+      "Alias": "CarMaxSpeed",
+      "Caption": "$AbTest_Views_Cars_MaxSpeed",
+      "FilterParameter": "CarMaxSpeed",
+      "FilterType": "Parameter",
+      "Type": "$AbCarMainInfo.MaxSpeed"
+    },
+    {
+      "Alias": "DriverID",
+      "Hidden": true,
+      "Type": "$AbCarMainInfo.DriverID"
+    },
+    {
+      "Alias": "DriverName",
+      "Caption": "$AbTest_Views_Cars_DriverName",
+      "FilterParameter": "Driver",
+      "FilterType": "Parameter",
+      "Type": "$AbCarMainInfo.DriverName"
+    },
+    {
+      "Alias": "CarReleaseDate",
+      "Caption": "$AbTest_Views_Cars_ReleaseDate",
+      "FilterParameter": "CarReleaseDateFrom",
+      "FilterType": "Parameter",
+      "Type": "$AbCarMainInfo.ReleaseDate"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "CarName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "CarName",
+      "AllowedOperands": [
+        "Contains"
+      ],
+      "Caption": "$AbTest_Views_Cars_CardName_Param",
+      "Multiple": false,
+      "Type": "$AbCarMainInfo.Name"
+    },
+    {
+      "Alias": "CarMaxSpeed",
+      "Caption": "$AbTest_Views_Cars_MaxSpeed_Param",
+      "DisallowedOperands": [
+        "IsNotNull",
+        "IsNull"
+      ],
+      "Multiple": false,
+      "Type": "$AbCarMainInfo.MaxSpeed"
+    },
+    {
+      "Alias": "Driver",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$AbTest_Views_Cars_DriverName_Param",
+      "Multiple": false,
+      "RefSection": [
+        "Roles"
+      ],
+      "Type": "$AbCarMainInfo.DriverID"
+    },
+    {
+      "Alias": "CarReleaseDateFrom",
+      "AllowedOperands": [
+        "GreatOrEquals"
+      ],
+      "Caption": "$AbTest_Views_Cars_ReleaseDateFrom_Param",
+      "Multiple": false,
+      "Type": "$AbCarMainInfo.ReleaseDate"
+    },
+    {
+      "Alias": "CarReleaseDateTo",
+      "AllowedOperands": [
+        "LessOrEquals"
+      ],
+      "Caption": "$AbTest_Views_Cars_ReleaseDateTo_Param",
+      "Multiple": false,
+      "Type": "$AbCarMainInfo.ReleaseDate"
+    },
+    {
+      "Alias": "Mileage",
+      "Caption": "$AbTest_Views_Cars_Mileage_Param",
+      "Multiple": false,
+      "Type": "$AbCarMainInfo.Running"
+    },
+    {
+      "Alias": "Price",
+      "Caption": "$AbTest_CardTypes_Controls_Price",
+      "Multiple": false,
+      "Type": "$AbCarMainInfo.Cost"
+    },
+    {
+      "Alias": "CarID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$AbTest_Views_Cars_CarID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$AbCarMainInfo.ID"
+    }
+  ],
+  "QuickSearchParam": "CarName",
+  "References": [
+    {
+      "ColPrefix": "Car",
+      "DisplayValueColumn": "CarName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "AbCarMainInfo"
+      ]
+    },
+    {
+      "ColPrefix": "Driver",
+      "DisplayValueColumn": "DriverName",
+      "IsCard": true,
+      "RefSection": [
+        "Roles",
+        "PersonalRoles"
+      ]
+    }
+  ],
+  "TagsPosition": "Top",
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AbCars MSSQL]
+SELECT
+	[t].[ID]			AS [CarID],
+	[t].[Name]			AS [CarName],
+	[t].[MaxSpeed]		AS [CarMaxSpeed],
+	[t].[DriverID],
+	[t].[DriverName],
+	[t].[ReleaseDate]	AS [CarReleaseDate]
+FROM [AbCarMainInfo] AS [t] WITH (NOLOCK)
+WHERE
+	1 = 1
+	#param(CarId, [t].[ID])
+	#param(CarName, [t].[Name])
+	#param(CarMaxSpeed, [t].[MaxSpeed])
+	#param(Driver, [t].[DriverID])
+	#param(CarReleaseDateFrom, [t].[ReleaseDate])
+	#param(CarReleaseDateTo, [t].[ReleaseDate])
+	#param(Mileage, [t].[Running])
+	#param(Price, [t].[Cost])
+ORDER BY #order_by
+
+[TEXTPART AbCars PGSQL]
+SELECT
+	"t"."ID"			AS "CarID",
+	"t"."Name"			AS "CarName",
+	"t"."MaxSpeed"		AS "CarMaxSpeed",
+	"t"."DriverID",
+	"t"."DriverName",
+	"t"."ReleaseDate"	AS "CarReleaseDate"
+FROM "AbCarMainInfo" AS "t"
+WHERE
+	true
+	#param(CarId, "t"."ID")
+	#param(CarName, "t"."Name")
+	#param(CarMaxSpeed, "t"."MaxSpeed")
+	#param(Driver, "t"."DriverID")
+	#param(CarReleaseDateFrom, "t"."ReleaseDate")
+	#param(CarReleaseDateTo, "t"."ReleaseDate")
+	#param(Mileage, "t"."Running")
+	#param(Price, "t"."Cost")
+ORDER BY #order_by	

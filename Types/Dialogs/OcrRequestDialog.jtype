@@ -1,0 +1,452 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_OcrRequestDialog",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "50",
+          "Description": "Confidence threshold below which recognized text is considered unreliable",
+          "ID::uid": "13ff3455-5017-48b8-860e-e78c1d10d2ff",
+          "Name": "Confidence",
+          "SchemeType": "Int32 Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": "Perform image page preprocessing before recognition",
+          "ID::uid": "75f5914d-c9a5-47db-bee5-35f825f11fa0",
+          "Name": "Preprocess",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 1,
+          "Description": "Image page segmentation mode in text recognition",
+          "ID::uid": "63a20cb0-a31c-4542-94cb-d06ae17388ce",
+          "IsReferencedToOwner": false,
+          "Name": "SegmentationMode",
+          "ReferencedColumns": [
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": "1",
+              "Description": "Segmentation mode identifier",
+              "ID::uid": "487237a3-84f0-4a6d-84e9-1ed0e71802c7",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "37507ad9-d1f0-4d39-8ae3-6e5a5936a730",
+              "SchemeType": "Int32 Not Null"
+            },
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": "$Enum_OcrSegmentationModes_AutoOsd",
+              "Description": "Segmentation mode name",
+              "ID::uid": "abff990d-0e31-4bda-b1de-b8cafbe57780",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "748bda68-c8b4-4e9e-ba52-14a8176332b2",
+              "SchemeType": "String(Max) Not Null"
+            }
+          ],
+          "ReferencedTableID::uid": "5455dc3b-79f8-4c06-8cf0-64e63919ab4a"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "True",
+          "Description": "Determine the set of possible languages ​​during the recognition process",
+          "ID::uid": "afa3e572-e5b5-44aa-963d-7a7b889b2408",
+          "Name": "DetectLanguages",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": "Create a new file from a set of recognized image pages",
+          "ID::uid": "f69bf22f-8d65-460f-a6cd-1f119031e905",
+          "Name": "Overwrite",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "True",
+          "Description": "Detect the scew and rotation of an image page before recognition",
+          "ID::uid": "6b8df804-fe59-4fb9-b04a-742bbf710238",
+          "Name": "DetectRotation",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": "Detect tables on image page during recognition",
+          "ID::uid": "4b935622-5fed-4f69-9821-722b8fecf6cf",
+          "Name": "DetectTables",
+          "SchemeType": "Boolean Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": "Detect barcodes on image page during recognition",
+          "ID::uid": "7046f8e2-e3f8-4a24-852a-4cea02ed7340",
+          "Name": "DetectBarcodes",
+          "SchemeType": "Boolean Not Null"
+        }
+      ],
+      "Description": "Information on text recognition requests",
+      "ID::uid": "10d7cb53-c7de-4180-ba88-e6d5c4dba2fb",
+      "Name": "OcrRequest",
+      "TableType::int": 1
+    },
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 1,
+          "Description": "Language reference",
+          "ID::uid": "44a41af6-2f44-4f68-ba03-7c256379be6f",
+          "IsReferencedToOwner": false,
+          "Name": "Language",
+          "ReferencedColumns": [
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": "Language identifier",
+              "ID::uid": "ab2b90bd-1044-40c9-9f23-98dd81891b37",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "729faf35-c1d7-4e03-9c60-8773284c30a8"
+            },
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": "Language name in ISO 639-2 format",
+              "ID::uid": "ca7ec5e0-33b7-444b-8ace-ee9c3aae5231",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "cb988837-dc52-43d5-94c1-380f4d5721e6"
+            },
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": "Language caption",
+              "ID::uid": "3151e3e5-4636-407b-b8a2-f29de53262a5",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "bb53aba8-a233-433f-82d6-7ae0e4054955"
+            }
+          ],
+          "ReferencedTableID::uid": "a5b1b1cf-ad8c-4459-a880-a5ff9f435398"
+        }
+      ],
+      "Description": "Information by languages ​​used in text recognition requests",
+      "ID::uid": "9050da4d-e06a-4160-a876-5ef5ad502794",
+      "Name": "OcrRequestLanguages",
+      "TableType::int": 2
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Recognition request",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ImagePageSegmentationMode",
+              "ComplexColumnID::uid": "63a20cb0-a31c-4542-94cb-d06ae17388ce",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "HelpMode::int": 3,
+                "HelpValue": "OCR_PageSegmentation",
+                "IsClearFieldVisible": true,
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "OcrSegmentationModes"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "OcrSegmentationModes",
+                "ViewAliasComboBox": "OcrSegmentationModes",
+                "ViewMap": [
+                  {
+                    "CardColumn": null,
+                    "CardSection": null,
+                    "ColumnType::int": 5,
+                    "ConstantValue": false,
+                    "ConstantValueType::int": 4,
+                    "SkipNullParams": false,
+                    "ViewMasterLinkName": "",
+                    "ViewMasterLinkType::int": 0,
+                    "ViewParamName": "Hidden",
+                    "ViewParamSetName": ""
+                  }
+                ],
+                "ViewReferencePrefix": "Mode"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 4,
+              "Name": "SegmentationMode",
+              "PhysicalColumnIDList": null,
+              "RequiredText": "$CardTypes_Validators_ImagePageSegmentationMode",
+              "SectionID::uid": "10d7cb53-c7de-4180-ba88-e6d5c4dba2fb",
+              "ToolTip": "$CardTypes_Controls_ImagePageSegmentationMode_Tooltip",
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ThresholdConfidenceFactor",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxValue": 100,
+                "MinValue": 1
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 6,
+              "Name": "Confidence",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "13ff3455-5017-48b8-860e-e78c1d10d2ff"
+              ],
+              "RequiredText": "$CardTypes_Validators_ThresholdConfidenceFactor",
+              "SectionID::uid": "10d7cb53-c7de-4180-ba88-e6d5c4dba2fb",
+              "ToolTip": "$CardTypes_Controls_ThresholdConfidenceFactor_Tooltip",
+              "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": false
+              },
+              "Caption": "$CardTypes_Controls_Languages",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "44a41af6-2f44-4f68-ba03-7c256379be6f",
+                  "DisplayFormat": "{2}",
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "HelpValue": "",
+                "IsClearFieldVisible": true,
+                "ParameterAlias": "Caption",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "OcrLanguages"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "OcrLanguages",
+                "ViewReferencePrefix": "Language"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 4,
+              "Form": null,
+              "Name": "Languages",
+              "RequiredText": "$CardTypes_Validators_Languages",
+              "SectionID::uid": "9050da4d-e06a-4160-a876-5ef5ad502794",
+              "ToolTip": "$CardTypes_Controls_Languages_Tooltip",
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_DetectLanguages",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "afa3e572-e5b5-44aa-963d-7a7b889b2408"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "10d7cb53-c7de-4180-ba88-e6d5c4dba2fb",
+              "ToolTip": "$CardTypes_Controls_DetectLanguages_Tooltip",
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ImagePageDetectSkewAndRotation",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "6b8df804-fe59-4fb9-b04a-742bbf710238"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "10d7cb53-c7de-4180-ba88-e6d5c4dba2fb",
+              "ToolTip": "$CardTypes_Controls_ImagePageDetectSkewAndRotation_Tooltip",
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ImagePageDetectTables",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "4b935622-5fed-4f69-9821-722b8fecf6cf"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "10d7cb53-c7de-4180-ba88-e6d5c4dba2fb",
+              "ToolTip": "$CardTypes_Controls_ImagePageDetectTables_Tooltip",
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ImagePageDetectBarcodes",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "7046f8e2-e3f8-4a24-852a-4cea02ed7340"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "10d7cb53-c7de-4180-ba88-e6d5c4dba2fb",
+              "ToolTip": "$CardTypes_Controls_ImagePageDetectBarcodes_Tooltip",
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ImagePagePreprocessing",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "75f5914d-c9a5-47db-bee5-35f825f11fa0"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "10d7cb53-c7de-4180-ba88-e6d5c4dba2fb",
+              "ToolTip": "$CardTypes_Controls_ImagePagePreprocessing_Tooltip",
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "RecognitionRequestBlock"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "HorizontalInterval::int": 1,
+            "VerticalInterval::int": 1
+          },
+          "Caption": "Text layer settings",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "Text layer possibility exist hint",
+              "ControlSettings": {
+                "Background": null,
+                "BorderColor": null,
+                "Padding": "3,3,3,3",
+                "Text": "$CardTypes_Labels_TextLayerPossibilityExistHint"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "TextLayerHint",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ImagePagesNewFile",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "HelpValue": ""
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "Overwrite",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "f69bf22f-8d65-460f-a6cd-1f119031e905"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "10d7cb53-c7de-4180-ba88-e6d5c4dba2fb",
+              "ToolTip": "$CardTypes_Controls_ImagePagesNewFile_Tooltip",
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "TextLayerSettingsBlock"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "OcrRequestDialog",
+      "TabCaption": "$CardTypes_OcrRequestDialog"
+    }
+  ],
+  "Group": "System",
+  "ID::uid": "51488d15-c19c-4855-8bec-7cc26936e9d6",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "OcrRequestDialog",
+  "SchemeItems": null,
+  "Validators": null
+}

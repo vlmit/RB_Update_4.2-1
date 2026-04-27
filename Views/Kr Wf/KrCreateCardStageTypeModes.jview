@@ -1,0 +1,78 @@
+﻿{
+  "Alias": "KrCreateCardStageTypeModes",
+  "Caption": "$Views_Names_KrCreateCardStageTypeModes",
+  "GroupName": "Kr Wf",
+  "ID": "1e8ca3c1-72a3-4c2c-8740-01c4dd96de39",
+  "JsonMetadataSource::txt": "KrCreateCardStageTypeModes JSONMETA",
+  "MsQuerySource::txt": "KrCreateCardStageTypeModes MSSQL",
+  "PgQuerySource::txt": "KrCreateCardStageTypeModes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART KrCreateCardStageTypeModes JSONMETA]
+{
+  "Alias": "KrCreateCardStageTypeModes",
+  "Caption": "$Views_Names_KrCreateCardStageTypeModes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$KrCreateCardStageTypeModes.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "RefName",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$KrCreateCardStageTypeModes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrCreateCardStageTypeModes_Name",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "KrCreateCardStageTypeModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrCreateCardStageTypeModes MSSQL]
+SELECT
+	[a].[ID]		AS [RefID],
+	[a].[Name]		AS [RefName]
+FROM [KrCreateCardStageTypeModes] AS [a] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([a].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [a].[Order]
+
+
+[TEXTPART KrCreateCardStageTypeModes PGSQL]
+SELECT
+	"a"."ID"		AS "RefID",
+	"a"."Name"		AS "RefName"
+FROM "KrCreateCardStageTypeModes" AS "a"
+#if(Name) {
+CROSS JOIN "Localization"("a"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "a"."Order"

@@ -1,0 +1,58 @@
+﻿{
+  "Alias": "AclGenerationRuleExtensions",
+  "Caption": "$Views_Names_AclGenerationRuleExtensions",
+  "GroupName": "Acl",
+  "ID": "480df66f-bb9f-4a16-b26c-d1f358c80a4a",
+  "JsonMetadataSource::txt": "AclGenerationRuleExtensions JSONMETA",
+  "MsQuerySource::txt": "AclGenerationRuleExtensions MSSQL",
+  "PgQuerySource::txt": "AclGenerationRuleExtensions PGSQL"
+}
+
+[TEXTPART AclGenerationRuleExtensions JSONMETA]
+{
+  "Alias": "AclGenerationRuleExtensions",
+  "Caption": "$Views_Names_AclGenerationRuleExtensions",
+  "Columns": [
+    {
+      "Alias": "ExtensionID",
+      "Hidden": true,
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "ExtensionName",
+      "Caption": "$Views_AclGenerationRuleExtensions_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "ExtensionName",
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "AllowedOperands": [
+        "Contains"
+      ],
+      "Caption": "$Views_AclGenerationRuleExtensions_Name",
+      "Multiple": false,
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Extension",
+      "RefSection": [
+        "AclGenerationRuleExtensions"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AclGenerationRuleExtensions MSSQL]
+
+
+[TEXTPART AclGenerationRuleExtensions PGSQL]

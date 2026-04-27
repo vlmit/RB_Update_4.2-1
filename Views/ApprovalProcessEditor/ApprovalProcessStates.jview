@@ -1,0 +1,85 @@
+﻿{
+  "Alias": "ApprovalProcessStates",
+  "Caption": "$Views_Names_ApprovalProcessStates",
+  "GroupName": "ApprovalProcessEditor",
+  "ID": "d055ba08-56e6-4d7a-97d0-3c763d89cbd1",
+  "JsonMetadataSource::txt": "ApprovalProcessStates JSONMETA",
+  "MsQuerySource::txt": "ApprovalProcessStates MSSQL",
+  "PgQuerySource::txt": "ApprovalProcessStates PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART ApprovalProcessStates JSONMETA]
+{
+  "Alias": "ApprovalProcessStates",
+  "Caption": "$Views_Names_ApprovalProcessStates",
+  "Columns": [
+    {
+      "Alias": "StateID",
+      "Hidden": true,
+      "Type": "$ApprovalProcessStates.ID"
+    },
+    {
+      "Alias": "StateName",
+      "Caption": "$Views_ApprovalProcessStates_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$ApprovalProcessStates.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "StateName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_ApprovalProcessStates_Name_Param",
+      "Multiple": false,
+      "Type": "$ApprovalProcessStates.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "State",
+      "DisplayValueColumn": "StateName",
+      "RefSection": [
+        "ApprovalProcessStates"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ApprovalProcessStates MSSQL]
+SELECT
+	[ct].[ID] 	AS [StateID],
+	[ct].[Name] AS [StateName]
+FROM [ApprovalProcessStates] AS [ct] WITH(NOLOCK)
+#if(Name || request.SortedBy("StateName")) {
+CROSS APPLY [Localization]([ct].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+[TEXTPART ApprovalProcessStates PGSQL]
+SELECT
+	"ct"."ID" 	AS "StateID",
+	"ct"."Name" AS "StateName"
+FROM "ApprovalProcessStates" AS "ct"
+#if(Name || request.SortedBy("StateName")) {
+CROSS JOIN "Localization"("ct"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

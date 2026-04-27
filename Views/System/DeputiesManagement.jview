@@ -1,0 +1,251 @@
+﻿{
+  "Alias": "DeputiesManagement",
+  "Caption": "$Views_Names_DeputiesManagement",
+  "GroupName": "System",
+  "ID": "4c2769bc-89ca-4b08-bc53-d6ee93a45b95",
+  "JsonMetadataSource::txt": "DeputiesManagement JSONMETA",
+  "MsQuerySource::txt": "DeputiesManagement MSSQL",
+  "PgQuerySource::txt": "DeputiesManagement PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART DeputiesManagement JSONMETA]
+{
+  "Alias": "DeputiesManagement",
+  "Caption": "$Views_Names_DeputiesManagement",
+  "Columns": [
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "$PersonalRoles.ID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Users_Name",
+      "FilterParameter": "UserName",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.UserName",
+      "Type": "$PersonalRoles.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    },
+    {
+      "Alias": "RecordID",
+      "Hidden": true,
+      "Type": "$PersonalRoles.ID"
+    },
+    {
+      "Alias": "RecordCaption",
+      "Hidden": true,
+      "Type": "$PersonalRoles.Name"
+    },
+    {
+      "Alias": "Departments",
+      "Caption": "$Views_Users_Departments",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "StaticRoles",
+      "Caption": "$Views_Users_StaticRoles",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "UserName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "Extensions": [
+    {
+      "Order": 0,
+      "TypeName": "Tessa.Extensions.Platform.Client.Cards.OpenFromDeputiesManagementOnDoubleClickExtension"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "UserID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_DeputiesManagement_User_Param",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$PersonalRoles.ID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Users_Name_Param",
+      "Type": "$PersonalRoles.Name"
+    }
+  ],
+  "QuickSearchParam": "UserName",
+  "References": [
+    {
+      "ColPrefix": "Record",
+      "DisplayValueColumn": "RecordCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "RoleDeputiesManagementVirtual"
+      ]
+    },
+    {
+      "ColPrefix": "User",
+      "DisplayValueColumn": "UserName",
+      "IsCard": true,
+      "RefSection": [
+        "Roles",
+        "DurableRoles",
+        "PersonalRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DeputiesManagement MSSQL]
+SELECT
+	[t].*
+	#if(Normal) {,
+	[t].[UserID]	AS [RecordID],
+	[t].[UserName]	AS [RecordCaption],
+	STUFF((
+		SELECT N', ' + [r].[Name]
+		FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+		INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+			ON [r].[ID] = [ru].[ID]
+		WHERE [ru].[UserID] = [t].[UserID]
+			AND [ru].[TypeID] = 2
+		ORDER BY [r].[Name]
+		FOR XML PATH('')
+	), 1, 2, N'') AS [Departments],
+	STUFF((
+		SELECT N', ' + [r].[Name]
+		FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+		INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+			ON [r].[ID] = [ru].[ID]
+		WHERE [ru].[UserID] = [t].[UserID]
+			AND [ru].[TypeID] = 0
+		ORDER BY [r].[Name]
+		FOR XML PATH('')
+	), 1, 2, N'') AS [StaticRoles]
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].*,
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM (
+		SELECT DISTINCT
+			#if(Normal) {
+			[pr].[ID]	AS [UserID],
+			[pr].[Name]	AS [UserName]
+			}
+			#if(Count) {
+			[pr].[ID]
+			}
+		FROM [PersonalRoles] AS [pr] WITH (NOLOCK)
+		LEFT JOIN [RoleDeputiesManagementAccess] AS [a] WITH (NOLOCK)
+			ON [a].[ID] = [pr].[ID]
+		WHERE ([pr].[ID] = #param(CurrentUserID) OR [a].[PersonalRoleID] = #param(CurrentUserID))
+			#param(UserID, [pr].[ID])
+			#param(UserName, [pr].[Name])
+		) AS [t]
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART DeputiesManagement PGSQL]
+SELECT
+	"t".*
+	#if(Normal) {,
+	"t"."UserID"	AS "RecordID",
+	"t"."UserName"	AS "RecordCaption",
+	(
+		SELECT string_agg("Name", ', ')
+		FROM (
+			SELECT "r"."Name"
+			FROM "RoleUsers" AS "ru"
+			INNER JOIN "Roles" AS "r"
+				ON "r"."ID" = "ru"."ID"
+			WHERE "ru"."UserID" = "t"."UserID"
+				AND "ru"."TypeID" = 2
+			ORDER BY "r"."Name") AS "names"
+	) AS "Departments",
+	(
+		SELECT string_agg("Name", ', ')
+		FROM (
+			SELECT "r"."Name"
+			FROM "RoleUsers" AS "ru"
+			INNER JOIN "Roles" AS "r"
+				ON "r"."ID" = "ru"."ID"
+			WHERE "ru"."UserID" = "t"."UserID"
+				AND "ru"."TypeID" = 0
+			ORDER BY "r"."Name") AS "names"
+	) AS "StaticRoles"
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t".*,
+		0::int8 AS "rn"
+		}
+		#if(Count) {
+		count(*) AS "cnt"
+		}
+	FROM (
+		SELECT DISTINCT
+			#if(Normal) {
+			"pr"."ID"	AS "UserID",
+			"pr"."Name"	AS "UserName"
+			}
+			#if(Count) {
+			"pr"."ID"
+			}
+		FROM "PersonalRoles" AS "pr"
+		LEFT JOIN "RoleDeputiesManagementAccess" AS "a"
+			ON "a"."ID" = "pr"."ID"
+		WHERE ("pr"."ID" = #param(CurrentUserID) OR "a"."PersonalRoleID" = #param(CurrentUserID))
+			#param(UserID, "pr"."ID")
+			#param(UserName, "pr"."Name")
+		) AS "t"
+	#if(Normal) {
+	ORDER BY #order_by
+	}
+	#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+	}
+	) AS "t"

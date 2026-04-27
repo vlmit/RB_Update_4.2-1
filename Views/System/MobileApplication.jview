@@ -1,0 +1,78 @@
+﻿{
+  "Alias": "MobileApplication",
+  "Caption": "$Views_Names_MobileApplication",
+  "Description": "Returns information on the current bundle",
+  "GroupName": "System",
+  "ID": "ccbc0fea-ed8e-4ce3-b7e5-2083be5690fd",
+  "JsonMetadataSource::txt": "MobileApplication JSONMETA",
+  "MsQuerySource::txt": "MobileApplication MSSQL",
+  "PgQuerySource::txt": "MobileApplication PGSQL"
+}
+
+[TEXTPART MobileApplication JSONMETA]
+{
+  "Alias": "MobileApplication",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_MobileApplication",
+  "Columns": [
+    {
+      "Alias": "BundleStrategy",
+      "Caption": "$Views_MobileApplication_BundleStrategy",
+      "Type": "$MobileApplication.BundleStrategy"
+    },
+    {
+      "Alias": "BundleVersion",
+      "Caption": "$Views_MobileApplication_BundleVersion",
+      "Type": "$MobileApplication.BundleVersion"
+    },
+    {
+      "Alias": "MinSupportNativeVersion",
+      "Caption": "$Views_MobileApplication_MinSupportNativeVersion",
+      "Type": "$MobileApplication.MinSupportNativeVersion"
+    },
+    {
+      "Alias": "PlatformVersion",
+      "Caption": "$Views_MobileApplication_PlatformVersion",
+      "Type": "$MobileApplication.PlatformVersion"
+    },
+    {
+      "Alias": "PublicKey",
+      "Caption": "$Views_MobileApplication_PublicKey",
+      "Type": "$MobileApplication.PublicKey"
+    },
+    {
+      "Alias": "Release",
+      "Caption": "$Views_MobileApplication_Release",
+      "Type": "$MobileApplication.Release"
+    },
+    {
+      "Alias": "ID",
+      "Type": "$MobileApplication.ID"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART MobileApplication MSSQL]
+SELECT 
+	[t].[BundleStrategy],
+	[t].[BundleVersion],
+	[t].[MinSupportNativeVersion],
+	[t].[PlatformVersion],
+	[t].[PublicKey],
+	[t].[Release],
+	[t].[ID]
+FROM [MobileApplication] AS [t] WITH (NOLOCK)
+
+[TEXTPART MobileApplication PGSQL]
+SELECT 
+	"t"."BundleStrategy",
+	"t"."BundleVersion",
+	"t"."MinSupportNativeVersion",
+	"t"."PlatformVersion",
+	"t"."PublicKey",
+	"t"."Release",
+	"t"."ID"
+FROM "MobileApplication" AS "t"

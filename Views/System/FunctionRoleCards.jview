@@ -1,0 +1,346 @@
+﻿{
+  "Alias": "FunctionRoleCards",
+  "Caption": "$Views_Names_FunctionRoleCards",
+  "GroupName": "System",
+  "ID": "6693a0e4-421c-484f-a4ce-21be436a4be2",
+  "JsonMetadataSource::txt": "FunctionRoleCards JSONMETA",
+  "MsQuerySource::txt": "FunctionRoleCards MSSQL",
+  "PgQuerySource::txt": "FunctionRoleCards PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART FunctionRoleCards JSONMETA]
+{
+  "Alias": "FunctionRoleCards",
+  "Caption": "$Views_Names_FunctionRoleCards",
+  "Columns": [
+    {
+      "Alias": "FunctionRoleID",
+      "Hidden": true,
+      "Type": "$FunctionRoles.ID"
+    },
+    {
+      "Alias": "FunctionRoleCaption",
+      "Caption": "$Views_FunctionRoles_Caption",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "l.Value",
+      "Type": "$FunctionRoles.Caption"
+    },
+    {
+      "Alias": "FunctionRoleName",
+      "Caption": "$Views_FunctionRoles_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "fr.Name",
+      "Type": "$FunctionRoles.Name"
+    },
+    {
+      "Alias": "FunctionRoleCanBeDeputy",
+      "Caption": "$Views_FunctionRoles_CanBeDeputy",
+      "FilterParameter": "CanBeDeputy",
+      "FilterType": "Parameter",
+      "SortBy": "fr.CanBeDeputy",
+      "Type": "$FunctionRoles.CanBeDeputy"
+    },
+    {
+      "Alias": "FunctionRoleCanTakeInProgress",
+      "Caption": "$Views_FunctionRoles_CanTakeInProgress",
+      "FilterParameter": "CanTakeInProgress",
+      "FilterType": "Parameter",
+      "SortBy": "fr.CanTakeInProgress",
+      "Type": "$FunctionRoles.CanTakeInProgress"
+    },
+    {
+      "Alias": "FunctionRoleHideTaskByDefault",
+      "Caption": "$Views_FunctionRoles_HideTaskByDefault",
+      "FilterParameter": "HideTaskByDefault",
+      "FilterType": "Parameter",
+      "SortBy": "fr.HideTaskByDefault",
+      "Type": "$FunctionRoles.HideTaskByDefault"
+    },
+    {
+      "Alias": "FunctionRoleCanChangeTaskInfo",
+      "Caption": "$Views_FunctionRoles_CanChangeTaskInfo",
+      "FilterParameter": "CanChangeTaskInfo",
+      "FilterType": "Parameter",
+      "SortBy": "fr.CanChangeTaskInfo",
+      "Type": "$FunctionRoles.CanChangeTaskInfo"
+    },
+    {
+      "Alias": "FunctionRoleCanChangeTaskRoles",
+      "Caption": "$Views_FunctionRoles_CanChangeTaskRoles",
+      "FilterParameter": "CanChangeTaskRoles",
+      "FilterType": "Parameter",
+      "SortBy": "fr.CanChangeTaskRoles",
+      "Type": "$FunctionRoles.CanChangeTaskRoles"
+    },
+    {
+      "Alias": "PartitionID",
+      "Hidden": true,
+      "Type": "$Partitions.ID"
+    },
+    {
+      "Alias": "PartitionName",
+      "Caption": "$Views_FunctionRoles_Partition",
+      "FilterParameter": "Partition",
+      "FilterType": "Parameter",
+      "SortBy": "p.Name",
+      "Type": "$Partitions.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "FunctionRoleCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "FunctionRoleID",
+      "Caption": "$Views_FunctionRoles_FunctionRoleID_Param",
+      "Hidden": true,
+      "Type": "$FunctionRoles.ID"
+    },
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_FunctionRoles_Caption_Param",
+      "Type": "$FunctionRoles.Caption"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_FunctionRoles_Alias_Param",
+      "Type": "$FunctionRoles.Name"
+    },
+    {
+      "Alias": "CanBeDeputy",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_FunctionRoles_CanBeDeputy_Param",
+      "Type": "$FunctionRoles.CanBeDeputy"
+    },
+    {
+      "Alias": "CanTakeInProgress",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_FunctionRoles_CanTakeInProgress_Param",
+      "Type": "$FunctionRoles.CanTakeInProgress"
+    },
+    {
+      "Alias": "HideTaskByDefault",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_FunctionRoles_HideTaskByDefault_Param",
+      "Type": "$FunctionRoles.HideTaskByDefault"
+    },
+    {
+      "Alias": "CanChangeTaskInfo",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_FunctionRoles_CanChangeTaskInfo_Param",
+      "Type": "$FunctionRoles.CanChangeTaskInfo"
+    },
+    {
+      "Alias": "CanChangeTaskRoles",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_FunctionRoles_CanChangeTaskRoles_Param",
+      "Type": "$FunctionRoles.CanChangeTaskRoles"
+    },
+    {
+      "Alias": "Partition",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "Partitions"
+      },
+      "Caption": "$Views_FunctionRoles_Partition",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "Partitions"
+      },
+      "RefSection": [
+        "Partitions"
+      ],
+      "Type": "$Partitions.ID"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "CardType": "FunctionRole",
+      "ColPrefix": "FunctionRole",
+      "DisplayValueColumn": "FunctionRoleCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "FunctionRoles"
+      ]
+    },
+    {
+      "ColPrefix": "Partition",
+      "DisplayValueColumn": "PartitionName",
+      "RefSection": [
+        "Partitions"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART FunctionRoleCards MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[fr].[ID]								AS [FunctionRoleID],
+		[fr].[Caption]							AS [FunctionRoleCaption],
+		[fr].[Name]								AS [FunctionRoleName],
+		[fr].[CanBeDeputy]						AS [FunctionRoleCanBeDeputy],
+		[fr].[CanTakeInProgress]				AS [FunctionRoleCanTakeInProgress],
+		[fr].[HideTaskByDefault]				AS [FunctionRoleHideTaskByDefault],
+		[fr].[CanChangeTaskInfo]				AS [FunctionRoleCanChangeTaskInfo],
+		[fr].[CanChangeTaskRoles]				AS [FunctionRoleCanChangeTaskRoles],
+		[p].[ID]		AS [PartitionID],
+		[p].[Name]		AS [PartitionName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [FunctionRoles] AS [fr] WITH (NOLOCK)
+	#if(Normal || Partition) {
+	OUTER APPLY (
+		SELECT
+			COALESCE(
+				[tt].[Definition].value('(/SchemeRecord/@Partition)[1]', 'uniqueidentifier'),
+				'29f90c69-c1ef-4cbf-b9d5-7fc91cd68c67' -- Default partition
+			) AS [PartitionID]
+		FROM (
+			SELECT [tt].[Definition].query('.') AS [Definition]
+			FROM [Tables] AS [t] WITH (NOLOCK)
+			CROSS APPLY [t].[Definition].nodes('/SchemeTable/SchemeRecord') AS [tt]([Definition])
+			WHERE [t].[ID] = 'a59078ce-8acf-4c45-a49a-503fa88a0580' -- FunctionRoles
+		) AS [tt]
+		WHERE [tt].[Definition].value('(/SchemeRecord/ID)[1]', 'uniqueidentifier') = [fr].[ID]
+	) AS [t]
+	LEFT JOIN [Partitions] AS [p] WITH (NOLOCK) ON [p].[ID] = [t].[PartitionID]
+	}
+	#if(Caption || Normal && request.SortedBy("FunctionRoleCaption")) {
+	CROSS APPLY [Localization]([fr].[Caption], #param(locale)) AS [l]
+	}
+	WHERE 1 = 1
+		#param(FunctionRoleID, [fr].[ID])
+		#param(Name, [fr].[Name])
+		#param(Caption, [l].[Value])
+		#param(CanBeDeputy, [fr].[CanBeDeputy])
+		#param(CanTakeInProgress, [fr].[CanTakeInProgress])
+		#param(HideTaskByDefault, [fr].[HideTaskByDefault])
+		#param(CanChangeTaskInfo, [fr].[CanChangeTaskInfo])
+		#param(CanChangeTaskRoles, [fr].[CanChangeTaskRoles])
+		#param(Partition, [p].[ID])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART FunctionRoleCards PGSQL]
+SELECT
+	#if(Normal) {
+	"fr"."ID"					AS "FunctionRoleID",
+	"fr"."Caption"				AS "FunctionRoleCaption",
+	"fr"."Name"					AS "FunctionRoleName",
+	"fr"."CanBeDeputy"			AS "FunctionRoleCanBeDeputy",
+	"fr"."CanTakeInProgress"	AS "FunctionRoleCanTakeInProgress",
+	"fr"."HideTaskByDefault"	AS "FunctionRoleHideTaskByDefault",
+	"fr"."CanChangeTaskInfo"	AS "FunctionRoleCanChangeTaskInfo",
+	"fr"."CanChangeTaskRoles"	AS "FunctionRoleCanChangeTaskRoles",
+	"p"."ID"					AS "PartitionID",
+	"p"."Name"					AS "PartitionName",
+	0::int8						AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "FunctionRoles" AS "fr"
+#if(Normal || Partition) {
+LEFT JOIN LATERAL (
+	SELECT
+		"p"."ID",
+		"p"."Name"
+	FROM "Partitions" AS "p"
+	WHERE "p"."ID" = (
+		SELECT
+			coalesce(
+				((xpath('/SchemeRecord/@Partition', "t"."Record")::text[])::uuid[])[1],
+				'29f90c69-c1ef-4cbf-b9d5-7fc91cd68c67'::uuid -- Default partition
+			) AS "PartitionID"
+		FROM (
+			SELECT unnest(xpath('/SchemeTable/SchemeRecord', "Definition")) AS "Record"
+			FROM "Tables"
+			WHERE "ID" = 'a59078ce-8acf-4c45-a49a-503fa88a0580' -- FunctionRoles
+		) AS "t"
+		WHERE ((xpath('/SchemeRecord/ID/text()', "t"."Record")::text[])::uuid[])[1] = "fr"."ID")
+) AS "p" ON TRUE
+}
+#if(Caption || Normal && request.SortedBy("FunctionRoleCaption")) {
+CROSS JOIN "Localization"("fr"."Caption", #param(locale)) AS "l"
+}
+WHERE true
+	#param(FunctionRoleID, "fr"."ID")
+	#param(Name, "fr"."Name")
+	#param(Caption, "l"."Value")
+	#param(CanBeDeputy, "fr"."CanBeDeputy")
+	#param(CanTakeInProgress, "fr"."CanTakeInProgress")
+	#param(HideTaskByDefault, "fr"."HideTaskByDefault")
+	#param(CanChangeTaskInfo, "fr"."CanChangeTaskInfo")
+	#param(CanChangeTaskRoles, "fr"."CanChangeTaskRoles")
+	#param(Partition, "p"."ID")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

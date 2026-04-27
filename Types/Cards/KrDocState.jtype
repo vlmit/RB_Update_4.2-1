@@ -1,0 +1,169 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_KrDocState",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": "{f:KrDocStateVirtual.Name}",
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "HorizontalInterval::int": 11
+          },
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Title",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "67c624bb-eb7f-4a44-a934-c7efa869ff21"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "e4345324-ad03-46ca-a157-5f71742e5816",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Identifier",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxValue": 32767,
+                "MinValue": 0
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "a6efb587-23e5-43a5-959d-179010303975"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "e4345324-ad03-46ca-a157-5f71742e5816",
+              "ToolTip": null,
+              "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Partition",
+              "ComplexColumnID::uid": "e68655b6-c95f-44dd-8fc1-8c13026cf635",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "ParameterAlias": "Name",
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "Partitions",
+                "ViewAliasComboBox": "Partitions"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "e4345324-ad03-46ca-a157-5f71742e5816",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": {
+            "Column::int": 0,
+            "ColumnSpan::int": 2,
+            "HideCaption": true,
+            "HorizontalAlignment::int": 3,
+            "Row::int": 0,
+            "RowSpan::int": 1,
+            "VerticalAlignment::int": 3
+          },
+          "Name": "MainInfo"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Columns": [
+          {
+            "::types": [
+              "dbl",
+              "dbl"
+            ]
+          },
+          1.0,
+          1.0
+        ],
+        "Rows": [
+          {
+            "::types": [
+              "unk",
+              "unk",
+              "dbl"
+            ]
+          },
+          null,
+          null,
+          1.0
+        ]
+      },
+      "Name": "KrDocState",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Dictionaries",
+  "ID::uid": "e83a230a-f5fc-445e-9b44-7d0140ee69f6",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "KrDocState",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "a6efb587-23e5-43a5-959d-179010303975",
+        "67c624bb-eb7f-4a44-a934-c7efa869ff21",
+        "e68655b6-c95f-44dd-8fc1-8c13026cf635"
+      ],
+      "SectionID::uid": "e4345324-ad03-46ca-a157-5f71742e5816"
+    }
+  ],
+  "Validators": [
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "67c624bb-eb7f-4a44-a934-c7efa869ff21",
+        "ErrorMessage": "$CardTypes_Validators_Title",
+        "SectionID::uid": "e4345324-ad03-46ca-a157-5f71742e5816"
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "a6efb587-23e5-43a5-959d-179010303975",
+        "ErrorMessage": "$CardTypes_Validators_Identifier",
+        "SectionID::uid": "e4345324-ad03-46ca-a157-5f71742e5816"
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "e68655b6-c95f-44dd-8fc1-8c13026cf635",
+        "ErrorMessage": "$CardTypes_Validators_Partition",
+        "SectionID::uid": "e4345324-ad03-46ca-a157-5f71742e5816"
+      }
+    }
+  ]
+}

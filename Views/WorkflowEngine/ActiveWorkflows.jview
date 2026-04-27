@@ -1,0 +1,391 @@
+﻿{
+  "Alias": "ActiveWorkflows",
+  "Caption": "$Views_Names_ActiveWorkflows",
+  "GroupName": "WorkflowEngine",
+  "ID": "68def22d-ade6-439f-bbc4-21ea18a3c409",
+  "JsonMetadataSource::txt": "ActiveWorkflows JSONMETA",
+  "MsQuerySource::txt": "ActiveWorkflows MSSQL",
+  "PgQuerySource::txt": "ActiveWorkflows PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART ActiveWorkflows JSONMETA]
+{
+  "Alias": "ActiveWorkflows",
+  "Caption": "$Views_Names_ActiveWorkflows",
+  "Columns": [
+    {
+      "Alias": "ProcessID",
+      "Hidden": true,
+      "Type": "$WorkflowEngineProcesses.ID"
+    },
+    {
+      "Alias": "ProcessRowID",
+      "Hidden": true,
+      "Type": "$WorkflowEngineProcesses.RowID"
+    },
+    {
+      "Alias": "ProcessName",
+      "Caption": "$Views_ActiveWorkflows_ProcessName",
+      "Localizable": true,
+      "SortBy": "pr.Name",
+      "Type": "$WorkflowEngineProcesses.Name"
+    },
+    {
+      "Alias": "ProcessCreated",
+      "Caption": "$Views_ActiveWorkflows_Created",
+      "FilterParameter": "Created",
+      "FilterType": "Parameter",
+      "SortBy": "pr.Created",
+      "Type": "$WorkflowEngineProcesses.Created"
+    },
+    {
+      "Alias": "ProcessLastActivity",
+      "Caption": "$Views_ActiveWorkflows_LastActivity",
+      "FilterParameter": "LastActivity",
+      "FilterType": "Parameter",
+      "SortBy": "pr.LastActivity",
+      "Type": "$WorkflowEngineProcesses.LastActivity"
+    },
+    {
+      "Alias": "ProcessCardID",
+      "Hidden": true,
+      "Type": "$Instances.TypeID"
+    },
+    {
+      "Alias": "ProcessCardDigest",
+      "Caption": "$Views_ActiveWorkflows_CardDigest",
+      "FilterParameter": "CardDigest",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "pr.CardDigest",
+      "Type": "$WorkflowEngineProcesses.CardDigest"
+    },
+    {
+      "Alias": "ProcessCardType",
+      "Caption": "$Views_ActiveWorkflows_CardType",
+      "FilterParameter": "CardType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "LCaption.Value",
+      "Type": "$Instances.TypeCaption"
+    },
+    {
+      "Alias": "ProcessVersion",
+      "Caption": "$Views_ActiveWorkflows_ProcessVersion",
+      "FilterParameter": "ProcessVersion",
+      "FilterType": "Parameter",
+      "SortBy": "bpv.Version",
+      "Type": "$BusinessProcessVersions.Version"
+    },
+    {
+      "Alias": "HasErrors",
+      "Caption": "$Views_ActiveWorkflows_HasErrors",
+      "FilterParameter": "HasActiveErrors",
+      "FilterType": "Parameter",
+      "Type": "Boolean Not Null"
+    },
+    {
+      "Alias": "LastErrorText",
+      "Appearance": "ErrorBackgroundAppearance",
+      "Caption": "$Views_WorkflowEngineErrors_LastErrorText",
+      "MaxLength": 50,
+      "Type": "$Errors.Text"
+    },
+    {
+      "Alias": "ErrorBackgroundAppearance",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ProcessCreated",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "ProcessTemplate",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "BusinessProcesses"
+      },
+      "Caption": "$Views_ActiveWorkflows_ProcessTemplate_Param",
+      "RefSection": [
+        "BusinessProcessInfo"
+      ],
+      "Type": "$BusinessProcessVersions.ID"
+    },
+    {
+      "Alias": "CardType",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "Types"
+      },
+      "Caption": "$Views_ActiveWorkflows_CardType_Param",
+      "RefSection": [
+        "Types"
+      ],
+      "Type": "$Instances.TypeID"
+    },
+    {
+      "Alias": "CardDigest",
+      "Caption": "$Views_ActiveWorkflows_CardDigest_Param",
+      "Type": "$WorkflowEngineProcesses.CardDigest"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_ActiveWorkflows_Created_Param",
+      "Type": "$WorkflowEngineProcesses.Created"
+    },
+    {
+      "Alias": "LastActivity",
+      "Caption": "$Views_ActiveWorkflows_LastActivity_Param",
+      "Type": "$WorkflowEngineProcesses.LastActivity"
+    },
+    {
+      "Alias": "CardID",
+      "Caption": "$Views_ActiveWorkflows_CardID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$WorkflowEngineProcesses.CardID"
+    },
+    {
+      "Alias": "HasActiveErrors",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_ActiveWorkflows_HasActiveErrors_Param",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "ProcessInstance",
+      "Caption": "$Views_ActiveWorkflows_ProcessInstance_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$WorkflowEngineProcesses.ID"
+    },
+    {
+      "Alias": "ProcessVersion",
+      "Caption": "$Views_ActiveWorkflows_ProcessVersion",
+      "Type": "$BusinessProcessVersions.Version"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Process",
+      "DisplayValueColumn": "ProcessName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "BusinessProcessInfo"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ActiveWorkflows MSSQL]
+SELECT
+    [pr].[ID]                                                                           as [ProcessID],
+    [pr].[RowID]                                                                        as [ProcessRowID],
+    [pr].[Name]                                                                         as [ProcessName],
+    [pr].[Created]                                                                      as [ProcessCreated],
+    [pr].[LastActivity]                                                                 as [ProcessLastActivity],
+    [pr].[CardID]                                                                       as [ProcessCardID],
+    COALESCE([pr].[CardDigest], N'$Views_ActiveWorkflows_NoNameStr_Sql')               as [ProcessCardDigest],
+    [pr].[Caption]                                                                      as [ProcessCardType],
+    [pr].[Version]                                                                      as [ProcessVersion],
+    #if(HasActiveErrors.CriteriaName == "IsFalse") { -- Если HasActiveErrors передан как False, то ошибок нет.
+        CAST(0 as BIT)                                                                  as [HasErrors],
+        CAST(NULL AS NVARCHAR(MAX))                                                     as [LastErrorText],
+        '#appearance(Background: #00000000)'                                           as [ErrorBackgroundAppearance]
+    }{
+        CAST(CASE WHEN [last_error].[ErrorRowID] IS NOT NULL THEN 1 ELSE 0 END AS BIT) as [HasErrors],
+        [last_error].[Text]                                                             as [LastErrorText],
+        N'#appearance(Background: ' + CASE
+            WHEN [last_error].[ErrorRowID] IS NOT NULL THEN N'LightPink'
+            ELSE N'#00000000'
+        END + N')'                                                                     as [ErrorBackgroundAppearance]
+    }
+    FROM (SELECT [inner_query].*
+    FROM (
+        SELECT
+            [pr].[ID],
+            [pr].[RowID],
+            [pr].[Name],
+            [pr].[Created],
+            [pr].[LastActivity],
+            [pr].[CardID],
+            [pr].[CardDigest],
+            [t].[Caption],
+            [bpv].[Version],
+            ROW_NUMBER() OVER (ORDER BY #order_by) AS [rn]
+        #if(HasActiveErrors.CriteriaName == "IsTrue") { -- HasActiveErrors передан как True
+        FROM (
+            SELECT [wen].[ProcessRowID] AS [RowID]
+            FROM (
+                SELECT [wee].[NodeRowID]
+                FROM [WorkflowEngineErrors] [wee] WITH(NOLOCK)
+                WHERE [wee].[Active] = 1
+                GROUP BY [wee].[NodeRowID]
+            ) [WorkflowEngineErrorsUniqueByNode]
+            INNER JOIN [WorkflowEngineNodes] [wen] WITH(NOLOCK) ON [wen].[RowID] = [WorkflowEngineErrorsUniqueByNode].[NodeRowID]
+            GROUP BY [wen].[ProcessRowID]
+        ) [WorkflowEngineUniqueProcesses]
+        INNER JOIN [WorkflowEngineProcesses] [pr] WITH(NOLOCK) ON [pr].[RowID] = [WorkflowEngineUniqueProcesses].[RowID]
+        }
+        { -- HasActiveErrors не передан или FALSE
+        FROM [WorkflowEngineProcesses] [pr]
+        }
+        
+        INNER JOIN [Instances] [i] WITH(NOLOCK) ON [pr].[CardID] = [i].[ID]
+        INNER JOIN [Types] [t] WITH(NOLOCK) ON [i].[TypeID] = [t].[ID]
+        INNER JOIN [BusinessProcessVersions] [bpv] WITH(NOLOCK) ON [bpv].[RowID] = [pr].[ProcessTemplateRowID]
+        
+        #if(Normal && request.SortedBy("ProcessCardType")) {
+            CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [LCaption]
+        }
+        
+        WHERE 1 = 1
+            #param(CardID, [pr].[CardID])
+            #param(CardDigest, [pr].[CardDigest])
+            #param(CardType, [i].[TypeID])
+            #param(ProcessTemplate, [bpv].[ID])
+            #param(ProcessInstance, [pr].[ID])
+            #param(Created, [pr].[Created])
+            #param(LastActivity, [pr].[LastActivity])
+            #param(ProcessVersion, [bpv].[Version])
+            
+            #if(HasActiveErrors.CriteriaName == "IsFalse") { -- Если HasActiveErrors == False, отфильтровать только те, что не имеют ошибок
+        	and NOT EXISTS(SELECT 1
+                    FROM [WorkflowEngineNodes] [n] WITH(NOLOCK)
+                    INNER JOIN [WorkflowEngineErrors] [er] WITH(NOLOCK) ON [er].[NodeRowID] = [n].[RowID]
+                        WHERE [n].[ProcessRowID] = [pr].[RowID]
+    			)
+        	}
+            ) [inner_query]
+            
+            #if(PageOffset) {
+    			WHERE [inner_query].[rn] BETWEEN (#param(PageOffset) - 1) * #param(PageLimit) + 1 AND #param(PageOffset) * #param(PageLimit)
+			}
+) [pr]
+
+#if(HasActiveErrors.CriteriaName != "IsFalse") { -- Если HasActiveErrors явно не передан как False, то джойним текст ошибок.
+OUTER APPLY (
+    SELECT TOP 1
+        [wee].[RowID] as [ErrorRowID],
+        [e].[Text]
+    FROM [WorkflowEngineNodes] [wen] WITH(NOLOCK)
+    JOIN [WorkflowEngineErrors] [wee] WITH(NOLOCK) ON [wen].[RowID] = [wee].[NodeRowID]
+    LEFT JOIN [Errors] [e] WITH(NOLOCK) ON [e].[ID] = [wee].[ErrorCardID]
+    WHERE [wen].[ProcessRowID] = [pr].[RowID]
+      AND [wee].[Active] = 1
+    ORDER BY [wee].[Added] DESC
+) [last_error]
+}
+
+[TEXTPART ActiveWorkflows PGSQL]
+SELECT
+    "pr"."ID"                                                           AS "ProcessID",
+    "pr"."RowID"                                                        AS "ProcessRowID",
+    "pr"."Name"                                                         AS "ProcessName",
+    "pr"."Created"                                                      AS "ProcessCreated",
+    "pr"."LastActivity"                                                 AS "ProcessLastActivity",
+    "pr"."CardID"                                                       AS "ProcessCardID",
+    COALESCE("pr"."CardDigest", '$Views_ActiveWorkflows_NoNameStr_Sql') AS "ProcessCardDigest",
+    "pr"."Caption"                                                      AS "ProcessCardType",
+    "pr"."Version"                                                     	AS "ProcessVersion",
+    #if(HasActiveErrors.CriteriaName == "IsFalse") { -- Если HasActiveErrors передан как False, то ошибок нет.
+    	false															AS "HasErrors",
+    	null															AS "LastErrorText",
+    	'#appearance(Background: #00000000'								AS "ErrorBackgroundAppearance"}
+    {
+    	"last_error"."ErrorRowID" IS NOT NULL                           AS "HasErrors",
+    	"last_error"."Text"                                             AS "LastErrorText",
+    	'#appearance(Background: ' ||
+        CASE
+            WHEN "last_error"."ErrorRowID" IS NOT NULL THEN N'LightPink'
+            ELSE N'#00000000'
+        END || ')'                                                      AS "ErrorBackgroundAppearance" }
+FROM (
+    SELECT 
+    "pr"."ID",
+    "pr"."RowID",
+    "pr"."Name",
+    "pr"."Created",
+    "pr"."LastActivity",
+    "pr"."CardID",
+    "pr"."CardDigest",
+    "t"."Caption",
+    "bpv"."Version"
+    #if(HasActiveErrors.CriteriaName == "IsTrue") { -- HasActiveErrors передан как True
+        FROM (
+            SELECT "wen"."ProcessRowID" AS "RowID"
+            FROM (
+                SELECT "wee"."NodeRowID"
+                FROM "WorkflowEngineErrors" "wee"
+                WHERE "wee"."Active"
+                GROUP BY "wee"."NodeRowID"
+            ) "WorkflowEngineErrorsUniqueByNode"
+            INNER JOIN "WorkflowEngineNodes" "wen" ON "wen"."RowID" = "WorkflowEngineErrorsUniqueByNode"."NodeRowID"
+            GROUP BY "wen"."ProcessRowID"
+        ) "WorkflowEngineUniqueProcesses"
+        INNER JOIN "WorkflowEngineProcesses" "pr" ON "pr"."RowID" = "WorkflowEngineUniqueProcesses"."RowID"
+    }
+    {	-- HasActiveErrors не передан или FALSE
+        FROM "WorkflowEngineProcesses" "pr"
+    }
+    INNER JOIN "Instances" "i" ON "pr"."CardID" = "i"."ID"
+    INNER JOIN "Types" "t" ON "i"."TypeID" = "t"."ID"
+    INNER JOIN "BusinessProcessVersions" "bpv" ON "bpv"."RowID" = "pr"."ProcessTemplateRowID"
+    #if(Normal && request.SortedBy("ProcessCardType")) {
+        CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "LCaption"
+    }
+    WHERE true
+        #param(CardID, "pr"."CardID")
+        #param(CardDigest, "pr"."CardDigest")
+        #param(CardType, "i"."TypeID")
+        #param(ProcessTemplate, "bpv"."ID")
+        #param(ProcessInstance, "pr"."ID")
+        #param(Created, "pr"."Created")
+        #param(LastActivity, "pr"."LastActivity")
+        #param(ProcessVersion, "bpv"."Version")
+        
+        #if(HasActiveErrors.CriteriaName == "IsFalse") { -- Если HasActiveErrors == False, отфильтровать только те, что не имеют ошибок
+        	and NOT EXISTS(SELECT
+                    FROM "WorkflowEngineNodes" "n"
+                    INNER JOIN "WorkflowEngineErrors" "er" ON er."NodeRowID" = "n"."RowID"
+                        WHERE "n"."ProcessRowID" = "pr"."RowID"
+    		)
+        }
+        
+    ORDER BY #order_by
+    #if(PageOffset) {
+        OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+    }
+) "pr"
+
+#if(HasActiveErrors.CriteriaName != "IsFalse") { -- Если HasActiveErrors явно не передан как False, то джойним текст ошибок.
+LEFT JOIN LATERAL (
+    SELECT 
+        "wee"."RowID" AS "ErrorRowID",
+        "e"."Text"
+    FROM "WorkflowEngineErrors" "wee"
+    INNER JOIN "WorkflowEngineNodes" "wen" ON "wen"."RowID" = "wee"."NodeRowID"
+    LEFT JOIN "Errors" "e" ON "e"."ID" = "wee"."ErrorCardID"
+    WHERE "wee"."Active" AND "wen"."ProcessRowID" = "pr"."RowID"
+    ORDER BY "wee"."Added" DESC
+    LIMIT 1
+) "last_error" ON true
+}

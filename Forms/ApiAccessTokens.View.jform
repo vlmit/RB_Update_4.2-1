@@ -1,0 +1,64 @@
+{
+  "Alias": "ApiAccessTokens.View",
+  "BundleID::uid": "c5bdb424-23c9-45ed-9210-98e8c72afd24",
+  "Caption": "$CardTypes_Tabs_ApiAccessTokens",
+  "Child": {
+    "Alias": "MainInformationBlock",
+    "Caption": "$CardTypes_Blocks_MainInformation",
+    "Children": [
+      {
+        "Alias": "296e67a0",
+        "Children": [
+          {
+            "Alias": "ApiAccessTokens",
+            "Caption": "ApiAccessTokens",
+            "CodeGenerated": true,
+            "HideCaption": true,
+            "ID::uid": "56378639-89b8-49d4-b4d6-a002ad0e91b8",
+            "MinHeight": "100%",
+            "MinWidth": "100%",
+            "Type::uid": "42970b45-65c3-42fc-be7c-0ab61ea221c7",
+            "ViewAlias": "ApiAccessTokens"
+          }
+        ],
+        "Column::int": 0,
+        "Height": "100%",
+        "ID::uid": "296e67a0-c6b8-4176-a7b4-aa4bb6533aea",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      }
+    ],
+    "Columns": [
+      {
+        "Alias": "34752d92",
+        "HideIfEmpty": true,
+        "ID::uid": "34752d92-7651-45e7-9980-811e74a8efbf",
+        "Index::int": 0,
+        "Size": "1fr",
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      }
+    ],
+    "GridGap": "10px 20px",
+    "Height": "100%",
+    "HideCaption": true,
+    "ID::uid": "36dd60f5-e8cf-4c87-9b16-2785b878cf0b",
+    "Padding": "10px",
+    "Rows": [
+      {
+        "Alias": "b84e3a88",
+        "HideIfEmpty": true,
+        "ID::uid": "b84e3a88-0292-4200-892b-5591bfc5130f",
+        "Index::int": 0,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      }
+    ],
+    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+  },
+  "ID::uid": "e688c3ba-7ecf-4a85-b364-0295dfad1df5",
+  "States": null,
+  "SubForms": null,
+  "Version::int": 0
+}

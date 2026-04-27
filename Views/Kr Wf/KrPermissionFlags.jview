@@ -1,0 +1,65 @@
+﻿{
+  "Alias": "KrPermissionFlags",
+  "Caption": "$Views_Names_KrPermissionFlags",
+  "GroupName": "Kr Wf",
+  "ID": "eb357452-657c-40cd-a2f4-f0214d0ac957",
+  "JsonMetadataSource::txt": "KrPermissionFlags JSONMETA",
+  "MsQuerySource::txt": "KrPermissionFlags MSSQL",
+  "PgQuerySource::txt": "KrPermissionFlags PGSQL"
+}
+
+[TEXTPART KrPermissionFlags JSONMETA]
+{
+  "Alias": "KrPermissionFlags",
+  "Caption": "$Views_Names_KrPermissionFlags",
+  "Columns": [
+    {
+      "Alias": "FlagID",
+      "Hidden": true,
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "FlagCaption",
+      "Caption": "$Views_KrPermissionFlags_Name",
+      "FilterParameter": "CaptionParam",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "FlagCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "CaptionParam",
+      "AllowedOperands": [
+        "Contains"
+      ],
+      "Caption": "$Views_KrPermissionFlags_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "CaptionParam",
+  "References": [
+    {
+      "ColPrefix": "Flag",
+      "DisplayValueColumn": "FlagCaption",
+      "RefSection": [
+        "KrPermissionFlags"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionFlags MSSQL]
+
+
+
+[TEXTPART KrPermissionFlags PGSQL]

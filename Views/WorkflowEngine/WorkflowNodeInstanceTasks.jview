@@ -1,0 +1,260 @@
+﻿{
+  "Alias": "WorkflowNodeInstanceTasks",
+  "Caption": "$Views_Names_WorkflowNodeInstanceTasks",
+  "Description": "Данное представление используется только для получения данных",
+  "GroupName": "WorkflowEngine",
+  "ID": "31853f54-cb3d-4004-a79c-a020cc0014c3",
+  "JsonMetadataSource::txt": "WorkflowNodeInstanceTasks JSONMETA",
+  "MsQuerySource::txt": "WorkflowNodeInstanceTasks MSSQL",
+  "PgQuerySource::txt": "WorkflowNodeInstanceTasks PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART WorkflowNodeInstanceTasks JSONMETA]
+{
+  "Alias": "WorkflowNodeInstanceTasks",
+  "Caption": "$Views_Names_WorkflowNodeInstanceTasks",
+  "Columns": [
+    {
+      "Alias": "TaskID",
+      "Hidden": true,
+      "Type": "$Tasks.RowID"
+    },
+    {
+      "Alias": "TaskTypeID",
+      "Type": "$Tasks.TypeID"
+    },
+    {
+      "Alias": "TaskTypeCaption",
+      "Localizable": true,
+      "Type": "$Tasks.TypeCaption"
+    },
+    {
+      "Alias": "TaskRoleID",
+      "Type": "$TaskAssignedRoles.RoleID"
+    },
+    {
+      "Alias": "TaskRoleName",
+      "Type": "$TaskAssignedRoles.RoleName"
+    },
+    {
+      "Alias": "TaskUserID",
+      "Type": "$Tasks.UserID"
+    },
+    {
+      "Alias": "TaskUserName",
+      "Type": "$Tasks.UserName"
+    },
+    {
+      "Alias": "TaskAuthorID",
+      "Type": "$TaskAssignedRoles.RoleID"
+    },
+    {
+      "Alias": "TaskAuthorName",
+      "Type": "$TaskAssignedRoles.RoleName"
+    },
+    {
+      "Alias": "TaskStateID",
+      "Type": "$Tasks.StateID"
+    },
+    {
+      "Alias": "TaskStateName",
+      "Localizable": true,
+      "Type": "$TaskStates.Name"
+    },
+    {
+      "Alias": "TaskDigest",
+      "Type": "$Tasks.Digest"
+    },
+    {
+      "Alias": "TaskCreated",
+      "Type": "$Tasks.Created"
+    },
+    {
+      "Alias": "TaskPlanned",
+      "Type": "$Tasks.Planned"
+    },
+    {
+      "Alias": "TaskInProgress",
+      "Type": "$Tasks.InProgress"
+    },
+    {
+      "Alias": "TaskPostponed",
+      "Type": "$Tasks.Postponed"
+    },
+    {
+      "Alias": "TaskPostponedTo",
+      "Type": "$Tasks.PostponedTo"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "NodeInstanceID",
+      "Caption": "$Views_WorkflowNodeInstanceTasks_NodeInstanceID",
+      "Multiple": false,
+      "Type": "$WorkflowEngineTaskSubscriptions.NodeRowID"
+    },
+    {
+      "Alias": "ProcessInstance",
+      "Caption": "$Views_MyTasks_FunctionRole_ProcessInstance_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$WorkflowEngineNodes.ProcessRowID"
+    },
+    {
+      "Alias": "FunctionRoleAuthorParam",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "FunctionRoleCards"
+      },
+      "Caption": "$Views_MyTasks_FunctionRole_Author_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "FunctionRoles"
+      ],
+      "Type": "$TaskAssignedRoles.TaskRoleID"
+    },
+    {
+      "Alias": "FunctionRolePerformerParam",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "FunctionRoleCards"
+      },
+      "Caption": "$Views_MyTasks_FunctionRole_Performer_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "FunctionRoles"
+      ],
+      "Type": "$TaskAssignedRoles.TaskRoleID"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WorkflowNodeInstanceTasks MSSQL]
+SELECT
+	[t].[RowID] as [TaskID],
+	[t].[TypeID] as [TaskTypeID],
+	[t].[TypeCaption] as [TaskTypeCaption],
+	[rl].[RoleID] as [TaskRoleID],
+	STUFF((
+		SELECT N', ' + [tar].[RoleName]
+		FROM [TaskAssignedRoles] AS [tar] WITH (NOLOCK)
+		WHERE [tar].[ID] = [t].[RowID]
+			AND [tar].[ParentRowID] IS NULL
+			#param(FunctionRolePerformerParam, [tar].[TaskRoleID])
+		FOR XML PATH('')), 1, 2, N'') as [TaskRoleName],
+	[t].[UserID] as [TaskUserID],
+	[t].[UserName] as [TaskUserName],
+	[au].[RoleID] as [TaskAuthorID],
+	STUFF((
+		SELECT N', ' + [tar].[RoleName]
+		FROM [TaskAssignedRoles] AS [tar] WITH (NOLOCK)
+		WHERE [tar].[ID] = [t].[RowID]
+			AND [tar].[ParentRowID] IS NULL
+			#param(FunctionRoleAuthorParam, [tar].[TaskRoleID])
+		FOR XML PATH('')), 1, 2, N'') as [TaskAuthorName],
+	[t].[StateID] as [TaskStateID],
+	[ts].[Name] as [TaskStateName],
+	[t].[Digest] as [TaskDigest],
+	[t].[Created] as [TaskCreated],
+	[t].[Planned] as [TaskPlanned],
+	[t].[InProgress] as [TaskInProgress],
+	[t].[Postponed] as [TaskPostponed],
+	[t].[PostponedTo] as [TaskPostponedTo]
+FROM [WorkflowEngineTaskSubscriptions] [wts] WITH(NOLOCK)
+INNER JOIN [Tasks] [t] WITH(NOLOCK) on [wts].[TaskID] = [t].[RowID]
+INNER JOIN [TaskStates] [ts] WITH(NOLOCK) on [t].[StateID] = [ts].[ID]
+INNER JOIN [WorkflowEngineNodes] [wen] WITH(NOLOCK) on [wts].[NodeRowID] = [wen].[RowID]
+OUTER APPLY (
+	SELECT TOP(1) [tar].[RoleID]
+	FROM [TaskAssignedRoles] AS [tar] WITH(NOLOCK)
+	WHERE [t].[RowID] = [tar].[ID]			
+		AND [tar].[ParentRowID] IS NULL
+		#param(FunctionRoleAuthorParam, [tar].[TaskRoleID])
+	) AS [au]
+OUTER APPLY (
+	SELECT TOP(1) [tar].[RoleID]
+	FROM [TaskAssignedRoles] AS [tar] WITH(NOLOCK)
+	WHERE [t].[RowID] = [tar].[ID]
+		AND [tar].[ParentRowID] IS NULL
+		#param(FunctionRolePerformerParam, [tar].[TaskRoleID])
+	) AS [rl]
+WHERE 1 = 1
+	#param(NodeInstanceID, [wts].[NodeRowID])
+	#param(ProcessInstance, [wen].[ProcessRowID])
+
+
+[TEXTPART WorkflowNodeInstanceTasks PGSQL]
+SELECT
+	"t"."RowID" as "TaskID",
+	"t"."TypeID" as "TaskTypeID",
+	"t"."TypeCaption" as "TaskTypeCaption",
+	"rl"."RoleID" as "TaskRoleID",
+	(
+		SELECT string_agg("tar"."RoleName", ', ')
+		FROM "TaskAssignedRoles" AS "tar"
+		WHERE "tar"."ID" = "t"."RowID"
+			AND "tar"."ParentRowID" IS NULL
+			#param(FunctionRolePerformerParam, "tar"."TaskRoleID")
+	) as "TaskRoleName",
+	"t"."UserID" as "TaskUserID",
+	"t"."UserName" as "TaskUserName",
+	"au"."RoleID" as "TaskAuthorID",
+	(
+		SELECT string_agg("tar"."RoleName", ', ')
+		FROM "TaskAssignedRoles" AS "tar"
+		WHERE "tar"."ID" = "t"."RowID"
+			AND "tar"."ParentRowID" IS NULL
+			#param(FunctionRoleAuthorParam, "tar"."TaskRoleID")
+	) as "TaskAuthorName",
+	"t"."StateID" as "TaskStateID",
+	"ts"."Name" as "TaskStateName",
+	"t"."Digest" as "TaskDigest",
+	"t"."Created" as "TaskCreated",
+	"t"."Planned" as "TaskPlanned",
+	"t"."InProgress" as "TaskInProgress",
+	"t"."Postponed" as "TaskPostponed",
+	"t"."PostponedTo" as "TaskPostponedTo"
+FROM "WorkflowEngineTaskSubscriptions" "wts"
+INNER JOIN "Tasks" "t" on "wts"."TaskID" = "t"."RowID"
+INNER JOIN "TaskStates" "ts" on "t"."StateID" = "ts"."ID"
+INNER JOIN "WorkflowEngineNodes" "wen" on "wts"."NodeRowID" = "wen"."RowID"
+LEFT JOIN LATERAL (
+	SELECT "tar"."RoleID"
+	FROM "TaskAssignedRoles" AS "tar"
+	WHERE "t"."RowID" = "tar"."ID"
+		AND "tar"."ParentRowID" IS NULL
+		#param(FunctionRoleAuthorParam, "tar"."TaskRoleID")
+	LIMIT 1
+) AS "au" ON true
+LEFT JOIN LATERAL (
+	SELECT "tar"."RoleID"
+	FROM "TaskAssignedRoles" AS "tar"
+	WHERE "t"."RowID" = "tar"."ID"
+		AND "tar"."ParentRowID" IS NULL
+		#param(FunctionRolePerformerParam, "tar"."TaskRoleID")
+	LIMIT 1
+) AS "rl" ON true
+WHERE true
+	#param(NodeInstanceID, "wts"."NodeRowID")
+	#param(ProcessInstance, "wen"."ProcessRowID")

@@ -1,0 +1,76 @@
+﻿{
+  "Alias": "WorkflowSignalTypes",
+  "Caption": "$Views_Names_WorkflowSignalTypes",
+  "GroupName": "WorkflowEngine",
+  "ID": "3bc28139-54ad-45fe-9aa7-83119dc47b62",
+  "JsonMetadataSource::txt": "WorkflowSignalTypes JSONMETA",
+  "MsQuerySource::txt": "WorkflowSignalTypes MSSQL",
+  "PgQuerySource::txt": "WorkflowSignalTypes PGSQL"
+}
+
+[TEXTPART WorkflowSignalTypes JSONMETA]
+{
+  "Alias": "WorkflowSignalTypes",
+  "Caption": "$Views_Names_WorkflowSignalTypes",
+  "Columns": [
+    {
+      "Alias": "SignalTypeID",
+      "Hidden": true,
+      "Type": "$WorkflowSignalTypes.ID"
+    },
+    {
+      "Alias": "SignalTypeName",
+      "Caption": "$Views_WorkflowSignalTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "st.Name",
+      "Type": "$WorkflowSignalTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "SignalTypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WorkflowSignalTypes_Name_Param",
+      "Multiple": false,
+      "Type": "$WorkflowSignalTypes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "SignalType",
+      "DisplayValueColumn": "SignalTypeName",
+      "RefSection": [
+        "WorkflowSignalTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WorkflowSignalTypes MSSQL]
+SELECT
+	[st].[ID] as [SignalTypeID]
+	,[st].[Name] as [SignalTypeName]
+FROM [WorkflowSignalTypes] [st] WITH(NOLOCK)
+WHERE 1 = 1
+	#param(Name, [st].[Name])
+ORDER BY #order_by
+
+
+[TEXTPART WorkflowSignalTypes PGSQL]
+SELECT
+	"st"."ID" as "SignalTypeID"
+	,"st"."Name" as "SignalTypeName"
+FROM "WorkflowSignalTypes" "st"
+WHERE true
+	#param(Name, "st"."Name")
+ORDER BY #order_by

@@ -1,0 +1,76 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_SubprocessControl",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "DoNotCollapseWithTopBlock": true
+          },
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_SignalForSend",
+              "ComplexColumnID::uid": "c21fb288-e09e-4a5c-a8ab-77065749fb8d",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "ManualInput": true,
+                "ManualInputColumnID::uid": "da1bd240-4abe-4b1d-aed6-209e72b2855f",
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "WorkflowSignalTypes"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "WorkflowSignalTypes",
+                "ViewAliasComboBox": "WorkflowSignalTypes"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "2f0a4a5d-6601-4cd9-9c2d-09d193d33352",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "WorkflowSubprocessControlAction",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "WorkflowActions",
+  "ID::uid": "3dc924c7-a7c8-407c-a7c7-5d2d77e6e1bc",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "WorkflowSubprocessControlAction",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "c21fb288-e09e-4a5c-a8ab-77065749fb8d"
+      ],
+      "SectionID::uid": "2f0a4a5d-6601-4cd9-9c2d-09d193d33352"
+    }
+  ],
+  "Validators": null
+}

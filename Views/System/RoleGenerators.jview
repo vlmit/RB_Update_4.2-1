@@ -1,0 +1,122 @@
+﻿{
+  "Alias": "RoleGenerators",
+  "Caption": "$Views_Names_RoleGenerators",
+  "GroupName": "System",
+  "ID": "e8163ca6-19e3-09ce-bb88-efcac757a8f4",
+  "JsonMetadataSource::txt": "RoleGenerators JSONMETA",
+  "MsQuerySource::txt": "RoleGenerators MSSQL",
+  "PgQuerySource::txt": "RoleGenerators PGSQL"
+}
+
+[TEXTPART RoleGenerators JSONMETA]
+{
+  "Alias": "RoleGenerators",
+  "Caption": "$Views_Names_RoleGenerators",
+  "Columns": [
+    {
+      "Alias": "GeneratorID",
+      "Hidden": true,
+      "Type": "$RoleGenerators.ID"
+    },
+    {
+      "Alias": "GeneratorName",
+      "Caption": "$Views_RoleGenerators_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$RoleGenerators.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "GeneratorName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_RoleGenerators_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Generator",
+      "DisplayValueColumn": "GeneratorName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "RoleGenerators"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RoleGenerators MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [GeneratorID],
+		[t].[Name]								AS [GeneratorName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [RoleGenerators] AS [t] WITH (NOLOCK)
+	#if(Name || Normal && request.SortedBy("GeneratorName")) {
+	CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+	}
+	WHERE 1 = 1
+		#param(Name, [lName].[Value])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART RoleGenerators PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"	AS "GeneratorID",
+	"t"."Name"	AS "GeneratorName",
+	0::int8		AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "RoleGenerators" AS "t"
+#if(Name || Normal && request.SortedBy("GeneratorName")) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

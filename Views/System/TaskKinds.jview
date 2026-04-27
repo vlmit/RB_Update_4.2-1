@@ -1,0 +1,138 @@
+﻿{
+  "Alias": "TaskKinds",
+  "Caption": "$Views_Names_TaskKinds",
+  "GroupName": "System",
+  "ID": "57dc8c0a-080f-486d-ba97-ffc52869754e",
+  "JsonMetadataSource::txt": "TaskKinds JSONMETA",
+  "MsQuerySource::txt": "TaskKinds MSSQL",
+  "PgQuerySource::txt": "TaskKinds PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TaskKinds JSONMETA]
+{
+  "Alias": "TaskKinds",
+  "Caption": "$Views_Names_TaskKinds",
+  "Columns": [
+    {
+      "Alias": "KindID",
+      "FilterParameter": "ID",
+      "FilterType": "Parameter",
+      "Hidden": true,
+      "Type": "$TaskKinds.ID"
+    },
+    {
+      "Alias": "KindCaption",
+      "Caption": "$Views_TaskKinds_Caption",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$TaskKinds.Caption"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "KindCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "ID",
+      "Caption": "$Views_TaskKinds_ID_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$TaskKinds.ID"
+    },
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_TaskKinds_Caption_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "Kind",
+      "DisplayValueColumn": "KindCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "TaskKinds"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TaskKinds MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [KindID],
+		[t].[Caption]							AS [KindCaption],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [TaskKinds] AS [t] WITH (NOLOCK)
+	#if(Caption || Normal && request.SortedBy("KindCaption")) {
+	CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+	}
+	WHERE 1 = 1
+		#param(Caption, [lCaption].[Value])
+		#param(ID, [t].[ID])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART TaskKinds PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"								AS "KindID",
+	"t"."Caption"							AS "KindCaption",
+	0::int8									AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "TaskKinds" AS "t"
+#if(Caption || Normal && request.SortedBy("KindCaption")) {
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+}
+WHERE true
+	#param(Caption, "lCaption"."Value")
+	#param(ID, "t"."ID")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

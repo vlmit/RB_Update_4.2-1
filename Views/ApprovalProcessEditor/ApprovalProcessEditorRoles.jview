@@ -1,0 +1,234 @@
+﻿{
+  "Alias": "ApprovalProcessEditorRoles",
+  "Caption": "$Views_Names_ApprovalProcessEditorRoles",
+  "GroupName": "ApprovalProcessEditor",
+  "ID": "0292286b-3326-46bd-987d-0698963c6d87",
+  "JsonMetadataSource::txt": "ApprovalProcessEditorRoles JSONMETA",
+  "MsQuerySource::txt": "ApprovalProcessEditorRoles MSSQL",
+  "PgQuerySource::txt": "ApprovalProcessEditorRoles PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART ApprovalProcessEditorRoles JSONMETA]
+{
+  "Alias": "ApprovalProcessEditorRoles",
+  "Caption": "$Views_Names_ApprovalProcessEditorRoles",
+  "Columns": [
+    {
+      "Alias": "RoleID",
+      "Caption": "RoleID",
+      "Hidden": true,
+      "Type": "$Roles.ID"
+    },
+    {
+      "Alias": "RoleName",
+      "Caption": "RoleName",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.Name",
+      "Type": "$Roles.Name"
+    },
+    {
+      "Alias": "TypeID",
+      "Caption": "TypeID",
+      "FilterParameter": "TypeID",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$Roles.TypeID"
+    },
+    {
+      "Alias": "Description",
+      "Caption": "Description",
+      "Localizable": true,
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "Parent",
+      "Caption": "Parent",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RoleName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$ApprovalProcessEditor_Roles_Name",
+      "Type": "$Roles.Name"
+    },
+    {
+      "Alias": "TypeID",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "RoleTypeNameParam",
+        "PopupColumns": [
+          1
+        ],
+        "RefPrefix": "RoleType",
+        "ViewAlias": "RoleTypes"
+      },
+      "Caption": "$ApprovalProcessEditor_Roles_TypeID",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "RoleTypes"
+      },
+      "RefSection": [
+        "RoleTypes"
+      ],
+      "Type": "$Roles.TypeID"
+    },
+    {
+      "Alias": "RoleID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$ApprovalProcessEditor_Roles_RoleID",
+      "Type": "$Roles.ID"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ApprovalProcessEditorRoles MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[ID] 		AS [RoleID],
+	[t].[Name] 		AS [RoleName],
+	[t].[TypeID],
+	CASE
+		WHEN [pr].[ID] IS NOT NULL
+			THEN [pr].[Position]
+		ELSE 
+			CASE
+				WHEN [t].[TypeID] = 0 --Static
+					THEN '$ApprovalProcessEditor_EmployeesAndRoles_Type_StaticRole'
+				ELSE [rt].[Name]
+			END
+	END AS [Description],
+	CASE
+		WHEN [pr].[ID] IS NOT NULL
+			THEN 
+			(
+				SELECT TOP(1)
+					[r].[Name]
+				FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+				INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+					ON [r].[ID] = [ru].[ID]
+				WHERE [ru].[UserID] = [t].[ID]
+					AND [ru].[TypeID] = 2 -- Department
+				ORDER BY [r].[Name]
+			)
+		ELSE 
+			CASE
+				WHEN [t].[TypeID] IN (0, 2) --Static, Department
+					THEN [t].[ParentName]
+				ELSE NULL
+			END
+	END	AS [Parent]
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID],
+		[t].[Name],
+		[t].[TypeID],
+		[t].[ParentName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+	FROM [Roles] AS [t] WITH (NOLOCK)
+	WHERE [t].[TypeID] <> 6 --  не показываем временные роли заданий
+		#if(!RoleID) {
+		AND [t].[Hidden] = 0
+		}
+		#param(Name, [t].[Name])
+		#param(TypeID, [t].[TypeID])
+		#param(RoleID, [t].[ID])
+	) AS [t]
+#if(Normal) {
+INNER JOIN [RoleTypes] AS [rt] WITH (NOLOCK)
+	ON [rt].[ID] = [t].[TypeID]
+LEFT JOIN [PersonalRoles] AS [pr] WITH (NOLOCK)
+	ON [pr].[ID] = [t].[ID]
+ORDER BY [t].[rn]
+}
+
+[TEXTPART ApprovalProcessEditorRoles PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"			AS "RoleID",
+	"t"."Name"			AS "RoleName",
+	"t"."TypeID",
+	CASE
+		WHEN "pr"."ID" IS NOT NULL
+			THEN "pr"."Position"
+		ELSE
+			CASE
+				WHEN "t"."TypeID" = 0 --Static
+					THEN '$ApprovalProcessEditor_EmployeesAndRoles_Type_StaticRole'
+				ELSE "rt"."Name"
+			END
+	END AS "Description",
+	CASE
+		WHEN "pr"."ID" IS NOT NULL
+			THEN 
+			(
+				SELECT
+					"r"."Name"
+				FROM "RoleUsers" AS "ru"
+				INNER JOIN "Roles" AS "r"
+					ON "r"."ID" = "ru"."ID"
+				WHERE "ru"."UserID" = "t"."ID"
+					AND "ru"."TypeID" = 2
+				ORDER BY "r"."Name"
+				LIMIT 1
+			)
+		ELSE 
+			CASE
+				WHEN "t"."TypeID" IN (0, 2) --Static, Department
+					THEN "t"."ParentName"
+				ELSE NULL
+			END
+	END	AS "Parent"
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID",
+		"t"."Name",
+		"t"."TypeID",
+		"t"."ParentName"
+		}
+	
+	FROM "Roles" AS "t"
+	WHERE "t"."TypeID" <> 6 -- не показываем временные роли заданий
+		#if(!RoleID) {
+		AND NOT "t"."Hidden"
+		}
+		#param(Name, "t"."Name")
+		#param(TypeID, "t"."TypeID")
+		#param(RoleID, "t"."ID")
+	) AS "t"
+#if(Normal) {
+INNER JOIN "RoleTypes" AS "rt"
+	ON "rt"."ID" = "t"."TypeID"
+LEFT JOIN "PersonalRoles" AS "pr"
+	ON "pr"."ID" = "t"."ID"
+ORDER BY #order_by
+}

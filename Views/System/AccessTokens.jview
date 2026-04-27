@@ -1,0 +1,300 @@
+﻿{
+  "Alias": "AccessTokens",
+  "Caption": "$Views_Names_Tokens_AccessTokens",
+  "GroupName": "System",
+  "ID": "19a93fc2-c6a2-4240-ac5d-485c9835c508",
+  "JsonMetadataSource::txt": "AccessTokens JSONMETA",
+  "MsQuerySource::txt": "AccessTokens MSSQL",
+  "PgQuerySource::txt": "AccessTokens PGSQL"
+}
+
+[TEXTPART AccessTokens JSONMETA]
+{
+  "Alias": "AccessTokens",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_Tokens_AccessTokens",
+  "Columns": [
+    {
+      "Alias": "ID",
+      "Caption": "$Views_Tokens_ID",
+      "FilterParameter": "ID",
+      "FilterType": "Parameter",
+      "Type": "$Tokens.ID"
+    },
+    {
+      "Alias": "Description",
+      "Caption": "$Views_Tokens_Description",
+      "FilterParameter": "Description",
+      "FilterType": "Parameter",
+      "SortBy": "tk.Description",
+      "Type": "$Tokens.Description"
+    },
+    {
+      "Alias": "Scope",
+      "Caption": "$Views_Tokens_Scope",
+      "FilterParameter": "Scope",
+      "FilterType": "Parameter",
+      "SortBy": "tk.Scope",
+      "Type": "$Tokens.Scope"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_Tokens_Created",
+      "FilterParameter": "Created",
+      "FilterType": "Parameter",
+      "SortBy": "tk.Created",
+      "Type": "$Tokens.Created"
+    },
+    {
+      "Alias": "Expires",
+      "Caption": "$Views_Tokens_Expires",
+      "FilterParameter": "Expires",
+      "FilterType": "Parameter",
+      "SortBy": "tk.Expires",
+      "Type": "$Tokens.Expires"
+    },
+    {
+      "Alias": "CreatedByName",
+      "Caption": "$Views_Tokens_CreatedByName",
+      "SortBy": "pr.FullName",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "RefID",
+      "Caption": "$Views_Tokens_RefID",
+      "FilterParameter": "RefID",
+      "FilterType": "Parameter",
+      "SortBy": "tk.RefID",
+      "Type": "$Tokens.RefID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Tokens_UserName",
+      "SortBy": "pr2.FullName",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Hash",
+      "Caption": "$Views_Tokens_Hash",
+      "FilterParameter": "Hash",
+      "FilterType": "Parameter",
+      "InvisibleByDefault": true,
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Created",
+      "SortDirection": "Descending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "ID",
+      "AllowedOperands": [
+        "Equality",
+        "Contains",
+        "NonEquality"
+      ],
+      "Caption": "$Views_Tokens_ID",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Description",
+      "Caption": "$Views_Tokens_Description",
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "Scope",
+      "Caption": "$Views_Tokens_Scope",
+      "Multiple": false,
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "Hash",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_Tokens_Hash",
+      "Multiple": false,
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "CreatedByID",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Tokens_CreatedByName",
+      "IgnoreCase": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "RefID",
+      "AllowedOperands": [
+        "Equality",
+        "IsNotNull",
+        "IsNull",
+        "NonEquality"
+      ],
+      "Caption": "$Views_Tokens_RefID",
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "UserID",
+      "AllowedOperands": [
+        "Equality",
+        "IsNotNull",
+        "IsNull",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Tokens_UserName",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "Created",
+      "AllowedOperands": [
+        "Between"
+      ],
+      "Caption": "$Views_Tokens_Created",
+      "Type": "DateTime Not Null"
+    },
+    {
+      "Alias": "Expires",
+      "AllowedOperands": [
+        "Between"
+      ],
+      "Caption": "$Views_Tokens_Expires",
+      "Type": "DateTime Not Null"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AccessTokens MSSQL]
+#if(Administrator && (ID || Scope || Description || Created || Expires || CreatedByID || RefID || UserID || Hash)) {
+SELECT
+  [tk].[MaskedID] AS [ID],
+  [t].[Description],
+  [t].[Scope],
+  [t].[Created],
+  [t].[Expires],
+  [tk].[CreatedByName],
+  [t].[RefID],
+  [tk].[UserName],
+  [tk].[Hash]
+FROM (
+  SELECT 
+    [tk].[ID],
+    CONCAT(SUBSTRING([tk].[ID],1,3), '...', SUBSTRING([tk].[ID],LEN([tk].[ID])-2,3)) AS [MaskedID],
+    CONVERT([VARCHAR](MAX), [tk].[TokenHash], 2) AS [Hash],
+    [pr].[FullName] AS [CreatedByName],
+    [pr2].[FullName] AS [UserName],
+    row_number() OVER (ORDER BY #order_by) AS [rn]
+  FROM [Tokens] AS [tk] WITH (NOLOCK)
+  LEFT JOIN [PersonalRoles] AS [pr] WITH (NOLOCK)
+    ON [pr].[ID] = [tk].[CreatedByID]
+  LEFT JOIN [PersonalRoles] AS [pr2] WITH (NOLOCK)
+    ON [pr2].[ID] = [tk].[UserID]
+  WHERE 1=1
+    #param(ID, CONCAT(SUBSTRING([tk].[ID],1,3), '...', SUBSTRING([tk].[ID],LEN([tk].[ID])-2,3)))
+    #param(Scope, [tk].[Scope])
+    #param(Description, [tk].[Description])
+    #param(Created, [tk].[Created])
+    #param(Expires, [tk].[Expires])
+    #param(CreatedByID, [tk].[CreatedByID])
+    #param(RefID, [tk].[RefID])
+    #param(UserID, [tk].[UserID])
+    #param(Hash, CONVERT([VARCHAR](MAX), [tk].[TokenHash], 2))
+) AS [tk]
+INNER JOIN [Tokens] AS [t] WITH (NOLOCK)
+  ON [t].[ID] = [tk].[ID]
+#if(PageOffset) {
+WHERE [tk].[rn] >= #param(PageOffset) AND [tk].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+ORDER BY [tk].[rn]
+} {
+-- no parameters given
+SELECT
+  '' AS [ID],
+  '' AS [Description],
+  '' AS [Scope],
+  SYSDATETIME() AS [Created],
+  SYSDATETIME() AS [Expires],
+  '' AS [CreatedByName],
+  CAST(NULL AS UNIQUEIDENTIFIER) AS [RefID],
+  '' AS [UserName],
+  '' AS [Hash]
+WHERE 1=0
+}
+
+[TEXTPART AccessTokens PGSQL]
+#if(Administrator && (ID || Scope || Description || Created || Expires || CreatedByID || RefID || UserID || Hash)) {
+SELECT 
+  (substring("tk"."ID" from 1 for 3) || '...' || substring("tk"."ID" from length("tk"."ID")-2 for 3)) AS "ID",
+  "tk"."Description",
+  "tk"."Scope",
+  "tk"."Created",
+  "tk"."Expires",
+  "pr"."FullName" AS "CreatedByName",
+  "tk"."RefID",
+  "pr2"."FullName" AS "UserName",
+  encode("tk"."TokenHash", 'hex') AS "Hash"
+FROM "Tokens" AS "tk"
+LEFT JOIN "PersonalRoles" AS "pr"
+  ON "pr"."ID" = "tk"."CreatedByID"
+LEFT JOIN "PersonalRoles" AS "pr2"
+  ON "pr2"."ID" = "tk"."UserID"
+WHERE 1=1
+  #param(ID, (substring("tk"."ID" from 1 for 3) || '...' || substring("tk"."ID" from length("tk"."ID")-2 for 3)))
+  #param(Scope, lower("tk"."Scope"))
+  #param(Description, lower("tk"."Description"))
+  #param(Created, "tk"."Created")
+  #param(Expires, "tk"."Expires")
+  #param(CreatedByID, "tk"."CreatedByID")
+  #param(RefID, "tk"."RefID")
+  #param(UserID, "tk"."UserID")
+  #param(Hash, encode("tk"."TokenHash", 'hex') )
+ORDER BY #order_by
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}
+} {
+-- no parameters given
+SELECT
+  '' AS "ID",
+  '' AS "Description",
+  '' AS "Scope",
+  now() AS "Created",
+  now() AS "Expires",
+  '' AS "CreatedByName",
+  NULL::uuid AS "RefID",
+  '' AS "UserName",
+  '' AS "Hash"
+WHERE 1=0
+}

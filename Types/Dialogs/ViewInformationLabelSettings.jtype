@@ -1,0 +1,130 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_ViewInformationLabelSettings",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": "Informational label text",
+          "ID::uid": "31277a84-868f-45b1-b9d7-e933f402171d",
+          "Name": "LabelText",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": "List of mandatory parameters",
+          "ID::uid": "89c05d84-eaa1-47fa-a713-f93def6cab3d",
+          "Name": "RequiredParams",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": "False",
+          "Description": "All parameters are mandatory",
+          "ID::uid": "65018982-22bb-4905-9052-7a506e5769bd",
+          "Name": "AllParamsRequired",
+          "SchemeType": "Boolean Not Null"
+        }
+      ],
+      "Description": "Settings",
+      "ID::uid": "278321ef-ee11-46c0-b2ea-a0665eb4d557",
+      "Name": "Settings",
+      "TableType::int": 1
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Main",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ViewInfoLabelText",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "LabelText",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "31277a84-868f-45b1-b9d7-e933f402171d"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "278321ef-ee11-46c0-b2ea-a0665eb4d557",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ViewInfoRequiredParams",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "RequiredParams",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "89c05d84-eaa1-47fa-a713-f93def6cab3d"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "278321ef-ee11-46c0-b2ea-a0665eb4d557",
+              "ToolTip": "$CardTypes_Controls_ViewInfoRequiredParams_Tooltip",
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ViewInfoAllParamsRequired",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "AllParamsRequired",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "65018982-22bb-4905-9052-7a506e5769bd"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "278321ef-ee11-46c0-b2ea-a0665eb4d557",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Main"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "MainForm",
+      "TabCaption": "$CardTypes_ViewInformationLabelSettings"
+    }
+  ],
+  "Group": "System",
+  "ID::uid": "e560622b-2773-43cf-ab5f-39417c4f9c7c",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "ViewInformationLabelSettings",
+  "SchemeItems": null,
+  "Validators": null
+}

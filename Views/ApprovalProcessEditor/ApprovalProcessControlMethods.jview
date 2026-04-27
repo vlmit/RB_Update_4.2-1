@@ -1,0 +1,85 @@
+﻿{
+  "Alias": "ApprovalProcessControlMethods",
+  "Caption": "$Views_Names_ApprovalProcessControlMethods",
+  "GroupName": "ApprovalProcessEditor",
+  "ID": "ca1dee8d-e15e-47d7-a021-58d9e283d5ef",
+  "JsonMetadataSource::txt": "ApprovalProcessControlMethods JSONMETA",
+  "MsQuerySource::txt": "ApprovalProcessControlMethods MSSQL",
+  "PgQuerySource::txt": "ApprovalProcessControlMethods PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART ApprovalProcessControlMethods JSONMETA]
+{
+  "Alias": "ApprovalProcessControlMethods",
+  "Caption": "$Views_Names_ApprovalProcessControlMethods",
+  "Columns": [
+    {
+      "Alias": "ControlMethodID",
+      "Hidden": true,
+      "Type": "$ApprovalProcessControlMethods.ID"
+    },
+    {
+      "Alias": "ControlMethodName",
+      "Caption": "$Views_ApprovalProcessControlMethods_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$ApprovalProcessControlMethods.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ControlMethodName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_ApprovalProcessControlMethods_Name_Param",
+      "Multiple": false,
+      "Type": "$ApprovalProcessControlMethods.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "ControlMethod",
+      "DisplayValueColumn": "ControlMethodName",
+      "RefSection": [
+        "ApprovalProcessControlMethods"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ApprovalProcessControlMethods MSSQL]
+SELECT
+	[ct].[ID] 	AS [ControlMethodID],
+	[ct].[Name] AS [ControlMethodName]
+FROM [ApprovalProcessControlMethods] AS [ct] WITH(NOLOCK)
+#if(Name || request.SortedBy("ControlMethodName")) {
+CROSS APPLY [Localization]([ct].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+[TEXTPART ApprovalProcessControlMethods PGSQL]
+SELECT
+	"ct"."ID" 	AS "ControlMethodID",
+	"ct"."Name" AS "ControlMethodName"
+FROM "ApprovalProcessControlMethods" AS "ct"
+#if(Name || request.SortedBy("ControlMethodName")) {
+CROSS JOIN "Localization"("ct"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

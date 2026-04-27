@@ -1,0 +1,366 @@
+﻿{
+  "Alias": "KrPermissionsExtendedFiles",
+  "Caption": "$Views_Names_KrPermissionsExtendedFiles",
+  "GroupName": "Kr Wf",
+  "ID": "76a033f1-404b-4dee-9305-9cc8bf8c22f0",
+  "JsonMetadataSource::txt": "KrPermissionsExtendedFiles JSONMETA",
+  "MsQuerySource::txt": "KrPermissionsExtendedFiles MSSQL",
+  "PgQuerySource::txt": "KrPermissionsExtendedFiles PGSQL"
+}
+
+[TEXTPART KrPermissionsExtendedFiles JSONMETA]
+{
+  "Alias": "KrPermissionsExtendedFiles",
+  "Caption": "$Views_Names_KrPermissionsExtendedFiles",
+  "Columns": [
+    {
+      "Alias": "KrPermissionsID",
+      "Hidden": true,
+      "Type": "$KrPermissions.ID"
+    },
+    {
+      "Alias": "KrPermissionsCaption",
+      "Caption": "$Views_KrPermissionsExtendedFiles_AccessRule",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "SortBy": "t.Caption",
+      "Type": "$KrPermissions.Caption"
+    },
+    {
+      "Alias": "KrPermissionsPriority",
+      "Caption": "$Views_KrPermissionsExtendedFiles_Priority",
+      "SortBy": "t.Priority",
+      "Type": "$KrPermissions.Priority"
+    },
+    {
+      "Alias": "KrPermissionsExtensions",
+      "Caption": "$Views_KrPermissionsExtendedFiles_Extensions",
+      "FilterParameter": "Extensions",
+      "FilterType": "Parameter",
+      "SortBy": "pe.Extensions",
+      "Type": "$KrPermissionExtendedFileRules.Extensions"
+    },
+    {
+      "Alias": "KrPermissionsCategories",
+      "Caption": "$Views_KrPermissionsExtendedFiles_FileCategories",
+      "FilterParameter": "Category",
+      "FilterType": "Parameter",
+      "Type": "$KrPermissionExtendedFileRuleCategories.CategoryName"
+    },
+    {
+      "Alias": "KrPermissionsFileCheckRule",
+      "Caption": "$Views_KrPermissionsExtendedFiles_FileCheckRule",
+      "FilterParameter": "FileCheckRule",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "pe.FileCheckRuleID",
+      "Type": "$KrPermissionExtendedFileRules.FileCheckRuleName"
+    },
+    {
+      "Alias": "KrPermissionsReadAccessSetting",
+      "Caption": "$Views_KrPermissionsExtendedFiles_ReadAccessSetting",
+      "FilterParameter": "ReadAccessSetting",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "pe.ReadAccessSettingID",
+      "Type": "$KrPermissionExtendedFileRules.ReadAccessSettingName"
+    },
+    {
+      "Alias": "KrPermissionsEditAccessSetting",
+      "Caption": "$Views_KrPermissionsExtendedFiles_EditAccessSetting",
+      "FilterParameter": "EditAccessSetting",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "pe.EditAccessSettingID",
+      "Type": "$KrPermissionExtendedFileRules.EditAccessSettingName"
+    },
+    {
+      "Alias": "KrPermissionsDeleteAccessSetting",
+      "Caption": "$Views_KrPermissionsExtendedFiles_DeleteAccessSetting",
+      "FilterParameter": "DeleteAccessSetting",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "pe.DeleteAccessSettingID",
+      "Type": "$KrPermissionExtendedFileRules.DeleteAccessSettingName"
+    },
+    {
+      "Alias": "KrPermissionsSignAccessSetting",
+      "Caption": "$Views_KrPermissionsExtendedFiles_SignAccessSetting",
+      "FilterParameter": "SignAccessSetting",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "pe.SignAccessSettingID",
+      "Type": "$KrPermissionExtendedFileRules.SignAccessSettingName"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "KrPermissionsCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_KrPermissionsExtendedFiles_Name_Param",
+      "Type": "$KrPermissions.Caption"
+    },
+    {
+      "Alias": "AccessRule",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "KrPermissions"
+      },
+      "Caption": "$Views_KrPermissionsExtendedFiles_AccessRule_Param",
+      "RefSection": [
+        "KrPermissions"
+      ],
+      "Type": "$KrPermissions.ID"
+    },
+    {
+      "Alias": "Extensions",
+      "Caption": "$Views_KrPermissionsExtendedFiles_Extensions_Param",
+      "Type": "$KrPermissionExtendedFileRules.Extensions"
+    },
+    {
+      "Alias": "Category",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "FileCategoriesAll"
+      },
+      "Caption": "$Views_KrPermissionsExtendedFiles_FileCategory_Param",
+      "RefSection": [
+        "FileCategory"
+      ],
+      "Type": "$KrPermissionExtendedFileRuleCategories.CategoryID"
+    },
+    {
+      "Alias": "FileCheckRule",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "KrPermissionsFileCheckRules"
+      },
+      "Caption": "$Views_KrPermissionsExtendedFiles_FileCheckRule_Param",
+      "DropDownInfo": {
+        "ViewAlias": "KrPermissionsFileCheckRules"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "KrPermissionsFileCheckRules"
+      ],
+      "Type": "$KrPermissionExtendedFileRules.FileCheckRuleID"
+    },
+    {
+      "Alias": "ReadAccessSetting",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "KrPermissionsFileReadAccessSettings"
+      },
+      "Caption": "$Views_KrPermissionsExtendedFiles_ReadAccessSetting_Param",
+      "DropDownInfo": {
+        "ViewAlias": "KrPermissionsFileReadAccessSettings"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "KrPermissionsFileReadAccessSettings"
+      ],
+      "Type": "$KrPermissionExtendedFileRules.ReadAccessSettingID"
+    },
+    {
+      "Alias": "EditAccessSetting",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "KrPermissionsFileEditAccessSettings"
+      },
+      "Caption": "$Views_KrPermissionsExtendedFiles_EditAccessSetting_Param",
+      "DropDownInfo": {
+        "ViewAlias": "KrPermissionsFileEditAccessSettings"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "KrPermissionsFileEditAccessSettings"
+      ],
+      "Type": "$KrPermissionExtendedFileRules.EditAccessSettingID"
+    },
+    {
+      "Alias": "DeleteAccessSetting",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "KrPermissionsFileEditAccessSettings"
+      },
+      "Caption": "$Views_KrPermissionsExtendedFiles_DeleteAccessSetting_Param",
+      "DropDownInfo": {
+        "ViewAlias": "KrPermissionsFileEditAccessSettings"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "KrPermissionsFileEditAccessSettings"
+      ],
+      "Type": "$KrPermissionExtendedFileRules.DeleteAccessSettingID"
+    },
+    {
+      "Alias": "SignAccessSetting",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "KrPermissionsFileEditAccessSettings"
+      },
+      "Caption": "$Views_KrPermissionsExtendedFiles_SignAccessSetting_Param",
+      "DropDownInfo": {
+        "ViewAlias": "KrPermissionsFileEditAccessSettings"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "KrPermissionsFileEditAccessSettings"
+      ],
+      "Type": "$KrPermissionExtendedFileRules.SignAccessSettingID"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "KrPermissions",
+      "DisplayValueColumn": "KrPermissionsCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "KrPermissions"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionsExtendedFiles MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		
+		[t].[ID]						AS [KrPermissionsID],
+		[t].[Caption]					AS [KrPermissionsCaption],
+		[t].[Priority]					AS [KrPermissionsPriority],
+		[pe].[Extensions]				AS [KrPermissionsExtensions],
+		STUFF((
+			SELECT CHAR(10) + [pef].[CategoryName]
+			FROM [KrPermissionExtendedFileRuleCategories] AS [pef] WITH (NOLOCK)
+			WHERE [pef].[RuleRowID] = [pe].[RowID]
+			FOR XML PATH('')
+		), 1, 1, N'') AS [KrPermissionsCategories],
+		[pe].[FileCheckRuleName]		AS [KrPermissionsFileCheckRule],
+		[pe].[ReadAccessSettingName]	AS [KrPermissionsReadAccessSetting],
+		[pe].[EditAccessSettingName]	AS [KrPermissionsEditAccessSetting],
+		[pe].[DeleteAccessSettingName]	AS [KrPermissionsDeleteAccessSetting],
+		[pe].[SignAccessSettingName]	AS [KrPermissionsSignAccessSetting],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(1)					AS [cnt]
+		}
+	FROM [KrPermissions] AS [t] WITH (NOLOCK)
+	
+	INNER JOIN [KrPermissionExtendedFileRules] AS [pe] WITH(NOLOCK)
+		ON [t].[ID] = [pe].[ID]
+		
+	#if(Category){
+	CROSS APPLY (
+		SELECT TOP 1 1 AS TMP FROM [KrPermissionExtendedFileRuleCategories] AS [pef] WITH(NOLOCK)
+		WHERE [pef].[RuleRowID] = [pe].[RowID]			
+			#param(Category, [pef].[CategoryID])) AS tf
+	}		
+		
+	WHERE [t].[IsExtended] = 1
+		#param(Caption, [t].[Caption])
+		#param(AccessRule, [t].[ID])
+		#param(Extensions, [pe].[Extensions])
+		#param(ReadAccessSetting, [pe].[ReadAccessSettingID])
+		#param(EditAccessSetting, [pe].[EditAccessSettingID])
+		#param(DeleteAccessSetting, [pe].[DeleteAccessSettingID])
+		#param(SignAccessSetting, [pe].[SignAccessSettingID])
+		#param(FileCheckRule, [pe].[FileCheckRuleID])
+		
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn];
+}
+
+
+[TEXTPART KrPermissionsExtendedFiles PGSQL]
+SELECT
+	"t".*
+FROM (
+	SELECT
+		#if(Normal) {
+		
+		"t"."ID"						AS "KrPermissionsID",
+		"t"."Caption"					AS "KrPermissionsCaption",
+		"t"."Priority"					AS "KrPermissionsPriority",
+		"pe"."Extensions"				AS "KrPermissionsExtensions",
+		(
+			SELECT string_agg("CategoryName", chr(10))
+			FROM (
+				SELECT "pef"."CategoryName" AS "CategoryName"
+				FROM "KrPermissionExtendedFileRuleCategories" AS "pef"
+				WHERE "pef"."RuleRowID" = "pe"."RowID"
+			) AS "groupFields"
+		) 								AS "KrPermissionsCategories",
+		"pe"."FileCheckRuleName"		AS "KrPermissionsFileCheckRule",
+		"pe"."ReadAccessSettingName"	AS "KrPermissionsReadAccessSetting",
+		"pe"."EditAccessSettingName"	AS "KrPermissionsEditAccessSetting",
+		"pe"."DeleteAccessSettingName"	AS "KrPermissionsDeleteAccessSetting",
+		"pe"."SignAccessSettingName"	AS "KrPermissionsSignAccessSetting",
+		row_number() OVER (ORDER BY #order_by) AS "rn"
+		}
+		#if(Count) {
+		count(1)					AS "cnt"
+		}
+	FROM "KrPermissions" AS "t"
+	
+	INNER JOIN "KrPermissionExtendedFileRules" AS "pe"
+		ON "t"."ID" = "pe"."ID"
+	
+	#if(Category){
+	INNER JOIN LATERAL (
+		SELECT null AS TMP FROM "KrPermissionExtendedFileRuleCategories" AS "pef"
+		WHERE "pef"."RuleRowID" = "pe"."RowID"			
+			#param(Category, "pef"."CategoryID")
+		LIMIT 1) AS tf ON true
+	}
+	
+	WHERE "t"."IsExtended"
+		#param(Caption, "t"."Caption")
+		#param(AccessRule, "t"."ID")
+		#param(Extensions, "pe"."Extensions")
+		#param(ReadAccessSetting, "pe"."ReadAccessSettingID")
+		#param(EditAccessSetting, "pe"."EditAccessSettingID")
+		#param(DeleteAccessSetting, "pe"."DeleteAccessSettingID")
+		#param(SignAccessSetting, "pe"."SignAccessSettingID")
+		#param(FileCheckRule, "pe"."FileCheckRuleID")
+		
+	) AS "t"
+#if(Normal) {
+ORDER BY "t"."rn"
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value);
+}

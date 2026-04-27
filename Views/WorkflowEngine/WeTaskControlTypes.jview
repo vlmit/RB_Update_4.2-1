@@ -1,0 +1,77 @@
+﻿{
+  "Alias": "WeTaskControlTypes",
+  "Caption": "$Views_Names_WeTaskControlTypes",
+  "GroupName": "WorkflowEngine",
+  "ID": "81a77ff3-5f38-42a4-bdaf-61ec8c508c39",
+  "JsonMetadataSource::txt": "WeTaskControlTypes JSONMETA",
+  "MsQuerySource::txt": "WeTaskControlTypes MSSQL",
+  "PgQuerySource::txt": "WeTaskControlTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART WeTaskControlTypes JSONMETA]
+{
+  "Alias": "WeTaskControlTypes",
+  "Caption": "$Views_Names_WeTaskControlTypes",
+  "Columns": [
+    {
+      "Alias": "ControlTypeID",
+      "Hidden": true,
+      "Type": "$WeTaskControlTypes.ID"
+    },
+    {
+      "Alias": "ControlTypeName",
+      "Caption": "$Views_WeTaskControlTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$WeTaskControlTypes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WeTaskControlTypes_Name_Param",
+      "Multiple": false,
+      "Type": "$WeTaskControlTypes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "ControlType",
+      "DisplayValueColumn": "ControlTypeName",
+      "RefSection": [
+        "WeTaskControlTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WeTaskControlTypes MSSQL]
+SELECT
+	[ct].[ID] as [ControlTypeID]
+	,[ct].[Name] as [ControlTypeName]
+FROM [WeTaskControlTypes] [ct] WITH(NOLOCK)
+#if(Name || request.SortedBy("ControlTypeName")) {
+CROSS APPLY [Localization]([ct].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+
+
+[TEXTPART WeTaskControlTypes PGSQL]
+SELECT
+	"ct"."ID" as "ControlTypeID"
+	,"ct"."Name" as "ControlTypeName"
+FROM "WeTaskControlTypes" "ct"
+#if(Name || request.SortedBy("ControlTypeName")) {
+CROSS JOIN "Localization"("ct"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")

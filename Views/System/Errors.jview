@@ -1,0 +1,368 @@
+﻿{
+  "Alias": "Errors",
+  "Caption": "$Views_Names_Errors",
+  "GroupName": "System",
+  "ID": "e1307d4f-a74d-460b-bdd9-e5d8644f98da",
+  "JsonMetadataSource::txt": "Errors JSONMETA",
+  "MsQuerySource::txt": "Errors MSSQL",
+  "PgQuerySource::txt": "Errors PGSQL"
+}
+
+[TEXTPART Errors JSONMETA]
+{
+  "Alias": "Errors",
+  "Caption": "$Views_Names_Errors",
+  "Columns": [
+    {
+      "Alias": "RecordID",
+      "Hidden": true,
+      "Type": "$Errors.ID"
+    },
+    {
+      "Alias": "RecordCaption",
+      "Hidden": true,
+      "Type": "$Errors.CardDigest"
+    },
+    {
+      "Alias": "Category",
+      "Caption": "$Views_Errors_Category",
+      "FilterParameter": "Category",
+      "FilterType": "Parameter",
+      "Type": "$Errors.Category"
+    },
+    {
+      "Alias": "CardID",
+      "Hidden": true,
+      "Type": "$Errors.CardID"
+    },
+    {
+      "Alias": "CardCaption",
+      "Caption": "$Views_ActionHistory_Caption",
+      "FilterParameter": "CardCaption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$Errors.CardDigest"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Errors.TypeID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_ActionHistory_Type",
+      "FilterParameter": "TypeCaption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$Errors.TypeCaption"
+    },
+    {
+      "Alias": "ActionID",
+      "Hidden": true,
+      "Type": "$Errors.ActionID"
+    },
+    {
+      "Alias": "ActionName",
+      "Caption": "$Views_ActionHistory_Action",
+      "FilterParameter": "ActionID",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$ActionTypes.Name"
+    },
+    {
+      "Alias": "Modified",
+      "Caption": "$Views_ActionHistory_DateTime",
+      "FilterParameter": "Modified",
+      "FilterType": "Parameter",
+      "SortBy": "t.Modified",
+      "Type": "$Errors.Modified"
+    },
+    {
+      "Alias": "ModifiedByID",
+      "Hidden": true,
+      "Type": "$Errors.ModifiedByID"
+    },
+    {
+      "Alias": "ModifiedByName",
+      "Caption": "$Views_ActionHistory_User",
+      "FilterParameter": "ModifiedByName",
+      "FilterType": "Parameter",
+      "SortBy": "t.ModifiedByName",
+      "Type": "$Errors.ModifiedByName"
+    },
+    {
+      "Alias": "Text",
+      "Caption": "$Views_Errors_Text",
+      "FilterParameter": "Text",
+      "FilterType": "Parameter",
+      "MaxLength": 150,
+      "Type": "$Errors.Text"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Modified",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "Category",
+      "Caption": "$Views_Errors_Category_Param",
+      "Type": "$Errors.Category"
+    },
+    {
+      "Alias": "CardID",
+      "Caption": "$Views_ActionHistory_CardId_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$Errors.CardID"
+    },
+    {
+      "Alias": "CardCaption",
+      "Caption": "$Views_ActionHistory_Card_Param",
+      "Type": "$Errors.CardDigest"
+    },
+    {
+      "Alias": "TypeID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1,
+          2
+        ],
+        "ViewAlias": "Types"
+      },
+      "Caption": "$Views_ActionHistory_Type_Param",
+      "Multiple": false,
+      "RefSection": [
+        "Types"
+      ],
+      "Type": "$Errors.TypeID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_Errors_TypeCaption_Param",
+      "Type": "$Errors.TypeCaption"
+    },
+    {
+      "Alias": "ActionID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "ActionTypes"
+      },
+      "Caption": "$Views_ActionHistory_Action_Param",
+      "DropDownInfo": {
+        "ViewAlias": "ActionTypes"
+      },
+      "Multiple": false,
+      "RefSection": [
+        "ActionTypes"
+      ],
+      "Type": "$Errors.ActionID"
+    },
+    {
+      "Alias": "Modified",
+      "Caption": "$Views_ActionHistory_DateTime_Param",
+      "Type": "$Errors.Modified"
+    },
+    {
+      "Alias": "ModifiedByID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Errors_ModifiedByID_Param",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$Errors.ModifiedByID"
+    },
+    {
+      "Alias": "ModifiedByName",
+      "Caption": "$Views_Errors_ModifiedByName_Param",
+      "Type": "$Errors.ModifiedByName"
+    },
+    {
+      "Alias": "Text",
+      "Caption": "$Views_Errors_Text_Param",
+      "Type": "$Errors.Text"
+    },
+    {
+      "Alias": "DepartmentID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3,
+          5
+        ],
+        "ViewAlias": "Departments"
+      },
+      "Caption": "$Views_ActionHistory_UserDepartment_Param",
+      "Multiple": false,
+      "RefSection": [
+        "DepartmentRoles"
+      ],
+      "Type": "$RoleUsers.ID"
+    }
+  ],
+  "QuickSearchParam": "CardCaption",
+  "References": [
+    {
+      "CardType": "Error",
+      "ColPrefix": "Record",
+      "DisplayValueColumn": "RecordCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "ActionHistoryVirtual"
+      ]
+    },
+    {
+      "ColPrefix": "Card",
+      "DisplayValueColumn": "CardCaption",
+      "IsCard": true,
+      "RefSection": [
+        "Instances"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Errors MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID] AS [RecordID],
+		COALESCE([t].[CardDigest], N'$Views_ActionHistory_UnknownName_Sql') AS [RecordCaption],
+		[t].[Category],
+		[t].[CardID],
+		COALESCE([t].[CardDigest], N'$Views_ActionHistory_UnknownName_Sql') AS [CardCaption],
+		[t].[TypeID],
+		[t].[TypeCaption],
+		[t].[ActionID],
+		[at].[Name] AS [ActionName],
+		[t].[Modified],
+		[t].[ModifiedByID],
+		[t].[ModifiedByName],
+		[t].[Text],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Errors] AS [t] WITH (NOLOCK)
+	#if(Normal) {
+	INNER JOIN [ActionTypes] AS [at] WITH (NOLOCK)
+		ON [at].[ID] = [t].[ActionID]
+	}
+	#if(TypeCaption) {
+	CROSS APPLY [Localization]([t].[TypeCaption], #param(locale)) AS [lTypeCaption]
+	}
+	WHERE 1 = 1
+		#param(Category, [t].[Category])
+		#param(Text, [t].[Text])
+		#param(CardID, [t].[CardID])
+		#param(CardCaption, [t].[CardDigest])
+		#param(TypeID, [t].[TypeID])
+		#param(TypeCaption, [lTypeCaption].[Value])
+		#param(ActionID, [t].[ActionID])
+		#param(Modified, [t].[Modified])
+		#param(ModifiedByID, [t].[ModifiedByID])
+		#param(ModifiedByName, [t].[ModifiedByName])
+		#if(DepartmentID) {
+		AND EXISTS (
+			SELECT NULL
+			FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+			WHERE [ru].[UserID] = [t].[ModifiedByID]
+				#param(DepartmentID, [ru].[ID]))
+		}
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+
+[TEXTPART Errors PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID" AS "RecordID",
+	COALESCE("t"."CardDigest", '$Views_ActionHistory_UnknownName_Sql') AS "RecordCaption",
+	"t"."Category",
+	"t"."CardID",
+	COALESCE("t"."CardDigest", '$Views_ActionHistory_UnknownName_Sql') AS "CardCaption",
+	"t"."TypeID",
+	"t"."TypeCaption",
+	"t"."ActionID",
+	"at"."Name" AS "ActionName",
+	"t"."Modified",
+	"t"."ModifiedByID",
+	"t"."ModifiedByName",
+	"t"."Text",
+	row_number() OVER (ORDER BY #order_by) AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "Errors" AS "t"
+#if(Normal) {
+INNER JOIN "ActionTypes" AS "at"
+	ON "at"."ID" = "t"."ActionID"
+}
+#if(TypeCaption) {
+CROSS JOIN "Localization"("t"."TypeCaption", #param(locale)) AS "lTypeCaption"
+}
+WHERE true
+	#param(Category, "t"."Category")
+	#param(Text, "t"."Text")
+	#param(CardID, "t"."CardID")
+	#param(CardCaption, "t"."CardDigest")
+	#param(TypeID, "t"."TypeID")
+	#param(TypeCaption, "lTypeCaption"."Value")
+	#param(ActionID, "t"."ActionID")
+	#param(Modified, "t"."Modified")
+	#param(ModifiedByID, "t"."ModifiedByID")
+	#param(ModifiedByName, "t"."ModifiedByName")
+	#if(DepartmentID) {
+	AND EXISTS (
+		SELECT NULL
+		FROM "RoleUsers" AS "ru"
+		WHERE "ru"."UserID" = "t"."ModifiedByID"
+			#param(DepartmentID, "ru"."ID"))
+	}
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

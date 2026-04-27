@@ -1,0 +1,155 @@
+﻿{
+  "Alias": "HelpSections",
+  "Caption": "$Views_Names_HelpSections_Details",
+  "GroupName": "System",
+  "ID": "c35e6ac1-9cec-482d-a20f-b3c330f2dc53",
+  "JsonMetadataSource::txt": "HelpSections JSONMETA",
+  "MsQuerySource::txt": "HelpSections MSSQL",
+  "PgQuerySource::txt": "HelpSections PGSQL"
+}
+
+[TEXTPART HelpSections JSONMETA]
+{
+  "Alias": "HelpSections",
+  "Caption": "$Views_Names_HelpSections_Details",
+  "Columns": [
+    {
+      "Alias": "HelpSectionID",
+      "Hidden": true,
+      "Type": "$HelpSections.ID"
+    },
+    {
+      "Alias": "HelpSectionCode",
+      "Caption": "$Views_HelpSections_Code",
+      "FilterParameter": "Code",
+      "FilterType": "Parameter",
+      "Hidden": true,
+      "SortBy": "t.Code",
+      "Type": "$HelpSections.Code"
+    },
+    {
+      "Alias": "HelpSectionLanguage",
+      "Caption": "$Views_HelpSections_Language",
+      "Localizable": true,
+      "SortBy": "t.LanguageCaption",
+      "Type": "$HelpSections.LanguageCaption"
+    },
+    {
+      "Alias": "HelpSectionName",
+      "Caption": "$Views_HelpSections_Name",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$HelpSections.Name"
+    },
+    {
+      "Alias": "HelpSectionPlainText",
+      "Caption": "$Views_HelpSections_PlainText",
+      "Type": "$HelpSections.PlainText"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Code",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_HelpSections_Code",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$HelpSections.Code"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "HelpSection",
+      "DisplayValueColumn": "HelpSectionName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "HelpSections"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART HelpSections MSSQL]
+SELECT
+#if(Normal) {
+	[t].[HelpSectionID],
+	[t].[HelpSectionCode],
+	[t].[HelpSectionLanguage],
+	[t].[HelpSectionName],
+	[t].[HelpSectionPlainText]
+}
+#if(Count) {
+	[t].*
+}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [HelpSectionID],
+		ISNULL([t].[LanguageCaption], '{$HelpSections_Default_Language}') AS [HelpSectionLanguage],
+		[t].[Code]								AS [HelpSectionCode],
+		[t].[Name]								AS [HelpSectionName],
+		CASE
+			WHEN LEN([t].[PlainText]) > 200 THEN LEFT([t].[PlainText], 197) + '...'
+			ELSE [t].[PlainText]
+		END										AS [HelpSectionPlainText],
+		row_number() OVER (ORDER BY [t].[LanguageCode])	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [HelpSections] AS [t] WITH (NOLOCK)
+	#if (Normal && request.SortedBy("HelpSectionName")) {
+	CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+	}
+	WHERE 1 = 1
+		#param(Code, [t].[Code])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART HelpSections PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"			AS "HelpSectionID",
+	"t"."Code"			AS "HelpSectionCode",
+	COALESCE("t"."LanguageCaption", '{$HelpSections_Default_Language}') AS "HelpSectionLanguage",
+	"t"."Name"			AS "HelpSectionName",
+	CASE
+    	WHEN char_length("t"."PlainText") > 200 THEN left("t"."PlainText", 197) || '...'
+		ELSE "t"."PlainText"
+	END					AS "HelpSectionPlainText"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "HelpSections" AS "t"
+#if (Normal && request.SortedBy("HelpSectionName")) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Code, "t"."Code")
+#if(Normal) {
+ORDER BY "t"."LanguageCode" ASC NULLS FIRST
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

@@ -1,0 +1,84 @@
+﻿{
+  "Alias": "KrPermissionsFileReadAccessSettings",
+  "Caption": "$Views_Names_KrPermissionsFileReadAccessSettings",
+  "GroupName": "Kr Wf",
+  "ID": "e8b1f86f-b19e-426f-8703-d87359d75c32",
+  "JsonMetadataSource::txt": "KrPermissionsFileReadAccessSettings JSONMETA",
+  "MsQuerySource::txt": "KrPermissionsFileReadAccessSettings MSSQL",
+  "PgQuerySource::txt": "KrPermissionsFileReadAccessSettings PGSQL"
+}
+
+[TEXTPART KrPermissionsFileReadAccessSettings JSONMETA]
+{
+  "Alias": "KrPermissionsFileReadAccessSettings",
+  "Caption": "$Views_Names_KrPermissionsFileReadAccessSettings",
+  "Columns": [
+    {
+      "Alias": "AccessSettingID",
+      "Hidden": true,
+      "SortBy": "s.ID",
+      "Type": "$KrPermissionsFileReadAccessSettings.ID"
+    },
+    {
+      "Alias": "AccessSettingName",
+      "Caption": "$Views_KrPermissionsFileReadAccessSettings_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$KrPermissionsFileReadAccessSettings.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "AccessSettingID",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrPermissionsFileReadAccessSettings_Name_Param",
+      "Type": "$KrPermissionsFileReadAccessSettings.Name"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "AccessSetting",
+      "DisplayValueColumn": "AccessSettingName",
+      "RefSection": [
+        "KrPermissionsFileReadAccessSettings"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionsFileReadAccessSettings MSSQL]
+SELECT
+	[s].[ID]		AS [AccessSettingID],
+	[s].[Name]		AS [AccessSettingName]
+FROM [KrPermissionsFileReadAccessSettings] AS [s] WITH (NOLOCK)
+#if(Name || request.SortedBy("AccessSettingName")) {
+CROSS APPLY [Localization]([s].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+	
+ORDER BY #order_by
+
+
+[TEXTPART KrPermissionsFileReadAccessSettings PGSQL]
+SELECT
+	"s"."ID"		AS "AccessSettingID",
+	"s"."Name"		AS "AccessSettingName"
+FROM "KrPermissionsFileReadAccessSettings" AS "s"
+#if(Name || request.SortedBy("AccessSettingName")) {
+CROSS JOIN "Localization"("s"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+	
+ORDER BY #order_by

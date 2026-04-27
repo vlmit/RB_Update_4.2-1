@@ -1,0 +1,210 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$AbTest_CardTypes_Tabs_CarViewParameters",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": "Car model",
+          "ID::uid": "d94412e1-b439-49fd-81b9-1025b6be945f",
+          "Name": "Name",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": "km/h",
+          "ID::uid": "d9108c89-a1f2-41ae-8652-b3fb206912ea",
+          "Name": "MaxSpeed",
+          "SchemeType": "Int32 Not Null"
+        },
+        {
+          "ColumnType::int": 1,
+          "Description": "Driver",
+          "ID::uid": "96d2e359-6ad9-4217-a1e9-0f0eebba82cc",
+          "IsReferencedToOwner": false,
+          "Name": "Driver",
+          "ReferencedColumns": [
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": null,
+              "ID::uid": "e43cb329-5e09-49c4-8634-1cfb0f173691",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "6c977939-bbfc-006f-2000-01c2244e3cc3"
+            },
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": null,
+              "ID::uid": "0fe4f065-67a9-47a1-b171-98893b0ec1ca",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "1782f76a-4743-4aa4-920c-7edaee860964"
+            }
+          ],
+          "ReferencedTableID::uid": "6c977939-bbfc-456f-a133-f1c2244e3cc3"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": "Release date \"from\"",
+          "ID::uid": "84333ca5-3779-435e-9857-a46fb2113fc5",
+          "Name": "ReleaseDateFrom",
+          "SchemeType": "Date Not Null"
+        },
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": "Release date \"to\"",
+          "ID::uid": "9f3bb1a9-c1cc-4f11-89b8-0ccf55790eaa",
+          "Name": "ReleaseDateTo",
+          "SchemeType": "Date Not Null"
+        }
+      ],
+      "Description": "View parameters",
+      "ID::uid": "dfcd24a1-1ba0-435e-9dbd-276a218f9ed3",
+      "Name": "Parameters",
+      "TableType::int": 1
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Parameters",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$AbTest_CardTypes_Controls_CarModel",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "d94412e1-b439-49fd-81b9-1025b6be945f"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "dfcd24a1-1ba0-435e-9dbd-276a218f9ed3",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$AbTest_CardTypes_Controls_MaximumSpeed",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MinValue": 1
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "d9108c89-a1f2-41ae-8652-b3fb206912ea"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "dfcd24a1-1ba0-435e-9dbd-276a218f9ed3",
+              "ToolTip": null,
+              "Type::uid": "01c2bb84-6b71-034e-859e-b6e2b64ff2f3"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$AbTest_CardTypes_Controls_DriverName",
+              "ComplexColumnID::uid": "96d2e359-6ad9-4217-a1e9-0f0eebba82cc",
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "ViewAlias": "Users"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "dfcd24a1-1ba0-435e-9dbd-276a218f9ed3",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$AbTest_CardTypes_Controls_ReleaseDateFrom",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "DateNullable": true,
+                "DateTimeFormat": "Date"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "84333ca5-3779-435e-9857-a46fb2113fc5"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "dfcd24a1-1ba0-435e-9dbd-276a218f9ed3",
+              "ToolTip": null,
+              "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$AbTest_CardTypes_Controls_ReleaseDateTo",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "DateNullable": true,
+                "DateTimeFormat": "Date"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "9f3bb1a9-c1cc-4f11-89b8-0ccf55790eaa"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "dfcd24a1-1ba0-435e-9dbd-276a218f9ed3",
+              "ToolTip": null,
+              "Type::uid": "c08b81f3-ed18-005a-bae6-a61679812709"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Parameters"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "MainTab",
+      "TabCaption": "$AbTest_CardTypes_Tabs_CarViewParameters"
+    }
+  ],
+  "Group": "AbTest",
+  "ID::uid": "ef08853d-7fdf-4fec-91b2-a1b8905e29fc",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "AbCarViewParameters",
+  "SchemeItems": null,
+  "Validators": null
+}

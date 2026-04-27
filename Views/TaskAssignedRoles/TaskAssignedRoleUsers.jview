@@ -1,0 +1,317 @@
+﻿{
+  "Alias": "TaskAssignedRoleUsers",
+  "Caption": "$Views_Names_TaskAssignedRoleUsers",
+  "Description": "Представление, отображающее пользователей для дочерних ФРЗ в диалоге \"Роли задания\". Сейчас данное представление используется только для \"контекстных ролей\", логика выбора представлений в перехватчике \"TaskAssignedRolesInterceptor\".",
+  "GroupName": "TaskAssignedRoles",
+  "ID": "966b7c87-1443-4ab9-b23a-6864234ed30e",
+  "JsonMetadataSource::txt": "TaskAssignedRoleUsers JSONMETA",
+  "MsQuerySource::txt": "TaskAssignedRoleUsers MSSQL",
+  "PgQuerySource::txt": "TaskAssignedRoleUsers PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TaskAssignedRoleUsers JSONMETA]
+{
+  "Alias": "TaskAssignedRoleUsers",
+  "Caption": "$Views_Names_TaskAssignedRoleUsers",
+  "Columns": [
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "$Roles.ID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Users_Name",
+      "SortBy": "t.Name",
+      "Type": "$PersonalRoles.Name"
+    },
+    {
+      "Alias": "Email",
+      "Caption": "$Views_Users_Email",
+      "Type": "$PersonalRoles.Email"
+    },
+    {
+      "Alias": "Position",
+      "Caption": "$Views_Users_Position",
+      "Type": "$PersonalRoles.Position"
+    },
+    {
+      "Alias": "Departments",
+      "Caption": "$Views_Users_Departments",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "StaticRoles",
+      "Caption": "$Views_Users_StaticRoles",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "FullName",
+      "Hidden": true,
+      "Type": "$PersonalRoles.FullName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "UserName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Users_Name_Param",
+      "Type": "$RoleUsers.UserName"
+    },
+    {
+      "Alias": "TaskAssignedRoleRowID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_Users_TaskAssignedRole_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$TaskAssignedRoles.RowID"
+    },
+    {
+      "Alias": "RoleExclusionID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3
+        ],
+        "RefPrefix": "Role",
+        "ViewAlias": "DurableRoles"
+      },
+      "Caption": "$Views_Users_RoleExclusion_Param",
+      "Multiple": false,
+      "RefSection": [
+        "DurableRoles"
+      ],
+      "Type": "$RoleUsers.ID"
+    },
+    {
+      "Alias": "ShowHidden",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_Users_ShowHidden_Param",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "RoleID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          3
+        ],
+        "RefPrefix": "Role",
+        "ViewAlias": "DurableRoles"
+      },
+      "Caption": "$Views_Users_Role_Param",
+      "Multiple": false,
+      "RefSection": [
+        "Roles"
+      ],
+      "Type": "$RoleUsers.ID"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "User",
+      "DisplayValueColumn": "UserName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Roles",
+        "DurableRoles",
+        "PersonalRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TaskAssignedRoleUsers MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[ID]					AS [UserID],
+	[pr].[Name]					AS [UserName],
+	[pr].[Email],
+	[pr].[Position],
+	STUFF((
+		SELECT N', ' + [r].[Name]
+		FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+		INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+			ON [r].[ID] = [ru].[ID]
+		WHERE [ru].[UserID] = [t].[ID]
+			AND [ru].[TypeID] = 2
+		ORDER BY [r].[Name]
+		FOR XML PATH('')
+	), 1, 2, N'') 				AS [Departments],
+	STUFF((
+		SELECT N', ' + [r].[Name]
+		FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+		INNER JOIN [Roles] AS [r] WITH (NOLOCK)
+			ON [r].[ID] = [ru].[ID]
+		WHERE [ru].[UserID] = [t].[ID]
+			AND [ru].[TypeID] = 0
+		ORDER BY [r].[Name]
+		FOR XML PATH('')
+	), 1, 2, N'') 				AS [StaticRoles],
+	[pr].[FullName]				AS [FullName]
+	} {
+	[t].*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Roles] AS [t] WITH (NOLOCK)
+	WHERE
+			[t].[TypeID] = 1
+			#param(Name, [t].[Name])
+			#if(RoleExclusionID) {
+			-- кроме роли
+			AND NOT EXISTS (
+				SELECT NULL
+				FROM [RoleUsers] AS [ru] WITH (NOLOCK)
+				WHERE [ru].[UserID] = [t].[ID]
+					#param(RoleExclusionID, [ru].[ID]))
+			}
+			
+			AND [t].[ID] in (
+				SELECT [child_tar].[RoleID]
+					FROM [TaskAssignedRoles] as [parent_tar]
+				INNER JOIN [TaskAssignedRoles] as [child_tar]
+					ON [child_tar].[ParentRowID] = [parent_tar].[RowID]
+				INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) -- заместители
+					ON [ru].[UserID] = [t].[ID]
+				WHERE [child_tar].[RoleType]  = 1 -- константный ID типа "персональная роль"
+				AND [ru].[UserID] = [child_tar].[RoleID] -- заместители
+				#param(TaskAssignedRoleRowID, [parent_tar].[RowID]) -- пробрасываемый параметр TaskAssignedRoleRowID
+				)
+			
+			#if(!ShowHidden || ShowHidden.CriteriaName != "IsTrue") {
+			--не отображать скрытые
+			AND [t].[Hidden] = 0
+			}
+	) AS [t]
+#if(Normal) {
+INNER JOIN [PersonalRoles] AS [pr] WITH (NOLOCK)
+	ON [pr].[ID] = [t].[ID]
+}
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+[TEXTPART TaskAssignedRoleUsers PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"					AS "UserID",
+	"pr"."Name"					AS "UserName",
+	"pr"."Email",
+	"pr"."Position",
+	STRING_AGG("r1"."Name", ', ' ORDER BY "r1"."Name") AS "Departments",
+    STRING_AGG("r2"."Name", ', ' ORDER BY "r2"."Name") AS "StaticRoles",
+    "pr"."FullName"				AS "FullName"
+	} {
+	"t".*
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."ID"
+		}
+		#if(Count) {
+		count(*) AS "cnt"
+		}
+	FROM "Roles" AS "t"
+	WHERE
+			"t"."TypeID" = 1
+			#param(Name, "t"."Name")
+			#if(RoleExclusionID) {
+			-- кроме роли
+			AND NOT EXISTS (
+				SELECT NULL
+				FROM "RoleUsers" AS "ru"
+				WHERE "ru"."UserID" = "t"."ID"
+					#param(RoleExclusionID, "ru"."ID"))
+			}
+			
+			AND "t"."ID" in (
+				SELECT "child_tar"."RoleID"
+					FROM "TaskAssignedRoles" as "parent_tar"
+				INNER JOIN "TaskAssignedRoles" as "child_tar"
+					ON "child_tar"."ParentRowID" = "parent_tar"."RowID"
+				INNER JOIN "RoleUsers" AS "ru" -- заместители
+					ON "ru"."UserID" = "t"."ID"
+				WHERE "child_tar"."RoleType"  = 1 -- константный ID типа "персональная роль"
+				AND "ru"."UserID" = "child_tar"."RoleID" -- заместители
+				#param(TaskAssignedRoleRowID, "parent_tar"."RowID") -- пробрасываемый параметр TaskAssignedRoleRowID
+				)
+			
+			#if(!ShowHidden || ShowHidden.CriteriaName != "IsTrue") {
+			--не отображать скрытые
+			AND "t"."Hidden" = false
+			#if(Normal) {
+				ORDER BY #order_by
+			}
+			}
+	) AS "t"
+#if(Normal) {
+INNER JOIN "PersonalRoles" AS "pr"
+	ON "pr"."ID" = "t"."ID"
+	
+LEFT JOIN (
+    SELECT "ru"."UserID", "r1"."Name"
+    FROM "RoleUsers" AS "ru"
+    INNER JOIN "Roles" AS "r1" ON "r1"."ID" = "ru"."ID"
+    WHERE "ru"."TypeID" = 2
+) AS "r1" ON "t"."ID" = "r1"."UserID"
+
+LEFT JOIN (
+    SELECT "ru"."UserID", "r2"."Name"
+    FROM "RoleUsers" AS "ru"
+    INNER JOIN "Roles" AS "r2" ON "r2"."ID" = "ru"."ID"
+    WHERE "ru"."TypeID" = 0
+) AS "r2" ON "t"."ID" = "r2"."UserID"
+
+group by "t"."ID", "pr"."Name", "pr"."FullName", "pr"."Email", "pr"."Position"
+}
+#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

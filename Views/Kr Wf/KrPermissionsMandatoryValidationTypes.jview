@@ -1,0 +1,81 @@
+﻿{
+  "Alias": "KrPermissionsMandatoryValidationTypes",
+  "Caption": "$Views_Names_KrPermissionsMandatoryValidationTypes",
+  "GroupName": "Kr Wf",
+  "ID": "ea16e82d-f10a-4897-90f6-a9caf61ce9cc",
+  "JsonMetadataSource::txt": "KrPermissionsMandatoryValidationTypes JSONMETA",
+  "MsQuerySource::txt": "KrPermissionsMandatoryValidationTypes MSSQL",
+  "PgQuerySource::txt": "KrPermissionsMandatoryValidationTypes PGSQL"
+}
+
+[TEXTPART KrPermissionsMandatoryValidationTypes JSONMETA]
+{
+  "Alias": "KrPermissionsMandatoryValidationTypes",
+  "Caption": "$Views_Names_KrPermissionsMandatoryValidationTypes",
+  "Columns": [
+    {
+      "Alias": "MandatoryValidationTypeID",
+      "Hidden": true,
+      "Type": "$KrPermissionsMandatoryValidationTypes.ID"
+    },
+    {
+      "Alias": "MandatoryValidationTypeName",
+      "Caption": "$Views_KrPermissionsMandatoryValidationTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$KrPermissionsMandatoryValidationTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "MandatoryValidationTypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrPermissionsMandatoryValidationTypes_Name_Param",
+      "Type": "$KrPermissionsMandatoryValidationTypes.Name"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "MandatoryValidationType",
+      "DisplayValueColumn": "MandatoryValidationTypeName",
+      "RefSection": [
+        "KrPermissionsMandatoryValidationTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionsMandatoryValidationTypes MSSQL]
+SELECT
+	[s].[ID]		AS [MandatoryValidationTypeID],
+	[s].[Name]		AS [MandatoryValidationTypeName]
+FROM [KrPermissionsMandatoryValidationTypes] AS [s] WITH (NOLOCK)
+#if(Name || request.SortedBy("MandatoryValidationTypeName")) {
+CROSS APPLY [Localization]([s].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART KrPermissionsMandatoryValidationTypes PGSQL]
+SELECT
+	"s"."ID"		AS "MandatoryValidationTypeID",
+	"s"."Name"		AS "MandatoryValidationTypeName"
+FROM "KrPermissionsMandatoryValidationTypes" AS "s"
+#if(Name || request.SortedBy("MandatoryValidationTypeName")) {
+CROSS JOIN "Localization"("s"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

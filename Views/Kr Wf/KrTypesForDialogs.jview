@@ -1,0 +1,333 @@
+﻿{
+  "Alias": "KrTypesForDialogs",
+  "Caption": "$Views_Names_KrTypesForDialogs",
+  "Description": "В общем случае копирует логику представления Types, однако по набору параметров и логике отбора адаптировано для использования в системе маршрутов.\nЕсли бы эти особенности встраивались в оригинальное Types, то имели бы место сложные вложенные #if.",
+  "GroupName": "Kr Wf",
+  "ID": "2c0b6a4a-8759-43d1-b23c-0c64f365d343",
+  "JsonMetadataSource::txt": "KrTypesForDialogs JSONMETA",
+  "MsQuerySource::txt": "KrTypesForDialogs MSSQL",
+  "PgQuerySource::txt": "KrTypesForDialogs PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART KrTypesForDialogs JSONMETA]
+{
+  "Alias": "KrTypesForDialogs",
+  "Caption": "$Views_Names_KrTypesForDialogs",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_Types_Name",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.LocalizedCaption",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_Types_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.TypeName",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "IsDocTypeCaption",
+      "Caption": "$Views_KrTypes_Type",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "State",
+      "Caption": "$Views_KrTypes_State",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "ParentType",
+      "Caption": "$Views_KrTypes_ParentType",
+      "Localizable": true,
+      "Type": "$KrSettingsCardTypes.CardTypeCaption"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_Types_Name_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Types_Alias_Param",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "NameOrCaption",
+      "Caption": "NameOrCaption",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "RefSection": [
+        "KrTypesForDialogs"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrTypesForDialogs MSSQL]
+SELECT
+	#if(Normal) {
+	[t].[TypeID],
+	[t].[TypeCaption],
+	[t].[TypeName],
+	[t].[IsDocTypeCaption],
+	[t].[State],
+	[t].[ParentType],
+	[t].[rn]
+	}
+	#if(Count) {
+	[t].[cnt]
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[TypeID],
+		[t].[TypeCaption],
+		[t].[TypeName],
+		[t].[IsDocTypeCaption],
+		[t].[State],
+		[t].[ParentType],
+		#if(request.SortedBy("TypeCaption")) {
+		[t].[LocalizedCaption],
+		}
+		row_number() OVER (ORDER BY #order_by)		AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM (
+		SELECT
+			#if(Normal) {
+			[t].[ID]								AS [TypeID],
+			[t].[Caption]							AS [TypeCaption],
+			[t].[Name]								AS [TypeName],
+			N'$Views_KrTypes_CardType_Sql'			AS [IsDocTypeCaption],
+			N'$Views_KrTypes_CardTypeDoesntUseStandardSolution_Sql'
+													AS [State],
+			N''										AS [ParentType]
+			#if(request.SortedBy("TypeCaption")) {
+			, [t].[LocalizedCaption]
+			}
+			}
+			#if(Count) {
+			NULL AS [Column]
+			}
+		FROM (
+			SELECT
+				#if(Normal) {
+				[t].[ID],
+				[t].[Caption],
+				[t].[Name]
+				#if(request.SortedBy("TypeCaption")) {
+				, [lCaption].[Value] AS [LocalizedCaption]
+				}
+				}
+				#if(Count) {
+				NULL AS [Column]
+				}
+			FROM [Types] AS [t] WITH (NOLOCK)
+			LEFT JOIN [KrDocType] AS [dt] WITH(NOLOCK) ON [t].[ID] = [dt].[CardTypeID]
+			#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+			CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+			}
+			WHERE [t].[InstanceTypeID] = 0		-- тип карточки, а не файла или задания#
+				#param(Name, [t].[Name])
+				#param(Caption, [lCaption].[Value])
+				AND (1 = 1 #param(NameOrCaption, "t"."Name") or 1=1 #param(NameOrCaption, "lCaption"."Value"))
+				AND [dt].[ID] IS NULL
+			) AS [t]
+		
+		UNION ALL
+		
+		SELECT
+			#if(Normal) {
+			[t].[ID]							AS [TypeID],
+			[t].[Title]							AS [TypeCaption],
+			[t].[CardTypeName]					AS [TypeName],
+			N'$Views_KrTypes_DocType_Sql'		AS [IsDocTypeCaption],
+			CASE [kr].[UseDocTypes]
+				WHEN 0 THEN N'$Views_KrTypes_ParentCardUseDocTypes_Sql'
+				WHEN 1 THEN N'$Views_KrTypes_SolutionParentDocType_Sql'
+			END									AS [State],
+			[kr].[CardTypeCaption]				AS [ParentType]
+			#if(request.SortedBy("TypeCaption")) {
+			, [lTitle].[Value]					AS [LocalizedCaption]
+			}
+			}
+			#if(Count) {
+			NULL AS [Column]
+			}
+		FROM [KrDocType] AS [t] WITH (NOLOCK)
+		INNER JOIN [KrSettingsCardTypes] AS [kr] WITH (NOLOCK)
+			ON [kr].[CardTypeID] = [t].[CardTypeID]
+		#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+		CROSS APPLY [Localization]([t].[Title], #param(locale)) AS [lTitle]
+		}
+		WHERE 1 = 1
+			#param(Name, [t].[CardTypeName])
+			#param(Caption, [lTitle].[Value])
+			AND (1 = 1 #param(NameOrCaption, "t"."CardTypeName") or 1=1 #param(NameOrCaption, "lTitle"."Value"))
+		) AS [t]
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART KrTypesForDialogs PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."TypeID",
+	"t"."TypeCaption",
+	"t"."TypeName",
+	"t"."IsDocTypeCaption",
+	"t"."State",
+	"t"."ParentType",
+	"t"."rn"
+	}
+	#if(Count) {
+	"t"."cnt"
+	}
+FROM (
+	SELECT
+		#if(Normal) {
+		"t"."TypeID",
+		"t"."TypeCaption",
+		"t"."TypeName",
+		"t"."IsDocTypeCaption",
+		"t"."State",
+		"t"."ParentType",
+		#if(request.SortedBy("TypeCaption")) {
+		"t"."LocalizedCaption",
+		}
+		0::int8										AS "rn"
+		}
+		#if(Count) {
+		count(*) AS "cnt"
+		}
+	FROM (
+		SELECT
+			#if(Normal) {
+			"t"."ID"								AS "TypeID",
+			"t"."Caption"							AS "TypeCaption",
+			"t"."Name"								AS "TypeName",
+			'$Views_KrTypes_CardType_Sql'			AS "IsDocTypeCaption",
+			'$Views_KrTypes_CardTypeDoesntUseStandardSolution_Sql'
+													AS "State",
+			''										AS "ParentType"
+			#if(request.SortedBy("TypeCaption")) {
+			, "t"."LocalizedCaption"
+			}
+			}
+			#if(Count) {
+			NULL
+			}
+		FROM (
+			SELECT
+				#if(Normal) {
+				"t"."ID",
+				"t"."Caption",
+				"t"."Name"
+				#if(request.SortedBy("TypeCaption")) {
+				, "lCaption"."Value" AS "LocalizedCaption"
+				}
+				}
+			FROM "Types" AS "t"
+			LEFT JOIN "KrDocType" AS "dt" ON "t"."ID" = "dt"."CardTypeID"
+			#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+			CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+			}
+			WHERE "t"."InstanceTypeID" = 0	-- тип карточки, а не файла или задания
+				#param(Name, "t"."Name")
+				#param(Caption, "lCaption"."Value")
+				AND (true #param(NameOrCaption, "t"."Name") or true #param(NameOrCaption, "lCaption"."Value"))
+				AND "dt"."ID" IS NULL
+		) AS "t"
+		
+		UNION ALL
+		
+		SELECT
+			#if(Normal) {
+			"t"."ID"							AS "TypeID",
+			"t"."Title"							AS "TypeCaption",
+            "t"."CardTypeName"					AS "TypeName",
+			'$Views_KrTypes_DocType_Sql'		AS "IsDocTypeCaption",
+			CASE "kr"."UseDocTypes"
+				WHEN false THEN '$Views_KrTypes_ParentCardUseDocTypes_Sql'
+				WHEN true THEN '$Views_KrTypes_SolutionParentDocType_Sql'
+			END									AS "State",
+			"kr"."CardTypeCaption"				AS "ParentType"
+			#if(request.SortedBy("TypeCaption")) {
+			, "lTitle"."Value"					AS "LocalizedCaption"
+			}
+			}
+			#if(Count) {
+			NULL
+			}
+		FROM "KrDocType" AS "t"
+		INNER JOIN "KrSettingsCardTypes" AS "kr"
+			ON "kr"."CardTypeID" = "t"."CardTypeID"
+		#if(Caption || Normal && request.SortedBy("TypeCaption")) {
+		CROSS JOIN "Localization"("t"."Title", #param(locale)) AS "lTitle"
+		}
+		WHERE true
+			#param(Name, "t"."CardTypeName")
+			#param(Caption, "lTitle"."Value")
+			AND (true #param(NameOrCaption, "t"."CardTypeName") or true #param(NameOrCaption, "lTitle"."Value"))
+		) AS "t"
+	) AS "t"
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

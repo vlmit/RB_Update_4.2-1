@@ -1,0 +1,93 @@
+﻿{
+  "Alias": "KrTypesForPermissionsExtension",
+  "Caption": "$Views_Names_KrTypesForPermissionsExtension",
+  "GroupName": "Kr Wf",
+  "ID": "d2c9ecb8-0e7f-4f79-a76c-c2cc71b0d959",
+  "JsonMetadataSource::txt": "KrTypesForPermissionsExtension JSONMETA",
+  "MsQuerySource::txt": "KrTypesForPermissionsExtension MSSQL",
+  "PgQuerySource::txt": "KrTypesForPermissionsExtension PGSQL"
+}
+
+[TEXTPART KrTypesForPermissionsExtension JSONMETA]
+{
+  "Alias": "KrTypesForPermissionsExtension",
+  "Caption": "$Views_Names_KrTypesForPermissionsExtension",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_KrTypes_Caption",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_KrTypes_Name",
+      "SortBy": "t.Name",
+      "Type": "$Types.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "NameOrCaption",
+      "Caption": "$Views_KrTypes_NameOrCaption_Param",
+      "Type": "$Types.Caption"
+    }
+  ],
+  "QuickSearchParam": "NameOrCaption",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "RefSection": [
+        "KrTypesForPermissionsExtension"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrTypesForPermissionsExtension MSSQL]
+SELECT
+	[t].[ID]				AS [TypeID],
+	[t].[Caption]			AS [TypeCaption],
+	[t].[Name]				AS [TypeName]
+FROM [Types] AS "t" WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+WHERE [t].[Group] = N'Permissions'
+	AND ([t].[Flags] & 2187) = 0	-- не должно быть флагов: Разрешить задания, Фиксировать действия, Удалять в корзину, Единственный экземпляр, Загружать при инициализации
+	AND ([t].[Flags] & 272) <> 0	-- должны быть флаги: Административный, Скрытый
+	AND [t].[InstanceTypeID] = 0	-- карточки
+	#if(NameOrCaption) {
+	AND ((1 = 1 #param(NameOrCaption, [t].[Name])) OR (1 = 1 #param(NameOrCaption, [lCaption].[Value])))
+	}
+ORDER BY #order_by;
+
+
+[TEXTPART KrTypesForPermissionsExtension PGSQL]
+SELECT
+	"t"."ID"				AS "TypeID",
+	"t"."Caption"			AS "TypeCaption",
+	"t"."Name"				AS "TypeName"
+FROM "Types" AS "t"
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+WHERE "t"."Group" = 'Permissions'
+	AND ("t"."Flags" & 2187) = 0	-- не должно быть флагов: Разрешить задания, Фиксировать действия, Удалять в корзину, Единственный экземпляр, Загружать при инициализации
+	AND ("t"."Flags" & 272) <> 0	-- должны быть флаги: Административный, Скрытый
+	AND "t"."InstanceTypeID" = 0	-- карточки
+	#if(NameOrCaption) {
+	AND ((true #param(NameOrCaption, "t"."Name")) OR (true #param(NameOrCaption, "lCaption"."Value")))
+	}
+ORDER BY #order_by

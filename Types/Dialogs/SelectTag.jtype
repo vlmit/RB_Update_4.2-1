@@ -1,0 +1,68 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$Cards_DefaultCaption",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "SelectTag",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "Tags",
+              "ControlSettings": {
+                "FirstRowSelection": false,
+                "ViewAlias": "Tags",
+                "ViewMap": [
+                  {
+                    "::single_type": "obj"
+                  },
+                  {
+                    "CardColumn": null,
+                    "CardSection": null,
+                    "ColumnType::int": 5,
+                    "ConstantValue": true,
+                    "ConstantValueType::int": 4,
+                    "SkipNullParams": false,
+                    "ViewMasterLinkName": "",
+                    "ViewMasterLinkType::int": 0,
+                    "ViewParamName": "AddToCardDialogMode",
+                    "ViewParamSetName": ""
+                  }
+                ]
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "Tags",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "e9a5084d-c76e-4096-ab2d-84f313710812"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "SelectTag"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Tab",
+      "TabCaption": "$Cards_TabDefaultCaption"
+    }
+  ],
+  "Group": "Tags",
+  "ID::uid": "b9bdea71-5b6f-494b-a878-afec21add8d0",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "SelectTag",
+  "SchemeItems": null,
+  "Validators": null
+}

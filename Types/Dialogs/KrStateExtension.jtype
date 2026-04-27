@@ -1,0 +1,115 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "KrStateExtension",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 1,
+          "Description": null,
+          "ID::uid": "130cb02b-a60a-4109-bdc7-e11d3f16f394",
+          "IsReferencedToOwner": false,
+          "Name": "State",
+          "ReferencedColumns": [
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": null,
+              "ID::uid": "57e34e4d-92f5-425c-8f00-79dc3ebc15ea",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "502209b0-233f-4e1f-be01-35a50f53414c"
+            },
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": null,
+              "ID::uid": "ca5e4de7-b61f-41c0-8f93-8f3291ecab6e",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "4c1a8dd7-72ed-4fc9-b559-b38ae30dccb9"
+            }
+          ],
+          "ReferencedTableID::uid": "47107d7a-3a8c-47f0-b800-2a45da222ff4"
+        }
+      ],
+      "Description": null,
+      "ID::uid": "03851fcd-ec1e-4b06-9c29-50b69d027ea7",
+      "Name": "AclExtensions_States",
+      "TableType::int": 2
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "States",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_States",
+              "Columns": [
+                {
+                  "AggregationFormat": null,
+                  "Alignment::int": 0,
+                  "Caption": "Reference",
+                  "ComplexColumnID::uid": "130cb02b-a60a-4109-bdc7-e11d3f16f394",
+                  "DisplayFormat": null,
+                  "Flags::int": 0,
+                  "HeaderAlignment::int": 0,
+                  "MaxLength": null,
+                  "OwnedComplexColumnID": null,
+                  "OwnedOrderColumnID": null,
+                  "OwnedPhysicalColumnIDList": null,
+                  "OwnedSectionID": null,
+                  "PhysicalColumnIDList": null,
+                  "SelectableControlName": null,
+                  "Separator": null,
+                  "ToolTipLineLength::int": 100
+                }
+              ],
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "KrDocState",
+                  "KrDocStateRefGroup"
+                ],
+                "ViewAlias": "KrDocStates"
+              },
+              "ControlType::int": 1,
+              "Flags::int": 0,
+              "Form": null,
+              "Name": null,
+              "RequiredText": null,
+              "SectionID::uid": "03851fcd-ec1e-4b06-9c29-50b69d027ea7",
+              "ToolTip": null,
+              "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "States"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "Tab",
+      "TabCaption": "$Cards_TabDefaultCaption"
+    }
+  ],
+  "Group": "Acl",
+  "ID::uid": "cca319ab-ed7a-4715-9b56-d0d5bd9d41ab",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "KrStateExtension",
+  "SchemeItems": null,
+  "Validators": null
+}

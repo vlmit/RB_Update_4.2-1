@@ -1,0 +1,174 @@
+﻿{
+  "Alias": "SmartRoleGenerators",
+  "Caption": "$Views_Names_SmartRoleGenerators",
+  "GroupName": "Acl",
+  "ID": "26ce38e4-cf2d-48f0-a790-c4bd631e3eea",
+  "JsonMetadataSource::txt": "SmartRoleGenerators JSONMETA",
+  "MsQuerySource::txt": "SmartRoleGenerators MSSQL",
+  "PgQuerySource::txt": "SmartRoleGenerators PGSQL"
+}
+
+[TEXTPART SmartRoleGenerators JSONMETA]
+{
+  "Alias": "SmartRoleGenerators",
+  "Caption": "$Views_Names_SmartRoleGenerators",
+  "Columns": [
+    {
+      "Alias": "SmartRoleGeneratorID",
+      "Hidden": true,
+      "Type": "$SmartRoleGenerators.ID"
+    },
+    {
+      "Alias": "SmartRoleGeneratorName",
+      "Caption": "$Views_SmartRoleGenerators_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$SmartRoleGenerators.Name"
+    },
+    {
+      "Alias": "SmartRoleGeneratorDescription",
+      "Caption": "$Views_SmartRoleGenerators_Description",
+      "FilterParameter": "Description",
+      "FilterType": "Parameter",
+      "Type": "$SmartRoleGenerators.Description"
+    },
+    {
+      "Alias": "SmartRoleGeneratorIsDisabled",
+      "Caption": "$Views_SmartRoleGenerators_IsDisabled",
+      "FilterParameter": "IsDisabled",
+      "FilterType": "Parameter",
+      "SortBy": "s.IsDisabled",
+      "Type": "$SmartRoleGenerators.IsDisabled"
+    },
+    {
+      "Alias": "SmartRoleGeneratorHideRoles",
+      "Caption": "$Views_SmartRoleGenerators_HideRoles",
+      "FilterParameter": "HideRoles",
+      "FilterType": "Parameter",
+      "SortBy": "s.HideRoles",
+      "Type": "$SmartRoleGenerators.HideRoles"
+    },
+    {
+      "Alias": "SmartRoleGeneratorDisableDeputies",
+      "Caption": "$Views_SmartRoleGenerators_DisableDeputies",
+      "FilterParameter": "DisableDeputies",
+      "FilterType": "Parameter",
+      "SortBy": "s.DisableDeputies",
+      "Type": "$SmartRoleGenerators.DisableDeputies"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "SmartRoleGeneratorName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_SmartRoleGenerators_Name_Param",
+      "Multiple": false,
+      "Type": "$SmartRoleGenerators.Name"
+    },
+    {
+      "Alias": "Description",
+      "Caption": "$Views_SmartRoleGenerators_Description_Param",
+      "Multiple": false,
+      "Type": "$SmartRoleGenerators.Description"
+    },
+    {
+      "Alias": "IsDisabled",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_SmartRoleGenerators_IsDisabled_Param",
+      "IgnoreCase": false,
+      "Multiple": false,
+      "Type": "$SmartRoleGenerators.IsDisabled"
+    },
+    {
+      "Alias": "HideRoles",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_SmartRoleGenerators_HideRoles_Param",
+      "IgnoreCase": false,
+      "Multiple": false,
+      "Type": "$SmartRoleGenerators.HideRoles"
+    },
+    {
+      "Alias": "DisableDeputies",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_SmartRoleGenerators_DisableDeputies_Param",
+      "IgnoreCase": false,
+      "Multiple": false,
+      "Type": "$SmartRoleGenerators.DisableDeputies"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "SmartRoleGenerator",
+      "DisplayValueColumn": "SmartRoleGeneratorName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "SmartRoleGenerators"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART SmartRoleGenerators MSSQL]
+SELECT
+	[s].[ID]				AS [SmartRoleGeneratorID],
+	[s].[Name]				AS [SmartRoleGeneratorName],
+	[s].[Description]		AS [SmartRoleGeneratorDescription],
+	[s].[IsDisabled]		AS [SmartRoleGeneratorIsDisabled],
+	[s].[HideRoles]			AS [SmartRoleGeneratorHideRoles],
+	[s].[DisableDeputies]	AS [SmartRoleGeneratorDisableDeputies]
+	
+FROM [SmartRoleGenerators] AS [s] WITH (NOLOCK)
+#if(Name || request.SortedBy("SmartRoleGeneratorName")) {
+CROSS APPLY [Localization]([s].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+	#param(Description, [s].[Description])
+	#param(IsDisabled, [s].[IsDisabled])
+	#param(HideRoles, [s].[HideRoles])
+	#param(DisableDeputies, [s].[DisableDeputies])
+ORDER BY #order_by
+
+
+[TEXTPART SmartRoleGenerators PGSQL]
+SELECT
+	"s"."ID"				AS "SmartRoleGeneratorID",
+	"s"."Name"				AS "SmartRoleGeneratorName",
+	"s"."Description"		AS "SmartRoleGeneratorDescription",
+	"s"."IsDisabled"		AS "SmartRoleGeneratorIsDisabled",
+	"s"."HideRoles"			AS "SmartRoleGeneratorHideRoles",
+	"s"."DisableDeputies"	AS "SmartRoleGeneratorDisableDeputies"
+	
+FROM "SmartRoleGenerators" AS "s"
+#if(Name || request.SortedBy("SmartRoleGeneratorName")) {
+CROSS JOIN "Localization"("s"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+	#param(Description, "s"."Description")
+	#param(IsDisabled, "s"."IsDisabled")
+	#param(HideRoles, "s"."HideRoles")
+	#param(DisableDeputies, "s"."DisableDeputies")
+	
+ORDER BY #order_by

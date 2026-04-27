@@ -1,0 +1,127 @@
+﻿{
+  "Alias": "ConditionUsePlaces",
+  "Caption": "$Views_Names_ConditionUsePlaces",
+  "GroupName": "System",
+  "ID": "c0b966a6-aa3a-4ea6-b5ab-a6084099cc1f",
+  "JsonMetadataSource::txt": "ConditionUsePlaces JSONMETA",
+  "MsQuerySource::txt": "ConditionUsePlaces MSSQL",
+  "PgQuerySource::txt": "ConditionUsePlaces PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART ConditionUsePlaces JSONMETA]
+{
+  "Alias": "ConditionUsePlaces",
+  "Caption": "$Views_Names_ConditionUsePlaces",
+  "Columns": [
+    {
+      "Alias": "ConditionUsePlaceID",
+      "Hidden": true,
+      "Type": "$ConditionUsePlaces.ID"
+    },
+    {
+      "Alias": "ConditionUsePlaceName",
+      "Caption": "$Views_ConditionUsePlaces_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$ConditionUsePlaces.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ConditionUsePlaceName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_ConditionUsePlaces_Name_Param",
+      "Type": "$ConditionUsePlaces.Name"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "ConditionUsePlace",
+      "DisplayValueColumn": "ConditionUsePlaceName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "ConditionUsePlaces"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART ConditionUsePlaces MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [ConditionUsePlaceID],
+		[t].[Name]								AS [ConditionUsePlaceName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [ConditionUsePlaces] AS [t] WITH (NOLOCK)
+	#if(Name || Normal && request.SortedBy("ConditionUsePlaceName")) {
+	CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+	}
+	WHERE 1 = 1
+		#param(Name, [lName].[Value])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART ConditionUsePlaces PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"		AS "ConditionUsePlaceID",
+	"t"."Name"		AS "ConditionUsePlaceName",
+	0::int8			AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "ConditionUsePlaces" AS "t"
+#if(Name || Normal && request.SortedBy("ConditionUsePlaceName")) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

@@ -1,0 +1,236 @@
+﻿{
+  "Alias": "CompletionOptionCards",
+  "Caption": "$Views_Names_CompletionOptionCards",
+  "GroupName": "System",
+  "ID": "f74f5397-74b2-4b55-8d4e-2cc3031f35af",
+  "JsonMetadataSource::txt": "CompletionOptionCards JSONMETA",
+  "MsQuerySource::txt": "CompletionOptionCards MSSQL",
+  "PgQuerySource::txt": "CompletionOptionCards PGSQL"
+}
+
+[TEXTPART CompletionOptionCards JSONMETA]
+{
+  "Alias": "CompletionOptionCards",
+  "Caption": "$Views_Names_CompletionOptionCards",
+  "Columns": [
+    {
+      "Alias": "OptionID",
+      "Hidden": true,
+      "Type": "$CompletionOptions.ID"
+    },
+    {
+      "Alias": "OptionCaption",
+      "Caption": "$Views_CompletionOptions_Caption",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "l.Value",
+      "Type": "$CompletionOptions.Caption"
+    },
+    {
+      "Alias": "OptionName",
+      "Caption": "$Views_CompletionOptions_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "co.Name",
+      "Type": "$CompletionOptions.Name"
+    },
+    {
+      "Alias": "PartitionID",
+      "Hidden": true,
+      "Type": "$Partitions.ID"
+    },
+    {
+      "Alias": "PartitionName",
+      "Caption": "$Views_CompletionOptions_Partition",
+      "FilterParameter": "Partition",
+      "FilterType": "Parameter",
+      "SortBy": "p.Name",
+      "Type": "$Partitions.Name"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "OptionCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "OptionID",
+      "Caption": "$Views_CompletionOptions_OptionID_Param",
+      "Hidden": true,
+      "Type": "$CompletionOptions.ID"
+    },
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_CompletionOptions_Caption_Param",
+      "Type": "$CompletionOptions.Caption"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_CompletionOptions_Alias_Param",
+      "Type": "$CompletionOptions.Name"
+    },
+    {
+      "Alias": "Partition",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "Partitions"
+      },
+      "Caption": "$Views_CompletionOptions_Partition",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "Partitions"
+      },
+      "RefSection": [
+        "Partitions"
+      ],
+      "Type": "$Partitions.ID"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "CardType": "CompletionOption",
+      "ColPrefix": "Option",
+      "DisplayValueColumn": "OptionCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "CompletionOptions"
+      ]
+    },
+    {
+      "ColPrefix": "Partition",
+      "DisplayValueColumn": "PartitionName",
+      "RefSection": [
+        "Partitions"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART CompletionOptionCards MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[co].[ID]								AS [OptionID],
+		[co].[Caption]							AS [OptionCaption],
+		[co].[Name]								AS [OptionName],
+		[p].[ID]		AS [PartitionID],
+		[p].[Name]		AS [PartitionName],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [CompletionOptions] AS [co] WITH (NOLOCK)
+	#if(Normal || Partition) {
+	OUTER APPLY (
+		SELECT
+			COALESCE(
+				[tt].[Definition].value('(/SchemeRecord/@Partition)[1]', 'uniqueidentifier'),
+				'29f90c69-c1ef-4cbf-b9d5-7fc91cd68c67' -- Default partition
+			) AS [PartitionID]
+		FROM (
+			SELECT [tt].[Definition].query('.') AS [Definition]
+			FROM [Tables] AS [t] WITH (NOLOCK)
+			CROSS APPLY [t].[Definition].nodes('/SchemeTable/SchemeRecord') AS [tt]([Definition])
+			WHERE [t].[ID] = '08cf782d-4130-4377-8a49-3e201a05d496' -- CompletionOptions
+		) AS [tt]
+		WHERE [tt].[Definition].value('(/SchemeRecord/ID)[1]', 'uniqueidentifier') = [co].[ID]
+	) AS [t]
+	LEFT JOIN [Partitions] AS [p] WITH (NOLOCK) ON [p].[ID] = [t].[PartitionID]
+	}
+	#if(Caption || Normal && request.SortedBy("OptionCaption")) {
+	CROSS APPLY [Localization]([co].[Caption], #param(locale)) AS [l]
+	}
+	WHERE 1 = 1
+		#param(OptionID, [co].[ID])
+		#param(Name, [co].[Name])
+		#param(Caption, [l].[Value])
+		#param(Partition, [p].[ID])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART CompletionOptionCards PGSQL]
+SELECT
+	#if(Normal) {
+	"co"."ID"			AS "OptionID",
+	"co"."Caption"		AS "OptionCaption",
+	"co"."Name"			AS "OptionName",
+	"p"."ID"			AS "PartitionID",
+	"p"."Name"			AS "PartitionName",
+	0::int8				AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "CompletionOptions" AS "co"
+#if(Normal || Partition) {
+LEFT JOIN LATERAL (
+	SELECT
+		"p"."ID",
+		"p"."Name"
+	FROM "Partitions" AS "p"
+	WHERE "p"."ID" = (
+		SELECT
+			coalesce(
+				((xpath('/SchemeRecord/@Partition', "t"."Record")::text[])::uuid[])[1],
+				'29f90c69-c1ef-4cbf-b9d5-7fc91cd68c67'::uuid -- Default partition
+			) AS "PartitionID"
+		FROM (
+			SELECT unnest(xpath('/SchemeTable/SchemeRecord', "Definition")) AS "Record"
+			FROM "Tables"
+			WHERE "ID" = '08cf782d-4130-4377-8a49-3e201a05d496' -- CompletionOptions
+		) AS "t"
+		WHERE ((xpath('/SchemeRecord/ID/text()', "t"."Record")::text[])::uuid[])[1] = "co"."ID")
+) AS "p" ON TRUE
+}
+#if(Caption || Normal && request.SortedBy("OptionCaption")) {
+CROSS JOIN "Localization"("co"."Caption", #param(locale)) AS "l"
+}
+WHERE true
+	#param(OptionID, "co"."ID")
+	#param(Name, "co"."Name")
+	#param(Caption, "l"."Value")
+	#param(Partition, "p"."ID")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

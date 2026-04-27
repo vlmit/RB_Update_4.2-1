@@ -1,0 +1,239 @@
+﻿{
+  "Alias": "NotificationSubscriptions",
+  "Caption": "$Views_Names_NotificationSubscriptions",
+  "GroupName": "System",
+  "ID": "41fef937-d98e-48f8-9d47-eed0c1d32adf",
+  "JsonMetadataSource::txt": "NotificationSubscriptions JSONMETA",
+  "MsQuerySource::txt": "NotificationSubscriptions MSSQL",
+  "PgQuerySource::txt": "NotificationSubscriptions PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART NotificationSubscriptions JSONMETA]
+{
+  "Alias": "NotificationSubscriptions",
+  "Caption": "$Views_Names_NotificationSubscriptions",
+  "Columns": [
+    {
+      "Alias": "NotificationSubscriptionID",
+      "Hidden": true,
+      "Type": "$NotificationSubscriptions.ID"
+    },
+    {
+      "Alias": "NotificationSubscriptionCardID",
+      "Hidden": true,
+      "Type": "$NotificationSubscriptions.CardID"
+    },
+    {
+      "Alias": "NotificationSubscriptionCardDigest",
+      "Caption": "$Views_NotificationSubscriptions_CardDigest",
+      "FilterParameter": "CardDigest",
+      "FilterType": "Parameter",
+      "SortBy": "ns.CardDigest",
+      "Type": "$NotificationSubscriptions.CardDigest"
+    },
+    {
+      "Alias": "NotificationSubscriptionDate",
+      "Caption": "$Views_NotificationSubscriptions_SubscriptionDate",
+      "FilterParameter": "SubscriptionDate",
+      "FilterType": "Parameter",
+      "SortBy": "ns.SubscriptionDate",
+      "Type": "$NotificationSubscriptions.SubscriptionDate"
+    },
+    {
+      "Alias": "NotificationSubscriptionNotificationType",
+      "Caption": "$Views_NotificationSubscriptions_NotificationType",
+      "FilterParameter": "NotificationType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lNotType.Value",
+      "Type": "$NotificationSubscriptions.NotificationTypeName"
+    },
+    {
+      "Alias": "NotificationSubscriptionType",
+      "Caption": "$Views_NotificationSubscriptions_SubscriptionType",
+      "Localizable": true,
+      "SortBy": "ns.IsSubscription",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "NotificationSubscriptionDate",
+      "SortDirection": "Descending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "CardDigest",
+      "Caption": "$Views_NotificationSubscriptions_CardDigest_Param",
+      "Type": "$NotificationSubscriptions.CardDigest"
+    },
+    {
+      "Alias": "NotificationType",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "NotificationTypes"
+      },
+      "Caption": "$Views_NotificationSubscriptions_NotificationType_Param",
+      "DisallowedOperands": [
+        "IsNull",
+        "IsNotNull"
+      ],
+      "RefSection": [
+        "NotificationTypes"
+      ],
+      "Type": "$NotificationSubscriptions.NotificationTypeID"
+    },
+    {
+      "Alias": "SubscriptionDate",
+      "Caption": "$Views_NotificationSubscriptions_SubscriptionDate_Param",
+      "DisallowedOperands": [
+        "IsNull",
+        "IsNotNull"
+      ],
+      "Type": "$NotificationSubscriptions.SubscriptionDate"
+    },
+    {
+      "Alias": "IsSubscription",
+      "Caption": "$Views_NotificationSubscriptions_IsSubscription_Param",
+      "DisallowedOperands": [
+        "IsNull",
+        "IsNotNull"
+      ],
+      "Multiple": false,
+      "Type": "$NotificationSubscriptions.IsSubscription"
+    },
+    {
+      "Alias": "User",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_NotificationSubscriptions_User_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Null"
+    }
+  ],
+  "QuickSearchParam": "CardDigest",
+  "References": [
+    {
+      "ColPrefix": "NotificationSubscription",
+      "DisplayValueColumn": "NotificationSubscriptionCardDigest",
+      "RefSection": [
+        "NotificationSubscriptions"
+      ]
+    },
+    {
+      "ColPrefix": "NotificationSubscriptionCard",
+      "DisplayValueColumn": "NotificationSubscriptionCardDigest",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Instances"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART NotificationSubscriptions MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[ns].[ID]									AS [NotificationSubscriptionID],
+		[ns].[CardID]								AS [NotificationSubscriptionCardID],
+		[ns].[CardDigest]							AS [NotificationSubscriptionCardDigest],
+		[ns].[SubscriptionDate]						AS [NotificationSubscriptionDate],
+		[ns].[NotificationTypeName]					AS [NotificationSubscriptionNotificationType],
+		CASE 
+			WHEN [ns].[IsSubscription] = 1
+			THEN '$Views_NotificationSubscriptions_SubscriptionValue'
+			ELSE '$Views_NotificationSubscriptions_RefusalValue'
+		END AS [NotificationSubscriptionType],
+		row_number() OVER (ORDER BY #order_by)		AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [NotificationSubscriptions] AS [ns] WITH (NOLOCK)
+	#if(Normal && request.SortedBy("NotificationSubscriptionNotificationType")) {
+	CROSS APPLY [Localization]([ns].[NotificationTypeName], #param(locale)) AS [lNotType]
+	}
+	
+	WHERE [ns].[UserID] = #if(User) { #param(User) } { #param(CurrentUserID) }
+		#param(CardDigest, [ns].[CardDigest])
+		#param(NotificationType, [ns].[NotificationTypeID])
+		#param(SubscriptionDate, [ns].[SubscriptionDate])
+		#param(IsSubscription, [ns].[IsSubscription])
+		
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART NotificationSubscriptions PGSQL]
+SELECT
+#if(Normal) {
+	"ns"."ID"									AS "NotificationSubscriptionID",
+	"ns"."CardID"								AS "NotificationSubscriptionCardID",
+	"ns"."CardDigest"							AS "NotificationSubscriptionCardDigest",
+	"ns"."SubscriptionDate"						AS "NotificationSubscriptionDate",
+	"ns"."NotificationTypeName"					AS "NotificationSubscriptionNotificationType",
+	CASE 
+		WHEN "ns"."IsSubscription"
+		THEN '$Views_NotificationSubscriptions_SubscriptionValue'
+		ELSE '$Views_NotificationSubscriptions_RefusalValue'
+	END AS "NotificationSubscriptionType",
+	row_number() OVER (ORDER BY #order_by)		AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "NotificationSubscriptions" AS "ns"
+#if(Normal && request.SortedBy("NotificationSubscriptionNotificationType")) {
+CROSS JOIN "Localization"("ns"."NotificationTypeName", #param(locale)) AS "lNotType"
+}
+
+WHERE "ns"."UserID" = #if(User) { #param(User) } { #param(CurrentUserID) }
+	#param(CardDigest, "ns"."CardDigest")
+	#param(NotificationType, "ns"."NotificationTypeID")
+	#param(SubscriptionDate, "ns"."SubscriptionDate")
+	#param(IsSubscription, "ns"."IsSubscription")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

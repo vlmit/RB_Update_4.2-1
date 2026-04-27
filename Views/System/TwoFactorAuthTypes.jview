@@ -1,0 +1,82 @@
+﻿{
+  "Alias": "TwoFactorAuthTypes",
+  "Caption": "$Views_Names_TwoFactorAuthTypes",
+  "GroupName": "System",
+  "ID": "935d6b3d-1307-4856-a142-dad02a3ff558",
+  "JsonMetadataSource::txt": "TwoFactorAuthTypes JSONMETA",
+  "MsQuerySource::txt": "TwoFactorAuthTypes MSSQL",
+  "PgQuerySource::txt": "TwoFactorAuthTypes PGSQL"
+}
+
+[TEXTPART TwoFactorAuthTypes JSONMETA]
+{
+  "Alias": "TwoFactorAuthTypes",
+  "Caption": "$Views_Names_TwoFactorAuthTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$TwoFactorAuthTypes.ID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_TwoFactorAuthTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$TwoFactorAuthTypes.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_TwoFactorAuthTypes_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeName",
+      "RefSection": [
+        "TwoFactorAuthTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TwoFactorAuthTypes MSSQL]
+SELECT
+	[t].[ID]		AS [TypeID],
+	[t].[Name]		AS [TypeName]
+FROM [TwoFactorAuthTypes] AS [t] WITH (NOLOCK)
+#if(Name || request.SortedBy("TypeName")) {
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART TwoFactorAuthTypes PGSQL]
+SELECT
+	"t"."ID"	AS "TypeID",
+	"t"."Name"	AS "TypeName"
+FROM "TwoFactorAuthTypes" AS "t"
+#if(Name || request.SortedBy("TypeName")) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

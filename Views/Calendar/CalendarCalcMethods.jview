@@ -1,0 +1,114 @@
+﻿{
+  "Alias": "CalendarCalcMethods",
+  "Caption": "$Views_Names_CalendarCalcMethods",
+  "GroupName": "Calendar",
+  "ID": "61a516b2-bb7d-41b7-b05c-57a5aeb564ac",
+  "JsonMetadataSource::txt": "CalendarCalcMethods JSONMETA",
+  "MsQuerySource::txt": "CalendarCalcMethods MSSQL",
+  "PgQuerySource::txt": "CalendarCalcMethods PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART CalendarCalcMethods JSONMETA]
+{
+  "Alias": "CalendarCalcMethods",
+  "Caption": "$Views_Names_CalendarCalcMethods",
+  "Columns": [
+    {
+      "Alias": "MethodID",
+      "Hidden": true,
+      "Type": "$CalendarCalcMethods.ID"
+    },
+    {
+      "Alias": "MethodName",
+      "Caption": "$Views_CalendarCalcMethods_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lMethodName.Value",
+      "Type": "$CalendarCalcMethods.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "MethodName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_CalendarCalcMethods_Name_Param",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Method",
+      "DisplayValueColumn": "MethodName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "CalendarCalcMethods"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART CalendarCalcMethods MSSQL]
+SELECT
+#if(Normal) 
+{
+	[t].[ID]				AS [MethodID],
+	[t].[Name]				AS [MethodName]
+}
+#if(Count) 
+{
+	count(*) AS [cnt]
+}
+FROM [CalendarCalcMethods] AS [t] WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lMethodName]
+
+WHERE 1 = 1
+	#param(Name, [lMethodName].[Value])
+#if(Normal) 
+{
+ORDER BY #order_by
+}
+
+
+[TEXTPART CalendarCalcMethods PGSQL]
+SELECT
+#if(Normal) 
+{
+	"t"."ID"				AS "MethodID",
+	"t"."Name"				AS "MethodName"
+}
+#if(Count) 
+{
+	count(*) AS "cnt"
+}
+FROM "CalendarCalcMethods" AS "t"
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lMethodName"
+
+WHERE true
+	#param(Name, "lMethodName"."Value")
+#if(Normal) 
+{
+ORDER BY #order_by
+}

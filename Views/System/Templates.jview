@@ -1,0 +1,330 @@
+﻿{
+  "Alias": "Templates",
+  "Caption": "$Views_Names_Templates",
+  "GroupName": "System",
+  "ID": "edab4e60-c19e-49a2-979f-7634133c377e",
+  "JsonMetadataSource::txt": "Templates JSONMETA",
+  "MsQuerySource::txt": "Templates MSSQL",
+  "PgQuerySource::txt": "Templates PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART Templates JSONMETA]
+{
+  "Alias": "Templates",
+  "Caption": "$Views_Names_Templates",
+  "Columns": [
+    {
+      "Alias": "TemplateID",
+      "Hidden": true,
+      "Type": "$Templates.ID"
+    },
+    {
+      "Alias": "TemplateCaption",
+      "Caption": "$Views_Templates_Name",
+      "FilterParameter": "TemplateCaption",
+      "FilterType": "Parameter",
+      "SortBy": "t.Caption",
+      "Type": "$Templates.Caption"
+    },
+    {
+      "Alias": "TemplateDescription",
+      "Caption": "$Views_Templates_Description",
+      "FilterParameter": "TemplateDescription",
+      "FilterType": "Parameter",
+      "SortBy": "t.Description",
+      "Type": "$Templates.Description"
+    },
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Templates.TypeID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_Templates_Type",
+      "FilterParameter": "TypeID",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lTypeCaption.Value",
+      "Type": "$Templates.TypeCaption"
+    },
+    {
+      "Alias": "TemplateDigest",
+      "Caption": "$Views_Templates_Digest",
+      "FilterParameter": "TemplateDigest",
+      "FilterType": "Parameter",
+      "SortBy": "t.Digest",
+      "Type": "$Templates.Digest"
+    },
+    {
+      "Alias": "TemplateVersion",
+      "Caption": "$Views_Templates_Version",
+      "FilterParameter": "TemplateVersion",
+      "FilterType": "Parameter",
+      "SortBy": "t.Version",
+      "Type": "$Templates.Version"
+    },
+    {
+      "Alias": "TemplateDate",
+      "Caption": "$Views_Templates_Date",
+      "FilterParameter": "TemplateDate",
+      "FilterType": "Parameter",
+      "SortBy": "i.Created",
+      "Type": "$Instances.Created"
+    },
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "$Instances.CreatedByID"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Templates_User",
+      "NormalizationKeyColumn": "UserID",
+      "NormalizationSource": "Users",
+      "Type": "$PersonalRoles.Name"
+    },
+    {
+      "Alias": "CardID",
+      "Hidden": true,
+      "Type": "$Templates.CardID"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TemplateDate",
+      "SortDirection": "Descending"
+    }
+  ],
+  "Extensions": [
+    {
+      "Order": 0,
+      "TypeName": "Tessa.Extensions.Platform.Client.Cards.CreateFromTemplateOnDoubleClickExtension"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Optional",
+  "Parameters": [
+    {
+      "Alias": "TemplateCaption",
+      "Caption": "$Views_Templates_Name_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "TemplateDescription",
+      "Caption": "$Views_Templates_Description_Param",
+      "Type": "$Templates.Description"
+    },
+    {
+      "Alias": "TypeID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "Types"
+      },
+      "Caption": "$Views_Templates_Type_Param",
+      "RefSection": [
+        "Types"
+      ],
+      "Type": "$Templates.TypeID"
+    },
+    {
+      "Alias": "TemplateDigest",
+      "Caption": "$Views_Templates_Digest_Param",
+      "Type": "$Templates.Digest"
+    },
+    {
+      "Alias": "TemplateVersion",
+      "Caption": "$Views_Templates_Version_Param",
+      "Multiple": false,
+      "Type": "$Templates.Version"
+    },
+    {
+      "Alias": "TemplateDate",
+      "Caption": "$Views_Templates_Date_Param",
+      "Type": "$Instances.Created"
+    },
+    {
+      "Alias": "UserID",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Templates_User_Param",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "$Instances.CreatedByID"
+    },
+    {
+      "Alias": "CardID",
+      "Caption": "$Views_Templates_SourceCard",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$Templates.CardID"
+    }
+  ],
+  "QuickSearchParam": "TemplateCaption",
+  "References": [
+    {
+      "ColPrefix": "Template",
+      "DisplayValueColumn": "TemplateCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Templates"
+      ]
+    },
+    {
+      "ColPrefix": "User",
+      "DisplayValueColumn": "UserName",
+      "IsCard": true,
+      "RefSection": [
+        "Roles",
+        "PersonalRoles"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Templates MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		[t].[ID]								AS [TemplateID],
+		[t].[Caption]							AS [TemplateCaption],
+		[t].[Description]						AS [TemplateDescription],
+		[t].[TypeID],
+		[t].[TypeCaption],
+		[t].[Digest]							AS [TemplateDigest],
+		[t].[Version]							AS [TemplateVersion],
+		[i].[Created]							AS [TemplateDate],
+		[i].[CreatedByID]						AS [UserID],
+		[t].[CardID],
+		row_number() OVER (ORDER BY #order_by)	AS [rn]
+		}
+		#if(Count) {
+		count(*) AS [cnt]
+		}
+	FROM [Templates] AS [t] WITH (NOLOCK)
+	INNER JOIN [Instances] AS [i] WITH (NOLOCK)
+		ON [i].[ID] = [t].[ID]
+	CROSS APPLY [Localization]([t].[TypeCaption], #param(locale)) AS [lTypeCaption]
+	#if(administrator) {
+	WHERE 1 = 1
+	} {	-- ELSE
+	WHERE (
+			EXISTS(
+				SELECT NULL
+				FROM [TemplateOpenRoles] AS [tr] WITH (NOLOCK)
+				INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK)
+					ON [ru].[ID] = [tr].[RoleID]
+				WHERE [tr].[ID] = [t].[ID]
+					#param(CurrentUserID, [ru].[UserID]))
+			OR
+			EXISTS(
+				SELECT NULL
+				FROM [TemplateEditRoles] AS [tr] WITH (NOLOCK)
+				INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK)
+					ON [ru].[ID] = [tr].[RoleID]
+				WHERE [tr].[ID] = [t].[ID]
+					#param(CurrentUserID, [ru].[UserID]))
+			)
+	}
+		#param(TemplateCaption, [t].[Caption])
+		#param(TemplateDigest, [t].[Digest])
+		#param(TemplateVersion, [t].[Version])
+		#param(TypeID, [t].[TypeID])
+		#param(TemplateDate, [i].[Created])
+		#param(UserID, [i].[CreatedByID])
+		#param(TemplateDescription, [t].[Description])
+		#param(CardID, [t].[CardID])
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+
+[TEXTPART Templates PGSQL]
+SELECT
+	#if(Normal) {
+	"t"."ID"									AS "TemplateID",
+	"t"."Caption"								AS "TemplateCaption",
+	"t"."Description"							AS "TemplateDescription",
+	"t"."TypeID",
+	"t"."TypeCaption",
+	"t"."Digest"								AS "TemplateDigest",
+	"t"."Version"								AS "TemplateVersion",
+	"i"."Created"								AS "TemplateDate",
+	"i"."CreatedByID"							AS "UserID",
+	"t"."CardID",
+	0::int8										AS "rn"
+	}
+	#if(Count) {
+	count(*) AS "cnt"
+	}
+FROM "Templates" AS "t"
+INNER JOIN "Instances" AS "i"
+	ON "i"."ID" = "t"."ID"
+CROSS JOIN "Localization"("t"."TypeCaption", #param(locale)) AS "lTypeCaption"
+#if(administrator) {
+WHERE true
+} {	-- ELSE
+WHERE (
+		EXISTS(
+			SELECT NULL
+			FROM "TemplateOpenRoles" AS "tr"
+			INNER JOIN "RoleUsers" AS "ru"
+				ON "ru"."ID" = "tr"."RoleID"
+			WHERE "tr"."ID" = "t"."ID"
+				#param(CurrentUserID, "ru"."UserID"))
+		OR
+		EXISTS(
+			SELECT NULL
+			FROM "TemplateEditRoles" AS "tr"
+			INNER JOIN "RoleUsers" AS "ru"
+				ON "ru"."ID" = "tr"."RoleID"
+			WHERE "tr"."ID" = "t"."ID"
+				#param(CurrentUserID, "ru"."UserID"))
+		)
+}
+	#param(TemplateCaption, "t"."Caption")
+	#param(TemplateDigest, "t"."Digest")
+	#param(TemplateVersion, "t"."Version")
+	#param(TypeID, "t"."TypeID")
+	#param(TemplateDate, "i"."Created")
+	#param(UserID, "i"."CreatedByID")
+	#param(TemplateDescription, "t"."Description")
+	#param(CardID, "t"."CardID")
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

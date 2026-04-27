@@ -1,0 +1,73 @@
+﻿{
+  "Alias": "DialogCardAutoOpenModes",
+  "Caption": "$Views_Names_DialogCardAutoOpenModes",
+  "GroupName": "System",
+  "ID": "115854cc-71a8-45ae-ab4f-940962b332c6",
+  "JsonMetadataSource::txt": "DialogCardAutoOpenModes JSONMETA",
+  "MsQuerySource::txt": "DialogCardAutoOpenModes MSSQL",
+  "PgQuerySource::txt": "DialogCardAutoOpenModes PGSQL"
+}
+
+[TEXTPART DialogCardAutoOpenModes JSONMETA]
+{
+  "Alias": "DialogCardAutoOpenModes",
+  "Caption": "$Views_Names_DialogCardAutoOpenModes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$DialogCardAutoOpenModes.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "RefName",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$DialogCardAutoOpenModes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$DialogCardAutoOpenModes_Name",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "DialogCardAutoOpenModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DialogCardAutoOpenModes MSSQL]
+SELECT
+	[a].[ID]		AS [RefID],
+	[a].[Name]		AS [RefName]
+FROM [DialogCardAutoOpenModes] AS [a] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([a].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [a].[ID]
+
+
+[TEXTPART DialogCardAutoOpenModes PGSQL]
+SELECT
+	"a"."ID"		AS "RefID",
+	"a"."Name"		AS "RefName"
+FROM "DialogCardAutoOpenModes" AS "a"
+#if(Name) {
+CROSS JOIN "Localization"("a"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "a"."ID"

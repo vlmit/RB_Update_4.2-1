@@ -1,0 +1,484 @@
+﻿{
+  "Alias": "TagCards",
+  "Caption": "$Views_Names_TagCards",
+  "GroupName": "Tags",
+  "ID": "c2b5ea9e-2bfa-43f6-a566-7e1df45f0f51",
+  "JsonMetadataSource::txt": "TagCards JSONMETA",
+  "MsQuerySource::txt": "TagCards MSSQL",
+  "PgQuerySource::txt": "TagCards PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TagCards JSONMETA]
+{
+  "Alias": "TagCards",
+  "Caption": "$Views_Names_TagCards",
+  "Columns": [
+    {
+      "Alias": "CardID",
+      "Hidden": true,
+      "SortBy": "t.SetAt",
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "CardTypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "CardType",
+      "Caption": "$Views_TagCards_CardType",
+      "FilterParameter": "Type",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "NormalizationKeyColumn": "CardTypeID",
+      "NormalizationSource": "KrTypes",
+      "Type": "$DocumentCommonInfo.DocTypeTitle"
+    },
+    {
+      "Alias": "CardNumber",
+      "Caption": "$Views_TagCards_CardNumber",
+      "Type": "$DocumentCommonInfo.FullNumber"
+    },
+    {
+      "Alias": "CardSubject",
+      "Caption": "$Views_TagCards_CardSubject",
+      "Type": "$DocumentCommonInfo.Subject"
+    },
+    {
+      "Alias": "CardDate",
+      "Caption": "$Views_TagCards_CardDate",
+      "Type": "$DocumentCommonInfo.DocDate"
+    },
+    {
+      "Alias": "CardState",
+      "Caption": "$Views_TagCards_CardState",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "CardID",
+      "SortDirection": "Descending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Tag",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_TagCards_Tag_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "Tags"
+      ],
+      "Type": "$TagCards.TagID"
+    },
+    {
+      "Alias": "Type",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Caption": "$Views_TagCards_Type_Param",
+      "DropDownInfo": {
+        "PopupColumns": [
+          1
+        ],
+        "ViewAlias": "KrTypesEffective"
+      },
+      "Hidden": true,
+      "RefSection": [
+        "TypeForView"
+      ],
+      "Type": "Guid Not Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Card",
+      "DisplayValueColumn": "CardNumber",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Instances"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    },
+    {
+      "Alias": "PersonalTags",
+      "Caption": "$Views_TagCards_PersonalTags_Subset",
+      "CaptionColumn": "TagName",
+      "CountColumn": "TagCount",
+      "RefColumn": "TagID",
+      "RefParam": "Tag"
+    },
+    {
+      "Alias": "CommonTags",
+      "Caption": "$Views_TagCards_CommonTags_Subset",
+      "CaptionColumn": "TagName",
+      "CountColumn": "TagCount",
+      "RefColumn": "TagID",
+      "RefParam": "Tag"
+    }
+  ],
+  "TagsPosition": "InColumn",
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TagCards MSSQL]
+#if(Tag || PersonalTags || CommonTags) {
+	#if(Normal || Count) {
+	IF EXISTS (
+		SELECT
+			NULL
+		FROM [Tags] AS [l] WITH(NOLOCK)
+		LEFT JOIN [TagReaders] AS [tr] WITH(NOLOCK)
+			ON [tr].[ID] = [l].[ID]
+		LEFT JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+			ON [ru].[ID] = [tr].[RoleID]
+		WHERE 1 = 1
+			#param(Tag, [l].[ID])
+			-- В данном случае OR не так важен, потому что пойдёт сбор от [Tags]
+			AND ([l].[OwnerID] = #param(CurrentUserID) OR [ru].[UserID] = #param(CurrentUserID))
+	) OR EXISTS (
+		SELECT
+			NULL
+		FROM [Tags] AS [l] WITH(NOLOCK)
+		LEFT JOIN [TagSharedWith] AS [tsw] WITH(NOLOCK)
+			ON [tsw].[ID] = [l].[ID]
+		LEFT JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+			ON [ru].[ID] = [tsw].[RoleID]
+		WHERE 1 = 1
+			#param(Tag, [l].[ID])
+			-- В данном случае OR не так важен, потому что пойдёт сбор от [Tags]
+			AND ([l].[OwnerID] = #param(CurrentUserID) OR [ru].[UserID] = #param(CurrentUserID))
+	) OR EXISTS (
+		SELECT
+			NULL
+		FROM [Tags] AS [l] WITH(NOLOCK)
+		LEFT JOIN [TagEditors] AS [te] WITH(NOLOCK)
+			ON [te].[ID] = [l].[ID]
+		LEFT JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+			ON [ru].[ID] = [te].[RoleID]
+		WHERE 1 = 1
+			#param(Tag, [l].[ID])
+			-- В данном случае OR не так важен, потому что пойдёт сбор от [Tags]
+			AND ([l].[OwnerID] = #param(CurrentUserID) OR [ru].[UserID] = #param(CurrentUserID))
+	)
+	}
+		WITH [AvailableTagCards] AS
+		(
+			SELECT [t].*
+			FROM [TagCards] AS [t]
+			#if(Type) {
+			INNER JOIN [Instances] AS [i]
+				ON [i].[ID] = [t].[CardID]
+			LEFT JOIN [DocumentCommonInfo] AS [dci]
+				ON [dci].[ID] = [t].[CardID]
+			}
+			WHERE 1 = 1
+				#param(Tag, [t].[TagID])
+				#param(Type, COALESCE([dci].[DocTypeID], [i].[TypeID]))
+		)
+
+		SELECT
+			#if(Normal) {
+				[t].[CardID],
+				COALESCE([dci].[DocTypeID], [i].[TypeID])				AS [CardTypeID],
+				[dci].[FullNumber]										AS [CardNumber],
+				[dci].[Subject]											AS [CardSubject],
+				[dci].[DocDate]											AS [CardDate],
+				[dci].[StateName]										AS [CardState]
+			}
+			#if(Count) {
+				[t].*
+			}
+			#if(PersonalTags || CommonTags) {
+				[t].[TagID],
+				[l].[Name] AS [TagName],
+				[t].[TagCount]
+			}
+		FROM (
+			#if(Normal || Count) {
+			-- есть конкретный Tag, то есть либо Normal либо Count
+			SELECT
+				#if(Normal) {
+					[t].[CardID],
+					row_number() OVER (ORDER BY #order_by) AS [rn]
+				}
+				#if(Count) {
+					count(*)	AS [cnt]
+				}
+			FROM [AvailableTagCards] AS [t] WITH(NOLOCK)
+			WHERE 1 = 1
+			} {
+			-- CommonTags || PersonalTags
+				SELECT
+					[t].[TagID],
+					COUNT(*)	AS [TagCount]
+				FROM [AvailableTagCards] AS [t] WITH(NOLOCK)
+				WHERE EXISTS (
+					SELECT NULL
+					FROM [Tags] AS [l] WITH(NOLOCK)
+					WHERE [l].[ID] = [t].[TagID]
+						AND [l].[OwnerID] = #param(CurrentUserID)
+						#if (CommonTags) {
+							AND [l].[IsCommon] = 1
+						}
+						{
+							AND [l].[IsCommon] = 0
+						}
+					)
+				GROUP BY [t].[TagID]
+					#if(CommonTags) {
+						UNION
+						SELECT
+							[t].[TagID],
+							COUNT(*)	AS [TagCount]
+						FROM [AvailableTagCards] AS [t] WITH(NOLOCK)
+						WHERE EXISTS (
+								SELECT NULL
+								FROM [TagReaders] AS [tr] WITH(NOLOCK)
+								INNER JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+									ON [ru].[ID] = [tr].[RoleID]
+								WHERE [ru].[UserID] = #param(CurrentUserID)
+									AND [tr].[ID] = [t].[TagID]
+							)
+							OR EXISTS (
+								SELECT NULL
+								FROM [TagSharedWith] AS [tsw] WITH(NOLOCK)
+								INNER JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+									ON [ru].[ID] = [tsw].[RoleID]
+								WHERE [ru].[UserID] = #param(CurrentUserID)
+									AND [tsw].[ID] = [t].[TagID]
+							)
+							OR EXISTS (
+								SELECT NULL
+								FROM [TagEditors] AS [te] WITH(NOLOCK)
+								INNER JOIN [RoleUsers] AS [ru] WITH(NOLOCK)
+									ON [ru].[ID] = [te].[RoleID]
+								WHERE [ru].[UserID] = #param(CurrentUserID)
+									AND [te].[ID] = [t].[TagID]
+							)						
+						GROUP BY [t].[TagID]
+					}
+				}
+		) AS [t]
+		#if(Normal) {
+		INNER JOIN [Instances] AS [i] WITH(NOLOCK)
+			ON [i].[ID] = [t].[CardID]
+		LEFT JOIN [DocumentCommonInfo] AS [dci] WITH(NOLOCK)
+			ON [dci].[ID] = [t].[CardID]
+		LEFT JOIN [KrApprovalCommonInfo] AS [kr] WITH(NOLOCK)
+			ON [kr].[MainCardID] = [t].[CardID]
+		#if(PageOffset) {
+		WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+		}
+		ORDER BY [t].[rn]
+		}
+		#if(CommonTags || PersonalTags) {
+		INNER JOIN [Tags] AS [l] WITH(NOLOCK)
+			ON [l].[ID] = [t].[TagID]
+		ORDER BY [l].[Name]
+		}
+	#if(Normal || Count) {
+	ELSE
+	}
+}
+#if(Normal || Count) {
+		SELECT
+			#if(Normal) {
+			CAST (NULL AS UNIQUEIDENTIFIER)	AS [CardID],
+			CAST (NULL AS UNIQUEIDENTIFIER)	AS [CardTypeID],
+			CAST (NULL AS NVARCHAR(MAX))	AS [CardNumber],
+			CAST (NULL AS NVARCHAR(MAX))	AS [CardSubject],
+			CAST (NULL AS DATETIME)			AS [CardDate],
+			CAST (NULL AS NVARCHAR(MAX))	AS [CardState]
+			}
+			#if(Count) {
+			0					AS [cnt]
+			}
+		#if(Normal) {
+		WHERE 1 = 0
+		}
+}
+
+[TEXTPART TagCards PGSQL]
+--Если указан конкретный таг (с любыми другими режимами) или выбраны перечисленные режимы
+#if(Tag || PersonalTags || CommonTags) {
+--Если есть какие-то данные, то отметим это наличием строки-заглушки
+--(планировщик даже не смотрит в остальные таблицы во "FROM", если в предыдущей таблице нет строк)
+WITH "ThereAreSomeData" AS (
+SELECT
+FROM (VALUES(NULL)) AS "dummy"
+WHERE
+	#if(Normal || Count) {
+	EXISTS (
+		SELECT
+		FROM "Tags" AS "l"
+		LEFT JOIN "TagReaders" AS "tr"
+			ON "tr"."ID" = "l"."ID"
+		LEFT JOIN "RoleUsers" AS "ru"
+			ON "ru"."ID" = "tr"."RoleID"
+		WHERE 1 = 1
+			#param(Tag, "l"."ID")
+			-- В данном случае OR не так важен, потому что пойдёт сбор от "Tags"
+			AND ("l"."OwnerID" = #param(CurrentUserID) OR "ru"."UserID" = #param(CurrentUserID))
+	)
+	OR EXISTS (
+		SELECT
+		FROM "Tags" AS "l"
+		LEFT JOIN "TagSharedWith" AS "tsw"
+			ON "tsw"."ID" = "l"."ID"
+		LEFT JOIN "RoleUsers" AS "ru"
+			ON "ru"."ID" = "tsw"."RoleID"
+		WHERE 1 = 1
+			#param(Tag, "l"."ID")
+			-- В данном случае OR не так важен, потому что пойдёт сбор от "Tags"
+			AND ("l"."OwnerID" = #param(CurrentUserID) OR "ru"."UserID" = #param(CurrentUserID))
+	)
+	OR EXISTS (
+		SELECT
+		FROM "Tags" AS "l"
+		LEFT JOIN "TagEditors" AS "te"
+			ON "te"."ID" = "l"."ID"
+		LEFT JOIN "RoleUsers" AS "ru"
+			ON "ru"."ID" = "te"."RoleID"
+		WHERE 1 = 1
+			#param(Tag, "l"."ID")
+			-- В данном случае OR не так важен, потому что пойдёт сбор от "Tags"
+			AND ("l"."OwnerID" = #param(CurrentUserID) OR "ru"."UserID" = #param(CurrentUserID))
+	)
+	} { #if( PersonalTags || CommonTags ) {
+			true
+		} {/*если !Tag && (Normal || Count)*/
+			false
+		}
+	}
+)}
+--КОНЕЧНАЯ ВЫБОРКА ДЛЯ ВОЗВРАЩЕНИЯ РЕЗУЛЬТАТА ПРИ ЛЮБЫХ УСЛОВИЯХ
+SELECT "Result".*
+FROM--ФОРМИРОВАНИЕ БЛОКА "FROM" В ЗАВИСИМОСТИ ОТ РЕЖИМА
+#if(Tag || PersonalTags || CommonTags) {
+"ThereAreSomeData",
+}
+(--начало формирования всей выборки
+WITH
+#if(PersonalTags) {
+"AvailableCards" AS (
+	SELECT "l"."ID"
+	FROM "Tags" AS "l"
+	WHERE "l"."OwnerID" = #param(CurrentUserID)
+	AND NOT "l"."IsCommon"),
+}
+#if(CommonTags) {
+"AvailableCards" AS (
+	SELECT "l"."ID"
+	FROM "Tags" AS "l"
+	WHERE "l"."OwnerID" = #param(CurrentUserID)
+	AND "l"."IsCommon"
+	UNION
+	SELECT "tr"."ID"
+	FROM "TagReaders" AS "tr"
+	INNER JOIN "RoleUsers" AS "ru"
+		ON "ru"."ID" = "tr"."RoleID"
+	WHERE "ru"."UserID" = #param(CurrentUserID)
+	UNION
+	SELECT "tsw"."ID"
+	FROM "TagSharedWith" AS "tsw"
+	INNER JOIN "RoleUsers" AS "ru"
+		ON "ru"."ID" = "tsw"."RoleID"
+	WHERE "ru"."UserID" = #param(CurrentUserID)
+	UNION
+	SELECT "te"."ID"
+	FROM "TagEditors" AS "te"
+	INNER JOIN "RoleUsers" AS "ru"
+		ON "ru"."ID" = "te"."RoleID"
+	WHERE "ru"."UserID" = #param(CurrentUserID)),
+}
+-- Доступные "тегнутные" карточки с учётом фильтрации
+"AvailableTagCards" AS (
+	SELECT "t".*
+	FROM "TagCards" AS "t"
+	#if(Type) {
+	INNER JOIN "Instances" AS "i"
+		ON "i"."ID" = "t"."CardID"
+	LEFT JOIN "DocumentCommonInfo" AS "dci"
+		ON "dci"."ID" = "t"."CardID"
+	}
+	-- Если не указан сабсет, возвращаем строки только если указан тэг для фильтрации
+	WHERE #eval(PersonalTags || CommonTags || Tag)
+		#param(Tag, "t"."TagID")
+		#param(Type, COALESCE("dci"."DocTypeID", "i"."TypeID")))
+
+SELECT
+#if(Normal) {
+	"t"."CardID",
+	COALESCE("dci"."DocTypeID", "i"."TypeID")				AS "CardTypeID",
+	"dci"."FullNumber"										AS "CardNumber",
+	"dci"."Subject"											AS "CardSubject",
+	"dci"."DocDate"											AS "CardDate",
+	"dci"."StateName"										AS "CardState"
+FROM (
+		SELECT "t"."CardID"
+		FROM "AvailableTagCards" AS "t"
+		ORDER BY #order_by
+		#if(PageOffset) {
+		OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)}
+) AS "t"
+INNER JOIN "Instances" AS "i"
+				ON "i"."ID" = "t"."CardID"
+LEFT JOIN "DocumentCommonInfo" AS "dci"
+				ON "dci"."ID" = "t"."CardID"
+}
+#if(PersonalTags || CommonTags) {
+	"t"."TagID",
+	"l"."Name" AS "TagName",
+	"t"."TagCount"
+FROM (
+		SELECT
+			"ac"."ID"	AS "TagID",
+			count(1)	AS "TagCount"
+		FROM "AvailableCards" AS "ac"
+		INNER JOIN "AvailableTagCards" AS "t"
+			ON "t"."TagID" = "ac"."ID"
+		GROUP BY "ac"."ID"
+) AS "t"
+INNER JOIN "Tags" AS "l"
+	ON "l"."ID" = "t"."TagID"
+ORDER BY "l"."Name"
+}
+#if(Count) {
+	"t".*
+FROM (
+	SELECT
+		count(1)	AS "cnt"
+	FROM "AvailableTagCards" AS "t"
+) AS "t"
+}
+) as "Result"
+;

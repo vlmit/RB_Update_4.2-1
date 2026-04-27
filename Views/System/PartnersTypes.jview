@@ -1,0 +1,79 @@
+﻿{
+  "Alias": "PartnersTypes",
+  "Caption": "$Views_Names_PartnersTypes",
+  "GroupName": "System",
+  "ID": "59d56dd0-700f-46de-afd5-9aa3a1f9f69e",
+  "JsonMetadataSource::txt": "PartnersTypes JSONMETA",
+  "MsQuerySource::txt": "PartnersTypes MSSQL",
+  "PgQuerySource::txt": "PartnersTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART PartnersTypes JSONMETA]
+{
+  "Alias": "PartnersTypes",
+  "Caption": "$Views_Names_PartnersTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$PartnersTypes.ID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_ParnerTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$PartnersTypes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_ParnerTypes_Name_Param",
+      "Multiple": false,
+      "Type": "$PartnersTypes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeName",
+      "RefSection": [
+        "PartnersTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART PartnersTypes MSSQL]
+SELECT
+	[pt].[ID]		AS [TypeID],
+	[pt].[Name]		AS [TypeName]
+FROM [PartnersTypes] AS [pt] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([pt].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY [pt].[ID]
+
+
+[TEXTPART PartnersTypes PGSQL]
+SELECT
+	"pt"."ID"		AS "TypeID",
+	"pt"."Name"		AS "TypeName"
+FROM "PartnersTypes" AS "pt"
+#if(Name) {
+CROSS JOIN "Localization"("pt"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY "pt"."ID"

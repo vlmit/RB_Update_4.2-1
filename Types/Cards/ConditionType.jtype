@@ -1,0 +1,577 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_ConditionType",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": "{f:ConditionTypes.Name}",
+  "Extensions": null,
+  "Flags::int": 257,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "ColumnsCount::int": 2
+          },
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": false
+              },
+              "Caption": "$CardTypes_Blocks_MainInformation",
+              "ControlSettings": null,
+              "ControlType::int": 2,
+              "Flags::int": 0,
+              "Forms": [
+                {
+                  "Blocks": [
+                    {
+                      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                      "BlockSettings": null,
+                      "Caption": "Block1",
+                      "Controls": [
+                        {
+                          "BlockSettings": null,
+                          "Caption": "$CardTypes_Controls_Name",
+                          "ComplexColumnID": null,
+                          "ControlSettings": {
+                            "ShowExpandButton": false,
+                            "TextWrap": false
+                          },
+                          "ControlType::int": 0,
+                          "DisplayFormat": null,
+                          "Flags::int": 4,
+                          "Name": null,
+                          "PhysicalColumnIDList": [
+                            {
+                              "::single_type": "uid"
+                            },
+                            "372d7961-0e5f-4045-abe0-651363144d31"
+                          ],
+                          "RequiredText": null,
+                          "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f",
+                          "ToolTip": null,
+                          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+                        },
+                        {
+                          "BlockSettings": null,
+                          "Caption": "$CardTypes_Controls_SettingsCardType",
+                          "ComplexColumnID::uid": "72d2c9ba-51f9-43aa-ad00-daa6ee878f7a",
+                          "ControlSettings": {
+                            "ParameterAlias": "Caption",
+                            "RefSection": [
+                              {
+                                "::single_type": "str"
+                              },
+                              "Types"
+                            ],
+                            "ReferenceOpenMode::int": 3,
+                            "ViewAlias": "Types",
+                            "ViewMap": [
+                              {
+                                "CardColumn": null,
+                                "CardSection": null,
+                                "ColumnType::int": 5,
+                                "ConstantValue": true,
+                                "ConstantValueType::int": 4,
+                                "SkipNullParams": false,
+                                "ViewParamName": "IsTypeForSettings"
+                              }
+                            ]
+                          },
+                          "ControlType::int": 0,
+                          "DisplayFormat": null,
+                          "Flags::int": 0,
+                          "Name": null,
+                          "PhysicalColumnIDList": null,
+                          "RequiredText": null,
+                          "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f",
+                          "ToolTip": null,
+                          "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+                        }
+                      ],
+                      "FormSettings": {
+                        "HideCaption": true
+                      },
+                      "Name": "Block1"
+                    },
+                    {
+                      "BlockClass": "Tessa.UI.Cards.Blocks.HorizontalBlockType",
+                      "BlockSettings": null,
+                      "Caption": "Block2",
+                      "Controls": [
+                        {
+                          "BlockSettings": {
+                            "ControlSpan": false
+                          },
+                          "Caption": "$CardTypes_Controls_RepairConditions",
+                          "ControlSettings": {
+                            "HelpValue": "",
+                            "Text": "$CardTypes_Controls_RepairConditions"
+                          },
+                          "ControlType::int": 3,
+                          "Flags::int": 0,
+                          "Name": "RepairConditionsButton",
+                          "RequiredText": null,
+                          "ToolTip": null,
+                          "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+                        },
+                        {
+                          "BlockSettings": {
+                            "ControlSpan": false
+                          },
+                          "Caption": "$CardTypes_Controls_RepairAllConditions",
+                          "ControlSettings": {
+                            "HelpValue": "",
+                            "Text": "$CardTypes_Controls_RepairAllConditions"
+                          },
+                          "ControlType::int": 3,
+                          "Flags::int": 0,
+                          "Name": "RepairAllConditionsButton",
+                          "RequiredText": null,
+                          "ToolTip": null,
+                          "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+                        }
+                      ],
+                      "FormSettings": {
+                        "HideCaption": true
+                      },
+                      "Name": "Block2"
+                    },
+                    {
+                      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                      "BlockSettings": null,
+                      "Caption": "Block3",
+                      "Controls": [
+                        {
+                          "BlockSettings": null,
+                          "Caption": "$CardTypes_Controls_ConditionUsePlaces",
+                          "Columns": [
+                            {
+                              "AggregationFormat": null,
+                              "Alignment::int": 0,
+                              "Caption": "Reference",
+                              "ComplexColumnID::uid": "e6554172-c0a5-4cd4-af13-561b0e1ee92f",
+                              "DisplayFormat": null,
+                              "Flags::int": 0,
+                              "HeaderAlignment::int": 0,
+                              "MaxLength": null,
+                              "OwnedComplexColumnID": null,
+                              "OwnedOrderColumnID": null,
+                              "OwnedPhysicalColumnIDList": null,
+                              "OwnedSectionID": null,
+                              "PhysicalColumnIDList": null,
+                              "SelectableControlName": null,
+                              "Separator": null,
+                              "ToolTipLineLength::int": 100
+                            }
+                          ],
+                          "ControlSettings": {
+                            "ParameterAlias": "Name",
+                            "RefSection": [
+                              {
+                                "::single_type": "str"
+                              },
+                              "ConditionUsePlaces"
+                            ],
+                            "ReferenceOpenMode::int": 3,
+                            "ViewAlias": "ConditionUsePlaces"
+                          },
+                          "ControlType::int": 1,
+                          "Flags::int": 0,
+                          "Form": null,
+                          "Name": null,
+                          "RequiredText": null,
+                          "SectionID::uid": "b764f842-5b97-4de7-854a-f61b6b7a71dc",
+                          "ToolTip": null,
+                          "Type::uid": "5d95340a-0f22-0d14-b9d2-a5471f607261"
+                        }
+                      ],
+                      "FormSettings": {
+                        "HideCaption": true
+                      },
+                      "Name": "Block3"
+                    }
+                  ],
+                  "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+                  "FormSettings": null,
+                  "TabCaption": "Вкладка"
+                }
+              ],
+              "Name": null,
+              "ToolTip": null,
+              "Type::uid": "5f24f4f0-954b-4996-af69-1ce23cd692d2"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": false
+              },
+              "Caption": "$CardTypes_Controls_Description",
+              "ControlSettings": null,
+              "ControlType::int": 2,
+              "Flags::int": 0,
+              "Forms": [
+                {
+                  "Blocks": [
+                    {
+                      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                      "BlockSettings": null,
+                      "Caption": "Block1",
+                      "Controls": [
+                        {
+                          "BlockSettings": null,
+                          "Caption": "$CardTypes_Controls_Description",
+                          "ComplexColumnID": null,
+                          "ControlSettings": {
+                            "MaxRows::int": 9,
+                            "MinRows::int": 9
+                          },
+                          "ControlType::int": 0,
+                          "DisplayFormat": null,
+                          "Flags::int": 0,
+                          "Name": null,
+                          "PhysicalColumnIDList": [
+                            {
+                              "::single_type": "uid"
+                            },
+                            "5cad8a5b-fd6a-4f44-bd32-fcca7004ff1e"
+                          ],
+                          "RequiredText": null,
+                          "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f",
+                          "ToolTip": null,
+                          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+                        }
+                      ],
+                      "FormSettings": {
+                        "HideCaption": true
+                      },
+                      "Name": "Block1"
+                    }
+                  ],
+                  "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+                  "FormSettings": null,
+                  "TabCaption": "Вкладка"
+                }
+              ],
+              "Name": null,
+              "ToolTip": null,
+              "Type::uid": "5f24f4f0-954b-4996-af69-1ce23cd692d2"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block2"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": null,
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "HideCaption": false
+              },
+              "Caption": "$CardTypes_Label_ConditionTextRepresentation_Mandatory",
+              "ControlSettings": {
+                "Background": "#FFF7F7F7",
+                "BorderColor": "#FFABADB3",
+                "BorderThickness::dbl": 1.0,
+                "Padding": "5,3,5,3",
+                "Text": "$CardTypes_Controls_ConditionTextRepresentationToolTip",
+                "TextColor": "#FF383838"
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": null,
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+            },
+            {
+              "BlockSettings": {
+                "HideCaption": true
+              },
+              "Caption": "$CardTypes_Controls_ConditionTextRepresentation",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxRows::int": 5
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 4,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "a1b799ac-57d1-48bc-ac54-70cce8a7a458"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": {
+                "HideCaption": false
+              },
+              "Caption": "$CardTypes_Container_Condition_Mandatory",
+              "ControlSettings": null,
+              "ControlType::int": 2,
+              "Flags::int": 0,
+              "Forms": [
+                {
+                  "Blocks": [
+                    {
+                      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                      "BlockSettings": null,
+                      "Caption": "Block1",
+                      "Controls": [
+                        {
+                          "BlockSettings": null,
+                          "Caption": "$CardTypes_Controls_Condition",
+                          "ControlSettings": {
+                            "Background": "#FFF7F7F7",
+                            "BorderColor": "#FFABADB3",
+                            "BorderThickness::dbl": 1.0,
+                            "Padding": "5,3,5,3",
+                            "Text": "$CardTypes_Controls_ConditionToolTip",
+                            "TextColor": "#FF383838"
+                          },
+                          "ControlType::int": 3,
+                          "Flags::int": 0,
+                          "Name": null,
+                          "RequiredText": null,
+                          "ToolTip": null,
+                          "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                        }
+                      ],
+                      "FormSettings": {
+                        "Column::int": 1,
+                        "ColumnSpan::int": 1,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 3,
+                        "Row::int": 0,
+                        "RowSpan::int": 1,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Name": "Block1"
+                    },
+                    {
+                      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                      "BlockSettings": {
+                        "DoNotCollapseWithTopBlock": true
+                      },
+                      "Caption": "Block3",
+                      "Controls": [
+                        {
+                          "BlockSettings": {
+                            "HideCaption": true
+                          },
+                          "Caption": "$CardTypes_Controls_Condition",
+                          "ComplexColumnID": null,
+                          "ControlSettings": {
+                            "AvalonFontType::int": 1,
+                            "AvalonShowLineNumbers": true,
+                            "AvalonSyntaxType::int": 2,
+                            "MaxRows::int": 20,
+                            "MinRows::int": 10,
+                            "TextMode::int": 1
+                          },
+                          "ControlType::int": 0,
+                          "DisplayFormat": null,
+                          "Flags::int": 4,
+                          "Name": null,
+                          "PhysicalColumnIDList": [
+                            {
+                              "::single_type": "uid"
+                            },
+                            "0e84555c-56ae-4716-a3c6-418d5c109c7f"
+                          ],
+                          "RequiredText": null,
+                          "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f",
+                          "ToolTip": "$CardTypes_Controls_ConditionToolTipFull",
+                          "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+                        },
+                        {
+                          "BlockSettings": null,
+                          "Caption": "$CardTypes_Controls_Compile",
+                          "ControlSettings": {
+                            "Text": "$CardTypes_Controls_Compile"
+                          },
+                          "ControlType::int": 3,
+                          "Flags::int": 0,
+                          "Name": "CompileButton",
+                          "RequiredText": null,
+                          "ToolTip": null,
+                          "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+                        }
+                      ],
+                      "FormSettings": {
+                        "Column::int": 0,
+                        "ColumnSpan::int": 1,
+                        "HideCaption": true,
+                        "HorizontalAlignment::int": 3,
+                        "Row::int": 0,
+                        "RowSpan::int": 2,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Name": "Block3"
+                    },
+                    {
+                      "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+                      "BlockSettings": {
+                        "CollapsedByDefault": true
+                      },
+                      "Caption": "$CardTypes_Blocks_Examples",
+                      "Controls": [
+                        {
+                          "BlockSettings": {
+                            "VerticalAlignment::int": 0
+                          },
+                          "Caption": "Examples",
+                          "ControlSettings": {
+                            "Background": "#FFF7F7F7",
+                            "BorderColor": "#FFABADB3",
+                            "BorderThickness::dbl": 1.0,
+                            "Padding": "5,3,5,3",
+                            "Text": "$CardTypes_Controls_ConditionToolTipExamples",
+                            "TextColor": "#FF383838"
+                          },
+                          "ControlType::int": 3,
+                          "Flags::int": 0,
+                          "Name": null,
+                          "RequiredText": null,
+                          "ToolTip": null,
+                          "Type::uid": "057d966f-52de-01e3-8a11-1b6e91221e9b"
+                        }
+                      ],
+                      "FormSettings": {
+                        "Column::int": 1,
+                        "ColumnSpan::int": 1,
+                        "HorizontalAlignment::int": 3,
+                        "Row::int": 1,
+                        "RowSpan::int": 1,
+                        "VerticalAlignment::int": 3
+                      },
+                      "Name": "Examples"
+                    }
+                  ],
+                  "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+                  "FormSettings": {
+                    "Columns": [
+                      {
+                        "::types": [
+                          "dbl",
+                          "dbl"
+                        ]
+                      },
+                      1.0,
+                      1.0
+                    ],
+                    "Interval::int": 5,
+                    "Rows": [
+                      {
+                        "::types": [
+                          "unk",
+                          "dbl"
+                        ]
+                      },
+                      null,
+                      1.0
+                    ]
+                  },
+                  "TabCaption": "Вкладка"
+                }
+              ],
+              "Name": null,
+              "ToolTip": "$CardTypes_Controls_ConditionToolTipFull",
+              "Type::uid": "5f24f4f0-954b-4996-af69-1ce23cd692d2"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "ConditionType",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "Settings",
+  "ID::uid": "ca37649d-9585-4c83-8ef4-fdf91c4c42ee",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "ConditionType",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "372d7961-0e5f-4045-abe0-651363144d31",
+        "72d2c9ba-51f9-43aa-ad00-daa6ee878f7a",
+        "a1b799ac-57d1-48bc-ac54-70cce8a7a458",
+        "0e84555c-56ae-4716-a3c6-418d5c109c7f",
+        "5cad8a5b-fd6a-4f44-bd32-fcca7004ff1e"
+      ],
+      "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "e6554172-c0a5-4cd4-af13-561b0e1ee92f"
+      ],
+      "SectionID::uid": "b764f842-5b97-4de7-854a-f61b6b7a71dc"
+    }
+  ],
+  "Validators": [
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "372d7961-0e5f-4045-abe0-651363144d31",
+        "ErrorMessage": "$CardTypes_Validators_ConditionTypeName",
+        "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f"
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "a1b799ac-57d1-48bc-ac54-70cce8a7a458",
+        "ErrorMessage": "$CardTypes_Validators_ConditionTypeConditionText",
+        "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f"
+      }
+    },
+    {
+      "TypeID::uid": "9b24ab01-5f46-05d1-bdfa-615212761dd8",
+      "ValidatorSettings": {
+        "ColumnID::uid": "0e84555c-56ae-4716-a3c6-418d5c109c7f",
+        "ErrorMessage": "$CardTypes_Validators_ConditionTypeCondition",
+        "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f"
+      }
+    },
+    {
+      "TypeID::uid": "9cd89f16-8482-4382-943b-1db0469481ae",
+      "ValidatorSettings": {
+        "ColumnID::uid": "372d7961-0e5f-4045-abe0-651363144d31",
+        "SectionID::uid": "7e0c2c3b-e8f3-4f96-9aa6-eb1c2100d74f"
+      }
+    },
+    {
+      "TypeID::uid": "9cd89f16-8482-4382-943b-1db0469481ae",
+      "ValidatorSettings": {
+        "ColumnID::uid": "e6554172-c0a5-4cd4-af13-561b0e1ee92f",
+        "RemoveDuplicates": true,
+        "SectionID::uid": "b764f842-5b97-4de7-854a-f61b6b7a71dc"
+      }
+    }
+  ]
+}

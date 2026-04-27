@@ -1,0 +1,340 @@
+﻿{
+  "Alias": "KrPermissionsExtendedTasks",
+  "Caption": "$Views_Names_KrPermissionsExtendedTasks",
+  "GroupName": "Kr Wf",
+  "ID": "3d026d41-fe09-4b2d-bd5f-bb482c6c7726",
+  "JsonMetadataSource::txt": "KrPermissionsExtendedTasks JSONMETA",
+  "MsQuerySource::txt": "KrPermissionsExtendedTasks MSSQL",
+  "PgQuerySource::txt": "KrPermissionsExtendedTasks PGSQL"
+}
+
+[TEXTPART KrPermissionsExtendedTasks JSONMETA]
+{
+  "Alias": "KrPermissionsExtendedTasks",
+  "Caption": "$Views_Names_KrPermissionsExtendedTasks",
+  "Columns": [
+    {
+      "Alias": "KrPermissionsID",
+      "Hidden": true,
+      "Type": "$KrPermissions.ID"
+    },
+    {
+      "Alias": "KrPermissionsCaption",
+      "Caption": "$Views_KrPermissionsExtendedTasks_AccessRule",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "SortBy": "t.Caption",
+      "Type": "$KrPermissions.Caption"
+    },
+    {
+      "Alias": "KrPermissionsPriority",
+      "Caption": "$Views_KrPermissionsExtendedTasks_Priority",
+      "FilterParameter": "Priority",
+      "FilterType": "Parameter",
+      "SortBy": "t.Priority",
+      "Type": "$KrPermissions.Priority"
+    },
+    {
+      "Alias": "KrPermissionsTaskTypes",
+      "Caption": "$Views_KrPermissionsExtendedTasks_TaskTypes",
+      "FilterParameter": "TaskType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$KrPermissionExtendedTaskRuleTypes.TaskTypeCaption"
+    },
+    {
+      "Alias": "KrPermissionsSection",
+      "Caption": "$Views_KrPermissionsExtendedTasks_Section",
+      "FilterParameter": "Section",
+      "FilterType": "Parameter",
+      "SortBy": "pe.SectionName",
+      "Type": "$KrPermissionExtendedTaskRules.SectionName"
+    },
+    {
+      "Alias": "KrPermissionsFields",
+      "Caption": "$Views_KrPermissionsExtendedTasks_Fields",
+      "FilterParameter": "Field",
+      "FilterType": "Parameter",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "KrPermissionsAccessSetting",
+      "Caption": "$Views_KrPermissionsExtendedTasks_AccessSetting",
+      "FilterParameter": "AccessSetting",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "pe.AccessSettingID",
+      "Type": "$KrPermissionExtendedTaskRules.AccessSettingName"
+    },
+    {
+      "Alias": "KrPermissionsIsHidden",
+      "Caption": "$Views_KrPermissionsExtendedTasks_Hide",
+      "FilterParameter": "IsHidden",
+      "FilterType": "Parameter",
+      "SortBy": "pe.IsHidden",
+      "Type": "$KrPermissionExtendedTaskRules.IsHidden"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "KrPermissionsCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_KrPermissionsExtendedTasks_Name_Param",
+      "Type": "$KrPermissions.Caption"
+    },
+    {
+      "Alias": "AccessRule",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "ViewAlias": "KrPermissions"
+      },
+      "Caption": "$Views_KrPermissionsExtendedTasks_AccessRule_Param",
+      "RefSection": [
+        "KrPermissions"
+      ],
+      "Type": "$KrPermissions.ID"
+    },
+    {
+      "Alias": "Priority",
+      "Caption": "$Views_KrPermissionsExtendedTasks_Priority_Param",
+      "Multiple": false,
+      "Type": "$KrPermissions.Priority"
+    },
+    {
+      "Alias": "TaskType",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Caption",
+        "PopupColumns": [
+          1,
+          2
+        ],
+        "ViewAlias": "TaskTypes"
+      },
+      "Caption": "$Views_KrPermissionsExtendedTasks_TaskType_Param",
+      "RefSection": [
+        "TaskTypes"
+      ],
+      "Type": "$KrPermissionExtendedTaskRuleTypes.TaskTypeID"
+    },
+    {
+      "Alias": "Section",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Sections"
+      },
+      "Caption": "$Views_KrPermissionsExtendedTasks_Section_Param",
+      "RefSection": [
+        "Sections"
+      ],
+      "Type": "$KrPermissionExtendedTaskRules.SectionID"
+    },
+    {
+      "Alias": "Field",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_KrPermissionsExtendedTasks_Field_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "AccessSetting",
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "KrPermissionRuleAccessSettings"
+      },
+      "Caption": "$Views_KrPermissionsExtendedTasks_AccessSetting_Param",
+      "DropDownInfo": {
+        "ViewAlias": "KrPermissionRuleAccessSettings"
+      },
+      "HideAutoCompleteButton": true,
+      "RefSection": [
+        "KrPermissionRuleAccessSettings"
+      ],
+      "Type": "$KrPermissionExtendedTaskRules.AccessSettingID"
+    },
+    {
+      "Alias": "IsHidden",
+      "Caption": "$Views_KrPermissionsExtendedTasks_Hide_Param",
+      "Type": "$KrPermissionExtendedTaskRules.IsHidden"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "KrPermissions",
+      "DisplayValueColumn": "KrPermissionsCaption",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "KrPermissions"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionsExtendedTasks MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		#if(Normal) {
+		
+		[t].[ID]					AS [KrPermissionsID],
+		[t].[Caption]				AS [KrPermissionsCaption],
+		[t].[Priority]				AS [KrPermissionsPriority],
+		STUFF((
+			SELECT CHAR(10) +
+				CASE WHEN left([pet].[TaskTypeCaption], 1) = N'$'
+					THEN N'{' + [pet].[TaskTypeCaption] + N'}'
+					ELSE [pet].[TaskTypeCaption]
+				END
+			FROM [KrPermissionExtendedTaskRuleTypes] AS [pet] WITH (NOLOCK)
+			WHERE [pet].[RuleRowID] = [pe].[RowID]
+			FOR XML PATH
+		), 1, 1, N'') AS [KrPermissionsTaskTypes],
+		[pe].[SectionName]			AS [KrPermissionsSection],
+		STUFF((
+			SELECT CHAR(10) + [pef].[FieldName]
+			FROM [KrPermissionExtendedTaskRuleFields] AS [pef] WITH (NOLOCK)
+			WHERE [pef].[RuleRowID] = [pe].[RowID]
+			FOR XML PATH
+		), 1, 1, N'') AS [KrPermissionsFields],
+		[pe].[AccessSettingName]	AS [KrPermissionsAccessSetting],
+		[pe].[IsHidden]				AS [KrPermissionsIsHidden],
+		row_number() OVER (ORDER BY #order_by) AS [rn]
+		}
+		#if(Count) {
+		count(1)					AS [cnt]
+		}
+	FROM [KrPermissions] AS [t] WITH (NOLOCK)
+	
+	INNER JOIN [KrPermissionExtendedTaskRules] AS [pe] WITH(NOLOCK)
+		ON [t].[ID] = [pe].[ID]
+		
+	#if(TaskType){
+	CROSS APPLY (
+		SELECT TOP 1 1 AS TMP FROM [KrPermissionExtendedTaskRuleTypes] AS [pet] WITH(NOLOCK)
+		WHERE [pet].[RuleRowID] = [pe].[RowID]			
+			#param(TaskType, [pet].[TaskTypeID])) AS tt
+	}
+		
+	#if(Field){
+	CROSS APPLY (
+		SELECT TOP 1 1 AS TMP FROM [KrPermissionExtendedTaskRuleFields] AS [pef] WITH(NOLOCK)
+		WHERE [pef].[RuleRowID] = [pe].[RowID]			
+			#param(Field, [pef].[FieldName])) AS tf
+	}	
+	
+	WHERE [t].[IsExtended] = 1
+		#param(Caption, [t].[Caption])
+		#param(AccessRule, [t].[ID])
+		#param(Priority, [t].[Priority])
+		#param(Section, [pe].[SectionID])
+		#param(AccessSetting, [pe].[AccessSettingID])
+		#param(IsHidden, [pe].[IsHidden])
+		
+	) AS [t]
+#if(PageOffset) {
+WHERE [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn];
+}
+
+
+[TEXTPART KrPermissionsExtendedTasks PGSQL]
+SELECT
+	"t".*
+FROM (
+	SELECT
+		#if(Normal) {
+		
+		"t"."ID"					AS "KrPermissionsID",
+		"t"."Caption"				AS "KrPermissionsCaption",
+		"t"."Priority"				AS "KrPermissionsPriority",
+		(
+			SELECT string_agg("TaskTypeCaption", chr(10))
+			FROM (
+				SELECT
+					CASE WHEN substring("pet"."TaskTypeCaption", 1, 1) = '$'
+						THEN '{' || "pet"."TaskTypeCaption" || '}'
+						ELSE "pet"."TaskTypeCaption"
+					END
+				FROM "KrPermissionExtendedTaskRuleTypes" AS "pet"
+				WHERE "pet"."RuleRowID" = "pe"."RowID"	) AS "groupCaptions"
+		) AS "KrPermissionsTaskTypes",
+		"pe"."SectionName"			AS "KrPermissionsSection",
+		(
+			SELECT string_agg("FieldName", chr(10))
+			FROM (
+				SELECT "pef"."FieldName" AS "FieldName"
+				FROM "KrPermissionExtendedTaskRuleFields" AS "pef"
+				WHERE "pef"."RuleRowID" = "pe"."RowID"
+			) AS "groupFields"
+		) AS "KrPermissionsFields",
+		"pe"."AccessSettingName"	AS "KrPermissionsAccessSetting",
+		"pe"."IsHidden"				AS "KrPermissionsIsHidden",
+		row_number() OVER (ORDER BY #order_by) AS "rn"
+		}
+		#if(Count) {
+		count(1)					AS "cnt"
+		}
+	FROM "KrPermissions" AS "t"
+	
+	INNER JOIN "KrPermissionExtendedTaskRules" AS "pe"
+		ON "t"."ID" = "pe"."ID"
+	
+	#if(TaskType){
+	INNER JOIN LATERAL (
+		SELECT null AS TMP FROM "KrPermissionExtendedTaskRuleTypes" AS "pet"
+		WHERE "pet"."RuleRowID" = "pe"."RowID"			
+			#param(TaskType, "pet"."TaskTypeID")
+		LIMIT 1) AS tt ON true
+	}
+	
+	#if(Field){
+	INNER JOIN LATERAL (
+		SELECT null AS TMP FROM "KrPermissionExtendedTaskRuleFields" AS "pef"
+		WHERE "pef"."RuleRowID" = "pe"."RowID"			
+			#param(Field, "pef"."FieldName")
+		LIMIT 1) AS tf ON true
+	}
+	
+	WHERE "t"."IsExtended"
+		#param(Caption, "t"."Caption")
+		#param(Priority, "t"."Priority")
+		#param(AccessRule, "t"."ID")
+		#param(Section, "pe"."SectionID")
+		#param(AccessSetting, "pe"."AccessSettingID")
+		#param(IsHidden, "pe"."IsHidden")
+		
+	) AS "t"
+#if(Normal) {
+ORDER BY "t"."rn"
+}
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value);
+}

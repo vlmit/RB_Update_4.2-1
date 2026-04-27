@@ -1,0 +1,136 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$AbTest_CardTypes_Tabs_CarExternalSystemRequest",
+  "CardTypeSections": [
+    {
+      "Columns": [
+        {
+          "ColumnType::int": 0,
+          "DefaultValue": null,
+          "Description": null,
+          "ID::uid": "a6f05cd7-6832-4c86-a867-ba063ae0896b",
+          "Name": "Name",
+          "SchemeType": "String(Max) Not Null"
+        },
+        {
+          "ColumnType::int": 1,
+          "Description": null,
+          "ID::uid": "53a0e04e-186d-4224-82f3-64f0cb9f15d8",
+          "IsReferencedToOwner": false,
+          "Name": "Driver",
+          "ReferencedColumns": [
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": null,
+              "ID::uid": "a85d24e5-4e7e-432a-b5b2-00df6f407ecf",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "6c977939-bbfc-006f-2000-01c2244e3cc3"
+            },
+            {
+              "ColumnType::int": 2,
+              "DefaultValue": null,
+              "Description": null,
+              "ID::uid": "2be63de6-d222-4281-ab67-58352f308a82",
+              "IsReferencedToOwner": false,
+              "ReferencedColumnID::uid": "1782f76a-4743-4aa4-920c-7edaee860964"
+            }
+          ],
+          "ReferencedTableID::uid": "6c977939-bbfc-456f-a133-f1c2244e3cc3"
+        }
+      ],
+      "Description": null,
+      "ID::uid": "c2712502-4f22-49c9-a91a-0a48ac5703e5",
+      "Name": "MainInfo",
+      "TableType::int": 1
+    }
+  ],
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": [
+    {
+      "ExtensionSettings": {
+        "FilesViewAlias": "Files"
+      },
+      "TypeID::uid": "5e2f5766-b107-4dd1-a741-655e8391fae5"
+    }
+  ],
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "ColumnsCount::int": 2
+          },
+          "Caption": "$AbTest_CardTypes_Blocks_DriverInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$AbTest_CardTypes_Controls_CarModel",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "a6f05cd7-6832-4c86-a867-ba063ae0896b"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "c2712502-4f22-49c9-a91a-0a48ac5703e5",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$AbTest_CardTypes_Controls_DriverName",
+              "ComplexColumnID::uid": "53a0e04e-186d-4224-82f3-64f0cb9f15d8",
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "ViewAlias": "Users"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "c2712502-4f22-49c9-a91a-0a48ac5703e5",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_Files",
+              "ControlSettings": null,
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "Files",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "e9a5084d-c76e-4096-ab2d-84f313710812"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "DriverInfo"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "MainInfo",
+      "TabCaption": "$AbTest_CardTypes_Tabs_ExternalSystemRequest"
+    }
+  ],
+  "Group": "AbTest",
+  "ID::uid": "0fa7aaeb-dc36-4647-a29e-2eb87153984d",
+  "InstanceType::int": 3,
+  "MainFormName": null,
+  "Name": "AbCarExternalSystemRequest",
+  "SchemeItems": null,
+  "Validators": null
+}

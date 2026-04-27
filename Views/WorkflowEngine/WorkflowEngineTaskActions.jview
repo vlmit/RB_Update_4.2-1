@@ -1,0 +1,72 @@
+﻿{
+  "Alias": "WorkflowEngineTaskActions",
+  "Caption": "$Views_Names_WorkflowEngineTaskActions",
+  "GroupName": "WorkflowEngine",
+  "ID": "c39c3de3-6448-4c35-8978-4b385ca6a647",
+  "JsonMetadataSource::txt": "WorkflowEngineTaskActions JSONMETA",
+  "MsQuerySource::txt": "WorkflowEngineTaskActions MSSQL",
+  "PgQuerySource::txt": "WorkflowEngineTaskActions PGSQL"
+}
+
+[TEXTPART WorkflowEngineTaskActions JSONMETA]
+{
+  "Alias": "WorkflowEngineTaskActions",
+  "Caption": "$Views_Names_WorkflowEngineTaskActions",
+  "Columns": [
+    {
+      "Alias": "TaskActionID",
+      "Hidden": true,
+      "Type": "$WorkflowEngineTaskActions.ID"
+    },
+    {
+      "Alias": "TaskActionName",
+      "Caption": "$Views_WorkflowEngineTaskActions_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$WorkflowEngineTaskActions.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WorkflowEngineTaskActions_Name_Param",
+      "Multiple": false,
+      "Type": "$WorkflowEngineTaskActions.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "TaskAction",
+      "DisplayValueColumn": "TaskActionName",
+      "RefSection": [
+        "WorkflowEngineTaskActions"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WorkflowEngineTaskActions MSSQL]
+SELECT
+	[ta].[ID] as [TaskActionID]
+	,[ta].[Name] as [TaskActionName]
+FROM [WorkflowEngineTaskActions] [ta] WITH(NOLOCK)
+#if(Name || request.SortedBy("TaskActionName")) {
+CROSS APPLY [Localization]([ta].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+
+
+[TEXTPART WorkflowEngineTaskActions PGSQL]
+SELECT
+	"ta"."ID" as "TaskActionID"
+	,"ta"."Name" as "TaskActionName"
+FROM "WorkflowEngineTaskActions" "ta"
+#if(Name || request.SortedBy("TaskActionName")) {
+CROSS JOIN "Localization"("ta"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")

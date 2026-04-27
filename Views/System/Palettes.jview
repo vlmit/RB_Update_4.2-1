@@ -1,0 +1,93 @@
+﻿{
+  "Alias": "Palettes",
+  "Caption": "$Views_Names_Palettes",
+  "GroupName": "System",
+  "ID": "dce09cae-5374-4df2-9de3-d6bbeab9ff91",
+  "JsonMetadataSource::txt": "Palettes JSONMETA",
+  "MsQuerySource::txt": "Palettes MSSQL",
+  "PgQuerySource::txt": "Palettes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART Palettes JSONMETA]
+{
+  "Alias": "Palettes",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_Palettes",
+  "Columns": [
+    {
+      "Alias": "PaletteRowID",
+      "Hidden": true,
+      "Type": "$Palettes.RowID"
+    },
+    {
+      "Alias": "PaletteAlias",
+      "Caption": "$Views_Palettes_PaletteAlias",
+      "Hidden": true,
+      "Type": "$Palettes.Alias"
+    },
+    {
+      "Alias": "PaletteCaption",
+      "Caption": "$Views_Palettes_PaletteCaption",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$Palettes.Caption"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "PaletteCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Palettes_Name_Param",
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Palette",
+      "DisplayValueColumn": "PaletteCaption",
+      "RefSection": [
+        "Palettes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Palettes MSSQL]
+SELECT
+	[t].[RowID] AS [PaletteRowID],
+	[t].[Alias]		AS [PaletteAlias],
+	[t].[Caption]	AS [PaletteCaption]
+FROM [Palettes] AS [t] WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+#if(Name) {
+	WHERE (1 = 1 #param(Name, [t].[Alias]) OR 1 = 1 #param(Name, [lCaption].[Value]))
+}
+ORDER BY #order_by
+
+
+[TEXTPART Palettes PGSQL]
+SELECT
+	"t"."RowID" AS "PaletteRowID",
+	"t"."Alias"		AS "PaletteAlias",
+	"t"."Caption"	AS "PaletteCaption"
+FROM "Palettes" AS "t"
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+#if(Name) {
+	WHERE (true #param(Name, "t"."Alias") OR true #param(Name, "lCaption"."Value"))
+}
+ORDER BY #order_by

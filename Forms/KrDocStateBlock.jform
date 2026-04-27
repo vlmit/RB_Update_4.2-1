@@ -1,0 +1,92 @@
+{
+  "Alias": "KrDocStateBlock",
+  "BackgroundType": "currentTheme",
+  "BundleID::uid": "c5bdb424-23c9-45ed-9210-98e8c72afd24",
+  "Child": {
+    "Alias": "143988dc",
+    "Children": [
+      {
+        "Alias": "4d2a6e53",
+        "Children": [
+          {
+            "Alias": "DocStateControl",
+            "BindingType": "Card",
+            "Caption": "$CardTypes_Controls_State",
+            "ComplexColumnID::uid": "2fd9593a-7a88-4b33-8b9d-89d95fe2c2ca",
+            "ID::uid": "4e75f153-9e5b-4e7e-b6f3-304d2b367285",
+            "MinWidth": "100%",
+            "Mode": "Full",
+            "Readonly": true,
+            "SearchMode": "Contains",
+            "SectionID::uid": "fe5739f6-d64b-45f5-a3a3-75e999f721dd",
+            "Type::uid": "c84cf60d-8948-4668-bd72-bf3985b54a34"
+          }
+        ],
+        "Column::int": 0,
+        "ID::uid": "4d2a6e53-e374-448e-aee9-47d0325bccf4",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "ea402ee8",
+        "Children": [
+          {
+            "Alias": "DocStateChangedControl",
+            "BindingType": "Card",
+            "Caption": "$CardTypes_Controls_StateChanged",
+            "DateType": "DateTime",
+            "ID::uid": "c666dfba-f0e7-4d83-a4bd-0d4f1c213207",
+            "MinWidth": "100%",
+            "PhysicalColumnsArray": [
+              {
+                "::single_type": "uid"
+              },
+              "936c6442-3dff-4d75-b767-17b1251f3719"
+            ],
+            "Readonly": true,
+            "SectionID::uid": "fe5739f6-d64b-45f5-a3a3-75e999f721dd",
+            "Type::uid": "45667845-d112-4ef3-9bb7-d03bd9eb4274"
+          }
+        ],
+        "Column::int": 1,
+        "ID::uid": "ea402ee8-08be-46c6-b23c-2f5f4db1f8a1",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      }
+    ],
+    "Columns": [
+      {
+        "Alias": "af5d3b8a",
+        "ID::uid": "af5d3b8a-726f-4db4-9d6e-6deb0fd39dd5",
+        "Index::int": 0,
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      },
+      {
+        "Alias": "2efbe16b",
+        "ID::uid": "2efbe16b-5cf1-4a61-b63b-df256df9010e",
+        "Index::int": 1,
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      }
+    ],
+    "GridGap": "20px",
+    "ID::uid": "143988dc-c7fe-4025-97d2-34538157a6b0",
+    "Rows": [
+      {
+        "Alias": "9bb12769",
+        "ID::uid": "9bb12769-bac8-4704-a2b8-cdce2cf79328",
+        "Index::int": 0,
+        "Size": "max-content",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      }
+    ],
+    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+  },
+  "ID::uid": "ac6f7d19-d785-4900-aa93-dd25f7f9a77f",
+  "States": null,
+  "SubForms": null,
+  "Version::int": 0
+}

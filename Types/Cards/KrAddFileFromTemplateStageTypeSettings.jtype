@@ -1,0 +1,122 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$KrStages_AddFromTemplate",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 272,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "DoNotCollapseWithTopBlock": true
+          },
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_FileTemplate",
+              "ComplexColumnID::uid": "99935616-d608-4270-baad-91443bbcf8f2",
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "FileTemplates"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "FileTemplates"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 4,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "b31d2f6f-7980-4686-8029-3abd969ee11b",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_FileNameAndTemplateIfEmpty",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "ShowExpandButton": false
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "6cc9e9e1-ffeb-4706-ab65-68184c62f2d2"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "b31d2f6f-7980-4686-8029-3abd969ee11b",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_FileCategory",
+              "ComplexColumnID::uid": "030c0416-f6dc-4bbf-8607-e88e3ecb955c",
+              "ControlSettings": {
+                "ManualInput": true,
+                "ManualInputColumnID::uid": "a308712b-edd1-43fa-88a8-979eaf2a15bf",
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "FileCategory"
+                ],
+                "ViewAlias": "FileCategoriesAll"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "b31d2f6f-7980-4686-8029-3abd969ee11b",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            }
+          ],
+          "FormSettings": null,
+          "Name": "Block1"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "KrAddFileFromTemplateStageTypeSettings",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "KrProcess",
+  "ID::uid": "b196cbd5-a534-4d18-91f9-561f31a2fe89",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "KrAddFileFromTemplateStageTypeSettings",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "6cc9e9e1-ffeb-4706-ab65-68184c62f2d2",
+        "99935616-d608-4270-baad-91443bbcf8f2",
+        "030c0416-f6dc-4bbf-8607-e88e3ecb955c"
+      ],
+      "SectionID::uid": "b31d2f6f-7980-4686-8029-3abd969ee11b"
+    }
+  ],
+  "Validators": null
+}

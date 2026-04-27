@@ -1,0 +1,149 @@
+﻿{
+  "Alias": "AclForCard",
+  "Caption": "$Views_Names_AclForCard",
+  "GroupName": "Acl",
+  "ID": "4e53c550-1954-457a-95a6-4b23c3452fb4",
+  "JsonMetadataSource::txt": "AclForCard JSONMETA",
+  "MsQuerySource::txt": "AclForCard MSSQL",
+  "PgQuerySource::txt": "AclForCard PGSQL"
+}
+
+[TEXTPART AclForCard JSONMETA]
+{
+  "Alias": "AclForCard",
+  "Caption": "$Views_Names_AclForCard",
+  "Columns": [
+    {
+      "Alias": "RoleID",
+      "Hidden": true,
+      "Type": "$Acl.RoleID"
+    },
+    {
+      "Alias": "RoleName",
+      "Caption": "$Views_AclForCard_RoleName",
+      "Localizable": true,
+      "SortBy": "r.Name",
+      "Type": "$Roles.Name"
+    },
+    {
+      "Alias": "RoleType",
+      "Caption": "$Views_AclForCard_RoleType",
+      "Localizable": true,
+      "SortBy": "rt.Name",
+      "Type": "$RoleTypes.Name"
+    },
+    {
+      "Alias": "RuleID",
+      "Hidden": true,
+      "Localizable": true,
+      "Type": "$Acl.RuleID"
+    },
+    {
+      "Alias": "RuleName",
+      "Caption": "$Views_AclForCard_RuleName",
+      "Localizable": true,
+      "SortBy": "agr.Name",
+      "Type": "$AclGenerationRules.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RoleName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "CardID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_AclForCard_CardID",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Guid Not Null"
+    }
+  ],
+  "References": [
+    {
+      "CardType": "AclGenerationRule",
+      "ColPrefix": "Rule",
+      "DisplayValueColumn": "RuleName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "AclGenerationRules"
+      ]
+    },
+    {
+      "ColPrefix": "Role",
+      "DisplayValueColumn": "RoleName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Roles"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AclForCard MSSQL]
+#if(CardID) {
+
+SELECT
+	[r].[ID] 		AS [RoleID],
+	[r].[Name] 		AS [RoleName],
+	[rt].[Name] 	AS [RoleType],
+	[a].[RuleID] 	AS [RuleID],
+	[agr].[Name] 	AS [RuleName]
+FROM [Acl] AS [a] WITH(NOLOCK)
+INNER JOIN [Roles] AS [r] WITH(NOLOCK)
+	ON [a].[RoleID] = [r].[ID]
+INNER JOIN [RoleTypes] AS [rt] WITH(NOLOCK)
+	ON [r].[TypeID] = [rt].[ID]
+LEFT JOIN [AclGenerationRules] AS [agr] WITH(NOLOCK)
+	ON [a].[RuleID] = [agr].[ID]
+WHERE 1 = 1
+	#param(CardID, [a].[ID])
+ORDER BY #order_by
+}
+{
+SELECT 
+	CAST(NULL AS uniqueidentifier) 	AS [RoleID],
+	'Card ID parameter unspecified' 	AS [RoleName],
+	CAST(NULL AS nvarchar) 	AS [RoleType],
+	CAST(NULL AS uniqueidentifier) 	AS [RuleID],
+	CAST(NULL AS nvarchar)  	AS [RuleName]
+}
+
+[TEXTPART AclForCard PGSQL]
+#if(CardID) {
+
+SELECT
+	"r"."ID" 		AS "RoleID",
+	"r"."Name" 		AS "RoleName",
+	"rt"."Name" 	AS "RoleType",
+	"a"."RuleID" 		AS "RuleID",
+	"agr"."Name" 	AS "RuleName"
+FROM "Acl" AS "a"
+INNER JOIN "Roles" AS "r"
+	ON "a"."RoleID" = "r"."ID"
+INNER JOIN "RoleTypes" AS "rt"
+	ON "r"."TypeID" = "rt"."ID"
+LEFT JOIN "AclGenerationRules" AS "agr"
+	ON "a"."RuleID" = "agr"."ID"
+WHERE true
+	#param(CardID, "a"."ID")
+ORDER BY #order_by
+}
+{
+SELECT
+	NULL::uuid 	AS "RoleID",
+	'Card ID parameter unspecified'::text 	AS "RoleName",
+	NULL::text 	AS "RoleType",
+	NULL::uuid 	AS "RuleID",
+	NULL::text 	AS "RuleName"
+}

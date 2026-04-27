@@ -1,0 +1,130 @@
+﻿{
+  "Alias": "WorkflowEngineErrors",
+  "Caption": "$Views_Names_WorkflowEngineErrors",
+  "GroupName": "WorkflowEngine",
+  "ID": "6138ccf4-b5a2-4789-a3c2-82382ae666a2",
+  "JsonMetadataSource::txt": "WorkflowEngineErrors JSONMETA",
+  "MsQuerySource::txt": "WorkflowEngineErrors MSSQL",
+  "PgQuerySource::txt": "WorkflowEngineErrors PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART WorkflowEngineErrors JSONMETA]
+{
+  "Alias": "WorkflowEngineErrors",
+  "Caption": "$Views_Names_WorkflowEngineErrors",
+  "Columns": [
+    {
+      "Alias": "ProcessErrorID",
+      "Hidden": true,
+      "Type": "$WorkflowEngineErrors.ErrorCardID"
+    },
+    {
+      "Alias": "ProcessErrorAdded",
+      "Caption": "$Views_WorkflowEngineErrors_Added",
+      "FilterParameter": "Added",
+      "FilterType": "Parameter",
+      "SortBy": "wee.Added",
+      "Type": "$WorkflowEngineErrors.Added"
+    },
+    {
+      "Alias": "ProcessErrorText",
+      "Caption": "$Views_WorkflowEngineErrors_ErrorText",
+      "Type": "$Errors.Text"
+    },
+    {
+      "Alias": "ProcessNodeInstanceID",
+      "Hidden": true,
+      "Type": "$WorkflowEngineErrors.NodeRowID"
+    },
+    {
+      "Alias": "ProcessNodeID",
+      "Hidden": true,
+      "Type": "$WorkflowEngineNodes.NodeID"
+    },
+    {
+      "Alias": "ProcessIsAsync",
+      "Hidden": true,
+      "Type": "$WorkflowEngineErrors.IsAsync"
+    },
+    {
+      "Alias": "ProcessResumable",
+      "Hidden": true,
+      "Type": "$WorkflowEngineErrors.Resumable"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "ProcessErrorAdded",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Added",
+      "Caption": "$Views_WorkflowEngineErrors_Added_Param",
+      "Type": "$WorkflowEngineErrors.Added"
+    },
+    {
+      "Alias": "ProcessInstance",
+      "Caption": "$Views_WorkflowEngineErrors_Process_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "$WorkflowEngineNodes.ProcessRowID"
+    },
+    {
+      "Alias": "Active",
+      "AllowedOperands": [
+        "IsTrue"
+      ],
+      "Caption": "$Views_WorkflowEngineErrors_ShowActiveOnly_Param",
+      "Multiple": false,
+      "Type": "$WorkflowEngineErrors.Active"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WorkflowEngineErrors MSSQL]
+SELECT
+	[wee].[ErrorCardID] as [ProcessErrorID]
+	,[wee].[Added] as [ProcessErrorAdded]
+	,[e].[Text] as [ProcessErrorText]
+	,[wee].[NodeRowID] as [ProcessNodeInstanceID]
+	,[wen].[NodeID] as [ProcessNodeID]
+	,[wee].[IsAsync] as [ProcessIsAsync]
+	,[wee].[Resumable] as [ProcessResumable]
+FROM [WorkflowEngineErrors] [wee] WITH(NOLOCK)
+INNER JOIN [Errors] [e] WITH(NOLOCK) ON [e].[ID] = [wee].[ErrorCardID]
+INNER JOIN [WorkflowEngineNodes] [wen] WITH(NOLOCK) ON [wen].[RowID] = [wee].[NodeRowID] 
+
+WHERE 1 = 1
+	#param(ProcessInstance, [wen].[ProcessRowID])
+	#param(Active, [wee].[Active])
+	#param(Added, [wee].[Added])
+ORDER BY #order_by
+
+
+[TEXTPART WorkflowEngineErrors PGSQL]
+SELECT
+	"wee"."ErrorCardID" as "ProcessErrorID"
+	,"wee"."Added" as "ProcessErrorAdded"
+	,"e"."Text" as "ProcessErrorText"
+	,"wee"."NodeRowID" as "ProcessNodeInstanceID"
+	,"wen"."NodeID" as "ProcessNodeID"
+	,"wee"."IsAsync" as "ProcessIsAsync"
+	,"wee"."Resumable" as "ProcessResumable"
+FROM "WorkflowEngineErrors" "wee"
+INNER JOIN "Errors" "e"ON "e"."ID" = "wee"."ErrorCardID"
+INNER JOIN "WorkflowEngineNodes" "wen" ON "wen"."RowID" = "wee"."NodeRowID" 
+
+WHERE true
+	#param(ProcessInstance, "wen"."ProcessRowID")
+	#param(Active, "wee"."Active")
+	#param(Added, "wee"."Added")
+ORDER BY #order_by

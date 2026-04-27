@@ -1,0 +1,63 @@
+﻿{
+  "Alias": "KrSecondaryProcessTileHandlers",
+  "Caption": "$Views_Names_KrSecondaryProcessTileHandlers",
+  "Description": "Данное представление обрабатывается серверным расширением KrSecondaryProcessTileHandlersViewInterceptor",
+  "GroupName": "Kr Wf",
+  "ID": "5013957b-348e-4eae-b3e6-5d18949aba99",
+  "JsonMetadataSource::txt": "KrSecondaryProcessTileHandlers JSONMETA",
+  "MsQuerySource::txt": "KrSecondaryProcessTileHandlers MSSQL",
+  "PgQuerySource::txt": "KrSecondaryProcessTileHandlers PGSQL"
+}
+
+[TEXTPART KrSecondaryProcessTileHandlers JSONMETA]
+{
+  "Alias": "KrSecondaryProcessTileHandlers",
+  "Caption": "$Views_Names_KrSecondaryProcessTileHandlers",
+  "Columns": [
+    {
+      "Alias": "SecondaryProcessTileHandlerID",
+      "Caption": "ID",
+      "Hidden": true,
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "SecondaryProcessTileHandlerName",
+      "Caption": "$Views_KrSecondaryProcessTileHandlers_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "Name",
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "SecondaryProcessTileHandlerName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrSecondaryProcessTileHandlers_Name_Param",
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "SecondaryProcessTileHandler",
+      "DisplayValueColumn": "SecondaryProcessTileHandlerName",
+      "RefSection": [
+        "KrSecondaryProcessTileHandlers"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrSecondaryProcessTileHandlers MSSQL]
+
+
+[TEXTPART KrSecondaryProcessTileHandlers PGSQL]

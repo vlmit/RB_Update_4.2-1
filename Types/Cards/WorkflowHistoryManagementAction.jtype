@@ -1,0 +1,127 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_HistoryManagementAction",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "DoNotCollapseWithTopBlock": true
+          },
+          "Caption": "Block1",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrHistoryManagement_Type",
+              "ComplexColumnID::uid": "ba3ca71f-60b8-492c-bc61-b70f668e4bc5",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "ExtendendLocalization": true,
+                "ParameterAlias": "GroupTypeCaptionParam",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "TaskHistoryGroupTypes"
+                ],
+                "ViewAlias": "TaskHistoryGroupTypes",
+                "ViewAliasComboBox": "TaskHistoryGroupTypes",
+                "ViewReferencePrefix": "GroupType"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[Param]",
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "bb018cba-ef03-4bb4-a7e6-8fb083fc44a4",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrHistoryManagement_ParentType",
+              "ComplexColumnID::uid": "82d96d29-33b3-42c8-b0d8-893958b52480",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "ExtendendLocalization": true,
+                "ParameterAlias": "GroupTypeCaptionParam",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "TaskHistoryGroupTypes"
+                ],
+                "ViewAlias": "TaskHistoryGroupTypes",
+                "ViewAliasComboBox": "TaskHistoryGroupTypes",
+                "ViewReferencePrefix": "GroupType"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[Param]",
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "bb018cba-ef03-4bb4-a7e6-8fb083fc44a4",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$UI_KrHistoryManagement_NewIteration",
+              "ComplexColumnID": null,
+              "ControlSettings": null,
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": "[Param]",
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "050bc663-5876-4a06-bf7f-bc96a27f02a2"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "bb018cba-ef03-4bb4-a7e6-8fb083fc44a4",
+              "ToolTip": null,
+              "Type::uid": "79633881-a684-010a-b1ea-027d714bda5d"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "KrTaskHistoryBlockAlias"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": null,
+      "Name": "WorkflowHistoryManagementAction",
+      "TabCaption": "$CardTypes_Tabs_Card"
+    }
+  ],
+  "Group": "WorkflowActions",
+  "ID::uid": "4e397642-1672-4598-8851-7ed18378c915",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "WorkflowHistoryManagementAction",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "ba3ca71f-60b8-492c-bc61-b70f668e4bc5",
+        "82d96d29-33b3-42c8-b0d8-893958b52480",
+        "050bc663-5876-4a06-bf7f-bc96a27f02a2"
+      ],
+      "SectionID::uid": "bb018cba-ef03-4bb4-a7e6-8fb083fc44a4"
+    }
+  ],
+  "Validators": null
+}

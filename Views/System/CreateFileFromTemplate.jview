@@ -1,0 +1,111 @@
+﻿{
+  "Alias": "CreateFileFromTemplate",
+  "Caption": "$Views_Names_CreateFileFromTemplate",
+  "Description": "Представление для таблицы с перечнем шаблонов файлов в диалоге \"Создать файл по шаблону\". Данное представление нужно только для метаданных, фактические данные формируются программно.",
+  "GroupName": "System",
+  "ID": "9334eab6-f2b7-4c35-b0ff-bf764cd0092c",
+  "JsonMetadataSource::txt": "CreateFileFromTemplate JSONMETA",
+  "MsQuerySource::txt": "CreateFileFromTemplate MSSQL",
+  "PgQuerySource::txt": "CreateFileFromTemplate PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART CreateFileFromTemplate JSONMETA]
+{
+  "Alias": "CreateFileFromTemplate",
+  "Caption": "$Views_Names_CreateFileFromTemplate",
+  "Columns": [
+    {
+      "Alias": "FileTemplateID",
+      "DisableGrouping": true,
+      "Hidden": true,
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "FileTemplateName",
+      "Caption": "$Cards_FileFromTemplate_TemplateNameColumn",
+      "DisableGrouping": true,
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "FileTemplateName",
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "FileTemplateFileExtension",
+      "DisableGrouping": true,
+      "Hidden": true,
+      "SortBy": "FileTemplateFileExtension",
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "FileTemplateFileExtensionText",
+      "Caption": "$Cards_FileFromTemplate_TemplateExtensionColumn",
+      "DisableGrouping": true,
+      "SortBy": "FileTemplateFileExtension",
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "FileTemplateFileName",
+      "DisableGrouping": true,
+      "Hidden": true,
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "FileTemplateGroupName",
+      "Caption": "$Cards_FileFromTemplate_TemplateGroupNameColumn",
+      "SortBy": "FileTemplateGroupName",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "ConvertToPdf",
+      "DisableGrouping": true,
+      "Hidden": true,
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "FileTemplateName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_CreateFileFromTemplate_Name",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART CreateFileFromTemplate MSSQL]
+-- Псевдо-запрос, нужен чтобы не падали тесты, т.к. колонки и их типы там берутся из QueryResultMetadataProvider, а не из метаданных представления.
+SELECT
+	CAST('080e76ae-886e-4660-802a-1f947ad6d9a8' AS uniqueidentifier) 	AS [FileTemplateID],
+	'FileTemplateName' 													AS [FileTemplateName],
+	'FileTemplateFileExtension' 										AS [FileTemplateFileExtension],
+	'FileTemplateFileExtensionText' 									AS [FileTemplateFileExtensionText],
+	'FileTemplateFileName' 												AS [FileTemplateFileName],
+	'FileTemplateGroupName' 											AS [FileTemplateGroupName],
+	CAST(0 AS bit)														AS [ConvertToPdf]
+
+[TEXTPART CreateFileFromTemplate PGSQL]
+-- Псевдо-запрос, нужен чтобы не падали тесты, т.к. колонки и их типы там берутся из QueryResultMetadataProvider, а не из метаданных представления.
+SELECT
+	uuid('080e76ae-886e-4660-802a-1f947ad6d9a8') 						AS "FileTemplateID",
+	'FileTemplateName'::text 											AS "FileTemplateName",
+	'FileTemplateFileExtension'::text 									AS "FileTemplateFileExtension",
+	'FileTemplateFileExtensionText'::text 								AS "FileTemplateFileExtensionText",
+	'FileTemplateFileName'::text 										AS "FileTemplateFileName",
+	'FileTemplateGroupName'::text 										AS "FileTemplateGroupName",
+	CAST(0 AS bool)														AS "ConvertToPdf"

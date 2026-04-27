@@ -1,0 +1,1391 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "32004cfd-11b2-4cd9-b2e8-5ed9f37dbf32",
+  "Name": "KrPermissions",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "KrPermissions_AccessSettings_AllowEdit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Allow edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разрешить редактирование"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_AccessSettings_DisallowEdit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disallow edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запретить редактирование"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_AccessSettings_DisallowRowAdding",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disallow row adding"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запретить добавление строк"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_AccessSettings_DisallowRowDeleting",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disallow row deleting"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запретить удаление строк"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_AccessSettings_DisallowRowEdit",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disallow row edit"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запретить редактирование строк"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_AccessSettings_MaskData",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mask data"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Замаскировать данные"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_AddFiles",
+      "Comment": "Право на добавление файлов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Files adding"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавление файлов"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_AddTopics",
+      "Comment": "Право на добавление новых обсуждений",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Topics adding"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Добавление обсуждений"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_AllowedFilesFilter",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Allowed files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступные файлы"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_CancelProcess",
+      "Comment": "Право на отмену процесса",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Cancel process"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отмена процесса"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_CanFullRecalcRoute",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can full recalculation route"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Полный пересчёт маршрута"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_CanMentionNewUsers",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Mentioning new participants"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Упоминание новых участников"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_CanSkipStages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Can skip stages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пропуск этапов"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_ControlType_Block",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Block"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Блок"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_ControlType_Control",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Control"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Контрол"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_ControlType_Tab",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Tab"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Вкладка"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_CreateCard",
+      "Comment": "Право на создание карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создание карточки"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_CreateFileLink",
+      "Comment": "Право на создание ссылки на скачивание файла/версии",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Creation of a file or file version download link"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создание ссылки на скачивание файла/версии"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_CreateResolutions",
+      "Comment": "Право на инициацию типового процесса отправки задач",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Initiate new task chain of standard solution"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инициация типового процесса отправки задач"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_CreateTemplateAndCopy",
+      "Comment": "Право на создание шаблона и копирование",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Create template and copy"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Создание шаблона и копирование"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_DeleteCard",
+      "Comment": "Право на удаление карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление карточки"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_DeleteFiles",
+      "Comment": "Право на удаление файлов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete all files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление всех файлов"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_DeleteOwnFiles",
+      "Comment": "Право на удаление собственных файлов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete own files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удаление собственных файлов"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Details_CardTemplate",
+      "Comment": "{0} - дайджест карточки\n{1} - идентификатор карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card: {0}, ID={{{1}}}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка: {0}, ID={{{1}}}"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Details_CardTypeTemplate",
+      "Comment": "{0} - имя типа карточки\n{1} - идентификатор типа карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card type: {0}, ID={{{1}}}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип карточки: {0}, ID={{{1}}}"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Details_CardWithoutDigestTemplate",
+      "Comment": "{0} - идентификатор карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Card: ID={{{0}}}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Карточка: ID={{{0}}}"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Details_DocumentTypeTemplate",
+      "Comment": "{0} - имя типа документа\n{1} - идентификатор типа документа",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Document type: {0}, ID={{{1}}}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Тип документа: {0}, ID={{{1}}}"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Details_StateTemplate",
+      "Comment": "{0} - имя состояния\n{1} - идентификатор состояния",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "State: {0}, ID={1}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Состояние: {0}, ID={1}"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Details_UserTemplate",
+      "Comment": "{0} - имя пользователя\n{1} - идентификатор пользователя",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "User: {0}, ID={{{1}}}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пользователь: {0}, ID={{{1}}}"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_DisableExtendedSettingsConfirm",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disabling the extended permissions settings will disable the extended settings of this card (the settings themselves will not be deleted).\n\nAre you sure you want to disable the extended permissions settings?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отключение расширенных настроек прав доступа приведет к отключению расширенных настроек данной карточки (сами настройки удалены не будут).\n\nВы уверены, что хотите отключить расширенные настройки прав доступа?"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_EditAllMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit all messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование всех сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_EditApprovalScheme",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Modify approval scheme"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование схемы согласования"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_EditCard",
+      "Comment": "Право на редактирование карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование карточки"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_EditFiles",
+      "Comment": "Право на редактирование файлов карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit all files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование всех файлов"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_EditMyMessages",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit my messages (limited)"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование своих сообщений (ограничено)"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_EditNumber",
+      "Comment": "Право на редактирование номера",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit number manually"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ручное редактирование номера"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_EditOwnFiles",
+      "Comment": "Право на редактирование собственных файлов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit own files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование собственных файлов"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_EditRoute",
+      "Comment": "Право на редактирование маршрута",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Edit route"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование маршрута"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FieldEditAccessErrorTemplate",
+      "Comment": "{0} - имя поля\n{1} - имя секции",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There is no access to edit the field \"{0}\" of the section \"{1}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа на редактирование поля \"{0}\" из секции \"{1}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileCheckRules_AllFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "All files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Все файлы"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileCheckRules_FilesOfOtherUsers",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Files of other users"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файлы других сотрудников"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileCheckRules_OwnFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Own files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Собственные файлы"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileEditAccessSettings_Allowed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Allowed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Разрешено"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileEditAccessSettings_Disallowed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Disallowed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запрещено"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileReadAccessSettings_AllVersions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "All versions allowed"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступны все версии"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileReadAccessSettings_ContentNotAvailable",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File content not available"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Содержимое файла недоступно"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileReadAccessSettings_FileNotAvailable",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File not available and hidden"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Файл недоступен и скрыт"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileReadAccessSettings_OnlyLastAndOwnVersions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Only your own and lastest versions are available"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступны только свои версии и последняя версия файла"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_FileReadAccessSettings_OnlyLastVersion",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Only the last version is available"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Доступна только последняя версия файла"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_MandatoryControlTemplate",
+      "Comment": "{0} - имя контрола",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "\"{0}\" is required."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Необходимо заполнить поле \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_MandatoryValidationType_Always",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Always"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Всегда"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_MandatoryValidationType_OnTaskCompletion",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "On task completion"
+        },
+        {
+          "Culture": "ru",
+          "Value": "При завершении задания"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_MandatoryValidationType_WhenOneFieldFilled",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "When one of the fields is filled"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Когда заполнено одно из полей"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_AddFile_FileTooBig_WithCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла\n{2} - категория файла\n{3} - максимально допустимый размер файла\n{4} - единица измерения размера файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to add file \"{0}\", file size exceeded.\nThe maximum allowed file size with extension \"{1}\" and category \"{2}\" is {3} {4}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно добавить файл \"{0}\", превышен допустимый размер файла.\nМаксимально допустимый размер файла с расширением \"{1}\" и категорией \"{2}\": {3} {4}."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_AddFile_FileTooBig_WithoutCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла\n{3} - максимально допустимый размер файла\n{4} - единица измерения размера файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to add file \"{0}\", file size exceeded.\nThe maximum allowed file size with extension \"{1}\" without category is {3} {4}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно добавить файл \"{0}\", превышен допустимый размер файла.\nМаксимально допустимый размер файла с расширением \"{1}\" без категории: {3} {4}."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_AddFile_NotAllowed_WithCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла\n{2} - категория файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to add file \"{0}\". There is no access to add files with the extension \"{1}\" and the category \"{2}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно добавить файл \"{0}\". Нет доступа на добавление файлов с расширением \"{1}\" и категорией \"{2}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_AddFile_NotAllowed_WithoutCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to add file \"{0}\". There is no access to add files with the extension \"{1}\" without category."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно добавить файл \"{0}\". Нет доступа на добавление файлов с расширением \"{1}\" без категории."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_AllowedNumberOfFiles",
+      "Comment": "{0} - допустимое число файлов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Allowed number of files: {0}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Допустимое число файлов: {0}."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_ChangeCategory_FileTooBig_WithCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла\n{2} - категория файла\n{3} - максимально допустимый размер файла\n{4} - единица измерения размера файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to change the category of file \"{0}\", file size exceeded.\nThe maximum allowed file size with extension \"{1}\" and category \"{2}\" is {3} {4}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно изменить категорию файла \"{0}\", превышен допустимый размер файла.\nМаксимально допустимый размер файла с расширением \"{1}\" и категорией \"{2}\": {3} {4}."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_ChangeCategory_FileTooBig_WithoutCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла\n{3} - максимально допустимый размер файла\n{4} - единица измерения размера файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to change the category of file \"{0}\", file size exceeded.\nThe maximum allowed file size with extension \"{1}\" without category is {3} {4}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно изменить категорию файла \"{0}\", превышен допустимый размер файла.\nМаксимально допустимый размер файла с расширением \"{1}\" без категории: {3} {4}."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_ChangeCategory_NotAllowed_WithCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла\n{2} - категория файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to change the category of file \"{0}\". Category \"{2}\" is not available for files with extension \"{1}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно изменить категорию файла \"{0}\". Категория \"{2}\" недоступна для файлов с расширением \"{1}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_ChangeCategory_NotAllowed_WithoutCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to change the category of file \"{0}\". Files with the extension \"{1}\" must have a category."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно изменить категорию файла \"{0}\". Для файлов с расширением \"{1}\" должна быть задана категория."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_EditFile_FileTooBig_WithCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла\n{2} - категория файла\n{3} - максимально допустимый размер файла\n{4} - единица измерения размера файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to edit file \"{0}\", file size exceeded.\nThe maximum allowed file size with extension \"{1}\" and category \"{2}\" is {3} {4}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно изменить файл \"{0}\", превышен допустимый размер файла.\nМаксимально допустимый размер файла с расширением \"{1}\" и категорией \"{2}\": {3} {4}."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_EditFile_FileTooBig_WithoutCategory",
+      "Comment": "{0} - имя файла\n{1} - расширение файла\n{3} - максимально допустимый размер файла\n{4} - единица измерения размера файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to edit file \"{0}\", file size exceeded.\nThe maximum allowed file size with extension \"{1}\" without category is {3} {4}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно изменить файл \"{0}\", превышен допустимый размер файла.\nМаксимально допустимый размер файла с расширением \"{1}\" без категории: {3} {4}."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_FailToAddFile",
+      "Comment": "{0} - имя файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to store file. Insufficient permissions to add file \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось сохранить файл. Недостаточно прав на добавление файла \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_FailToCopyFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to copy file \"{0}\". Insufficient permissions to view this file."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось скопировать файл \"{0}\". Недостаточно прав на просмотр данного файла."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_FailToCreateFileLink",
+      "Comment": "{0} - имя файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to create a file link. Insufficient permissions to create link to file \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось создать ссылку на файл. Недостаточно прав на создание ссылки для файла \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_FailToDeleteFile",
+      "Comment": "{0} - имя файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to delete file. Insufficient permissions to delete file \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось удалить файл. Недостаточно прав на удаление файла \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_FailToEditFile",
+      "Comment": "{0} - имя файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to store file. Insufficient permissions to edit file \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось сохранить файл. Недостаточно прав на изменение файла \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_FailToLoadFile",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to upload file \"{0}\". Insufficient permissions to view this file."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось загрузить файл \"{0}\". Недостаточно прав на просмотр данного файла."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_FailToLoadVersions",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to load file versions. Insufficient permissions to download versions of this file."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось загрузить версии файла. Недостаточно прав на загрузку версий данного файла."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_FailToSignFile",
+      "Comment": "{0} - имя файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to store file. Insufficient permissions to sign file \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось сохранить файл. Недостаточно прав на подписание файла \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_FileCheckRule",
+      "Comment": "{0} - правило проверки файлов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File check rule: \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Правило проверки файлов: \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_ForExtensions",
+      "Comment": "{0} - расширения файлов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "with extensions: {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "c расширениями: {0}"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_InCategories",
+      "Comment": "{0} - категории файлов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "in categories: {0}"
+        },
+        {
+          "Culture": "ru",
+          "Value": "в категориях: {0}"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_MandatoryFileMissed",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "File is required"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Требуется файл"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_MaxFilesCountExceeded",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "The affordable number of files has been exceeded"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Превышено допустимое количество файлов"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_ReplaceFile_FileTooBig_WithCategory",
+      "Comment": "{0} - имя заменяемого файла\n{1} - имя нового файла\n{2} - расширение файла\n{3} - категория файла\n{4} - максимально допустимый размер файла\n{5} - единица измерения размера файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to replace file \"{0}\" with file \"{1}\", file size exceeded.\nThe maximum allowed file size with extension \"{2}\" and category \"{3}\" is {4} {5}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно заменить файл \"{0}\" на файл \"{1}\", превышен допустимый размер файла.\nМаксимально допустимый размер файла с расширением \"{2}\" и категорией \"{3}\": {4} {5}."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_ReplaceFile_FileTooBig_WithoutCategory",
+      "Comment": "{0} - имя заменяемого файла\n{1} - имя нового файла\n{2} - расширение файла\n{4} - максимально допустимый размер файла\n{5} - единица измерения размера файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to replace file \"{0}\" with file \"{1}\", file size exceeded.\nThe maximum allowed file size with extension \"{2}\" without category is {4} {5}."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно заменить файл \"{0}\" на файл \"{1}\", превышен допустимый размер файла.\nМаксимально допустимый размер файла с расширением \"{2}\" без категории: {4} {5}."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_ReplaceFile_NotAllowed_WithCategory",
+      "Comment": "{0} - имя заменяемого файла\n{1} - имя нового файла\n{2} - расширение файла\n{3} - категория файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to replace file \"{0}\" with file \"{1}\". There is no access to add files with the extension \"{2}\" and the category \"{3}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно заменить файл \"{0}\" на файл \"{1}\". Нет доступа на добавление файлов с расширением \"{2}\" и категорией \"{3}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_ReplaceFile_NotAllowed_WithoutCategory",
+      "Comment": "{0} - имя заменяемого файла\n{1} - имя нового файла\n{2} - расширение файла",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Unable to replace file \"{0}\" with file \"{1}\". There is no access to add files with the extension \"{2}\" without category."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Невозможно заменить файл \"{0}\" на файл \"{1}\". Нет доступа на добавление файлов с расширением \"{2}\" без категории."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_Messages_WithoutCategory",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "without category"
+        },
+        {
+          "Culture": "ru",
+          "Value": "без категории"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_ModifyAllTaskAssignedRoles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Modify task assigned roles list for any task"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование ФРЗ всех заданий"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_ModifyOwnTaskAssignedRoles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Modify task assigned roles list for own tasks"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Редактирование ФРЗ своих заданий"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_PermissionsDeleteErrorMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to take a lock on removing access rule. Access rules are being calculated now. If the error still occurs after re-saving, click on the \"Clear access rules cache\" tile on the left side panel of the access rule card."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось взять блокировку на удаление правила доступа. В данный момент производится расчет правил доступа. Если при повторном сохранении ошибка все еще возникает, нажмите на тайл \"Сбросить кеш правил доступа\" на левой боковой панели карточки правил доступа."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_PermissionsStoreErrorMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to take a lock on changing access rules. Access rules are being calculated now. If the error still occurs after re-saving, click on the \"Clear access rules cache\" tile on the left side panel of the access rule card."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось взять блокировку на изменение правил доступа. В данный момент производится расчет правил доступа. Если при повторном сохранении ошибка все еще возникает, нажмите на тайл \"Сбросить кеш правил доступа\" на левой боковой панели карточки правил доступа."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_ReadAllTopics",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Read topics"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Чтение обсуждений"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_ReadAndSendMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Read and send messages"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Чтение и отправка сообщений"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_ReadCard",
+      "Comment": "Право на чтение карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Read card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Чтение карточки"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_RegisterCard",
+      "Comment": "Право на регистрацию карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Register card"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Регистрация карточки"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_RestoreAllDeletedFiles",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Restore all deleted files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Восстановление всех удалённых файлов"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_ReturnForRevision",
+      "Comment": "Право на возврат карточки на доработку",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Return card to revision"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Возврат карточки на доработку"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_RevokeProcessOrRegistration",
+      "Comment": "Право на отзыв процесса",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Revoke process or cancel registration"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отзыв процесса или отмена регистрации"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_SectionAddRowAccessErrorTemplate",
+      "Comment": "{0} - имя секции",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There is no access to add new rows to the section \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа на добавление новых строк в секцию \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_SectionDeleteRowAccessErrorTemplate",
+      "Comment": "{0} - имя секции",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There is no access to delete rows from the section \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа на удаление строк секции \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_SectionEditAccessErrorTemplate",
+      "Comment": "{0} - имя секции",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "There is no access to edit the section \"{0}\"."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Нет доступа на редактирование секции \"{0}\"."
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_SeeInCatalog",
+      "Comment": "Право видеть карточку в \"доступных документах\" или аналогичных представлениях",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "View in registry"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Просмотр в реестре"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_SignFiles",
+      "Comment": "Право на подписание файлов",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Sign files"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подписание файлов"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_StartProcess",
+      "Comment": "Право на запуск процесса",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Start process"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Запуск процесса"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_SubscribeForNotifications",
+      "Comment": "Право на возможность подписаться на уведомления карточки",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Subscribe for notifications"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Подписка на уведомления"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_SuperModeratorMode",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Super moderator mode"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Режим супермодератора"
+        }
+      ]
+    },
+    {
+      "Name": "KrPermissions_UnableToLoadPermissionsMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Failed to calculate access rules. Access rules are updating. If the error occurs when you repeat the action, contact your administrator."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Не удалось произвести расчет правил доступа. Производится обновление правил доступа. Если при повторении действия ошибка повторяется, обратитесь к администратору."
+        }
+      ]
+    }
+  ]
+}

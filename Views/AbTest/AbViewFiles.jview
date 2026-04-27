@@ -1,0 +1,63 @@
+﻿{
+  "Alias": "AbViewFiles",
+  "Caption": "$AbTest_Views_Names_ViewFiles",
+  "GroupName": "AbTest",
+  "ID": "af26a537-a1c9-4e09-9048-b892cc0c687e",
+  "JsonMetadataSource::txt": "AbViewFiles JSONMETA",
+  "MsQuerySource::txt": "AbViewFiles MSSQL",
+  "PgQuerySource::txt": "AbViewFiles PGSQL"
+}
+
+[TEXTPART AbViewFiles JSONMETA]
+{
+  "Alias": "AbViewFiles",
+  "Caption": "$AbTest_Views_Names_ViewFiles",
+  "Columns": [
+    {
+      "Alias": "FullFileName",
+      "Caption": "FullFileName",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$AbTest_Views_ViewFiles_Name_Param",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Folder",
+      "Caption": "$AbTest_Views_ViewFiles_Folder_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "ParentFolder",
+      "Caption": "$AbTest_Views_ViewFiles_ParentFolder_Param",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "Subsets": [
+    {
+      "Alias": "ByFolder",
+      "Caption": "$AbTest_Views_ViewFiles_ByFolder",
+      "CaptionColumn": "FileName",
+      "CountColumn": "String",
+      "Kind": "Tree",
+      "RefColumn": "FullFileName",
+      "RefParam": "Folder",
+      "TreeRefParam": "ParentFolder"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART AbViewFiles MSSQL]
+
+
+[TEXTPART AbViewFiles PGSQL]

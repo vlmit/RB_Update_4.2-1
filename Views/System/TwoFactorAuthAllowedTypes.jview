@@ -1,0 +1,87 @@
+﻿{
+  "Alias": "TwoFactorAuthAllowedTypes",
+  "Caption": "$Views_Names_TwoFactorAuthAllowedTypes",
+  "GroupName": "System",
+  "ID": "32bb841b-cd75-4757-87fd-b23a770a3cc9",
+  "JsonMetadataSource::txt": "TwoFactorAuthAllowedTypes JSONMETA",
+  "MsQuerySource::txt": "TwoFactorAuthAllowedTypes MSSQL",
+  "PgQuerySource::txt": "TwoFactorAuthAllowedTypes PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TwoFactorAuthAllowedTypes JSONMETA]
+{
+  "Alias": "TwoFactorAuthAllowedTypes",
+  "Caption": "$Views_Names_TwoFactorAuthAllowedTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$TwoFactorAuthAllowedTypes.TypeID"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_TwoFactorAuthTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$TwoFactorAuthAllowedTypes.TypeName"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_TwoFactorAuthTypes_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeName",
+      "RefSection": [
+        "TwoFactorAuthAllowedTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TwoFactorAuthAllowedTypes MSSQL]
+SELECT
+	[t].[TypeID]	AS [TypeID],
+	[t].[TypeName]	AS [TypeName]
+FROM [TwoFactorAuthAllowedTypes] AS [t] WITH (NOLOCK)
+#if(Name || request.SortedBy("TypeName")) {
+CROSS APPLY [Localization]([t].[TypeName], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY #order_by
+
+
+[TEXTPART TwoFactorAuthAllowedTypes PGSQL]
+SELECT
+	"t"."TypeID"	AS "TypeID",
+	"t"."TypeName"	AS "TypeName"
+FROM "TwoFactorAuthAllowedTypes" AS "t"
+#if(Name || request.SortedBy("TypeName")) {
+CROSS JOIN "Localization"("t"."TypeName", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY #order_by

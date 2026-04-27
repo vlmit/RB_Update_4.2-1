@@ -1,0 +1,364 @@
+﻿{
+  ".formatVersion::int": 3,
+  "Caption": "$CardTypes_TypesNames_ProcessTemplate",
+  "CardTypeSections": null,
+  "CompletionOptions": null,
+  "DigestFormat": null,
+  "Extensions": null,
+  "Flags::int": 16,
+  "Forms": [
+    {
+      "Blocks": [
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "ColumnsCount::int": 2
+          },
+          "Caption": "$CardTypes_Blocks_MainInformation",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_Name",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxLength::int": 128,
+                "ShowExpandButton": false
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "3113bddf-32cc-439a-8cde-4773ee2d35d8"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "87f7e0c3-2d97-4e36-bb14-1aeec6e67a94",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_Description",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "MaxRows::int": 5,
+                "MinRows::int": 3
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "926db15a-5a47-473c-9b46-901caf3317af"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "87f7e0c3-2d97-4e36-bb14-1aeec6e67a94",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": {
+                "ControlSpan": true
+              },
+              "Caption": "$CardTypes_Controls_LogLevel",
+              "ComplexColumnID::uid": "f5d0fb37-7367-4297-8dcb-4f7ed8c76965",
+              "ControlSettings": {
+                "ComboBoxMode": true,
+                "HideSelectorButton": true,
+                "ParameterAlias": "Name",
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "WorkflowEngineLoglevels",
+                "ViewAliasComboBox": "WorkflowEngineLoglevels"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "87f7e0c3-2d97-4e36-bb14-1aeec6e67a94",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": {
+                "StartAtNewLine": true
+              },
+              "Caption": "$CardTypes_Controls_EditProcessParameters",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_EditProcessParameters",
+                "UseAllSpace": true
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "EditParametersButton",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": {
+                "StartAtNewLine": true
+              },
+              "Caption": "$CardTypes_Controls_Compile",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_Compile",
+                "UseAllSpace": true
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "CompileButton",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": {
+                "StartAtNewLine": true
+              },
+              "Caption": "$CardTypes_Controls_OpenFileInProject",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_OpenFileInProject",
+                "UseAllSpace": true
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "OpenFileButton",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": {
+                "StartAtNewLine": true
+              },
+              "Caption": "$CardTypes_Controls_UpgradeActions",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_UpgradeActions",
+                "UseAllSpace": true
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "UpgradeActionsButton",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Block1"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "ColumnsCount::int": 2
+          },
+          "Caption": "ScriptManagement",
+          "Controls": [
+            {
+              "BlockSettings": {
+                "ColumnSpan::int": 2
+              },
+              "Caption": "$CardTypes_Controls_ProjectPath",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "ShowExpandButton": false,
+                "TextWrap": false
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 1,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "98e7a1d1-c6e2-45b1-9c4d-93c13ed1e9c9"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "87f7e0c3-2d97-4e36-bb14-1aeec6e67a94",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_SelectProject",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_SelectProject",
+                "UseAllSpace": true
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "SelectProject",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_UpdateProject",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_UpdateProject",
+                "UseAllSpace": true
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "UpdateProject",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_UpdateProcessByProject",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_UpdateProcessByProject",
+                "UseAllSpace": true
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "UpdateProcess",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ShowAllReferences",
+              "ControlSettings": {
+                "Text": "$CardTypes_Controls_ShowAllReferences",
+                "UseAllSpace": true
+              },
+              "ControlType::int": 3,
+              "Flags::int": 0,
+              "Name": "ShowReferences",
+              "RequiredText": null,
+              "ToolTip": null,
+              "Type::uid": "16caaf03-c4f1-0803-b548-0c230cc19db5"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "ScriptManagement"
+        },
+        {
+          "BlockClass": "Tessa.UI.Cards.Blocks.ColumnBlockType",
+          "BlockSettings": {
+            "DoNotCollapseWithTopBlock": true
+          },
+          "Caption": "Script",
+          "Controls": [
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_ProcessBaseClass",
+              "ComplexColumnID::uid": "e84ff10c-893a-4557-8744-b3cece0331a3",
+              "ControlSettings": {
+                "ParameterAlias": "Name",
+                "RefSection": [
+                  {
+                    "::single_type": "str"
+                  },
+                  "WorkflowEngineCompiledBaseTypes"
+                ],
+                "ReferenceOpenMode::int": 3,
+                "ViewAlias": "WorkflowEngineCompiledBaseTypes"
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": null,
+              "RequiredText": null,
+              "SectionID::uid": "87f7e0c3-2d97-4e36-bb14-1aeec6e67a94",
+              "ToolTip": null,
+              "Type::uid": "208e364e-94fe-0d64-bc27-6b4dc12d039c"
+            },
+            {
+              "BlockSettings": null,
+              "Caption": "$CardTypes_Controls_MainProcessScript",
+              "ComplexColumnID": null,
+              "ControlSettings": {
+                "AvalonFontType::int": 1,
+                "AvalonShowLineNumbers": true,
+                "AvalonSyntaxType::int": 2,
+                "MaxRows::int": 40,
+                "MinRows::int": 5,
+                "TextMode::int": 1,
+                "TextWrap": false
+              },
+              "ControlType::int": 0,
+              "DisplayFormat": null,
+              "Flags::int": 0,
+              "Name": null,
+              "PhysicalColumnIDList": [
+                {
+                  "::single_type": "uid"
+                },
+                "f81d70e4-aaad-4f10-a483-42824c6f0d88"
+              ],
+              "RequiredText": null,
+              "SectionID::uid": "87f7e0c3-2d97-4e36-bb14-1aeec6e67a94",
+              "ToolTip": null,
+              "Type::uid": "1962c931-9c23-0eb9-903c-26bac9ef3571"
+            }
+          ],
+          "FormSettings": {
+            "HideCaption": true
+          },
+          "Name": "Script"
+        }
+      ],
+      "FormClass": "Tessa.UI.Cards.Forms.DefaultFormType",
+      "FormSettings": {
+        "Interval::int": 15
+      },
+      "Name": "WorkflowProcessEditor",
+      "TabCaption": "$CardTypes_Tabs_ProcessEditor"
+    }
+  ],
+  "Group": "WorkflowEngine",
+  "ID::uid": "d7420bf0-ce4e-4155-9b97-0117b9d1e13c",
+  "InstanceType::int": 0,
+  "MainFormName": null,
+  "Name": "WorkflowProcessEditor",
+  "SchemeItems": [
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "f81d70e4-aaad-4f10-a483-42824c6f0d88",
+        "3113bddf-32cc-439a-8cde-4773ee2d35d8",
+        "926db15a-5a47-473c-9b46-901caf3317af",
+        "e84ff10c-893a-4557-8744-b3cece0331a3",
+        "f5d0fb37-7367-4297-8dcb-4f7ed8c76965",
+        "98e7a1d1-c6e2-45b1-9c4d-93c13ed1e9c9"
+      ],
+      "SectionID::uid": "87f7e0c3-2d97-4e36-bb14-1aeec6e67a94"
+    },
+    {
+      "ColumnIDList": [
+        {
+          "::single_type": "uid"
+        },
+        "4b9f5bf2-41e9-4f56-8b44-d1eaf9bd7e33",
+        "12658c04-db7d-4e48-9b1f-3ab620e9ef65"
+      ],
+      "SectionID::uid": "f7ebd016-ef99-4dfd-ba04-11f428395fe3"
+    }
+  ],
+  "Validators": null
+}

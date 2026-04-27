@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SchemeFunction ID="ba6a80cb-e605-4ed9-9075-1f64ccbf17f0" Name="TryCastAsBigint" Group="Common">
+	<Definition Dbms="PostgreSql" IsExternal="true" />
+</SchemeFunction>

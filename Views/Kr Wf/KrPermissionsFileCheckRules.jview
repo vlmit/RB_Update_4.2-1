@@ -1,0 +1,83 @@
+﻿{
+  "Alias": "KrPermissionsFileCheckRules",
+  "Caption": "$Views_KrPermissionsFileCheckRules",
+  "GroupName": "Kr Wf",
+  "ID": "2215eeaa-790a-4389-b800-7790487318aa",
+  "JsonMetadataSource::txt": "KrPermissionsFileCheckRules JSONMETA",
+  "MsQuerySource::txt": "KrPermissionsFileCheckRules MSSQL",
+  "PgQuerySource::txt": "KrPermissionsFileCheckRules PGSQL"
+}
+
+[TEXTPART KrPermissionsFileCheckRules JSONMETA]
+{
+  "Alias": "KrPermissionsFileCheckRules",
+  "Caption": "$Views_KrPermissionsFileCheckRules",
+  "Columns": [
+    {
+      "Alias": "FileCheckRuleID",
+      "Hidden": true,
+      "Type": "$KrPermissionsFileEditAccessSettings.ID"
+    },
+    {
+      "Alias": "FileCheckRuleName",
+      "Caption": "$Views_KrPermissionsFileCheckRules_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "lName.Value",
+      "Type": "$KrPermissionsFileCheckRules.Name"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "FileCheckRuleName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrPermissionsFileCheckRules_Name_Param",
+      "Type": "$KrPermissionsFileCheckRules.Name"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "FileCheckRule",
+      "DisplayValueColumn": "FileCheckRuleName",
+      "RefSection": [
+        "KrPermissionsFileCheckRules"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrPermissionsFileCheckRules MSSQL]
+SELECT
+	[s].[ID]		AS [FileCheckRuleID],
+	[s].[Name]		AS [FileCheckRuleName]
+FROM [KrPermissionsFileCheckRules] AS [s] WITH (NOLOCK)
+#if(Name || request.SortedBy("FileCheckRuleName")) {
+CROSS APPLY [Localization]([s].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+	
+ORDER BY #order_by
+
+
+[TEXTPART KrPermissionsFileCheckRules PGSQL]
+SELECT
+	"s"."ID"		AS "FileCheckRuleID",
+	"s"."Name"		AS "FileCheckRuleName"
+FROM "KrPermissionsFileCheckRules" AS "s"
+#if(Name || request.SortedBy("FileCheckRuleName")) {
+CROSS JOIN "Localization"("s"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+	
+ORDER BY #order_by

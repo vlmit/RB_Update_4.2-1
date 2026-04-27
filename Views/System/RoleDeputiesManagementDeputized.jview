@@ -1,0 +1,434 @@
+﻿{
+  "Alias": "RoleDeputiesManagementDeputized",
+  "Caption": "$Views_Names_RoleDeputiesManagementDeputized",
+  "GroupName": "System",
+  "ID": "2877fb32-b5fa-40ed-94d2-32dcd675afc1",
+  "JsonMetadataSource::txt": "RoleDeputiesManagementDeputized JSONMETA",
+  "MsQuerySource::txt": "RoleDeputiesManagementDeputized MSSQL",
+  "PgQuerySource::txt": "RoleDeputiesManagementDeputized PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART RoleDeputiesManagementDeputized JSONMETA]
+{
+  "Alias": "RoleDeputiesManagementDeputized",
+  "Caption": "$Views_Names_RoleDeputiesManagementDeputized",
+  "Columns": [
+    {
+      "Alias": "RoleDeputizedRoles",
+      "Caption": "$Views_RoleDeputiesManagementDeputized_Roles",
+      "Localizable": true,
+      "Type": "$RoleDeputies.DeputyName"
+    },
+    {
+      "Alias": "RoleDeputizedID",
+      "Hidden": true,
+      "Type": "$RoleDeputies.DeputizedID"
+    },
+    {
+      "Alias": "RoleDeputizedName",
+      "Caption": "$Views_RoleDeputies_RoleDeputized",
+      "FilterParameter": "Deputized",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "Name",
+      "Type": "$RoleDeputies.DeputizedName"
+    },
+    {
+      "Alias": "RoleDeputyFrom",
+      "Caption": "$Views_RoleDeputies_RoleDeputyFrom",
+      "SortBy": "MinDate",
+      "Type": "$RoleDeputies.MinDate"
+    },
+    {
+      "Alias": "RoleDeputyTo",
+      "Caption": "$Views_RoleDeputies_RoleDeputyTo",
+      "SortBy": "MaxDate",
+      "Type": "$RoleDeputies.MaxDate"
+    },
+    {
+      "Alias": "RoleDeputyIsPermanent",
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsPermanent",
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "RoleDeputyIsEnabled",
+      "Caption": "$Views_RoleDeputies_RoleDeputyAvailable",
+      "FilterParameter": "IsEnabled",
+      "FilterType": "Parameter",
+      "SortBy": "IsEnabled",
+      "Type": "$RoleDeputies.IsEnabled"
+    },
+    {
+      "Alias": "RoleDeputyIsActive",
+      "Caption": "$Views_RoleDeputies_RoleDeputyIsActive",
+      "SortBy": "IsActive",
+      "Type": "$RoleDeputies.IsActive"
+    },
+    {
+      "Alias": "rn",
+      "Hidden": true,
+      "Type": "Int64 Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "RoleDeputizedName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Deputized",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_RoleDeputies_RoleDeputized",
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "Deputy",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_RoleDeputies_RoleDeputy",
+      "Hidden": true,
+      "Multiple": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "AvailableOnDate",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_RoleDeputies_AvailableOnDate",
+      "Multiple": false,
+      "Type": "Date Null"
+    },
+    {
+      "Alias": "IsEnabled",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_RoleDeputies_RoleDeputyAvailable",
+      "Multiple": false,
+      "Type": "$RoleDeputies.IsEnabled"
+    },
+    {
+      "Alias": "ShowAllDeputies",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_RoleDeputies_ShowAllDeputies",
+      "Multiple": false,
+      "Type": "$RoleDeputies.IsActive"
+    },
+    {
+      "Alias": "CardType",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_RoleDeputies_CardType",
+      "Hidden": true,
+      "Multiple": false,
+      "Type": "Guid Not Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "RoleDeputized",
+      "DisplayValueColumn": "RoleDeputizedName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Users"
+      ]
+    }
+  ],
+  "RowCountSubset": "Count",
+  "Subsets": [
+    {
+      "Alias": "Count"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART RoleDeputiesManagementDeputized MSSQL]
+SELECT 
+	#if(Normal) {
+	#if(DeputiesSettings.UseDeputyRoleSeparation){
+	STUFF((
+		SELECT N', ' + [rdmr].[RoleName]
+		FROM [RoleDeputiesManagementRoles] AS [rdmr] WITH (NOLOCK)
+		WHERE [rdmr].[ParentRowID] = [t].[ParentRowID]
+		FOR XML PATH('')), 1, 2, N'')
+	}{ NULL }						AS [RoleDeputizedRoles],
+	[t].[RoleID]					AS [RoleDeputizedID],
+	[t].[Name]						AS [RoleDeputizedName],
+	[t].[MinDate]					AS [RoleDeputyFrom],
+	[t].[MaxDate]					AS [RoleDeputyTo],
+	CAST(0 as bit) 					AS [RoleDeputyIsPermanent],
+	[t].[IsEnabled]					AS [RoleDeputyIsEnabled],			
+	[t].[IsActive]					AS [RoleDeputyIsActive],
+	[t].[rn] 						AS [rn]
+	}
+	#if(Count) {
+		count(*)					AS [cnt]
+	}
+FROM (SELECT *
+		#if(Normal){
+		, ROW_NUMBER() OVER (ORDER BY #order_by) AS [rn]
+		}
+	FROM
+	(
+	SELECT 
+		[combined].[ID],
+		[combined].[RowID],
+		[combined].[ParentRowID],
+		[combined].[SecondParentRowID],
+
+		-- Если дата начала задана также и у вложенного замещения, отображать наибольшую
+        CASE
+            WHEN [combined].[SecondParentRowID] IS NOT NULL -- замещение через звено
+            THEN
+            	-- аналог GREATEST([rdm].[MinDate], [rdm2].[MinDate])
+                CASE 
+                    WHEN [rdm].[MinDate] > [rdm2].[MinDate] THEN [rdm].[MinDate]
+                    ELSE [rdm2].[MinDate]
+                END
+            ELSE [rdm].[MinDate]
+        END AS [MinDate],
+
+        -- Если дата окончания задана также и у вложенного замещения, отображать наименьшую
+        CASE
+            WHEN [combined].[SecondParentRowID] IS NOT NULL -- замещение через звено
+            THEN
+            	-- аналог LEAST([rdm].[MaxDate], [rdm2].[MaxDate])
+                CASE 
+                    WHEN [rdm].[MaxDate] < [rdm2].[MaxDate] THEN [rdm].[MaxDate]
+                    ELSE [rdm2].[MaxDate]
+                END
+            ELSE [rdm].[MaxDate]
+        END AS [MaxDate],
+
+    	-- Если хоть одно звено в цепочке имеет IsEnabled = false, то весь результат false
+    	CASE
+    		WHEN ([rdm].[IsEnabled] = 1 AND [combined].[SecondParentRowID] IS NULL) OR ([rdm].[IsEnabled] = 1 AND [rdm2].[IsEnabled] = 1) 
+    		THEN CAST(1 as bit)
+    		ELSE CAST(0 as bit)
+    	END AS [IsEnabled],
+
+    	CASE
+	    	-- когда замещение через звено, то оба звена должны быть IsActive
+    		WHEN ([rdm].[IsActive] = 1 AND [combined].[SecondParentRowID] IS NULL) OR ([rdm].[IsActive] = 1 AND [rdm2].[IsActive] = 1)
+    		THEN CAST(1 as bit)
+    		ELSE CAST(0 as bit)
+		END AS [IsActive],
+
+		[r].[ID] as [RoleID],
+		[r].[Name]
+	
+		FROM (
+		SELECT
+			[rdmu].[ID],
+			[rdmu].[RowID],
+			[rdmu].[ParentRowID],
+			NULL AS [SecondParentRowID]
+		FROM [RoleDeputiesManagementUsers] AS [rdmu] WITH(NOLOCK)
+		WHERE 1 = 1
+			#param(Deputy, [rdmu].[PersonalRoleID])
+			
+		#if(DeputiesSettings.DeputyTransitivityLevel > 0){
+		UNION
+
+		SELECT
+			[rdmu2].[ID],
+			[rdmu2].[RowID],
+			[rdmu2].[ParentRowID],
+			[rdmu].[ParentRowID] AS [SecondParentRowID] -- для проверки IsEnabled и IsActive (если у промежуточного звена замещение недоступно, оно также недоступно и через звено)
+		FROM [RoleDeputiesManagementUsers] AS [rdmu] WITH(NOLOCK)
+		INNER JOIN [RoleDeputiesManagementUsers] AS [rdmu2] WITH (NOLOCK) ON [rdmu2].[PersonalRoleID] = [rdmu].[ID]
+
+		WHERE 1 = 1
+			#param(Deputy, [rdmu].[PersonalRoleID])
+		}
+		) AS [combined]
+		
+	
+	INNER JOIN [RoleDeputiesManagement] AS [rdm] WITH (NOLOCK) ON [combined].[ParentRowID] = [rdm].[RowID]
+	LEFT JOIN [RoleDeputiesManagement] AS [rdm2] WITH (NOLOCK) ON [combined].[SecondParentRowID] = [rdm2].[RowID]
+	INNER JOIN [Roles] AS [r] WITH (NOLOCK) ON [combined].[ID] = [r].[ID]
+	
+	WHERE 1 = 1
+		#param(Deputized, [combined].[ID])
+		
+		#if(Deputy)
+		{
+			-- Заместитель не должен видеть сам себя
+			AND [r].[ID] != #param(Deputy)
+		}
+
+	) AS [innerQuery]
+	) AS [t]
+	
+	WHERE 1=1
+		#param(IsEnabled, [t].[IsEnabled])
+		#if(AvailableOnDate) { AND #param(AvailableOnDate) BETWEEN [t].[MinDate] AND [t].[MaxDate] }
+
+        -- Если не задан ни один параметр из "Замещение доступно", "Замещение на дату" и "Показывать все замещения", фильтруем по IsActive.
+		#if(!IsEnabled && !AvailableOnDate && !ShowAllDeputies) {
+		  AND [t].[IsActive] = 1
+		}
+		
+		-- Фильтрация подзамещений с непересекающимися периодами.
+		AND ([t].[SecondParentRowID] IS NULL OR [t].[MinDate] <= [t].[MaxDate])
+
+#if(PageOffset) {
+AND [t].[rn] >= #param(PageOffset) AND [t].[rn] < (#param(PageOffset) + #param(PageLimit))
+}
+#if(Normal) {
+ORDER BY [t].[rn]
+}
+
+[TEXTPART RoleDeputiesManagementDeputized PGSQL]
+SELECT 
+	#if(Normal) {
+	#if(DeputiesSettings.UseDeputyRoleSeparation){
+	(
+		SELECT string_agg("rdmr"."RoleName", ', ')
+		FROM "RoleDeputiesManagementRoles" AS "rdmr"
+		WHERE "rdmr"."ParentRowID" = "t"."ParentRowID"
+	)}{ NULL::text }				AS "RoleDeputizedRoles",
+	"t"."RoleID"					AS "RoleDeputizedID",
+	"t"."Name"						AS "RoleDeputizedName",
+	"t"."MinDate"					AS "RoleDeputyFrom",
+	"t"."MaxDate"					AS "RoleDeputyTo",
+	false							AS "RoleDeputyIsPermanent",
+	"t"."IsEnabled"					AS "RoleDeputyIsEnabled",			
+	"t"."IsActive"					AS "RoleDeputyIsActive",
+	0::int8							AS "rn"
+	}
+	#if(Count) {
+		count(*)					AS "cnt"
+	}
+FROM (
+	SELECT 
+		"combined"."ID",
+		"combined"."RowID",
+		"combined"."ParentRowID",
+		"combined"."SecondParentRowID",
+
+		-- Если дата начала задана также и у вложенного замещения, отображать наибольшую
+		CASE
+    		WHEN "combined"."SecondParentRowID" IS NOT NULL -- замещение через звено
+    		THEN GREATEST("rdm"."MinDate", "rdm2"."MinDate")
+    		ELSE "rdm"."MinDate"
+    	END AS "MinDate",
+
+		-- Если дата окончания задана также и у вложенного замещения, отображать наименьшую
+		CASE
+    		WHEN "combined"."SecondParentRowID" IS NOT NULL -- замещение через звено
+    		THEN LEAST("rdm"."MaxDate", "rdm2"."MaxDate")
+    		ELSE "rdm"."MaxDate"
+    	END AS "MaxDate",
+
+    	-- Если хоть одно звено в цепочке имеет IsEnabled = false, то весь результат false
+    	CASE
+    		WHEN ("rdm"."IsEnabled" = true AND "combined"."SecondParentRowID" IS NULL) OR ("rdm"."IsEnabled" = true AND "rdm2"."IsEnabled" = true) 
+    		THEN true
+    		ELSE false
+    	END AS "IsEnabled",
+
+    	CASE
+	    	-- когда замещение через звено, то оба звена должны быть IsActive
+    		WHEN ("rdm"."IsActive" = true AND "combined"."SecondParentRowID" IS NULL) OR ("rdm"."IsActive" = true AND "rdm2"."IsActive" = true)
+    		THEN true
+    		ELSE false 
+		END AS "IsActive",
+
+		"r"."ID" as "RoleID",
+		"r"."Name"
+		FROM (
+		SELECT
+			"rdmu"."ID",
+			"rdmu"."RowID",
+			"rdmu"."ParentRowID",
+			NULL::uuid AS "SecondParentRowID"
+		FROM "RoleDeputiesManagementUsers" AS "rdmu"
+		WHERE true
+			#param(Deputy, "rdmu"."PersonalRoleID")
+			
+		#if(DeputiesSettings.DeputyTransitivityLevel > 0){
+		UNION
+
+		SELECT
+			"rdmu2"."ID",
+			"rdmu2"."RowID",
+			"rdmu2"."ParentRowID",
+			"rdmu"."ParentRowID" as "SecondParentRowID" -- для проверки IsEnabled и IsActive (если у промежуточного звена замещение недоступно, оно также недоступно и через звено)
+		FROM "RoleDeputiesManagementUsers" AS "rdmu"
+		INNER JOIN "RoleDeputiesManagementUsers" AS "rdmu2" ON "rdmu2"."PersonalRoleID" = "rdmu"."ID"
+
+		WHERE true
+			#param(Deputy, "rdmu"."PersonalRoleID")
+		}
+		) AS "combined"
+
+		INNER JOIN "RoleDeputiesManagement" AS "rdm" ON "combined"."ParentRowID" = "rdm"."RowID"
+		LEFT JOIN "RoleDeputiesManagement" AS "rdm2" ON "combined"."SecondParentRowID" = "rdm2"."RowID"
+		INNER JOIN "Roles" AS "r" ON "combined"."ID" = "r"."ID"
+	
+	WHERE true
+		#param(Deputized, "combined"."ID")
+		
+		#if(Deputy)
+		{
+			-- Заместитель не должен видеть сам себя
+			AND "r"."ID" != #param(Deputy)
+		}
+
+	) AS "t"
+	
+	WHERE true
+		#param(IsEnabled, "t"."IsEnabled")
+		#if(AvailableOnDate) { AND #param(AvailableOnDate) BETWEEN "t"."MinDate" AND "t"."MaxDate" }
+
+		-- Если не задан ни один параметр из "Замещение доступно", "Замещение на дату" и "Показывать все замещения", фильтруем по IsActive.
+		#if(!IsEnabled && !AvailableOnDate && !ShowAllDeputies) {
+		  AND "t"."IsActive" = true
+		}
+		
+		-- Фильтрация подзамещений с непересекающимися периодами.
+		AND ("t"."SecondParentRowID" IS NULL OR "t"."MinDate" <= "t"."MaxDate")
+
+#if(Normal) {
+ORDER BY #order_by
+}
+#if(PageOffset) {
+	OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}

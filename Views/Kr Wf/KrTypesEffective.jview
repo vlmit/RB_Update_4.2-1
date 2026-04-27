@@ -1,0 +1,198 @@
+﻿{
+  "Alias": "KrTypesEffective",
+  "Caption": "$Views_Names_KrTypesEffective",
+  "GroupName": "Kr Wf",
+  "ID": "fd177ebc-050e-4f1a-8a28-deba816a727d",
+  "JsonMetadataSource::txt": "KrTypesEffective JSONMETA",
+  "MsQuerySource::txt": "KrTypesEffective MSSQL",
+  "PgQuerySource::txt": "KrTypesEffective PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART KrTypesEffective JSONMETA]
+{
+  "Alias": "KrTypesEffective",
+  "Caption": "$Views_Names_KrTypesEffective",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_KrTypesEffective_Name",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.LocalizedTypeCaption",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "LocalizedTypeCaption",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "TypeIsDocType",
+      "Hidden": true,
+      "Type": "Boolean Null"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_KrTypesEffective_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.TypeName",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "IsDocTypeCaption",
+      "Caption": "$Views_KrTypesEffective_Type",
+      "FilterParameter": "TypeIsDocType",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "ParentType",
+      "Caption": "$Views_KrTypesEffective_ParentType",
+      "Localizable": true,
+      "Type": "$KrSettingsCardTypes.CardTypeCaption"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_KrTypesEffective_Name_Param",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrTypesEffective_Alias_Param",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "TypeIsDocType",
+      "AllowedOperands": [
+        "IsTrue",
+        "IsFalse"
+      ],
+      "Caption": "$Views_KrTypesEffective_DocType_Param",
+      "Multiple": false,
+      "Type": "Boolean Null"
+    }
+  ],
+  "QuickSearchParam": "Caption",
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "RefSection": [
+        "KrCardTypesVirtual",
+        "TypeForView"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrTypesEffective MSSQL]
+SELECT
+	[t].*
+FROM (
+	SELECT
+		[t].[ID]									AS [TypeID],
+		[t].[Caption]								AS [TypeCaption],
+		[lCaption].[Value]							AS [LocalizedTypeCaption],
+		CAST(0 AS bit)								AS [TypeIsDocType],
+		[t].[Name]									AS [TypeName],
+		N'$Views_KrTypesEffective_CardType_Sql'		AS [IsDocTypeCaption],
+		N''											AS [ParentType]
+	FROM [Types] AS [t] WITH (NOLOCK)
+	INNER JOIN [KrSettingsCardTypes] AS [kr]
+		ON [kr].[CardTypeID] = [t].[ID]
+		AND [kr].[UseDocTypes] = 0
+	CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+	WHERE 1 = 1
+		#if(TypeIsDocType && TypeIsDocType.CriteriaName == "IsTrue") { AND 1 = 0 }
+		#param(Name, [t].[Name])
+		#param(Caption, [lCaption].[Value])
+
+	UNION ALL
+
+	SELECT
+		[t].[ID]									AS [TypeID],
+		[t].[Title]									AS [TypeCaption],
+		[lTitle].[Value]							AS [LocalizedTypeCaption],
+		CAST(1 AS bit)								AS [TypeIsDocType],
+		[t].[CardTypeName]							AS [TypeName],
+		N'$Views_KrTypesEffective_DocType_Sql'		AS [IsDocTypeCaption],
+		[kr].[CardTypeCaption]						AS [ParentType]
+	FROM [KrDocType] AS [t] WITH (NOLOCK)
+	INNER JOIN [KrSettingsCardTypes] AS [kr] WITH (NOLOCK)
+		ON [kr].[CardTypeID] = [t].[CardTypeID]
+		AND [kr].[UseDocTypes] = 1
+	CROSS APPLY [Localization]([t].[Title], #param(locale)) AS [lTitle]
+	WHERE 1 = 1
+		#if(TypeIsDocType && TypeIsDocType.CriteriaName == "IsFalse") { AND 1 = 0 }
+		#param(Name, [t].[CardTypeName])
+		#param(Caption, [lTitle].[Value])
+	) AS [t]
+ORDER BY #order_by
+
+
+[TEXTPART KrTypesEffective PGSQL]
+SELECT
+	"t".*
+FROM (
+	SELECT
+		"t"."ID"									AS "TypeID",
+		"t"."Caption"								AS "TypeCaption",
+		"lCaption"."Value"							AS "LocalizedTypeCaption",
+		false										AS "TypeIsDocType",
+		"t"."Name"									AS "TypeName",
+		'$Views_KrTypesEffective_CardType_Sql'		AS "IsDocTypeCaption",
+		''											AS "ParentType"
+	FROM "Types" AS "t"
+	INNER JOIN "KrSettingsCardTypes" AS "kr"
+		ON "kr"."CardTypeID" = "t"."ID"
+		AND "kr"."UseDocTypes" = false
+	CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+	WHERE 1 = 1
+		#if(TypeIsDocType && TypeIsDocType.CriteriaName == "IsTrue") { AND false }
+		#param(Name, "t"."Name")
+		#param(Caption, "lCaption"."Value")
+
+	UNION ALL
+
+	SELECT
+		"t"."ID"									AS "TypeID",
+		"t"."Title"									AS "TypeCaption",
+		"lTitle"."Value"							AS "LocalizedTypeCaption",
+		true										AS "TypeIsDocType",
+		"t"."CardTypeName"							AS "TypeName",
+		'$Views_KrTypesEffective_DocType_Sql'		AS "IsDocTypeCaption",
+		"kr"."CardTypeCaption"						AS "ParentType"
+	FROM "KrDocType" AS "t"
+	INNER JOIN "KrSettingsCardTypes" AS "kr"
+		ON "kr"."CardTypeID" = "t"."CardTypeID"
+		AND "kr"."UseDocTypes" = true
+	CROSS JOIN "Localization"("t"."Title", #param(locale)) AS "lTitle"
+	WHERE true
+		#if(TypeIsDocType && TypeIsDocType.CriteriaName == "IsFalse") { AND false }
+		#param(Name, "t"."CardTypeName")
+		#param(Caption, "lTitle"."Value")
+	) AS "t"
+ORDER BY #order_by

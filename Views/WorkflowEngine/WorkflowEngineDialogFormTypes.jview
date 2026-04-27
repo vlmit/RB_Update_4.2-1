@@ -1,0 +1,74 @@
+﻿{
+  "Alias": "WorkflowEngineDialogFormTypes",
+  "Caption": "$Views_Names_WorkflowEngineDialogFormTypes",
+  "GroupName": "WorkflowEngine",
+  "ID": "a0b46639-b2e2-4e98-86f9-d862ec0c912d",
+  "JsonMetadataSource::txt": "WorkflowEngineDialogFormTypes JSONMETA",
+  "MsQuerySource::txt": "WorkflowEngineDialogFormTypes MSSQL",
+  "PgQuerySource::txt": "WorkflowEngineDialogFormTypes PGSQL"
+}
+
+[TEXTPART WorkflowEngineDialogFormTypes JSONMETA]
+{
+  "Alias": "WorkflowEngineDialogFormTypes",
+  "Caption": "$Views_Names_WorkflowEngineDialogFormTypes",
+  "Columns": [
+    {
+      "Alias": "DialogFormTypeID",
+      "Hidden": true,
+      "Type": "$WorkflowEngineDialogFormTypes.ID"
+    },
+    {
+      "Alias": "DialogFormTypeName",
+      "Caption": "$Views_WorkflowEngineDialogFormTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$WorkflowEngineDialogFormTypes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_WorkflowEngineDialogFormTypes_Name_Param",
+      "Multiple": false,
+      "Type": "$WorkflowEngineDialogFormTypes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "DialogFormType",
+      "DisplayValueColumn": "DialogFormTypeName",
+      "RefSection": [
+        "WorkflowEngineDialogFormTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART WorkflowEngineDialogFormTypes MSSQL]
+SELECT
+	[dt].[ID] as [DialogFormTypeID]
+	,[dt].[Name] as [DialogFormTypeName]
+FROM [WorkflowEngineDialogFormTypes] [dt] WITH(NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([dt].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY [dt].[ID]
+
+
+[TEXTPART WorkflowEngineDialogFormTypes PGSQL]
+SELECT
+	"dt"."ID" as "DialogFormTypeID"
+	,"dt"."Name" as "DialogFormTypeName"
+FROM "WorkflowEngineDialogFormTypes" "dt"
+#if(Name) {
+CROSS JOIN "Localization"("dt"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY "dt"."ID"

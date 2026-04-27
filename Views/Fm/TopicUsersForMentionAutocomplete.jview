@@ -1,0 +1,158 @@
+﻿{
+  "Alias": "TopicUsersForMentionAutocomplete",
+  "Caption": "$View_Names_TopicUsersForMentionAutocomplete",
+  "Description": "Представление для выборки пользователей при их упоминании в форумах.\r\nСначала выводятся участники указанного топика, а затем - остальные пользователи системы.",
+  "GroupName": "Fm",
+  "ID": "004ec465-980a-43ce-a860-17e705653661",
+  "JsonMetadataSource::txt": "TopicUsersForMentionAutocomplete JSONMETA",
+  "MsQuerySource::txt": "TopicUsersForMentionAutocomplete MSSQL",
+  "PgQuerySource::txt": "TopicUsersForMentionAutocomplete PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART TopicUsersForMentionAutocomplete JSONMETA]
+{
+  "Alias": "TopicUsersForMentionAutocomplete",
+  "AutoSelectFirstRow": false,
+  "Caption": "$View_Names_TopicUsersForMentionAutocomplete",
+  "Columns": [
+    {
+      "Alias": "UserID",
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "IsParticipant",
+      "Type": "Boolean Not Null"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Paging": "Always",
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "AllowedOperands": [
+        "Contains"
+      ],
+      "Caption": "$View_TopicUsersForMentionAutocomplete_Name",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "TopicID",
+      "Caption": "$View_TopicUsersForMentionAutocomplete_TopicID",
+      "Type": "Guid Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART TopicUsersForMentionAutocomplete MSSQL]
+#if(TopicID) {
+SELECT 
+	[UserID],
+	[IsParticipant]
+FROM (
+	SELECT
+		[roles].[ID] AS [UserID],
+		[roles].[Name],
+		CAST(COALESCE([topics].[IsParticipant], 0) as bit) AS [IsParticipant],
+		
+		ROW_NUMBER() OVER (ORDER BY [IsParticipant] DESC, [Name]) AS [rn]
+	FROM (
+		SELECT 
+			[ID], 
+			[Name]
+		FROM [Roles] WITH (NOLOCK)
+		WHERE
+			[TypeID] = 1
+			AND [Hidden] = 0
+			#param(Name, [Name])
+		) AS [roles]
+	OUTER APPLY (
+		SELECT TOP 1 1 AS [IsParticipant]
+		FROM [FmTopicParticipantRoles] AS [tpr] WITH (NOLOCK)
+		INNER JOIN [RoleUsers] AS [ru] WITH (NOLOCK) 
+			ON [ru].[ID] = [tpr].[RoleID]
+		WHERE 
+			[roles].[ID] = [ru].[UserID]
+			#param(TopicID, [tpr].[TopicRowID])
+			
+		UNION
+		
+		SELECT TOP 1 1 AS [IsParticipant]
+		FROM [FmTopicParticipants] AS [tp] WITH (NOLOCK)
+		WHERE 
+			[roles].[ID] = [tp].[UserID]
+			#param(TopicID, [tp].[TopicRowID])
+		) AS [topics]
+	) AS [res]
+#if(PageOffset) {
+WHERE 
+	[rn] >= #param(PageOffset) AND [rn] < (#param(PageOffset) + #param(PageLimit))
+}
+ORDER BY [rn]
+}
+{
+SELECT 
+	CAST(NULL AS uniqueidentifier) AS [UserID],
+	CAST(0 AS bit) AS [IsParticipant]
+}
+
+[TEXTPART TopicUsersForMentionAutocomplete PGSQL]
+#if(TopicID) {
+SELECT 
+	"UserID",
+	"IsParticipant"
+FROM (
+	SELECT
+		"roles"."ID" AS "UserID",
+		"roles"."Name",
+		COALESCE("topics"."IsParticipant", false) as "IsParticipant"
+	FROM (
+		SELECT 
+			"ID", 
+			"Name"
+		FROM "Roles"
+		WHERE
+			"TypeID" = 1
+			AND "Hidden" = false
+			#param(Name, "Name")
+		) AS "roles"
+	LEFT JOIN LATERAL (
+		(SELECT true AS "IsParticipant"
+		FROM "FmTopicParticipantRoles" AS "tpr"
+		INNER JOIN "RoleUsers" AS "ru"
+			ON "ru"."ID" = "tpr"."RoleID"
+		WHERE 
+			"roles"."ID" = "ru"."UserID"
+			#param(TopicID, "tpr"."TopicRowID")
+		LIMIT 1)
+			
+		UNION
+		
+		(SELECT true AS "IsParticipant"
+		FROM "FmTopicParticipants" AS "tp"
+		WHERE 
+			"roles"."ID" = "tp"."UserID"
+			#param(TopicID, "tp"."TopicRowID")
+		LIMIT 1)
+		) AS "topics" ON TRUE
+	) AS "res"
+ORDER BY 
+	"IsParticipant" DESC,
+	"Name"
+#if(PageOffset) {
+OFFSET #param(PageOffset) - 1 LIMIT #eval(PageLimit.Value)
+}
+}
+{
+SELECT 
+	NULL::uuid AS "UserID",
+	false AS "IsParticipant"
+}

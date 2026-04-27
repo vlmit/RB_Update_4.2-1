@@ -1,0 +1,164 @@
+﻿{
+  ".formatVersion": 2,
+  "ID": "83aebf5d-3b40-4495-ac61-515f7dea0159",
+  "Name": "Views_Charting",
+  "Priority": 0,
+  "Entries": [
+    {
+      "Name": "Views_Charting_DeleteMessage",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Delete '{0}'?"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Удалить '{0}'?"
+        }
+      ]
+    },
+    {
+      "Name": "Views_Charting_LicenseNotFound",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "License doesn't have charts enabled."
+        },
+        {
+          "Culture": "ru",
+          "Value": "Отсутствует лицензия для использования диаграмм."
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_AccentPalette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Heliocentric"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Перигей"
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_Category10Palette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Empty space"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Пустота"
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_Dark2Palette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Eccentricity"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Орбита"
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_PairedPalette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Lagrangian"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Магнетар"
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_Pastel1Palette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Parsec"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Облако Оорта"
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_Pastel2Palette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Multiverse"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Галактика"
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_Set1Palette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Extrasolar"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Инфракрасное излучение"
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_Set2Palette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Perigee"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Туманность "
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_Set3Palette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Luminosity"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Ель"
+        }
+      ]
+    },
+    {
+      "Name": "Views_WebCharting_Tableau10Palette",
+      "Strings": [
+        {
+          "Culture": "en",
+          "Value": "Supernova"
+        },
+        {
+          "Culture": "ru",
+          "Value": "Коричневый карлик "
+        }
+      ]
+    }
+  ]
+}

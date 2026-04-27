@@ -1,0 +1,73 @@
+﻿{
+  "Alias": "DeviceTypes",
+  "Caption": "$Views_Names_DeviceTypes",
+  "GroupName": "System",
+  "ID": "4a9aaa12-6830-4dc5-bd0d-c31415f7a306",
+  "JsonMetadataSource::txt": "DeviceTypes JSONMETA",
+  "MsQuerySource::txt": "DeviceTypes MSSQL",
+  "PgQuerySource::txt": "DeviceTypes PGSQL"
+}
+
+[TEXTPART DeviceTypes JSONMETA]
+{
+  "Alias": "DeviceTypes",
+  "Caption": "$Views_Names_DeviceTypes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$DeviceTypes.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "$Views_DeviceTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$DeviceTypes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_DeviceTypes_Name_Param",
+      "Type": "$DeviceTypes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "DeviceTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART DeviceTypes MSSQL]
+SELECT
+	[t].[ID]	AS [RefID],
+	[t].[Name]	AS [RefName]
+FROM [DeviceTypes] AS [t] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([t].[Name], #param(locale)) AS [lName]
+}
+WHERE 1 = 1
+	#param(Name, [lName].[Value])
+ORDER BY [t].[ID]
+
+
+[TEXTPART DeviceTypes PGSQL]
+SELECT
+	"t"."ID"	AS "RefID",
+	"t"."Name"	AS "RefName"
+FROM "DeviceTypes" AS "t"
+#if(Name) {
+CROSS JOIN "Localization"("t"."Name", #param(locale)) AS "lName"
+}
+WHERE true
+	#param(Name, "lName"."Value")
+ORDER BY "t"."ID"

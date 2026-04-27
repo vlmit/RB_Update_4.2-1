@@ -1,0 +1,306 @@
+﻿{
+  "Alias": "FileLoadingTokensForCard",
+  "Caption": "$Views_Names_Tokens_FileLoading",
+  "Description": "Представление для просмотра токенов доступа к файлам карточки",
+  "GroupName": "System",
+  "ID": "b7608ec1-465a-4aa5-8938-efa7f6e7880c",
+  "JsonMetadataSource::txt": "FileLoadingTokensForCard JSONMETA",
+  "MsQuerySource::txt": "FileLoadingTokensForCard MSSQL",
+  "PgQuerySource::txt": "FileLoadingTokensForCard PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART FileLoadingTokensForCard JSONMETA]
+{
+  "Alias": "FileLoadingTokensForCard",
+  "AutoSelectFirstRow": false,
+  "Caption": "$Views_Names_Tokens_FileLoading",
+  "Columns": [
+    {
+      "Alias": "Scope",
+      "Caption": "$Views_Tokens_Scope",
+      "FilterParameter": "Scope",
+      "FilterType": "Parameter",
+      "SortBy": "tk.Scope",
+      "Type": "$Tokens.Scope"
+    },
+    {
+      "Alias": "Created",
+      "Caption": "$Views_Tokens_Created",
+      "FilterParameter": "Created",
+      "FilterType": "Parameter",
+      "SortBy": "tk.Created",
+      "Type": "$Tokens.Created"
+    },
+    {
+      "Alias": "Expires",
+      "Caption": "$Views_Tokens_Expires",
+      "FilterParameter": "Expires",
+      "FilterType": "Parameter",
+      "SortBy": "tk.Expires",
+      "Type": "$Tokens.Expires"
+    },
+    {
+      "Alias": "CreatedByID",
+      "Hidden": true,
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "CreatedByName",
+      "Caption": "$Views_Tokens_CreatedByName",
+      "FilterParameter": "CreatedByID",
+      "FilterType": "Parameter",
+      "NormalizationKeyColumn": "CreatedByID",
+      "NormalizationSource": "Users",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "FileID",
+      "Caption": "$Views_Tokens_FileID",
+      "SortBy": "tk.FileID",
+      "Type": "$Tokens.RefID"
+    },
+    {
+      "Alias": "FileName",
+      "Caption": "$Views_Tokens_FileName",
+      "FilterParameter": "FileName",
+      "FilterType": "Parameter",
+      "SortBy": "tk.FileName",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "UserID",
+      "Hidden": true,
+      "Type": "Guid Null"
+    },
+    {
+      "Alias": "UserName",
+      "Caption": "$Views_Tokens_UserName",
+      "FilterParameter": "UserID",
+      "FilterType": "Parameter",
+      "InvisibleByDefault": true,
+      "NormalizationKeyColumn": "UserID",
+      "NormalizationSource": "Users",
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Hash",
+      "Caption": "$Views_Tokens_Hash",
+      "FilterParameter": "Hash",
+      "FilterType": "Parameter",
+      "InvisibleByDefault": true,
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "ID",
+      "Caption": "$Views_Tokens_ID",
+      "FilterParameter": "ID",
+      "FilterType": "Parameter",
+      "Type": "$Tokens.ID"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "Created",
+      "SortDirection": "Descending"
+    }
+  ],
+  "EnableAutoWidth": true,
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "CardID",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_Tokens_CardID",
+      "Hidden": true,
+      "Mandatory": true,
+      "Multiple": false,
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "ID",
+      "AllowedOperands": [
+        "Equality",
+        "Contains"
+      ],
+      "Caption": "$Views_Tokens_ID",
+      "Multiple": false,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "Scope",
+      "Caption": "$Views_Tokens_Scope",
+      "Multiple": false,
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "Hash",
+      "AllowedOperands": [
+        "Equality"
+      ],
+      "Caption": "$Views_Tokens_Hash",
+      "Multiple": false,
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "CreatedByID",
+      "AllowedOperands": [
+        "Equality",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Tokens_CreatedByName",
+      "IgnoreCase": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "UserID",
+      "AllowedOperands": [
+        "Equality",
+        "IsNotNull",
+        "IsNull",
+        "NonEquality"
+      ],
+      "AutoCompleteInfo": {
+        "ParamAlias": "Name",
+        "PopupColumns": [
+          1,
+          4
+        ],
+        "ViewAlias": "Users"
+      },
+      "Caption": "$Views_Tokens_UserName",
+      "RefSection": [
+        "PersonalRoles"
+      ],
+      "Type": "Guid Not Null"
+    },
+    {
+      "Alias": "FileName",
+      "AllowedOperands": [
+        "Equality",
+        "Contains",
+        "StartWith",
+        "EndWith",
+        "NonEquality"
+      ],
+      "Caption": "$Views_Tokens_FileName",
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "Created",
+      "AllowedOperands": [
+        "Between"
+      ],
+      "Caption": "$Views_Tokens_Created",
+      "Type": "DateTime Not Null"
+    },
+    {
+      "Alias": "Expires",
+      "AllowedOperands": [
+        "Between"
+      ],
+      "Caption": "$Views_Tokens_Expires",
+      "Type": "DateTime Not Null"
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART FileLoadingTokensForCard MSSQL]
+SELECT
+  [tk].[Scope],
+  [tk].[Created],
+  [tk].[Expires],
+  [tk].[CreatedByID],
+  [tk].[FileID],
+  [tk].[FileName],
+  [tk].[UserID],
+  [tk].[Hash],
+  [tk].[MaskedID] AS [ID]
+FROM (
+  SELECT 
+    [tk].[ID],
+    CONCAT(SUBSTRING([tk].[ID],1,3), '...', SUBSTRING([tk].[ID],LEN([tk].[ID])-2,3)) AS [MaskedID],
+    [tk].[Scope],
+    [tk].[Created],
+    [tk].[Expires],
+    [tk].[CreatedByID],
+    [tk].[RefID] AS [FileID],
+    [tk].[Description] AS [FileName],
+    [tk].[UserID],
+    CONVERT([VARCHAR](MAX), [tk].[TokenHash], 2) AS [Hash]
+  FROM [Tokens] AS [tk] WITH (NOLOCK)
+  WHERE [tk].[TypeID] = 4 -- File
+  	AND [tk].[Options] LIKE CONCAT('%"CardID":"', #param(CardID), '"%')
+    #param(FileName, [tk].[Description])
+    #param(Created, [tk].[Created])
+    #param(Expires, [tk].[Expires])
+    #if(!Administrator) { 
+    #param(CurrentUserID, [tk].[CreatedByID]) 
+    }
+) AS [tk]
+WHERE 1=1
+  #param(ID, [tk].[MaskedID])
+  #param(Scope, [tk].[Scope])
+  #param(Hash, [tk].[Hash])
+  #param(CreatedByID, [tk].[CreatedByID])
+  #param(UserID, [tk].[UserID])
+ORDER BY #order_by
+
+[TEXTPART FileLoadingTokensForCard PGSQL]
+SELECT
+  "tk"."Scope",
+  "tk"."Created",
+  "tk"."Expires",
+  "tk"."CreatedByID",
+  "tk"."FileID",
+  "tk"."FileName",
+  "tk"."UserID",
+  "tk"."Hash",
+  "tk"."MaskedID" AS "ID"
+FROM (
+  SELECT 
+    "tk"."ID",
+    (substring("tk"."ID" from 1 for 3) || '...' || substring("tk"."ID" from length("tk"."ID")-2 for 3)) AS "MaskedID",
+    "tk"."Scope",
+    "tk"."Created",
+    "tk"."Expires",
+    "tk"."CreatedByID",
+    "tk"."RefID" AS "FileID",
+    "tk"."Description" AS "FileName",
+    "tk"."UserID",
+    encode("tk"."TokenHash", 'hex') AS "Hash"
+  FROM "Tokens" AS "tk"
+  WHERE "tk"."TypeID" = 4 -- File
+  	AND "Options"->>'CardID' = #param(CardID)::text
+    #param(FileName, "tk"."Description")
+    #param(Created, "tk"."Created")
+    #param(Expires, "tk"."Expires")
+    #if(!Administrator) { 
+    #param(CurrentUserID, "tk"."CreatedByID") 
+    }
+) AS "tk"
+WHERE 1=1
+  #param(ID, "tk"."MaskedID")
+  #param(Scope, lower("tk"."Scope"))
+  #param(Hash, "tk"."Hash")
+  #param(CreatedByID, "tk"."CreatedByID")
+  #param(UserID, "tk"."UserID")
+ORDER BY #order_by

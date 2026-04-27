@@ -1,0 +1,73 @@
+﻿{
+  "Alias": "KrProcessManagementStageTypeModes",
+  "Caption": "$Views_Names_KrProcessManagementStageTypeModes",
+  "GroupName": "Kr Wf",
+  "ID": "20036792-579c-4228-b2f9-79495f326f06",
+  "JsonMetadataSource::txt": "KrProcessManagementStageTypeModes JSONMETA",
+  "MsQuerySource::txt": "KrProcessManagementStageTypeModes MSSQL",
+  "PgQuerySource::txt": "KrProcessManagementStageTypeModes PGSQL"
+}
+
+[TEXTPART KrProcessManagementStageTypeModes JSONMETA]
+{
+  "Alias": "KrProcessManagementStageTypeModes",
+  "Caption": "$Views_Names_KrProcessManagementStageTypeModes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "$KrProcessManagementStageTypeModes.ID"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "RefName",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$KrProcessManagementStageTypeModes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrProcessManagementStageTypeModes_Name",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "KrProcessManagementStageTypeModes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrProcessManagementStageTypeModes MSSQL]
+SELECT
+	[a].[ID]		AS [RefID],
+	[a].[Name]		AS [RefName]
+FROM [KrProcessManagementStageTypeModes] AS [a] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([a].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [a].[ID]
+
+
+[TEXTPART KrProcessManagementStageTypeModes PGSQL]
+SELECT
+	"a"."ID"		AS "RefID",
+	"a"."Name"		AS "RefName"
+FROM "KrProcessManagementStageTypeModes" AS "a"
+#if(Name) {
+CROSS JOIN "Localization"("a"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "a"."ID"

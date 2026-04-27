@@ -1,0 +1,104 @@
+﻿{
+  "Alias": "Currencies",
+  "Caption": "$Views_Names_Currencies",
+  "GroupName": "System",
+  "ID": "67e0e026-8dbd-462a-93fa-9ec03636564f",
+  "JsonMetadataSource::txt": "Currencies JSONMETA",
+  "MsQuerySource::txt": "Currencies MSSQL",
+  "PgQuerySource::txt": "Currencies PGSQL",
+  "Roles": [
+    {
+      "RoleId": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d"
+    }
+  ]
+}
+
+[TEXTPART Currencies JSONMETA]
+{
+  "Alias": "Currencies",
+  "Caption": "$Views_Names_Currencies",
+  "Columns": [
+    {
+      "Alias": "CurrencyID",
+      "Hidden": true,
+      "Type": "$Currencies.ID"
+    },
+    {
+      "Alias": "CurrencyName",
+      "Caption": "$Views_Currencies_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.Name",
+      "Type": "$Currencies.Name"
+    },
+    {
+      "Alias": "CurrencyCaption",
+      "Caption": "$Views_Currencies_Caption",
+      "Localizable": true,
+      "SortBy": "lCaption.Value",
+      "Type": "$Currencies.Caption"
+    },
+    {
+      "Alias": "CurrencyCode",
+      "Caption": "$Views_Currencies_Code",
+      "Type": "$Currencies.Code"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "CurrencyName",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "MultiSelect": true,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_Currencies_Name_Param",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "QuickSearchParam": "Name",
+  "References": [
+    {
+      "ColPrefix": "Currency",
+      "DisplayValueColumn": "CurrencyName",
+      "IsCard": true,
+      "OpenOnDoubleClick": true,
+      "RefSection": [
+        "Currencies"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART Currencies MSSQL]
+SELECT
+	[t].[ID]		AS [CurrencyID],
+	[t].[Name]		AS [CurrencyName],
+	[t].[Caption]	AS [CurrencyCaption],
+	[t].[Code]		AS [CurrencyCode]
+FROM [Currencies] AS [t] WITH (NOLOCK)
+CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [lCaption]
+WHERE 1 = 1
+	#if(Name) {
+	AND (1 = 1 #param(Name, [t].[Name]) OR 1 = 1 #param(Name, [lCaption].[Value]))
+	}
+ORDER BY #order_by
+
+
+[TEXTPART Currencies PGSQL]
+SELECT
+	"t"."ID"		AS "CurrencyID",
+	"t"."Name"		AS "CurrencyName",
+	"t"."Caption"	AS "CurrencyCaption",
+	"t"."Code"		AS "CurrencyCode"
+FROM "Currencies" AS "t"
+CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "lCaption"
+WHERE true
+	#if(Name) {
+	AND (true #param(Name, "t"."Name") OR true #param(Name, "lCaption"."Value"))
+	}
+ORDER BY #order_by

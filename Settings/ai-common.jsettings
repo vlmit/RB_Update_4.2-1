@@ -1,0 +1,19 @@
+[
+  {
+    "Data": {
+      "CardTypes": [
+        {
+          "ID": "335f86a1-d009-012c-8b45-1f43c2382c2d",
+          "Name": "$CardTypes_TypesNames_Contract"
+        }
+      ],
+      "Model": {
+        "ID": "",
+        "Name": "$Ai_Model_Unknown"
+      },
+      "StartupMessage": "$UI_Controls_AiAssistant_StartupMessage"
+    },
+    "Name": "ai-common",
+    "SchemeVersion": 3
+  }
+]

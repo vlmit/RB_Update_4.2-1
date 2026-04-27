@@ -1,0 +1,128 @@
+{
+  "Alias": "FormsWorkspace",
+  "BundleID::uid": "c5bdb424-23c9-45ed-9210-98e8c72afd24",
+  "Child": {
+    "Alias": "bd084530",
+    "Children": [
+      {
+        "Alias": "5ddcdc8c",
+        "Children": [],
+        "Column::int": 0,
+        "ID::uid": "5ddcdc8c-c6a6-44a3-91e4-43b79947d782",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "bb636058",
+        "Background": "var(--form-designer-background)",
+        "BorderRadius": "5px",
+        "Children": [
+          {
+            "Alias": "FormsTable",
+            "Caption": "$Views_Names_EditorForms",
+            "CaptionPadding": "0 0 10px 0",
+            "Columns": [
+              {
+                "Alias": "FormID",
+                "Caption": "FormID",
+                "FieldType": "uid",
+                "ID::uid": "2b631d4f-76be-4749-a098-bec77ef07ddd",
+                "IsHidden": true,
+                "Type::uid": "8f53b48d-7e9d-486c-b71f-6279364bed39"
+              },
+              {
+                "Alias": "FormName",
+                "Caption": "$Views_EditorForms_FormName",
+                "ID::uid": "17f9f436-f0b1-4846-b001-d27e8f31f6ab",
+                "Type::uid": "8f53b48d-7e9d-486c-b71f-6279364bed39"
+              },
+              {
+                "Alias": "FormDescription",
+                "Caption": "$Views_EditorForms_FormDescription",
+                "ID::uid": "a4ab337a-c399-42d0-b56e-33bc27f01d35",
+                "Type::uid": "8f53b48d-7e9d-486c-b71f-6279364bed39"
+              },
+              {
+                "Alias": "FormVersion",
+                "Caption": "$Views_EditorForms_Version",
+                "FieldType": "int",
+                "ID::uid": "896478dc-59ee-420a-858d-3bd6c93dfc56",
+                "Type::uid": "8f53b48d-7e9d-486c-b71f-6279364bed39"
+              },
+              {
+                "Alias": "FormCardTypeID",
+                "Caption": "FormCardTypeID",
+                "FieldType": "uid",
+                "ID::uid": "1749f222-6fc9-4177-915a-835cbd18f38a",
+                "IsHidden": true,
+                "Type::uid": "8f53b48d-7e9d-486c-b71f-6279364bed39"
+              }
+            ],
+            "ID::uid": "afadf49b-9edc-4efb-9d18-23e52ba244d3",
+            "MinWidth": "100%",
+            "Multiselect": true,
+            "Type::uid": "e7aad76f-49b3-4e52-b11a-ab28935bd126"
+          }
+        ],
+        "Column::int": 1,
+        "ID::uid": "bb636058-23ca-49e6-87b9-a6783570069a",
+        "Padding": "10px",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      },
+      {
+        "Alias": "98f6bb0a",
+        "Children": [],
+        "Column::int": 2,
+        "ID::uid": "98f6bb0a-46bf-4750-9917-f96d764649c2",
+        "Row::int": 0,
+        "TakenColumns::int": 1,
+        "TakenRows::int": 1,
+        "Type::uid": "dadfe03e-4878-4ba0-b00c-48bcbdd7e6be"
+      }
+    ],
+    "Columns": [
+      {
+        "Alias": "dac66dcc",
+        "ID::uid": "dac66dcc-98cb-45d8-b52d-ad6366296c2c",
+        "Index::int": 0,
+        "Size": "minmax(0px, auto)",
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      },
+      {
+        "Alias": "9b784ac9",
+        "ID::uid": "9b784ac9-5627-4719-8658-5dc05aea9282",
+        "Index::int": 1,
+        "Size": "minmax(360px, 720px)",
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      },
+      {
+        "Alias": "220fefc6",
+        "ID::uid": "220fefc6-c179-4787-9b4c-d82202c0aee0",
+        "Index::int": 2,
+        "Size": "minmax(0px, auto)",
+        "Type::uid": "6cb2edfd-915f-4fe6-957d-c6641285ea0f"
+      }
+    ],
+    "ID::uid": "bd084530-c264-4da2-956f-ed62121583b7",
+    "Padding": "20px 10px 10px 10px",
+    "Rows": [
+      {
+        "Alias": "da471b69",
+        "ID::uid": "da471b69-669c-4cfa-a5cd-e5875c3a1455",
+        "Index::int": 0,
+        "Size": "100%",
+        "Type::uid": "d936d5fd-1af7-49d9-960f-22b0186a011d"
+      }
+    ],
+    "Type::uid": "1fa1b500-fad3-4779-80c3-bb251617feb0"
+  },
+  "ID::uid": "da237c7d-4c4f-49fa-9705-0bb1d9321697",
+  "States": null,
+  "SubForms": null,
+  "Version::int": 0
+}

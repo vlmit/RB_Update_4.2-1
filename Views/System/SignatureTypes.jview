@@ -1,0 +1,74 @@
+﻿{
+  "Alias": "SignatureTypes",
+  "Caption": "$Views_Names_SignatureTypes",
+  "GroupName": "System",
+  "ID": "30a4931f-c0cf-41fd-b962-053488596ca1",
+  "JsonMetadataSource::txt": "SignatureTypes JSONMETA",
+  "MsQuerySource::txt": "SignatureTypes MSSQL",
+  "PgQuerySource::txt": "SignatureTypes PGSQL"
+}
+
+[TEXTPART SignatureTypes JSONMETA]
+{
+  "Alias": "SignatureTypes",
+  "Caption": "$Views_Names_SignatureTypes",
+  "Columns": [
+    {
+      "Alias": "SignatureTypeID",
+      "Hidden": true,
+      "Type": "$SignatureTypes.ID"
+    },
+    {
+      "Alias": "SignatureTypeName",
+      "Caption": "$Views_SignatureTypes_Name",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "$SignatureTypes.Name"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_SignatureTypes_Name_Param",
+      "Multiple": false,
+      "Type": "$SignatureTypes.Name"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "SignatureType",
+      "DisplayValueColumn": "SignatureTypeName",
+      "RefSection": [
+        "SignatureTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART SignatureTypes MSSQL]
+SELECT
+	[st].[ID]		AS [SignatureTypeID],
+	[st].[Name]		AS [SignatureTypeName]
+FROM [SignatureTypes] AS [st] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([st].[Name], #param(locale)) AS [lName]
+}
+WHERE [st].[ID] <> 0
+	#param(Name, [lName].[Value])
+ORDER BY [st].[ID]
+
+
+[TEXTPART SignatureTypes PGSQL]
+SELECT
+	"st"."ID"		AS "SignatureTypeID",
+	"st"."Name"		AS "SignatureTypeName"
+FROM "SignatureTypes" AS "st"
+#if(Name) {
+CROSS JOIN "Localization"("st"."Name", #param(locale)) AS "lName"
+}
+WHERE "st"."ID" != 0
+	#param(Name, "lName"."Value")
+ORDER BY "st"."Name"

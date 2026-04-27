@@ -1,0 +1,159 @@
+﻿{
+  "Alias": "FileTemplateTypes",
+  "Caption": "$Views_Names_FileTemplateTypes",
+  "GroupName": "System",
+  "ID": "eb59292c-378c-412f-b780-88469049a349",
+  "JsonMetadataSource::txt": "FileTemplateTypes JSONMETA",
+  "MsQuerySource::txt": "FileTemplateTypes MSSQL",
+  "PgQuerySource::txt": "FileTemplateTypes PGSQL"
+}
+
+[TEXTPART FileTemplateTypes JSONMETA]
+{
+  "Alias": "FileTemplateTypes",
+  "Caption": "$Views_Names_FileTemplateTypes",
+  "Columns": [
+    {
+      "Alias": "TypeID",
+      "Hidden": true,
+      "Type": "$Types.ID"
+    },
+    {
+      "Alias": "TypeCaption",
+      "Caption": "$Views_FileTemplateTypes_Name",
+      "FilterParameter": "Caption",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "SortBy": "t.LocalizedCaption",
+      "Type": "$Types.Caption"
+    },
+    {
+      "Alias": "TypeName",
+      "Caption": "$Views_FileTemplateTypes_Alias",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "SortBy": "t.TypeName",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "IsDocTypeCaption",
+      "Caption": "$Views_FileTemplateTypes_Type",
+      "Localizable": true,
+      "Type": "String(Max) Null"
+    },
+    {
+      "Alias": "LocalizedCaption",
+      "Hidden": true,
+      "Type": "String(Max) Null"
+    }
+  ],
+  "DefaultSortColumns": [
+    {
+      "Alias": "TypeCaption",
+      "SortDirection": "Ascending"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_FileTemplateTypes_Alias_Param",
+      "Type": "$Types.Name"
+    },
+    {
+      "Alias": "Caption",
+      "Caption": "$Views_FileTemplateTypes_Name_Param",
+      "Type": "$Types.Caption"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Type",
+      "DisplayValueColumn": "TypeCaption",
+      "RefSection": [
+        "FileTemplateTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART FileTemplateTypes MSSQL]
+SELECT *
+FROM (
+	SELECT
+		[t].[ID]						AS [TypeID],
+		[t].[Caption]					AS [TypeCaption],
+		[t].[Name]						AS [TypeName],
+		'$Views_KrTypes_CardType_Sql'	AS [IsDocTypeCaption],
+		[t].[Value]						AS [LocalizedCaption]
+	FROM (
+		SELECT
+			[t].[ID],
+			[t].[Caption],
+			[t].[Name],
+			[tl].[Value]
+		FROM [Types] AS [t] WITH (NOLOCK)
+		CROSS APPLY [Localization]([t].[Caption], #param(locale)) AS [tl]
+		WHERE [t].[InstanceTypeID] = 0	-- тип карточки, а не файла или задания
+			AND ([t].[Flags] & 400) = 0	-- 400 = 16 + 128 + 256; тип карточки не содержит флагов Hidden, Singleton и Administrative
+			AND ([t].[Group] IS NULL OR [t].[Group] NOT IN (N'Settings', N'System', N'KrProcess'))
+			#param(Name, [t].[Name])
+			#param(Caption, [tl].[Value])
+		) AS [t]
+	UNION ALL
+	SELECT
+		[dt].[ID]						AS [TypeID],
+		[dt].[Title]					AS [TypeCaption],
+		[dt].[CardTypeName]				AS [TypeName],
+		'$Views_KrTypes_DocType_Sql'	AS [IsDocTypeCaption],
+		[tl].[Value]					AS [LocalizedCaption]
+	FROM [KrDocType] AS [dt] WITH (NOLOCK)
+	INNER JOIN [KrSettingsCardTypes] AS [sct] WITH (NOLOCK)
+		ON [sct].[CardTypeID] = [dt].[CardTypeID]
+	CROSS APPLY [Localization]([dt].[Title], #param(locale)) AS [tl]
+	WHERE [sct].[UseDocTypes] = 1
+			#param(Name, [dt].[CardTypeName])
+			#param(Caption, [tl].[Value])
+	) AS [t]
+ORDER BY #order_by
+
+[TEXTPART FileTemplateTypes PGSQL]
+SELECT *
+FROM (
+	SELECT
+		"t"."ID"						AS "TypeID",
+		"t"."Caption"					AS "TypeCaption",
+		"t"."Name"						AS "TypeName",
+		'$Views_KrTypes_CardType_Sql'	AS "IsDocTypeCaption",
+		"t"."Value"						AS "LocalizedCaption"
+	FROM (
+		SELECT
+			"t"."ID",
+			"t"."Caption",
+			"t"."Name",
+			"tl"."Value"
+		FROM "Types" AS "t"
+		CROSS JOIN "Localization"("t"."Caption", #param(locale)) AS "tl"
+		WHERE "t"."InstanceTypeID" = 0	-- тип карточки, а не файла или задания
+			AND ("t"."Flags" & 400) = 0	-- 400 = 16 + 128 + 256; тип карточки не содержит флагов Hidden, Singleton и Administrative
+			AND ("t"."Group" IS NULL OR "t"."Group" NOT IN ('Settings', 'System', 'KrProcess'))
+			#param(Name, "t"."Name")
+			#param(Caption, "tl"."Value")
+		) AS "t"
+	UNION ALL
+	SELECT
+		"dt"."ID"						AS "TypeID",
+		"dt"."Title"					AS "TypeCaption",
+		"dt"."CardTypeName"				AS "TypeName",
+		'$Views_KrTypes_DocType_Sql'	AS "IsDocTypeCaption",
+		"tl"."Value"					AS "LocalizedCaption"
+	FROM "KrDocType" AS "dt"
+	INNER JOIN "KrSettingsCardTypes" AS "sct"
+		ON "sct"."CardTypeID" = "dt"."CardTypeID"
+	CROSS JOIN "Localization"("dt"."Title", #param(locale)) AS "tl"
+	WHERE "sct"."UseDocTypes" = true
+			#param(Name, "dt"."CardTypeName")
+			#param(Caption, "tl"."Value")
+) AS "t"
+ORDER BY #order_by

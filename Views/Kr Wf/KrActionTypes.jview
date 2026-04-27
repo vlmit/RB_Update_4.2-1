@@ -1,0 +1,81 @@
+﻿{
+  "Alias": "KrActionTypes",
+  "Caption": "$Views_Names_KrActionTypes",
+  "GroupName": "Kr Wf",
+  "ID": "73ad84ae-84b6-4292-b496-5bf63cf9033e",
+  "JsonMetadataSource::txt": "KrActionTypes JSONMETA",
+  "MsQuerySource::txt": "KrActionTypes MSSQL",
+  "PgQuerySource::txt": "KrActionTypes PGSQL"
+}
+
+[TEXTPART KrActionTypes JSONMETA]
+{
+  "Alias": "KrActionTypes",
+  "Caption": "$Views_Names_KrActionTypes",
+  "Columns": [
+    {
+      "Alias": "RefID",
+      "Hidden": true,
+      "Type": "Int32 Null"
+    },
+    {
+      "Alias": "RefName",
+      "Caption": "RefName",
+      "FilterParameter": "Name",
+      "FilterType": "Parameter",
+      "Localizable": true,
+      "Type": "String(Max) Not Null"
+    },
+    {
+      "Alias": "RefEventType",
+      "Caption": "RefEventType",
+      "Hidden": true,
+      "Type": "String(Max) Not Null"
+    }
+  ],
+  "FormatVersion": 5,
+  "Parameters": [
+    {
+      "Alias": "Name",
+      "Caption": "$Views_KrActionTypes_Name",
+      "Type": "String(Max) Null"
+    }
+  ],
+  "References": [
+    {
+      "ColPrefix": "Ref",
+      "DisplayValueColumn": "RefName",
+      "RefSection": [
+        "KrActionTypes"
+      ]
+    }
+  ],
+  "TreatAsSingleQuery": true
+}
+
+[TEXTPART KrActionTypes MSSQL]
+SELECT
+	[a].[ID]		AS [RefID],
+	[a].[Name]		AS [RefName],
+	[a].[EventType]	AS [RefEventType]
+FROM [KrActionTypes] AS [a] WITH (NOLOCK)
+#if(Name) {
+CROSS APPLY [Localization]([a].[Name], #param(locale)) AS [l]
+}
+WHERE 1 = 1
+	#param(Name, [l].[Value])
+ORDER BY [a].[ID]
+
+
+[TEXTPART KrActionTypes PGSQL]
+SELECT
+	"a"."ID"		AS "RefID",
+	"a"."Name"		AS "RefName",
+	"a"."EventType"	AS "RefEventType"
+FROM "KrActionTypes" AS "a"
+#if(Name) {
+CROSS JOIN "Localization"("a"."Name", #param(locale)) AS "l"
+}
+WHERE true
+	#param(Name, "l"."Value")
+ORDER BY "a"."ID"
