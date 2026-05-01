@@ -1,644 +1,285 @@
-{
+﻿{
   "Alias": "Test585",
   "Caption": "Мои документы",
   "Description": "   ",
-  "FormatVersion::int": 1,
   "GroupName": "CustomDocs",
-  "ID::uid": "3daae0b5-2d8a-4c96-b0e3-0fce6109486f",
+  "ID": "3daae0b5-2d8a-4c96-b0e3-0fce6109486f",
   "JsonMetadataSource::txt": "Test585 JSONMETA",
   "MsQuerySource::txt": "Test585 MSSQL",
-  "PgQuerySource::txt": "Test585 PGSQL",
-  "Roles": [
-    {
-      "DeltaKind": "Added",
-      "ObjectId::uid": "3daae0b5-2d8a-4c96-b0e3-0fce6109486f",
-      "RoleId::uid": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d",
-      "RoleName": "Все сотрудники"
-    }
-  ]
+  "PgQuerySource::txt": "Test585 PGSQL"
 }
 
 [TEXTPART Test585 JSONMETA]
 {
   "Alias": "Test585",
   "Appearance": "Background",
-  "Appearances": null,
-  "AutoWidthRowLimit": null,
   "Caption": "Мои документы",
   "Columns": [
     {
       "Alias": "DocID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.ID"
     },
     {
       "Alias": "DocNumber",
-      "Appearance": null,
       "Caption": "$Views_Registers_Number",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
       "SortBy": "mi.Number",
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.FullNumber"
     },
     {
       "Alias": "DocDate",
-      "Appearance": null,
       "Caption": "$Views_Registers_DocDate",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
       "SortBy": "mi.DocDate",
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.DocDate"
     },
     {
       "Alias": "DocSubject",
-      "Appearance": null,
       "Caption": "$Views_Registers_Subject",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
       "SortBy": "mi.Subject",
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.DocTypeTitle"
     },
     {
       "Alias": "DocDescription",
-      "Appearance": null,
       "Caption": "$Views_Registers_DocDescription",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String"
     },
     {
       "Alias": "AuthorID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.AuthorID"
     },
     {
       "Alias": "AuthorName",
-      "Appearance": null,
       "Caption": "$Views_Registers_Author",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
       "SortBy": "mi.AuthorName",
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.AuthorName"
     },
     {
       "Alias": "RegistratorID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.RegistratorID"
     },
     {
       "Alias": "RegistratorName",
-      "Appearance": null,
       "Caption": "$Views_Registers_Registrator",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
       "SortBy": "mi.RegistratorName",
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.RegistratorName"
     },
     {
       "Alias": "KrState",
-      "Appearance": null,
       "Caption": "$Views_Registers_State",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$KrApprovalCommonInfo.StateName"
     },
     {
       "Alias": "KrStateModified",
-      "Appearance": null,
       "Caption": "$Views_Registers_StateModified",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
       "Localizable": true,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "Date"
     },
     {
       "Alias": "PartnerName",
-      "Appearance": null,
       "Caption": "Корреспондент",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.DepartmentName"
     },
     {
       "Alias": "Correspondents",
-      "Appearance": null,
       "Caption": "Корреспондент",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$Correspondents.PartnersName"
     },
     {
       "Alias": "Recipients",
-      "Appearance": null,
       "Caption": "Кому переслать",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$Recipients.UserName"
     },
     {
       "Alias": "DeliveryTypeID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.DeliveryTypeID"
     },
     {
       "Alias": "DeliveryTypeName",
-      "Appearance": null,
       "Caption": "Тип доставки",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.DeliveryTypeName"
     },
     {
       "Alias": "CreationDate",
-      "Appearance": null,
       "Caption": "$Views_Registers_CreationDate",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
       "SortBy": "mi.CreationDate",
-      "TreatValueAsUtc": false,
       "Type": "Date"
     },
     {
       "Alias": "Department",
-      "Appearance": null,
       "Caption": "$Views_Registers_Department",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.DepartmentName"
     },
     {
       "Alias": "DocTypeTitle",
-      "Appearance": null,
       "Caption": "Тип документа",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.DepartmentName"
     },
     {
       "Alias": "ApprovedBy",
-      "Appearance": null,
       "Caption": "$Views_Registers_ApprovedBy",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$KrApprovalCommonInfo.ApprovedBy"
     },
     {
       "Alias": "DisapprovedBy",
-      "Appearance": null,
       "Caption": "$Views_Registers_DisapprovedBy",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$KrApprovalCommonInfo.DisapprovedBy"
     },
     {
       "Alias": "Background",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String"
     },
     {
       "Alias": "rn",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "Int64"
     }
   ],
-  "ConnectionAlias": null,
   "DefaultSortColumns": [
     {
       "Alias": "DocDate",
       "SortDirection": "Descending"
     }
   ],
-  "EnableAutoWidth": false,
-  "ExportDataPageLimit": null,
-  "Extensions": null,
-  "GroupingColumn": null,
+  "FormatVersion": 5,
   "MultiSelect": true,
-  "Overrides": null,
-  "PageLimit::int": 50,
+  "PageLimit": 50,
   "Paging": "Always",
   "Parameters": [
     {
       "Alias": "IsAuthor",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "IsTrue",
         "IsFalse"
       ],
-      "AutoCompleteInfo": null,
       "Caption": "$Views_Registers_IsAuthor_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "Boolean"
     },
     {
       "Alias": "IsInitiator",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "IsTrue",
         "IsFalse"
       ],
-      "AutoCompleteInfo": null,
       "Caption": "$Views_Registers_IsInitiator_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "Boolean"
     },
     {
       "Alias": "IsRegistrator",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "IsTrue",
         "IsFalse"
       ],
-      "AutoCompleteInfo": null,
       "Caption": "$Views_Registers_IsRegistrator_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "Boolean"
     },
     {
       "Alias": "Number",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "$Views_Registers_Number_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.FullNumber"
     },
     {
       "Alias": "ProjNumber",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "Проектный номер",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.FullNumber"
     },
     {
       "Alias": "Subject",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "$Views_Registers_Subject_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.Subject"
     },
     {
       "Alias": "OutgoingNumber",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "№ (внеш.)",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.OutgoingNumber"
     },
     {
       "Alias": "OutgoingDate",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Between",
         "Equality",
         "GreatOrEquals",
         "LessOrEquals"
       ],
-      "AutoCompleteInfo": null,
       "Caption": "Дата (внеш.)",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.OutgoingDate"
     },
     {
       "Alias": "DocDate",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Between",
         "Equality",
         "GreatOrEquals",
         "LessOrEquals"
       ],
-      "AutoCompleteInfo": null,
       "Caption": "$Views_Registers_DocDate_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "Date"
     },
     {
       "Alias": "CreationDate",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Between",
         "Equality",
         "GreatOrEquals",
         "LessOrEquals"
       ],
-      "AutoCompleteInfo": null,
       "Caption": "Дата создания",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.CreationDate"
     },
     {
       "Alias": "Author",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Equality",
         "NonEquality"
       ],
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1,
           4
         ],
-        "RefPrefix": null,
         "ViewAlias": "Users"
       },
       "Caption": "$Views_Registers_Author_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "PersonalRoles",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
       "Type": "$DocumentCommonInfo.AuthorID"
     },
     {
       "Alias": "Registrator",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Equality",
         "NonEquality"
       ],
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1,
           4
         ],
-        "RefPrefix": null,
         "ViewAlias": "Users"
       },
       "Caption": "$Views_Registers_Registrator_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "PersonalRoles",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
       "Type": "$DocumentCommonInfo.RegistratorID"
     },
     {
       "Alias": "State",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Equality",
         "NonEquality",
         "IsNull",
@@ -647,380 +288,207 @@
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "KrDocStates"
       },
       "Caption": "$Views_Registers_State_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
       "DropDownInfo": {
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "KrDocStates"
       },
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "KrDocState",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "KrDocState"
+      ],
       "Type": "$KrApprovalCommonInfo.StateID"
     },
     {
       "Alias": "Type",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Caption",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "KrTypesEffective"
       },
       "Caption": "$Views_Registers_Type_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
       "DropDownInfo": {
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "KrTypesEffective"
       },
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "KrCardTypesVirtual",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "KrCardTypesVirtual"
+      ],
       "Type": "$DocumentCommonInfo.DocTypeID"
     },
     {
       "Alias": "Type2",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Caption",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "KrTypesEffective"
       },
       "Caption": "Тип исключение",
-      "Condition": null,
-      "DisallowedOperands": null,
       "DropDownInfo": {
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "KrTypesEffective"
       },
       "Hidden": true,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "KrCardTypesVirtual",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "KrCardTypesVirtual"
+      ],
       "Type": "$DocumentCommonInfo.DocTypeID"
     },
     {
       "Alias": "Department",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1,
           3,
           5
         ],
-        "RefPrefix": null,
         "ViewAlias": "Departments"
       },
       "Caption": "$Views_Registers_Department_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": "DepartmentRoles",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "DepartmentRoles"
+      ],
       "Type": "$DocumentCommonInfo.DepartmentID"
     },
     {
       "Alias": "AllTypesSearch",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "Поиск по всем текстовым реквизитам",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "ExternalGuid",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "Внешний guid",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "ID",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "ID Тессы",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.ID"
     },
     {
       "Alias": "Correspondents",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "Partners"
       },
       "Caption": "Корреспондент",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "Partners",
-      "SourceViews": [
-        {
-          "::single_type": "str"
-        },
+      "RefSection": [
         "Partners"
       ],
-      "TreatValueAsUtc": false,
       "Type": "$Correspondents.PartnersID"
     },
     {
       "Alias": "Recipients",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
         "RefPrefix": "User",
         "ViewAlias": "Users"
       },
       "Caption": "Кому переслать",
-      "Condition": null,
-      "DisallowedOperands": null,
       "DropDownInfo": {
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
         "RefPrefix": "User",
         "ViewAlias": "Users"
       },
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "PersonalRoles",
-      "SourceViews": [
-        {
-          "::single_type": "str"
-        },
-        "Users"
+      "RefSection": [
+        "PersonalRoles"
       ],
-      "TreatValueAsUtc": false,
       "Type": "$Recipients.UserID"
     },
     {
       "Alias": "DeliveryType",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
         "RefPrefix": "Type",
         "ViewAlias": "DeliveryType"
       },
       "Caption": "Тип доставки",
-      "Condition": null,
-      "DisallowedOperands": null,
       "DropDownInfo": {
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
         "RefPrefix": "Type",
         "ViewAlias": "DeliveryType"
       },
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": "DeliveryTypes",
-      "SourceViews": [
-        {
-          "::single_type": "str"
-        },
-        "DeliveryType"
+      "RefSection": [
+        "DeliveryTypes"
       ],
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.DeliveryTypeID"
     }
   ],
   "QuickSearchParam": "Number",
   "References": [
     {
-      "CardType": null,
-      "CardTypeColumn": null,
       "ColPrefix": "Doc",
-      "Condition": null,
       "DisplayValueColumn": "DocNumber",
       "IsCard": true,
       "OpenOnDoubleClick": true,
       "RefSection": [
-        {
-          "::single_type": "str"
-        },
         "DocumentCommonInfo",
         "DocRefsSection"
       ]
     },
     {
-      "CardType": null,
-      "CardTypeColumn": null,
       "ColPrefix": "Author",
-      "Condition": null,
       "DisplayValueColumn": "AuthorName",
       "IsCard": true,
       "OpenOnDoubleClick": true,
       "RefSection": [
-        {
-          "::single_type": "str"
-        },
         "Roles",
         "DurableRoles",
         "PersonalRoles"
       ]
     }
   ],
-  "RowCounterVisible": false,
   "RowCountSubset": "Count",
-  "SelectionMode": "Row",
   "Subsets": [
     {
       "Alias": "ByType",
       "Caption": "$Views_Registers_ByType_Subset",
       "CaptionColumn": "TypeName",
-      "Condition": null,
       "CountColumn": "TypeCount",
-      "HideZeroCount": false,
-      "Kind": "List",
       "RefColumn": "TypeID",
-      "RefParam": "Type",
-      "TreeHasChildrenColumn": null,
-      "TreeRefParam": null
+      "RefParam": "Type"
     },
     {
       "Alias": "ByState",
       "Caption": "$Views_Registers_ByState_Subset",
       "CaptionColumn": "StateName",
-      "Condition": null,
       "CountColumn": "StateCount",
-      "HideZeroCount": false,
-      "Kind": "List",
       "RefColumn": "StateID",
-      "RefParam": "State",
-      "TreeHasChildrenColumn": null,
-      "TreeRefParam": null
+      "RefParam": "State"
     },
     {
-      "Alias": "Count",
-      "Caption": null,
-      "CaptionColumn": null,
-      "Condition": null,
-      "CountColumn": null,
-      "HideZeroCount": false,
-      "Kind": "List",
-      "RefColumn": null,
-      "RefParam": null,
-      "TreeHasChildrenColumn": null,
-      "TreeRefParam": null
+      "Alias": "Count"
     }
-  ],
-  "TreatAsSingleQuery": false,
-  "TreeGroup": null,
-  "TreeGroupDisplayValue": null,
-  "TreeGroupId": null,
-  "TreeGroupParentId": null,
-  "TreeId": null,
-  "TreeParentId": null
+  ]
 }
 
 [TEXTPART Test585 MSSQL]

@@ -1,408 +1,185 @@
-{
+﻿{
   "Alias": "AssistantCompletedTasks",
   "Caption": "Завершенные задания помощниками",
   "Description": "       ",
-  "FormatVersion::int": 1,
   "GroupName": "Custom",
-  "ID::uid": "d471576a-4481-40b2-8b33-f4a0a3a820e6",
+  "ID": "d471576a-4481-40b2-8b33-f4a0a3a820e6",
   "JsonMetadataSource::txt": "AssistantCompletedTasks JSONMETA",
   "MsQuerySource::txt": "AssistantCompletedTasks MSSQL",
-  "PgQuerySource::txt": "AssistantCompletedTasks PGSQL",
-  "Roles": [
-    {
-      "DeltaKind": "Added",
-      "ObjectId::uid": "d471576a-4481-40b2-8b33-f4a0a3a820e6",
-      "RoleId::uid": "2b428bbf-972f-485a-aed1-b832da28ef81",
-      "RoleName": "Администраторы"
-    },
-    {
-      "DeltaKind": "Added",
-      "ObjectId::uid": "d471576a-4481-40b2-8b33-f4a0a3a820e6",
-      "RoleId::uid": "63b38597-d7cb-4de2-9f7e-f2dadf925239",
-      "RoleName": "Все помощники_динамическая роль"
-    }
-  ]
+  "PgQuerySource::txt": "AssistantCompletedTasks PGSQL"
 }
 
 [TEXTPART AssistantCompletedTasks JSONMETA]
 {
   "Alias": "AssistantCompletedTasks",
-  "Appearance": null,
-  "Appearances": null,
-  "AutoWidthRowLimit": null,
   "Caption": "Завершенные задания помощниками",
   "Columns": [
     {
       "Alias": "CardID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.ID"
     },
     {
       "Alias": "CardName",
-      "Appearance": null,
       "Caption": "$Views_CompletedTasks_Card",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.FullNumber"
     },
     {
       "Alias": "CardTypeCaption",
-      "Appearance": null,
       "Caption": "$Views_CompletedTasks_CardType",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.DocTypeTitle"
     },
     {
       "Alias": "Subject",
-      "Appearance": null,
       "Caption": "$Views_Registers_Subject",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.Subject"
     },
     {
       "Alias": "TypeID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.TypeID"
     },
     {
       "Alias": "TypeCaption",
-      "Appearance": null,
       "Caption": "$Views_CompletedTasks_TaskType",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.KindCaption"
     },
     {
       "Alias": "OptionID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.OptionID"
     },
     {
       "Alias": "OptionCaption",
-      "Appearance": null,
       "Caption": "$Views_CompletedTasks_CompletionOption",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.OptionCaption"
     },
     {
       "Alias": "Result",
-      "Appearance": null,
       "Caption": "$Views_CompletedTasks_Result",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength::int": 150,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
+      "MaxLength": 150,
       "Type": "$TaskHistory.Result"
     },
     {
       "Alias": "RoleID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.RoleID"
     },
     {
       "Alias": "RoleName",
-      "Appearance": null,
       "Caption": "$Views_CompletedTasks_Role",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.RoleName"
     },
     {
       "Alias": "AuthorID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.AuthorID"
     },
     {
       "Alias": "AuthorName",
-      "Appearance": null,
       "Caption": "$Views_CompletedTasks_Author",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.AuthorName"
     },
     {
       "Alias": "CompletedByID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.CompletedByID"
     },
     {
       "Alias": "CompletedByName",
-      "Appearance": null,
       "Caption": "$Views_CompletedTasks_CompletedBy",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
       "SortBy": "th.CompletedByName",
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.CompletedByName"
     },
     {
       "Alias": "Completed",
-      "Appearance": null,
       "Caption": "$Views_CompletedTasks_Completed",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
       "SortBy": "th.Completed",
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.Completed"
     },
     {
       "Alias": "rn",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "Int64"
     }
   ],
-  "ConnectionAlias": null,
   "DefaultSortColumns": [
     {
       "Alias": "Completed",
       "SortDirection": "Descending"
     }
   ],
-  "EnableAutoWidth": false,
-  "ExportDataPageLimit": null,
-  "Extensions": null,
-  "GroupingColumn": null,
-  "MultiSelect": false,
-  "Overrides": null,
-  "PageLimit": null,
+  "FormatVersion": 5,
   "Paging": "Always",
   "Parameters": [
     {
       "Alias": "FromMeMode",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Equality"
       ],
-      "AutoCompleteInfo": null,
       "Caption": "$Views_CompletedTasks_FromMeMode_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
       "Hidden": true,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "Int32"
     },
     {
       "Alias": "CompletionDate",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "$Views_CompletedTasks_CompletionDate_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.Completed"
     },
     {
       "Alias": "TypeParam",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Equality"
       ],
       "AutoCompleteInfo": {
         "ParamAlias": "Caption",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "KrTypesEffective"
       },
       "Caption": "$Views_CompletedTasks_CardType_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
       "DropDownInfo": {
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "KrTypesEffective"
       },
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": "TypeForView",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "TypeForView"
+      ],
       "Type": "$DocumentCommonInfo.DocTypeID"
     },
     {
       "Alias": "TaskType",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Caption",
-        "PopupColumns": null,
-        "RefPrefix": null,
         "ViewAlias": "TaskTypes"
       },
       "Caption": "$Views_CompletedTasks_TaskType_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
       "DropDownInfo": {
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "TaskTypes"
       },
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "TaskTypes",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "TaskTypes"
+      ],
       "Type": "$TaskHistory.TypeID"
     },
     {
       "Alias": "Role",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1,
           3
         ],
@@ -410,200 +187,98 @@
         "ViewAlias": "DurableRoles"
       },
       "Caption": "$Views_CompletedTasks_RoleGroup_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "Roles",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "Roles"
+      ],
       "Type": "$RoleUsers.ID"
     },
     {
       "Alias": "CompletedBy",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1,
           4
         ],
-        "RefPrefix": null,
         "ViewAlias": "Users"
       },
       "Caption": "$Views_CompletedTasks_CompletedBy_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "PersonalRoles",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
       "Type": "$TaskHistory.CompletedByID"
     },
     {
       "Alias": "Option",
-      "AllowedOperands": null,
       "AutoCompleteInfo": {
         "ParamAlias": "Caption",
-        "PopupColumns": null,
-        "RefPrefix": null,
         "ViewAlias": "CompletionOptions"
       },
       "Caption": "$Views_CompletedTasks_CompletionOption_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
       "DropDownInfo": {
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "CompletionOptions"
       },
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": "CompletionOptions",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "CompletionOptions"
+      ],
       "Type": "$TaskHistory.OptionID"
     },
     {
       "Alias": "Number",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "Номер",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "Subject",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "Тема",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "CompletedByAssistant",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "IsTrue"
       ],
-      "AutoCompleteInfo": null,
       "Caption": "Завершено помощником",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "Boolean Not Null"
     },
     {
       "Alias": "ForHeadHistory",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "Завершены в течение последних 14 дней",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "Boolean Not Null"
     }
   ],
   "QuickSearchParam": "Subject",
   "References": [
     {
-      "CardType": null,
-      "CardTypeColumn": null,
       "ColPrefix": "Card",
-      "Condition": null,
       "DisplayValueColumn": "CardName",
       "IsCard": true,
       "OpenOnDoubleClick": true,
       "RefSection": [
-        {
-          "::single_type": "str"
-        },
         "Instances"
       ]
     }
   ],
-  "RowCounterVisible": false,
   "RowCountSubset": "Count",
-  "SelectionMode": "Row",
   "Subsets": [
     {
-      "Alias": "Count",
-      "Caption": null,
-      "CaptionColumn": null,
-      "Condition": null,
-      "CountColumn": null,
-      "HideZeroCount": false,
-      "Kind": "List",
-      "RefColumn": null,
-      "RefParam": null,
-      "TreeHasChildrenColumn": null,
-      "TreeRefParam": null
+      "Alias": "Count"
     },
     {
       "Alias": "ByCompletedByName",
       "Caption": "По сотруднику",
       "CaptionColumn": "CompletedByName",
-      "Condition": null,
-      "CountColumn": "",
-      "HideZeroCount": false,
-      "Kind": "List",
       "RefColumn": "CompletedByID",
-      "RefParam": "CompletedBy",
-      "TreeHasChildrenColumn": null,
-      "TreeRefParam": null
+      "RefParam": "CompletedBy"
     }
-  ],
-  "TreatAsSingleQuery": false,
-  "TreeGroup": null,
-  "TreeGroupDisplayValue": null,
-  "TreeGroupId": null,
-  "TreeGroupParentId": null,
-  "TreeId": null,
-  "TreeParentId": null
+  ]
 }
 
 [TEXTPART AssistantCompletedTasks MSSQL]

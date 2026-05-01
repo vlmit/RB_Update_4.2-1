@@ -1,131 +1,54 @@
-{
+﻿{
   "Alias": "test3_{d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380}(copy)",
   "Caption": "Список отмененных проектов поручений",
-  "Description": "",
-  "FormatVersion::int": 1,
   "GroupName": "Custom",
-  "ID::uid": "d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380",
+  "ID": "d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380",
   "JsonMetadataSource::txt": "test3_{d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380}(copy) JSONMETA",
   "MsQuerySource::txt": "test3_{d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380}(copy) MSSQL",
-  "PgQuerySource::txt": "test3_{d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380}(copy) PGSQL",
-  "Roles": [
-    {
-      "DeltaKind": "Added",
-      "ObjectId::uid": "d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380",
-      "RoleId::uid": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d",
-      "RoleName": "Все сотрудники"
-    }
-  ]
+  "PgQuerySource::txt": "test3_{d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380}(copy) PGSQL"
 }
 
 [TEXTPART test3_{d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380}(copy) JSONMETA]
 {
   "Alias": "test3_{d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380}(copy)",
-  "Appearance": null,
-  "Appearances": null,
-  "AutoWidthRowLimit": null,
   "Caption": "Список отмененных проектов поручений",
   "Columns": [
     {
       "Alias": "NdsID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$NDSRate.ID"
     },
     {
       "Alias": "FullNumber",
-      "Appearance": null,
       "Caption": "FullNumber",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$NDSRate.Rate"
     },
     {
       "Alias": "CompletedByName",
-      "Appearance": null,
       "Caption": "CompletedByName",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$NDSRate.Rate"
     },
     {
       "Alias": "OptionCaption",
-      "Appearance": null,
       "Caption": "OptionCaption",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$NDSRate.Rate"
     },
     {
       "Alias": "Completed",
-      "Appearance": null,
       "Caption": "Completed",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.Completed"
     },
     {
       "Alias": "KindCaption",
-      "Appearance": null,
       "Caption": "KindCaption",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$NDSRate.Rate"
     },
     {
       "Alias": "Result",
-      "Appearance": null,
       "Caption": "Result",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$NDSRate.Rate"
     }
   ],
-  "ConnectionAlias": null,
   "DefaultSortColumns": [
     {
       "Alias": "NdsID",
@@ -133,27 +56,8 @@
     }
   ],
   "EnableAutoWidth": true,
-  "ExportDataPageLimit": null,
-  "Extensions": null,
-  "GroupingColumn": null,
-  "MultiSelect": false,
-  "Overrides": null,
-  "PageLimit": null,
-  "Paging": "No",
-  "Parameters": null,
-  "QuickSearchParam": "Rate",
-  "References": null,
-  "RowCounterVisible": false,
-  "RowCountSubset": null,
-  "SelectionMode": "Row",
-  "Subsets": null,
-  "TreatAsSingleQuery": false,
-  "TreeGroup": null,
-  "TreeGroupDisplayValue": null,
-  "TreeGroupId": null,
-  "TreeGroupParentId": null,
-  "TreeId": null,
-  "TreeParentId": null
+  "FormatVersion": 5,
+  "QuickSearchParam": "Rate"
 }
 
 [TEXTPART test3_{d5f0f29a-a1a8-4ccc-8aae-aef6cf4cc380}(copy) MSSQL]

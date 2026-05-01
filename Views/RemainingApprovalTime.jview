@@ -1,99 +1,45 @@
-{
+﻿{
   "Alias": "RemainingApprovalTime",
   "Caption": "test",
   "Description": "  ",
-  "FormatVersion::int": 1,
   "GroupName": "Testing",
-  "ID::uid": "b823de19-1493-4652-8019-1be77a7df511",
+  "ID": "b823de19-1493-4652-8019-1be77a7df511",
   "JsonMetadataSource::txt": "RemainingApprovalTime JSONMETA",
   "MsQuerySource::txt": "RemainingApprovalTime MSSQL",
-  "PgQuerySource::txt": "RemainingApprovalTime PGSQL",
-  "Roles": null
+  "PgQuerySource::txt": "RemainingApprovalTime PGSQL"
 }
 
 [TEXTPART RemainingApprovalTime JSONMETA]
 {
   "Alias": "RemainingApprovalTime",
-  "Appearance": "",
-  "Appearances": null,
-  "AutoWidthRowLimit": null,
   "Caption": "test",
   "Columns": [
     {
       "Alias": "test",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
       "Localizable": true,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "DateTime2 Null"
     },
     {
       "Alias": "Planned",
-      "Appearance": null,
       "Caption": "Оставшееся время согласования / задание",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     }
   ],
-  "ConnectionAlias": null,
-  "DefaultSortColumns": null,
-  "EnableAutoWidth": false,
-  "ExportDataPageLimit": null,
-  "Extensions": null,
-  "GroupingColumn": null,
-  "MultiSelect": false,
-  "Overrides": null,
-  "PageLimit": null,
-  "Paging": "No",
+  "FormatVersion": 5,
   "Parameters": [
     {
       "Alias": "CardID",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Equality"
       ],
-      "AutoCompleteInfo": null,
       "Caption": "$Views_Templates_Digest",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
       "Hidden": true,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.ID"
     }
-  ],
-  "QuickSearchParam": null,
-  "References": null,
-  "RowCounterVisible": false,
-  "RowCountSubset": null,
-  "SelectionMode": "Row",
-  "Subsets": null,
-  "TreatAsSingleQuery": false,
-  "TreeGroup": null,
-  "TreeGroupDisplayValue": null,
-  "TreeGroupId": null,
-  "TreeGroupParentId": null,
-  "TreeId": null,
-  "TreeParentId": null
+  ]
 }
 
 [TEXTPART RemainingApprovalTime MSSQL]

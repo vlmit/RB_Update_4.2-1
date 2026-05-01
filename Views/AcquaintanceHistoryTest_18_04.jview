@@ -1,373 +1,192 @@
-{
+﻿{
   "Alias": "AcquaintanceHistoryTest_18_04",
   "Caption": "История ознакомления",
   "Description": "  ",
-  "FormatVersion::int": 1,
   "GroupName": "Acquaintance",
-  "ID::uid": "a638c850-e496-4c51-ae0f-de8f4b83a141",
+  "ID": "a638c850-e496-4c51-ae0f-de8f4b83a141",
   "JsonMetadataSource::txt": "AcquaintanceHistoryTest_18_04 JSONMETA",
   "MsQuerySource::txt": "AcquaintanceHistoryTest_18_04 MSSQL",
-  "PgQuerySource::txt": "AcquaintanceHistoryTest_18_04 PGSQL",
-  "Roles": [
-    {
-      "DeltaKind": "Added",
-      "ObjectId::uid": "a638c850-e496-4c51-ae0f-de8f4b83a141",
-      "RoleId::uid": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d",
-      "RoleName": "Все сотрудники"
-    }
-  ]
+  "PgQuerySource::txt": "AcquaintanceHistoryTest_18_04 PGSQL"
 }
 
 [TEXTPART AcquaintanceHistoryTest_18_04 JSONMETA]
 {
   "Alias": "AcquaintanceHistoryTest_18_04",
-  "Appearance": null,
-  "Appearances": null,
-  "AutoWidthRowLimit": null,
   "Caption": "История ознакомления",
   "Columns": [
     {
       "Alias": "ID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceRows.ID"
     },
     {
       "Alias": "UserID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceRows.UserID"
     },
     {
       "Alias": "UserName",
-      "Appearance": null,
       "Caption": "$Views_Acquaintance_Employee",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
       "SortBy": "ar.UserName",
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceRows.UserName"
     },
     {
       "Alias": "IsReceived",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceRows.IsReceived"
     },
     {
       "Alias": "IsReceivedString",
-      "Appearance": null,
       "Caption": "$Views_Acquaintance_State",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
       "SortBy": "ar.IsReceived",
-      "TreatValueAsUtc": false,
       "Type": "String"
     },
     {
       "Alias": "Received",
-      "Appearance": null,
       "Caption": "$Views_Acquaintance_ReceivedDate",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
       "SortBy": "ar.Received",
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceRows.Received"
     },
     {
       "Alias": "SenderID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceRows.SenderID"
     },
     {
       "Alias": "SenderName",
-      "Appearance": null,
       "Caption": "$Views_Acquaintance_Sender",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
       "SortBy": "ar.SenderName",
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceRows.SenderName"
     },
     {
       "Alias": "Sent",
-      "Appearance": null,
       "Caption": "$Views_Acquaintance_SentDate",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
       "SortBy": "ar.Sent",
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceRows.Sent"
     },
     {
       "Alias": "Comment",
-      "Appearance": null,
       "Caption": "$Views_Acquaintance_CommentColumn",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength::int": 150,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
+      "MaxLength": 150,
       "Type": "$AcquaintanceComments.Comment"
     }
   ],
-  "ConnectionAlias": null,
   "DefaultSortColumns": [
     {
       "Alias": "Received",
       "SortDirection": "Ascending"
     }
   ],
-  "EnableAutoWidth": false,
-  "ExportDataPageLimit": null,
-  "Extensions": null,
-  "GroupingColumn": null,
-  "MultiSelect": false,
-  "Overrides": null,
-  "PageLimit": null,
+  "FormatVersion": 5,
   "Paging": "Always",
   "Parameters": [
     {
       "Alias": "CardIDParam",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "$Views_Acquaintance_CardID",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
       "Hidden": true,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceRows.CardID"
     },
     {
       "Alias": "UserParam",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Equality",
         "NonEquality"
       ],
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1,
           4
         ],
-        "RefPrefix": null,
         "ViewAlias": "Users"
       },
       "Caption": "$Views_Acquaintance_Employee",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": "PersonalRoles",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
       "Type": "$AcquaintanceRows.UserID"
     },
     {
       "Alias": "IsReceivedParam",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Equality",
         "NonEquality"
       ],
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "AcquaintanceStates"
       },
       "Caption": "$Views_Acquaintance_State",
-      "Condition": null,
-      "DisallowedOperands": null,
       "DropDownInfo": {
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1
         ],
-        "RefPrefix": null,
         "ViewAlias": "AcquaintanceStates"
       },
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": "AcquaintanceStates",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "AcquaintanceStates"
+      ],
       "Type": "$AcquaintanceRows.IsReceived"
     },
     {
       "Alias": "SenderParam",
       "AllowedOperands": [
-        {
-          "::single_type": "str"
-        },
         "Equality",
         "NonEquality"
       ],
       "AutoCompleteInfo": {
         "ParamAlias": "Name",
         "PopupColumns": [
-          {
-            "::single_type": "int"
-          },
           1,
           4
         ],
-        "RefPrefix": null,
         "ViewAlias": "Users"
       },
       "Caption": "$Views_Acquaintance_Sender",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": "PersonalRoles",
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
+      "RefSection": [
+        "PersonalRoles"
+      ],
       "Type": "$AcquaintanceRows.SenderID"
     },
     {
       "Alias": "CommentParam",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "$Views_Acquaintance_CommentParam",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$AcquaintanceComments.Comment"
     }
   ],
   "QuickSearchParam": "CommentParam",
   "References": [
     {
-      "CardType": null,
-      "CardTypeColumn": null,
       "ColPrefix": "User",
-      "Condition": null,
       "DisplayValueColumn": "UserName",
       "IsCard": true,
       "OpenOnDoubleClick": true,
       "RefSection": [
-        {
-          "::single_type": "str"
-        },
         "Roles",
         "DurableRoles",
         "PersonalRoles"
       ]
     }
   ],
-  "RowCounterVisible": false,
   "RowCountSubset": "Count",
-  "SelectionMode": "Row",
   "Subsets": [
     {
-      "Alias": "Count",
-      "Caption": null,
-      "CaptionColumn": null,
-      "Condition": null,
-      "CountColumn": null,
-      "HideZeroCount": false,
-      "Kind": "List",
-      "RefColumn": null,
-      "RefParam": null,
-      "TreeHasChildrenColumn": null,
-      "TreeRefParam": null
+      "Alias": "Count"
     }
-  ],
-  "TreatAsSingleQuery": false,
-  "TreeGroup": null,
-  "TreeGroupDisplayValue": null,
-  "TreeGroupId": null,
-  "TreeGroupParentId": null,
-  "TreeId": null,
-  "TreeParentId": null
+  ]
 }
 
 [TEXTPART AcquaintanceHistoryTest_18_04 MSSQL]

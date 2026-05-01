@@ -1,196 +1,83 @@
-{
+﻿{
   "Alias": "CoUsers",
   "Caption": "Соисполнители",
-  "Description": "",
-  "FormatVersion::int": 1,
   "GroupName": "Custom",
-  "ID::uid": "45583f83-4377-4204-94fa-1f3eb9544642",
+  "ID": "45583f83-4377-4204-94fa-1f3eb9544642",
   "JsonMetadataSource::txt": "CoUsers JSONMETA",
   "MsQuerySource::txt": "CoUsers MSSQL",
-  "PgQuerySource::txt": "CoUsers PGSQL",
-  "Roles": [
-    {
-      "DeltaKind": "Added",
-      "ObjectId::uid": "45583f83-4377-4204-94fa-1f3eb9544642",
-      "RoleId::uid": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d",
-      "RoleName": "Все сотрудники"
-    }
-  ]
+  "PgQuerySource::txt": "CoUsers PGSQL"
 }
 
 [TEXTPART CoUsers JSONMETA]
 {
   "Alias": "CoUsers",
-  "Appearance": null,
-  "Appearances": null,
-  "AutoWidthRowLimit": null,
   "Caption": "Соисполнители",
   "Columns": [
     {
       "Alias": "TypeID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$Partners.ID"
     },
     {
       "Alias": "TypeName",
-      "Appearance": null,
       "Caption": "Исполнитель",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": "",
-      "TreatValueAsUtc": false,
       "Type": "$Partners.Name"
     },
     {
       "Alias": "Planned",
-      "Appearance": null,
       "Caption": "Срок",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": "",
-      "TreatValueAsUtc": false,
       "Type": "Date Null"
     },
     {
       "Alias": "Question",
-      "Appearance": null,
       "Caption": "Описание",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": "",
-      "TreatValueAsUtc": false,
       "Type": "$Partners.Name"
     },
     {
       "Alias": "Status",
-      "Appearance": null,
       "Caption": "Статус",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": "",
-      "TreatValueAsUtc": false,
       "Type": "$Partners.Name"
     },
     {
       "Alias": "Result",
-      "Appearance": null,
       "Caption": "Комментарий",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": "",
-      "TreatValueAsUtc": false,
       "Type": "$Partners.Name"
     }
   ],
-  "ConnectionAlias": null,
-  "DefaultSortColumns": null,
-  "EnableAutoWidth": false,
-  "ExportDataPageLimit": null,
   "Extensions": [
     {
-      "Condition": null,
-      "Data": null,
-      "Order::int": 0,
+      "Order": 0,
       "TypeName": "Tessa.Extensions.Default.Client.Views.ViewsContextMenuExtension"
     }
   ],
-  "GroupingColumn": null,
-  "MultiSelect": false,
-  "Overrides": null,
-  "PageLimit": null,
-  "Paging": "No",
+  "FormatVersion": 5,
   "Parameters": [
     {
       "Alias": "CardID",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "CardID",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
       "Hidden": true,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.AuthorID"
     },
     {
       "Alias": "TaskCardID",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "TaskCardID",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
       "Hidden": true,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$TaskHistory.AuthorID"
     }
   ],
   "QuickSearchParam": "Name",
   "References": [
     {
-      "CardType": null,
-      "CardTypeColumn": null,
       "ColPrefix": "Type",
-      "Condition": null,
-      "DisplayValueColumn": "",
       "IsCard": true,
       "OpenOnDoubleClick": true,
       "RefSection": [
-        {
-          "::single_type": "str"
-        },
         "PersonalRoles"
       ]
     }
-  ],
-  "RowCounterVisible": false,
-  "RowCountSubset": null,
-  "SelectionMode": "Row",
-  "Subsets": null,
-  "TreatAsSingleQuery": false,
-  "TreeGroup": null,
-  "TreeGroupDisplayValue": null,
-  "TreeGroupId": null,
-  "TreeGroupParentId": null,
-  "TreeId": null,
-  "TreeParentId": null
+  ]
 }
 
 [TEXTPART CoUsers MSSQL]

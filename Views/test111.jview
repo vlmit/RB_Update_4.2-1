@@ -1,122 +1,53 @@
-{
+﻿{
   "Alias": "test111",
   "Caption": "test",
-  "Description": "",
-  "FormatVersion::int": 1,
   "GroupName": "Custom",
-  "ID::uid": "2fce00cf-bea0-4bef-8fb2-710bc9f12a5b",
+  "ID": "2fce00cf-bea0-4bef-8fb2-710bc9f12a5b",
   "JsonMetadataSource::txt": "test111 JSONMETA",
   "MsQuerySource::txt": "test111 MSSQL",
-  "PgQuerySource::txt": "test111 PGSQL",
-  "Roles": null
+  "PgQuerySource::txt": "test111 PGSQL"
 }
 
 [TEXTPART test111 JSONMETA]
 {
   "Alias": "test111",
-  "Appearance": null,
-  "Appearances": null,
-  "AutoWidthRowLimit": null,
   "Caption": "test",
   "Columns": [
     {
       "Alias": "DocID",
-      "Appearance": null,
       "Caption": "ID",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "Guid Null"
     },
     {
       "Alias": "DocFullNumber",
-      "Appearance": null,
       "Caption": "FullNumber",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "CreationDate",
-      "Appearance": null,
       "Caption": "CreationDate",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "DateTime Null"
     },
     {
       "Alias": "ParentDescription",
-      "Appearance": null,
       "Caption": "ParentDescription",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     }
   ],
-  "ConnectionAlias": null,
-  "DefaultSortColumns": null,
   "EnableAutoWidth": true,
-  "ExportDataPageLimit": null,
-  "Extensions": null,
-  "GroupingColumn": null,
-  "MultiSelect": false,
-  "Overrides": null,
-  "PageLimit": null,
-  "Paging": "No",
-  "Parameters": null,
-  "QuickSearchParam": null,
+  "FormatVersion": 5,
   "References": [
     {
-      "CardType": null,
-      "CardTypeColumn": null,
       "ColPrefix": "Doc",
-      "Condition": null,
       "DisplayValueColumn": "DocFullNumber",
       "IsCard": true,
       "OpenOnDoubleClick": true,
       "RefSection": [
-        {
-          "::single_type": "str"
-        },
         "DocumentCommonInfo",
         "DocRefsSection"
       ]
     }
-  ],
-  "RowCounterVisible": false,
-  "RowCountSubset": null,
-  "SelectionMode": "Row",
-  "Subsets": null,
-  "TreatAsSingleQuery": false,
-  "TreeGroup": null,
-  "TreeGroupDisplayValue": null,
-  "TreeGroupId": null,
-  "TreeGroupParentId": null,
-  "TreeId": null,
-  "TreeParentId": null
+  ]
 }
 
 [TEXTPART test111 MSSQL]

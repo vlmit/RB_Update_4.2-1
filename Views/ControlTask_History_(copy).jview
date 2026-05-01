@@ -1,199 +1,73 @@
-{
+﻿{
   "Alias": "ControlTask_History_(copy)",
   "Caption": "История изменений",
-  "Description": "",
-  "FormatVersion::int": 1,
   "GroupName": "Custom",
-  "ID::uid": "7960f1e9-1b2e-473c-9a19-cd0cd2053d0b",
+  "ID": "7960f1e9-1b2e-473c-9a19-cd0cd2053d0b",
   "JsonMetadataSource::txt": "ControlTask_History_(copy) JSONMETA",
   "MsQuerySource::txt": "ControlTask_History_(copy) MSSQL",
-  "PgQuerySource::txt": "ControlTask_History_(copy) PGSQL",
-  "Roles": [
-    {
-      "DeltaKind": "Added",
-      "ObjectId::uid": "7960f1e9-1b2e-473c-9a19-cd0cd2053d0b",
-      "RoleId::uid": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d",
-      "RoleName": "Все сотрудники"
-    }
-  ]
+  "PgQuerySource::txt": "ControlTask_History_(copy) PGSQL"
 }
 
 [TEXTPART ControlTask_History_(copy) JSONMETA]
 {
   "Alias": "ControlTask_History_(copy)",
-  "Appearance": null,
-  "Appearances": null,
-  "AutoWidthRowLimit": null,
   "Caption": "История изменений",
   "Columns": [
     {
       "Alias": "Modified",
-      "Appearance": null,
       "Caption": "Дата",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$ActionHistory.Modified"
     },
     {
       "Alias": "Request",
-      "Appearance": null,
       "Caption": "Поручение",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "Request2",
-      "Appearance": null,
       "Caption": "Содержание поручения",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "Reguest3",
-      "Appearance": null,
       "Caption": "Плановая дата",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "Performer1",
-      "Appearance": null,
       "Caption": "Исполнитель 1",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "Performer2",
-      "Appearance": null,
       "Caption": "Исполнитель 2",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "Performer3",
-      "Appearance": null,
       "Caption": "Исполнитель 3",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "String(Max) Null"
     },
     {
       "Alias": "ModifiedByName",
-      "Appearance": null,
       "Caption": "Сотрудник",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$ActionHistory.ModifiedByName"
     },
     {
       "Alias": "Request3",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$ActionHistory.Request"
     }
   ],
-  "ConnectionAlias": null,
-  "DefaultSortColumns": null,
   "EnableAutoWidth": true,
-  "ExportDataPageLimit": null,
-  "Extensions": null,
-  "GroupingColumn": null,
-  "MultiSelect": false,
-  "Overrides": null,
-  "PageLimit": null,
-  "Paging": "No",
+  "FormatVersion": 5,
   "Parameters": [
     {
       "Alias": "CardID",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "Card ID",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
       "Multiple": false,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$DocumentCommonInfo.ID"
     }
-  ],
-  "QuickSearchParam": null,
-  "References": null,
-  "RowCounterVisible": false,
-  "RowCountSubset": null,
-  "SelectionMode": "Row",
-  "Subsets": null,
-  "TreatAsSingleQuery": false,
-  "TreeGroup": null,
-  "TreeGroupDisplayValue": null,
-  "TreeGroupId": null,
-  "TreeGroupParentId": null,
-  "TreeId": null,
-  "TreeParentId": null
+  ]
 }
 
 [TEXTPART ControlTask_History_(copy) MSSQL]

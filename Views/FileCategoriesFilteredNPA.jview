@@ -1,145 +1,64 @@
-{
+﻿{
   "Alias": "FileCategoriesFilteredNPA",
   "Caption": "Отфильтрованные категории для НПА",
   "Description": " ",
-  "FormatVersion::int": 1,
   "GroupName": "System",
-  "ID::uid": "47e00286-7da2-40c4-92f1-899f6dead125",
+  "ID": "47e00286-7da2-40c4-92f1-899f6dead125",
   "JsonMetadataSource::txt": "FileCategoriesFilteredNPA JSONMETA",
   "MsQuerySource::txt": "FileCategoriesFilteredNPA MSSQL",
-  "PgQuerySource::txt": "FileCategoriesFilteredNPA PGSQL",
-  "Roles": [
-    {
-      "DeltaKind": "Added",
-      "ObjectId::uid": "47e00286-7da2-40c4-92f1-899f6dead125",
-      "RoleId::uid": "7ff52dc0-ff6a-4c9d-ba25-b562c370004d",
-      "RoleName": "Все сотрудники"
-    }
-  ]
+  "PgQuerySource::txt": "FileCategoriesFilteredNPA PGSQL"
 }
 
 [TEXTPART FileCategoriesFilteredNPA JSONMETA]
 {
   "Alias": "FileCategoriesFilteredNPA",
-  "Appearance": null,
-  "Appearances": null,
-  "AutoWidthRowLimit": null,
   "Caption": "Отфильтрованные категории для НПА",
   "Columns": [
     {
       "Alias": "CategoryID",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "$FileCategories.ID"
     },
     {
       "Alias": "CategoryName",
-      "Appearance": null,
       "Caption": "$Views_FileCategoriesFiltered_Name",
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
-      "Hidden": false,
       "Localizable": true,
-      "MaxLength": null,
       "SortBy": "lName.Value",
-      "TreatValueAsUtc": false,
       "Type": "$FileCategories.Name"
     },
     {
       "Alias": "rn",
-      "Appearance": null,
-      "Caption": null,
-      "Condition": null,
-      "DisableGrouping": false,
-      "HasTag": false,
       "Hidden": true,
-      "Localizable": false,
-      "MaxLength": null,
-      "SortBy": null,
-      "TreatValueAsUtc": false,
       "Type": "Int64"
     }
   ],
-  "ConnectionAlias": null,
-  "DefaultSortColumns": null,
-  "EnableAutoWidth": false,
-  "ExportDataPageLimit": null,
-  "Extensions": null,
-  "GroupingColumn": null,
-  "MultiSelect": false,
-  "Overrides": null,
-  "PageLimit": null,
+  "FormatVersion": 5,
   "Paging": "Always",
   "Parameters": [
     {
       "Alias": "Name",
-      "AllowedOperands": null,
-      "AutoCompleteInfo": null,
       "Caption": "$Views_FileCategoriesFiltered_Name_Param",
-      "Condition": null,
-      "DisallowedOperands": null,
-      "DropDownInfo": null,
-      "Hidden": false,
-      "HideAutoCompleteButton": false,
-      "Multiple": true,
-      "RefSection": null,
-      "SourceViews": null,
-      "TreatValueAsUtc": false,
       "Type": "$FileCategories.Name"
     }
   ],
   "QuickSearchParam": "Name",
   "References": [
     {
-      "CardType": null,
-      "CardTypeColumn": null,
       "ColPrefix": "Category",
-      "Condition": null,
       "DisplayValueColumn": "CategoryName",
       "IsCard": true,
       "OpenOnDoubleClick": true,
       "RefSection": [
-        {
-          "::single_type": "str"
-        },
         "FileCategory"
       ]
     }
   ],
-  "RowCounterVisible": false,
   "RowCountSubset": "Count",
-  "SelectionMode": "Row",
   "Subsets": [
     {
-      "Alias": "Count",
-      "Caption": null,
-      "CaptionColumn": null,
-      "Condition": null,
-      "CountColumn": null,
-      "HideZeroCount": false,
-      "Kind": "List",
-      "RefColumn": null,
-      "RefParam": null,
-      "TreeHasChildrenColumn": null,
-      "TreeRefParam": null
+      "Alias": "Count"
     }
-  ],
-  "TreatAsSingleQuery": false,
-  "TreeGroup": null,
-  "TreeGroupDisplayValue": null,
-  "TreeGroupId": null,
-  "TreeGroupParentId": null,
-  "TreeId": null,
-  "TreeParentId": null
+  ]
 }
 
 [TEXTPART FileCategoriesFilteredNPA MSSQL]
