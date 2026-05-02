@@ -1,0 +1,12 @@
+import { ExtensionRegistrator, ExtensionStage } from '@tessa/application';
+import { AutoLogout } from './AutoLogout';
+
+export const Registrator: ExtensionRegistrator = {
+  async registerTypes() { },
+  async registerExtensions(container) {
+    container.registerExtension({
+      extension: AutoLogout,
+      stage: ExtensionStage.AfterPlatform,
+    });
+  }
+}
