@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="$(ProjectDir)../../Tessa.targets" />
+  <Import Project="$(ProjectDir)../../Tessa.Extensions.targets" />
+  <Import Project="$(ProjectDir)*.pre.targets" />
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <RestoreSources>$(RestoreSources);../../Bin/packages;https://api.nuget.org/v3/index.json</RestoreSources>
+    <OutputType>Library</OutputType>
+    <NoWarn>$(NoWarn);CS1998</NoWarn>
+  </PropertyGroup>
+  <Import Project="$(ProjectDir)*.props.targets" />
+  <ItemGroup>
+    <Compile Include="../../Extensions/Tessa.Extensions.Default.Shared/GlobalUsings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../Extensions/Tessa.Extensions.Shared/Tessa.Extensions.Shared.csproj" />
+    <ProjectReference Include="../Tessa.Test.Default.Shared/Tessa.Test.Default.Shared.csproj" />
+  </ItemGroup>
+  <Import Project="$(ProjectDir)*.post.targets" />
+</Project>

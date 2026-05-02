@@ -1,0 +1,8 @@
+﻿<Project>
+
+  <ItemGroup>
+    <Content Include="../../applocal-server.json" CopyToOutputDirectory="PreserveNewest" />
+    <Content Include="../../applocalx-server-*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+</Project>

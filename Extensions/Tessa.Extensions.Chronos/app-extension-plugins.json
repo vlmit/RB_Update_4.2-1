@@ -1,0 +1,15 @@
+﻿{
+	"Settings": {
+		"Plugins": {
+			"ExamplePlugin": {
+				"Enabled": false,
+				"LaunchImmediately": false,
+				"DisallowConcurrency": true,
+				"Trigger": 300,
+
+				// Special ExamplePlugin settings
+				"CardID": "7FF52DC0-FF6A-4C9D-BA25-B562C370004D"
+			}
+		}
+	}
+}

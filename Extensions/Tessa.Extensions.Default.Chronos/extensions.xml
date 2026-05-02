@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extensions>
+
+  <scan path="../../extensions" />
+  
+  <include file="Tessa.Extensions.Default.Chronos.dll" serverOnly="true" />
+  <include file="../../Tessa.Extensions.PostgreSql.Server.dll" serverOnly="true" />
+  <include file="../../Tessa.Extensions.SqlServer.Server.dll" serverOnly="true" />
+
+</extensions>

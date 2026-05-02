@@ -1,0 +1,51 @@
+﻿{
+	// {".include":"applocalx-server-master.json"}
+
+	"ConnectionStrings!!": {
+		"default": "Server=.\\SQLEXPRESS; Database=tessa; Integrated Security=false; User ID=sa; Password=Master1234; Connect Timeout=200; Pooling=true; Max Pool Size=200; Trust Server Certificate=true",
+
+		"temp_ms": "Server=.\\SQLEXPRESS; Database=tessa_test; Integrated Security=false; User ID=sa; Password=Master1234; Pooling=true; Max Pool Size=1024; Trust Server Certificate=true",
+		"temp_pg": [ "Host=localhost; Database=tessa_test; User ID=postgres; Password=Master1234; Pooling=true; Timeout=0; Include Error Detail=true; GSS Encryption Mode=Disable", "Npgsql" ],
+
+		"migration": [ "Host=localhost; Database=tessa2; User ID=postgres; Password=Master1234; Pooling=true; MaxPoolSize=100; MaxAutoPrepare=50; AutoPrepareMinUsages=20; GSS Encryption Mode=Disable", "Npgsql" ],
+		"gc": "Filename=C:\\Tessa\\gclocal.db;Connection=shared"
+	},
+
+	".include": [
+		{
+			".files": "app-webdev.json",
+			"always": true
+		}
+	],
+
+	"Settings": {
+		"SignatureKey": "",
+		"CipherKey": "",
+		"Redis": "localhost",
+
+		"ServerCode": "platform",
+		"GuyFawkesAuth": "tessa/web",
+		"WinAuthIsEnabled": false,
+		"WinAuth": "tessa/tw_winauth",
+		"WinAutoLogin": true,
+		"CryptoProPluginEnabled": false,
+		"SessionsSyncIsLocal": true,
+		"EnableInterprocessCache": true,
+
+		"AiModule": {
+			"IsLoggingEnabled": false,
+			"Arti": {
+				"BaseAddress": "https://localhost:25137",
+				"AccessToken": ""
+			}
+		},
+
+		"Webbi": {
+			"MaintenanceConfig": {
+				"Mode": "iis",
+				"Path": "C:/tessa/web/web.config",
+				"RulePrefix": "Maintenance"
+			}
+		}
+	}
+}

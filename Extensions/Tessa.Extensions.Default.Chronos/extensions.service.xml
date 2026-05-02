@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<extensions>
+
+  <include file="Tessa.Extensions.Default.Imaging.dll" serverOnly="true" />
+  <include file="Tessa.Extensions.Default.Server.dll" serverOnly="true" />
+  <include file="Tessa.Extensions.Default.Shared.dll" />
+
+  <include file="Tessa.Extensions.Imaging.dll" serverOnly="true" />
+  <include file="Tessa.Extensions.Server.dll" serverOnly="true" />
+  <include file="Tessa.Extensions.Shared.dll" />
+
+</extensions>

@@ -1,0 +1,36 @@
+﻿#nullable enable
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+using Tessa.Cards;
+using Tessa.Cards.TypeSerializers;
+using Tessa.Cards.TypeSettings;
+using Tessa.Extensions.Default.Shared.Cards;
+using Tessa.Platform.Storage;
+
+namespace Tessa.Extensions.Default.Server.TypeSerializers.Extensions
+{
+    /// <summary>
+    /// Сериализатор расширения типа <see cref="DefaultCardTypeExtensionTypes.OpenCardInView"/>.
+    /// </summary>
+    public sealed class OpenCardInViewExtensionSerializer : ITypeComponentSerializer<CardTypeExtension>
+    {
+        #region ITypeComponentSerializer<CardTypeExtension> Members
+
+        /// <inheritdoc/>
+        public ValueTask NotifyOnSerializingAsync(
+            Dictionary<string, object?> settings,
+            CardTypeExtension component,
+            ICardSerializableContext context,
+            CancellationToken cancellationToken = default)
+        {
+            settings.RemoveIfEmptyString(DefaultCardTypeExtensionSettings.ViewControlAlias);
+            settings.RemoveIfEmptyString(DefaultCardTypeExtensionSettings.ViewReferencePrefix);
+            settings.RemoveIfEmptyString(DefaultCardTypeExtensionSettings.CardDialogName);
+            settings.RemoveIfDefaultEnum(CardControlSettings.ReferenceOpenModeSetting, ReferenceOpenMode.Default);
+            return ValueTask.CompletedTask;
+        }
+
+        #endregion
+    }
+}
