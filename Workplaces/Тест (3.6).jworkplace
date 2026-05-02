@@ -1,0 +1,88 @@
+﻿{
+  "Content": {
+    "Metadata": {
+      "Alias": "Тест (3.6)",
+      "CompositionId": "8e1a1533-3e52-4504-bf01-d417ece49938",
+      "EmptyFoldersVisible": false,
+      "FormatVersion": 5,
+      "Items": [
+        {
+          "Alias": "TasksMyDepartment_(copy)",
+          "Caption": "Текущие задания по ведомству v2",
+          "CompositionId": "84f482c9-4ec2-4732-867e-32fa027860f5",
+          "DataSourceMetadata": {
+            "Alias": "TasksMyDepartment_(copy)",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "7b3be789-a2d7-4ef8-a84b-c7866e607fe1",
+              "Items": [
+                {
+                  "CompositionId": "7b3be789-a2d7-00f8-a800-07866e607fe1",
+                  "Items": [
+                    {
+                      "Alias": "TasksMyDepartment_(copy)",
+                      "CompositionId": "84f482c9-4ec2-4732-867e-32fa027860f5",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "NormalMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "Новая папка",
+          "CompositionId": "9ee64984-5491-4fc9-8e2f-226d809248af",
+          "Items": [
+            {
+              "Alias": "Cars",
+              "Caption": "Автомобили",
+              "CompositionId": "72fc2326-b5ec-4785-b07d-95d9abfa6ad7",
+              "DataSourceMetadata": {
+                "Alias": "Cars",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "692b74f7-8672-4240-925b-165abbb791ce",
+                  "Items": [
+                    {
+                      "CompositionId": "692b74f7-8672-0040-9200-065abbb791ce",
+                      "Items": [
+                        {
+                          "Alias": "Cars",
+                          "CompositionId": "72fc2326-b5ec-4785-b07d-95d9abfa6ad7",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            }
+          ],
+          "TypeName": "JsonFolderNodeMetadata"
+        }
+      ],
+      "LeftSideWidth::dbl": 285.0,
+      "TreeVisibility": true,
+      "Version": 1
+    },
+    "Order": 0
+  }
+}

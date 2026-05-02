@@ -1,0 +1,2890 @@
+﻿{
+  "Content": {
+    "Metadata": {
+      "Alias": "Регистратор НПА",
+      "CompositionId": "95cc0eb1-689c-4fc1-9573-3490acd182d4",
+      "EmptyFoldersVisible": false,
+      "FormatVersion": 5,
+      "Items": [
+        {
+          "Alias": "Workplaces",
+          "Caption": "$Workplaces_Workplaces",
+          "CompositionId": "ed70ab06-561a-4057-a17b-a8db13888b3d",
+          "DataSourceMetadata": {
+            "Alias": "Workplaces",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin340",
+          "IconName": "Thin340",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "5f342ab8-8966-415c-ba9d-c9cf051688e0",
+              "Items": [
+                {
+                  "CompositionId": "5f342ab8-8966-005c-ba00-09cf051688e0",
+                  "Items": [
+                    {
+                      "Alias": "Workplaces",
+                      "CompositionId": "ed70ab06-561a-4057-a17b-a8db13888b3d",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "Roles",
+          "Caption": "$Workplaces_User_Dictionaries_Roles",
+          "CompositionId": "b86242e9-1ab9-4072-9722-950576d00baf",
+          "DataSourceMetadata": {
+            "Alias": "Roles",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin195",
+          "ExpandingMode": "Expanded",
+          "IconName": "Thin195",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "76d8a853-2fad-4d04-a117-771b9e0a8f9e",
+              "Items": [
+                {
+                  "CompositionId": "76d8a853-2fad-0004-a100-071b9e0a8f9e",
+                  "Items": [
+                    {
+                      "Alias": "Roles",
+                      "CompositionId": "b86242e9-1ab9-4072-9722-950576d00baf",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "RoleTypes",
+              "Caption": "$Views_Roles_ByType",
+              "CompositionId": "72c28678-365a-42de-8ac8-54c39fd578da",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "DurableRoles",
+          "Caption": "$Workplaces_Admin_Roles",
+          "CompositionId": "bd6bc767-0443-46de-9462-ec720d8c97a8",
+          "DataSourceMetadata": {
+            "Alias": "DurableRoles",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin195",
+          "ExpandingMode": "Expanded",
+          "IconName": "Thin195",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "cd0a5672-f64f-4f84-9de9-bae47f78fdc2",
+              "Items": [
+                {
+                  "CompositionId": "cd0a5672-f64f-0084-9d00-0ae47f78fdc2",
+                  "Items": [
+                    {
+                      "Alias": "DurableRoles",
+                      "CompositionId": "bd6bc767-0443-46de-9462-ec720d8c97a8",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "RoleTypes",
+              "Caption": "$Views_Roles_ByType",
+              "CompositionId": "f0eeb033-dcea-4e98-ba22-db241c990f91",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "Users",
+          "Caption": "$Workplaces_User_Dictionaries_Employees",
+          "CompositionId": "2f265388-13f8-4ffa-8754-d4b44a55e380",
+          "DataSourceMetadata": {
+            "Alias": "Users",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin193",
+          "ExpandingMode": "Expanded",
+          "IconName": "Thin193",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "db459684-5453-40a1-924a-793a669d3a0b",
+              "Items": [
+                {
+                  "CompositionId": "db459684-5453-00a1-9200-093a669d3a0b",
+                  "Items": [
+                    {
+                      "Alias": "Users",
+                      "CompositionId": "2f265388-13f8-4ffa-8754-d4b44a55e380",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByDepartment",
+              "Caption": "$Views_Users_ByDepartment_Param",
+              "CompositionId": "5e5f4cb9-1647-49ef-b628-d770e13bf569",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByStaticRole",
+              "Caption": "$Views_Users_ByStaticRole_Param",
+              "CompositionId": "483e7444-a1de-40b1-a837-e4a2f8fab2ec",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "Currencies",
+          "Caption": "$Workplaces_User_Dictionaries_Currencies",
+          "CompositionId": "984f9282-4ef9-4b35-87e9-270e8700262d",
+          "DataSourceMetadata": {
+            "Alias": "Currencies",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin151",
+          "IconName": "Thin151",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "7ad67b8b-6d1c-4309-8a00-5f36eeb731f3",
+              "Items": [
+                {
+                  "CompositionId": "7ad67b8b-6d1c-0009-8a00-0f36eeb731f3",
+                  "Items": [
+                    {
+                      "Alias": "Currencies",
+                      "CompositionId": "984f9282-4ef9-4b35-87e9-270e8700262d",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "KrDocStates",
+          "Caption": "$Workplaces_User_DocumentStates",
+          "CompositionId": "e558b99f-d530-4c50-a53c-797d915f780b",
+          "DataSourceMetadata": {
+            "Alias": "KrDocStates",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin127",
+          "IconName": "Thin127",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "4cacd7bc-a301-467e-8f9e-6e705fa91aaf",
+              "Items": [
+                {
+                  "CompositionId": "4cacd7bc-a301-007e-8f00-0e705fa91aaf",
+                  "Items": [
+                    {
+                      "Alias": "KrDocStates",
+                      "CompositionId": "e558b99f-d530-4c50-a53c-797d915f780b",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "AvailableDeputyRoles",
+          "Caption": "$Workplaces_User_AvailableDeputyRoles",
+          "CompositionId": "e417e270-9f86-43e3-b3a2-7590d873e4f4",
+          "DataSourceMetadata": {
+            "Alias": "AvailableDeputyRoles",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin195",
+          "ExpandingMode": "Expanded",
+          "IconName": "Thin195",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "475437b9-a21f-4610-afdc-0a0d4bd4df43",
+              "Items": [
+                {
+                  "CompositionId": "475437b9-a21f-0010-af00-0a0d4bd4df43",
+                  "Items": [
+                    {
+                      "Alias": "AvailableDeputyRoles",
+                      "CompositionId": "e417e270-9f86-43e3-b3a2-7590d873e4f4",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "RoleTypes",
+              "Caption": "$Views_Roles_ByType",
+              "CompositionId": "d0e052aa-b1ef-47f1-be6c-9f683a5aecfe",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "AvailableDeputyUsers",
+          "Caption": "$Workplaces_User_AvailableDeputyUsers",
+          "CompositionId": "2d575001-10d9-48ec-b119-f7ab630a28d7",
+          "DataSourceMetadata": {
+            "Alias": "AvailableDeputyUsers",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin193",
+          "ExpandingMode": "Expanded",
+          "IconName": "Thin193",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "9a807840-a7ee-474b-9e12-a815c38a8f7f",
+              "Items": [
+                {
+                  "CompositionId": "9a807840-a7ee-004b-9e00-0815c38a8f7f",
+                  "Items": [
+                    {
+                      "Alias": "AvailableDeputyUsers",
+                      "CompositionId": "2d575001-10d9-48ec-b119-f7ab630a28d7",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByDepartment",
+              "Caption": "$Views_Users_ByDepartment_Param",
+              "CompositionId": "90a96fa7-bad4-47b0-b6b0-1047de663aad",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByStaticRole",
+              "Caption": "$Views_Users_ByStaticRole_Param",
+              "CompositionId": "99709e84-bcab-4075-aa94-f387cb7eea10",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "CompletionOptions",
+          "Caption": "$Workplaces_User_CompletionOptions",
+          "CompositionId": "595e4673-a46d-4c07-a81e-53142b4674ae",
+          "DataSourceMetadata": {
+            "Alias": "CompletionOptions",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "7bb070d8-e39d-420b-9808-35fffe3b93df",
+              "Items": [
+                {
+                  "CompositionId": "7bb070d8-e39d-000b-9800-05fffe3b93df",
+                  "Items": [
+                    {
+                      "Alias": "CompletionOptions",
+                      "CompositionId": "595e4673-a46d-4c07-a81e-53142b4674ae",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "PartnersContacts",
+          "Caption": "$CardTypes_Tabs_PartnerContacts",
+          "CompositionId": "fd408ea4-964d-4cd0-bb1c-40f9acedcae3",
+          "DataSourceMetadata": {
+            "Alias": "PartnersContacts",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin202",
+          "IconName": "Thin202",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "8fc5869b-db2c-434a-831b-61431fc18398",
+              "Items": [
+                {
+                  "CompositionId": "8fc5869b-db2c-004a-8300-01431fc18398",
+                  "Items": [
+                    {
+                      "Alias": "PartnersContacts",
+                      "CompositionId": "fd408ea4-964d-4cd0-bb1c-40f9acedcae3",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Single",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "DocumentTypes",
+          "Caption": "$Workplaces_User_DocumentTypes",
+          "CompositionId": "32a643b5-4703-41d4-9390-6245e353369c",
+          "DataSourceMetadata": {
+            "Alias": "DocumentTypes",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin53",
+          "IconName": "Thin53",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "811b9de1-9292-4895-8757-00dc1cc49be8",
+              "Items": [
+                {
+                  "CompositionId": "811b9de1-9292-0095-8700-00dc1cc49be8",
+                  "Items": [
+                    {
+                      "Alias": "DocumentTypes",
+                      "CompositionId": "32a643b5-4703-41d4-9390-6245e353369c",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "Departments",
+          "Caption": "$Workplaces_User_Dictionaries_Departments",
+          "CompositionId": "596076df-0f09-4669-96fa-9168845dab75",
+          "DataSourceMetadata": {
+            "Alias": "Departments",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin48",
+          "ExpandingMode": "Expanded",
+          "IconName": "Thin48",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "18f44026-f355-4370-9f94-ecf2f4aa1023",
+              "Items": [
+                {
+                  "CompositionId": "18f44026-f355-0070-9f00-0cf2f4aa1023",
+                  "Items": [
+                    {
+                      "Alias": "Departments",
+                      "CompositionId": "596076df-0f09-4669-96fa-9168845dab75",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByDep",
+              "Caption": "$Views_Departments_ByDep_Param",
+              "CompositionId": "4d609e89-9e86-4ea8-8ab8-f406d2db815c",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "Partners",
+          "Caption": "$Workplaces_User_Dictionaries_Partners",
+          "CompositionId": "8fa11b5a-1be5-4f62-81ce-c378ed068010",
+          "DataSourceMetadata": {
+            "Alias": "Partners",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin214",
+          "Extensions": [
+            {
+              "Data": {
+                "CardCreationKind": "ByTypeAlias",
+                "CardOpeningKind": "ApplicationTab",
+                "DocTypeIdentifier": null,
+                "IDParam": "PartnerID",
+                "TypeAlias": "Partner"
+              },
+              "Order": 0,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.CreateCardExtension"
+            }
+          ],
+          "IconName": "Thin214",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "1e09c70a-3b58-421c-a843-a8dead3e3517",
+              "Items": [
+                {
+                  "CompositionId": "1e09c70a-3b58-001c-a800-08dead3e3517",
+                  "Items": [
+                    {
+                      "Alias": "Partners",
+                      "CompositionId": "8fa11b5a-1be5-4f62-81ce-c378ed068010",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "PartnersTypes",
+          "Caption": "$Workplaces_Admin_StandSol_PartnersTypes",
+          "CompositionId": "a2de67c2-4852-4e36-aca8-1063ba077525",
+          "DataSourceMetadata": {
+            "Alias": "PartnersTypes",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin53",
+          "IconName": "Thin53",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "5da84e7c-845d-474b-8908-241da5b8f7f7",
+              "Items": [
+                {
+                  "CompositionId": "5da84e7c-845d-004b-8900-041da5b8f7f7",
+                  "Items": [
+                    {
+                      "Alias": "PartnersTypes",
+                      "CompositionId": "a2de67c2-4852-4e36-aca8-1063ba077525",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Single",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "DocumentCategories",
+          "Caption": "$Workplaces_User_Dictionaries_DocumentCategories",
+          "CompositionId": "b81e02bf-b408-44f6-ae8d-ea2e3d1e401d",
+          "DataSourceMetadata": {
+            "Alias": "DocumentCategories",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin53",
+          "IconName": "Thin53",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "cb36322e-95f9-4520-aea5-beef7a21a9ff",
+              "Items": [
+                {
+                  "CompositionId": "cb36322e-95f9-0020-ae00-0eef7a21a9ff",
+                  "Items": [
+                    {
+                      "Alias": "DocumentCategories",
+                      "CompositionId": "b81e02bf-b408-44f6-ae8d-ea2e3d1e401d",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "RoleTypes",
+          "Caption": "$Workplaces_User_RoleTypes",
+          "CompositionId": "971f7c58-a1ba-4da9-af9d-1d1cfc68b730",
+          "DataSourceMetadata": {
+            "Alias": "RoleTypes",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin53",
+          "IconName": "Thin53",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "7b4526e9-abc7-46c4-b394-dd46e4216eb8",
+              "Items": [
+                {
+                  "CompositionId": "7b4526e9-abc7-00c4-b300-0d46e4216eb8",
+                  "Items": [
+                    {
+                      "Alias": "RoleTypes",
+                      "CompositionId": "971f7c58-a1ba-4da9-af9d-1d1cfc68b730",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Single",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "WfResolutionAuthors",
+          "Caption": "$Workplaces_User_WfResolutionAuthors",
+          "CompositionId": "dbd0c03f-8fe9-4944-9c1a-0fec047ad607",
+          "DataSourceMetadata": {
+            "Alias": "WfResolutionAuthors",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin193",
+          "IconName": "Thin193",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "f0e52c8e-353e-4a54-b128-5282afce9dab",
+              "Items": [
+                {
+                  "CompositionId": "f0e52c8e-353e-0054-b100-0282afce9dab",
+                  "Items": [
+                    {
+                      "Alias": "WfResolutionAuthors",
+                      "CompositionId": "dbd0c03f-8fe9-4944-9c1a-0fec047ad607",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Single",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "TaskKinds",
+          "Caption": "$Workplaces_User_TaskKinds",
+          "CompositionId": "bf576ccd-4f84-4af9-af43-1a0b140d2a3d",
+          "DataSourceMetadata": {
+            "Alias": "TaskKinds",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin53",
+          "IconName": "Thin53",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "268e4cfe-ca4a-47c4-9129-6b5b15e716c9",
+              "Items": [
+                {
+                  "CompositionId": "268e4cfe-ca4a-00c4-9100-0b5b15e716c9",
+                  "Items": [
+                    {
+                      "Alias": "TaskKinds",
+                      "CompositionId": "bf576ccd-4f84-4af9-af43-1a0b140d2a3d",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "TaskTypes",
+          "Caption": "$Workplaces_User_TaskTypes",
+          "CompositionId": "efe938db-00d8-4b4f-939f-8107a1de2fb2",
+          "DataSourceMetadata": {
+            "Alias": "TaskTypes",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin53",
+          "IconName": "Thin53",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "68e5c08c-e27a-4d46-b519-67252f97a4dd",
+              "Items": [
+                {
+                  "CompositionId": "68e5c08c-e27a-0046-b500-07252f97a4dd",
+                  "Items": [
+                    {
+                      "Alias": "TaskTypes",
+                      "CompositionId": "efe938db-00d8-4b4f-939f-8107a1de2fb2",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "KrTypesEffective",
+          "Caption": "$Workplaces_Admin_StandSol_EffectTypes",
+          "CompositionId": "74dd4d6c-d040-4d93-b902-20c3c32ce538",
+          "DataSourceMetadata": {
+            "Alias": "KrTypesEffective",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin53",
+          "IconName": "Thin53",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "89fbd3e3-1718-47df-931e-d02ae4d7e70f",
+              "Items": [
+                {
+                  "CompositionId": "89fbd3e3-1718-00df-9300-002ae4d7e70f",
+                  "Items": [
+                    {
+                      "Alias": "KrTypesEffective",
+                      "CompositionId": "74dd4d6c-d040-4d93-b902-20c3c32ce538",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "KrTypesForDialogs",
+          "Caption": "$Workplaces_Admin_Route_KrTypesForDialogs",
+          "CompositionId": "65155ac5-996e-4172-a16f-45558c826879",
+          "DataSourceMetadata": {
+            "Alias": "KrTypesForDialogs",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin53",
+          "IconName": "Thin53",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "42de669e-0757-4e93-b6b1-d2e112bc2ce4",
+              "Items": [
+                {
+                  "CompositionId": "42de669e-0757-0093-b600-02e112bc2ce4",
+                  "Items": [
+                    {
+                      "Alias": "KrTypesForDialogs",
+                      "CompositionId": "65155ac5-996e-4172-a16f-45558c826879",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "ConditionTypes",
+          "Caption": "$Workplaces_Admin_ConditionTypes",
+          "CompositionId": "47f0b9e7-a8e7-4037-b0f1-20fbd6e101b7",
+          "DataSourceMetadata": {
+            "Alias": "ConditionTypes",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin53",
+          "IconName": "Thin53",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "0cb5881b-8ccc-49ac-98e9-e86714f7b8aa",
+              "Items": [
+                {
+                  "CompositionId": "0cb5881b-8ccc-00ac-9800-086714f7b8aa",
+                  "Items": [
+                    {
+                      "Alias": "ConditionTypes",
+                      "CompositionId": "47f0b9e7-a8e7-4037-b0f1-20fbd6e101b7",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "Notifications",
+          "Caption": "$Workplaces_Admin_Notifications",
+          "CompositionId": "cdcf861a-68fe-42ac-8f61-82c3025435a7",
+          "DataSourceMetadata": {
+            "Alias": "Notifications",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin11",
+          "IconName": "Thin11",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "09d11968-03d1-46c9-8b9a-ecddc6f3b258",
+              "Items": [
+                {
+                  "CompositionId": "09d11968-03d1-00c9-8b00-0cddc6f3b258",
+                  "Items": [
+                    {
+                      "Alias": "Notifications",
+                      "CompositionId": "cdcf861a-68fe-42ac-8f61-82c3025435a7",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "NotificationTypes",
+          "Caption": "$Workplaces_Admin_NotificationTypes",
+          "CompositionId": "e1600d99-ffd0-4fa4-90cb-d8fd86f8b70d",
+          "DataSourceMetadata": {
+            "Alias": "NotificationTypes",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin11",
+          "IconName": "Thin11",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "89e46084-455a-4f93-a2f2-9a7923949586",
+              "Items": [
+                {
+                  "CompositionId": "89e46084-455a-0093-a200-0a7923949586",
+                  "Items": [
+                    {
+                      "Alias": "NotificationTypes",
+                      "CompositionId": "e1600d99-ffd0-4fa4-90cb-d8fd86f8b70d",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "MyTasks",
+          "Caption": "$Workplaces_User_MyTasks",
+          "CompositionId": "1f0da137-b287-4354-9712-a13d39f28845",
+          "DataSourceMetadata": {
+            "Alias": "MyTasks",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin91",
+          "IconName": "Thin91",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "97530434-5852-4e36-b38b-37545daf72e7",
+              "Items": [
+                {
+                  "CompositionId": "97530434-5852-0036-b300-07545daf72e7",
+                  "Items": [
+                    {
+                      "Alias": "MyTasks",
+                      "CompositionId": "1f0da137-b287-4354-9712-a13d39f28845",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByStatus",
+              "Caption": "$Workplaces_User_MyTasks_ByState",
+              "CompositionId": "cc69054b-c9f4-409c-9217-a638b29e44f6",
+              "ExpandingMode": "Expanded",
+              "Items": [
+                {
+                  "Alias": "ByTaskType",
+                  "Caption": "$Workplaces_User_MyTasks_ByState_ByType",
+                  "CompositionId": "393e2eb1-95cc-41d6-85d4-e00ce04fd1f0",
+                  "Items": [
+                    {
+                      "Alias": "ByTaskDueDateInterval",
+                      "Caption": "$Workplaces_User_MyTasks_ByState_ByType_ByDueDate",
+                      "CompositionId": "1f7eba8d-1572-45da-a87b-d0d9682c0f66",
+                      "TypeName": "JsonWorkplaceViewSubsetMetadata",
+                      "Visibility": "OpenedAsDefault"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceViewSubsetMetadata",
+                  "Visibility": "OpenedAsDefault"
+                }
+              ],
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByTaskType",
+              "Caption": "$Workplaces_User_MyTasks_ByTaskType",
+              "CompositionId": "f43229ae-1f90-42a3-988c-cf6056b53670",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByTaskDueDateInterval",
+              "Caption": "$Workplaces_User_MyTasks_ByDueDate",
+              "CompositionId": "2b1e5d5a-9e27-4f4e-9226-cd6a6100d2bd",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByAuthorDepartment",
+              "Caption": "$Workplaces_User_MyTasks_ByAuthorDepartment",
+              "CompositionId": "b73a9c7c-e5dc-4739-94fb-4e8e4710d015",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByRole",
+              "Caption": "$Workplaces_User_MyTasks_ByRole",
+              "CompositionId": "50df789c-46ee-46e0-88a0-fb99dc0b3ad5",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByDeputy",
+              "Caption": "$Workplaces_User_MyTasks_ByDeputy",
+              "CompositionId": "3054862b-e851-4e5e-96ee-36625ecb56ca",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            }
+          ],
+          "MultiSelect": "Single",
+          "Parameters": [
+            {
+              "CriteriaValues": [
+                {
+                  "CriteriaName": "IsTrue"
+                }
+              ],
+              "Name": "NotComplete"
+            }
+          ],
+          "SelectionMode": "Row",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "EmittedTasks",
+          "Caption": "$Workplaces_User_EmittedTasks",
+          "CompositionId": "dc786adb-024e-48e0-9623-4a81f7256af9",
+          "DataSourceMetadata": {
+            "Alias": "EmittedTasks",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin128",
+          "IconName": "Thin128",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "d3c6f863-5746-4571-a915-63fa806d1284",
+              "Items": [
+                {
+                  "CompositionId": "d3c6f863-5746-0071-a900-03fa806d1284",
+                  "Items": [
+                    {
+                      "Alias": "EmittedTasks",
+                      "CompositionId": "dc786adb-024e-48e0-9623-4a81f7256af9",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByStatus",
+              "Caption": "$Workplaces_User_EmittedTasks_ByState",
+              "CompositionId": "134e99bf-716d-425d-aba7-16edf79de3b9",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByTaskType",
+              "Caption": "$Workplaces_User_EmittedTasks_ByTaskType",
+              "CompositionId": "74b60901-f574-4304-b347-b4c2247d29db",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByCardType",
+              "Caption": "$Workplaces_User_EmittedTasks_ByCardType",
+              "CompositionId": "3bf99c62-61c8-43ff-b067-147d6c85b0ea",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByTaskDueDateInterval",
+              "Caption": "$Workplaces_User_EmittedTasks_ByDueDate",
+              "CompositionId": "f706cfc4-efd1-45e2-81d6-da514424d539",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            }
+          ],
+          "MultiSelect": "Single",
+          "SelectionMode": "Row",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "MyDocuments",
+          "Caption": "$Workplaces_User_MyDocuments",
+          "CompositionId": "2aa3959c-334e-4fbb-8477-0fb662a88c32",
+          "DataSourceMetadata": {
+            "Alias": "MyDocuments",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin63",
+          "Extensions": [
+            {
+              "Order": 0,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.ViewsContextMenuExtension"
+            },
+            {
+              "Data": {
+                "CardCreationKind": "ByTypeFromSelection",
+                "CardOpeningKind": "ApplicationTab",
+                "DocTypeIdentifier": null,
+                "IDParam": null,
+                "TypeAlias": null
+              },
+              "Order": 1,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.CreateCardExtension"
+            }
+          ],
+          "IconName": "Thin63",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "8b5685e8-1623-4ea8-bba8-43941916663f",
+              "Items": [
+                {
+                  "CompositionId": "663aa03f-bd35-494e-b103-b0e0676a3511",
+                  "Items": [
+                    {
+                      "CompositionId": "663aa03f-bd35-004e-b100-00e0676a3511",
+                      "Items": [
+                        {
+                          "Alias": "MyDocuments",
+                          "CompositionId": "2aa3959c-334e-4fbb-8477-0fb662a88c32",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                },
+                {
+                  "CompositionId": "48aa4310-cf45-4752-a5ed-481bf8119a9d",
+                  "Items": [
+                    {
+                      "CompositionId": "48aa4310-cf45-0052-a500-081bf8119a9d",
+                      "Items": [
+                        {
+                          "Alias": "LinkedDocuments",
+                          "CompositionId": "7c286b5f-2671-4944-bbb0-727b4e1f4f2b",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SplitState": "HorizontalSplit",
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByType",
+              "Caption": "$Views_Registers_ByType_Subset",
+              "CompositionId": "de43585a-d75b-44c1-8f0d-3de200f760fb",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "ByState",
+              "Caption": "$Views_Registers_ByState_Subset",
+              "CompositionId": "44400d7b-92a2-4755-ab07-01c337031c3a",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "OpenedAsDefault"
+            },
+            {
+              "Alias": "LinkedDocuments",
+              "Caption": "$Views_DocumentAll_Caption",
+              "CompositionId": "7c286b5f-2671-4944-bbb0-727b4e1f4f2b",
+              "DataSourceMetadata": {
+                "Alias": "LinkedDocuments",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "Items": [
+                {
+                  "Alias": "LinkedDocID",
+                  "LinkedSource": {
+                    "Alias": "DocID",
+                    "TypeName": "JsonMasterSource"
+                  },
+                  "TypeName": "JsonWorkplaceViewParameterLink"
+                }
+              ],
+              "MultiSelect": "Multiple",
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "Parameters": [
+            {
+              "CriteriaValues": [
+                {
+                  "CriteriaName": "IsTrue"
+                }
+              ],
+              "Name": "IsAuthor"
+            },
+            {
+              "CriteriaValues": [
+                {
+                  "CriteriaName": "Equality",
+                  "Values": [
+                    {
+                      "Text": "Поручение",
+                      "Value::uid": "aa85fd72-fb7e-4e98-a097-bb1d3216f667"
+                    }
+                  ]
+                }
+              ],
+              "Name": "Type2"
+            }
+          ],
+          "SelectionMode": "Row",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "AllDocuments",
+          "Caption": "Поиск по документам",
+          "CompositionId": "b1a56677-a5af-49d4-b35f-b671fe238b80",
+          "DataSourceMetadata": {
+            "Alias": "AllDocuments",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "ExpandedIconName": "Thin18",
+          "ExpandingMode": "Expanded",
+          "Extensions": [
+            {
+              "Order": 0,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.ViewsContextMenuExtension"
+            },
+            {
+              "Data": {
+                "CardCreationKind": "ByTypeFromSelection",
+                "CardOpeningKind": "ApplicationTab",
+                "DocTypeIdentifier": null,
+                "IDParam": null,
+                "TypeAlias": null
+              },
+              "Order": 1,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.CreateCardExtension"
+            }
+          ],
+          "IconName": "Thin18",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "97d03093-0f05-4eb9-904d-a07b29691d62",
+              "Items": [
+                {
+                  "CompositionId": "e6939712-ac7e-4b67-b2d7-c7eb3f3adee5",
+                  "Items": [
+                    {
+                      "CompositionId": "e6939712-ac7e-0067-b200-07eb3f3adee5",
+                      "Items": [
+                        {
+                          "Alias": "AllDocuments",
+                          "CompositionId": "b1a56677-a5af-49d4-b35f-b671fe238b80",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                },
+                {
+                  "CompositionId": "8910bf92-dbdf-43b7-9bd0-eb2b0b565b78",
+                  "Items": [
+                    {
+                      "CompositionId": "8910bf92-dbdf-00b7-9b00-0b2b0b565b78",
+                      "Items": [
+                        {
+                          "Alias": "LinkedDocuments",
+                          "CompositionId": "9337d0c9-f324-4470-855b-a30ed951e678",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SplitState": "HorizontalSplit",
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "LinkedDocuments",
+              "Caption": "$Views_DocumentAll_Caption",
+              "CompositionId": "9337d0c9-f324-4470-855b-a30ed951e678",
+              "DataSourceMetadata": {
+                "Alias": "LinkedDocuments",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "Items": [
+                {
+                  "Alias": "LinkedDocID",
+                  "LinkedSource": {
+                    "Alias": "DocID",
+                    "TypeName": "JsonMasterSource"
+                  },
+                  "TypeName": "JsonWorkplaceViewParameterLink"
+                }
+              ],
+              "MultiSelect": "Multiple",
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            }
+          ],
+          "Parameters": [
+            {
+              "CriteriaValues": [
+                {
+                  "CriteriaName": "Equality",
+                  "Values": [
+                    {
+                      "Text": "Поручение",
+                      "Value::uid": "aa85fd72-fb7e-4e98-a097-bb1d3216f667"
+                    }
+                  ]
+                }
+              ],
+              "Name": "Type2"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "AllDocuments_noMEDO",
+          "Caption": "Поиск по документам",
+          "CompositionId": "80749b76-aee3-41d1-94e2-b6e5de51eb2d",
+          "DataSourceMetadata": {
+            "Alias": "AllDocuments_noMEDO",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "ExpandedIconName": "Thin18",
+          "ExpandingMode": "Expanded",
+          "Extensions": [
+            {
+              "Order": 0,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.ViewsContextMenuExtension"
+            },
+            {
+              "Data": {
+                "CardCreationKind": "ByTypeFromSelection",
+                "CardOpeningKind": "ApplicationTab",
+                "DocTypeIdentifier": null,
+                "IDParam": null,
+                "TypeAlias": null
+              },
+              "Order": 1,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.CreateCardExtension"
+            }
+          ],
+          "IconName": "Thin18",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "3ddfbb31-d551-4fba-96fe-702d9d38f96d",
+              "Items": [
+                {
+                  "CompositionId": "72a446f3-c1c2-401d-a0cd-5f6f4ad5063b",
+                  "Items": [
+                    {
+                      "CompositionId": "72a446f3-c1c2-001d-a000-0f6f4ad5063b",
+                      "Items": [
+                        {
+                          "Alias": "AllDocuments_noMEDO",
+                          "CompositionId": "80749b76-aee3-41d1-94e2-b6e5de51eb2d",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                },
+                {
+                  "CompositionId": "493a922f-ebb0-4918-b3ec-249a14970d13",
+                  "Items": [
+                    {
+                      "CompositionId": "493a922f-ebb0-0018-b300-049a14970d13",
+                      "Items": [
+                        {
+                          "Alias": "LinkedDocuments",
+                          "CompositionId": "a9aa5c51-1236-4a6b-b0df-9ec908cb2b62",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SplitState": "HorizontalSplit",
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "LinkedDocuments",
+              "Caption": "$Views_DocumentAll_Caption",
+              "CompositionId": "a9aa5c51-1236-4a6b-b0df-9ec908cb2b62",
+              "DataSourceMetadata": {
+                "Alias": "LinkedDocuments",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "Items": [
+                {
+                  "Alias": "LinkedDocID",
+                  "LinkedSource": {
+                    "Alias": "DocID",
+                    "TypeName": "JsonMasterSource"
+                  },
+                  "TypeName": "JsonWorkplaceViewParameterLink"
+                }
+              ],
+              "MultiSelect": "Multiple",
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            }
+          ],
+          "Parameters": [
+            {
+              "CriteriaValues": [
+                {
+                  "CriteriaName": "Equality",
+                  "Values": [
+                    {
+                      "Text": "Поручение",
+                      "Value::uid": "aa85fd72-fb7e-4e98-a097-bb1d3216f667"
+                    }
+                  ]
+                }
+              ],
+              "Name": "Type2"
+            }
+          ],
+          "SelectionMode": "Row",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "ControlTasks_RB_Expand_Search",
+          "Caption": "Поиск по поручениям",
+          "CompositionId": "2001448c-7903-435e-a0d6-536f6c40ff4a",
+          "DataSourceMetadata": {
+            "Alias": "ControlTasks_RB_Expand_Search",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin18",
+          "IconName": "Thin18",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "53d3713f-c498-4982-8405-0ba720f13a36",
+              "Items": [
+                {
+                  "CompositionId": "53d3713f-c498-0082-8400-0ba720f13a36",
+                  "Items": [
+                    {
+                      "Alias": "ControlTasks_RB_Expand_Search",
+                      "CompositionId": "2001448c-7903-435e-a0d6-536f6c40ff4a",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "SelectionMode": "Row",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "MyAcquaintanceHistory",
+          "Caption": "$Workplaces_User_MyAcquaintanceHistory",
+          "CompositionId": "c4f6091d-bb97-40d0-b0ff-8be72286a0d8",
+          "DataSourceMetadata": {
+            "Alias": "MyAcquaintanceHistory",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin83",
+          "ExpandingMode": "Expanded",
+          "IconName": "Thin83",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "dc7a336f-33f8-4561-869a-9b449566d90d",
+              "Items": [
+                {
+                  "CompositionId": "dc7a336f-33f8-0061-8600-0b449566d90d",
+                  "Items": [
+                    {
+                      "Alias": "MyAcquaintanceHistory",
+                      "CompositionId": "c4f6091d-bb97-40d0-b0ff-8be72286a0d8",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Single",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "AcquaintanceStates",
+          "Caption": "$Workplaces_User_Dictionaries_AcquaintanceStates",
+          "CompositionId": "4e7d8797-5b85-4f97-8d95-a15cdb1fe8b1",
+          "DataSourceMetadata": {
+            "Alias": "AcquaintanceStates",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin83",
+          "IconName": "Thin83",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "e607f0d7-04d4-4fe7-abd2-162a2ad159a1",
+              "Items": [
+                {
+                  "CompositionId": "e607f0d7-04d4-00e7-ab00-062a2ad159a1",
+                  "Items": [
+                    {
+                      "Alias": "AcquaintanceStates",
+                      "CompositionId": "4e7d8797-5b85-4f97-8d95-a15cdb1fe8b1",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Single",
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "RB_IncomingDocuments",
+          "Caption": "Документы из АПиП",
+          "CompositionId": "ffc526e9-ef81-4a34-9a1c-ee59b5c84f29",
+          "DataSourceMetadata": {
+            "Alias": "RB_IncomingDocuments",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "ExpandedIconName": "Thin13",
+          "Extensions": [
+            {
+              "Data": {
+                "CardCreationKind": "ByDocTypeIdentifier",
+                "CardOpeningKind": "ApplicationTab",
+                "DocTypeIdentifier": "93806539-4931-47ad-9d68-7387156c417f",
+                "IDParam": null,
+                "TypeAlias": null
+              },
+              "Order": 0,
+              "TypeName": "Tessa.Extensions.Default.Client.Views.CreateCardExtension"
+            }
+          ],
+          "IconName": "Thin13",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "b5365697-42e0-4ac2-be86-18b9ee3e9ce6",
+              "Items": [
+                {
+                  "CompositionId": "dd7793e7-f4df-4ed1-a146-da584149ff46",
+                  "Items": [
+                    {
+                      "CompositionId": "dd7793e7-f4df-00d1-a100-0a584149ff46",
+                      "Items": [
+                        {
+                          "Alias": "RB_IncomingDocuments",
+                          "CompositionId": "ffc526e9-ef81-4a34-9a1c-ee59b5c84f29",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                },
+                {
+                  "CompositionId": "0e077fda-b937-45f1-8ff9-17e7c00e0dfb",
+                  "Items": [
+                    {
+                      "CompositionId": "0e077fda-b937-00f1-8f00-07e7c00e0dfb",
+                      "Items": [
+                        {
+                          "Alias": "LinkedDocuments",
+                          "CompositionId": "68f0bb34-4193-47f9-a22e-ed4e386ce231",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SecondChildSize": "306",
+              "SplitPosition": "356",
+              "SplitState": "HorizontalSplit",
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByState",
+              "Caption": "$Views_Registers_ByState_Subset",
+              "CompositionId": "75e58098-c430-4633-aa60-5f825241353b",
+              "ExpandingMode": "Expanded",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "UserDefined"
+            },
+            {
+              "Alias": "ByDocType",
+              "Caption": "$Views_Registers_ByDocType_Subset",
+              "CompositionId": "7b606ee2-506b-4dc3-8c08-b2280fb6bcc3",
+              "ExpandingMode": "Expanded",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "UserDefined"
+            },
+            {
+              "Alias": "LinkedDocuments",
+              "Caption": "$Views_DocumentAll_Caption",
+              "CompositionId": "68f0bb34-4193-47f9-a22e-ed4e386ce231",
+              "DataSourceMetadata": {
+                "Alias": "LinkedDocuments",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "Items": [
+                {
+                  "Alias": "LinkedDocID",
+                  "LinkedSource": {
+                    "Alias": "DocID",
+                    "TypeName": "JsonMasterSource"
+                  },
+                  "TypeName": "JsonWorkplaceViewParameterLink"
+                }
+              ],
+              "MultiSelect": "Multiple",
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            }
+          ],
+          "Parameters": [
+            {
+              "CriteriaValues": [
+                {
+                  "CriteriaName": "Equality",
+                  "Values": [
+                    {
+                      "Text": "Входящий",
+                      "Value::uid": "9f9e8879-9b7f-4a55-8d22-82c6bdca66a8"
+                    }
+                  ]
+                }
+              ],
+              "Name": "DocType"
+            },
+            {
+              "CriteriaValues": [
+                {
+                  "CriteriaName": "Equality",
+                  "Values": [
+                    {
+                      "Text": "System",
+                      "Value::uid": "11111111-1111-1111-1111-111111111111"
+                    }
+                  ]
+                }
+              ],
+              "Name": "Registrator"
+            }
+          ],
+          "SelectionMode": "Row",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "$Workplaces_User_Reports_CompletedTasks",
+          "CompositionId": "520aec25-aa09-4d6e-af07-6000fec61bb1",
+          "Items": [
+            {
+              "Alias": "MyCompletedTasks",
+              "Caption": "$Views_MyCompletedTasks_ByMe",
+              "CompositionId": "389db521-7a6f-4a29-9237-e10b5c4dbfb2",
+              "DataSourceMetadata": {
+                "Alias": "MyCompletedTasks",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "ExpandedIconName": "Thin91",
+              "IconName": "Thin91",
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "d38bd574-6d20-4c4a-b399-6b79faa56bb7",
+                  "Items": [
+                    {
+                      "CompositionId": "d38bd574-6d20-004a-b300-0b79faa56bb7",
+                      "Items": [
+                        {
+                          "Alias": "MyCompletedTasks",
+                          "CompositionId": "389db521-7a6f-4a29-9237-e10b5c4dbfb2",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "MultiSelect": "Single",
+              "Parameters": [
+                {
+                  "CriteriaValues": [
+                    {
+                      "CriteriaName": "Equality",
+                      "Values": [
+                        {
+                          "Text": "0",
+                          "Value::int": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "Name": "FromMeMode"
+                }
+              ],
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            },
+            {
+              "Alias": "MyCompletedTasks",
+              "Caption": "$Views_MyCompletedTasks_FromMe",
+              "CompositionId": "9dc998c1-00c7-43b3-ac4f-79762f3772fb",
+              "DataSourceMetadata": {
+                "Alias": "MyCompletedTasks",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "ExpandedIconName": "Thin128",
+              "IconName": "Thin128",
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "fdf281a5-b5ec-407f-9cdf-9c8b1e762034",
+                  "Items": [
+                    {
+                      "CompositionId": "fdf281a5-b5ec-007f-9c00-0c8b1e762034",
+                      "Items": [
+                        {
+                          "Alias": "MyCompletedTasks",
+                          "CompositionId": "9dc998c1-00c7-43b3-ac4f-79762f3772fb",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "MultiSelect": "Single",
+              "Parameters": [
+                {
+                  "CriteriaValues": [
+                    {
+                      "CriteriaName": "Equality",
+                      "Values": [
+                        {
+                          "Text": "1",
+                          "Value::int": 1
+                        }
+                      ]
+                    }
+                  ],
+                  "Name": "FromMeMode"
+                }
+              ],
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            }
+          ],
+          "TypeName": "JsonFolderNodeMetadata"
+        },
+        {
+          "Alias": "$Workplaces_User_Dictionaries",
+          "CompositionId": "a55a53e2-c1b7-4936-8caf-fc713bf2fd5e",
+          "Items": [
+            {
+              "Alias": "Nomenclature",
+              "Caption": "Номенклатура дел",
+              "CompositionId": "d77d7317-ab70-4b29-88ae-a4df1da656d7",
+              "DataSourceMetadata": {
+                "Alias": "Nomenclature",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "a707aaa0-993d-4909-989d-b991d7ad36b7",
+                  "Items": [
+                    {
+                      "CompositionId": "a707aaa0-993d-0009-9800-0991d7ad36b7",
+                      "Items": [
+                        {
+                          "Alias": "Nomenclature",
+                          "CompositionId": "d77d7317-ab70-4b29-88ae-a4df1da656d7",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SelectionMode": "Row",
+              "ShowMode": "NormalMode",
+              "TypeName": "JsonDataNodeMetadata"
+            },
+            {
+              "Alias": "DeliveryType",
+              "Caption": "Тип доставки",
+              "CompositionId": "7dae9d38-09ce-4a3a-ad91-af58098bafd3",
+              "DataSourceMetadata": {
+                "Alias": "DeliveryType",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "77586815-2bda-4368-b036-803b243b5660",
+                  "Items": [
+                    {
+                      "CompositionId": "77586815-2bda-0068-b000-003b243b5660",
+                      "Items": [
+                        {
+                          "Alias": "DeliveryType",
+                          "CompositionId": "7dae9d38-09ce-4a3a-ad91-af58098bafd3",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SelectionMode": "Row",
+              "ShowMode": "NormalMode",
+              "TypeName": "JsonDataNodeMetadata"
+            },
+            {
+              "Alias": "Partners",
+              "Caption": "$Workplaces_User_Dictionaries_Partners",
+              "CompositionId": "d88ba054-5d28-41f7-bf53-462ebb0803c8",
+              "DataSourceMetadata": {
+                "Alias": "Partners",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "ExpandedIconName": "Thin214",
+              "Extensions": [
+                {
+                  "Data": {
+                    "CardCreationKind": "ByTypeAlias",
+                    "CardOpeningKind": "ApplicationTab",
+                    "DocTypeIdentifier": null,
+                    "IDParam": null,
+                    "TypeAlias": "Partner"
+                  },
+                  "Order": 0,
+                  "TypeName": "Tessa.Extensions.Default.Client.Views.CreateCardExtension"
+                }
+              ],
+              "IconName": "Thin214",
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "fb3a0c60-7817-40c2-95c9-b21770f18bf3",
+                  "Items": [
+                    {
+                      "CompositionId": "b08a52ba-839e-4f10-b4e6-31f896faab34",
+                      "Items": [
+                        {
+                          "CompositionId": "b08a52ba-839e-0010-b400-01f896faab34",
+                          "Items": [
+                            {
+                              "Alias": "Partners",
+                              "CompositionId": "d88ba054-5d28-41f7-bf53-462ebb0803c8",
+                              "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                            }
+                          ],
+                          "TypeName": "JsonWorkplaceContentMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceLayoutMetadata"
+                    },
+                    {
+                      "CompositionId": "6a26c143-ca6f-4dcd-b125-954287ce23c9",
+                      "Items": [
+                        {
+                          "CompositionId": "6a26c143-ca6f-00cd-b100-054287ce23c9",
+                          "Items": [
+                            {
+                              "CompositionId": "11b5c058-8c9a-4d94-9522-3639c7787a22",
+                              "Items": [
+                                {
+                                  "CompositionId": "11b5c058-8c9a-0094-9500-0639c7787a22",
+                                  "Items": [
+                                    {
+                                      "Alias": "RB_IncomingDocuments",
+                                      "CompositionId": "c9335897-7e12-480d-83f0-31643ebc7188",
+                                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                                    }
+                                  ],
+                                  "TypeName": "JsonWorkplaceContentMetadata"
+                                }
+                              ],
+                              "TabCaption": "$Workplaces_User_Registrator_Incomings",
+                              "TypeName": "JsonWorkplaceLayoutMetadata"
+                            },
+                            {
+                              "CompositionId": "0ba2971a-3256-431a-9cb6-ad5abd612f09",
+                              "Items": [
+                                {
+                                  "CompositionId": "0ba2971a-3256-001a-9c00-0d5abd612f09",
+                                  "Items": [
+                                    {
+                                      "Alias": "RB_OutgoingDocuments",
+                                      "CompositionId": "fd103c4b-e15a-4562-a962-ae8c1f9c550e",
+                                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                                    }
+                                  ],
+                                  "TypeName": "JsonWorkplaceContentMetadata"
+                                }
+                              ],
+                              "TabCaption": "$Workplaces_User_Registrator_Outgoings",
+                              "TypeName": "JsonWorkplaceLayoutMetadata"
+                            },
+                            {
+                              "CompositionId": "610fb94f-95fa-47d9-ad29-147560bf5f33",
+                              "Items": [
+                                {
+                                  "CompositionId": "610fb94f-95fa-00d9-ad00-047560bf5f33",
+                                  "Items": [
+                                    {
+                                      "Alias": "RB_ORDDocuments",
+                                      "CompositionId": "c75ab137-89f2-4c6c-adb8-91e638fbd1fc",
+                                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                                    }
+                                  ],
+                                  "TypeName": "JsonWorkplaceContentMetadata"
+                                }
+                              ],
+                              "TabCaption": "Постановления и распоряжения",
+                              "TypeName": "JsonWorkplaceLayoutMetadata"
+                            }
+                          ],
+                          "TypeName": "JsonWorkplaceContentMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceLayoutMetadata"
+                    }
+                  ],
+                  "SplitState": "HorizontalSplit",
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                },
+                {
+                  "Alias": "RB_IncomingDocuments",
+                  "Caption": "Входящие",
+                  "CompositionId": "c9335897-7e12-480d-83f0-31643ebc7188",
+                  "DataSourceMetadata": {
+                    "Alias": "RB_IncomingDocuments",
+                    "SourceType": "ViewSource",
+                    "TypeName": "JsonDataSourceMetadata"
+                  },
+                  "Items": [
+                    {
+                      "Alias": "Partner",
+                      "LinkedSource": {
+                        "Alias": "PartnerID",
+                        "TypeName": "JsonMasterSource"
+                      },
+                      "TypeName": "JsonWorkplaceViewParameterLink"
+                    }
+                  ],
+                  "SelectionMode": "Row",
+                  "TypeName": "JsonDataNodeMetadata"
+                },
+                {
+                  "Alias": "RB_OutgoingDocuments",
+                  "Caption": "Исходящие",
+                  "CompositionId": "fd103c4b-e15a-4562-a962-ae8c1f9c550e",
+                  "DataSourceMetadata": {
+                    "Alias": "RB_OutgoingDocuments",
+                    "SourceType": "ViewSource",
+                    "TypeName": "JsonDataSourceMetadata"
+                  },
+                  "Items": [
+                    {
+                      "Alias": "Partner",
+                      "LinkedSource": {
+                        "Alias": "PartnerID",
+                        "TypeName": "JsonMasterSource"
+                      },
+                      "TypeName": "JsonWorkplaceViewParameterLink"
+                    }
+                  ],
+                  "SelectionMode": "Row",
+                  "TypeName": "JsonDataNodeMetadata"
+                },
+                {
+                  "Alias": "RB_ORDDocuments",
+                  "Caption": "Постановления и распоряжения",
+                  "CompositionId": "c75ab137-89f2-4c6c-adb8-91e638fbd1fc",
+                  "DataSourceMetadata": {
+                    "Alias": "RB_ORDDocuments",
+                    "SourceType": "ViewSource",
+                    "TypeName": "JsonDataSourceMetadata"
+                  },
+                  "Items": [
+                    {
+                      "Alias": "Partner",
+                      "LinkedSource": {
+                        "Alias": "PartnerID",
+                        "TypeName": "JsonMasterSource"
+                      },
+                      "TypeName": "JsonWorkplaceViewParameterLink"
+                    }
+                  ],
+                  "SelectionMode": "Row",
+                  "TypeName": "JsonDataNodeMetadata"
+                }
+              ],
+              "MultiSelect": "Multiple",
+              "SelectionMode": "Row",
+              "ShowMode": "NormalMode",
+              "TypeName": "JsonDataNodeMetadata"
+            },
+            {
+              "Alias": "MyPersonalLists",
+              "Caption": "Мои личные списки ",
+              "CompositionId": "ded3ef9e-1c86-47b3-b8e9-a58aeec37195",
+              "DataSourceMetadata": {
+                "Alias": "MyPersonalLists",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "bcb5d2cd-220a-4206-abfd-1f4254edb935",
+                  "Items": [
+                    {
+                      "CompositionId": "69db469f-8b86-487f-8287-9789b4fac441",
+                      "Items": [
+                        {
+                          "CompositionId": "69db469f-8b86-007f-8200-0789b4fac441",
+                          "Items": [
+                            {
+                              "Alias": "MyPersonalLists",
+                              "CompositionId": "ded3ef9e-1c86-47b3-b8e9-a58aeec37195",
+                              "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                            }
+                          ],
+                          "TypeName": "JsonWorkplaceContentMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceLayoutMetadata"
+                    },
+                    {
+                      "CompositionId": "18f12a27-6271-4503-a3f1-ef2fc1274f46",
+                      "Items": [
+                        {
+                          "CompositionId": "18f12a27-6271-0003-a300-0f2fc1274f46",
+                          "Items": [
+                            {
+                              "Alias": "UsersExpand",
+                              "CompositionId": "82c9af6e-20ab-4c07-97fc-8e5376031b24",
+                              "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                            }
+                          ],
+                          "TypeName": "JsonWorkplaceContentMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceLayoutMetadata"
+                    }
+                  ],
+                  "SplitState": "VerticalSplit",
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                },
+                {
+                  "Alias": "UsersExpand",
+                  "Caption": "Сотрудники",
+                  "CompositionId": "82c9af6e-20ab-4c07-97fc-8e5376031b24",
+                  "DataSourceMetadata": {
+                    "Alias": "UsersExpand",
+                    "SourceType": "ViewSource",
+                    "TypeName": "JsonDataSourceMetadata"
+                  },
+                  "EnableAutoWidth": true,
+                  "Items": [
+                    {
+                      "Alias": "DepartmentRoleID",
+                      "LinkedSource": {
+                        "Alias": "LinkedStaticRoleID",
+                        "TypeName": "JsonMasterSource"
+                      },
+                      "TypeName": "JsonWorkplaceViewParameterLink"
+                    }
+                  ],
+                  "SelectionMode": "Row",
+                  "TypeName": "JsonDataNodeMetadata"
+                }
+              ],
+              "SelectionMode": "Row",
+              "ShowMode": "NormalMode",
+              "TypeName": "JsonDataNodeMetadata"
+            },
+            {
+              "Alias": "MySampleTexts",
+              "Caption": "Мои типовые тексты",
+              "CompositionId": "6af0737a-bfd3-4828-a1db-0e38f8012be1",
+              "DataSourceMetadata": {
+                "Alias": "MySampleTexts",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "7eba63f9-f3e5-4e4d-a102-7ab8c42d2ee2",
+                  "Items": [
+                    {
+                      "CompositionId": "7eba63f9-f3e5-004d-a100-0ab8c42d2ee2",
+                      "Items": [
+                        {
+                          "Alias": "MySampleTexts",
+                          "CompositionId": "6af0737a-bfd3-4828-a1db-0e38f8012be1",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            },
+            {
+              "Alias": "DocTypeMEDO",
+              "Caption": "Вид документа МЭДО",
+              "CompositionId": "4b556f08-1ddd-4397-9a32-13075d6714d3",
+              "DataSourceMetadata": {
+                "Alias": "DocTypeMEDO",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "acd65c96-087e-4432-a937-a11c4d29f812",
+                  "Items": [
+                    {
+                      "CompositionId": "acd65c96-087e-0032-a900-011c4d29f812",
+                      "Items": [
+                        {
+                          "Alias": "DocTypeMEDO",
+                          "CompositionId": "4b556f08-1ddd-4397-9a32-13075d6714d3",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "SelectionMode": "Row",
+              "ShowMode": "NormalMode",
+              "TypeName": "JsonDataNodeMetadata"
+            }
+          ],
+          "TypeName": "JsonFolderNodeMetadata"
+        },
+        {
+          "Alias": "$Workplaces_User_Dictionaries",
+          "CompositionId": "db74dc24-9745-4333-ba2a-54bcc5070eae",
+          "ShowMode": "SelectionMode",
+          "TypeName": "JsonFolderNodeMetadata"
+        },
+        {
+          "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+          "Caption": "Мой контроль",
+          "CompositionId": "1a44d22a-3c23-4a86-890b-5c3f39caa14f",
+          "DataSourceMetadata": {
+            "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin205",
+          "IconName": "Thin205",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "b3d61e7c-0a51-4470-86e0-8ff7c5c2346e",
+              "Items": [
+                {
+                  "CompositionId": "b3d61e7c-0a51-0070-8600-0ff7c5c2346e",
+                  "Items": [
+                    {
+                      "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                      "CompositionId": "1a44d22a-3c23-4a86-890b-5c3f39caa14f",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+              "Caption": "На контроле",
+              "CompositionId": "1ac6be61-08ca-43a1-bb2f-920651f646ed",
+              "DataSourceMetadata": {
+                "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "4fb3f9df-9527-4f83-bcd2-ab8a3f5ff1ea",
+                  "Items": [
+                    {
+                      "CompositionId": "4fb3f9df-9527-0083-bc00-0b8a3f5ff1ea",
+                      "Items": [
+                        {
+                          "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                          "CompositionId": "1ac6be61-08ca-43a1-bb2f-920651f646ed",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                },
+                {
+                  "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                  "Caption": "На исполнении ",
+                  "CompositionId": "2e313da4-10a2-4793-b456-5409fcf4d9b2",
+                  "DataSourceMetadata": {
+                    "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                    "SourceType": "ViewSource",
+                    "TypeName": "JsonDataSourceMetadata"
+                  },
+                  "EnableAutoWidth": true,
+                  "IsNode": true,
+                  "Items": [
+                    {
+                      "CompositionId": "6910d1d3-53c9-4e18-bf35-6dca3010b815",
+                      "Items": [
+                        {
+                          "CompositionId": "6910d1d3-53c9-0018-bf00-0dca3010b815",
+                          "Items": [
+                            {
+                              "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                              "CompositionId": "2e313da4-10a2-4793-b456-5409fcf4d9b2",
+                              "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                            }
+                          ],
+                          "TypeName": "JsonWorkplaceContentMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceLayoutMetadata"
+                    },
+                    {
+                      "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                      "Caption": "Срок исполнения до 5 дней",
+                      "CompositionId": "d0302701-65d8-485e-949d-e0feb39604a6",
+                      "DataSourceMetadata": {
+                        "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                        "SourceType": "ViewSource",
+                        "TypeName": "JsonDataSourceMetadata"
+                      },
+                      "EnableAutoWidth": true,
+                      "IsNode": true,
+                      "Items": [
+                        {
+                          "CompositionId": "6abb364d-346d-43c7-800a-b4dc91c221d3",
+                          "Items": [
+                            {
+                              "CompositionId": "6abb364d-346d-00c7-8000-04dc91c221d3",
+                              "Items": [
+                                {
+                                  "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                                  "CompositionId": "d0302701-65d8-485e-949d-e0feb39604a6",
+                                  "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                                }
+                              ],
+                              "TypeName": "JsonWorkplaceContentMetadata"
+                            }
+                          ],
+                          "TypeName": "JsonWorkplaceLayoutMetadata"
+                        }
+                      ],
+                      "Parameters": [
+                        {
+                          "CriteriaValues": [
+                            {
+                              "CriteriaName": "IsTrue"
+                            }
+                          ],
+                          "Name": "IsNotOK"
+                        },
+                        {
+                          "CriteriaValues": [
+                            {
+                              "CriteriaName": "Equality",
+                              "Values": [
+                                {
+                                  "Text": "На контроле",
+                                  "Value::int": 0
+                                }
+                              ]
+                            }
+                          ],
+                          "Name": "ControlState"
+                        },
+                        {
+                          "CriteriaValues": [
+                            {
+                              "CriteriaName": "IsTrue"
+                            }
+                          ],
+                          "Name": "DeadlineFiveDays"
+                        },
+                        {
+                          "CriteriaValues": [
+                            {
+                              "CriteriaName": "IsTrue"
+                            }
+                          ],
+                          "Name": "IsRegistrator"
+                        }
+                      ],
+                      "SelectionMode": "Row",
+                      "TypeName": "JsonDataNodeMetadata"
+                    },
+                    {
+                      "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                      "Caption": "Просрочено",
+                      "CompositionId": "890ecad7-1ffa-48e6-906e-f91b7f63ab78",
+                      "DataSourceMetadata": {
+                        "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                        "SourceType": "ViewSource",
+                        "TypeName": "JsonDataSourceMetadata"
+                      },
+                      "EnableAutoWidth": true,
+                      "IsNode": true,
+                      "Items": [
+                        {
+                          "CompositionId": "af884f47-0297-48ee-939d-68e4c5096de2",
+                          "Items": [
+                            {
+                              "CompositionId": "af884f47-0297-00ee-9300-08e4c5096de2",
+                              "Items": [
+                                {
+                                  "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                                  "CompositionId": "890ecad7-1ffa-48e6-906e-f91b7f63ab78",
+                                  "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                                }
+                              ],
+                              "TypeName": "JsonWorkplaceContentMetadata"
+                            }
+                          ],
+                          "TypeName": "JsonWorkplaceLayoutMetadata"
+                        }
+                      ],
+                      "Parameters": [
+                        {
+                          "CriteriaValues": [
+                            {
+                              "CriteriaName": "IsTrue"
+                            }
+                          ],
+                          "Name": "IsNotOK"
+                        },
+                        {
+                          "CriteriaValues": [
+                            {
+                              "CriteriaName": "Equality",
+                              "Values": [
+                                {
+                                  "Text": "На контроле",
+                                  "Value::int": 0
+                                }
+                              ]
+                            }
+                          ],
+                          "Name": "ControlState"
+                        },
+                        {
+                          "CriteriaValues": [
+                            {
+                              "CriteriaName": "IsTrue"
+                            }
+                          ],
+                          "Name": "DeadlinePast"
+                        },
+                        {
+                          "CriteriaValues": [
+                            {
+                              "CriteriaName": "IsTrue"
+                            }
+                          ],
+                          "Name": "IsRegistrator"
+                        }
+                      ],
+                      "SelectionMode": "Row",
+                      "TypeName": "JsonDataNodeMetadata"
+                    }
+                  ],
+                  "Parameters": [
+                    {
+                      "CriteriaValues": [
+                        {
+                          "CriteriaName": "IsTrue"
+                        }
+                      ],
+                      "Name": "IsNotOK"
+                    },
+                    {
+                      "CriteriaValues": [
+                        {
+                          "CriteriaName": "Equality",
+                          "Values": [
+                            {
+                              "Text": "На контроле",
+                              "Value::int": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "Name": "ControlState"
+                    },
+                    {
+                      "CriteriaValues": [
+                        {
+                          "CriteriaName": "IsTrue"
+                        }
+                      ],
+                      "Name": "IsRegistrator"
+                    }
+                  ],
+                  "SelectionMode": "Row",
+                  "TypeName": "JsonDataNodeMetadata"
+                },
+                {
+                  "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                  "Caption": "Исполнено",
+                  "CompositionId": "9a86b52a-1169-4043-96d4-f56271264312",
+                  "DataSourceMetadata": {
+                    "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                    "SourceType": "ViewSource",
+                    "TypeName": "JsonDataSourceMetadata"
+                  },
+                  "EnableAutoWidth": true,
+                  "IsNode": true,
+                  "Items": [
+                    {
+                      "CompositionId": "c03cb04f-c51a-4dff-ac6e-88dd31ceba5a",
+                      "Items": [
+                        {
+                          "CompositionId": "c03cb04f-c51a-00ff-ac00-08dd31ceba5a",
+                          "Items": [
+                            {
+                              "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                              "CompositionId": "9a86b52a-1169-4043-96d4-f56271264312",
+                              "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                            }
+                          ],
+                          "TypeName": "JsonWorkplaceContentMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceLayoutMetadata"
+                    }
+                  ],
+                  "Parameters": [
+                    {
+                      "CriteriaValues": [
+                        {
+                          "CriteriaName": "IsTrue"
+                        }
+                      ],
+                      "Name": "IsOK"
+                    },
+                    {
+                      "CriteriaValues": [
+                        {
+                          "CriteriaName": "Equality",
+                          "Values": [
+                            {
+                              "Text": "На контроле",
+                              "Value::int": 0
+                            }
+                          ]
+                        }
+                      ],
+                      "Name": "ControlState"
+                    },
+                    {
+                      "CriteriaValues": [
+                        {
+                          "CriteriaName": "IsTrue"
+                        }
+                      ],
+                      "Name": "IsRegistrator"
+                    }
+                  ],
+                  "SelectionMode": "Row",
+                  "TypeName": "JsonDataNodeMetadata"
+                }
+              ],
+              "Parameters": [
+                {
+                  "CriteriaValues": [
+                    {
+                      "CriteriaName": "Equality",
+                      "Values": [
+                        {
+                          "Text": "На контроле",
+                          "Value::int": 0
+                        }
+                      ]
+                    }
+                  ],
+                  "Name": "ControlState"
+                },
+                {
+                  "CriteriaValues": [
+                    {
+                      "CriteriaName": "IsTrue"
+                    }
+                  ],
+                  "Name": "IsRegistrator"
+                }
+              ],
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            },
+            {
+              "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+              "Caption": "Снято с контроля",
+              "CompositionId": "015432cf-2fb3-420c-9ace-7d32baab2966",
+              "DataSourceMetadata": {
+                "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                "SourceType": "ViewSource",
+                "TypeName": "JsonDataSourceMetadata"
+              },
+              "EnableAutoWidth": true,
+              "IsNode": true,
+              "Items": [
+                {
+                  "CompositionId": "0b3fd542-0119-47e7-8429-c66221305ef2",
+                  "Items": [
+                    {
+                      "CompositionId": "0b3fd542-0119-00e7-8400-066221305ef2",
+                      "Items": [
+                        {
+                          "Alias": "ControlTasks_RB_Expand_APIP_Registrator",
+                          "CompositionId": "015432cf-2fb3-420c-9ace-7d32baab2966",
+                          "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                        }
+                      ],
+                      "TypeName": "JsonWorkplaceContentMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceLayoutMetadata"
+                }
+              ],
+              "Parameters": [
+                {
+                  "CriteriaValues": [
+                    {
+                      "CriteriaName": "Equality",
+                      "Values": [
+                        {
+                          "Text": "Снято с контроля",
+                          "Value::int": 1
+                        }
+                      ]
+                    }
+                  ],
+                  "Name": "ControlState"
+                },
+                {
+                  "CriteriaValues": [
+                    {
+                      "CriteriaName": "IsTrue"
+                    }
+                  ],
+                  "Name": "IsRegistrator"
+                }
+              ],
+              "SelectionMode": "Row",
+              "TypeName": "JsonDataNodeMetadata"
+            }
+          ],
+          "Parameters": [
+            {
+              "CriteriaValues": [
+                {
+                  "CriteriaName": "IsTrue"
+                }
+              ],
+              "Name": "IsMe"
+            },
+            {
+              "CriteriaValues": [
+                {
+                  "CriteriaName": "IsTrue"
+                }
+              ],
+              "Name": "IsRegistrator"
+            }
+          ],
+          "SelectionMode": "Row",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "Templates",
+          "Caption": "$Workplaces_User_Templates",
+          "CompositionId": "46f29aab-8ef4-4ab4-9948-9ff321be793b",
+          "DataSourceMetadata": {
+            "Alias": "Templates",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin3",
+          "IconName": "Thin3",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "c8f4a9ba-c67e-47be-ac64-aefdbad75fa7",
+              "Items": [
+                {
+                  "CompositionId": "c8f4a9ba-c67e-00be-ac00-0efdbad75fa7",
+                  "Items": [
+                    {
+                      "Alias": "Templates",
+                      "CompositionId": "46f29aab-8ef4-4ab4-9948-9ff321be793b",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Multiple",
+          "SelectionMode": "Row",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "DeputiesManagement",
+          "Caption": "$Workplaces_User_DeputiesManagement",
+          "CompositionId": "0dfe6256-22d8-4e41-aae8-d27540aa5bc9",
+          "DataSourceMetadata": {
+            "Alias": "DeputiesManagement",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "EnableAutoWidth": true,
+          "ExpandedIconName": "Thin196",
+          "IconName": "Thin196",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "57557873-3b37-4b6b-ab25-bcd3851a32b9",
+              "Items": [
+                {
+                  "CompositionId": "57557873-3b37-006b-ab00-0cd3851a32b9",
+                  "Items": [
+                    {
+                      "Alias": "DeputiesManagement",
+                      "CompositionId": "0dfe6256-22d8-4e41-aae8-d27540aa5bc9",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            }
+          ],
+          "MultiSelect": "Single",
+          "SelectionMode": "Row",
+          "ShowMode": "NormalMode",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "RB_NPA",
+          "Caption": "Проекты НПА",
+          "CompositionId": "271885e0-2dd2-451c-8881-67ff45430a97",
+          "DataSourceMetadata": {
+            "Alias": "RB_NPA",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "ExpandedIconName": "Thin64",
+          "IconName": "Thin64",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "5b33a788-f082-4877-8ad0-2f22e957cafb",
+              "Items": [
+                {
+                  "CompositionId": "5b33a788-f082-0077-8a00-0f22e957cafb",
+                  "Items": [
+                    {
+                      "Alias": "RB_NPA",
+                      "CompositionId": "271885e0-2dd2-451c-8881-67ff45430a97",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByDocType",
+              "Caption": "$Views_Registers_ByDocType_Subset",
+              "CompositionId": "ea682cee-812a-49dd-aaae-c4683fb4064d",
+              "ExpandingMode": "Expanded",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "UserDefined"
+            }
+          ],
+          "SelectionMode": "Row",
+          "TypeName": "JsonDataNodeMetadata"
+        },
+        {
+          "Alias": "RB_NPA_RK",
+          "Caption": "НПА",
+          "CompositionId": "02700525-d086-4cca-aacf-d46574ef2654",
+          "DataSourceMetadata": {
+            "Alias": "RB_NPA_RK",
+            "SourceType": "ViewSource",
+            "TypeName": "JsonDataSourceMetadata"
+          },
+          "ExpandedIconName": "Thin325",
+          "IconName": "Thin325",
+          "IsNode": true,
+          "Items": [
+            {
+              "CompositionId": "3e86aa4b-2457-4ebb-93e7-f09eea2042a2",
+              "Items": [
+                {
+                  "CompositionId": "3e86aa4b-2457-00bb-9300-009eea2042a2",
+                  "Items": [
+                    {
+                      "Alias": "RB_NPA_RK",
+                      "CompositionId": "02700525-d086-4cca-aacf-d46574ef2654",
+                      "TypeName": "JsonWorkplaceLayoutViewMetadata"
+                    }
+                  ],
+                  "TypeName": "JsonWorkplaceContentMetadata"
+                }
+              ],
+              "TypeName": "JsonWorkplaceLayoutMetadata"
+            },
+            {
+              "Alias": "ByDocType",
+              "Caption": "$Views_Registers_ByDocType_Subset",
+              "CompositionId": "ba30c066-2616-46ef-86dc-18d1d219e7b6",
+              "ExpandingMode": "Expanded",
+              "TypeName": "JsonWorkplaceViewSubsetMetadata",
+              "Visibility": "UserDefined"
+            }
+          ],
+          "SelectionMode": "Row",
+          "TypeName": "JsonDataNodeMetadata"
+        }
+      ],
+      "LeftSideWidth::dbl": 285.0,
+      "TreeVisibility": true,
+      "Version": 1
+    },
+    "Order": 0
+  }
+}
