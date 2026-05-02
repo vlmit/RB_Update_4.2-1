@@ -1,7 +1,7 @@
 applocal*.json
 /Configuration.Base*
-/Source/.idea
-/Source/.vs
+.idea
+.vs
 Bin/extensions/*
 Bin/Tessa.Chronos/*
 Bin/Tessa.Extensions.Chronos/*
