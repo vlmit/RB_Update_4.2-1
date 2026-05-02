@@ -33,6 +33,7 @@ WebClient SDK/node_modules/*
 WebClient SDK/platform/dts/*
 WebClient SDK/platform/platform-api-manifests/*
 WebClient SDK/platform/platform-api-manifests-mobile/*
+WebClient SDK/wwwroot/extensions/*
 *.csproj.user
 *.DotSettings.user
 *.suo
