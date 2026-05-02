@@ -1,0 +1,94 @@
+.tree-mock {
+  .tree__node {
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tree-control-header-gap);
+
+    .children {
+      display: flex;
+      flex-direction: column;
+      gap: var(--tree-control-root-gap);
+      padding-left: calc(16px + var(--tree-control-node-padding-left));
+      padding-right: 1px;
+    }
+
+    .tree__node-header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: var(--tree-control-header-padding);
+      gap: var(--tree-control-header-gap);
+      border-radius: var(--tree-control-node-corners);
+
+      &:hover {
+        background-color: var(--tree-control-node-hover-background);
+      }
+
+      &.selected {
+        background-color: var(--tree-control-node-selected-background);
+        box-shadow: var(--tree-control-node-selected-shadow);
+      }
+
+      &.active {
+        background-color: var(--tree-control-node-active-background);
+        box-shadow: var(--tree-control-node-active-shadow);
+      }
+
+      &.item {
+        padding: 14px;
+      }
+    }
+
+    .tree__expand-toggle {
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: var(--tree-control-toggle-width);
+      height: var(--tree-control-toggle-height);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--tree-control-toggle-corners);
+      transition: background-color 0.2s ease;
+      visibility: hidden;
+
+      &:hover {
+        background-color: var(--tree-control-toggle-hover-background);
+        box-shadow: var(--tree-control-toggle-active-shadow);
+      }
+
+      &.visible {
+        visibility: visible;
+      }
+    }
+
+    .tree__expand-icon {
+      color: var(--tree-control-icon-color);
+      transition: transform 0.2s ease;
+
+      &.expanded {
+        transform: rotate(90deg);
+      }
+    }
+
+    .tree__caption {
+      user-select: none;
+      color: var(--tree-control-caption-color);
+      font-weight: var(--tree-control-caption-weight);
+      font-size: var(--tree-control-caption-size);
+    }
+  }
+}
+
+.list-filtration-layout-fix {
+  label {
+    margin: 0;
+  }
+
+  .checkbox-wrap {
+    display: flex;
+    align-items: center;
+  }
+}

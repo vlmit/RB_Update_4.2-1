@@ -1,0 +1,9 @@
+.crypto-pro-dialog {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-primary);
+  line-height: var(--line-height-base);
+  color: var(--font-color-primary);
+  text-align: center;
+  gap: var(--8);
+}

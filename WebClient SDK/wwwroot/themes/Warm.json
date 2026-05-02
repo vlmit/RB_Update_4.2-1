@@ -1,0 +1,149 @@
+{
+  "Name": "Warm",
+  "meta": {
+    "name": "Warm",
+    "caption": "$UI_Theme_Fragment_Warm",
+
+    "wallpapers": [
+      "Autumn.png",
+      "Egypt.png",
+      "Golden.png",
+      "Liquid.png",
+      "Pasture.png",
+      "PinkSunrise.png",
+      "Rye.png",
+      "Sakura.png",
+      "Sands.png",
+      "Shore.png",
+      "Stone.png",
+      "Warm_Circles.png",
+      "Wood.png"
+    ],
+
+    "defaultWallpaper": "Autumn.png",
+
+    "variables": {
+      "white": "#ffffff",
+      "highlight": "#f6d88b",
+      "primary": "#4f4836",
+      "secondary": "#9c978f",
+
+      "a1": "#686058",
+      "a2": "#9d9084",
+      "a3": "#ad9c8c",
+      "a4": "#dad5cc",
+
+      "b1": "#e2ddc9",
+      "b2": "#1389fd",
+      "b3": "#f5f4ee",
+      "b4": "#5b89b4",
+      "b5": "#d3cdbd",
+      "b6": "#8c8075",
+      "b7": "#d6cbb7",
+      "b8": "#e8e6db",
+      "b12": "#e4e2d4",
+      "b17": "#dedcd0",
+      "b14": "#d7d0c6",
+      "b23": "#eae7d8",
+      "b25": "#130e0c",
+      "b26": "#3e3937",
+
+      "c1": "#e3e8d5",
+
+      "message": "#f0eee5",
+      "quote": "#e9e3d0",
+
+      "sliderA": "#f4f1e8",
+      "sliderB": "#f0f0e5",
+      "sliderC": "#3c3528"
+    }
+  },
+
+  "templates": {
+    "table": {
+      "row": {
+        "hover": {
+          "background": "$b3"
+        }
+      }
+    }
+  },
+
+  "autocomplete": {
+    "table": {
+      "header": {
+        "background": "$b11"
+      }
+    }
+  },
+
+  "dialog": {
+    "@types": {
+      "queries": {
+        "@components": {
+          "header": {
+            "hover": {
+              "background": "$a2+1a"
+            },
+            "@states": {
+              "open": {
+                "hover": {
+                  "background": "$a2+1a"
+                }
+              }
+            }
+          },
+          "item": {
+            "hover": {
+              "background": "$a2+1a"
+            }
+          }
+        }
+      },
+      "theme": {
+        "@components": {
+          "slider": {
+            "track": {
+              "background": "linear-gradient(to right, $sliderB, $sliderC)"
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "settings-editor": {
+    "content": {
+      "background": "$b12"
+    }
+  },
+
+  "slider": {
+    "track": {
+      "@layouts": {
+        "bottom": {
+          "background": "$white"
+        }
+      }
+    },
+    "thumb": {
+      "background": "$sliderA",
+      "hover": {
+        "background": "$white"
+      },
+      "active": {
+        "background": "$white"
+      }
+    }
+  },
+
+  "tree": {
+    "@components": {
+      "item": {
+        "open": {
+          "background": "$a2+99"
+        }
+      }
+    }
+  }
+}

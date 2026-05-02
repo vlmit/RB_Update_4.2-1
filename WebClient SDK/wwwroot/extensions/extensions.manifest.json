@@ -1,0 +1,10 @@
+{
+  "scripts": [
+    "webpack-runtime.3be650c58fdd4282edfa.js",
+    "api-manifest-runtime.b1cdb274e4cff462b4ec.js",
+    "commons.14cd0ad8f0607cb69ad2.js",
+    "default.d455cc5254c3040ff57e.js",
+    "solution.7cd2e4b0a340c123dc85.js"
+  ],
+  "assets": {}
+}

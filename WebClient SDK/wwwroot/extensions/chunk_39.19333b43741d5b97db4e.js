@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktessa_web_extensions=self.webpackChunktessa_web_extensions||[]).push([[39],{7039(e){e.exports=JSON.parse('{"Name":"Dark.Solution","meta":{"name":"Dark.Solution","variables":{},"comments":["This is theme config for Dark theme for a project solution."]}}')}}]);

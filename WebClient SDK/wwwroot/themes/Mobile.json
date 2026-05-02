@@ -1,0 +1,28 @@
+{
+  "Name": "Mobile",
+  "meta": {
+    "name": "Mobile",
+    "caption": "Mobile",
+    "comments": ["This fragment redefines the styles for mobile version of the application."],
+    "variables": {
+      "fontSizeExtraLarge": "28",
+      "fontSizeLarge": "24",
+      "fontSizeBase": "19",
+      "fontSizePrimary": "16",
+      "fontSizeSecondary": "14",
+      "fontSizeMini": "12"
+    }
+  },
+
+  "vars": {
+    "content": {
+      "padding": "10"
+    }
+  },
+
+  "dialog": {
+    "height": "100%",
+    "width": "100%",
+    "min-width": "100%"
+  }
+}

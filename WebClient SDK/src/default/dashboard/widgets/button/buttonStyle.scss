@@ -1,0 +1,29 @@
+.button-widget-container {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--dashboard-widget-button-corners);
+  padding: var(--dashboard-widget-button-padding);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  flex-wrap: wrap;
+  gap: var(--dashboard-widget-button-gap);
+
+  background: var(--dashboard-widget-button-background);
+  color: var(--dashboard-widget-button-font-color);
+  font-size: var(--dashboard-widget-button-font-size);
+  font-weight: var(--dashboard-widget-button-font-weight);
+
+  overflow: hidden;
+  cursor: pointer;
+
+  span {
+    text-align: center;
+    min-height: 0;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

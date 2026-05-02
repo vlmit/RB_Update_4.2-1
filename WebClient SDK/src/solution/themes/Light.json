@@ -1,0 +1,225 @@
+{
+  "Name": "Light",
+  "meta": {
+    "name": "Light",
+    "caption": "Light",
+
+    "wallpapers": [
+      "Cream.png",
+      "Arch.png",
+      "Clouds.png",
+      "Desert.png",
+      "Geometry.png",
+      "Lake.png",
+      "LightCubes.png",
+      "Lines.png",
+      "Marble.png",
+      "Mist.png",
+      "Mist2.png",
+      "PolarBear.png",
+      "Scales.png",
+      "Village.png",
+      "Waves.png"
+    ],
+
+    "defaultWallpaper": "Cream.png",
+    "variables": {
+      "a1": "#cad9e0",
+      "a2": "#dfecf2",
+      "a3": "#cad9e0",
+      "a4": "#6f8e9e",
+
+      "b1": "#dce5ea",
+      "b4": "#2687be",
+      "b5": "#bcccd6",
+      "b6": "#d2e4ec",
+      "b7": "#c3d7e2",
+      "b44": "#d37421",
+
+      "c1": "#dfecf2",
+
+      "l1": "#f4fbff"
+    }
+  },
+
+  "templates": {
+    "control": {
+      "@states": {
+        "active": {
+          "border": "1 solid $a4"
+        }
+      }
+    },
+    "table": {
+      "header": {
+        "font": {
+          "color": "$b11"
+        }
+      }
+    }
+  },
+
+  "resources": {
+    "icons": {
+      "dashboard-icons": {
+        "icons": {
+          "dashboard-logo": {
+            "id": "dashboard-logo-light"
+          }
+        }
+      }
+    }
+  },
+
+  "buttons": {
+    "@themes": {
+      "dark": {
+        "font": {
+          "color": "$primary"
+        },
+        "disabled": {
+          "color": "$primary+99"
+        }
+      },
+      "card-toolbar": {
+        "font": {
+          "color": "$primary"
+        }
+      },
+      "tab": {
+        "font": {
+          "color": "$primary"
+        }
+      }
+    }
+  },
+
+  "checkbox": {
+    "@states": {
+      "hover": {
+        "border": "1 solid $primary"
+      }
+    }
+  },
+
+  "double": {
+    "@states": {
+      "hover": {
+        "border": {
+          "color": "$primary"
+        }
+      }
+    }
+  },
+
+  "files": {
+    "@components": {
+      "item": {
+        "background": "$l1+b2"
+      }
+    }
+  },
+
+  "label": {
+    "@states": {
+      "active": {
+        "border": "1 solid $primary"
+      }
+    }
+  },
+
+  "panel": {
+    "@components": {
+      "button": {
+        "font": {
+          "color": "$primary"
+        },
+        "hover": {
+          "font": {
+            "color": "$primary"
+          }
+        }
+      },
+      "tab": {
+        "@components": {
+          "header": {
+            "@components": {
+              "caption": {
+                "font": {
+                  "color": "$primary"
+                }
+              },
+              "info": {
+                "font": {
+                  "color": "$primary"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "tabs": {
+    "@types": {
+      "main": {
+        "background": "$b11+80",
+        "font": {
+          "color": "$b4"
+        }
+      }
+    }
+  },
+
+  "tree": {
+    "background": "$a2",
+    "font": {
+      "color": "$primary"
+    },
+    "@components": {
+      "subset": {
+        "font": {
+          "color": "$primary"
+        }
+      },
+      "item": {
+        "@states": {
+          "open": {
+            "background": "$a3+80"
+          },
+          "hover": {
+            "background": "$a3+80"
+          },
+          "active": {
+            "background": "$a3"
+          }
+        }
+      }
+    }
+  },
+
+  "tiles": {
+    "@text": {
+      "primary": {
+        "font": {
+          "color": "$primary"
+        }
+      }
+    },
+
+    "@components": {
+      "splitter": {
+        "font": {
+          "color": "$primary+80"
+        }
+      }
+    }
+  },
+
+  "wfe": {
+    "node": {
+      "border": "1 solid $primary"
+    }
+  }
+}

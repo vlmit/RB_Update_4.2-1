@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktessa_web_extensions=self.webpackChunktessa_web_extensions||[]).push([[508],{3508(e){e.exports=JSON.parse('{"Name":"Warm.Solution","meta":{"name":"Warm.Solution","variables":{},"comments":["This is theme config for Warm theme for a project solution."]}}')}}]);

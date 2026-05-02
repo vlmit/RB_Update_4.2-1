@@ -1,0 +1,348 @@
+{
+  "Name": "CodeBase",
+  "meta": {
+    "name": "CodeBase",
+    "caption": "CodeBase",
+    "comments": [
+      "This fragment defines the base styles for the code editor's theme.",
+      "The general styles of the code editor are located in the 'code' section.",
+      "The highlighting styles of specific tags are listed there in the 'tags' section as well."
+    ],
+    "variables": {
+      "codeBaseColor": "#383a42",
+      "codeEditorBackground": "#ffffff",
+      "codeCaretColor": "#000",
+      "codeHighlight": "#999999",
+      "codeActiveColor": "#0b216f",
+      "codeSelection": "#add6ff",
+      "codeSelectionMatch": "#a8ac94",
+      "codeFontFamily": "Menlo, Monaco, Consolas, Andale Mono, Ubuntu Mono, Courier New, monospace",
+      "codeGutterColor": "#237893",
+      "codeGutterBackground": "#f5f5f5",
+      "codeGutterBorder": "#ddd",
+
+      "codeVariableColor": "#0070c1",
+      "codeConstantColor": "#0000ff",
+      "codeStringColor": "#a31515",
+      "codeFunctionColor": "#795e26",
+      "codeCommentColor": "#008000",
+      "codeTypeColor": "#267f99",
+      "codePropertyColor": "#212529",
+      "codeNumberColor": "#098658",
+      "codeControlColor": "#af00db",
+      "codeKeywordColor": "#708",
+      "codeLinkColor": "#4078f2",
+      "codeInvalidColor": "#e45649"
+    }
+  },
+  "code": {
+    "#control": "*",
+    "color": "$codeBaseColor",
+    "background": "$codeEditorBackground",
+    "caret": "$codeCaretColor",
+    "highlight": "$codeHighlight+26",
+
+    "autocomplete": {
+      "color": "$codeBaseColor",
+      "background": "$codeEditorBackground",
+
+      "@states": {
+        "active": {
+          "color": "$codeActiveColor",
+          "background": "$codeSelection"
+        }
+      }
+    },
+
+    "font": {
+      "family": "$codeFontFamily"
+    },
+
+    "gutter": {
+      "color": "$codeGutterColor",
+      "background": "$codeGutterBackground",
+      "border": "1px solid $codeGutterBorder",
+
+      "@states": {
+        "active": {
+          "color": "$codeActiveColor"
+        }
+      }
+    },
+
+    "selection": {
+      "background": "$codeSelection",
+
+      "@states": {
+        "match": {
+          "background": "$codeSelectionMatch"
+        }
+      }
+    },
+
+    "tags": {
+      "constant": {
+        "name": {
+          "font": {
+            "color": "$codeConstantColor"
+          }
+        }
+      },
+      "standart": {
+        "name": {
+          "font": {
+            "color": "$codeConstantColor"
+          }
+        },
+        "tagName": {
+          "font": {
+            "color": "$codeConstantColor"
+          }
+        }
+      },
+      "definition": {
+        "name": {
+          "font": {
+            "color": "$codeVariableColor"
+          }
+        }
+      },
+      "special": {
+        "variableName": {
+          "font": {
+            "color": "$codeConstantColor"
+          }
+        },
+        "brace": {
+          "font": {
+            "color": "$codeConstantColor"
+          }
+        },
+        "string": {
+          "font": {
+            "color": "$codeStringColor"
+          }
+        }
+      },
+      "function": {
+        "variableName": {
+          "font": {
+            "color": "$codeFunctionColor"
+          }
+        },
+        "propertyName": {
+          "font": {
+            "color": "$codeFunctionColor"
+          }
+        }
+      },
+      "comment": {
+        "font": {
+          "color": "$codeCommentColor"
+        }
+      },
+      "name": {
+        "font": {
+          "color": "$codeVariableColor"
+        }
+      },
+      "variableName": {
+        "font": {
+          "color": "$codeVariableColor"
+        }
+      },
+      "typeName": {
+        "font": {
+          "color": "$codeTypeColor"
+        }
+      },
+      "tagName": {
+        "font": {
+          "color": "$codeTypeColor"
+        }
+      },
+      "propertyName": {
+        "font": {
+          "color": "$codePropertyColor"
+        }
+      },
+      "className": {
+        "font": {
+          "color": "$codeTypeColor"
+        }
+      },
+      "labelName": {
+        "font": {
+          "color": "$codeVariableColor"
+        }
+      },
+      "namespace": {
+        "font": {
+          "color": "$codeTypeColor"
+        }
+      },
+      "macroName": {
+        "font": {
+          "color": "$codeVariableColor"
+        }
+      },
+      "string": {
+        "font": {
+          "color": "$codeStringColor"
+        }
+      },
+      "character": {
+        "font": {
+          "color": "$codeVariableColor"
+        }
+      },
+      "number": {
+        "font": {
+          "color": "$codeNumberColor"
+        }
+      },
+      "bool": {
+        "font": {
+          "color": "$codeConstantColor"
+        }
+      },
+      "regexp": {
+        "font": {
+          "color": "$codeControlColor"
+        }
+      },
+      "escape": {
+        "font": {
+          "color": "$codeBaseColor"
+        }
+      },
+      "color": {
+        "font": {
+          "color": "$codeConstantColor"
+        }
+      },
+      "url": {
+        "font": {
+          "color": "$codeBaseColor"
+        }
+      },
+      "keyword": {
+        "font": {
+          "color": "$codeKeywordColor"
+        }
+      },
+      "self": {
+        "font": {
+          "color": "$codeTypeColor"
+        }
+      },
+      "atom": {
+        "font": {
+          "color": "$codeConstantColor"
+        }
+      },
+      "modifier": {
+        "font": {
+          "color": "$codeConstantColor"
+        }
+      },
+      "operatorKeyword": {
+        "font": {
+          "color": "$codeConstantColor"
+        }
+      },
+      "controlKeyword": {
+        "font": {
+          "color": "$codeControlColor"
+        }
+      },
+      "moduleKeyword": {
+        "font": {
+          "color": "$codeControlColor"
+        }
+      },
+      "operator": {
+        "font": {
+          "color": "$codeBaseColor"
+        }
+      },
+      "punctuation": {
+        "font": {
+          "color": "$codeBaseColor"
+        }
+      },
+      "separator": {
+        "font": {
+          "color": "$codeBaseColor"
+        }
+      },
+      "angleBracket": {
+        "font": {
+          "color": "$codeBaseColor"
+        }
+      },
+      "heading": {
+        "font": {
+          "color": "$codeVariableColor",
+          "weight": "bold"
+        }
+      },
+      "emphasis": {
+        "font": {
+          "style": "italic"
+        }
+      },
+      "strong": {
+        "font": {
+          "weight": "bold"
+        }
+      },
+      "link": {
+        "font": {
+          "color": "$codeLinkColor",
+          "decoration": "underline"
+        }
+      },
+      "strikethrough": {
+        "font": {
+          "decoration": "line-through"
+        }
+      },
+      "inserted": {
+        "font": {
+          "color": "$codeStringColor"
+        }
+      },
+      "deleted": {
+        "font": {
+          "color": "$codeVariableColor"
+        }
+      },
+      "changed": {
+        "font": {
+          "color": "$codeTypeColor"
+        }
+      },
+      "invalid": {
+        "font": {
+          "color": "$codeInvalidColor"
+        }
+      },
+      "meta": {
+        "font": {
+          "color": "$codeCommentColor"
+        }
+      },
+      "annotation": {
+        "font": {
+          "color": "$codeTypeColor"
+        }
+      },
+      "processingInstruction": {
+        "font": {
+          "color": "$codeStringColor"
+        }
+      }
+    }
+  }
+}

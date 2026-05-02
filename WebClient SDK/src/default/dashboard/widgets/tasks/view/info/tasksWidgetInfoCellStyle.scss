@@ -1,0 +1,25 @@
+.tasks-widget {
+  .info-table-cell {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dashboard-widget-tasks-gap);
+
+    .cell-data-task {
+      color: var(--dashboard-widget-tasks-secondary-font-color);
+      font-size: var(--dashboard-widget-tasks-secondary-font-size);
+      font-weight: var(--dashboard-widget-tasks-secondary-font-weight);
+      line-height: var(--dashboard-widget-tasks-secondary-font-height);
+    }
+
+    .cell-data-card {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--dashboard-widget-tasks-gap);
+
+      .cell-data-card-info {
+        color: var(--dashboard-widget-tasks-hyperlink-font-color);
+      }
+    }
+  }
+}

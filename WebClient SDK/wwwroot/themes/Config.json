@@ -1,0 +1,38 @@
+{
+  "Name": "Config",
+  "themes": [
+    {
+      "name": "Cold",
+      "caption": "$UI_Theme_Fragment_Cold",
+      "fragments": ["Base", "Base.Solution", "Cold", "Cold.Solution", "CodeBase"],
+      "compact": ["Compact", "Compact.Solution"],
+      "condensed": ["Condensed", "Condensed.Solution"],
+      "mobile": ["Mobile", "Mobile.Solution"]
+    },
+    {
+      "name": "Dark",
+      "caption": "$UI_Theme_Fragment_Dark",
+      "fragments": ["Base", "Base.Solution", "Dark", "Dark.Solution", "CodeBase", "CodeDark"],
+      "compact": ["Compact", "Compact.Solution"],
+      "condensed": ["Condensed", "Condensed.Solution"],
+      "mobile": ["Mobile", "Mobile.Solution"]
+    },
+    {
+      "name": "Warm",
+      "caption": "$UI_Theme_Fragment_Warm",
+      "fragments": ["Base", "Base.Solution", "Warm", "Warm.Solution", "CodeBase"],
+      "compact": ["Compact", "Compact.Solution"],
+      "condensed": ["Condensed", "Condensed.Solution"],
+      "mobile": ["Mobile", "Mobile.Solution"]
+    },
+    {
+      "name": "Light",
+      "caption": "$UI_Theme_Fragment_Light",
+      "fragments": ["Base", "Base.Solution", "Light", "Light.Solution", "CodeBase"],
+      "compact": ["Compact", "Compact.Solution"],
+      "condensed": ["Condensed", "Condensed.Solution"],
+      "mobile": ["Mobile", "Mobile.Solution"],
+      "workplaceBlur": false
+    }
+  ]
+}

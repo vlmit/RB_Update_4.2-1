@@ -1,0 +1,18 @@
+.view-widget-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .view-control {
+    background: var(--card-background);
+  }
+}
+
+.view-widget-error {
+  color: var(--dashboard-widget-view-error-font-color);
+  font-style: var(--dashboard-widget-view-error-font-style);
+  font-size: var(--dashboard-widget-view-error-font-size);
+  line-height: var(--dashboard-widget-view-error-font-height);
+}

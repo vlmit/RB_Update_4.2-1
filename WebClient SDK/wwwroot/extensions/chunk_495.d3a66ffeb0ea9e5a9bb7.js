@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktessa_web_extensions=self.webpackChunktessa_web_extensions||[]).push([[495],{4495(e){e.exports=JSON.parse('{"Name":"Light.Solution","meta":{"name":"Light.Solution","variables":{},"comments":["This is theme config for Light theme for a project solution."]}}')}}]);

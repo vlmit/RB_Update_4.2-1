@@ -1,0 +1,15 @@
+.common-widget-tile.view-widget-past-preview {
+  background: var(--dashboard-tile-view-background);
+
+  &:hover {
+    background: var(--dashboard-tile-view-hover-background);
+  }
+
+  .common-widget-preview__title {
+    color: var(--dashboard-tile-view-header-font-color);
+  }
+
+  .common-widget-preview__description {
+    color: var(--dashboard-tile-view-description-font-color);
+  }
+}

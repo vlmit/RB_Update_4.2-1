@@ -1,0 +1,14 @@
+.diagram-container {
+  display: grid;
+  grid-row-gap: var(--diagram-gap);
+  font-size: var(--diagram-font-size);
+  color: var(--diagram-font-color);
+  fill: var(--diagram-font-color);
+}
+
+.diagram-header {
+  font-size: var(--diagram-header-font-size);
+  color: var(--diagram-header-font-color);
+  padding: var(--diagram-header-padding);
+  text-align: center;
+}

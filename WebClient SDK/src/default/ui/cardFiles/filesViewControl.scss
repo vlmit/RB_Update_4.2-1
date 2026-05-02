@@ -1,0 +1,15 @@
+.files-view-table-wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .files-view-table {
+    display: none;
+  }
+
+  .files-control-item-container {
+    display: inline-flex;
+    gap: var(--files-item-gap);
+  }
+}

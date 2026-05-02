@@ -1,0 +1,103 @@
+{
+  "Name": "CodeDark",
+  "meta": {
+    "name": "CodeDark",
+    "caption": "CodeDark",
+    "comments": ["This fragment defines the styles for the code editor's dark theme."],
+    "variables": {
+      "codeBaseColor": "#9cdcfe",
+      "codeEditorBackground": "#3d4244",
+      "codeCaretColor": "#c6c6c6",
+      "codeHighlight": "#ffffff",
+      "codeActiveColor": "#fff",
+      "codeSelection": "#6199ff",
+      "codeSelectionMatch": "#72a1ff",
+      "codeGutterColor": "#838383",
+      "codeGutterBackground": "#313638",
+      "codeGutterBorder": "#ddd",
+
+      "codeVariableColor": "#9cdcfe",
+      "codeConstantColor": "#569cd6",
+      "codeStringColor": "#ce9178",
+      "codeFunctionColor": "#dcdcaa",
+      "codeCommentColor": "#6a9955",
+      "codeTypeColor": "#4ec9b0",
+      "codeNumberColor": "#b5cea8",
+      "codeControlColor": "#c586c0",
+      "codeKeywordColor": "#c678dd",
+      "codeInvalidColor": "#ff0000",
+      "codeOperatorColor": "#d4d4d4",
+      "codeRegexpColor": "#d16969",
+      "codeAngleColor": "#808080"
+    }
+  },
+  "code": {
+    "highlight": "$codeHighlight+0f",
+
+    "autocomplete": {
+      "@states": {
+        "active": {
+          "background": "$codeSelection+2f"
+        }
+      }
+    },
+
+    "selection": {
+      "background": "$codeSelection+2f",
+
+      "@states": {
+        "match": {
+          "background": "$codeSelectionMatch+59"
+        }
+      }
+    },
+
+    "tags": {
+      "propertyName": {
+        "font": {
+          "color": "$codeFunctionColor"
+        }
+      },
+      "regexp": {
+        "font": {
+          "color": "$codeRegexpColor"
+        }
+      },
+      "escape": {
+        "font": {
+          "color": "$codeOperatorColor"
+        }
+      },
+      "url": {
+        "font": {
+          "color": "$codeOperatorColor"
+        }
+      },
+      "operator": {
+        "font": {
+          "color": "$codeOperatorColor"
+        }
+      },
+      "punctuation": {
+        "font": {
+          "color": "$codeOperatorColor"
+        }
+      },
+      "separator": {
+        "font": {
+          "color": "$codeOperatorColor"
+        }
+      },
+      "angleBracket": {
+        "font": {
+          "color": "$codeAngleColor"
+        }
+      },
+      "link": {
+        "font": {
+          "color": "$codeCommentColor"
+        }
+      }
+    }
+  }
+}

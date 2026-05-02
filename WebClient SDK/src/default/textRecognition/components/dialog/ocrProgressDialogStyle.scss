@@ -1,0 +1,10 @@
+.progress-dialog {
+  outline: none;
+  background: var(--ocr-progress-background);
+  font-size: var(--ocr-progress-font-size);
+  color: var(--ocr-progress-font-color);
+}
+
+.progress-dialog-content {
+  text-align: center;
+}

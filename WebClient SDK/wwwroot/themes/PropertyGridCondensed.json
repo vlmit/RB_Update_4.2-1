@@ -1,0 +1,81 @@
+{
+  "Name": "PropertyGridCondensed",
+  "meta": {
+    "name": "PropertyGridCondensed",
+    "variables": {
+      "fontSizeExtraLarge": "20",
+      "fontSizeLarge": "16",
+      "fontSizeBase": "14",
+      "fontSizePrimary": "12",
+      "fontSizeSecondary": "11",
+      "fontSizeMini": "9",
+      "fontSizeMicro": "8"
+    }
+  },
+
+  "templates": {
+    "control": {
+      "padding": "4 4 4 7"
+    },
+    "table": {
+      "row": {
+        "padding": "5 7"
+      },
+      "header": {
+        "padding": "5 8"
+      }
+    }
+  },
+
+  "buttons": {
+    "normal": {
+      "height": "calc(5 * 2 + var(--icon-size-m))"
+    },
+    "small": {
+      "padding": "var(--2) var(--2)",
+      "height": "calc(var(--2) * 2 + var(--icon-size-m))"
+    }
+  },
+
+  "font": {
+    "size": {
+      "mini": "8px",
+      "secondary": "10px",
+      "primary": "12px",
+      "base": "14px",
+      "large": "16px"
+    },
+    "height": {
+      "mini": "10px",
+      "secondary": "12px",
+      "primary": "14px",
+      "base": "16px",
+      "large": "19px"
+    }
+  },
+
+  "form": {
+    "label": {
+      "padding": "6 0 2 0"
+    },
+    "block": {
+      "padding": "15 0 0 0",
+      "gap": "10 10"
+    }
+  },
+
+  "icon": {
+    "size": {
+      "s": "12px",
+      "m": "14px",
+      "l": "20px"
+    }
+  },
+
+  "search-box": {
+    "padding": "2 8",
+    "compact": {
+      "padding": "2 8"
+    }
+  }
+}

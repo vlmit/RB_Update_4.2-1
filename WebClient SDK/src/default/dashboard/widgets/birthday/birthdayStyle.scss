@@ -1,0 +1,118 @@
+.birthday-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dashboard-widget-birthday-gap);
+  min-width: fit-content;
+  width: 100%;
+
+  .empty-groups {
+    color: var(--dashboard-widget-birthday-empty-font-color);
+    font-style: var(--dashboard-widget-birthday-empty-font-style);
+    font-size: var(--dashboard-widget-birthday-empty-font-size);
+    line-height: var(--dashboard-widget-birthday-empty-font-height);
+  }
+}
+
+.birthday-group {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  gap: var(--dashboard-widget-birthday-gap);
+  background: var(--dashboard-widget-birthday-group-background);
+  padding: var(--dashboard-widget-birthday-group-padding);
+  border-radius: var(--dashboard-widget-birthday-group-corners);
+  transition: var(--dashboard-widget-birthday-group-transition);
+
+  &:hover {
+    background-color: var(--dashboard-widget-birthday-group-hover-background);
+  }
+
+  &.collapsed {
+    gap: 0;
+    .group-items {
+      overflow: hidden;
+      height: 0;
+    }
+  }
+
+  .group-header {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--dashboard-widget-birthday-user-gap);
+  }
+
+  .group-title {
+    display: flex;
+    align-items: center;
+    gap: var(--dashboard-widget-birthday-user-gap);
+    font-size: var(--dashboard-widget-birthday-group-font-size);
+    color: var(--dashboard-widget-birthday-group-font-color);
+
+    .title-count {
+      color: var(--dashboard-widget-birthday-group-count-font-color);
+    }
+  }
+
+  .group-items {
+    display: flex;
+    flex-direction: column;
+    transition: var(--dashboard-widget-birthday-group-items-transition);
+    gap: var(--dashboard-widget-birthday-gap);
+  }
+}
+
+.birthday-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--user-info-background);
+  gap: var(--dashboard-widget-birthday-user-gap);
+  padding: var(--dashboard-widget-birthday-user-padding);
+  border-radius: var(--dashboard-widget-birthday-user-corners);
+
+  .user-info-viewer {
+    padding: 0;
+    min-width: unset;
+    max-width: unset;
+
+    .user-info-main {
+      gap: var(--dashboard-widget-birthday-user-gap);
+
+      .user-info-bio {
+        gap: var(--dashboard-widget-birthday-user-info-bio-gap);
+
+        .user-info-name {
+          color: var(--dashboard-widget-birthday-user-info-name-font-color);
+          font-weight: var(--dashboard-widget-birthday-user-info-name-font-weight);
+        }
+
+        .user-info-text {
+          -webkit-line-clamp: 1;
+        }
+      }
+    }
+  }
+
+  .user-birthday {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: var(--dashboard-widget-birthday-user-birthday-padding);
+    border-radius: var(--dashboard-widget-birthday-user-birthday-corners);
+    background: var(--dashboard-widget-birthday-user-birthday-background);
+    color: var(--dashboard-widget-birthday-user-font-color);
+
+    .birthday-date {
+      font-size: var(--dashboard-widget-birthday-user-birthday-font-size);
+      line-height: var(--dashboard-widget-birthday-user-birthday-font-height);
+    }
+
+    .birthday-month {
+      font-size: var(--dashboard-widget-birthday-user-birthday-month-font-size);
+      line-height: var(--dashboard-widget-birthday-user-birthday-month-font-height);
+    }
+  }
+}

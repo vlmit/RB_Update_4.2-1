@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktessa_web_extensions=self.webpackChunktessa_web_extensions||[]).push([[940],{940(e){e.exports=JSON.parse('{"Name":"Compact.Solution","meta":{"name":"Compact.Solution","comments":["This is theme config for a compact mode for a project solution."]}}')}}]);

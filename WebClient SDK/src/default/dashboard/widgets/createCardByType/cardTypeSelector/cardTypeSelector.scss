@@ -1,0 +1,52 @@
+.dashboard-card-type-selector-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--dialog-card-type-gap);
+  user-select: none;
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.desktop .dialog-window.dashboard-card-type-selector-dialog {
+  max-height: 50%;
+}
+
+.dashboard-card-type-selector-list {
+  min-height: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  background: var(--dialog-card-type-list-background);
+  border-radius: var(--dialog-card-type-list-corners);
+  padding: var(--dialog-card-type-list-padding);
+}
+
+.dashboard-card-type-selector-group {
+  display: flex;
+  flex-direction: column;
+
+  .dashboard-card-type-selector-group__header {
+    padding: var(--dialog-card-type-group-header-padding);
+    color: var(--dialog-card-type-group-header-font-color);
+    font-size: var(--dialog-card-type-group-header-font-size);
+    line-height: var(--dialog-card-type-group-header-font-height);
+  }
+
+  .dashboard-card-type-selector-group__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dialog-card-type-group-gap);
+  }
+}
+
+.dashboard-card-type-selector-item {
+  padding: var(--dialog-card-type-item-padding);
+  color: var(--dialog-card-type-item-font-color);
+  font-size: var(--dialog-card-type-item-font-size);
+  line-height: var(--dialog-card-type-item-font-height);
+  cursor: pointer;
+
+  &.selected {
+    background: var(--dialog-card-type-item-selected-background);
+    color: var(--dialog-card-type-item-selected-font-color);
+  }
+}

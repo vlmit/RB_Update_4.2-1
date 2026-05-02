@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": false,
+    "outDir": "build",
+    "experimentalDecorators": true,
+    "jsx": "preserve",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "sourceMap": true,
+
+    "strictNullChecks": true,
+    "strictPropertyInitialization": false,
+    "useDefineForClassFields": false,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "resolveJsonModule": true,
+
+    "target": "ES2021",
+    "paths": {
+      "tessa": ["platform/dts/tessa"],
+      "tessa/*": ["platform/dts/tessa/*"],
+      "ui": ["platform/dts/ui"],
+      "ui/*": ["platform/dts/ui/*"],
+      "common": ["platform/dts/common"],
+      "common/*": ["platform/dts/common/*"],
+      "components": ["platform/dts/components"],
+      "components/*": ["platform/dts/components/*"],
+
+      "@tessa/core": ["platform/dts/@tessa/core/lib.d.ts"],
+      "@tessa/core/*": ["platform/dts/@tessa/core/*"],
+      "@tessa/application": ["platform/dts/@tessa/application/lib.d.ts"],
+      "@tessa/application/*": ["platform/dts/@tessa/application/*"],
+      "@tessa/platform": ["platform/dts/@tessa/platform/lib.d.ts"],
+      "@tessa/platform/*": ["platform/dts/@tessa/platform/*"],
+      "@tessa/ui": ["platform/dts/@tessa/ui/lib.d.ts"],
+      "@tessa/ui/*": ["platform/dts/@tessa/ui/*"]
+    },
+    "types": [],
+    "typeRoots": [],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"]
+  },
+  "include": ["platform/dts/global.d.ts", "platform/dts/@types/png.d.ts", "src/**/*"],
+  "exclude": ["node_modules", "build"]
+}

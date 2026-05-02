@@ -1,0 +1,37 @@
+.grid-article-document-info-row-details td {
+  // чтобы контент внутри не расширял таблицу
+  max-width: 0;
+}
+
+.grid-article-meeting-nodes-container {
+  padding: 15px;
+  background: var(--view-background);
+}
+
+.grid-article-document-status {
+  width: fit-content;
+}
+
+.grid-article-files-row-details-error {
+  padding: 5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.chip.grid-article-files-row-details-file {
+  cursor: pointer;
+}
+
+.grid-article-files-row-details-container {
+  padding: 15px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.grid-article-custom-loader {
+  display: flex;
+  justify-content: center;
+  padding: var(--grid-row-details-placeholder-padding);
+}

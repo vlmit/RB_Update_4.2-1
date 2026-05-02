@@ -1,0 +1,14 @@
+.tasks-widget {
+  .completion-table-cell {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dashboard-widget-tasks-gap);
+
+    .cell-data-completion {
+      color: var(--dashboard-widget-tasks-secondary-font-color);
+      font-size: var(--dashboard-widget-tasks-secondary-font-size);
+      font-weight: var(--dashboard-widget-tasks-secondary-font-weight);
+      line-height: var(--dashboard-widget-tasks-secondary-font-height);
+    }
+  }
+}

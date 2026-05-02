@@ -1,0 +1,16 @@
+{
+  "Name": "Base.Solution",
+  "meta": {
+    "name": "Base.Solution",
+    "variables": {},
+    "comments": [
+      "This is base theme config for a project solution.",
+      "You can override platform values here, do not modify original theme config.",
+      "Also you can specify your custom theme sections here."
+    ]
+  },
+  "resources": {
+    "icons": {},
+    "images": {}
+  }
+}

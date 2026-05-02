@@ -1,0 +1,2 @@
+// eslint only
+module.exports = {};

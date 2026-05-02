@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktessa_web_extensions=self.webpackChunktessa_web_extensions||[]).push([[113],{4113(e){e.exports=JSON.parse('{"Name":"Mobile.Solution","meta":{"name":"Mobile.Solution","comments":["This is theme config for a mobile mode for a project solution."]}}')}}]);

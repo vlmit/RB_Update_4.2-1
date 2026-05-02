@@ -1,0 +1,9 @@
+.platform-compact {
+  .dialog-content {
+    gap: var(--dialog-categories-compact-gap);
+
+    .control-caption {
+      padding-bottom: 0;
+    }
+  }
+}

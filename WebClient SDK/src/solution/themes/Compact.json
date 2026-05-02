@@ -1,0 +1,20 @@
+{
+  "Name": "Compact",
+  "meta": {
+    "name": "Compact",
+    "caption": "Compact",
+    "comments": ["This fragment redefines the styles for compact version of the application."]
+  },
+
+  "vars": {
+    "content": {
+      "padding": "10"
+    }
+  },
+
+  "dialog": {
+    "height": "100%",
+    "width": "100%",
+    "min-width": "100%"
+  }
+}

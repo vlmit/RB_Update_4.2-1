@@ -1,0 +1,742 @@
+﻿{
+  "Name": "Dark",
+  "meta": {
+    "name": "Dark",
+    "caption": "$UI_Theme_Fragment_Dark",
+
+    "wallpapers": [
+      "Aurora-Borealis.png",
+      "Cat.png",
+      "Circles.png",
+      "DarkWood.png",
+      "Doggy.png",
+      "Leafs.png",
+      "Panther.png",
+      "SharpGeometry.png",
+      "StarryNight.png",
+      "Stones.png",
+      "Sunset-Rocks.png",
+      "VioletGrass.png",
+      "WarpSteps.png"
+    ],
+
+    "defaultWallpaper": "Aurora-Borealis.png",
+
+    "variables": {
+      "white": "#ffffff",
+      "lightBlue": "#badde9",
+      "yellow": "#f6d88b",
+      "yellowDark": "#ecc561",
+      "lightOrange": "#c1b492",
+      "green": "#abe8ad",
+      "greenDark": "#8ae38e",
+      "red": "#d39090",
+      "redDark": "#e89999",
+      "error": "#bf3737",
+      "primary": "#aac0cd",
+      "secondary": "#6a7981",
+      "transparent": "#ffffff00",
+      "inverse": "#aac0cd",
+      "special": "#6a7981",
+      "honeydew": "#384a32",
+      "paleBlue": "#2c3032",
+      "paleYellow": "#474132",
+      "paleRed": "#4f2424",
+
+      "a1": "#242728",
+      "a2": "#373f43",
+      "a3": "#444f54",
+      "a4": "#adc2cc",
+
+      "b1": "#2e3335",
+      "b2": "#1389fd",
+      "b3": "#454c4e",
+      "b4": "#62abd3",
+      "b5": "#3d4244",
+      "b6": "#51709d",
+      "b7": "#48545b",
+      "b8": "#546267",
+      "b9": "#2e89bb",
+      "b10": "#66afe9",
+      "b11": "#3d4244",
+      "b12": "#2e3335",
+      "b14": "#313638",
+      "b16": "#525e65",
+      "b17": "#5a6266",
+      "b19": "#10142c",
+      "b22": "#3d4244",
+      "b23": "#303537",
+      "b25": "#171c1f",
+      "b26": "#1a5170",
+      "b27": "#444849",
+      "b45": "#4cc851",
+      "b46": "#e4871d",
+
+      "c1": "#313638",
+      "c2": "#313638",
+      "c3": "#383f41",
+      "c4": "#383f41",
+      "c5": "#aac0cd",
+      "c6": "#62abd3",
+
+      "d1": "#3d4244",
+      "d2": "#202b30",
+      "d3": "#20a7f3",
+      "d4": "#2c3031",
+
+      "shadow": "#0a0d1d",
+
+      "structureKey": "$greenDark",
+      "structureValue": "#2ebdff",
+      "structureString": "#ffa4a4",
+      "structureNull": "#8383ff",
+      "structureError ": "#f09184",
+
+      "sliderA": "#505b61",
+      "sliderB": "#67767e",
+      "sliderC": "#373a3c",
+      "sliderD": "#8ea3ae",
+      "sliderE": "#1e2025",
+
+      "searchBoxA": "#333738",
+
+      "codeActive": "#444f54",
+      "codeSelection": "#3a454a",
+      "codeGutterBorder": "$transparent",
+      "codeGutterColor": "$primary",
+      "codeGutterBackground": "$b11",
+      "codeGutterActive": "$a3",
+
+      "message": "#495357",
+      "extension": "#6288bb",
+      "pdf": "#b9514a",
+      "quote": "#373c3e",
+      "quoteIconDark": "#282C2D",
+      "inline": "#353a3b",
+      "blockBorder": "#656565",
+
+      "tableHiddenRow": "#26292A",
+
+      "approvalsGridBorder": "#292e2f",
+      "approvalsIndicatorBackground": "#78a9c5",
+      "approvalsPanelBackground": "#353b3c",
+      "approvalsPanelHeaderShadow": "#040609",
+      "approvalsStatusBackground": "#4c5456",
+      "approvalsRoleBackground": "#272b2c",
+
+      "dashboardPlaceholder": "#0b0c0c",
+      "dashboardWidgetTileHover": "#323638",
+      "dashboardBirthdayGroupHover": "#464e51"
+    }
+  },
+  "resources": {
+    "images": {
+      "deski-clipboard": {
+        "path": "deski/deski-clipboard-dark.png",
+        "generateClass": "true",
+        "width": 210,
+        "height": 210
+      },
+      "deski-clipboard-en": {
+        "path": "deski/deski-clipboard-dark-en.png",
+        "generateClass": "true",
+        "width": 210,
+        "height": 210
+      }
+    }
+  },
+  "ai-assistant": {
+    "@components": {
+      "message": {
+        "content": {
+          "@types": {
+            "markdown": {
+              "table": {
+                "@components": {
+                  "header": {
+                    "cell": {
+                      "font": {
+                        "color": "$inverse+66"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "@types": {
+          "assistant": {
+            "font": {
+              "color": "$b3"
+            }
+          },
+          "user": {
+            "font": {
+              "color": "$b3"
+            }
+          }
+        }
+      }
+    }
+  },
+  "alerts": {
+    "@components": {
+      "message": {
+        "@types": {
+          "error": {
+            "border": "none"
+          },
+          "info": {
+            "border": "none"
+          },
+          "success": {
+            "border": "none"
+          },
+          "warning": {
+            "border": "none"
+          }
+        }
+      }
+    }
+  },
+  "approvals": {
+    "details": {
+      "secondary": {
+        "background": "$b5"
+      }
+    },
+    "tooltip": {
+      "background": "$b3"
+    },
+    "status": {
+      "background": "$approvalsStatusBackground"
+    },
+    "indicator": {
+      "font": {
+        "color": "$b3"
+      }
+    }
+  },
+  "autocomplete": {
+    "table": {
+      "header": {
+        "background": "$b11"
+      }
+    }
+  },
+  "buttons": {
+    "@themes": {
+      "tab": {
+        "background": "$b3"
+      },
+      "green": {
+        "font": {
+          "color": "$b5"
+        }
+      },
+      "yellow": {
+        "font": {
+          "color": "$b5"
+        }
+      },
+      "red": {
+        "font": {
+          "color": "$b5"
+        }
+      }
+    }
+  },
+  "calendar": {
+    "hover": {
+      "font": {
+        "color": "black"
+      }
+    }
+  },
+  "templates": {
+    "control": {
+      "doorhanger": {
+        "error": {
+          "font": {
+            "color": "$b5"
+          }
+        },
+        "info": {
+          "font": {
+            "color": "$b5"
+          }
+        },
+        "warning": {
+          "font": {
+            "color": "$b5"
+          }
+        }
+      }
+    },
+
+    "editor": {
+      "panel": {
+        "background": "$approvalsPanelBackground",
+        "header": {
+          "background": "$approvalsPanelBackground"
+        }
+      },
+      "node": {
+        "@types": {
+          "collection": {
+            "background": "$b5",
+            "item": {
+              "border": "1 solid $b5"
+            }
+          }
+        }
+      }
+    },
+
+    "table": {
+      "header": {
+        "font": {
+          "color": "$inverse+66"
+        }
+      },
+      "row": {
+        "hover": {
+          "background": "$b3"
+        },
+        "highlight": {
+          "font": {
+            "color": "$b11"
+          }
+        }
+      },
+      "footer": {
+        "background": "$b5"
+      }
+    }
+  },
+  "shepherd": {
+    "@components": {
+      "header": {
+        "background": "$b3"
+      },
+      "theme": {
+        "background": "$b3"
+      }
+    }
+  },
+  "dashboard": {
+    "widget": {
+      "@types": {
+        "birthday": {
+          "@components": {
+            "user": {
+              "@components": {
+                "birthday": {
+                  "background": "$b3"
+                }
+              }
+            },
+            "group": {
+              "@states": {
+                "hover": {
+                  "background": "$dashboardBirthdayGroupHover"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "placeholder": {
+      "background": "$dashboardPlaceholder+4d"
+    },
+    "tile": {
+      "@types": {
+        "common": {
+          "description": {
+            "font": {
+              "color": "$primary"
+            }
+          },
+          "@states": {
+            "hover": {
+              "background": "$dashboardWidgetTileHover"
+            }
+          }
+        },
+        "view": {
+          "header": {
+            "font": {
+              "color": "$honeydew"
+            }
+          },
+          "description": {
+            "font": {
+              "color": "$special"
+            }
+          }
+        }
+      }
+    },
+    "palette": {
+      "transparent": {
+        "saturation": "35",
+        "luminosity": "19",
+        "opacity": "0.7",
+        "hue": {
+          "min": "17",
+          "max": "347"
+        },
+        "font": {
+          "color": "$inverse"
+        }
+      },
+      "opaque": {
+        "saturation": "56",
+        "luminosity": "61",
+        "opacity": "1",
+        "hue": {
+          "min": "1",
+          "max": "341"
+        }
+      }
+    }
+  },
+  "dialog": {
+    "@types": {
+      "queries": {
+        "@components": {
+          "header": {
+            "hover": {
+              "background": "$a1+80"
+            },
+            "@states": {
+              "open": {
+                "hover": {
+                  "background": "$a1+80"
+                }
+              }
+            }
+          },
+          "item": {
+            "hover": {
+              "background": "$a1+80"
+            }
+          }
+        }
+      },
+      "theme": {
+        "@components": {
+          "slider": {
+            "track": {
+              "background": "linear-gradient(to right, $sliderD, $sliderE)"
+            }
+          }
+        }
+      },
+      "column-settings": {
+        "@components": {
+          "mobile": {
+            "footer": {
+              "background": "$b5"
+            }
+          }
+        }
+      },
+      "deski": {
+        "background": "$a1"
+      }
+    }
+  },
+  "dropdown": {
+    "shadow": "0 0 var(--6) 0 $shadow+66"
+  },
+  "forum": {
+    "@dialogs": {
+      "mobile": {
+        "@components": {
+          "editor": {
+            "shadow": "0 0 var(--6) 0 $shadow+66"
+          }
+        }
+      }
+    }
+  },
+  "label": {
+    "@types": {
+      "label": {
+        "font": {
+          "color": "$b5"
+        },
+        "@types": {
+          "hyperlink": {
+            "font": {
+              "color": "$b5"
+            }
+          }
+        }
+      },
+      "warning": {
+        "background": "$lightOrange",
+        "font": {
+          "color": "$b5"
+        },
+        "@types": {
+          "hyperlink": {
+            "font": {
+              "color": "$b5"
+            }
+          }
+        }
+      },
+      "error": {
+        "font": {
+          "color": "$b5"
+        },
+        "@types": {
+          "hyperlink": {
+            "font": {
+              "color": "$b5"
+            }
+          }
+        }
+      },
+      "info": {
+        "background": "$lightBlue",
+        "font": {
+          "color": "$b5"
+        },
+        "@types": {
+          "hyperlink": {
+            "font": {
+              "color": "$b5"
+            }
+          }
+        }
+      }
+    }
+  },
+  "ocr": {
+    "@dialogs": {
+      "request": {
+        "layer": {
+          "background": "$b1+4d"
+        }
+      }
+    }
+  },
+  "playground": {
+    "main": {
+      "background": "$a1"
+    },
+    "drawer": {
+      "background": "$a1",
+      "tree": {
+        "item": {
+          "@states": {
+            "selected": {
+              "background": "$b3"
+            }
+          }
+        }
+      }
+    },
+    "demo": {
+      "background": "$d4"
+    }
+  },
+  "rich": {
+    "quote": {
+      "icon": {
+        "font": {
+          "color": "$quoteIconDark"
+        }
+      }
+    }
+  },
+  "search-box": {
+    "@themes": {
+      "embeded": {
+        "background": "$searchBoxA"
+      }
+    }
+  },
+  "slider": {
+    "font": {
+      "color": "$b5"
+    },
+    "track": {
+      "@layouts": {
+        "bottom": {
+          "background": "$sliderC"
+        }
+      }
+    },
+    "thumb": {
+      "background": "$sliderA",
+      "hover": {
+        "background": "$sliderB"
+      },
+      "active": {
+        "background": "$sliderB"
+      }
+    }
+  },
+
+  "tasks": {
+    "@components": {
+      "limitation": {
+        "font": {
+          "color": "$b5"
+        }
+      },
+
+      "table": {
+        "row": {
+          "hover": {
+            "background": "$c6+1a"
+          }
+        }
+      }
+    }
+  },
+
+  "tags": {
+    "@components": {
+      "item": {
+        "counter": {
+          "font": {
+            "color": "$b5"
+          }
+        }
+      }
+    }
+  },
+  "preview": {
+    "background": "$b27+99",
+
+    "html": {
+      "background": "#545C5F"
+    }
+  },
+
+  "grid-tooltip": {
+    "shadow": "0 0 var(--6) 0 $shadow+66"
+  },
+
+  "user-info": {
+    "shadow": "0 0 var(--6) 0 $shadow+66"
+  },
+
+  "panel": {
+    "@components": {
+      "button": {
+        "hover": {
+          "font": {
+            "color": "$a4"
+          }
+        }
+      }
+    }
+  },
+
+  "wfe": {
+    "anchor": {
+      "background": "$d1"
+    },
+    "node": {
+      "background": "$d1",
+      "border": "1 solid $d2",
+      "@components": {
+        "content": {
+          "@themes": {
+            "start": {
+              "font": {
+                "color": "$b45"
+              }
+            },
+            "end": {
+              "font": {
+                "color": "$b46"
+              }
+            },
+            "active": {
+              "font": {
+                "color": "$d3"
+              }
+            }
+          }
+        },
+        "resizer": {
+          "background": "$c5",
+          "@themes": {
+            "start": {
+              "background": "$b45"
+            },
+            "end": {
+              "background": "$b46"
+            },
+            "active": {
+              "background": "$d3"
+            }
+          }
+        }
+      },
+      "@themes": {
+        "start": {
+          "background": {
+            "color1": "$d1",
+            "color2": "$d1"
+          }
+        },
+        "end": {
+          "background": {
+            "color1": "$d1",
+            "color2": "$d1"
+          }
+        },
+        "active": {
+          "border": "1 solid $d3",
+          "background": {
+            "color1": "$d4",
+            "color2": "$d4"
+          }
+        }
+      },
+      "@states": {
+        "hover": {
+          "border": "1 solid $c5"
+        },
+        "selected": {
+          "border": "2 solid $c5"
+        },
+        "dragover": {
+          "border": "2 solid $c5"
+        }
+      }
+    },
+    "handle": {
+      "background": "$c5",
+      "@states": {
+        "selected": {
+          "background": "$b42"
+        }
+      },
+      "@themes": {
+        "start": {
+          "background": "$b45"
+        },
+        "end": {
+          "background": "$b46"
+        },
+        "active": {
+          "background": "$d3"
+        },
+        "edge": {
+          "background": "$b4"
+        }
+      }
+    }
+  }
+}

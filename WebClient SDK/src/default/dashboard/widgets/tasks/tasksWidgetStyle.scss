@@ -1,0 +1,13 @@
+.tasks-widget {
+  tbody {
+    vertical-align: top;
+
+    td,
+    th {
+      color: var(--dashboard-widget-tasks-main-font-color);
+      font-size: var(--dashboard-widget-tasks-main-font-size);
+      font-weight: var(--dashboard-widget-tasks-main-font-weight);
+      line-height: var(--dashboard-widget-tasks-main-font-height);
+    }
+  }
+}

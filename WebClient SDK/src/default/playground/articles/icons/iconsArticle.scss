@@ -1,0 +1,19 @@
+.playground-icon-selector {
+  .icon-selector {
+    height: 75vh;
+  }
+
+  .icon-selector__search-box {
+    border: var(--icon-selector-search-border);
+    border-radius: var(--icon-selector-search-corners);
+  }
+
+  .playground-icon-selector__selected-container {
+    display: flex;
+    gap: var(--icon-selector-selectedIcon-gap);
+  }
+
+  .playground-icon-selector__selected-container :hover {
+    background-color: transparent;
+  }
+}

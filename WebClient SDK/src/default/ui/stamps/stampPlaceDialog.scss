@@ -1,0 +1,14 @@
+.category-dialog {
+  .desktop & {
+    min-width: var(--dialog-categories-min-width);
+  }
+
+  .dialog-content {
+    gap: var(--dialog-categories-gap);
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
