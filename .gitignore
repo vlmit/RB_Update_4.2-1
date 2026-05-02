@@ -29,6 +29,10 @@ applocal*.json
 /Source/**/project.assets.json
 /tools
 /Tools
+WebClient SDK/node_modules/*
+WebClient SDK/platform/dts/*
+WebClient SDK/platform/platform-api-manifests/*
+WebClient SDK/platform/platform-api-manifests-mobile/*
 *.csproj.user
 *.DotSettings.user
 *.suo
