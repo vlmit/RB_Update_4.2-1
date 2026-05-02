@@ -13,6 +13,10 @@
     <Compile Include="../../Extensions/Tessa.Extensions.Default.Shared/GlobalUsings.cs" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="PDFsharp" Version="6.2.4" />
+    <PackageReference Include="System.Drawing.Common" Version="10.0.5" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="../Tessa.Extensions.Default.Server/Tessa.Extensions.Default.Server.csproj" />
     <ProjectReference Include="../Tessa.Extensions.Shared/Tessa.Extensions.Shared.csproj" />
   </ItemGroup>
