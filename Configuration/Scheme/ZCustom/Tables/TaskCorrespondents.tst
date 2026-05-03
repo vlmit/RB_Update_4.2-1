@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <SchemeTable Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="99560120-7746-4241-99e2-e2ddc3d40002" Name="TaskCorrespondents" Group="Custom" InstanceType="Tasks" ContentType="Collections">
-	<Description></Description>
 	<SchemeComplexColumn IsSystem="true" IsPermanent="true" IsSealed="true" ID="99560120-7746-0041-2000-02ddc3d40002" Name="ID" Type="Reference(Typified) Not Null" ReferencedTable="5bfa9936-bb5a-4e8f-89a9-180bfd8f75f8">
 		<SchemeReferencingColumn IsSystem="true" IsPermanent="true" ID="99560120-7746-0141-4000-02ddc3d40002" Name="ID" Type="Guid Not Null" ReferencedColumn="5bfa9936-bb5a-008f-3100-080bfd8f75f8" />
 	</SchemeComplexColumn>

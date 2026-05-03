@@ -4,6 +4,9 @@
 		<SchemePhysicalColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="f805c74a-24b3-44b4-9141-7b5f6ac3fde1" Name="DepartmentIndexDistrict" Type="String(128) Null" />
 		<SchemePhysicalColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="f1c12699-f648-466d-8907-d98c6e9c051d" Name="DepartmentIndexDep" Type="String(128) Null" />
 	</SchemeComplexColumn>
+	<SchemeComplexColumn ID="22ed59ec-4939-4d96-a7a8-cbf0bda55ec0" Name="Partner">
+		<SchemeReferencingColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="39e6b05b-6f47-4264-b178-c461b25af088" Name="PartnerMedoID" Type="String(Max) Null" ReferencedColumn="745788ea-1a23-472c-9eb0-c48d2dfea546" />
+	</SchemeComplexColumn>
 	<SchemeComplexColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="6637c3dd-eef2-48e2-8bda-2460f3095a2e" Name="Nomenclature" Type="Reference(Typified) Null" ReferencedTable="27454eac-5316-4d34-baa6-31e0379447f6" WithForeignKey="false">
 		<SchemeReferencingColumn IsSystem="true" IsPermanent="true" ID="6637c3dd-eef2-00e2-4000-0460f3095a2e" Name="NomenclatureID" Type="Guid Null" ReferencedColumn="27454eac-5316-0134-4000-01e0379447f6" />
 		<SchemeReferencingColumn ID="96e72bcd-98b1-48b6-8bd1-1806890fca2a" Name="NomenclatureIndex" Type="String(128) Null" ReferencedColumn="ecbfd5ce-7268-4bfc-98ec-d903d80124a6" />
@@ -209,9 +212,7 @@
 		<SchemeReferencingColumn IsSystem="true" IsPermanent="true" ID="340bbb62-0c79-00f3-4000-00f0f067466f" Name="DepAGIPID" Type="Guid Null" ReferencedColumn="d43dace1-536f-019f-4000-09a8892a7427" />
 		<SchemePhysicalColumn ID="9d94c5a4-ed1b-4d83-898f-070387979b56" Name="DepAGIPName" Type="String(128) Null" />
 	</SchemeComplexColumn>
-	<SchemePhysicalColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="ba9117f3-89c2-4966-a327-979de2a78d6b" Name="WaitinigTaskID" Type="Guid Null">
-		<Description></Description>
-	</SchemePhysicalColumn>
+	<SchemePhysicalColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="ba9117f3-89c2-4966-a327-979de2a78d6b" Name="WaitinigTaskID" Type="Guid Null" />
 	<SchemePhysicalColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="755f4921-bc40-4933-9bbb-c1d0719f9e28" Name="MEDOFolderName" Type="String(Max) Null">
 		<Description>Столбец с названием папки для входящих МЭДО</Description>
 	</SchemePhysicalColumn>
@@ -226,9 +227,6 @@
 	<SchemeComplexColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="8c2876d4-e2b1-4d0e-8347-f9f9e74612d2" Name="UrgencyNPA" Type="Reference(Typified) Null" ReferencedTable="d9c38557-c1c1-441b-8699-e4e3e0619ee3">
 		<SchemeReferencingColumn IsSystem="true" IsPermanent="true" ID="8c2876d4-e2b1-000e-4000-09f9e74612d2" Name="UrgencyNPAID" Type="Guid Null" ReferencedColumn="d9c38557-c1c1-011b-4000-04e3e0619ee3" />
 		<SchemeReferencingColumn ID="26a6b266-272a-4cd3-89ac-9ea3995f3738" Name="UrgencyNPAName" Type="String(Max) Null" ReferencedColumn="22caea1f-324a-43aa-99b3-e7f8c54c1994" />
-	</SchemeComplexColumn>
-	<SchemeComplexColumn ID="22ed59ec-4939-4d96-a7a8-cbf0bda55ec0" Name="Partner">
-		<SchemeReferencingColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="39e6b05b-6f47-4264-b178-c461b25af088" Name="PartnerMedoID" Type="String(Max) Null" ReferencedColumn="745788ea-1a23-472c-9eb0-c48d2dfea546" />
 	</SchemeComplexColumn>
 	<SchemeComplexColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="73e5211c-fd18-4052-8478-ce9eef9321a7" Name="Executor" Type="Reference(Typified) Null" ReferencedTable="6c977939-bbfc-456f-a133-f1c2244e3cc3" WithForeignKey="false">
 		<SchemeReferencingColumn IsSystem="true" IsPermanent="true" ID="73e5211c-fd18-0052-4000-0e9eef9321a7" Name="ExecutorID" Type="Guid Null" ReferencedColumn="6c977939-bbfc-016f-4000-01c2244e3cc3" />
@@ -292,10 +290,4 @@
 		<SchemeReferencingColumn ID="14d25e27-9cd0-49f6-8aa4-4f5e9c7c9e99" Name="InDeloName" Type="String(512) Null" ReferencedColumn="3b87132b-cdeb-4f31-8ebf-4b60e3b85eb0" />
 		<SchemeReferencingColumn ID="7aed4a86-1550-4498-a1c8-978d1da3a7ca" Name="InDeloDescription" Type="String(512) Null" ReferencedColumn="db1d439d-2e90-4233-8127-b2cdc6a027cf" />
 	</SchemeComplexColumn>
-	<Predicate Dbms="SqlServer">[RefDocID] IS NOT NULL</Predicate>
-	<Predicate Dbms="PostgreSql">"RefDocID" IS NOT NULL</Predicate>
-	<Predicate Dbms="SqlServer">[ReceiverRowID] IS NOT NULL</Predicate>
-	<Predicate Dbms="PostgreSql">"ReceiverRowID" IS NOT NULL</Predicate>
-	<Predicate Dbms="SqlServer">[CategoryID] IS NOT NULL</Predicate>
-	<Predicate Dbms="PostgreSql">"CategoryID" IS NOT NULL</Predicate>
 </SchemeTable>

@@ -14,4 +14,5 @@
 	<SchemePhysicalColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="6953e457-fa32-4f10-9a8c-b652abe3c587" Name="ChooseAllApprovers" Type="Boolean Null">
 		<SchemeDefaultConstraint IsPermanent="true" ID="1a1814d5-a486-4819-b672-eace85067fdf" Name="df_TaskCommonInfo_ChooseAllApprovers" Value="false" />
 	</SchemePhysicalColumn>
+	<SchemePhysicalColumn Partition="c0aa4f8e-0bb0-4a9e-93c7-88507423a84c" ID="fca61275-915b-4827-a82c-f829301f682e" Name="Info" Type="String(Max) Null" />
 </SchemeTable>
