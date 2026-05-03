@@ -33,6 +33,7 @@
 	<SchemeTable ID="47107d7a-3a8c-47f0-b800-2a45da222ff4" Name="KrDocState" IsExternal="true" />
 	<SchemeTable ID="78bfc212-cad5-4d1d-8b91-a9c58562b9d5" Name="KrDocType" IsExternal="true" />
 	<SchemeTable ID="0ad2b029-2f30-4e19-96df-bc3c2dcd9dfe" Name="KrSigningTaskOptions" IsExternal="true" />
+	<SchemeTable ID="344fa4e8-cdfc-4cb0-8634-9155c49fd21a" Name="KrTaskCommentVirtual" IsExternal="true" />
 	<SchemeTable ID="7d8dbdbf-e607-4761-adeb-1566f7959436" Name="LogOfPassingDepartments" IsExternal="true" />
 	<SchemeTable ID="edab83a5-7559-44d9-b13b-82215d44d63b" Name="LogStates" IsExternal="true" />
 	<SchemeTable ID="4d654422-f61b-4d84-8de7-527ec119a244" Name="MEDOActive" IsExternal="true" />
