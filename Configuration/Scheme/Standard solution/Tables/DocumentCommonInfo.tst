@@ -37,7 +37,7 @@
 	<SchemePhysicalColumn ID="dadb1130-034d-493c-b7a0-a7c74eae078b" Name="SecondarySequence" Type="String(128) Null">
 		<Description>Последовательность для вторичного номера (поля SecondaryNumber и SecondaryFullNumber)</Description>
 	</SchemePhysicalColumn>
-	<SchemePhysicalColumn ID="2246998b-e4f7-45f1-8a96-211848466450" Name="Subject" Type="String(440) Null">
+	<SchemePhysicalColumn ID="2246998b-e4f7-45f1-8a96-211848466450" Name="Subject" Type="String(1440) Null">
 		<Description>Тема документа.</Description>
 	</SchemePhysicalColumn>
 	<SchemePhysicalColumn ID="b452a4ce-ae1e-43fd-a44f-cc74464a6cd3" Name="DocDate" Type="Date Null">

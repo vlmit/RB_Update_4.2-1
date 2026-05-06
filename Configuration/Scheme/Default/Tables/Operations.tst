@@ -32,7 +32,7 @@
 	<SchemePhysicalColumn ID="3bf2fe3e-aabc-4403-968a-9023843fe75b" Name="SessionID" Type="Guid Null" IsSparse="true">
 		<Description>Identifier of a session used to create an operation, or Null if it's a legacy operation, or if it was created outside of a session</Description>
 	</SchemePhysicalColumn>
-	<SchemePhysicalColumn ID="d7debd98-0f6b-4d8d-abd2-105432bf87ac" Name="CreationFlags" Type="Int16 Not Null">
+	<SchemePhysicalColumn ID="d7debd98-0f6b-4d8d-abd2-105432bf87ac" Name="CreationFlags" Type="Int16 Null">
 		<Description>Flags describing operation's behaviour, determined when an operation is created</Description>
 	</SchemePhysicalColumn>
 	<SchemePhysicalColumn ID="ad765270-26d9-439b-a3f7-273441fa81fb" Name="ObjectID" Type="Guid Null">

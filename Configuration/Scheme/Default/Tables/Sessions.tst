@@ -71,8 +71,8 @@
 	<SchemePhysicalColumn ID="2120a471-1807-4c9b-a766-97e14f3941b7" Name="Client64BitOS" Type="Boolean Null">
 		<Description>Признак того, что операционная система клиента является 64-битной. True - 64-битная ОС, False - 32-битная ОС, Null - разрядность неизвестна.</Description>
 	</SchemePhysicalColumn>
-	<SchemeComplexColumn ID="c75efa41-489e-4b69-ae8a-c023b1589c3a" Name="Calendar" Type="Reference(Typified) Not Null" ReferencedTable="67b1fd42-0106-4b31-a368-ea3e4d38ac5c" WithForeignKey="false">
-		<SchemeReferencingColumn IsSystem="true" IsPermanent="true" ID="c75efa41-489e-0069-4000-0023b1589c3a" Name="CalendarID" Type="Guid Not Null" ReferencedColumn="67b1fd42-0106-0131-4000-0a3e4d38ac5c" />
+	<SchemeComplexColumn ID="c75efa41-489e-4b69-ae8a-c023b1589c3a" Name="Calendar" Type="Reference(Typified) Null" ReferencedTable="67b1fd42-0106-4b31-a368-ea3e4d38ac5c" WithForeignKey="false">
+		<SchemeReferencingColumn IsSystem="true" IsPermanent="true" ID="c75efa41-489e-0069-4000-0023b1589c3a" Name="CalendarID" Type="Guid Null" ReferencedColumn="67b1fd42-0106-0131-4000-0a3e4d38ac5c" />
 	</SchemeComplexColumn>
 	<SchemePhysicalColumn ID="e1ba1f26-366b-4905-9846-7a40350b1bee" Name="Culture" Type="String(8) Not Null">
 		<Description>Имя культуры пользователя.</Description>
